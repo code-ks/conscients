@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Production configs for the app
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
@@ -33,8 +34,8 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-  # `config.assets.precompile` and `config.assets.version`
-  # have moved to config/initializers/assets.rb
+  # `config.assets.precompile` and `config.assets.version` have moved to
+  # config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
@@ -66,7 +67,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "conscients_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "grease_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
 

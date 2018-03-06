@@ -4,7 +4,7 @@ This is a Rails 5 app created using [modern-rails-template][]. Please check READ
 
 ## How to use this project
 
-* Use [gitflow][] for version control. More info [here].
+* Use [git-flow][] for version control. More info [here].
 * We advise you to use [overmind][] to launch your processes in development. You just need to run `overmind s -f Procfile.dev`. Of course, another process manager, like [foreman][], would work too.
 * We advise you to deploy to [Heroku][]. Do not forget to add the [Redis] add-on.
 
