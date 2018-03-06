@@ -47,7 +47,7 @@ GEM
       rake (>= 10.4, < 13.0)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (7.2.5)
+    autoprefixer-rails (8.1.0)
       execjs
     awesome_print (1.8.0)
     better_errors (2.4.0)
@@ -83,7 +83,7 @@ GEM
     eventmachine (1.2.5)
     execjs (2.7.0)
     ffi (1.9.23)
-    font-awesome-sass (4.7.0)
+    font-awesome-sass (5.0.6.2)
       sass (>= 3.2)
     formatador (0.2.5)
     friendly_id (5.2.3)
@@ -109,6 +109,7 @@ GEM
       guard (~> 2.8)
       guard-compat (~> 1.0)
       multi_json (~> 1.8)
+    high_voltage (3.0.0)
     http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
@@ -142,7 +143,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oj (3.4.0)
+    oj (3.5.0)
     overcommit (0.43.0)
       childprocess (~> 0.6, >= 0.6.3)
       iniparse (~> 1.4)
@@ -292,6 +293,7 @@ DEPENDENCIES
   guard
   guard-bundler
   guard-livereload
+  high_voltage
   jbuilder (~> 2.5)
   listen (>= 3.0.5)
   oj

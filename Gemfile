@@ -28,6 +28,7 @@ gem 'sidekiq'
 gem 'sidekiq-failures'
 
 gem 'friendly_id'
+gem 'high_voltage'
 
 group :development, :test do
   gem 'pry-byebug'

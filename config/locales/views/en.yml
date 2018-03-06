@@ -1,1 +1,6 @@
 en:
+  pages:
+    home:
+      hello: "Test EN"
+    about:
+      test: "Youpi"
