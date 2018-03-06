@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
 
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'oj'
+gem 'rollbar'
 
 gem 'rails-i18n'
 

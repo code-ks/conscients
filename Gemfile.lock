@@ -142,6 +142,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oj (3.4.0)
     overcommit (0.43.0)
       childprocess (~> 0.6, >= 0.6.3)
       iniparse (~> 1.4)
@@ -206,6 +207,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.1)
+    rollbar (2.15.5)
+      multi_json
     rubocop (0.53.0)
       parallel (~> 1.10)
       parser (>= 2.5)
@@ -291,6 +294,7 @@ DEPENDENCIES
   guard-livereload
   jbuilder (~> 2.5)
   listen (>= 3.0.5)
+  oj
   overcommit
   pg (>= 0.18)
   pry-byebug
@@ -301,6 +305,7 @@ DEPENDENCIES
   rails-erd
   rails-i18n
   redis (~> 4.0)
+  rollbar
   rubocop
   sass-rails (~> 5.0)
   sidekiq
