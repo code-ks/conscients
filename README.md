@@ -1,18 +1,36 @@
-# conscients
+# Conscients
 
-This is a Rails 5 app created using [modern-rails-template][]. Please check README of the template repository to see the features available out of the box. To have a look to the new features introduced by Rails 5.2 (credentials for example), check this [article][].
+## Configurer l'application sur mon ordinateur
 
-## How to use this project
+Ouvrir le terminal et lancer les commandes si dessous dans l'ordre:
+- `git clone git@github.com:damienlethiec/conscients.git`
+- `git co -b develop`
+- `git pull origin develop`
+- `bundle install`
+- `rails db:setup`
+- `brew install overmind`
 
-* Use [git-flow][] for version control. More info [here].
-* We advise you to use [overmind][] to launch your processes in development. You just need to run `overmind s -f Procfile.dev`. Of course, another process manager, like [foreman][], would work too.
-* We advise you to deploy to [Heroku][]. Do not forget to add the [Redis] add-on.
+## Travailler sur l'application
 
-[article]: https://evilmartians.com/chronicles/rails-5-2-active-storage-and-beyond
-[modern-rails-template]: https://github.com/damienlethiec/modern-rails-template
-[git-flow]: https://github.com/nvie/gitflow
-[here]: http://nvie.com/posts/a-successful-git-branching-model/
-[overmind]: https://github.com/DarthSim/overmind
-[foreman]: https://github.com/ddollar/foreman
-[heroku]: https://www.heroku.com/
-[redis]: https://devcenter.heroku.com/articles/heroku-redis
+### Travailler sur une feature
+
+- Commencer ma feature: `git co -b feature/<nom-de-ma-feature>`
+- Lancer l'application (attention, avec webpack ce n'est plus `rails s`): `overmind start -f Procfile.dev`
+- Finir ma feature: `git add .` puis `git commit -m <message>` puis `git push origin 
+feature/<nom-de-ma-feature>`. Puis faire une pull request sur Github et demander une code review 
+sur Slack
+
+### Créer des pages de contenu avec High Voltage
+
+Pour aller plus loin, se référer à la [documentation](https://github.com/thoughtbot/high_voltage)
+ High Voltage.
+
+- Commencer une nouvelle page: Créer un fichier `<nom-de-ma-page>.html.erb` dans le dossier 
+`app/views/pages`. Ma page est tout de suite disponible sur `localhost:3000/<nom-de-ma-page>` 
+(version française) ou sur `localhost:3000/en/<nom-de-ma-page>` (version anglaise).
+- Gérer I18n: Dans mes pages, intégrer tout le contenu avec I18n via le format suivant: `t 
+'pages/<nom-de-ma-page>/<identifiant-du-contenu>`. Créer ensuite le contenu dans les fichiers 
+`fr` et `en` situés dans `config/locales/views` et ajouter les balises nécessaires et suivant les
+ exemples existants.
+ - Gérer le SEO d'une page: processus à compléter (si tu veux le créer, avec plaisir)
+ - Travailler le front de ma page: faire du HTML/CSS classique, bootstrap est déjà installé

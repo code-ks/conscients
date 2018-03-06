@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-class PagesController < ApplicationController
+class PagesController < HighVoltage::PagesController
   def home; end
 end
