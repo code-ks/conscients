@@ -1,0 +1,40 @@
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 100
+
+AllCops:
+  Exclude:
+    - db/migrate/*
+    - db/schema.rb
+    - bin/*
+    - node_modules/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/development.rb
+    - Guardfile
+    - config/initializers/simple_form_bootstrap.rb
+    - lib/tasks/*
+
+Layout/AlignHash:
+  Enabled: False
+
+GlobalVars:
+  AllowedVariables:
+    - $redis
+
+Rails/Output:
+  Exclude:
+    - db/seeds.rb
+
