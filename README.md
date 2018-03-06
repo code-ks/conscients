@@ -9,6 +9,8 @@ Ouvrir le terminal et lancer les commandes si dessous dans l'ordre:
 - `bundle install`
 - `rails db:setup`
 - `brew install overmind`
+- `touch config/master.key` et copier dans le fichier tout juste créé la clé partagée par Damien 
+(ne jamais la dévoiler à personne)
 
 ## Travailler sur l'application
 
