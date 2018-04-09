@@ -4,24 +4,51 @@
 // 3. You can override them below!
 
 // General style
-$font-family-sans-serif:  $body-font;
-$headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
-$font-size-base:          $base-size;
-$line-height-base:        $base-height;
-$font-size-h3: $headers-size;
+// $font-family-sans-serif:  $body-font;
+// $headings-font-family:    $headers-font;
+// $body-bg:                 $light-gray;
+// $font-size-base:          $base-size;
+// $line-height-base:        $base-height;
+// $font-size-h3: $headers-size;
+
+// $base-size: 14px;
+// $base-height: 1.4;
+// $headers-size: 16px;
 
 // Colors
-$gray-base:       $gray;
-$brand-primary:   $blue;
-$brand-success:   $green;
-$brand-info:      $yellow;
-$brand-danger:    $red;
-$brand-warning:   $orange;
+// $gray-base:       $gray;
+// $brand-primary:   $blue;
+// $brand-success:   $green;
+// $brand-info:      $yellow;
+// $brand-danger:    $red;
+// $brand-warning:   $orange;
+
+// $red: #EE5F5B;
+// $blue: #469AE0;
+// $yellow: #FDB631;
+// $orange: #E67E22;
+// $green: #32B796;
+// $gray: #000000;
+// $light-gray: #F2F2F2;
 
 // Buttons & inputs' radius
-$border-radius-base:  2px;
-$border-radius-large: 2px;
-$border-radius-small: 2px;
+// $border-radius-base:  2px;
+// $border-radius-large: 2px;
+// $border-radius-small: 2px;
 
-// Override other variables below!
+// fonts
+// @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+// @import url("https://fonts.googleapis.com/css?family=Droid+Sans:400,700");
+
+// $body-font: "Droid Sans", "Helvetica", "sans-serif";
+// $headers-font: "Droid Sans", "Helvetica", "sans-serif";
+
+// To use a font file (.woff) uncomment following lines
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('FontFile.eot');
+//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//        font-url('FontFile.woff') format('woff'),
+//        font-url('FontFile.ttf') format('truetype')
+// }
+// $my-font: "Font Name";
