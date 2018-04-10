@@ -1,12 +1,12 @@
 <div class="col-lg-4 col-sm-6 col-xs-12">
   <%= link_to product do %>
     <div class="card mt-3 mb-3 card-hover-parent">
-      <%= image_tag(product.image, class: 'card-img-top card-hide-hover') %>
+      <%= image_tag(product.images.first, class: 'card-img-top card-hide-hover') %>
       <div class="card-body card-hover-child">
         <h5 class="card-title"><%= product.name %></h5>
         <p class="card-text"><%= product.ttc_price %> <%= product.ttc_price.currency.symbol %></p>
         <p class="card-text text-center card-show-hover" ><%= product.description %></p>
-        <p class="card-text text-center card-show-hover bold orange" ><%= t('.see_product').upcase %></p>
+        <p class="card-text text-center text-uppercase card-show-hover font-weight-bold orange" ><%= t('.see_product') %></p>
       </div>
     </div>
   <% end %>

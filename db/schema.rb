@@ -49,25 +49,26 @@ ActiveRecord::Schema.define(version: 2018_04_10_044817) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.string "name", null: false
+    t.text "description", null: false
     t.integer "ht_price_cents", default: 0, null: false
     t.string "ht_price_currency", default: "EUR", null: false
-    t.decimal "taxe_rate", precision: 4, scale: 2, default: "20.0"
+    t.decimal "tax_rate", precision: 4, scale: 2, default: "20.0", null: false
     t.integer "weight", default: 0
-    t.integer "product_type", default: 0
-    t.boolean "published", default: true
+    t.integer "product_type", default: 0, null: false
+    t.boolean "published", default: true, null: false
     t.integer "display_order"
     t.integer "ht_buying_price_cents", default: 0, null: false
     t.string "ht_buying_price_currency", default: "EUR", null: false
-    t.string "seo_title"
-    t.string "meta_description"
+    t.string "seo_title", null: false
+    t.string "meta_description", null: false
     t.text "keywords", default: [], array: true
-    t.string "url"
+    t.string "slug", null: false
     t.decimal "producer_latitude", precision: 11, scale: 8
     t.decimal "producer_longitude", precision: 11, scale: 8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
 end

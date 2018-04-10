@@ -1,0 +1,24 @@
+<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <% product.images.each_with_index do |image, i| %>
+      <li data-target="#carouselIndicators" data-slide-to="<%= i %>" class="<%= "active" if i.zero? %>"></li>
+    <% end %>
+  </ol>
+  <div class="carousel-inner">
+    <% product.images.each_with_index do |image, i| %>
+      <div class="carousel-item <%= "active" if i.zero? %>">
+        <%= image_tag image, class: 'd-block w-100' %>
+      </div>
+    <% end %>
+  </div>
+  <% unless product.images.size == 1 %>
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only"><%= t('.previous') %></span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only"><%= t('.next') %></span>
+    </a>
+  <% end %>
+</div>

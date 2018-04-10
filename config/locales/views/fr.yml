@@ -7,3 +7,6 @@ fr:
   products:
     product:
       see_product: "Voir"
+    carousel:
+      next: "Suivant"
+      previous: "Précédent"

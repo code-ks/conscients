@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 
 gem 'jbuilder', '~> 2.5'
+gem 'mini_magick'
 gem 'redis', '~> 4.0'
 
 gem 'bootsnap', '>= 1.1.0', require: false

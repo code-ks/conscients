@@ -17,8 +17,7 @@ task create_development_resources: :environment do
     seo_title: 'Super Top Livre',
     meta_description: "Un top livre qui vaut vraiment le coup et que tout\
     le monde devrait lire parce qu'il est vraiment bien",
-    keywords: %w[top livre],
-    url: 'top-livre'
+    keywords: %w[top livre]
   )
   Product.create!(
     name: 'Top livre 2',
@@ -30,8 +29,7 @@ task create_development_resources: :environment do
     seo_title: 'Top Livre 2',
     meta_description: "Un deuxième top livre qui vaut vraiment le coup et que tout\
     le monde devrait lire parce qu'il est vraiment bien",
-    keywords: %w[top livre],
-    url: 'top-livre-2'
+    keywords: %w[top livre]
   )
   Product.create!(
     name: 'Top vêtement garçon',
@@ -43,8 +41,7 @@ task create_development_resources: :environment do
     seo_title: 'Top vetement garçon',
     meta_description: "Un top vetement garçon qui vaut vraiment le coup et que tout\
     le monde devrait porter parce qu'il est vraiment bien",
-    keywords: %w[top vetement garçon],
-    url: 'top-vetement-garçon'
+    keywords: %w[top vetement garçon]
   )
   Product.create!(
     name: 'Top vêtement fille',
@@ -56,8 +53,7 @@ task create_development_resources: :environment do
     seo_title: 'Top vetement fille',
     meta_description: "Un top vetement fille qui vaut vraiment le coup et que tout\
     le monde devrait porter parce qu'il est vraiment bien",
-    keywords: %w[top vetement fille],
-    url: 'top-vetement-fille'
+    keywords: %w[top vetement fille]
   )
   Product.create!(
     name: 'Livre et arbre',
@@ -70,8 +66,7 @@ task create_development_resources: :environment do
     seo_title: 'Top bundle livre + arbre',
     meta_description: "Un top bundle livre + arbrequi vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",
-    keywords: %w[top bundle livre arbre],
-    url: 'top-livre-arbre'
+    keywords: %w[top bundle livre arbre]
   )
   Product.create!(
     name: 'Arbre',
@@ -83,12 +78,13 @@ task create_development_resources: :environment do
     seo_title: 'Super Top arbre',
     meta_description: "Un arbre qui vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",
-    keywords: %w[top bundle livre arbre],
-    url: 'top-arbre'
+    keywords: %w[top bundle livre arbre]
   )
   Product.all.each do |p|
-    p.image.attach(io: File.open('lib/assets/tree.jpeg'),
+    p.images.attach(io: File.open('lib/assets/tree.jpeg'),
                    filename: 'tree.jpeg', content_type: 'image/jpeg')
+    p.images.attach(io: File.open('lib/assets/book.jpeg'),
+                   filename: 'book.jpeg', content_type: 'image/jpeg')
     p.save
   end
   Rails.logger.info "#{Product.all.count} products created"
