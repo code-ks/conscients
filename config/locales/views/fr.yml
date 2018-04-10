@@ -4,3 +4,6 @@ fr:
       hello: "Test"
     about:
       test: "Youpi"
+  products:
+    product:
+      see_product: "Voir"

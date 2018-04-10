@@ -1,0 +1,11 @@
+a {
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.orange {
+  color: $orange;
+}

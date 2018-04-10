@@ -4,3 +4,6 @@ en:
       hello: "Test EN"
     about:
       test: "Youpi"
+  products:
+    product:
+      see_product: "See"
