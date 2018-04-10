@@ -13,7 +13,6 @@ task create_development_resources: :environment do
     le monde devrait lire parce qu'il est vraiment bien",
     ht_price_cents: 1000,
     weight: 1000,
-    display_order: 1,
     ht_buying_price_cents: 900,
     seo_title: 'Super Top Livre',
     meta_description: "Un top livre qui vaut vraiment le coup et que tout\
@@ -27,7 +26,6 @@ task create_development_resources: :environment do
     le monde devrait lire parce qu'il est vraiment bien",
     ht_price_cents: 1000,
     weight: 1000,
-    display_order: 1,
     ht_buying_price_cents: 900,
     seo_title: 'Top Livre 2',
     meta_description: "Un deuxième top livre qui vaut vraiment le coup et que tout\
@@ -41,7 +39,6 @@ task create_development_resources: :environment do
     le monde devrait porter parce qu'il est vraiment bien",
     ht_price_cents: 1200,
     weight: 500,
-    display_order: 1,
     ht_buying_price_cents: 1000,
     seo_title: 'Top vetement garçon',
     meta_description: "Un top vetement garçon qui vaut vraiment le coup et que tout\
@@ -55,7 +52,6 @@ task create_development_resources: :environment do
     le monde devrait porter parce qu'il est vraiment bien",
     ht_price_cents: 1200,
     weight: 500,
-    display_order: 1,
     ht_buying_price_cents: 1000,
     seo_title: 'Top vetement fille',
     meta_description: "Un top vetement fille qui vaut vraiment le coup et que tout\
@@ -69,7 +65,6 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     ht_price_cents: 1700,
     weight: 1000,
-    display_order: 1,
     product_type: 1,
     ht_buying_price_cents: 1300,
     seo_title: 'Top bundle livre + arbre',
@@ -83,7 +78,6 @@ task create_development_resources: :environment do
     description: "Un arbre qui vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",
     ht_price_cents: 500,
-    display_order: 1,
     product_type: 2,
     ht_buying_price_cents: 400,
     seo_title: 'Super Top arbre',
@@ -92,5 +86,10 @@ task create_development_resources: :environment do
     keywords: %w[top bundle livre arbre],
     url: 'top-arbre'
   )
+  Product.all.each do |p|
+    p.image.attach(io: File.open('lib/assets/tree.jpeg'),
+                   filename: 'tree.jpeg', content_type: 'image/jpeg')
+    p.save
+  end
   Rails.logger.info "#{Product.all.count} products created"
 end

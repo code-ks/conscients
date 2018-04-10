@@ -27,14 +27,18 @@
 #
 
 class Product < ApplicationRecord
-  enum product_type: { classic: 0, personalized: 1, tree: 2 }
+  has_one_attached :image
 
-  validates :name, :description, :seo_title, :meta_description, :url, presence: true
+  enum product_type: { classic: 0, personalized: 1, tree: 2 }
+  validates :name, :description, :seo_title, :meta_description, :url, :image, presence: true
   validates :name, :url, length: { minimum: 5, maximum: 30 }
   validates :description, :meta_description, length: { minimum: 100, maximum: 500 }
   validates :seo_title, length: { minimum: 10, maximum: 150 }
   validates :product_type, inclusion: { in: product_types.keys }
   validates :ht_price_cents, :ht_buying_price_cents, numericality: { greater_than_or_equal_to: 1 }
+
+  scope :published, -> { where(published: true) }
+  scope :order_for_display, -> { order(display_order: :asc) }
 
   def ttc_price_cents
     ht_price_cents * (1 + taxe_rate)
