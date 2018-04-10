@@ -30,6 +30,9 @@ Metrics/BlockLength:
 Layout/AlignHash:
   Enabled: False
 
+Style/AsciiComments:
+  Enabled: False
+
 GlobalVars:
   AllowedVariables:
     - $redis
@@ -37,4 +40,3 @@ GlobalVars:
 Rails/Output:
   Exclude:
     - db/seeds.rb
-

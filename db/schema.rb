@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_02_08_061509) do
+ActiveRecord::Schema.define(version: 2018_04_10_030030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,28 @@ ActiveRecord::Schema.define(version: 2018_02_08_061509) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "ht_price_cents", default: 0, null: false
+    t.string "ht_price_currency", default: "EUR", null: false
+    t.decimal "taxe_rate", precision: 4, scale: 2, default: "20.0"
+    t.integer "weight", default: 0
+    t.integer "product_type", default: 0
+    t.boolean "published", default: true
+    t.integer "display_order"
+    t.integer "ht_buying_price_cents", default: 0, null: false
+    t.string "ht_buying_price_currency", default: "EUR", null: false
+    t.string "seo_title"
+    t.string "meta_description"
+    t.text "keywords", default: [], array: true
+    t.string "url"
+    t.decimal "producer_latitude", precision: 11, scale: 8
+    t.decimal "producer_longitude", precision: 11, scale: 8
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
