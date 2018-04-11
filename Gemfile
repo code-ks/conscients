@@ -10,54 +10,54 @@ gem 'puma', '~> 3.11'
 gem 'rails', '5.2.0'
 gem 'sass-rails', '~> 5.0'
 
-gem 'uglifier', '>= 1.3.0'
-gem 'webpacker'
+gem 'uglifier', '~> 4.1'
+gem 'webpacker', '~> 3.4'
 
 gem 'jbuilder', '~> 2.5'
-gem 'mini_magick'
+gem 'mini_magick', '~> 4.8'
 gem 'redis', '~> 4.0'
 
-gem 'bootsnap', '>= 1.1.0', require: false
-gem 'oj'
-gem 'rollbar'
+gem 'bootsnap', '~> 1.3', require: false
+gem 'oj', '~> 3.5'
+gem 'rollbar', '~> 2.15'
 
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 5.1'
 
-gem 'sidekiq'
-gem 'sidekiq-failures'
+gem 'sidekiq', '~> 5.1'
+gem 'sidekiq-failures', '~> 1.0'
 
-gem 'friendly_id'
-gem 'high_voltage'
+gem 'friendly_id', '~> 5.2'
+gem 'high_voltage', '~> 3.0'
 
-gem 'money-rails'
+gem 'money-rails', '~> 1.11'
 
 group :development, :test do
-  gem 'pry-byebug'
-  gem 'pry-rails'
+  gem 'pry-byebug', '~> 3.6'
+  gem 'pry-rails', '~> 0.3'
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'listen', '~> 3.1'
+  gem 'spring', '~> 2.0'
+  gem 'spring-watcher-listen', '~> 2.0'
 
-  gem 'annotate'
-  gem 'awesome_print'
-  gem 'bullet'
-  gem 'rails-erd'
-  gem 'table_print'
-  gem 'xray-rails'
+  gem 'annotate', '~> 2.7'
+  gem 'awesome_print', '~> 1.8'
+  gem 'bullet', '~> 5.7'
+  gem 'rails-erd', '~> 1.5'
+  gem 'table_print', '~> 1.5'
+  gem 'xray-rails', '~> 0.3'
 
-  gem 'brakeman', require: false
-  gem 'overcommit'
-  gem 'rubocop', require: false
+  gem 'brakeman', '~> 4.2', require: false
+  gem 'overcommit', '~> 0.44'
+  gem 'rubocop', '~> 0.54', require: false
 
-  gem 'guard'
-  gem 'guard-bundler', require: false
-  gem 'guard-livereload', require: false
-  gem 'rack-livereload'
+  gem 'guard', '~> 2.14'
+  gem 'guard-bundler', '~> 2.1', require: false
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'rack-livereload', '~> 0.3'
 
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'web-console', '>= 3.3.0'
+  gem 'better_errors', '~> 2.4'
+  gem 'binding_of_caller', '~> 0.8'
+  gem 'web-console', '~> 3.6'
 end

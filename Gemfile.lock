@@ -55,15 +55,15 @@ GEM
     bindex (0.5.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootsnap (1.1.8)
+    bootsnap (1.3.0)
       msgpack (~> 1.0)
-    brakeman (4.2.0)
+    brakeman (4.2.1)
     builder (3.2.3)
-    bullet (5.7.3)
+    bullet (5.7.5)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11.0)
-    byebug (10.0.0)
-    childprocess (0.8.0)
+    byebug (10.0.2)
+    childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     choice (0.2.0)
     coderay (1.1.2)
@@ -117,7 +117,7 @@ GEM
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    lumberjack (1.0.12)
+    lumberjack (1.0.13)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     marcel (0.3.2)
@@ -128,14 +128,14 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    monetize (1.4.0)
-      money (~> 6.7)
+    monetize (1.7.0)
+      money (~> 6.9)
     money (6.11.0)
       i18n (>= 0.6.4, < 1.1)
-    money-rails (1.7.0)
+    money-rails (1.11.0)
       activesupport (>= 3.0)
-      monetize (~> 1.4.0)
-      money (~> 6.7)
+      monetize (~> 1.7.0)
+      money (~> 6.11.0)
       railties (>= 3.0)
     msgpack (1.2.4)
     multi_json (1.13.1)
@@ -147,11 +147,11 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     oj (3.5.0)
-    overcommit (0.43.0)
+    overcommit (0.44.0)
       childprocess (~> 0.6, >= 0.6.3)
       iniparse (~> 1.4)
     parallel (1.12.1)
-    parser (2.5.0.3)
+    parser (2.5.0.5)
       ast (~> 2.4.0)
     pg (1.0.0)
     powerpack (0.1.1)
@@ -165,7 +165,7 @@ GEM
       pry (>= 0.10.4)
     puma (3.11.3)
     rack (2.0.4)
-    rack-livereload (0.3.16)
+    rack-livereload (0.3.17)
       rack
     rack-protection (2.0.1)
       rack
@@ -213,7 +213,7 @@ GEM
     redis (4.0.1)
     rollbar (2.15.5)
       multi_json
-    rubocop (0.53.0)
+    rubocop (0.54.0)
       parallel (~> 1.10)
       parser (>= 2.5)
       powerpack (~> 0.1)
@@ -223,7 +223,7 @@ GEM
     ruby-graphviz (1.2.3)
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
-    sass (3.5.5)
+    sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -235,7 +235,7 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     shellany (0.0.1)
-    sidekiq (5.1.1)
+    sidekiq (5.1.3)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
@@ -260,16 +260,16 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.6)
+    uglifier (4.1.8)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.3.0)
     uniform_notifier (1.11.0)
-    web-console (3.5.1)
+    web-console (3.6.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webpacker (3.3.0)
+    webpacker (3.4.3)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
@@ -283,45 +283,45 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate
-  awesome_print
-  better_errors
-  binding_of_caller
-  bootsnap (>= 1.1.0)
-  brakeman
-  bullet
-  friendly_id
-  guard
-  guard-bundler
-  guard-livereload
-  high_voltage
+  annotate (~> 2.7)
+  awesome_print (~> 1.8)
+  better_errors (~> 2.4)
+  binding_of_caller (~> 0.8)
+  bootsnap (~> 1.3)
+  brakeman (~> 4.2)
+  bullet (~> 5.7)
+  friendly_id (~> 5.2)
+  guard (~> 2.14)
+  guard-bundler (~> 2.1)
+  guard-livereload (~> 2.5)
+  high_voltage (~> 3.0)
   jbuilder (~> 2.5)
-  listen (>= 3.0.5)
-  mini_magick
-  money-rails
-  oj
-  overcommit
+  listen (~> 3.1)
+  mini_magick (~> 4.8)
+  money-rails (~> 1.11)
+  oj (~> 3.5)
+  overcommit (~> 0.44)
   pg (>= 0.18)
-  pry-byebug
-  pry-rails
+  pry-byebug (~> 3.6)
+  pry-rails (~> 0.3)
   puma (~> 3.11)
-  rack-livereload
+  rack-livereload (~> 0.3)
   rails (= 5.2.0)
-  rails-erd
-  rails-i18n
+  rails-erd (~> 1.5)
+  rails-i18n (~> 5.1)
   redis (~> 4.0)
-  rollbar
-  rubocop
+  rollbar (~> 2.15)
+  rubocop (~> 0.54)
   sass-rails (~> 5.0)
-  sidekiq
-  sidekiq-failures
-  spring
-  spring-watcher-listen (~> 2.0.0)
-  table_print
-  uglifier (>= 1.3.0)
-  web-console (>= 3.3.0)
-  webpacker
-  xray-rails
+  sidekiq (~> 5.1)
+  sidekiq-failures (~> 1.0)
+  spring (~> 2.0)
+  spring-watcher-listen (~> 2.0)
+  table_print (~> 1.5)
+  uglifier (~> 4.1)
+  web-console (~> 3.6)
+  webpacker (~> 3.4)
+  xray-rails (~> 0.3)
 
 RUBY VERSION
    ruby 2.5.0p0
