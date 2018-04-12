@@ -33,6 +33,10 @@ Layout/AlignHash:
 Style/AsciiComments:
   Enabled: False
 
+Rails/OutputSafety:
+  Exclude:
+    - app/helpers/internationalization_helper.rb
+
 GlobalVars:
   AllowedVariables:
     - $redis

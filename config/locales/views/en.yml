@@ -10,3 +10,9 @@ en:
     carousel:
       next: "Next"
       previous: "Previous"
+  shared:
+    navbar:
+      about: "About"
+      my_account: "My account"
+      participate: "Participate"
+      my_cart: "My cart"

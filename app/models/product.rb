@@ -47,6 +47,7 @@ class Product < ApplicationRecord
 
   scope :published, -> { where(published: true) }
   scope :order_for_display, -> { order(display_order: :asc) }
+  scope :favorite, -> { where(favorite: true) }
 
   def ttc_price_cents
     ht_price_cents * (1 + tax_rate)

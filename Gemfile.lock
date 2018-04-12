@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:bokmann/font-awesome-rails.git
+  revision: 0e5c694d5485983772f47ef1c8051af9fbb3938d
+  specs:
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -290,6 +297,7 @@ DEPENDENCIES
   bootsnap (~> 1.3)
   brakeman (~> 4.2)
   bullet (~> 5.7)
+  font-awesome-rails!
   friendly_id (~> 5.2)
   guard (~> 2.14)
   guard-bundler (~> 2.1)

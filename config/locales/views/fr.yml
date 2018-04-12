@@ -10,3 +10,9 @@ fr:
     carousel:
       next: "Suivant"
       previous: "Précédent"
+  shared:
+    navbar:
+      about: "A propos"
+      my_account: "Mon compte"
+      participate: "Participer"
+      my_cart: "Mon panier"

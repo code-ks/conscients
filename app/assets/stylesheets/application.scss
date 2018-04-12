@@ -1,12 +1,8 @@
-// Your CSS partials
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import "config/_bootstrap_variables";
+@import "font-awesome";
 
 @import "layouts/index";
 @import "utilities/index";
 @import "components/index";
 @import "pages/index";
-
-body {
-  height: 200vh;
-}

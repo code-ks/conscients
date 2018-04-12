@@ -31,6 +31,8 @@ gem 'high_voltage', '~> 3.0'
 
 gem 'money-rails', '~> 1.11'
 
+gem 'font-awesome-rails', git: 'git@github.com:bokmann/font-awesome-rails.git'
+
 group :development, :test do
   gem 'pry-byebug', '~> 3.6'
   gem 'pry-rails', '~> 0.3'
