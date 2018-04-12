@@ -1,4 +1,18 @@
 en:
   activerecord:
     models:
+      admin_user: "Admin"
+      category: "Category"
+      sub_category: "Subcatégory"
+      categorization: "Categorization"
+      product: "Product"
     attributes:
+      admin_user:
+        email: "Email"
+        current_sign_in_at: "Current Sign In At"
+        sign_in_count: "Sign In Count"
+      product:
+        ht_price_cents: "HT price in cents"
+        ht_price_currency: "Sale currency"
+        ht_buying_price_cents: "HT buying price in cents"
+        ht_buying_price_currency: "Buying currency"

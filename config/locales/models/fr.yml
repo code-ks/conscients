@@ -1,4 +1,50 @@
 fr:
   activerecord:
     models:
+      admin_user: "Administrateur"
+      category: "Catégorie"
+      sub_category: "Sous Catégorie"
+      categorization: "Catégorisation"
+      product: "Produit"
     attributes:
+      admin_user:
+        email: "Email"
+        current_sign_in_at: "Connection actuelle le"
+        sign_in_count: "Nombre de connections"
+        created_at: "Créé le"
+      category:
+        name: "Nom"
+        slug: "URL"
+        created_at: "Créé le"
+        updated_at: "Mise à jour le"
+      sub_category:
+        name: "Nom"
+        slug: "URL"
+        category: "Catégorie"
+        created_at: "Créé le"
+        updated_at: "Mise à jour le"
+      categorization:
+        sub_category: "Sous Catégorie"
+        product: "Produit"
+        created_at: "Créé le"
+        updated_at: "Mise à jour le"
+      product:
+        name: "Nom"
+        description: "Description"
+        ht_price_cents: "Prix hors taxe (en centimes)"
+        ht_price_currency: "Devise de vente"
+        taxe_rate: "Taux de TVA"
+        weight: "Poids"
+        product_type: "Type de produit"
+        published: "En ligne"
+        display_order: "Ordre de présentation"
+        ht_buying_price_cents: "Prix d'achat hors taxe (en centimes)"
+        ht_buying_price_currency: "Devise d'achat"
+        seo_title: "Titre SEO"
+        meta_description: "Meta Description"
+        keywords: "Mots clés"
+        slug: "URL"
+        producer_latitude: "Latitude du lieu de production"
+        producer_longitude: "Longitude du lieu de production"
+        created_at: "Créé le"
+        updated_at: "Mise à jour le"
