@@ -20,6 +20,9 @@ Style/ClassAndModuleChildren:
 Rails/InverseOf:
   Enabled: false
 
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
 Metrics/BlockLength:
   Exclude:
     - config/environments/development.rb

@@ -24,12 +24,14 @@
 #  producer_longitude       :decimal(11, 8)
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
+#  favorite                 :boolean
 #
 
 class Product < ApplicationRecord
   include FriendlyId
   friendly_id :name, use: %i[finders slugged]
 
+  has_and_belongs_to_many :sub_categories
   has_many_attached :images
 
   monetize :ht_price_cents, :ht_buying_price_cents, :ttc_price_cents
