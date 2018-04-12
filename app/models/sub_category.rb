@@ -18,7 +18,8 @@
 
 class SubCategory < ApplicationRecord
   belongs_to :category
-  has_and_belongs_to_many :products
+  has_many :categorizations, dependent: :destroy
+  has_many :products, through: :categorizations
 
   include FriendlyId
   friendly_id :name, use: %i[finders slugged scoped], scope: :category

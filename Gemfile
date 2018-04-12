@@ -7,8 +7,8 @@ ruby '2.5.0'
 
 gem 'pg', '>= 0.18'
 gem 'puma', '~> 3.11'
-gem 'rails', '5.2.0'
-gem 'sass-rails', '~> 5.0'
+gem 'rails', '5.2.0.rc2'
+gem 'rails-i18n', '~> 5.1'
 
 gem 'uglifier', '~> 4.1'
 gem 'webpacker', '~> 3.4'
@@ -21,17 +21,20 @@ gem 'bootsnap', '~> 1.3', require: false
 gem 'oj', '~> 3.5'
 gem 'rollbar', '~> 2.15'
 
-gem 'rails-i18n', '~> 5.1'
-
 gem 'sidekiq', '~> 5.1'
 gem 'sidekiq-failures', '~> 1.0'
 
+gem 'devise', '~> 4.4'
+gem 'devise-i18n', '~> 1.6'
+
+gem 'activeadmin', '~> 1.2'
 gem 'friendly_id', '~> 5.2'
 gem 'high_voltage', '~> 3.0'
 
 gem 'money-rails', '~> 1.11'
 
 gem 'font-awesome-rails', git: 'git@github.com:bokmann/font-awesome-rails.git'
+gem 'sass-rails', '~> 5.0'
 
 group :development, :test do
   gem 'pry-byebug', '~> 3.6'

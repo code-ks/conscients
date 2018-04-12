@@ -22,3 +22,7 @@ end
 
 Rails.logger.info "#{Category.all.count} categories created"
 Rails.logger.info "#{SubCategory.all.count} sub_categories created"
+if Rails.env.development?
+  AdminUser.create!(email: 'admin@example.com', password: 'password',
+                    password_confirmation: 'password')
+end

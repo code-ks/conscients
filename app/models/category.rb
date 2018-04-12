@@ -13,7 +13,8 @@
 
 class Category < ApplicationRecord
   has_many :sub_categories, dependent: :nullify
-  has_many :categories, through: :sub_categories
+  has_many :categorizations, through: :sub_categories
+  has_many :products, through: :categorizations
 
   include FriendlyId
   friendly_id :name, use: %i[finders slugged]
