@@ -16,11 +16,9 @@
   <% end %>
   <div class="d-none d-md-block">
     <div class="d-flex align-items-center">
-      <div class="mx-3">Blabla</div>
-      <div class="mx-3">Blabla</div>
-      <div class="mx-3">Blabla</div>
-      <div class="mx-3">Blabla</div>
-      <div class="mx-3">Blabla</div>
+      <% Category.main.each do |category| %>
+        <div class="mx-3"><%= link_to category.name, category_products_path(category) %></div>
+      <% end %>
     </div>
   </div>
   <div class="d-none d-md-block">

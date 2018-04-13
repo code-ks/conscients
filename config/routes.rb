@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /en/ do
     root to: 'pages#home'
 
+    resources :categories, only: [] do
+      resources :products, only: :index
+    end
     resources :products, only: %i[index show]
     get ':id', to: 'high_voltage/pages#show', as: :page, format: false
   end

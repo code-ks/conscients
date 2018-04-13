@@ -51,7 +51,7 @@ class Product < ApplicationRecord
   validates :product_type, inclusion: { in: product_types.keys }
   validates :ht_price_cents, numericality: { greater_than_or_equal_to: 1 }
 
-  default_scope { i18n.friendly }
+  default_scope { i18n.friendly.in_order }
   scope :published, -> { where(published: true) }
   scope :in_order, -> { order(position: :asc) }
   scope :favorite, -> { where(favorite: true) }
