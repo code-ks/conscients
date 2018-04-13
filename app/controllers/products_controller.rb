@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   def index
     if params[:category_id]
       @products = Category.find(params[:category_id]).products
+    elsif params[:search]
+      @products = Product.where(name: params[:search])
     else
       @product = Product.all
     end

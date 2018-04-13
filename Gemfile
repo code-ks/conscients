@@ -9,8 +9,8 @@ gem 'pg', '>= 0.18'
 gem 'puma', '~> 3.11'
 gem 'rails', '5.2.0.rc2'
 
+gem 'friendly_id-mobility', '~> 0.5'
 gem 'mobility', '~> 0.5'
-# gem 'friendly_id-mobility', '~> 0.5'
 gem 'rails-i18n', '~> 5.1'
 
 gem 'uglifier', '~> 4.1'

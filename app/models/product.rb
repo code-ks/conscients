@@ -61,6 +61,6 @@ class Product < ApplicationRecord
   end
 
   def ttc_price_cents
-    ht_price_cents * (1 + tax_rate)
+    ht_price_cents * (1 + tax_rate.fdiv(100))
   end
 end

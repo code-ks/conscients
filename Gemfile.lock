@@ -129,6 +129,9 @@ GEM
     formtastic_i18n (0.6.0)
     friendly_id (5.2.3)
       activerecord (>= 4.0.0)
+    friendly_id-mobility (0.5.3)
+      friendly_id (>= 5.0.0, <= 5.3.0)
+      mobility (>= 0.3.0, < 1.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     guard (2.14.2)
@@ -389,6 +392,7 @@ DEPENDENCIES
   devise-i18n (~> 1.6)
   font-awesome-rails!
   friendly_id (~> 5.2)
+  friendly_id-mobility (~> 0.5)
   guard (~> 2.14)
   guard-bundler (~> 2.1)
   guard-livereload (~> 2.5)

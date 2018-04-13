@@ -23,10 +23,10 @@
   </div>
   <div class="d-none d-md-block">
     <div class="d-flex align-items-center mx-3">
-      <form class="form-inline my-2 my-lg-0 mx-3">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <%= form_with url: products_path, method: :get, local: true, class: "form-inline my-2 mx-2 my-lg-0" do |form| %>
+        <%= form.text_field :search, class: "form-control mr-sm-2" %>
+        <%= form.submit t('.search'), class: "btn btn-outline-success my-2 my-sm-0"%>
+      <% end %>
       <%= link_to products_path do %>
         <%= fa_icon "shopping-cart" %>
       <% end %>
@@ -38,8 +38,9 @@
       <%= link_to t('.my_cart'), root_path, class: 'dropdown-item' %>
       <%= link_to t('.my_account'), root_path, class: 'dropdown-item' %>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
+      <% Category.main.each do |category| %>
+        <%= link_to category.name, category_products_path(category), class: 'dropdown-item'  %>
+      <% end %>
     </div>
   </div>
 </div>
