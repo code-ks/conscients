@@ -87,13 +87,17 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
-  Product.all.each do |p|
-    p.images.attach(io: File.open('lib/assets/tree.jpeg'),
+  Product.all.each do |product|
+    product.images.attach(io: File.open('lib/assets/tree.jpeg'),
                    filename: 'tree.jpeg', content_type: 'image/jpeg')
-    p.images.attach(io: File.open('lib/assets/book.jpeg'),
+    product.images.attach(io: File.open('lib/assets/book.jpeg'),
                    filename: 'book.jpeg', content_type: 'image/jpeg')
-    p.save
+    8.times do
+      Categorization.find_or_create_by!(product: product, category: Category.all.sample)
+    end
+    product.save
   end
+
   Rails.logger.info "#{Product.all.count} products created"
 
   if Rails.env.development?

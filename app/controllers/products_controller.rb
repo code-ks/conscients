@@ -2,7 +2,12 @@
 
 class ProductsController < ApplicationController
   def index
-    @products = Product.published.in_order.with_attached_images
+    if params[:category_id]
+      @products = Category.find(params[:category_id]).products
+    else
+      @product = Product.all
+    end
+    @products = @products.published.with_attached_images
   end
 
   def show
