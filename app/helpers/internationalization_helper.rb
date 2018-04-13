@@ -5,7 +5,7 @@ module InternationalizationHelper
     content = ''
     I18n.available_locales.each_with_index do |locale, i|
       content += ' / ' unless i.zero?
-      content += link_to locale.to_s, url_for(locale: correct_locale(locale))
+      content += link_to locale.to_s, root_path(locale: correct_locale(locale))
     end
     content.html_safe
   end

@@ -6,9 +6,11 @@ task create_development_resources: :environment do
   desc 'Create minimal resources to allow tests in development'
 
   Product.destroy_all
+  AdminUser.destroy_all
 
   Product.create!(
     name: 'Top livre',
+    name_en: 'Top book',
     description: "Un top livre qui vaut vraiment le coup et que tout\
     le monde devrait lire parce qu'il est vraiment bien",
     ht_price_cents: 1000,
@@ -21,6 +23,7 @@ task create_development_resources: :environment do
   )
   Product.create!(
     name: 'Top livre 2',
+    name_en: 'Top book 2',
     description: "Un deuxième top livre qui vaut vraiment le coup et que tout\
     le monde devrait lire parce qu'il est vraiment bien",
     ht_price_cents: 1000,
@@ -33,6 +36,7 @@ task create_development_resources: :environment do
   )
   Product.create!(
     name: 'Top vêtement garçon',
+    name_en: 'Great boy cloth',
     description: "Un top vetement garçon qui vaut vraiment le coup et que tout\
     le monde devrait porter parce qu'il est vraiment bien",
     ht_price_cents: 1200,
@@ -45,6 +49,7 @@ task create_development_resources: :environment do
   )
   Product.create!(
     name: 'Top vêtement fille',
+    name_en: 'Great girl cloth',
     description: "Un top vetement fille qui vaut vraiment le coup et que tout\
     le monde devrait porter parce qu'il est vraiment bien",
     ht_price_cents: 1200,
@@ -57,6 +62,7 @@ task create_development_resources: :environment do
   )
   Product.create!(
     name: 'Livre et arbre',
+    name_en: 'Book and tree',
     description: "Un top bundle livre + arbre qui vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",
     ht_price_cents: 1700,
@@ -70,6 +76,7 @@ task create_development_resources: :environment do
   )
   Product.create!(
     name: 'Arbre',
+    name_en: 'Top Tree',
     description: "Un arbre qui vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",
     ht_price_cents: 500,
@@ -88,4 +95,9 @@ task create_development_resources: :environment do
     p.save
   end
   Rails.logger.info "#{Product.all.count} products created"
+
+  if Rails.env.development?
+    AdminUser.create!(email: 'admin@example.com', password: 'password',
+                      password_confirmation: 'password')
+  end
 end

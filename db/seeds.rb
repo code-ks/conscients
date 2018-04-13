@@ -4,7 +4,7 @@ Category.destroy_all
 SubCategory.destroy_all
 
 categories_name = %w[Bébés Enfants Cadeaux]
-sub_categories_name = %w[Vêtements Livres Others]
+sub_categories_name = %w[Vêtements Livres Arbres]
 gift_sub_categories_name = ['Cadeaux de Naissance', 'Cadeau anniversaire', 'Cadeau de mariage']
 
 categories_name.each do |category_name|
@@ -20,9 +20,8 @@ categories_name.each do |category_name|
   end
 end
 
+category = Category.create!(name: 'Coup de Coeur')
+SubCategory.create!(name: 'Coup de Coeur', category: category)
+
 Rails.logger.info "#{Category.all.count} categories created"
 Rails.logger.info "#{SubCategory.all.count} sub_categories created"
-if Rails.env.development?
-  AdminUser.create!(email: 'admin@example.com', password: 'password',
-                    password_confirmation: 'password')
-end

@@ -5,19 +5,32 @@
 # Table name: categories
 #
 #  id         :integer          not null, primary key
-#  name       :string           not null
-#  slug       :string           not null
+#  name       :string
+#  slug       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  ancestry   :string
 #
 
 class Category < ApplicationRecord
-  has_many :sub_categories, dependent: :nullify
-  has_many :categorizations, through: :sub_categories
-  has_many :products, through: :categorizations
+  has_ancestry
+  has_many :categorizations, dependent: :destroy
 
-  include FriendlyId
-  friendly_id :name, use: %i[finders slugged]
+  extend Mobility
+  translates :slug, :name
 
-  validates :name, presence: true, uniqueness: true
+  extend FriendlyId
+  friendly_id :name, use: %i[slugged mobility]
+  validates :name, presence: true, uniqueness: true, length: { minimum: 3, maximum: 30 }
+  validates :slug, presence: true, uniqueness: true, length: { minimum: 3, maximum: 30 }
+
+  default_scope { i18n.friendly }
+
+  def should_generate_new_friendly_id?
+    name_changed? || super
+  end
+
+  def products
+    Product.includes(:categorizations).where(categorizations: { category: subtree })
+  end
 end

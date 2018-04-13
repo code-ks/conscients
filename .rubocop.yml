@@ -29,6 +29,7 @@ Metrics/BlockLength:
     - Guardfile
     - config/initializers/simple_form_bootstrap.rb
     - lib/tasks/*
+    - app/admin/*
 
 Layout/AlignHash:
   Enabled: False

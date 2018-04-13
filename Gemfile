@@ -8,6 +8,9 @@ ruby '2.5.0'
 gem 'pg', '>= 0.18'
 gem 'puma', '~> 3.11'
 gem 'rails', '5.2.0.rc2'
+
+gem 'mobility', '~> 0.5'
+# gem 'friendly_id-mobility', '~> 0.5'
 gem 'rails-i18n', '~> 5.1'
 
 gem 'uglifier', '~> 4.1'
@@ -28,6 +31,10 @@ gem 'devise', '~> 4.4'
 gem 'devise-i18n', '~> 1.6'
 
 gem 'activeadmin', '~> 1.2'
+gem 'arctic_admin', '~> 1.4'
+
+gem 'acts_as_list', '~> 0.9'
+gem 'ancestry', '~> 3.0'
 gem 'friendly_id', '~> 5.2'
 gem 'high_voltage', '~> 3.0'
 

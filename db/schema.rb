@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_12_063224) do
+ActiveRecord::Schema.define(version: 2018_04_13_024510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,19 +68,22 @@ ActiveRecord::Schema.define(version: 2018_04_12_063224) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "slug", null: false
+    t.string "name"
+    t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
   create_table "categorizations", force: :cascade do |t|
-    t.bigint "sub_category_id"
+    t.bigint "category_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_categorizations_on_category_id"
     t.index ["product_id"], name: "index_categorizations_on_product_id"
-    t.index ["sub_category_id"], name: "index_categorizations_on_sub_category_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -95,40 +98,54 @@ ActiveRecord::Schema.define(version: 2018_04_12_063224) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "mobility_string_translations", force: :cascade do |t|
+    t.string "locale"
+    t.string "key"
+    t.string "value"
+    t.integer "translatable_id"
+    t.string "translatable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["translatable_id", "translatable_type", "key"], name: "index_mobility_string_translations_on_translatable_attribute"
+    t.index ["translatable_id", "translatable_type", "locale", "key"], name: "index_mobility_string_translations_on_keys", unique: true
+    t.index ["translatable_type", "key", "value", "locale"], name: "index_mobility_string_translations_on_query_keys"
+  end
+
+  create_table "mobility_text_translations", force: :cascade do |t|
+    t.string "locale"
+    t.string "key"
+    t.text "value"
+    t.integer "translatable_id"
+    t.string "translatable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["translatable_id", "translatable_type", "key"], name: "index_mobility_text_translations_on_translatable_attribute"
+    t.index ["translatable_id", "translatable_type", "locale", "key"], name: "index_mobility_text_translations_on_keys", unique: true
+  end
+
   create_table "products", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "description", null: false
+    t.string "name"
+    t.text "description"
     t.integer "ht_price_cents", default: 0, null: false
     t.string "ht_price_currency", default: "EUR", null: false
     t.decimal "tax_rate", precision: 4, scale: 2, default: "20.0", null: false
     t.integer "weight", default: 0
     t.integer "product_type", default: 0, null: false
     t.boolean "published", default: true, null: false
-    t.integer "display_order"
+    t.integer "position"
     t.integer "ht_buying_price_cents", default: 0, null: false
     t.string "ht_buying_price_currency", default: "EUR", null: false
-    t.string "seo_title", null: false
-    t.string "meta_description", null: false
+    t.string "seo_title"
+    t.string "meta_description"
     t.text "keywords", default: [], array: true
-    t.string "slug", null: false
+    t.string "slug"
     t.decimal "producer_latitude", precision: 11, scale: 8
     t.decimal "producer_longitude", precision: 11, scale: 8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "favorite"
     t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
-  create_table "sub_categories", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "slug", null: false
-    t.bigint "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_sub_categories_on_category_id"
-  end
-
+  add_foreign_key "categorizations", "categories"
   add_foreign_key "categorizations", "products"
-  add_foreign_key "categorizations", "sub_categories"
-  add_foreign_key "sub_categories", "categories"
 end

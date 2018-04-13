@@ -2,7 +2,7 @@
 
 class ProductsController < ApplicationController
   def index
-    @products = Product.published.order_for_display.with_attached_images
+    @products = Product.published.in_order.with_attached_images
   end
 
   def show

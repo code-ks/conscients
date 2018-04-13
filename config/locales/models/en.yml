@@ -3,7 +3,6 @@ en:
     models:
       admin_user: "Admin"
       category: "Category"
-      sub_category: "Subcatégory"
       categorization: "Categorization"
       product: "Product"
     attributes:
@@ -11,6 +10,9 @@ en:
         email: "Email"
         current_sign_in_at: "Current Sign In At"
         sign_in_count: "Sign In Count"
+      category:
+        name_en: "English name"
+        slug_en: "English URL"
       product:
         ht_price_cents: "HT price in cents"
         ht_price_currency: "Sale currency"

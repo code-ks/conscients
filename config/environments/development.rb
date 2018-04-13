@@ -68,5 +68,9 @@ Rails.application.configure do
   Bullet.alert = true
   Bullet.add_whitelist type: :n_plus_one_query,
                        class_name: 'ActiveStorage::Attachment', association: :blob
+  Bullet.add_whitelist type: :n_plus_one_query,
+                       class_name: 'Category', association: :text_translations
+  Bullet.add_whitelist type: :n_plus_one_query,
+                       class_name: 'Product', association: :text_translations
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 end
