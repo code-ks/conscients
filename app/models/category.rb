@@ -43,4 +43,13 @@ class Category < ApplicationRecord
   def products
     Product.includes(:categorizations).where(categorizations: { category: subtree })
   end
+
+  def variants
+    Variant.includes(:text_translations, :variabilizations, :product_skus)
+           .where(variabilizations: { product_skus: { product: products } })
+  end
+
+  def variants_by_categories
+    variants.group_by(&:category)
+  end
 end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Category.destroy_all
+Variant.destroy_all
 
 node = Category.create!(name_fr: 'Home', slug_fr: 'home', name_en: 'Home', slug_en: 'home')
 
@@ -59,3 +60,10 @@ Category.create!(name_fr: 'Cadeaux de Noël', slug_fr: 'cadeaux-pour-tous-cadeau
                 parent: second_child)
 
 Rails.logger.info "#{Category.all.count} categories created"
+
+Variant.create!(value_fr: '0 à 3 mois', value_en: '0 to 3 months')
+Variant.create!(value_fr: '3 à 6 mois', value_en: '3 to 6 months')
+Variant.create!(value_fr: '6 à 12 mois', value_en: '6 to 12 months')
+Variant.create!(value_fr: '1 à 2 ans', value_en: '1 to 2 years')
+Variant.create!(value_fr: '2 à 4 ans', value_en: '2 to 4 years')
+Variant.create!(value_fr: '4 à 6 ans', value_en: '4 to 6 years')

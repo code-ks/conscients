@@ -5,6 +5,10 @@ fr:
       category: "Catégorie"
       categorization: "Catégorisation"
       product: "Produit"
+      product_sku: "UGS produit"
+      stock_entry: "Entrée de stock"
+      variabilization: "Variabilisation"
+      variant: "Variante"
     attributes:
       admin_user:
         email: "Email"
@@ -37,6 +41,10 @@ fr:
         taxe_rate: "Taux de TVA"
         weight: "Poids"
         product_type: "Type de produit"
+        product_types:
+          classic: "Classique"
+          personalized: "Personnalisé"
+          tree: "Arbre"
         published: "En ligne"
         position: "Position"
         ht_buying_price_cents: "Prix d'achat hors taxe (en centimes)"
@@ -55,5 +63,28 @@ fr:
         slug_fr: "URL en français"
         producer_latitude: "Latitude du lieu de production"
         producer_longitude: "Longitude du lieu de production"
+        created_at: "Créé le"
+        updated_at: "Mise à jour le"
+      product_sku:
+        product: "Produit"
+        sku: "UGS"
+        quantity: "Quantité"
+        created_at: "Créé le"
+        updated_at: "Mise à jour le"
+      stock_entry:
+        product_sku: "UGS produit"
+        quantity: "Quantité"
+        created_at: "Créé le"
+        updated_at: "Mise à jour le"
+      variabilization:
+        product_sku: "UGS produit"
+        variant: "Variante"
+        created_at: "Créé le"
+        updated_at: "Mise à jour le"
+      variant:
+        category: "Catégorie"
+        categories:
+          age: "Age"
+        value: "Valeur"
         created_at: "Créé le"
         updated_at: "Mise à jour le"

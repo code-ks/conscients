@@ -7,6 +7,7 @@
     <div class="card-deck">
       <%= render @products %>
     </div>
+    <div class="d-flex justify-content-center"><%= paginate @products %></div>
   <% else %>
     <h2><%= t('.no_product') %></h2>
   <% end %>

@@ -31,6 +31,8 @@ class Product < ApplicationRecord
   has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
   has_many :product_skus, dependent: :destroy
+  has_many :variabilizations, through: :product_skus
+  has_many :variants, through: :variabilizations
   has_many_attached :images
 
   extend Mobility
@@ -60,10 +62,13 @@ class Product < ApplicationRecord
   validates :ht_price_cents, numericality: { greater_than_or_equal_to: 1 }
 
   default_scope { i18n.friendly.in_order }
-  scope :with_skus, -> { joins(:product_skus) }
   scope :published, -> { where(published: true) }
   scope :in_order, -> { order(position: :asc) }
-  scope :favorite, -> { where(favorite: true) }
+  scope :in_stock, -> { joins(:product_skus).where.not(product_skus: { quantity: 0 }) }
+  scope :with_variant, lambda { |variant|
+    includes(:variabilizations).where(variabilizations: { variant: variant })
+  }
+  scope :displayable, -> { in_stock.published.with_attached_images }
 
   def should_generate_new_friendly_id?
     name_fr_changed? || name_en_changed? || super

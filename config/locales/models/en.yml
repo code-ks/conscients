@@ -5,6 +5,10 @@ en:
       category: "Category"
       categorization: "Categorization"
       product: "Product"
+      product_sku: "Product SKU"
+      stock_entry: "Stock Entry"
+      variabilization: "Variabilization"
+      variant: "Variant"
     attributes:
       admin_user:
         email: "Email"
@@ -14,7 +18,15 @@ en:
         name_en: "English name"
         slug_en: "English URL"
       product:
+        product_types:
+          classic: "Classic"
+          personalized: "Personalized"
+          tree: "Tree"
         ht_price_cents: "HT price in cents"
         ht_price_currency: "Sale currency"
         ht_buying_price_cents: "HT buying price in cents"
         ht_buying_price_currency: "Buying currency"
+      variant:
+        category: "Category"
+        categories:
+          age: "Age"

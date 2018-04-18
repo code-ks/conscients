@@ -1,10 +1,22 @@
 <% if category.children.any? %>
-  <div class="font-weight-bold mx-3"><%= t('.category') %></div>
+  <div class="font-weight-bold mx-2"><%= t('.category') %></div>
   <div class="dropdown">
     <%= fa_icon "plus", class: "c-pointer", data: { toggle: "dropdown" } %>
     <div class="dropdown-menu">
       <% category.children.each do |c| %>
         <%= link_to c.name, category_products_path(c), class: "dropdown-item" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<% category.variants_by_categories.each do |c| %>
+  <div class="font-weight-bold ml-5 mr-2"><%= c.first.capitalize %></div>
+  <div class="dropdown">
+    <%= fa_icon "plus", class: "c-pointer", data: { toggle: "dropdown" } %>
+    <div class="dropdown-menu">
+      <% c.last.each do |variant| %>
+        <%= link_to variant.value.capitalize, category_products_path(category, variant: variant.id), class: "dropdown-item" %>
       <% end %>
     </div>
   </div>

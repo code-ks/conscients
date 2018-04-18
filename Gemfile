@@ -39,6 +39,8 @@ gem 'friendly_id', '~> 5.2'
 gem 'high_voltage', '~> 3.0'
 
 gem 'money-rails', '~> 1.11'
+
+gem 'kaminari', '~> 1.1'
 gem 'pg_search', '~> 2.1'
 
 gem 'font-awesome-rails', git: 'git@github.com:bokmann/font-awesome-rails.git'

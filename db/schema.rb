@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_13_115211) do
+ActiveRecord::Schema.define(version: 2018_04_18_114113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,8 +124,16 @@ ActiveRecord::Schema.define(version: 2018_04_13_115211) do
     t.index ["translatable_id", "translatable_type", "locale", "key"], name: "index_mobility_text_translations_on_keys", unique: true
   end
 
+  create_table "product_skus", force: :cascade do |t|
+    t.bigint "product_id"
+    t.string "sku", null: false
+    t.integer "quantity", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_skus_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
-    t.string "name"
     t.text "description"
     t.integer "ht_price_cents", default: 0, null: false
     t.string "ht_price_currency", default: "EUR", null: false
@@ -144,9 +152,42 @@ ActiveRecord::Schema.define(version: 2018_04_13_115211) do
     t.decimal "producer_longitude", precision: 11, scale: 8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name_en"
+    t.string "name_fr"
+    t.index ["name_en"], name: "index_products_on_name_en"
+    t.index ["name_fr"], name: "index_products_on_name_fr"
     t.index ["slug"], name: "index_products_on_slug", unique: true
+  end
+
+  create_table "stock_entries", force: :cascade do |t|
+    t.bigint "product_sku_id"
+    t.integer "quantity", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_sku_id"], name: "index_stock_entries_on_product_sku_id"
+  end
+
+  create_table "variabilizations", force: :cascade do |t|
+    t.bigint "product_sku_id"
+    t.bigint "variant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_sku_id"], name: "index_variabilizations_on_product_sku_id"
+    t.index ["variant_id"], name: "index_variabilizations_on_variant_id"
+  end
+
+  create_table "variants", force: :cascade do |t|
+    t.integer "category", default: 0, null: false
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "position"
   end
 
   add_foreign_key "categorizations", "categories"
   add_foreign_key "categorizations", "products"
+  add_foreign_key "product_skus", "products"
+  add_foreign_key "stock_entries", "product_skus"
+  add_foreign_key "variabilizations", "product_skus"
+  add_foreign_key "variabilizations", "variants"
 end

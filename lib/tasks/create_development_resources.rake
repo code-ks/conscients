@@ -5,10 +5,14 @@ Rails.logger = Logger.new(STDOUT)
 task create_development_resources: :environment do
   desc 'Create minimal resources to allow tests in development'
 
+  StockEntry.delete_all
   Product.destroy_all
   AdminUser.destroy_all
+  Categorization.destroy_all
+  ProductSku.destroy_all
+  Variabilization.destroy_all
 
-  Product.create!(
+  product = Product.create!(
     name_fr: 'Top livre',
     name_en: 'Top book',
     description: "Un top livre qui vaut vraiment le coup et que tout\
@@ -21,7 +25,9 @@ task create_development_resources: :environment do
     le monde devrait lire parce qu'il est vraiment bien",
     keywords: %w[top livre]
   )
-  Product.create!(
+  ProductSku.create(product: product)
+
+  product = Product.create!(
     name_fr: 'Top livre 2',
     name_en: 'Top book 2',
     description: "Un deuxième top livre qui vaut vraiment le coup et que tout\
@@ -34,7 +40,9 @@ task create_development_resources: :environment do
     le monde devrait lire parce qu'il est vraiment bien",
     keywords: %w[top livre]
   )
-  Product.create!(
+  ProductSku.create(product: product)
+
+  product = Product.create!(
     name_fr: 'Top vêtement garçon',
     name_en: 'Great boy cloth',
     description: "Un top vetement garçon qui vaut vraiment le coup et que tout\
@@ -47,7 +55,12 @@ task create_development_resources: :environment do
     le monde devrait porter parce qu'il est vraiment bien",
     keywords: %w[top vetement garçon]
   )
-  Product.create!(
+  product_sku = ProductSku.create(product: product)
+  product_sku.variants << Variant.find_by(value: '0 à 3 mois')
+  product_sku.variants << Variant.find_by(value: '3 à 6 mois')
+  product_sku.variants << Variant.find_by(value: '6 à 12 mois')
+
+  product = Product.create!(
     name_fr: 'Top vêtement fille',
     name_en: 'Great girl cloth',
     description: "Un top vetement fille qui vaut vraiment le coup et que tout\
@@ -60,7 +73,12 @@ task create_development_resources: :environment do
     le monde devrait porter parce qu'il est vraiment bien",
     keywords: %w[top vetement fille]
   )
-  Product.create!(
+  product_sku = ProductSku.create(product: product)
+  product_sku.variants << Variant.find_by(value: '0 à 3 mois')
+  product_sku.variants << Variant.find_by(value: '3 à 6 mois')
+  product_sku.variants << Variant.find_by(value: '6 à 12 mois')
+
+  product = Product.create!(
     name_fr: 'Livre et arbre',
     name_en: 'Book and tree',
     description: "Un top bundle livre + arbre qui vaut vraiment le coup et que tout\
@@ -74,7 +92,9 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
-  Product.create!(
+  ProductSku.create(product: product)
+
+  product = Product.create!(
     name_fr: 'Arbre',
     name_en: 'Top Tree',
     description: "Un arbre qui vaut vraiment le coup et que tout\
@@ -87,18 +107,24 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
-  Product.all.each do |product|
-    product.images.attach(io: File.open('lib/assets/tree.jpeg'),
+  ProductSku.create(product: product)
+
+  Product.all.each do |p|
+    p.images.attach(io: File.open('lib/assets/tree.jpeg'),
                    filename: 'tree.jpeg', content_type: 'image/jpeg')
-    product.images.attach(io: File.open('lib/assets/book.jpeg'),
+    p.images.attach(io: File.open('lib/assets/book.jpeg'),
                    filename: 'book.jpeg', content_type: 'image/jpeg')
     8.times do
-      Categorization.find_or_create_by!(product: product, category: Category.all.sample)
+      Categorization.find_or_create_by!(product: p, category: Category.all.sample)
     end
-    product.save
+    p.save
   end
 
-  Rails.logger.info "#{Product.all.count} products created"
+  ProductSku.all.each do |sku|
+    2.times { StockEntry.create!(product_sku: sku, quantity: rand(1..10)) }
+  end
+
+  Rails.logger.info "#{Product.all.count} products created with SKU and co"
 
   if Rails.env.development?
     AdminUser.create!(email: 'admin@example.com', password: 'password',

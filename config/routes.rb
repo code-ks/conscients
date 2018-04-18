@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :categories, only: [] do
       resources :products, only: :index
     end
-    resources :products, only: %i[index show]
+    resources :products, only: :show
     get ':id', to: 'high_voltage/pages#show', as: :page, format: false
   end
 end

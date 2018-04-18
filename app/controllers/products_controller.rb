@@ -1,17 +1,10 @@
 # frozen_string_literal: true
 
 class ProductsController < ApplicationController
-  before_action :set_category, only: :index
-
   def index
-    @products = if params[:category_id]
-                  @category.products
-                elsif params[:search]
-                  Product.search_by_name(params[:search])
-                else
-                  Product.all
-                end
-    @products = @products.published.with_skus.with_attached_images
+    @products = @category.products.page(params[:page]).displayable
+                         .merge(product_search)
+                         .merge(product_with_variant)
   end
 
   def show
@@ -20,7 +13,15 @@ class ProductsController < ApplicationController
 
   private
 
-  def set_category
-    @category = params[:category_id] ? Category.find(params[:category_id]) : Category.home
+  def product_search
+    params[:search].present? ? Product.search_by_name(params[:search]) : Product.all
+  end
+
+  def product_with_variant
+    params[:variant] ? Product.with_variant(set_variant) : Product.all
+  end
+
+  def set_variant
+    Variant.find(params[:variant])
   end
 end
