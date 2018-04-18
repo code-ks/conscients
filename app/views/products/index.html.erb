@@ -1,5 +1,13 @@
 <div class="container">
-  <div class="card-deck">
-    <%= render @products %>
-  </div>
+  <% if @products.any? %>
+    <%= render 'breadcrumb', category: @category %>
+    <div class="d-flex">
+      <%= render 'filters', category: @category %>
+    </div>
+    <div class="card-deck">
+      <%= render @products %>
+    </div>
+  <% else %>
+    <h2><%= t('.no_product') %></h2>
+  <% end %>
 </div>

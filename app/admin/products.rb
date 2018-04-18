@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Product do
-  permit_params :name, :name_en, :description, :description_en, :ht_price_cents, :position,
+  permit_params :name_fr, :name_en, :description, :description_en, :ht_price_cents, :position,
                 :tax_rate, :weight, :product_type, :published, :ht_buying_price_cents,
                 :seo_title, :seo_title_en, :meta_description, :meta_description_en,
                 :keywords, :keywords_en, :slug, :slug_en, :producer_latitude,

@@ -5,7 +5,6 @@
 # Table name: products
 #
 #  id                       :integer          not null, primary key
-#  name                     :string
 #  description              :text
 #  ht_price_cents           :integer          default(0), not null
 #  ht_price_currency        :string           default("EUR"), not null
@@ -24,40 +23,50 @@
 #  producer_longitude       :decimal(11, 8)
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
+#  name_en                  :string
+#  name_fr                  :string
 #
 
 class Product < ApplicationRecord
   has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
+  has_many :product_skus, dependent: :destroy
   has_many_attached :images
 
   extend Mobility
-  translates :name, :description, :seo_title, :meta_description, :keywords, :slug
+  translates :name, backend: :column
+  translates :description, :seo_title, :meta_description, :keywords, :slug
 
   include FriendlyId
   friendly_id :name, use: %i[slugged mobility]
+
+  include PgSearch
+  pg_search_scope :search_by_name,
+                  against: %i[name_fr name_en],
+                  using: { tsearch: { prefix: true } }
 
   acts_as_list
   monetize :ht_price_cents, :ht_buying_price_cents, :ttc_price_cents
 
   enum product_type: { classic: 0, personalized: 1, tree: 2 }
 
-  validates :name, :description, :ht_price_cents, :product_type, :published, :seo_title,
-            :meta_description, :slug, :tax_rate, presence: true
-  validates :name, :slug, :seo_title, uniqueness: true
-  validates :name, :slug, length: { minimum: 3, maximum: 30 }
+  validates :name_fr, :name_en, :description, :ht_price_cents, :product_type, :published,
+            :seo_title, :meta_description, :slug, :tax_rate, presence: true
+  validates :name_fr, :name_en, :slug, :seo_title, uniqueness: true
+  validates :name_fr, :name_en, :slug, length: { minimum: 3, maximum: 30 }
   validates :description, :meta_description, length: { minimum: 50, maximum: 500 }
   validates :seo_title, length: { minimum: 5, maximum: 150 }
   validates :product_type, inclusion: { in: product_types.keys }
   validates :ht_price_cents, numericality: { greater_than_or_equal_to: 1 }
 
   default_scope { i18n.friendly.in_order }
+  scope :with_skus, -> { joins(:product_skus) }
   scope :published, -> { where(published: true) }
   scope :in_order, -> { order(position: :asc) }
   scope :favorite, -> { where(favorite: true) }
 
   def should_generate_new_friendly_id?
-    name_changed? || super
+    name_fr_changed? || name_en_changed? || super
   end
 
   def ttc_price_cents

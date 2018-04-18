@@ -5,11 +5,15 @@ fr:
     about:
       test: "Youpi"
   products:
+    index:
+      no_product: "Aucun produit ne répond à ces critères"
     product:
       see_product: "Voir"
     carousel:
       next: "Suivant"
       previous: "Précédent"
+    filters:
+      category: "Catégorie"
   shared:
     navbar:
       about: "A propos"

@@ -9,7 +9,7 @@ task create_development_resources: :environment do
   AdminUser.destroy_all
 
   Product.create!(
-    name: 'Top livre',
+    name_fr: 'Top livre',
     name_en: 'Top book',
     description: "Un top livre qui vaut vraiment le coup et que tout\
     le monde devrait lire parce qu'il est vraiment bien",
@@ -22,7 +22,7 @@ task create_development_resources: :environment do
     keywords: %w[top livre]
   )
   Product.create!(
-    name: 'Top livre 2',
+    name_fr: 'Top livre 2',
     name_en: 'Top book 2',
     description: "Un deuxième top livre qui vaut vraiment le coup et que tout\
     le monde devrait lire parce qu'il est vraiment bien",
@@ -35,7 +35,7 @@ task create_development_resources: :environment do
     keywords: %w[top livre]
   )
   Product.create!(
-    name: 'Top vêtement garçon',
+    name_fr: 'Top vêtement garçon',
     name_en: 'Great boy cloth',
     description: "Un top vetement garçon qui vaut vraiment le coup et que tout\
     le monde devrait porter parce qu'il est vraiment bien",
@@ -48,7 +48,7 @@ task create_development_resources: :environment do
     keywords: %w[top vetement garçon]
   )
   Product.create!(
-    name: 'Top vêtement fille',
+    name_fr: 'Top vêtement fille',
     name_en: 'Great girl cloth',
     description: "Un top vetement fille qui vaut vraiment le coup et que tout\
     le monde devrait porter parce qu'il est vraiment bien",
@@ -61,7 +61,7 @@ task create_development_resources: :environment do
     keywords: %w[top vetement fille]
   )
   Product.create!(
-    name: 'Livre et arbre',
+    name_fr: 'Livre et arbre',
     name_en: 'Book and tree',
     description: "Un top bundle livre + arbre qui vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",
@@ -75,7 +75,7 @@ task create_development_resources: :environment do
     keywords: %w[top bundle livre arbre]
   )
   Product.create!(
-    name: 'Arbre',
+    name_fr: 'Arbre',
     name_en: 'Top Tree',
     description: "Un arbre qui vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",

@@ -30,7 +30,11 @@ class Category < ApplicationRecord
 
   default_scope { i18n.friendly.in_order }
   scope :in_order, -> { order(position: :asc) }
-  scope :main, -> { roots.first.children }
+  scope :main, -> { home.children }
+
+  def self.home
+    roots.first
+  end
 
   def should_generate_new_friendly_id?
     name_changed? || super
