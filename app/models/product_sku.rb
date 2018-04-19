@@ -29,6 +29,18 @@ class ProductSku < ApplicationRecord
 
   delegate :name, to: :product, prefix: true
 
+  default_scope { includes(:product, :variabilizations, :variants) }
+
+  def to_s
+    string = product_name.to_s
+    variants.each { |variant| string += " / #{variant.category.capitalize} #{variant.value}" }
+    string
+  end
+
+  def age
+    variants.age.first
+  end
+
   def normalize_sku
     self.sku = SecureRandom.uuid
   end

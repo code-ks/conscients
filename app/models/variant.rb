@@ -26,6 +26,10 @@ class Variant < ApplicationRecord
 
   validates :category, :value, presence: true
 
-  default_scope { i18n.in_order }
+  default_scope { i18n.in_order.includes(:text_translations) }
   scope :in_order, -> { order(position: :asc) }
+
+  def to_s
+    "#{category.capitalize}: #{value}"
+  end
 end

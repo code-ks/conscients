@@ -32,6 +32,12 @@ class Category < ApplicationRecord
   scope :in_order, -> { order(position: :asc) }
   scope :main, -> { home.children }
 
+  def to_s
+    "#{id} - #{name}".tap do |string|
+      string += "parent: #{parent&.name}" if parent
+    end
+  end
+
   def self.home
     roots.first
   end

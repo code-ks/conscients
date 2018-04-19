@@ -57,7 +57,9 @@ task create_development_resources: :environment do
   )
   product_sku = ProductSku.create(product: product)
   product_sku.variants << Variant.find_by(value: '0 à 3 mois')
+  product_sku = ProductSku.create(product: product)
   product_sku.variants << Variant.find_by(value: '3 à 6 mois')
+  product_sku = ProductSku.create(product: product)
   product_sku.variants << Variant.find_by(value: '6 à 12 mois')
 
   product = Product.create!(
@@ -75,7 +77,9 @@ task create_development_resources: :environment do
   )
   product_sku = ProductSku.create(product: product)
   product_sku.variants << Variant.find_by(value: '0 à 3 mois')
+  product_sku = ProductSku.create(product: product)
   product_sku.variants << Variant.find_by(value: '3 à 6 mois')
+  product_sku = ProductSku.create(product: product)
   product_sku.variants << Variant.find_by(value: '6 à 12 mois')
 
   product = Product.create!(
