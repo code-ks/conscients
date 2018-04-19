@@ -20,5 +20,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     add_index :products, :slug, unique: true
+    add_index :products, :weight
+    add_index :products, :ht_price_cents
+    add_index :products, :tax_rate
   end
 end

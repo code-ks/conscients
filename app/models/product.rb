@@ -31,8 +31,11 @@ class Product < ApplicationRecord
   has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
   has_many :product_skus, dependent: :destroy
+  has_many :line_items, through: :product_skus
+  has_many :orders, through: :line_items
   has_many :variabilizations, through: :product_skus
   has_many :variants, through: :variabilizations
+  has_many :coupons, dependent: :destroy
   has_many_attached :images
 
   extend Mobility

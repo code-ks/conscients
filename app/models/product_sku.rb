@@ -21,6 +21,8 @@ class ProductSku < ApplicationRecord
   has_many :variabilizations, dependent: :destroy
   has_many :variants, through: :variabilizations
   has_many :stock_entries, dependent: :destroy
+  has_many :line_items, dependent: :nullify
+  has_many :orders, through: :line_items
 
   before_validation :normalize_sku, only: :create
 
