@@ -1,0 +1,25 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "9eae49e812d00a0575072aedf9d167c0968f9647d51a66efb364039577ecd1bb",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/products/index.html.erb",
+      "line": 8,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => (Category.find(params[:category_id]) or Category.home).products.page(params[:page]).displayable.merge(product_search).merge(product_with_variant), {})",
+      "render_path": [{"type":"controller","class":"ProductsController","method":"index","line":6,"file":"app/controllers/products_controller.rb"}],
+      "location": {
+        "type": "template",
+        "template": "products/index"
+      },
+      "user_input": "params[:page]",
+      "confidence": "Weak",
+      "note": ""
+    }
+  ],
+  "updated": "2018-04-18 20:58:58 +0800",
+  "brakeman_version": "4.2.1"
+}

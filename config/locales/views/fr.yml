@@ -4,3 +4,35 @@ fr:
       hello: "Test"
     about:
       test: "Youpi"
+  products:
+    index:
+      no_product: "Aucun produit ne répond à ces critères"
+    product:
+      see_product: "Voir"
+    carousel:
+      next: "Suivant"
+      previous: "Précédent"
+    filters:
+      category: "Catégorie"
+  shared:
+    navbar:
+      about: "A propos"
+      my_account: "Mon compte"
+      participate: "Participer"
+      my_cart: "Mon panier"
+      search: "Rechercher"
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: "%{entry_name}  <b>%{first} - %{last}</b> sur <b>%{total}</b> au total"
+      one_page:
+        display_entries:
+          one: "<b>%{count}</b> %{entry_name}"
+          other: "<b>tous les %{count}</b> %{entry_name}"
+  views:
+    pagination:
+      first: "&laquo; Premier"
+      last: Dernier &raquo;
+      next: Suivant &rsaquo;
+      previous: "&lsaquo; Précédent"
+      truncate: "&hellip;"

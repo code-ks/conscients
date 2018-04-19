@@ -4,3 +4,20 @@ en:
       hello: "Test EN"
     about:
       test: "Youpi"
+  products:
+    index:
+      no_product: "No product fits these criteria"
+    product:
+      see_product: "See"
+    carousel:
+      next: "Next"
+      previous: "Previous"
+    filters:
+      category: "Category"
+  shared:
+    navbar:
+      about: "About"
+      my_account: "My account"
+      participate: "Participate"
+      my_cart: "My cart"
+      search: "Search"
