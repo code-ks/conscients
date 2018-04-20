@@ -9,12 +9,12 @@
 #  coupon_id              :integer
 #  delivery_address_id    :integer
 #  billing_address_id     :integer
-#  delivery_method        :integer          default(0), not null
+#  delivery_method        :integer          default("single_address"), not null
 #  delivery_fees_cents    :integer          default(0), not null
 #  delivery_fees_currency :string           default("EUR"), not null
 #  total_price_cents      :integer          default(0), not null
 #  total_price_currency   :string           default("EUR"), not null
-#  payment_method         :integer          default(0), not null
+#  payment_method         :integer          default("stripe"), not null
 #  recipient_message      :text
 #  customer_note          :text
 #  client_id              :integer
@@ -23,8 +23,10 @@
 #
 # Foreign Keys
 #
+#  fk_rails_...  (billing_address_id => addresses.id)
 #  fk_rails_...  (client_id => clients.id)
 #  fk_rails_...  (coupon_id => coupons.id)
+#  fk_rails_...  (delivery_address_id => addresses.id)
 #
 
 class Order < ApplicationRecord

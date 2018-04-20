@@ -9,8 +9,8 @@
 #  project_type          :string
 #  plantation_uuid       :string           not null
 #  base_certificate_uuid :string           not null
-#  lat                   :decimal(11, 8)   not null
-#  long                  :decimal(11, 8)   not null
+#  latitude              :decimal(11, 8)   not null
+#  longitude             :decimal(11, 8)   not null
 #  tree_specie           :string           not null
 #  producer_name         :string           not null
 #  trees_quantity        :integer          default(0), not null
@@ -25,5 +25,5 @@ class TreePlantation < ApplicationRecord
   translates :project_type
 
   validates :project_name, :project_type, :plantation_uuid, :base_certificate_uuid,
-            :lat, :long, :tree_specie, :producer_name, :tree_quantity
+            :latitude, :longitude, :tree_specie, :producer_name, :tree_quantity, presence: true
 end

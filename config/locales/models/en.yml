@@ -2,11 +2,17 @@ en:
   activerecord:
     models:
       admin_user: "Admin"
+      address: "Address"
       category: "Category"
       categorization: "Categorization"
+      client: "Client"
+      coupon: "Coupon"
+      line_item: "Line Item"
+      order: "Order"
       product: "Product"
       product_sku: "Product SKU"
       stock_entry: "Stock Entry"
+      tree_plantation: "Tree Plantation"
       variabilization: "Variabilization"
       variant: "Variant"
     attributes:
@@ -30,3 +36,24 @@ en:
         category: "Category"
         categories:
           age: "Age"
+      address:
+        title: "Address title"
+      client:
+        newsletter_subscriber: "Subscribed to the newsletter?"
+      coupon:
+        percentage: "Value in pourcentage?"
+        amount: "Value of the discount"
+      order:
+        aasm_state: "State of the order"
+        delivery_methods:
+          single_address: "Delivery to an address"
+          email: "Delivery by email"
+        delivery_fees_cents: "Delivery fees in cents"
+        total_price_cents: "Total price in cents"
+        total_price_currency: "Order currency"
+        payment_methods:
+          stripe: "Stripe"
+          paypal: "Paypal"
+          bank_tranfer: "Bank Transfer"
+      tree_plantation:
+        trees_quantity: "Available tree_quantity"
