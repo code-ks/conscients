@@ -1,0 +1,27 @@
+<div class="modal fade" id="added_to_cart_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="d-flex justify-content-between align-items-center flex-column m-5">
+          <h2 class="mb-5">
+            <% if product.certificable? %>
+              <%= t('.tree_added', recipient: cart.recipient_last_tree) %>
+            <% else %>
+              <%= t('.product_added', recipient: cart.recipient_last_tree) %>
+            <% end %>
+          </h2>
+          <%= link_to t('.go_to_cart'), root_path, class: "font-weight-bold orange mb-1" %>
+          <% if product.tree? %>
+            <%= link_to t('.plant_more_trees'), category_products_path(Category.last_visited), class: "font-weight-bold orange mb-1" %>
+          <% else %>
+            <%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "font-weight-bold orange mb-1" %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

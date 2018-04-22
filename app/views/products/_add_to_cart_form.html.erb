@@ -1,0 +1,55 @@
+<%= form_with model: [product, line_item] do |form| %>
+  <% if line_item.errors.any? %>
+    <ul>
+      <% line_item.errors.full_messages.each do |message| %>
+        <li class="font-weight-bold text-danger"><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="form-group row">
+    <%= form.label :quantity, class: "col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.number_field :quantity, value: 1, class: "form-control mr-sm-2" %>
+    </div>
+  </div>
+
+  <% product.variants_by_category.each do |c| %>
+    <div class="form-group row">
+      <%= form.label c.first, class: "col-sm-4 col-form-label" %>
+      <div class="col-sm-8">
+        <%= collection_select :variants, c.first, c.last, :id, :value, {}, { class: "form-control mr-sm-2" }  %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if product.certificable? %>
+
+    <div class="form-group row">
+      <%= form.label :recipient_name, class: "col-sm-4 col-form-label" %>
+      <div class="col-sm-8">
+        <%= form.text_field :recipient_name, class: "form-control mr-sm-2" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :recipient_message, class: "col-sm-4 col-form-label" %>
+      <div class="col-sm-8">
+        <%= form.text_area :recipient_message, class: "form-control mr-sm-2" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :certificate_date, class: "col-sm-4 col-form-label" %>
+      <div class="col-sm-8">
+        <%= form.date_field :certificate_date, class: "form-control mr-sm-2", id: "datepicker" %>
+      </div>
+    </div>
+
+  <% end %>
+
+  <%= form.submit class: "btn btn-outline-success offset-sm-4 col-sm-8"%>
+
+<% end %>
+
+<%= render 'products/added_to_cart_modal', product: product, cart: @cart %>

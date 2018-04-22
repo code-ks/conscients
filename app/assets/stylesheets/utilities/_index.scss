@@ -6,6 +6,12 @@ a {
   }
 }
 
+textarea { resize: none; }
+
+.form-control[readonly] {
+  background-color: white;
+}
+
 .orange {
   color: $orange;
 }

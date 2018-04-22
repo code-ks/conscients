@@ -32,6 +32,12 @@ class Category < ApplicationRecord
   scope :in_order, -> { order(position: :asc) }
   scope :main, -> { home.children }
 
+  class << self
+    def last_visited
+      find(Ahoy::Event.id_last_category_visited)
+    end
+  end
+
   def to_s
     "#{id} - #{name}".tap do |string|
       string += "parent: #{parent&.name}" if parent
@@ -55,7 +61,7 @@ class Category < ApplicationRecord
            .where(variabilizations: { product_skus: { product: products } })
   end
 
-  def variants_by_categories
+  def variants_by_category
     variants.group_by(&:category)
   end
 end

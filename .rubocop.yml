@@ -44,6 +44,7 @@ Style/AsciiComments:
 Rails/OutputSafety:
   Exclude:
     - app/helpers/internationalization_helper.rb
+    - config/environment.rb
 
 GlobalVars:
   AllowedVariables:

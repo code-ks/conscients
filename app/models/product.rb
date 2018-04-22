@@ -37,6 +37,7 @@ class Product < ApplicationRecord
   has_many :variants, through: :variabilizations
   has_many :coupons, dependent: :destroy
   has_many_attached :images
+  has_one_attached :certificate_background
 
   extend Mobility
   translates :name, backend: :column
@@ -79,5 +80,13 @@ class Product < ApplicationRecord
 
   def ttc_price_cents
     ht_price_cents * (1 + tax_rate.fdiv(100))
+  end
+
+  def variants_by_category
+    variants.group_by(&:category)
+  end
+
+  def certificable?
+    personalized? || tree?
   end
 end

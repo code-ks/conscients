@@ -14,6 +14,12 @@ en:
       previous: "Previous"
     filters:
       category: "Category"
+    added_to_cart_modal:
+      tree_added: "A tree for %{recipient} has been added to your cart."
+      product_added: "Product added to your cart."
+      go_to_cart: "Go to my cart"
+      plant_more_trees: "Plant more trees !"
+      continue_purchases: "Continue my purchases"
   shared:
     navbar:
       about: "About"
@@ -21,3 +27,11 @@ en:
       participate: "Participate"
       my_cart: "My cart"
       search: "Search"
+  active_admin:
+    resource:
+      show:
+        remove_images: "Remove images linked to the product"
+  flash:
+    line_items:
+      create:
+        notice: "Product correctly added to your cart"

@@ -130,9 +130,9 @@ fr:
         product_sku: "UGS produit"
         order: "Commande"
         tree_plantation: "Plantation d'arbres"
-        quantity: "Quantité"
-        recipient_name: "Nom du destinataire"
-        recipient_message: "Message au destinataire"
+        quantity: "Quantité en stock"
+        recipient_name: "Attribué à"
+        recipient_message: "Message"
         certificate_date: "Date du certificat"
         certificate_number: "Numéro du certificat"
         delivery_email: "Email du destinataire"
@@ -167,3 +167,13 @@ fr:
         tree_specie: "Espèce d'arbre"
         producer_name: "Nom du producteur"
         trees_quantity: "Quantité d'arbres disponibles"
+    errors:
+      models:
+        product_sku:
+          attributes:
+            quantity:
+              greater_than_or_equal_to: "en stock trop faible"
+        tree_plantation:
+          attributes:
+            trees_quantity:
+              greater_than_or_equal_to: "en stock trop faible"

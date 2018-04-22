@@ -1,7 +1,7 @@
-<div class="container mt-5">
+<div class="container my-5">
   <div class="row h-100">
     <div class="col-lg-8 col-md-7 col-xs-12 order-md-last">
-      <%= render 'carousel', product: @product %>
+      <%= render 'products/carousel', product: @product %>
     </div>
     <div class="col-lg-4 col-md-5 col-xs-12 order-md-first">
       <h2><%= @product.name %></h2>
@@ -9,15 +9,9 @@
       <p><%= @product.description %></p>
 
       <hr>
-      <%= form_with url: root_path, local: true do |form| %>
-        <div class="form-group row">
-          <%= form.label :search, class: "col-sm-2 col-form-label" %>
-          <div class="col-sm-10">
-            <%= form.text_field :search, class: "form-control mr-sm-2" %>
-          </div>
-        </div>
-        <%= form.submit 'Youpi', class: "btn btn-outline-success offset-sm-2 col-sm-10"%>
-      <% end %>
+      <div id="new_line_item">
+        <%= render 'products/add_to_cart_form', product: @product, line_item: @line_item %>
+      </div>
     </div>
   </div>
 </div>

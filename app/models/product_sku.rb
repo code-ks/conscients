@@ -26,12 +26,17 @@ class ProductSku < ApplicationRecord
 
   before_validation :normalize_sku, only: :create
 
-  validates :quantity, presence: true
+  validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :sku, presence: true, uniqueness: true, length: { minimum: 3 }
 
   delegate :name, to: :product, prefix: true
+  delegate :certificable?, to: :product
 
   default_scope { includes(:product, :variabilizations, :variants) }
+  scope :with_variant, lambda { |variant|
+    includes(:variabilizations).where(variabilizations: { variant: variant })
+  }
+  scope :in_stock, -> { where('quantity > ?', 0) }
 
   def to_s
     string = product_name.to_s

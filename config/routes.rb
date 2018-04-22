@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :products, only: :index
     end
     resources :products, only: :show do
-      resources :line_items, only: :create
+      resources :line_items, only: %i[create update]
     end
     get ':id', to: 'high_voltage/pages#show', as: :page, format: false
   end

@@ -31,6 +31,8 @@ class Client < ApplicationRecord
   has_many :product_skus, through: :line_items
   has_many :products, through: :product_skus
   has_many :tree_plantations, through: :line_items
+  has_many :visits, dependent: :destroy, class_name: 'Ahoy::Visit', foreign_key: 'user_id'
+  has_many :events, dependent: :destroy, class_name: 'Ahoy::Event', foreign_key: 'user_id'
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

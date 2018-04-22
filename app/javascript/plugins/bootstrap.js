@@ -1,6 +1,12 @@
 import "bootstrap/dist/js/bootstrap";
 
-$(".carousel").carousel({
+$("#carouselIndicators").carousel({
   pause: true,
   interval: false
 });
+
+function launchModal(id) {
+  $(id).modal("show", "focus");
+}
+
+window.launchModal = launchModal;

@@ -57,3 +57,15 @@ en:
           bank_tranfer: "Bank Transfer"
       tree_plantation:
         trees_quantity: "Available tree_quantity"
+      line_item:
+        quantity: "Quantity in stock"
+    errors:
+      models:
+        product_sku:
+          attributes:
+            quantity:
+              greater_than_or_equal_to: "in stock too limited"
+        tree_plantation:
+          attributes:
+            trees_quantity:
+              greater_than_or_equal_to: "in stock too limited"

@@ -8,14 +8,23 @@ ActiveAdmin.register Product do
                 :tax_rate, :weight, :product_type, :published, :ht_buying_price_cents,
                 :seo_title, :seo_title_en, :meta_description, :meta_description_en,
                 :keywords, :keywords_en, :slug, :slug_en, :producer_latitude,
-                :producer_longitude
+                :producer_longitude, :certificate_background, images: []
 
-  includes :text_translations
+  includes :text_translations, :images_attachments, :certificate_background_attachment
 
   controller do
     def find_resource
       scoped_collection.friendly.find(params[:id])
     end
+  end
+
+  action_item :remove_images, only: :show do
+    link_to t('.remove_images'), remove_images_admin_product_path(product), method: :put
+  end
+
+  member_action :remove_images, method: :put do
+    resource.images.purge
+    redirect_to resource_path
   end
 
   index do
@@ -27,6 +36,15 @@ ActiveAdmin.register Product do
     column :slug_en
     column :description_fr
     column :description_en
+    column :images do |product|
+      if product.images.attached?
+        ul do
+          product.images.each do |image|
+            li image_tag(image, height: 50)
+          end
+        end
+      end
+    end
     column :published
     column :position
     column :ht_price_cents
@@ -42,6 +60,11 @@ ActiveAdmin.register Product do
     column :keywords_en
     column :producer_latitude
     column :producer_longitude
+    column :certificate_background do |product|
+      if product.certificate_background.attached?
+        image_tag(product.certificate_background, height: 200)
+      end
+    end
     column :created_at
     column :updated_at
     actions
@@ -56,6 +79,14 @@ ActiveAdmin.register Product do
       f.input :slug_en
       f.input :description_fr
       f.input :description_en
+      f.input :images, as: :file, input_html: { multiple: true },
+              hint: if product.images.attached?
+                      ul do
+                        product.images.each do |image|
+                          li image_tag(image, height: 50)
+                        end
+                      end
+                    end
       f.input :published
       f.input :position
       f.input :ht_price_cents
@@ -69,6 +100,10 @@ ActiveAdmin.register Product do
       f.input :meta_description_en
       f.input :keywords_fr
       f.input :keywords_en
+      f.input :certificate_background, as: :file,
+              hint: if product.certificate_background.attached?
+                      image_tag(f.object.certificate_background, height: 200)
+                    end
       f.input :producer_latitude
       f.input :producer_longitude
     end
@@ -84,6 +119,15 @@ ActiveAdmin.register Product do
       row :slug_en
       row :description_fr
       row :description_en
+      row :images do |product|
+        if product.images.attached?
+          ul do
+            product.images.each do |image|
+              li image_tag(image, height: 50)
+            end
+          end
+        end
+      end
       row :published
       row :position
       row :ht_price_cents
@@ -99,6 +143,11 @@ ActiveAdmin.register Product do
       row :keywords_en
       row :producer_latitude
       row :producer_longitude
+      row :certificate_background do |product|
+        if product.certificate_background.attached?
+          image_tag(product.certificate_background, height: 200)
+        end
+      end
       row :created_at
       row :updated_at
     end

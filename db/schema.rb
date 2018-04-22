@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_19_112201) do
+ActiveRecord::Schema.define(version: 2018_04_20_083851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,44 @@ ActiveRecord::Schema.define(version: 2018_04_19_112201) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "ahoy_events", force: :cascade do |t|
+    t.bigint "visit_id"
+    t.bigint "user_id"
+    t.string "name"
+    t.jsonb "properties"
+    t.datetime "time"
+    t.index ["name", "time"], name: "index_ahoy_events_on_name_and_time"
+    t.index ["properties"], name: "index_ahoy_events_on_properties_jsonb_path_ops", opclass: :jsonb_path_ops, using: :gin
+    t.index ["user_id"], name: "index_ahoy_events_on_user_id"
+    t.index ["visit_id"], name: "index_ahoy_events_on_visit_id"
+  end
+
+  create_table "ahoy_visits", force: :cascade do |t|
+    t.string "visit_token"
+    t.string "visitor_token"
+    t.bigint "user_id"
+    t.string "ip"
+    t.text "user_agent"
+    t.text "referrer"
+    t.string "referring_domain"
+    t.string "search_keyword"
+    t.text "landing_page"
+    t.string "browser"
+    t.string "os"
+    t.string "device_type"
+    t.string "country"
+    t.string "region"
+    t.string "city"
+    t.string "utm_source"
+    t.string "utm_medium"
+    t.string "utm_term"
+    t.string "utm_content"
+    t.string "utm_campaign"
+    t.datetime "started_at"
+    t.index ["user_id"], name: "index_ahoy_visits_on_user_id"
+    t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "slug"
@@ -153,7 +191,7 @@ ActiveRecord::Schema.define(version: 2018_04_19_112201) do
     t.bigint "product_sku_id"
     t.bigint "order_id"
     t.bigint "tree_plantation_id"
-    t.integer "quantity", default: 1, null: false
+    t.integer "quantity", default: 0, null: false
     t.string "recipient_name"
     t.text "recipient_message"
     t.date "certificate_date"
@@ -192,7 +230,7 @@ ActiveRecord::Schema.define(version: 2018_04_19_112201) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "aasm_state"
+    t.integer "aasm_state", null: false
     t.bigint "coupon_id"
     t.bigint "delivery_address_id"
     t.bigint "billing_address_id"
@@ -262,6 +300,7 @@ ActiveRecord::Schema.define(version: 2018_04_19_112201) do
   create_table "tree_plantations", force: :cascade do |t|
     t.string "project_name", null: false
     t.string "project_type"
+    t.string "partner", null: false
     t.string "plantation_uuid", null: false
     t.string "base_certificate_uuid", null: false
     t.decimal "latitude", precision: 11, scale: 8, null: false

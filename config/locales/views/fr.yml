@@ -14,6 +14,12 @@ fr:
       previous: "Précédent"
     filters:
       category: "Catégorie"
+    added_to_cart_modal:
+      tree_added: "Un arbre pour %{recipient} a été ajouté au panier."
+      product_added: "Produit ajouté au panier."
+      go_to_cart: "Valider mon panier"
+      plant_more_trees: "Planter d'autres arbres !"
+      continue_purchases: "Poursuivre mes achats"
   shared:
     navbar:
       about: "A propos"
@@ -29,6 +35,9 @@ fr:
         display_entries:
           one: "<b>%{count}</b> %{entry_name}"
           other: "<b>tous les %{count}</b> %{entry_name}"
+    submit:
+      line_item:
+        create: "Ajouter au panier"
   views:
     pagination:
       first: "&laquo; Premier"
@@ -36,3 +45,11 @@ fr:
       next: Suivant &rsaquo;
       previous: "&lsaquo; Précédent"
       truncate: "&hellip;"
+  active_admin:
+    resource:
+      show:
+        remove_images: "Supprimer les images liées au produit"
+  flash:
+    line_items:
+      create:
+        notice: "Produit bien ajouté au panier"
