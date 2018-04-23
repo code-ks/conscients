@@ -31,16 +31,15 @@ class LineItem < ApplicationRecord
 
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1 }
   validates :recipient_message, length: { maximum: 300 }
-  validates :recipient_name, :certificate_date, :certificate_number,
-            presence: true, if: :certificable?
+  # validates :recipient_name, :certificate_date, :certificate_number,
+  #           presence: true, if: :certificable?
 
-  before_validation :decrement_stock_quantity, prepend: true
+  before_validation :decrement_stock_quantities, prepend: true
 
   delegate :certificable?, to: :product_sku
-
-  def stock
-    certificable? ? tree_plantation : product_sku
-  end
+  delegate :classic?, to: :product_sku
+  delegate :personnalized?, to: :product_sku
+  delegate :tree?, to: :product_sku
 
   def added_quantity
     quantity - quantity_was
@@ -48,11 +47,8 @@ class LineItem < ApplicationRecord
 
   private
 
-  def decrement_stock_quantity
-    stock.decrement(:quantity, added_quantity)
+  def decrement_stock_quantities
+    product_sku.decrement(:quantity, added_quantity) unless tree?
+    tree_plantation.decrement(:quantity, added_quantity) unless classic?
   end
-
-  # def quantity_available
-  #   errors.add(:quantity, :not_enough_in_stock, max: stock.quantity) if not_enough_in_stock
-  # end
 end

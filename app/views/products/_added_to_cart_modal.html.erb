@@ -7,10 +7,14 @@
         </button>
         <div class="d-flex justify-content-between align-items-center flex-column m-5">
           <h2 class="mb-5">
-            <% if product.certificable? %>
-              <%= t('.tree_added', recipient: cart.recipient_last_tree) %>
+            <% if product.tree? && cart.recipient_last_product.present? %>
+              <%= t('.tree_added_with_recipient', recipient: cart.recipient_last_product) %>
+            <% elsif product.tree? %>
+              <%= t('.tree_added') %>
+            <% elsif cart.recipient_last_product.present? %>
+              <%= t('.product_added_with_recipient', recipient: cart.recipient_last_product) %>
             <% else %>
-              <%= t('.product_added', recipient: cart.recipient_last_tree) %>
+              <%= t('.product_added') %>
             <% end %>
           </h2>
           <%= link_to t('.go_to_cart'), root_path, class: "font-weight-bold orange mb-1" %>

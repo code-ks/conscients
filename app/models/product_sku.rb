@@ -31,6 +31,9 @@ class ProductSku < ApplicationRecord
 
   delegate :name, to: :product, prefix: true
   delegate :certificable?, to: :product
+  delegate :classic?, to: :product
+  delegate :personnalized?, to: :product
+  delegate :tree?, to: :product
 
   default_scope { includes(:product, :variabilizations, :variants) }
   scope :with_variant, lambda { |variant|

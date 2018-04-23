@@ -7,12 +7,14 @@
     </ul>
   <% end %>
 
-  <div class="form-group row">
-    <%= form.label :quantity, class: "col-sm-4 col-form-label" %>
-    <div class="col-sm-8">
-      <%= form.number_field :quantity, value: 1, class: "form-control mr-sm-2" %>
+  <% if product.tree? %>
+    <div class="form-group row">
+      <%= form.label :quantity, class: "col-sm-4 col-form-label" %>
+      <div class="col-sm-8">
+        <%= form.number_field :quantity, value: 1, class: "form-control mr-sm-2" %>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <% product.variants_by_category.each do |c| %>
     <div class="form-group row">

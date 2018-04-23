@@ -15,7 +15,9 @@ fr:
     filters:
       category: "Catégorie"
     added_to_cart_modal:
-      tree_added: "Un arbre pour %{recipient} a été ajouté au panier."
+      tree_added_with_recipient: "Un arbre pour %{recipient} a été ajouté au panier."
+      product_added_with_recipient: "Un produit pour %{recipient} a été ajouté au panier."
+      tree_added: "Un arbre a été ajouté au panier."
       product_added: "Produit ajouté au panier."
       go_to_cart: "Valider mon panier"
       plant_more_trees: "Planter d'autres arbres !"

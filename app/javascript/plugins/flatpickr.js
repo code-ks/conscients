@@ -5,7 +5,6 @@ import "flatpickr/dist/l10n/fr.js";
 function launchFlatpickr(id) {
   flatpickr(id, {
     dateFormat: "d-m-Y",
-    defaultDate: "today",
     locale
   });
 }

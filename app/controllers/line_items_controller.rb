@@ -5,7 +5,7 @@ class LineItemsController < ApplicationController
   respond_to :js, :html
 
   def create
-    @line_item = AddItemToCart.new(@cart, line_item_params, params.dig(:line_item, :quantity))
+    @line_item = AddItemToCart.new(@cart, line_item_params, quantity)
                               .perform
     respond_with(@line_item, location: product_path(@product)) do |format|
       format.html { render 'products/show' } unless @line_item.save
@@ -40,7 +40,12 @@ class LineItemsController < ApplicationController
     Variant.find(value)
   end
 
+  def quantity
+    (params.dig(:line_item, :quantity) || 1).to_i
+  end
+
   def line_item_params
+    params[:line_item] = { empty: true } unless params.key?(:line_item)
     params.require(:line_item).permit(:recipient_name, :recipient_message, :certificate_date)
           .merge(product_sku_id: @product_sku.id)
   end

@@ -57,7 +57,7 @@ class Order < ApplicationRecord
     line_items.last
   end
 
-  def recipient_last_tree
-    last_added.recipient_name
+  def recipient_last_product
+    last_added&.recipient_name
   end
 end

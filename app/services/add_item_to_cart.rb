@@ -4,7 +4,7 @@ class AddItemToCart
   def initialize(cart, line_item_params, quantity)
     @cart = cart
     @line_item_params = line_item_params
-    @quantity = quantity.to_i
+    @quantity = quantity
   end
 
   def perform
