@@ -15,11 +15,21 @@ en:
     filters:
       category: "Category"
     added_to_cart_modal:
-      tree_added: "A tree for %{recipient} has been added to your cart."
+      tree_added_with_recipient: "A tree for %{recipient} has been added to your cart."
+      tree_added: "A tree has been added to your cart."
       product_added: "Product added to your cart."
+      product_added_with_recipient: "A product for %{recipient} has been added to your cart."
       go_to_cart: "Go to my cart"
       plant_more_trees: "Plant more trees !"
       continue_purchases: "Continue my purchases"
+  checkout:
+    carts:
+      show:
+        cart: "Cart"
+        selection: "Selection"
+        quantity: "Quantity"
+        personalized_product: "Personalized product"
+        total_price: "Total"
   shared:
     navbar:
       about: "About"

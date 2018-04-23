@@ -22,6 +22,14 @@ fr:
       go_to_cart: "Valider mon panier"
       plant_more_trees: "Planter d'autres arbres !"
       continue_purchases: "Poursuivre mes achats"
+  checkout:
+    carts:
+      show:
+        cart: "Panier"
+        selection: "Sélection"
+        quantity: "Quantité"
+        personalized_product: "Produit personnalisé"
+        total_price: "Total"
   shared:
     navbar:
       about: "A propos"

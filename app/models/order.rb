@@ -60,4 +60,8 @@ class Order < ApplicationRecord
   def recipient_last_product
     last_added&.recipient_name
   end
+
+  def items_number
+    line_items.count
+  end
 end

@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 class="text-uppercase mb-5"><%= t('.cart') %></h1>
+  <div class="table-responsive">
+    <table class="table border-table-cart">
+      <thead>
+        <tr>
+          <th scope="col"><%= t('.selection') %></th>
+          <th scope="col"></th>
+          <th scope="col"><%= t('.quantity') %></th>
+          <th scope="col"><%= t('.personalized_product') %></th>
+          <th scope="col"><%= t('.total_price') %></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart.line_items.each do |line_item| %>
+          <tr class="table-cart-bordered">
+            <td><%= image_tag(line_item.product_images.first, height: 100) %></th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

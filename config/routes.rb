@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     resources :products, only: :show do
       resources :line_items, only: %i[create update]
     end
+    scope module: :checkout do
+      resources :carts, only: :show
+    end
     get ':id', to: 'high_voltage/pages#show', as: :page, format: false
   end
 end

@@ -28,7 +28,7 @@ class Ahoy::Event < ApplicationRecord
     end
 
     def id_last_category_visited
-      events_current_visit.category_events.last.properties['category_id']
+      events_current_visit.category_events.last&.properties&.dig('category_id') || Category.home.id
     end
   end
 end

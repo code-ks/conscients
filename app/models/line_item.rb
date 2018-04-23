@@ -40,6 +40,7 @@ class LineItem < ApplicationRecord
   delegate :classic?, to: :product_sku
   delegate :personnalized?, to: :product_sku
   delegate :tree?, to: :product_sku
+  delegate :product_images, to: :product_sku
 
   def added_quantity
     quantity - quantity_was
