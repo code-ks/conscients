@@ -53,6 +53,10 @@ class Order < ApplicationRecord
     state :fullfilled
   end
 
+  def ttc_price
+    line_items.sum(&:ttc_price)
+  end
+
   def last_added
     line_items.last
   end

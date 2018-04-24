@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-uppercase mb-5"><%= t('.cart') %></h1>
+  <h1 class="text-uppercase my-4"><%= t('.cart') %></h1>
   <div class="table-responsive">
     <table class="table border-table-cart">
       <thead>
@@ -13,16 +13,40 @@
         </tr>
       </thead>
       <tbody>
-        <% @cart.line_items.each do |line_item| %>
+        <% @cart.line_items.includes(:product_sku).each do |line_item| %>
           <tr class="table-cart-bordered">
             <td><%= image_tag(line_item.product_images.first, height: 100) %></th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
+            <td>
+              <div><%= line_item.product_sku.to_s %></div>
+              <div><%= line_item.recipient_name if line_item&.recipient_name&.present? %></div>
+            </td>
+            <td><%= line_item.quantity %></td>
+            <td>
+              <div><%= l(line_item.certificate_date, format: :default) if line_item&.certificate_date&.present? %></div>
+              <div><%= line_item.recipient_message if line_item&.recipient_message&.present? %></div>
+            </td>
+            <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
+            <td>
+              <%= link_to product_path(line_item.product) do %>
+                <%= fa_icon "pencil", class: "c-pointer mr-3" %>
+              <% end %>
+              <%= link_to line_item_path(line_item), method: :delete do %>
+                <%= fa_icon "times", class: "c-pointer mr-3" %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
+    <div class="d-flex justify-content-between align-items-end">
+      <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "orange" %></div>
+      <div class="d-flex flex-column align-items-end">
+        <div class="h4">
+          <%= t('.total_price') %> <span class="orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></span>
+        </div>
+        <div class="mb-3"><%= t('.without_delivery_fees') %></div>
+        <%= link_to t('.validate'), root_path, class: "btn btn-orange" %>
+      </div>
+    </div>
   </div>
 </div>

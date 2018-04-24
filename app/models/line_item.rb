@@ -7,6 +7,8 @@
 #  id                 :integer          not null, primary key
 #  product_sku_id     :integer
 #  order_id           :integer
+#  ttc_price_cents    :integer          default(0), not null
+#  ttc_price_currency :string           default("EUR"), not null
 #  tree_plantation_id :integer
 #  quantity           :integer          default(0), not null
 #  recipient_name     :string
@@ -29,21 +31,29 @@ class LineItem < ApplicationRecord
   belongs_to :order
   belongs_to :tree_plantation, optional: true, autosave: true
 
+  monetize :ttc_price_cents
+
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1 }
   validates :recipient_message, length: { maximum: 300 }
-  # validates :recipient_name, :certificate_date, :certificate_number,
-  #           presence: true, if: :certificable?
 
   before_validation :decrement_stock_quantities, prepend: true
+  before_save :update_price
 
   delegate :certificable?, to: :product_sku
   delegate :classic?, to: :product_sku
   delegate :personnalized?, to: :product_sku
   delegate :tree?, to: :product_sku
+  delegate :product, to: :product_sku
   delegate :product_images, to: :product_sku
+  delegate :product_name, to: :product_sku
+  delegate :product_ttc_price_cents, to: :product_sku
 
   def added_quantity
     quantity - quantity_was
+  end
+
+  def update_price
+    self.ttc_price_cents = quantity * product_ttc_price_cents
   end
 
   private

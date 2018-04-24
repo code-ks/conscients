@@ -35,6 +35,7 @@ class ProductSku < ApplicationRecord
   delegate :personnalized?, to: :product
   delegate :tree?, to: :product
   delegate :images, to: :product, prefix: true
+  delegate :ttc_price_cents, to: :product, prefix: true
 
   default_scope { includes(:product, :variabilizations, :variants) }
   scope :with_variant, lambda { |variant|
@@ -43,9 +44,7 @@ class ProductSku < ApplicationRecord
   scope :in_stock, -> { where('quantity > ?', 0) }
 
   def to_s
-    string = product_name.to_s
-    variants.each { |variant| string += " / #{variant.category.capitalize} #{variant.value}" }
-    string
+    variants.any? ? "#{product_name} / #{variants.join(' / ')}" : product_name
   end
 
   def age

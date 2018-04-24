@@ -16,6 +16,12 @@ textarea { resize: none; }
   color: $orange;
 }
 
+.btn-orange {
+  background-color: $orange;
+  border-color: $orange;
+  color: white;
+}
+
 .c-pointer {
   cursor: pointer;
 }

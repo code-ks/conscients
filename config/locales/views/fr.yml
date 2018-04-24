@@ -30,6 +30,9 @@ fr:
         quantity: "Quantité"
         personalized_product: "Produit personnalisé"
         total_price: "Total"
+        without_delivery_fees: "Ce prix n'inclut pas les frais de port"
+        validate: "Valider"
+        continue_purchases: "Poursuivre mes achats"
   shared:
     navbar:
       about: "A propos"

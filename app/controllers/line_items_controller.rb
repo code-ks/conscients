@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class LineItemsController < ApplicationController
-  before_action :set_product, :set_product_sku
+  before_action :set_product, :set_product_sku, only: :create
+  before_action :set_line_item, only: :destroy
   respond_to :js, :html
 
   def create
@@ -12,7 +13,16 @@ class LineItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @line_item.destroy
+    redirect_to cart_path(@cart)
+  end
+
   private
+
+  def set_line_item
+    @line_item = LineItem.find(params[:id])
+  end
 
   def set_product
     @product = Product.with_attached_images.find(params[:product_id])

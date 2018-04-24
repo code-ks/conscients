@@ -17,7 +17,7 @@
               <%= t('.product_added') %>
             <% end %>
           </h2>
-          <%= link_to t('.go_to_cart'), root_path, class: "font-weight-bold orange mb-1" %>
+          <%= link_to t('.go_to_cart'), cart_path(@cart), class: "font-weight-bold orange mb-1" %>
           <% if product.tree? %>
             <%= link_to t('.plant_more_trees'), category_products_path(Category.last_visited), class: "font-weight-bold orange mb-1" %>
           <% else %>

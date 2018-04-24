@@ -30,6 +30,9 @@ en:
         quantity: "Quantity"
         personalized_product: "Personalized product"
         total_price: "Total"
+        without_delivery_fees: "This price does not include delivery fees"
+        validate: "Validate"
+        continue_purchases: "Continue my purchases"
   shared:
     navbar:
       about: "About"
