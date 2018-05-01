@@ -4,10 +4,10 @@
 #
 # Table name: ahoy_visits
 #
-#  id               :integer          not null, primary key
+#  id               :bigint(8)        not null, primary key
 #  visit_token      :string
 #  visitor_token    :string
-#  user_id          :integer
+#  user_id          :bigint(8)
 #  ip               :string
 #  user_agent       :text
 #  referrer         :text

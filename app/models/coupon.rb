@@ -4,9 +4,9 @@
 #
 # Table name: coupons
 #
-#  id          :integer          not null, primary key
-#  product_id  :integer
-#  client_id   :integer
+#  id          :bigint(8)        not null, primary key
+#  product_id  :bigint(8)
+#  client_id   :bigint(8)
 #  percentage  :boolean          default(FALSE), not null
 #  amount      :integer          not null
 #  valid_from  :date             not null

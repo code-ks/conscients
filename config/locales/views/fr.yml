@@ -33,6 +33,27 @@ fr:
         without_delivery_fees: "Ce prix n'inclut pas les frais de port"
         validate: "Valider"
         continue_purchases: "Poursuivre mes achats"
+    deliveries:
+      new:
+        title: "Livraison"
+        email: "Email pour l'envoi du certificat"
+        description: "Vous pouvez renseigner l'email de la personne à qui envoyer le certificat dans le récupitulatif à droite."
+        description_details: "(Vous recevrez une copie de l'email pour télécharger le certificat)"
+        go_to_postal_delivery: "Vous aimeriez une impression et un envoi postal ? (Frais d'impression et de port en sus)"
+        go_to_postal_delivery_link: "Oui, je souhaite un envoie postal"
+        selection: "Sélection"
+        quantity: "Quantité"
+        delivery: "Livraison"
+        total_price: "Total"
+        cart: "Panier"
+  devise:
+    sessions:
+      new:
+        title: "Compte client"
+        sign_up: "Créer votre compte"
+        already_sign_up: "Déjà enregistré?"
+        sign_in: "Se connecter"
+        subscribe_to_newsletter: "S'inscrire à la newsletter"
   shared:
     navbar:
       about: "A propos"

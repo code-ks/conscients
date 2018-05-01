@@ -4,9 +4,9 @@
 #
 # Table name: ahoy_events
 #
-#  id         :integer          not null, primary key
-#  visit_id   :integer
-#  user_id    :integer
+#  id         :bigint(8)        not null, primary key
+#  visit_id   :bigint(8)
+#  user_id    :bigint(8)
 #  name       :string
 #  properties :jsonb
 #  time       :datetime
@@ -24,11 +24,12 @@ class Ahoy::Event < ApplicationRecord
 
   class << self
     def events_current_visit
-      Current.visit.events
+      Current.visit&.events
     end
 
     def id_last_category_visited
-      events_current_visit.category_events.last&.properties&.dig('category_id') || Category.home.id
+      events_current_visit&.category_events&.last&.properties&.dig('category_id') ||
+        Category.home.id
     end
   end
 end

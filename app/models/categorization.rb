@@ -4,9 +4,9 @@
 #
 # Table name: categorizations
 #
-#  id          :integer          not null, primary key
-#  category_id :integer
-#  product_id  :integer
+#  id          :bigint(8)        not null, primary key
+#  category_id :bigint(8)
+#  product_id  :bigint(8)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

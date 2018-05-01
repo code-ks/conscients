@@ -4,7 +4,7 @@
 #
 # Table name: products
 #
-#  id                       :integer          not null, primary key
+#  id                       :bigint(8)        not null, primary key
 #  description              :text
 #  ht_price_cents           :integer          default(0), not null
 #  ht_price_currency        :string           default("EUR"), not null

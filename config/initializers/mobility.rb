@@ -79,4 +79,6 @@ Mobility.configure do |config|
   # Note: The dirty plugin enables fallthrough_accessors by default.
   #
   config.default_options[:fallthrough_accessors] = true
+
+  config.default_options[:type] = :text
 end

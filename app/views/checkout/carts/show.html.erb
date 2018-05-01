@@ -38,15 +38,19 @@
         <% end %>
       </tbody>
     </table>
-    <div class="d-flex justify-content-between align-items-end">
-      <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "orange" %></div>
-      <div class="d-flex flex-column align-items-end">
-        <div class="h4">
-          <%= t('.total_price') %> <span class="orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></span>
-        </div>
-        <div class="mb-3"><%= t('.without_delivery_fees') %></div>
-        <%= link_to t('.validate'), root_path, class: "btn btn-orange" %>
+  </div>
+  <div class="d-flex justify-content-between align-items-end">
+    <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "orange" %></div>
+    <div class="d-flex flex-column align-items-end">
+      <div class="h4">
+        <%= t('.total_price') %> <span class="orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></span>
       </div>
+      <div class="mb-3"><%= t('.without_delivery_fees') %></div>
+      <% if @cart.tree_only? %>
+        <%= link_to t('.validate'), new_delivery_path(delivery_type: "email"), class: "btn btn-orange" %>
+      <% else %>
+        <%= link_to t('.validate'), new_delivery_path(delivery_type: "postal"), class: "btn btn-orange" %>
+      <% end %>
     </div>
   </div>
 </div>

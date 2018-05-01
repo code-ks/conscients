@@ -4,7 +4,7 @@
 #
 # Table name: tree_plantations
 #
-#  id                    :integer          not null, primary key
+#  id                    :bigint(8)        not null, primary key
 #  project_name          :string           not null
 #  project_type          :string
 #  partner               :string           not null

@@ -4,11 +4,11 @@
 #
 # Table name: orders
 #
-#  id                     :integer          not null, primary key
+#  id                     :bigint(8)        not null, primary key
 #  aasm_state             :integer          not null
-#  coupon_id              :integer
-#  delivery_address_id    :integer
-#  billing_address_id     :integer
+#  coupon_id              :bigint(8)
+#  delivery_address_id    :bigint(8)
+#  billing_address_id     :bigint(8)
 #  delivery_method        :integer          default("single_address"), not null
 #  delivery_fees_cents    :integer          default(0), not null
 #  delivery_fees_currency :string           default("EUR"), not null
@@ -17,7 +17,7 @@
 #  payment_method         :integer          default("stripe"), not null
 #  recipient_message      :text
 #  customer_note          :text
-#  client_id              :integer
+#  client_id              :bigint(8)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -36,6 +36,7 @@ class Order < ApplicationRecord
   belongs_to :client, optional: true
   has_many :line_items, dependent: :destroy
   has_many :product_skus, through: :line_items
+  has_many :products, through: :product_skus
 
   enum delivery_method: { single_address: 0, email: 1 }
   enum payment_method: { stripe: 0, paypal: 1, bank_transfer: 2 }
@@ -67,5 +68,9 @@ class Order < ApplicationRecord
 
   def items_number
     line_items.count
+  end
+
+  def tree_only?
+    products.pluck(:product_type).uniq == ['tree']
   end
 end

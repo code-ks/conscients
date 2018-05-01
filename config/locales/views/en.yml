@@ -33,6 +33,27 @@ en:
         without_delivery_fees: "This price does not include delivery fees"
         validate: "Validate"
         continue_purchases: "Continue my purchases"
+    deliveries:
+      new:
+        title: "Delivery"
+        email: "Email for the delivery of the certificate"
+        description: "You can inquire the email of the person to whom send the certificate in the sumarry on the right."
+        description_details: "(You will receive a copie of the email to download the certificate)"
+        go_to_postal_delivery: "Would you like a printed certificate and postal delivery? (Additional printing and delivery fees)"
+        go_to_postal_delivery_link: "Yes, I want a postal delivery"
+        selection: "Selection"
+        quantity: "Quantity"
+        delivery: "Delivery"
+        total_price: "Total"
+        cart: "Cart"
+  devise:
+    sessions:
+      new:
+        title: "Client account"
+        sign_up: "Create your account"
+        already_sign_up: "Already registered?"
+        sign_in: "Connect"
+        subscribe_to_newsletter: "Subscribe to newsletter"
   shared:
     navbar:
       about: "About"

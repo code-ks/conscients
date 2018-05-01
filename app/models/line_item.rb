@@ -4,12 +4,12 @@
 #
 # Table name: line_items
 #
-#  id                 :integer          not null, primary key
-#  product_sku_id     :integer
-#  order_id           :integer
+#  id                 :bigint(8)        not null, primary key
+#  product_sku_id     :bigint(8)
+#  order_id           :bigint(8)
 #  ttc_price_cents    :integer          default(0), not null
 #  ttc_price_currency :string           default("EUR"), not null
-#  tree_plantation_id :integer
+#  tree_plantation_id :bigint(8)
 #  quantity           :integer          default(0), not null
 #  recipient_name     :string
 #  recipient_message  :text

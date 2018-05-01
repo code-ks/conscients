@@ -4,7 +4,7 @@
 #
 # Table name: addresses
 #
-#  id         :integer          not null, primary key
+#  id         :bigint(8)        not null, primary key
 #  first_name :string           not null
 #  last_name  :string           not null
 #  company    :string
@@ -14,7 +14,7 @@
 #  zip_code   :string           not null
 #  country    :string           default("France"), not null
 #  title      :string
-#  client_id  :integer
+#  client_id  :bigint(8)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

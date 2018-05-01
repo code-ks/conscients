@@ -30,6 +30,8 @@ gem 'sidekiq-failures', '~> 1.0'
 gem 'ahoy_matey', '~> 2.0'
 gem 'devise', '~> 4.4'
 gem 'devise-i18n', '~> 1.6'
+gem 'gibbon', '~> 3.2'
+gem 'omniauth-facebook', '~> 5.0'
 
 gem 'activeadmin', '~> 1.2'
 gem 'arctic_admin', '~> 1.4'

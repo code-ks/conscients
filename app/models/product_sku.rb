@@ -4,8 +4,8 @@
 #
 # Table name: product_skus
 #
-#  id         :integer          not null, primary key
-#  product_id :integer
+#  id         :bigint(8)        not null, primary key
+#  product_id :bigint(8)
 #  sku        :string           not null
 #  quantity   :integer          default(0)
 #  created_at :datetime         not null
