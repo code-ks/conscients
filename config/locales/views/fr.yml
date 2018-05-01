@@ -40,12 +40,19 @@ fr:
         description: "Vous pouvez renseigner l'email de la personne à qui envoyer le certificat dans le récupitulatif à droite."
         description_details: "(Vous recevrez une copie de l'email pour télécharger le certificat)"
         go_to_postal_delivery: "Vous aimeriez une impression et un envoi postal ? (Frais d'impression et de port en sus)"
-        go_to_postal_delivery_link: "Oui, je souhaite un envoie postal"
+        go_to_postal_delivery_link: "Oui, je souhaite un envoi postal"
         selection: "Sélection"
         quantity: "Quantité"
         delivery: "Livraison"
         total_price: "Total"
         cart: "Panier"
+        delivery_is_billing: "Utiliser l'adresse de livraison comme adresse de facturation"
+        go_to_paiement: "Passer au paiement"
+        general_sales_conditions: "J'ai lu les conditions générales de ventes et j'y adhère sans réserve"
+        delivery_address: "Adresse de livraison"
+        billing_address: "Addresse de facturation"
+        customer_note: "Souhaitez-vous nous addresser un message?"
+        recipient_message: "C'est un cadeau? Ecrivez un mot que nous rajouterons au colis"
   devise:
     sessions:
       new:

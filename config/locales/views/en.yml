@@ -46,6 +46,13 @@ en:
         delivery: "Delivery"
         total_price: "Total"
         cart: "Cart"
+        delivery_is_billing: "Use the same address for billing and delivery"
+        go_to_paiement: "Go to paiement"
+        general_sales_conditions: "I have read the general sales conditions and accept them"
+        delivery_address: "Delivery address"
+        billing_address: "Billing address"
+        customer_note: "Would you like to send us a message?"
+        recipient_message: "Is it a gift? Write a note that we will add to the package"
   devise:
     sessions:
       new:

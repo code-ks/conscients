@@ -99,8 +99,9 @@ fr:
       address:
         first_name: "Prénom"
         last_name: "Nom de famille"
-        address_1: "Adresse 1"
-        address_2: "Adresse 2"
+        address_1: "Adresse"
+        address_2: "Complément d'adresse (apt, étage, etc.)"
+        company: "Société"
         city: "Ville"
         zip_code: "Code Postal"
         country: "Pays"
