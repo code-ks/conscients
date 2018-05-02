@@ -51,18 +51,21 @@ ActiveRecord::Schema.define(version: 2018_04_30_125420) do
   end
 
   create_table "addresses", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.string "company"
-    t.string "address_1", null: false
+    t.string "address_1"
     t.string "address_2"
-    t.string "city", null: false
-    t.string "zip_code", null: false
-    t.string "country", default: "France", null: false
+    t.string "city"
+    t.string "zip_code"
+    t.string "country", default: "France"
     t.string "title"
+    t.integer "address_type", default: 0, null: false
+    t.string "email"
     t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["address_type"], name: "index_addresses_on_address_type"
     t.index ["client_id"], name: "index_addresses_on_client_id"
   end
 
@@ -249,10 +252,13 @@ ActiveRecord::Schema.define(version: 2018_04_30_125420) do
     t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["aasm_state"], name: "index_orders_on_aasm_state"
     t.index ["billing_address_id"], name: "index_orders_on_billing_address_id"
     t.index ["client_id"], name: "index_orders_on_client_id"
     t.index ["coupon_id"], name: "index_orders_on_coupon_id"
     t.index ["delivery_address_id"], name: "index_orders_on_delivery_address_id"
+    t.index ["delivery_method"], name: "index_orders_on_delivery_method"
+    t.index ["payment_method"], name: "index_orders_on_payment_method"
   end
 
   create_table "product_skus", force: :cascade do |t|
@@ -288,6 +294,7 @@ ActiveRecord::Schema.define(version: 2018_04_30_125420) do
     t.index ["ht_price_cents"], name: "index_products_on_ht_price_cents"
     t.index ["name_en"], name: "index_products_on_name_en"
     t.index ["name_fr"], name: "index_products_on_name_fr"
+    t.index ["product_type"], name: "index_products_on_product_type"
     t.index ["slug"], name: "index_products_on_slug", unique: true
     t.index ["tax_rate"], name: "index_products_on_tax_rate"
     t.index ["weight"], name: "index_products_on_weight"

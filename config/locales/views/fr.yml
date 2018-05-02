@@ -34,18 +34,23 @@ fr:
         validate: "Valider"
         continue_purchases: "Poursuivre mes achats"
     deliveries:
-      new:
+      top_description:
         title: "Livraison"
         email: "Email pour l'envoi du certificat"
         description: "Vous pouvez renseigner l'email de la personne à qui envoyer le certificat dans le récupitulatif à droite."
         description_details: "(Vous recevrez une copie de l'email pour télécharger le certificat)"
         go_to_postal_delivery: "Vous aimeriez une impression et un envoi postal ? (Frais d'impression et de port en sus)"
         go_to_postal_delivery_link: "Oui, je souhaite un envoi postal"
+        description_postal_delivery: "Votre commande sera envoyée à l'adresse ci-dessous, les frais de port sont calculés en fonction du poids"
+        go_to_email_delivery_link: "Non, retour à l'envoi par email uniquement"
+      line_items_table:
         selection: "Sélection"
         quantity: "Quantité"
         delivery: "Livraison"
         total_price: "Total"
+      breadcrumb:
         cart: "Panier"
+      delivery_form:
         delivery_is_billing: "Utiliser l'adresse de livraison comme adresse de facturation"
         go_to_paiement: "Passer au paiement"
         general_sales_conditions: "J'ai lu les conditions générales de ventes et j'y adhère sans réserve"

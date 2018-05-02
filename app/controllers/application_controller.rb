@@ -28,8 +28,9 @@ class ApplicationController < ActionController::Base
 
   def set_cart
     @cart = Order.in_cart.find(session[:cart_id])
+    @cart.update(client: current_client) if !@cart.client && current_client
   rescue ActiveRecord::RecordNotFound
-    @cart = Order.create
+    @cart = Order.create(client: current_client)
     session[:cart_id] = @cart.id
   end
 

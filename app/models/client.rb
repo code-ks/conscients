@@ -28,7 +28,10 @@
 class Client < ApplicationRecord
   has_many :coupons, dependent: :destroy
   has_many :orders, dependent: :destroy
+  has_one :cart, -> { in_cart }, class_name: 'Order'
   has_many :addresses, dependent: :destroy
+  has_one :email_address, -> { order(created_at: :desc).email }, class_name: 'Address'
+  has_one :postal_address, -> { order(created_at: :desc).postal }, class_name: 'Address'
   has_many :line_items, through: :orders
   has_many :product_skus, through: :line_items
   has_many :products, through: :product_skus

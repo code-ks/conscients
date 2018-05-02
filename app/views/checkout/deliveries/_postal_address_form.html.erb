@@ -1,0 +1,44 @@
+<%= form.fields_for string, instance do |g| %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= g.text_field :first_name, class: "form-control mr-sm-2", placeholder: true, required: true %>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= g.text_field :last_name, class: "form-control mr-sm-2", placeholder: true, required: true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= g.text_field :company, class: "form-control mr-sm-2", placeholder: true %>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= g.text_field :address_1, class: "form-control mr-sm-2", placeholder: true, required: true %>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= g.text_field :address_2, class: "form-control mr-sm-2", placeholder: true %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= g.text_field :city, class: "form-control mr-sm-2", placeholder: true, required: true %>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= g.text_field :zip_code, class: "form-control mr-sm-2", placeholder: true %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= g.text_field :country, class: "form-control mr-sm-2", placeholder: true %>
+  </div>
+<% end %>

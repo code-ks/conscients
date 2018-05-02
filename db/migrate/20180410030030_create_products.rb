@@ -23,5 +23,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
     add_index :products, :weight
     add_index :products, :ht_price_cents
     add_index :products, :tax_rate
+    add_index :products, :product_type
   end
 end

@@ -4,19 +4,21 @@
 #
 # Table name: addresses
 #
-#  id         :bigint(8)        not null, primary key
-#  first_name :string           not null
-#  last_name  :string           not null
-#  company    :string
-#  address_1  :string           not null
-#  address_2  :string
-#  city       :string           not null
-#  zip_code   :string           not null
-#  country    :string           default("France"), not null
-#  title      :string
-#  client_id  :bigint(8)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :bigint(8)        not null, primary key
+#  first_name   :string
+#  last_name    :string
+#  company      :string
+#  address_1    :string
+#  address_2    :string
+#  city         :string
+#  zip_code     :string
+#  country      :string           default("France")
+#  title        :string
+#  address_type :integer          default("postal"), not null
+#  email        :string
+#  client_id    :bigint(8)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 # Foreign Keys
 #
@@ -30,5 +32,9 @@ class Address < ApplicationRecord
   has_many :billing_orders, class_name: 'Order',
            foreign_key: 'billing_address_id', dependent: :nullify
 
-  validates :first_name, :last_name, :address_1, :city, :zip_code, :country, presence: true
+  enum address_type: { postal: 0, email: 1 }
+
+  validates :email, presence: true, allow_blank: false, if: :email?
+  validates :first_name, :last_name, :address_1, :city, :zip_code, :country,
+            presence: true, allow_blank: false, if: :postal?
 end

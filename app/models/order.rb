@@ -38,7 +38,9 @@ class Order < ApplicationRecord
   has_many :product_skus, through: :line_items
   has_many :products, through: :product_skus
 
-  enum delivery_method: { single_address: 0, email: 1 }
+  accepts_nested_attributes_for :line_items
+
+  enum delivery_method: { postal: 0, email: 1 }
   enum payment_method: { stripe: 0, paypal: 1, bank_transfer: 2 }
   enum aasm_state: { in_cart: 0, paid: 1, fulfilled: 2 }
 
@@ -58,6 +60,8 @@ class Order < ApplicationRecord
     line_items.sum(&:ttc_price)
   end
 
+  def current_delivery_fees; end
+
   def last_added
     line_items.last
   end
@@ -72,5 +76,17 @@ class Order < ApplicationRecord
 
   def tree_only?
     products.pluck(:product_type).uniq == ['tree']
+  end
+
+  def set_email_delivery_address
+    delivery_address || client.email_address || build_delivery_address(email: client.email)
+  end
+
+  def set_postal_delivery_address
+    delivery_address || client.postal_address || build_delivery_address
+  end
+
+  def set_billing_address
+    billing_address || client.postal_address || build_billing_address
   end
 end

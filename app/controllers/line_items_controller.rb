@@ -3,6 +3,7 @@
 class LineItemsController < ApplicationController
   before_action :set_product, :set_product_sku, only: :create
   before_action :set_line_item, only: :destroy
+
   respond_to :js, :html
 
   def create
