@@ -48,12 +48,19 @@
 </div>
 
 <div class="col-md-6">
-  <div class="mb-5">
+  <div class="mb-2">
 
     <%= render 'line_items_table', cart: cart, form: form %>
 
   </div>
+
   <div class="d-flex flex-column align-items-end">
+
+    <span class="d-flex flex-column align-items-end">
+      <div class="font-weight-bold"><%= t('.total_price') %></div>
+      <span><%= t('.without_delivery_fees') %></span>
+      <div class="h4"><span class="orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></span></div>
+    </span>
 
     <div class="form-group">
       <%= form.check_box :general_sales_conditions, checked: true, required: true %>

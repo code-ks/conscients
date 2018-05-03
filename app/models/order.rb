@@ -9,7 +9,7 @@
 #  coupon_id              :bigint(8)
 #  delivery_address_id    :bigint(8)
 #  billing_address_id     :bigint(8)
-#  delivery_method        :integer          default("single_address"), not null
+#  delivery_method        :integer          default("postal"), not null
 #  delivery_fees_cents    :integer          default(0), not null
 #  delivery_fees_currency :string           default("EUR"), not null
 #  total_price_cents      :integer          default(0), not null
@@ -40,6 +40,9 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :line_items
 
+  monetize :total_price_cents
+  monetize :delivery_fees_cents
+
   enum delivery_method: { postal: 0, email: 1 }
   enum payment_method: { stripe: 0, paypal: 1, bank_transfer: 2 }
   enum aasm_state: { in_cart: 0, paid: 1, fulfilled: 2 }
@@ -48,6 +51,7 @@ class Order < ApplicationRecord
   validates :delivery_method, presence: true, inclusion: { in: delivery_methods.keys }
   validates :payment_method, presence: true, inclusion: { in: payment_methods.keys }
   validates :aasm_state, presence: true, inclusion: { in: aasm_states.keys }
+  validate :eligible_to_coupon
 
   include AASM
   aasm enum: true do
@@ -88,5 +92,33 @@ class Order < ApplicationRecord
 
   def set_billing_address
     billing_address || client.postal_address || build_billing_address
+  end
+
+  def coupon_discount
+    return false unless coupon
+  end
+
+  private
+
+  def eligible_to_coupon
+    return unless coupon &&
+                  (not_coupon_client || no_eligible_product_in_cart ||
+                    order_too_small_for_coupon || coupon_not_valid)
+  end
+
+  def not_coupon_client
+    coupon.client &&  coupon.client != Current&.visit&.client
+  end
+
+  def no_eligible_product_in_cart
+    coupon.product && !products.include?(coupon.product)
+  end
+
+  def order_too_small_for_coupon
+    ttc_price < coupon.amount_min_order
+  end
+
+  def coupon_not_valid
+    !Time.zone.today.between?(coupon.valid_from, coupon.valid_until)
   end
 end

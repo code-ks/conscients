@@ -41,6 +41,9 @@ Layout/AlignHash:
 Style/AsciiComments:
   Enabled: False
 
+Style/DoubleNegation:
+  Enabled: False
+
 Rails/OutputSafety:
   Exclude:
     - app/helpers/internationalization_helper.rb

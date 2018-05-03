@@ -170,8 +170,12 @@ ActiveRecord::Schema.define(version: 2018_04_30_125420) do
   create_table "coupons", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "client_id"
-    t.boolean "percentage", default: false, null: false
-    t.integer "amount", null: false
+    t.integer "percentage"
+    t.integer "amount_cents"
+    t.string "amount_currency", default: "EUR", null: false
+    t.string "name", null: false
+    t.integer "amount_min_order_cents", default: 0, null: false
+    t.string "amount_min_order_currency", default: "EUR", null: false
     t.date "valid_from", null: false
     t.date "valid_until", null: false
     t.datetime "created_at", null: false

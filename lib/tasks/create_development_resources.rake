@@ -153,6 +153,9 @@ task create_development_resources: :environment do
     longitude: -72.007402
   )
 
+  Coupon.create!(name: 'MYREDUC', amount_cents: 1000, amount_min_order_cents: 3000,
+                 valid_from: Time.zone.today - 2.days, valid_until: Time.zone.today + 20.days)
+
   Rails.logger.info "#{Product.all.count} products created with SKU and co"
 
   if Rails.env.development?

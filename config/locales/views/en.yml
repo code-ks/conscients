@@ -51,6 +51,8 @@ en:
       breadcrumb:
         cart: "Cart"
       delivery_form:
+        total_price: "Total price"
+        without_delivery_fees: "(excluding delivery fees, calculated in the next screen)"
         delivery_is_billing: "Use the same address for billing and delivery"
         go_to_paiement: "Go to paiement"
         general_sales_conditions: "I have read the general sales conditions and accept them"
@@ -58,6 +60,9 @@ en:
         billing_address: "Billing address"
         customer_note: "Would you like to send us a message?"
         recipient_message: "Is it a gift? Write a note that we will add to the package"
+      add_coupon:
+        coupon_name: "Coupon name"
+        add_coupon: "Add"
   devise:
     sessions:
       new:
@@ -81,3 +86,7 @@ en:
     line_items:
       create:
         notice: "Product correctly added to your cart"
+    coupon_to_order_additions:
+      create:
+        alert: "Coupon incorrect"
+        notice: "The coupon has been added to your order"

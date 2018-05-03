@@ -51,6 +51,8 @@ fr:
       breadcrumb:
         cart: "Panier"
       delivery_form:
+        total_price: "Prix total"
+        without_delivery_fees: "(frais de ports exclus, calculés à l'écran suivant)"
         delivery_is_billing: "Utiliser l'adresse de livraison comme adresse de facturation"
         go_to_paiement: "Passer au paiement"
         general_sales_conditions: "J'ai lu les conditions générales de ventes et j'y adhère sans réserve"
@@ -58,6 +60,9 @@ fr:
         billing_address: "Addresse de facturation"
         customer_note: "Souhaitez-vous nous addresser un message?"
         recipient_message: "C'est un cadeau? Ecrivez un mot que nous rajouterons au colis"
+      add_coupon:
+        coupon_name: "Nom du bon de réduction"
+        add_coupon: "Ajouter"
   devise:
     sessions:
       new:
@@ -99,3 +104,7 @@ fr:
     line_items:
       create:
         notice: "Produit bien ajouté au panier"
+    coupon_to_order_additions:
+      create:
+        alert: "Bon de réduction incorrect"
+        notice: "Le bon de réduction a été ajouté à votre commande"

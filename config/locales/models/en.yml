@@ -43,8 +43,11 @@ en:
       client:
         newsletter_subscriber: "Subscribed to the newsletter?"
       coupon:
-        percentage: "Value in pourcentage?"
-        amount: "Value of the discount"
+        percentage: "Value in pourcentage"
+        amount_cents: "Value of the discount"
+        amount_currency: "Currency of the discount"
+        amount_min_order_cents: "Minimum amount of the order"
+        amount_min_order_currency: "Currency of the minimum of the order"
       order:
         aasm_state: "State of the order"
         delivery_methods:
@@ -71,3 +74,7 @@ en:
           attributes:
             trees_quantity:
               greater_than_or_equal_to: "in stock too limited"
+        coupon:
+          amount_or_percentage: "Amount or percentage must be filled but not both"
+        order:
+          not_eligible_to_coupon: "Your order is not eligible to this coupon"

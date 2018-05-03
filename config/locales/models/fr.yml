@@ -141,10 +141,14 @@ fr:
       coupon:
         product: "Produit"
         client: "Client"
-        percentage: "Valeur en pourcentage?"
-        amount: "Montant de la réduction"
+        percentage: "Valeur en pourcentage"
+        amount_cents: "Montant de la réduction"
+        amount_currency: "Devise de la réduction"
+        amount_min_order_cents: "Minimum de commande"
+        amount_min_order_currency: "Devise du minimum de commande"
         valid_from: "Valide à partir"
         valid_until: "Valide jusqu'à"
+        name: "Nom"
       line_item:
         product_sku: "UGS produit"
         order: "Commande"
@@ -196,3 +200,7 @@ fr:
           attributes:
             trees_quantity:
               greater_than_or_equal_to: "en stock trop faible"
+        coupon:
+          amount_or_percentage: "Montant ou pourcentage doit être rempli mais pas les 2"
+        order:
+          not_eligible_to_coupon: "Votre commande n'est pas éligible a ce bon de réduction"
