@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     scope module: :checkout do
       resources :carts, only: :show
       resources :deliveries, only: %i[new create]
-      resources :paiements, only: :new
+      resources :payments, only: :new
       resources :coupon_to_order_additions, only: :create
     end
     get ':id', to: 'high_voltage/pages#show', as: :page, format: false

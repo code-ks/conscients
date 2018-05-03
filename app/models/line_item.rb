@@ -39,14 +39,8 @@ class LineItem < ApplicationRecord
   before_validation :decrement_stock_quantities, prepend: true
   before_save :update_price
 
-  delegate :certificable?, to: :product_sku
-  delegate :classic?, to: :product_sku
-  delegate :personnalized?, to: :product_sku
-  delegate :tree?, to: :product_sku
-  delegate :product, to: :product_sku
-  delegate :product_images, to: :product_sku
-  delegate :product_name, to: :product_sku
-  delegate :product_ttc_price_cents, to: :product_sku
+  delegate :certificable?, :classic?, :personnalized?, :tree?, :product, :product_images,
+           :product_name, :product_ttc_price_cents, :product_weight, to: :product_sku
 
   def added_quantity
     quantity - quantity_was

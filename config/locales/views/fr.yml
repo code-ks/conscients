@@ -50,11 +50,12 @@ fr:
         total_price: "Total"
       breadcrumb:
         cart: "Panier"
+        delivery: "Livraison"
       delivery_form:
         total_price: "Prix total"
         without_delivery_fees: "(frais de ports exclus, calculés à l'écran suivant)"
         delivery_is_billing: "Utiliser l'adresse de livraison comme adresse de facturation"
-        go_to_paiement: "Passer au paiement"
+        go_to_payment: "Passer au paiement"
         general_sales_conditions: "J'ai lu les conditions générales de ventes et j'y adhère sans réserve"
         delivery_address: "Adresse de livraison"
         billing_address: "Addresse de facturation"
@@ -64,6 +65,31 @@ fr:
       add_coupon:
         coupon_name: "Nom du bon de réduction"
         add_coupon: "Ajouter"
+    payments:
+      breadcrumb:
+        cart: "Panier"
+        delivery: "Livraison"
+        payment: "Paiement"
+      new:
+        title: "Paiement"
+      address:
+        billing: "Adresse de facturation"
+        delivery: "Adresse de livraison"
+      payment_buttons:
+        select_payment_method: "Sélectionner le mode de paiement"
+      line_items_table:
+        selection: "Sélection"
+        quantity: "Quantité"
+        delivery: "Livraison"
+        total_price: "Total"
+      add_coupon:
+        coupon_name: "Nom du bon de réduction"
+        add_coupon: "Ajouter"
+      price:
+        sub_total: "Sous total"
+        total_price: "Prix total"
+        from_discount: "de reduction"
+        delivery_fees: "Frais de livraison"
   devise:
     sessions:
       new:

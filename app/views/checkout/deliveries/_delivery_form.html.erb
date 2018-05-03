@@ -21,7 +21,7 @@
 
   <% else %>
 
-    <%= render 'postal_address_form', string: "delivery_address", instance: delivery_address, form: form %>
+    <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
 
   <% end %>
 
@@ -41,7 +41,7 @@
 
     <div data-target="billing-address.hideable" class="<%= "d-none" if cart.postal? %>">
 
-      <%= render 'postal_address_form', string: "billing_address", instance: billing_address, form: form %>
+      <%= render 'postal_billing_address_form', billing_address: billing_address, form: form %>
 
     </div>
   </div>
@@ -73,7 +73,7 @@
 
     <%= form.hidden_field :address_type, value: cart.delivery_method %>
 
-    <%= form.submit t('.go_to_paiement'), class: "btn btn-orange"%>
+    <%= form.submit t('.go_to_payment'), class: "btn btn-orange"%>
   </div>
 
 <% end %>

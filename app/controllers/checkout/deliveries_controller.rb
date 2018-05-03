@@ -15,7 +15,7 @@ class Checkout::DeliveriesController < ApplicationController
       LinkDeliveryInfoToCart.new(@cart, order_params, addresses_params)
                             .perform
     if @delivery_address.save && @billing_address.save && @cart.save
-      redirect_to new_paiement_path
+      redirect_to new_payment_path
     else
       render :new
     end

@@ -1,4 +1,4 @@
-<%= form.fields_for string, instance do |g| %>
+<%= form.fields_for "delivery_address", delivery_address do |g| %>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
@@ -39,6 +39,6 @@
     </div>
   </div>
   <div class="form-group">
-    <%= g.text_field :country, class: "form-control mr-sm-2", placeholder: true %>
+    <%= g.country_select :country, priority_countries: ["FR"], class: "form-control mr-sm-2", placeholder: true, required: true %>
   </div>
 <% end %>

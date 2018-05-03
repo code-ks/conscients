@@ -31,6 +31,10 @@ Metrics/BlockLength:
     - lib/tasks/*
     - app/admin/*
 
+Metrics/ClassLength:
+  Exclude:
+    - app/models/order.rb
+
 Lint/UselessAssignment:
   Exclude:
     - app/models/category.rb

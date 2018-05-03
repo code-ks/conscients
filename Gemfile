@@ -48,6 +48,7 @@ gem 'money-rails', '~> 1.11'
 gem 'kaminari', '~> 1.1'
 gem 'pg_search', '~> 2.1'
 
+gem 'country_select', '~> 3.1'
 gem 'font-awesome-rails', git: 'git@github.com:bokmann/font-awesome-rails.git'
 gem 'sass-rails', '~> 5.0'
 

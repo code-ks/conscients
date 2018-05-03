@@ -53,13 +53,9 @@ class Order < ApplicationRecord
   validates :aasm_state, presence: true, inclusion: { in: aasm_states.keys }
   validate :eligible_to_coupon
 
-  delegate :client, to: :coupon, prefix: true
-  delegate :product, to: :coupon, prefix: true
-  delegate :amount_min_order, to: :coupon, prefix: true
-  delegate :valid_from, to: :coupon, prefix: true
-  delegate :valid_until, to: :coupon, prefix: true
-  delegate :amount, to: :coupon, prefix: true
-  delegate :percentage, to: :coupon, prefix: true
+  delegate :client, :product, :amount_min_order, :valid_from, :valid_until, :amount, :percentage,
+           to: :coupon, prefix: true
+  delegate :country, to: :delivery_address, prefix: true
 
   include AASM
   aasm enum: true do
@@ -73,6 +69,7 @@ class Order < ApplicationRecord
   end
 
   def coupon_discount
+    return 0 unless coupon
     coupon_percentage ? ttc_price * coupon_percentage : coupon_amount
   end
 
@@ -80,7 +77,39 @@ class Order < ApplicationRecord
     ttc_price - coupon_discount
   end
 
-  def current_delivery_fees; end
+  def current_delivery_fees
+    return 0 if email?
+    main_delivery_fees + printing_fees
+  end
+
+  def main_delivery_fees
+    DELIVERY_FEES.select { |weight| weight.member?(total_weight) }.values.dig(0, symbol_region)
+  end
+
+  def printing_fees
+    return 0 if email?
+    line_items.inject(Money.new(0, 'EUR')) do |sum, line_item|
+      line_item.certificable? ? sum + PRINTING_FEES * line_item.quantity : sum
+    end
+  end
+
+  def total_weight
+    line_items.sum(&:product_weight)
+  end
+
+  def symbol_region
+    if delivery_address_country == 'FR'
+      :france
+    elsif EUROPE.include?(delivery_address_country)
+      :europe
+    else
+      :world
+    end
+  end
+
+  def ttc_price_all_included
+    ttc_price_with_coupon + current_delivery_fees
+  end
 
   def last_added
     line_items.last

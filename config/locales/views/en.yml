@@ -50,11 +50,12 @@ en:
         total_price: "Total"
       breadcrumb:
         cart: "Cart"
+        delivery: "Delivery"
       delivery_form:
         total_price: "Total price"
         without_delivery_fees: "(excluding delivery fees, calculated in the next screen)"
         delivery_is_billing: "Use the same address for billing and delivery"
-        go_to_paiement: "Go to paiement"
+        go_to_payment: "Go to paiement"
         general_sales_conditions: "I have read the general sales conditions and accept them"
         delivery_address: "Delivery address"
         billing_address: "Billing address"
@@ -64,6 +65,31 @@ en:
       add_coupon:
         coupon_name: "Coupon name"
         add_coupon: "Add"
+    payments:
+      breadcrumb:
+        cart: "Cart"
+        delivery: "Delivery"
+        payment: "Payment"
+      new:
+        title: "Payment"
+      line_items_table:
+        selection: "Selection"
+        quantity: "Quantity"
+        delivery: "Delivery"
+        total_price: "Total"
+      add_coupon:
+        coupon_name: "Coupon name"
+        add_coupon: "Add"
+      address:
+        billing: "Billing address"
+        delivery: "Delivery address"
+      payment_buttons:
+        select_payment_method: "Select your payment method"
+      price:
+        sub_total: "Sub Total"
+        total_price: "Total price"
+        from_discount: "from discount"
+        delivery_fees: "Delivery fees"
   devise:
     sessions:
       new:

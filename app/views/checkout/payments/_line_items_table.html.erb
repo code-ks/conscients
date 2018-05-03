@@ -5,7 +5,6 @@
         <th scope="col"><%= t('.selection') %></th>
         <th scope="col"></th>
         <th scope="col"><%= t('.quantity') %></th>
-        <th scope="col"><%= t('.delivery') %></th>
         <th scope="col"><%= t('.total_price') %></th>
         <th scope="col"></th>
       </tr>
@@ -19,15 +18,6 @@
             <div><%= line_item.recipient_name if line_item&.recipient_name&.present? %></div>
           </td>
           <td><%= line_item.quantity %></td>
-          <td>
-            <% if line_item.tree? %>
-              <%= form.fields_for :line_items, line_item do |j| %>
-                <div class="form-group col-10">
-                  <%= j.email_field :delivery_email, class: "form-control mr-sm-2", placeholder: true %>
-                </div>
-              <% end %>
-            <% end %>
-          </td>
           <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
           <td>
             <%= link_to line_item_path(line_item), method: :delete do %>
