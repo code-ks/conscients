@@ -11,6 +11,12 @@ task create_development_resources: :environment do
   Categorization.destroy_all
   ProductSku.destroy_all
   Variabilization.destroy_all
+  Client.destroy_all
+  Address.destroy_all
+  Coupon.destroy_all
+  Order.destroy_all
+  LineItem.destroy_all
+  TreePlantation.destroy_all
 
   product = Product.create!(
     name_fr: 'Top livre',
@@ -96,6 +102,8 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
+  product.images.attach(io: File.open('lib/assets/certificate-background.jpeg'),
+                        filename: 'certificate-background.jpeg', content_type: 'image/jpeg')
   ProductSku.create(product: product)
 
   product = Product.create!(
@@ -111,6 +119,9 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
+  product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpeg'),
+                                        filename: 'certificate-background.jpeg',
+                                        content_type: 'image/jpeg')
   ProductSku.create(product: product)
 
   Product.all.each do |p|
@@ -127,6 +138,23 @@ task create_development_resources: :environment do
   ProductSku.all.each do |sku|
     2.times { StockEntry.create!(product_sku: sku, quantity: rand(1..10)) }
   end
+
+  TreePlantation.create!(
+    project_name: 'Alta Huayabamba, San Martin, Pérou',
+    project_type_fr: 'reforestation / agroforesterie',
+    project_type_en: 'some tree stuff',
+    partner: 'Fundacion Amazonia Viva',
+    plantation_uuid: SecureRandom.uuid,
+    tree_specie: 'capirona, boleina',
+    producer_name: 'Eber Vaqui Saldana',
+    trees_quantity: 100,
+    base_certificate_uuid: SecureRandom.uuid,
+    latitude: -13.524001,
+    longitude: -72.007402
+  )
+
+  Coupon.create!(name: 'MYREDUC', amount_cents: 1000, amount_min_order_cents: 3000,
+                 valid_from: Time.zone.today - 2.days, valid_until: Time.zone.today + 20.days)
 
   Rails.logger.info "#{Product.all.count} products created with SKU and co"
 

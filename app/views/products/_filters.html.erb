@@ -10,7 +10,7 @@
   </div>
 <% end %>
 
-<% category.variants_by_categories.each do |c| %>
+<% category.variants_by_category.each do |c| %>
   <div class="font-weight-bold ml-5 mr-2"><%= c.first.capitalize %></div>
   <div class="dropdown">
     <%= fa_icon "plus", class: "c-pointer", data: { toggle: "dropdown" } %>

@@ -4,9 +4,9 @@
 #
 # Table name: variabilizations
 #
-#  id             :integer          not null, primary key
-#  product_sku_id :integer
-#  variant_id     :integer
+#  id             :bigint(8)        not null, primary key
+#  product_sku_id :bigint(8)
+#  variant_id     :bigint(8)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

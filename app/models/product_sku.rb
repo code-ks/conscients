@@ -4,8 +4,8 @@
 #
 # Table name: product_skus
 #
-#  id         :integer          not null, primary key
-#  product_id :integer
+#  id         :bigint(8)        not null, primary key
+#  product_id :bigint(8)
 #  sku        :string           not null
 #  quantity   :integer          default(0)
 #  created_at :datetime         not null
@@ -21,20 +21,30 @@ class ProductSku < ApplicationRecord
   has_many :variabilizations, dependent: :destroy
   has_many :variants, through: :variabilizations
   has_many :stock_entries, dependent: :destroy
+  has_many :line_items, dependent: :nullify
+  has_many :orders, through: :line_items
 
   before_validation :normalize_sku, only: :create
 
-  validates :quantity, presence: true
+  validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :sku, presence: true, uniqueness: true, length: { minimum: 3 }
 
   delegate :name, to: :product, prefix: true
+  delegate :certificable?, to: :product
+  delegate :classic?, to: :product
+  delegate :personnalized?, to: :product
+  delegate :tree?, to: :product
+  delegate :images, to: :product, prefix: true
+  delegate :ttc_price_cents, to: :product, prefix: true
 
   default_scope { includes(:product, :variabilizations, :variants) }
+  scope :with_variant, lambda { |variant|
+    includes(:variabilizations).where(variabilizations: { variant: variant })
+  }
+  scope :in_stock, -> { where('quantity > ?', 0) }
 
   def to_s
-    string = product_name.to_s
-    variants.each { |variant| string += " / #{variant.category.capitalize} #{variant.value}" }
-    string
+    variants.any? ? "#{product_name} / #{variants.join(' / ')}" : product_name
   end
 
   def age

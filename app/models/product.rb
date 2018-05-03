@@ -4,7 +4,7 @@
 #
 # Table name: products
 #
-#  id                       :integer          not null, primary key
+#  id                       :bigint(8)        not null, primary key
 #  description              :text
 #  ht_price_cents           :integer          default(0), not null
 #  ht_price_currency        :string           default("EUR"), not null
@@ -31,9 +31,13 @@ class Product < ApplicationRecord
   has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
   has_many :product_skus, dependent: :destroy
+  has_many :line_items, through: :product_skus
+  has_many :orders, through: :line_items
   has_many :variabilizations, through: :product_skus
   has_many :variants, through: :variabilizations
+  has_many :coupons, dependent: :destroy
   has_many_attached :images
+  has_one_attached :certificate_background
 
   extend Mobility
   translates :name, backend: :column
@@ -76,5 +80,13 @@ class Product < ApplicationRecord
 
   def ttc_price_cents
     ht_price_cents * (1 + tax_rate.fdiv(100))
+  end
+
+  def variants_by_category
+    variants.group_by(&:category)
+  end
+
+  def certificable?
+    personalized? || tree?
   end
 end

@@ -14,6 +14,64 @@ en:
       previous: "Previous"
     filters:
       category: "Category"
+    added_to_cart_modal:
+      tree_added_with_recipient: "A tree for %{recipient} has been added to your cart."
+      tree_added: "A tree has been added to your cart."
+      product_added: "Product added to your cart."
+      product_added_with_recipient: "A product for %{recipient} has been added to your cart."
+      go_to_cart: "Go to my cart"
+      plant_more_trees: "Plant more trees !"
+      continue_purchases: "Continue my purchases"
+  checkout:
+    carts:
+      show:
+        cart: "Cart"
+        selection: "Selection"
+        quantity: "Quantity"
+        personalized_product: "Personalized product"
+        total_price: "Total"
+        without_delivery_fees: "This price does not include delivery fees"
+        validate: "Validate"
+        continue_purchases: "Continue my purchases"
+    deliveries:
+      top_description:
+        title: "Delivery"
+        email: "Email for the delivery of the certificate"
+        description: "You can inquire the email of the person to whom send the certificate in the sumarry on the right."
+        description_details: "(You will receive a copie of the email to download the certificate)"
+        go_to_postal_delivery: "Would you like a printed certificate and postal delivery? (Additional printing and delivery fees)"
+        go_to_postal_delivery_link: "Yes, I want a postal delivery"
+        description_postal_delivery: "Your order will be sent to the bellow address, delivery fees are calculated based on weight"
+        go_to_email_delivery_link: "No, back to email delivery"
+      line_items_table:
+        selection: "Selection"
+        quantity: "Quantity"
+        delivery: "Delivery"
+        total_price: "Total"
+      breadcrumb:
+        cart: "Cart"
+      delivery_form:
+        total_price: "Total price"
+        without_delivery_fees: "(excluding delivery fees, calculated in the next screen)"
+        delivery_is_billing: "Use the same address for billing and delivery"
+        go_to_paiement: "Go to paiement"
+        general_sales_conditions: "I have read the general sales conditions and accept them"
+        delivery_address: "Delivery address"
+        billing_address: "Billing address"
+        customer_note: "Would you like to send us a message?"
+        recipient_message: "Is it a gift? Write a note that we will add to the package"
+        from_discount: "from discount"
+      add_coupon:
+        coupon_name: "Coupon name"
+        add_coupon: "Add"
+  devise:
+    sessions:
+      new:
+        title: "Client account"
+        sign_up: "Create your account"
+        already_sign_up: "Already registered?"
+        sign_in: "Connect"
+        subscribe_to_newsletter: "Subscribe to newsletter"
   shared:
     navbar:
       about: "About"
@@ -21,3 +79,15 @@ en:
       participate: "Participate"
       my_cart: "My cart"
       search: "Search"
+  active_admin:
+    resource:
+      show:
+        remove_images: "Remove images linked to the product"
+  flash:
+    line_items:
+      create:
+        notice: "Product correctly added to your cart"
+    coupon_to_order_additions:
+      create:
+        alert: "Coupon incorrect"
+        notice: "The coupon has been added to your order"

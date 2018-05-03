@@ -1,0 +1,20 @@
+<div class="container">
+
+  <%= render 'checkout/deliveries/breadcrumb', cart: @cart %>
+
+  <div class="row">
+    <div class="col-md-6">
+
+      <%= render 'checkout/deliveries/top_description', cart: @cart %>
+
+      <%= render 'checkout/deliveries/delivery_form', cart: @cart, delivery_address: @delivery_address, billing_address: @billing_address %>
+
+      <% unless @cart.coupon %>
+
+        <%= render 'checkout/deliveries/add_coupon' %>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

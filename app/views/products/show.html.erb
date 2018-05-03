@@ -1,12 +1,17 @@
-<div class="container mt-5">
+<div class="container my-5">
   <div class="row h-100">
-    <div class="col-lg-4 col-sm-12">
+    <div class="col-lg-8 col-md-7 col-xs-12 order-md-last">
+      <%= render 'products/carousel', product: @product %>
+    </div>
+    <div class="col-lg-4 col-md-5 col-xs-12 order-md-first">
       <h2><%= @product.name %></h2>
       <p class="font-weight-bold"><%= humanized_money_with_symbol @product.ttc_price %></p>
       <p><%= @product.description %></p>
-    </div>
-    <div class="col-lg-8 col-sm-12">
-      <%= render 'carousel', product: @product %>
+
+      <hr>
+      <div id="new_line_item">
+        <%= render 'products/add_to_cart_form', product: @product, line_item: @line_item %>
+      </div>
     </div>
   </div>
 </div>

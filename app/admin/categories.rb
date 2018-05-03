@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Category do
+  menu parent: I18n.t('i18n.product_management')
+
   config.sort_order = 'position_asc'
 
   permit_params :name, :slug, :name_en, :slug_en, :parent, :positon

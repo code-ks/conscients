@@ -1,3 +1,5 @@
 fr:
   i18n:
     product_management: "Gestion des produits"
+    order_management: "Gestion des commandes"
+    client_management: "Gestion des clients"

@@ -2,13 +2,21 @@ en:
   activerecord:
     models:
       admin_user: "Admin"
+      address: "Address"
       category: "Category"
       categorization: "Categorization"
+      client: "Client"
+      coupon: "Coupon"
+      line_item: "Line Item"
+      order: "Order"
       product: "Product"
       product_sku: "Product SKU"
       stock_entry: "Stock Entry"
+      tree_plantation: "Tree Plantation"
       variabilization: "Variabilization"
       variant: "Variant"
+      visit: "Visit"
+      event: "Event"
     attributes:
       admin_user:
         email: "Email"
@@ -30,3 +38,43 @@ en:
         category: "Category"
         categories:
           age: "Age"
+      address:
+        title: "Address title"
+      client:
+        newsletter_subscriber: "Subscribed to the newsletter?"
+      coupon:
+        percentage: "Value in pourcentage"
+        amount_cents: "Value of the discount"
+        amount_currency: "Currency of the discount"
+        amount_min_order_cents: "Minimum amount of the order"
+        amount_min_order_currency: "Currency of the minimum of the order"
+      order:
+        aasm_state: "State of the order"
+        delivery_methods:
+          single_address: "Delivery to an address"
+          email: "Delivery by email"
+        delivery_fees_cents: "Delivery fees in cents"
+        total_price_cents: "Total price in cents"
+        total_price_currency: "Order currency"
+        payment_methods:
+          stripe: "Stripe"
+          paypal: "Paypal"
+          bank_tranfer: "Bank Transfer"
+      tree_plantation:
+        trees_quantity: "Available tree_quantity"
+      line_item:
+        quantity: "Quantity in stock"
+    errors:
+      models:
+        product_sku:
+          attributes:
+            quantity:
+              greater_than_or_equal_to: "in stock too limited"
+        tree_plantation:
+          attributes:
+            trees_quantity:
+              greater_than_or_equal_to: "in stock too limited"
+        coupon:
+          amount_or_percentage: "Amount or percentage must be filled but not both"
+        order:
+          not_eligible_to_coupon: "Your order is not eligible to this coupon"

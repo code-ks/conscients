@@ -27,8 +27,11 @@ gem 'rollbar', '~> 2.15'
 gem 'sidekiq', '~> 5.1'
 gem 'sidekiq-failures', '~> 1.0'
 
+gem 'ahoy_matey', '~> 2.0'
 gem 'devise', '~> 4.4'
 gem 'devise-i18n', '~> 1.6'
+gem 'gibbon', '~> 3.2'
+gem 'omniauth-facebook', '~> 5.0'
 
 gem 'activeadmin', '~> 1.2'
 gem 'arctic_admin', '~> 1.4'
@@ -37,7 +40,9 @@ gem 'acts_as_list', '~> 0.9'
 gem 'ancestry', '~> 3.0'
 gem 'friendly_id', '~> 5.2'
 gem 'high_voltage', '~> 3.0'
+gem 'responders', '~> 2.4'
 
+gem 'aasm', '~> 4.12'
 gem 'money-rails', '~> 1.11'
 
 gem 'kaminari', '~> 1.1'

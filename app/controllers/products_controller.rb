@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.with_attached_images.find(params[:id])
+    @line_item = LineItem.new
   end
 
   private

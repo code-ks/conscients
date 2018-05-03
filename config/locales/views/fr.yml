@@ -14,6 +14,64 @@ fr:
       previous: "Précédent"
     filters:
       category: "Catégorie"
+    added_to_cart_modal:
+      tree_added_with_recipient: "Un arbre pour %{recipient} a été ajouté au panier."
+      product_added_with_recipient: "Un produit pour %{recipient} a été ajouté au panier."
+      tree_added: "Un arbre a été ajouté au panier."
+      product_added: "Produit ajouté au panier."
+      go_to_cart: "Valider mon panier"
+      plant_more_trees: "Planter d'autres arbres !"
+      continue_purchases: "Poursuivre mes achats"
+  checkout:
+    carts:
+      show:
+        cart: "Panier"
+        selection: "Sélection"
+        quantity: "Quantité"
+        personalized_product: "Produit personnalisé"
+        total_price: "Total"
+        without_delivery_fees: "Ce prix n'inclut pas les frais de port"
+        validate: "Valider"
+        continue_purchases: "Poursuivre mes achats"
+    deliveries:
+      top_description:
+        title: "Livraison"
+        email: "Email pour l'envoi du certificat"
+        description: "Vous pouvez renseigner l'email de la personne à qui envoyer le certificat dans le récupitulatif à droite."
+        description_details: "(Vous recevrez une copie de l'email pour télécharger le certificat)"
+        go_to_postal_delivery: "Vous aimeriez une impression et un envoi postal ? (Frais d'impression et de port en sus)"
+        go_to_postal_delivery_link: "Oui, je souhaite un envoi postal"
+        description_postal_delivery: "Votre commande sera envoyée à l'adresse ci-dessous, les frais de port sont calculés en fonction du poids"
+        go_to_email_delivery_link: "Non, retour à l'envoi par email uniquement"
+      line_items_table:
+        selection: "Sélection"
+        quantity: "Quantité"
+        delivery: "Livraison"
+        total_price: "Total"
+      breadcrumb:
+        cart: "Panier"
+      delivery_form:
+        total_price: "Prix total"
+        without_delivery_fees: "(frais de ports exclus, calculés à l'écran suivant)"
+        delivery_is_billing: "Utiliser l'adresse de livraison comme adresse de facturation"
+        go_to_paiement: "Passer au paiement"
+        general_sales_conditions: "J'ai lu les conditions générales de ventes et j'y adhère sans réserve"
+        delivery_address: "Adresse de livraison"
+        billing_address: "Addresse de facturation"
+        customer_note: "Souhaitez-vous nous addresser un message?"
+        recipient_message: "C'est un cadeau? Ecrivez un mot que nous rajouterons au colis"
+        from_discount: "de reduction"
+      add_coupon:
+        coupon_name: "Nom du bon de réduction"
+        add_coupon: "Ajouter"
+  devise:
+    sessions:
+      new:
+        title: "Compte client"
+        sign_up: "Créer votre compte"
+        already_sign_up: "Déjà enregistré?"
+        sign_in: "Se connecter"
+        subscribe_to_newsletter: "S'inscrire à la newsletter"
   shared:
     navbar:
       about: "A propos"
@@ -29,6 +87,9 @@ fr:
         display_entries:
           one: "<b>%{count}</b> %{entry_name}"
           other: "<b>tous les %{count}</b> %{entry_name}"
+    submit:
+      line_item:
+        create: "Ajouter au panier"
   views:
     pagination:
       first: "&laquo; Premier"
@@ -36,3 +97,15 @@ fr:
       next: Suivant &rsaquo;
       previous: "&lsaquo; Précédent"
       truncate: "&hellip;"
+  active_admin:
+    resource:
+      show:
+        remove_images: "Supprimer les images liées au produit"
+  flash:
+    line_items:
+      create:
+        notice: "Produit bien ajouté au panier"
+    coupon_to_order_additions:
+      create:
+        alert: "Bon de réduction incorrect"
+        notice: "Le bon de réduction a été ajouté à votre commande"

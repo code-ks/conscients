@@ -1,0 +1,18 @@
+<h1 class="my-4"><%= t('.title').upcase %></h1>
+<h2 class="my-4"><%= t('.email') %></h2>
+<p class="my-4">
+  <% if cart.email? %>
+    <%= t('.go_to_postal_delivery') %>
+    <%= link_to new_delivery_path(delivery_type: "postal") do %>
+      <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
+    <% end %>
+  <% else %>
+    <%= t('.description_postal_delivery') %>
+    <% if cart.tree_only? %>
+      <%= link_to new_delivery_path(delivery_type: "email") do %>
+        <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_email_delivery_link') %></span>
+      <% end %>
+    <% end %>
+  <% end %>
+</p>
+<p class="my-4"><span class="font-weight-bold"><%= t('.description') %></span><span><%= t('.description_details') %></span></p>

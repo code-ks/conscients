@@ -4,8 +4,8 @@
 #
 # Table name: stock_entries
 #
-#  id             :integer          not null, primary key
-#  product_sku_id :integer
+#  id             :bigint(8)        not null, primary key
+#  product_sku_id :bigint(8)
 #  quantity       :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
