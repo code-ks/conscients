@@ -4,7 +4,7 @@ class Checkout::DeliveriesController < ApplicationController
   before_action :authenticate_client!
 
   def new
-    @cart.instance_eval(params[:delivery_type] + '!')
+    @cart.to_correct_delivery_type(params[:delivery_type])
     @delivery_address =
       @cart.email? ? @cart.set_email_delivery_address : @cart.set_postal_delivery_address
     @billing_address = @cart.set_billing_address

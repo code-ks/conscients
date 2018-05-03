@@ -110,6 +110,14 @@ class Order < ApplicationRecord
     billing_address || client.postal_address || build_billing_address
   end
 
+  def to_correct_delivery_type(params)
+    if params == 'postal'
+      postal!
+    elsif params == 'email'
+      email!
+    end
+  end
+
   private
 
   def eligible_to_coupon
