@@ -60,6 +60,7 @@ en:
         billing_address: "Billing address"
         customer_note: "Would you like to send us a message?"
         recipient_message: "Is it a gift? Write a note that we will add to the package"
+        from_discount: "from discount"
       add_coupon:
         coupon_name: "Coupon name"
         add_coupon: "Add"

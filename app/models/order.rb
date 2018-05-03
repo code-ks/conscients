@@ -53,6 +53,14 @@ class Order < ApplicationRecord
   validates :aasm_state, presence: true, inclusion: { in: aasm_states.keys }
   validate :eligible_to_coupon
 
+  delegate :client, to: :coupon, prefix: true
+  delegate :product, to: :coupon, prefix: true
+  delegate :amount_min_order, to: :coupon, prefix: true
+  delegate :valid_from, to: :coupon, prefix: true
+  delegate :valid_until, to: :coupon, prefix: true
+  delegate :amount, to: :coupon, prefix: true
+  delegate :percentage, to: :coupon, prefix: true
+
   include AASM
   aasm enum: true do
     state :in_cart, initial: true
@@ -62,6 +70,14 @@ class Order < ApplicationRecord
 
   def ttc_price
     line_items.sum(&:ttc_price)
+  end
+
+  def coupon_discount
+    coupon_percentage ? ttc_price * coupon_percentage : coupon_amount
+  end
+
+  def ttc_price_with_coupon
+    ttc_price - coupon_discount
   end
 
   def current_delivery_fees; end
@@ -94,10 +110,6 @@ class Order < ApplicationRecord
     billing_address || client.postal_address || build_billing_address
   end
 
-  def coupon_discount
-    return false unless coupon
-  end
-
   private
 
   def eligible_to_coupon
@@ -107,18 +119,18 @@ class Order < ApplicationRecord
   end
 
   def not_coupon_client
-    coupon.client &&  coupon.client != Current&.visit&.client
+    coupon_client &&  coupon_client != Current&.visit&.client
   end
 
   def no_eligible_product_in_cart
-    coupon.product && !products.include?(coupon.product)
+    coupon_product && !products.include?(coupon_product)
   end
 
   def order_too_small_for_coupon
-    ttc_price < coupon.amount_min_order
+    ttc_price < coupon_amount_min_order
   end
 
   def coupon_not_valid
-    !Time.zone.today.between?(coupon.valid_from, coupon.valid_until)
+    !Time.zone.today.between?(coupon_valid_from, coupon_valid_until)
   end
 end

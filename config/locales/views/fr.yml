@@ -60,6 +60,7 @@ fr:
         billing_address: "Addresse de facturation"
         customer_note: "Souhaitez-vous nous addresser un message?"
         recipient_message: "C'est un cadeau? Ecrivez un mot que nous rajouterons au colis"
+        from_discount: "de reduction"
       add_coupon:
         coupon_name: "Nom du bon de réduction"
         add_coupon: "Ajouter"
