@@ -7,6 +7,7 @@
         <th scope="col"></th>
         <th scope="col"><%= t('.delivery') %></th>
         <th scope="col"><%= t('.total_price') %></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -28,6 +29,11 @@
             <% end %>
           </td>
           <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
+          <td>
+            <%= link_to line_item_path(line_item), method: :delete do %>
+              <%= fa_icon "times", class: "c-pointer mr-3" %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
