@@ -26,6 +26,7 @@ fr:
     carts:
       show:
         cart: "Panier"
+        cart_empty: "Panier vide"
         selection: "Sélection"
         quantity: "Quantité"
         personalized_product: "Produit personnalisé"
@@ -77,6 +78,8 @@ fr:
         delivery: "Adresse de livraison"
       payment_buttons:
         select_payment_method: "Sélectionner le mode de paiement"
+      stripe_button:
+        card: "CB"
       line_items_table:
         selection: "Sélection"
         quantity: "Quantité"

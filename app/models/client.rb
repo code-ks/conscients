@@ -23,6 +23,7 @@
 #  updated_at             :datetime         not null
 #  provider               :string
 #  uid                    :string
+#  stripe_customer_id     :string
 #
 
 class Client < ApplicationRecord

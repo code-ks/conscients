@@ -44,6 +44,7 @@ gem 'responders', '~> 2.4'
 
 gem 'aasm', '~> 4.12'
 gem 'money-rails', '~> 1.11'
+gem 'stripe', '~> 3.13'
 
 gem 'kaminari', '~> 1.1'
 gem 'pg_search', '~> 2.1'

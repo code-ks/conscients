@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_30_125420) do
+ActiveRecord::Schema.define(version: 2018_05_04_092956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(version: 2018_04_30_125420) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
+    t.string "stripe_customer_id"
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
   end
@@ -256,6 +257,7 @@ ActiveRecord::Schema.define(version: 2018_04_30_125420) do
     t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "stripe_payment_details"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
     t.index ["billing_address_id"], name: "index_orders_on_billing_address_id"
     t.index ["client_id"], name: "index_orders_on_client_id"

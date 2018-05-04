@@ -26,6 +26,7 @@ en:
     carts:
       show:
         cart: "Cart"
+        cart_empty: "Empty cart"
         selection: "Selection"
         quantity: "Quantity"
         personalized_product: "Personalized product"
@@ -85,6 +86,8 @@ en:
         delivery: "Delivery address"
       payment_buttons:
         select_payment_method: "Select your payment method"
+      stripe_button:
+        card: "Card"
       price:
         sub_total: "Sub Total"
         total_price: "Total price"

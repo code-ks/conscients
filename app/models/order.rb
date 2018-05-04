@@ -20,6 +20,7 @@
 #  client_id              :bigint(8)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  stripe_payment_details :jsonb
 #
 # Foreign Keys
 #
@@ -40,8 +41,9 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :line_items
 
-  monetize :total_price_cents
-  monetize :delivery_fees_cents
+  monetize :total_price_cents, :ttc_price_cents, :delivery_fees_cents,
+           :ttc_price_all_included_cents, :coupon_discount_cents, :ttc_price_with_coupon_cents,
+           :current_delivery_fees_cents, :main_delivery_fees_cents, :printing_fees_cents
 
   enum delivery_method: { postal: 0, email: 1 }
   enum payment_method: { stripe: 0, paypal: 1, bank_transfer: 2 }
@@ -53,9 +55,9 @@ class Order < ApplicationRecord
   validates :aasm_state, presence: true, inclusion: { in: aasm_states.keys }
   validate :eligible_to_coupon
 
-  delegate :client, :product, :amount_min_order, :valid_from, :valid_until, :amount, :percentage,
-           to: :coupon, prefix: true
-  delegate :country, to: :delivery_address, prefix: true
+  delegate :client, :product, :amount_min_order, :valid_from, :valid_until,
+           :amount_cents, :percentage, to: :coupon, prefix: true
+  delegate :email, :stripe_customer_id, to: :client, prefix: true
 
   include AASM
   aasm enum: true do
@@ -64,51 +66,51 @@ class Order < ApplicationRecord
     state :fullfilled
   end
 
-  def ttc_price
-    line_items.sum(&:ttc_price)
+  def ttc_price_cents
+    line_items.sum(&:ttc_price_cents)
   end
 
-  def coupon_discount
+  def coupon_discount_cents
     return 0 unless coupon
-    coupon_percentage ? ttc_price * coupon_percentage : coupon_amount
+    coupon_percentage ? ttc_price_cents * coupon_percentage : coupon_amount_cents
   end
 
-  def ttc_price_with_coupon
-    ttc_price - coupon_discount
+  def ttc_price_with_coupon_cents
+    ttc_price_cents - coupon_discount_cents
   end
 
-  def current_delivery_fees
+  def current_delivery_fees_cents
     return 0 if email?
-    main_delivery_fees + printing_fees
+    main_delivery_fees_cents + printing_fees_cents
   end
 
-  def main_delivery_fees
-    DELIVERY_FEES.select { |weight| weight.member?(total_weight) }.values.dig(0, symbol_region)
+  def main_delivery_fees_cents
+    DELIVERY_FEES.select { |weight| weight.member?(total_weight) }.values.dig(0, symbol_region) || 0
   end
 
-  def printing_fees
+  def printing_fees_cents
     return 0 if email?
-    line_items.inject(Money.new(0, 'EUR')) do |sum, line_item|
+    line_items.inject(0) do |sum, line_item|
       line_item.certificable? ? sum + PRINTING_FEES * line_item.quantity : sum
     end
   end
 
   def total_weight
-    line_items.sum(&:product_weight)
+    line_items.includes(:product_sku).sum(&:product_weight) || 0
   end
 
   def symbol_region
-    if delivery_address_country == 'FR'
+    if delivery_address&.country == ('FR' || nil)
       :france
-    elsif EUROPE.include?(delivery_address_country)
+    elsif EUROPE.include?(delivery_address&.country)
       :europe
     else
       :world
     end
   end
 
-  def ttc_price_all_included
-    ttc_price_with_coupon + current_delivery_fees
+  def ttc_price_all_included_cents
+    ttc_price_with_coupon_cents + current_delivery_fees_cents
   end
 
   def last_added
