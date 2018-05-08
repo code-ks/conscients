@@ -1,8 +1,17 @@
+//Conscients variables sass
+@import "config/variables";
+
+//External librairies
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import "config/_bootstrap_variables";
 @import "font-awesome";
 
+//Conscients css
 @import "layouts/index";
 @import "utilities/index";
 @import "components/index";
 @import "pages/index";
+
+body {
+  font-family: "Raleway", "Open Sans", "sans-serif";
+}
