@@ -81,6 +81,8 @@ fr:
       my_cart: "Mon panier"
       search: "Rechercher"
   helpers:
+    placeholder:
+      search: "Ma recherche..."
     page_entries_info:
       more_pages:
         display_entries: "%{entry_name}  <b>%{first} - %{last}</b> sur <b>%{total}</b> au total"
