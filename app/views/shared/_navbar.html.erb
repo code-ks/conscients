@@ -1,6 +1,6 @@
 <!-- navbar displayed only on medium and large devices -->
 <nav class="navbar bg-white d-none d-md-block">
-  <div class="d-flex justify-content-between align-items-top menu-small-font">
+  <div class="d-flex justify-content-between align-items-top navbar-small-font">
     <div>
       <div><%= locale_links %></div>
       <div><%= link_to t('.about'), root_path, class: 'mr-2' %></%= link_to t('.participate') %></div>
@@ -19,7 +19,7 @@
     <%= image_tag "logo.jpg", height: 50, class: "d-md-none show-on-scroll" %>
   <% end %>
   <div class="d-none d-md-block">
-    <div class="d-flex align-items-center menu-big-font">
+    <div class="d-flex align-items-center">
       <% Category.main.each do |category| %>
         <div class="mx-3"><%= link_to category.name, category_products_path(category) %></div>
       <% end %>

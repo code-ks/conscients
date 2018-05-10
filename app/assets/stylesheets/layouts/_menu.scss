@@ -1,8 +1,46 @@
+
 .top-menu {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  padding: 8px 16px;
 }
+
+.top-menu-right {
+  order: 3;
+  background-color: $conscients-light-green;
+  // display: flex;
+  justify-content: flex-end;
+  width: 20%;
+}
+
+.top-menu-item {
+}
+.top-menu-left {
+  order: 1;
+  background-color: $conscients-yellow;
+  width: 20%;
+}
+
+.top-menu-center {
+  order: 2;
+  background-color: $conscients-red;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", "sans-serif";
+  text-transform: Uppercase;
+  color: $conscients-grey;
+}
+
+
 
 .top-menu-cat {
   position: absolute;
   left: 50%;
 }
+
+
