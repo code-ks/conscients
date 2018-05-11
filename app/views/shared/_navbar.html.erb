@@ -1,13 +1,13 @@
 
 <!-- navbar displayed only on medium and large devices -->
-<nav class="navbar bg-white d-none d-md-block">
-  <div class="d-flex justify-content-between align-items-top navbar-small-font">
+<nav class="navbar bg-white d-none d-md-block side-padding coral-link">
+  <div class="d-flex justify-content-between align-items-top small-title-min">
     <div>
       <div><%= locale_links %></div>
       <div><%= link_to t('.about'), root_path, class: 'mr-2' %></%= link_to t('.participate') %></div>
     </div>
     <%= link_to root_path do %>
-      <%= image_tag "logo.jpg" %>
+      <%= image_tag "logo-conscients-bebe-bio.png", class: "logo-padding" %>
     <% end %>
     <div><%= link_to t('.my_account'), root_path %></div>
   </div>
@@ -32,13 +32,13 @@
   </div>
 
 <!-- ***MENU*** -->
-  <div class= "top-menu sticky-top">
+  <div class= "top-menu sticky-top big-title">
     <div class="top-menu-left">
-      <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.jpg", height: 50, class: "d-md-none show-on-scroll" %>
+      <%= link_to root_path, class: "navbar-brand pt-0" do %>
+      <%= image_tag "logo-conscients-bebe-bio.png", height: 40, class: "d-md-none show-on-scroll" %>
     <% end %>
     </div>
-    <div class="top-menu-center d-none d-md-flex">
+    <div class="top-menu-center coral-link d-none d-md-flex">
       <% Category.main.each do |category| %>
         <div class="mx-3"><%= link_to category.name, category_products_path(category) %></div>
         <% end %>

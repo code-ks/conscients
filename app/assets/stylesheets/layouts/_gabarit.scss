@@ -1,0 +1,38 @@
+// **** FONTS ***
+  .big-title {
+    font-family: "Roboto", "sans-serif";
+    text-transform: Uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 0.8rem;
+    color: $conscients-grey;
+  }
+
+  .small-title-min {
+    font-family: "Roboto", "sans-serif";
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    color: $conscients-grey;
+  }
+
+
+// **** PADDING ***
+.logo-padding {
+  padding: 16px 0px 24px 0px;
+}
+
+.side-padding {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+// **** LINKS COLORS ****
+  .coral-link {
+    a {
+      &:hover {
+        color: $conscients-coral;
+      }
+    }
+  }
+
+
+

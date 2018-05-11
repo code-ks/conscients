@@ -5,8 +5,10 @@
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+  border-bottom: 0.5px dotted $conscients-very-light-grey;
   background-color: white;
-  padding: 8px 16px;
+  color: $conscients-light-grey;
+  padding: 8px 1.5rem;
 }
 
 .top-menu-left {
@@ -17,11 +19,7 @@
   flex: 1;
   align-items: center;
   justify-content: center;
-  font-family: "arial","Open Sans", "sans-serif";
-  text-transform: Uppercase;
   color: $conscients-grey;
-  letter-spacing: 0.15em;
-  font-size: 0.75rem;
 }
 
 .top-menu-right {
