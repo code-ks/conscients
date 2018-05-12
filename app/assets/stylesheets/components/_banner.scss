@@ -38,8 +38,12 @@
 // identique a small title
 
 .banner-link {
-  text-transform: uppercase;
   font-family: "Frank Ruhl Libre", "serif";
+  // font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  text-decoration: underline;
+  text-underline-position: under;
 }
 
 .banner p {
