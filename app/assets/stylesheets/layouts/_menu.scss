@@ -1,14 +1,29 @@
+.navbar-top-font {
+  font-family: "Frank Ruhl Libre", "serif";
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  color: $conscients-grey;
+}
+
+.menu-wrapper {
+  background-color: white;
+  padding: 8px 0px;
+  border-bottom: 0.5px dotted $conscients-very-light-grey;
+}
 
 .top-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  margin: 0 auto;
+  width: $container-width;
   box-sizing: border-box;
-  border-bottom: 0.5px dotted $conscients-very-light-grey;
   background-color: white;
-  color: $conscients-light-grey;
-  padding: 8px 1.5rem;
+  font-family: "Roboto", "sans-serif";
+  text-transform: Uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.8rem;
+  color: $conscients-grey;
 }
 
 .top-menu-left {

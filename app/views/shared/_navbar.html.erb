@@ -1,7 +1,7 @@
 
 <!-- navbar displayed only on medium and large devices -->
-<nav class="navbar bg-white d-none d-md-block side-padding coral-link">
-  <div class="d-flex justify-content-between align-items-top small-title-min">
+<nav class="navbar bg-white d-none d-md-block coral-link">
+  <div class="d-flex justify-content-between align-items-top navbar-top-font">
     <div>
       <div><%= locale_links %></div>
       <div><%= link_to t('.about'), root_path, class: 'mr-2' %></%= link_to t('.participate') %></div>
@@ -32,7 +32,8 @@
   </div>
 
 <!-- ***MENU*** -->
-  <div class= "top-menu sticky-top big-title">
+  <div class="menu-wrapper sticky-top">
+  <div class= "top-menu">
     <div class="top-menu-left">
       <%= link_to root_path, class: "navbar-brand pt-0" do %>
       <%= image_tag "logo-conscients-bebe-bio.png", height: 40, class: "d-md-none show-on-scroll" %>
@@ -70,3 +71,4 @@
       </div>
     </div>
   </div>
+</div>
