@@ -1,16 +1,57 @@
 // Specific CSS for your home-page
 // FONTS
 .home-font {
-  h1{
-
-  }
   h2{
-
+    font-family: "Frank Ruhl Libre", "serif";
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    color: $conscients-grey;
+    text-align: center;
   }
   h3{
-
+    font-family: "Roboto", "sans-serif";
+    text-transform: Uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    color: conscients-grey;
   }
   p{
 
   }
+}
+
+.occasions-container{
+  position: relative;
+  height: 450px;
+  width: 95vw;
+  margin: 0 auto;
+  overflow: visible;
+}
+.occasions-img-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 450px;
+  width: 70%;
+  background-size: cover !important;
+  background-position: center;
+  text-align: left;
+  background-color: purple;
+}
+.occasions-card{
+  height: 100%;
+  width: 100%;
+  border: 1px solid $conscients-light-grey;
+  background-color: white;
+  padding: 8px;
+  text-align: center;
+    @media (min-width: $screen-sm) {
+      /* On screens that are equal to screen md or more ie desktop*/
+      // width: 30vw;
+      height: 400px;
+      width: 40%;
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+    }
 }

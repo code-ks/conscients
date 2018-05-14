@@ -1,7 +1,8 @@
 .tabs {
   display: flex;
   justify-content: center;
-  padding: 10px 10px 0 10px;
+  color: $conscients-light-grey;
+  // padding: 10px 10px 0 10px;
 }
 // .tabs a {
 // }
@@ -23,5 +24,8 @@
 }
 
 .tab.active {
-  border-bottom: 1px solid red;
+  color: $conscients-grey;
+  // border-bottom: 1px solid $conscients-grey;
+  text-decoration: underline;
+  text-underline-position: under;
 }
