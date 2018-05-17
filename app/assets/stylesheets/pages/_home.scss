@@ -7,6 +7,7 @@
     letter-spacing: 0.1rem;
     color: $conscients-grey;
     text-align: center;
+    text-transform: none;
   }
   h3{
     font-family: "Roboto", "sans-serif";
@@ -72,7 +73,11 @@
     padding: 20px;
   }
   .occasions-card-img {
-    background: linear-gradient(to right, rgb(217, 167, 199), rgb(255, 252, 220));
-    height: 100px;
+    height: 50%;
+    // height: 250px;
+    // width: 250px;
+    // margin-top: 30px;
+    // margin-bottom: 30px;
+    // background-size: cover !important;
   }
 
