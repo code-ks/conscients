@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+Rails.application.routes.default_url_options[:host] = 'conscients.com'
+
 # Production configs for the app
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json

@@ -20,7 +20,7 @@
 #  client_id              :bigint(8)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  stripe_payment_details :jsonb
+#  payment_details        :jsonb
 #
 # Foreign Keys
 #

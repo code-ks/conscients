@@ -4,7 +4,7 @@
       <%= link_to t('.cart'), cart_path(cart) %>
     </li>
     <li class="breadcrumb-item">
-      <%= link_to t('.delivery'), new_delivery_path %>
+      <%= link_to t('.delivery'), new_delivery_path(delivery_type: @cart.delivery_method) %>
     </li>
   </ol>
 </nav>

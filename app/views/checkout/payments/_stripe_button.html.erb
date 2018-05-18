@@ -2,6 +2,7 @@
   <script src="https://checkout.stripe.com/checkout.js"></script>
 
   <%= hidden_field_tag 'stripe_token' %>
+  <%= hidden_field_tag 'payment_method', :stripe %>
 
   <button id="stripe-payment-button" class="btn btn-dark btn-lg"><%= t('.card') %></button>
 

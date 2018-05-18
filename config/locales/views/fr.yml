@@ -37,6 +37,7 @@ fr:
     deliveries:
       top_description:
         title: "Livraison"
+        address: "Adresse pour l'envoi du certificat"
         email: "Email pour l'envoi du certificat"
         description: "Vous pouvez renseigner l'email de la personne à qui envoyer le certificat dans le récupitulatif à droite."
         description_details: "(Vous recevrez une copie de l'email pour télécharger le certificat)"
@@ -138,3 +139,7 @@ fr:
       create:
         alert: "Bon de réduction incorrect"
         notice: "Le bon de réduction a été ajouté à votre commande"
+    payments:
+      create:
+        alert: "Un problème est survenu lors de votre paiement"
+        notice: "Votre commande a été validée. Nous vous remercions"

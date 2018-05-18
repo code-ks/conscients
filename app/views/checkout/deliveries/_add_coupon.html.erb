@@ -1,4 +1,6 @@
-<%= form_with url: coupon_to_order_additions_path, method: :post, local: true, class: "form-inline my-2 mx-3 my-lg-0" do |i| %>
-  <%= i.text_field :name, class: "form-control mr-sm-2", placeholder: t('.coupon_name') %>
-  <%= i.submit t('.add_coupon'), class: "btn btn-orange"%>
-<% end %>
+<div class="col-md-4 d-flex flex-column justify-content-end align-items-end">
+  <%= form_with url: coupon_to_order_additions_path, method: :post, local: true, class: "form-inline my-2 mx-3 my-lg-0" do |i| %>
+    <%= i.text_field :name, class: "form-control mr-sm-2", placeholder: t('.coupon_name') %>
+    <%= i.submit t('.add_coupon'), class: "btn btn-orange"%>
+  <% end %>
+</div>

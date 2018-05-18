@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /en/ do
     root to: 'pages#home'
+    get ':id', to: 'high_voltage/pages#show', as: :page, format: false
 
     devise_for :clients, skip: :omniauth_callbacks
 
@@ -27,9 +28,10 @@ Rails.application.routes.draw do
     scope module: :checkout do
       resources :carts, only: :show
       resources :deliveries, only: %i[new create]
-      resources :payments, only: %i[new create]
+      resources :payments, only: %i[new create] do
+        get 'paypal_success', on: :collection
+      end
       resources :coupon_to_order_additions, only: :create
     end
-    get ':id', to: 'high_voltage/pages#show', as: :page, format: false
   end
 end

@@ -3,3 +3,5 @@ en:
     product_management: "Product Management"
     order_management: "Order Management"
     client_management: "Client Management"
+  paypal:
+    delivery_fees: "Delivery fees"

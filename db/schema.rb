@@ -257,7 +257,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_092956) do
     t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.jsonb "stripe_payment_details"
+    t.jsonb "payment_details"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
     t.index ["billing_address_id"], name: "index_orders_on_billing_address_id"
     t.index ["client_id"], name: "index_orders_on_client_id"

@@ -37,6 +37,7 @@ en:
     deliveries:
       top_description:
         title: "Delivery"
+        address: "Address for the delivery of the certificate"
         email: "Email for the delivery of the certificate"
         description: "You can inquire the email of the person to whom send the certificate in the sumarry on the right."
         description_details: "(You will receive a copie of the email to download the certificate)"

@@ -4,8 +4,8 @@
 
     <%= render 'stripe_button', cart: cart %>
 
-    <%= render 'paypal_button' %>
-    <%= link_to "test1", root_path, class: "btn btn-orange" %>
+    <%= link_to "Paypal", payments_path(payment_method: "paypal"), method: :post,  class: "btn btn-lg btn-dark" %>
+
     <%= link_to "test1", root_path, class: "btn btn-orange" %>
   </div>
 </div>

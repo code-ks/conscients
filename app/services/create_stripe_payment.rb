@@ -8,8 +8,8 @@ class CreateStripePayment
 
   def perform
     create_customer
-    charge = create_charge
-    update_order(charge)
+    @charge = create_charge
+    update_order
   end
 
   private
@@ -35,8 +35,9 @@ class CreateStripePayment
     )
   end
 
-  def update_order(charge)
+  def update_order
     @cart.stripe!
-    @cart.update(stripe_payment_details: charge.to_json, total_price: @cart.ttc_price_all_included)
+    @cart.update(payment_details: @charge.to_json, total_price: @cart.ttc_price_all_included)
+    @cart.paid!
   end
 end
