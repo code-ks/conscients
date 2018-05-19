@@ -28,8 +28,13 @@ Rails.application.routes.draw do
     scope module: :checkout do
       resources :carts, only: :show
       resources :deliveries, only: %i[new create]
-      resources :payments, only: %i[new create] do
-        get 'paypal_success', on: :collection
+      resources :payments, only: %i[new] do
+        collection do
+          post 'create_stripe'
+          post 'create_paypal'
+          post 'create_bank_transfer'
+          get 'paypal_success'
+        end
       end
       resources :coupon_to_order_additions, only: :create
     end

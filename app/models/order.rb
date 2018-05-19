@@ -64,6 +64,10 @@ class Order < ApplicationRecord
     state :in_cart, initial: true
     state :paid
     state :fullfilled
+
+    event :pay, after: :notify_somebody do
+      transitions from: :in_cart, to: :paid
+    end
   end
 
   def ttc_price_cents

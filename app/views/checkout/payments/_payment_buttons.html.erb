@@ -4,8 +4,8 @@
 
     <%= render 'stripe_button', cart: cart %>
 
-    <%= link_to "Paypal", payments_path(payment_method: "paypal"), method: :post,  class: "btn btn-lg btn-dark" %>
+    <%= link_to "Paypal", create_paypal_payments_path, method: :post,  class: "btn btn-lg btn-dark" %>
 
-    <%= link_to "test1", root_path, class: "btn btn-orange" %>
+    <%= link_to t('.bank_transfer'), create_bank_transfer_payments_path, method: :post, class: "btn btn-lg btn-dark" %>
   </div>
 </div>

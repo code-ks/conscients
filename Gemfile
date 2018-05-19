@@ -32,6 +32,7 @@ gem 'devise', '~> 4.4'
 gem 'devise-i18n', '~> 1.6'
 gem 'gibbon', '~> 3.2'
 gem 'omniauth-facebook', '~> 5.0'
+gem 'postmark-rails', '~> 0.16'
 
 gem 'activeadmin', '~> 1.2'
 gem 'arctic_admin', '~> 1.4'
@@ -60,6 +61,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener', '~> 1.6'
+  gem 'letter_opener_web', '~> 1.3'
+
   gem 'listen', '~> 3.1'
   gem 'spring', '~> 2.0'
   gem 'spring-watcher-listen', '~> 2.0'

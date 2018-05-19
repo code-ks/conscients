@@ -79,6 +79,7 @@ fr:
         delivery: "Adresse de livraison"
       payment_buttons:
         select_payment_method: "Sélectionner le mode de paiement"
+        bank_transfer: "Virement bancaire"
       stripe_button:
         card: "CB"
       line_items_table:
@@ -94,6 +95,12 @@ fr:
         total_price: "Prix total"
         from_discount: "de reduction"
         delivery_fees: "Frais de livraison"
+  client_mailer:
+    bank_account_details:
+      subject: "Validez votre commande"
+      greatings: "Bonjour"
+      core: "Pour confirmer votre commande, merci d'effectuer un virement de %{amount} au RIB ci-joint. Votre commande sera confirmée et expédiée dès que le virement sera reçu."
+      thanks: "Merci beaucoup"
   devise:
     sessions:
       new:
@@ -143,3 +150,5 @@ fr:
       create:
         alert: "Un problème est survenu lors de votre paiement"
         notice: "Votre commande a été validée. Nous vous remercions"
+      create_bank_transfer:
+        notice: "Un email vous a été envoyé avec les instructions pour réaliser le virement"

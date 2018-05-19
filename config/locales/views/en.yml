@@ -87,6 +87,7 @@ en:
         delivery: "Delivery address"
       payment_buttons:
         select_payment_method: "Select your payment method"
+        bank_transfer: "Bank Transfer"
       stripe_button:
         card: "Card"
       price:
@@ -94,6 +95,12 @@ en:
         total_price: "Total price"
         from_discount: "from discount"
         delivery_fees: "Delivery fees"
+  client_mailer:
+    bank_account_details:
+      subject: "Please confirm your order"
+      greatings: "Hello"
+      core: "To confirm your order, please send a bank transfer of %{amount} to the joint bank account. Your order will be confirmed and shipped as soon as we receive the transfer"
+      thanks: "Thanks a lot"
   devise:
     sessions:
       new:
@@ -121,3 +128,9 @@ en:
       create:
         alert: "Coupon incorrect"
         notice: "The coupon has been added to your order"
+    payments:
+      create:
+        alert: "A problem occured during your payment"
+        notice: "Your order has been confirmed. Thank you!"
+      create_bank_transfer:
+        notice: "You will receive an email with instruction for the bank transfer"
