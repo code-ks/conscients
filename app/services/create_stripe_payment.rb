@@ -38,6 +38,6 @@ class CreateStripePayment
   def update_order
     @cart.stripe!
     @cart.update(payment_details: @charge.to_json, total_price: @cart.ttc_price_all_included)
-    @cart.paid!
+    @cart.pay
   end
 end

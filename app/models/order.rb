@@ -40,6 +40,7 @@ class Order < ApplicationRecord
   has_many :products, through: :product_skus
 
   accepts_nested_attributes_for :line_items
+  attr_accessor :active_admin_requested_event
 
   monetize :total_price_cents, :ttc_price_cents, :delivery_fees_cents,
            :ttc_price_all_included_cents, :coupon_discount_cents, :ttc_price_with_coupon_cents,
@@ -65,10 +66,12 @@ class Order < ApplicationRecord
     state :paid
     state :fullfilled
 
-    event :pay, after: :notify_somebody do
+    event :pay, after: :process_order do
       transitions from: :in_cart, to: :paid
     end
   end
+
+  def process_order; end
 
   def ttc_price_cents
     line_items.sum(&:ttc_price_cents)

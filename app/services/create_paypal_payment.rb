@@ -19,7 +19,7 @@ class CreatePaypalPayment
     raise PayPalError unless execute_paypal_payment
     @cart.paypal!
     @cart.update(total_price: @cart.ttc_price_all_included)
-    @cart.paid!
+    @cart.pay
   end
 
   private
