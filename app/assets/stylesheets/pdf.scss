@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+span {
+  display: block;
+}
+
+th {
+  height: 50px;
+}
+
+td {
+  padding: 15px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+}

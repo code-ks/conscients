@@ -5,3 +5,4 @@ fr:
     client_management: "Gestion des clients"
   paypal:
     delivery_fees: "Frais de livraison"
+    total_price: "Prix total"

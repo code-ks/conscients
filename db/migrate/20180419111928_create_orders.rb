@@ -11,6 +11,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.integer :payment_method, null: false, default: 0
       t.text :recipient_message
       t.text :customer_note
+      t.datetime :payment_date
       t.references :client, foreign_key: true
 
       t.timestamps

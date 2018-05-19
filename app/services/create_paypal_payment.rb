@@ -18,7 +18,6 @@ class CreatePaypalPayment
   def perform_execution
     raise PayPalError unless execute_paypal_payment
     @cart.paypal!
-    @cart.update(total_price: @cart.ttc_price_all_included)
     @cart.pay
   end
 
@@ -30,23 +29,25 @@ class CreatePaypalPayment
       payer: { payment_method: 'paypal' },
       redirect_urls: { return_url: paypal_success_payments_url, cancel_url: new_payment_url },
       transactions: [{
-        item_list: { items: array_items_list },
+        item_list: { items: [{ name: I18n.t('paypal.total_price'),
+                    price: @cart.ttc_price_all_included.dollars, currency: 'EUR', quantity: 1 }] },
         amount: { total: @cart.ttc_price_all_included.dollars, currency: 'EUR' }
       }]
     )
   end
 
-  def array_items_list
-    arr = [{ name: I18n.t('paypal.delivery_fees'), price: @cart.current_delivery_fees.dollars,
-             currency: 'EUR', quantity: 1 }]
-    @cart.line_items.each do |line_item|
-      arr << {
-        name: line_item.product_name, price: line_item.ttc_price.dollars,
-        currency: 'EUR', quantity: line_item.quantity
-      }
-    end
-    arr
-  end
+  # Problem with coupons (sum amount does not add up to total anymore --> error)
+  # def array_items_list
+  #   arr = [{ name: I18n.t('paypal.delivery_fees'), price: @cart.current_delivery_fees.dollars,
+  #            currency: 'EUR', quantity: 1 }]
+  #   @cart.line_items.each do |line_item|
+  #     arr << {
+  #       name: line_item.product_name, price: line_item.ttc_price.dollars,
+  #       currency: 'EUR', quantity: line_item.quantity
+  #     }
+  #   end
+  #   arr
+  # end
 
   def return_redirect_url
     @payment.links.find { |v| v.method == 'REDIRECT' }.href

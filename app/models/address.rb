@@ -12,7 +12,7 @@
 #  address_2    :string
 #  city         :string
 #  zip_code     :string
-#  country      :string           default("France")
+#  country      :string           default("FR")
 #  title        :string
 #  address_type :integer          default("postal"), not null
 #  email        :string

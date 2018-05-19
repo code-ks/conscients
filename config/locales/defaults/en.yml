@@ -5,3 +5,4 @@ en:
     client_management: "Client Management"
   paypal:
     delivery_fees: "Delivery fees"
+    total_price: "Total price"

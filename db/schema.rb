@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_092956) do
     t.string "address_2"
     t.string "city"
     t.string "zip_code"
-    t.string "country", default: "France"
+    t.string "country", default: "FR"
     t.string "title"
     t.integer "address_type", default: 0, null: false
     t.string "email"
@@ -254,6 +254,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_092956) do
     t.integer "payment_method", default: 0, null: false
     t.text "recipient_message"
     t.text "customer_note"
+    t.datetime "payment_date"
     t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

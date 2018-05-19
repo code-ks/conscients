@@ -17,6 +17,7 @@
 #  payment_method         :integer          default("stripe"), not null
 #  recipient_message      :text
 #  customer_note          :text
+#  payment_date           :datetime
 #  client_id              :bigint(8)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -38,6 +39,7 @@ class Order < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_many :product_skus, through: :line_items
   has_many :products, through: :product_skus
+  has_one_attached :invoice
 
   accepts_nested_attributes_for :line_items
   attr_accessor :active_admin_requested_event
@@ -70,8 +72,6 @@ class Order < ApplicationRecord
       transitions from: :in_cart, to: :paid
     end
   end
-
-  def process_order; end
 
   def ttc_price_cents
     line_items.sum(&:ttc_price_cents)
@@ -157,6 +157,10 @@ class Order < ApplicationRecord
   end
 
   private
+
+  def process_order
+    ProcessOrder.new(self).perform
+  end
 
   def eligible_to_coupon
     return unless coupon &&

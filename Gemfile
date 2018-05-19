@@ -50,6 +50,8 @@ gem 'stripe', '~> 3.13'
 
 gem 'kaminari', '~> 1.1'
 gem 'pg_search', '~> 2.1'
+gem 'wicked_pdf', '~> 1.1'
+gem 'wkhtmltopdf-binary', '~> 0.12'
 
 gem 'country_select', '~> 3.1'
 gem 'font-awesome-rails', git: 'git@github.com:bokmann/font-awesome-rails.git'
