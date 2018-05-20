@@ -1,8 +1,11 @@
 en:
-  i18n:
+  active_admin:
     product_management: "Product Management"
     order_management: "Order Management"
     client_management: "Client Management"
   paypal:
     delivery_fees: "Delivery fees"
     total_price: "Total price"
+  time:
+    formats:
+      long_no_time: "%B %d, %Y"

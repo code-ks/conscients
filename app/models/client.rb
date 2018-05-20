@@ -64,7 +64,7 @@ class Client < ApplicationRecord
   def subscribe_to_mailing_list
     return unless Rails.env.production?
     list_id = I18n.locale == :fr ? '53e2a5b32b' : 'fde901016c'
-    SubscribeClientToMailingList.perform_later(list_id, id)
+    SubscribeClientToMailingListJob.perform_later(list_id, id)
   end
 
   def lower_case_md5_hashed_email

@@ -59,7 +59,7 @@ class Order < ApplicationRecord
   validate :eligible_to_coupon
 
   delegate :client, :product, :amount_min_order, :valid_from, :valid_until,
-           :amount_cents, :percentage, to: :coupon, prefix: true
+           :amount_cents, :percentage, :list_of_clients, to: :coupon, prefix: true
   delegate :email, :stripe_customer_id, to: :client, prefix: true
 
   include AASM
@@ -159,21 +159,25 @@ class Order < ApplicationRecord
   private
 
   def process_order
-    ProcessOrder.new(self).perform
+    ProcessOrderJob.perform_later(id)
   end
 
   def eligible_to_coupon
     return unless coupon &&
-                  (not_coupon_client || no_eligible_product_in_cart ||
-                    order_too_small_for_coupon || coupon_not_valid)
+                  (not_coupon_client || no_eligible_product_in_cart || coupon_used_by_client
+                   order_too_small_for_coupon || coupon_not_valid)
   end
 
   def not_coupon_client
-    coupon_client &&  coupon_client != Current&.visit&.client
+    coupon_client && coupon_client != client
   end
 
   def no_eligible_product_in_cart
     coupon_product && !products.include?(coupon_product)
+  end
+
+  def coupon_used_by_client
+    coupon_list_of_clients.include?(client_id)
   end
 
   def order_too_small_for_coupon

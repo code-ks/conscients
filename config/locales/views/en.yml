@@ -22,6 +22,17 @@ en:
       go_to_cart: "Go to my cart"
       plant_more_trees: "Plant more trees !"
       continue_purchases: "Continue my purchases"
+  invoices:
+    new:
+      order: "Order"
+      delivery_address: "Delivery address"
+      billing_address: "Billing address"
+      product_name: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      delivery_fees: "Delivery fees"
+      coupon_discount: "Discount"
+      total_price: "Total price"
   checkout:
     carts:
       show:

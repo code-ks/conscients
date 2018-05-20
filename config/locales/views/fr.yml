@@ -22,6 +22,17 @@ fr:
       go_to_cart: "Valider mon panier"
       plant_more_trees: "Planter d'autres arbres !"
       continue_purchases: "Poursuivre mes achats"
+  invoices:
+    new:
+      order: "Commande"
+      delivery_address: "Adresse de livraison"
+      billing_address: "Adresse de facturation"
+      product_name: "Produit"
+      quantity: "Quantité commandée"
+      price: "Prix"
+      delivery_fees: "Frais de livraison"
+      coupon_discount: "Réduction"
+      total_price: "Prix total"
   checkout:
     carts:
       show:
