@@ -33,6 +33,18 @@ fr:
       delivery_fees: "Frais de livraison"
       coupon_discount: "Réduction"
       total_price: "Prix total"
+  certificates:
+    new:
+      tree_quantity:
+        one: "1 arbre"
+        other: "%{count} arbres"
+      project_name: "Projet: %{project_name}"
+      project_type: "Type: %{project_type}"
+      project_partner: "Partenaire: %{project_partner}"
+      plantation_uuid: "Parcelle: %{plantation_uuid}"
+      coordinates: "GPS Latitude: %{lat} - GPS Longitude: %{long}"
+      tree_specie: "Espèce: %{tree_specie}"
+      tree_producer: "Producteur: %{tree_producer}"
   checkout:
     carts:
       show:
@@ -111,6 +123,19 @@ fr:
       subject: "Validez votre commande"
       greatings: "Bonjour"
       core: "Pour confirmer votre commande, merci d'effectuer un virement de %{amount} au RIB ci-joint. Votre commande sera confirmée et expédiée dès que le virement sera reçu."
+      thanks: "Merci beaucoup"
+    order_confirmation:
+      subject: "Votre commande est confirmée"
+      greatings: "Bonjour"
+      core_email: "Votre commande a bien été confirmée. Veuillez la trouver ci-jointe ainsi que votre facture."
+      core_postal_with_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-joints vos certificats d'arbres ainsi que votre facture"
+      core_postal_without_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-jointe votre facture"
+      thanks: "Merci beaucoup"
+  recipient_mailer:
+    gift_certificate:
+      subject: "Quelqu'un a planté un arbre pour vous"
+      greatings: "Bonjour"
+      core: "%{name} a planté un arbre pour vous. Veuillez trouver le certificat ci-joint et rendez-vous sur www.conscients.com pour en planter par vous même."
       thanks: "Merci beaucoup"
   devise:
     sessions:

@@ -28,6 +28,9 @@ class TreePlantation < ApplicationRecord
   validates :project_name, :project_type, :plantation_uuid, :base_certificate_uuid,
             :latitude, :longitude, :tree_specie, :producer_name, :trees_quantity, :partner,
             presence: true
+  validates :base_certificate_uuid, length: { maximum: 15 }
+  validates :project_name, :project_type, :plantation_uuid, :tree_specie, :producer_name,
+            :partner, length: { maximum: 40 }
   validates :trees_quantity, numericality: { greater_than_or_equal_to: 0 }
 
   default_scope { in_order }

@@ -33,6 +33,18 @@ en:
       delivery_fees: "Delivery fees"
       coupon_discount: "Discount"
       total_price: "Total price"
+  certificates:
+    new:
+      tree_quantity:
+        one: "1 tree"
+        other: "%{count} treees"
+      project_name: "Project: %{project_name}"
+      project_type: "Type: %{project_type}"
+      project_partner: "Partner: %{project_partner}"
+      plantation_uuid: "Plantation: %{plantation_uuid}"
+      coordinates: "GPS Latitude: %{lat} - GPS Longitude: %{long}"
+      tree_specie: "Specie: %{tree_specie}"
+      tree_producer: "Producer: %{tree_producer}"
   checkout:
     carts:
       show:
@@ -111,6 +123,19 @@ en:
       subject: "Please confirm your order"
       greatings: "Hello"
       core: "To confirm your order, please send a bank transfer of %{amount} to the joint bank account. Your order will be confirmed and shipped as soon as we receive the transfer"
+      thanks: "Thanks a lot"
+    order_confirmation:
+      subject: "Your order is confirmed"
+      greatings: "Hello"
+      core_email: "Your order is confirmed. Please find it and your invoice attached."
+      core_postal_with_tree: "Your order is confirmed and will be shipped soon. Please find your tree certificates and your invoice attached."
+      core_postal_without_tree: "Your order is confirmed and will be shipped soon. Please find your invoice attached."
+      thanks: "Thanks a lot"
+  recipient_mailer:
+    gift_certificate:
+      subject: "Somebody planted a tree for you"
+      greatings: "Hello"
+      core: "%{name} has planted a tree for you. Please find the certificate attached and visit www.conscients.com to plant some by yourself."
       thanks: "Thanks a lot"
   devise:
     sessions:

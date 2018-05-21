@@ -30,6 +30,7 @@ class LineItem < ApplicationRecord
   belongs_to :product_sku, autosave: true
   belongs_to :order
   belongs_to :tree_plantation, optional: true, autosave: true
+  has_one_attached :certificate
 
   monetize :ttc_price_cents
 
@@ -40,7 +41,12 @@ class LineItem < ApplicationRecord
   before_save :update_price
 
   delegate :certificable?, :classic?, :personnalized?, :tree?, :product, :product_images,
-           :product_name, :product_ttc_price_cents, :product_weight, to: :product_sku
+           :product_name, :product_ttc_price_cents, :product_weight, :certificate_background,
+           to: :product_sku
+  delegate :client_full_name, to: :order
+
+  scope :to_deliver_by_email, -> { where("delivery_email <> ''") }
+  scope :certificable, -> { select { |line_item| line_item.certificate.attached? } }
 
   def added_quantity
     quantity - quantity_was

@@ -30,7 +30,8 @@ class ProductSku < ApplicationRecord
   validates :sku, presence: true, uniqueness: true, length: { minimum: 3 }
 
   delegate :name, :images, :ttc_price_cents, :weight, to: :product, prefix: true
-  delegate :certificable?, :classic?, :personnalized?, :tree?, to: :product
+  delegate :certificable?, :classic?, :personnalized?, :tree?, :certificate_background,
+           to: :product
 
   default_scope { includes(:product, :variabilizations, :variants) }
   scope :with_variant, lambda { |variant|

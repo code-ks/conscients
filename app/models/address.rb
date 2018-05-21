@@ -37,4 +37,8 @@ class Address < ApplicationRecord
   validates :email, presence: true, allow_blank: false, if: :email?
   validates :first_name, :last_name, :address_1, :city, :zip_code, :country,
             presence: true, allow_blank: false, if: :postal?
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

@@ -136,6 +136,10 @@ class Order < ApplicationRecord
     products.pluck(:product_type).uniq == ['tree']
   end
 
+  def include_trees?
+    products.pluck(:product_type).include?('tree')
+  end
+
   def set_email_delivery_address
     delivery_address || client.email_address || build_delivery_address(email: client.email)
   end

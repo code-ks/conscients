@@ -7,4 +7,13 @@ class ClientMailer < ApplicationMailer
       File.read(Rails.root.join('app', 'assets', 'images', 'bank_account_details_conscients.jpg'))
     mail to: @order.client_email
   end
+
+  def order_confirmation
+    @order = params[:order]
+    attachments['invoice.pdf'] = @order.invoice.download
+    @order.line_items.certificable.each do |line_item|
+      attachments["certificate##{line_item.id}.pdf"] = line_item.certificate.download
+    end
+    mail to: @order.client_email
+  end
 end
