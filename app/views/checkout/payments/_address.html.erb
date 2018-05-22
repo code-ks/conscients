@@ -5,7 +5,7 @@
     <% if address.email? %>
       <p><%= address.email %></p>
     <% else %>
-      <p><%= address.first_name %> <%= address.last_name %></p>
+      <p><%= address.full_name %></p>
       <% if address.company %>
         <p><%= address.company %></p>
       <% end %>

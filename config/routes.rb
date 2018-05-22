@@ -14,11 +14,9 @@ Rails.application.routes.draw do
                        controllers: { omniauth_callbacks: 'clients/omniauth_callbacks' }
 
   scope '(:locale)', locale: /en/ do
-    root to: 'pages#home'
-    get ':id', to: 'high_voltage/pages#show', as: :page, format: false
-
     devise_for :clients, skip: :omniauth_callbacks
 
+    resource :clients, only: :show
     resources :categories, only: [] do
       resources :products, only: :index
     end

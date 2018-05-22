@@ -131,6 +131,11 @@ en:
       core_postal_with_tree: "Your order is confirmed and will be shipped soon. Please find your tree certificates and your invoice attached."
       core_postal_without_tree: "Your order is confirmed and will be shipped soon. Please find your invoice attached."
       thanks: "Thanks a lot"
+    order_fulfillment:
+      subject: "Your order has been shipped"
+      greatings: "Hello"
+      core: "Your order has been shipped. You should receive it in the next days."
+      thanks: "Thanks a lot"
   recipient_mailer:
     gift_certificate:
       subject: "Somebody planted a tree for you"
@@ -152,6 +157,7 @@ en:
       participate: "Participate"
       my_cart: "My cart"
       search: "Search"
+      sign_in: "Connect"
   active_admin:
     resource:
       show:

@@ -131,6 +131,11 @@ fr:
       core_postal_with_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-joints vos certificats d'arbres ainsi que votre facture"
       core_postal_without_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-jointe votre facture"
       thanks: "Merci beaucoup"
+    order_fulfillment:
+      subject: "Votre commande a été confirmée"
+      greatings: "Bonjour"
+      core: "Votre commande a été expédiée. Vous devriez la recevoir dans les prochains jours."
+      thanks: "Merci beaucoup"
   recipient_mailer:
     gift_certificate:
       subject: "Quelqu'un a planté un arbre pour vous"
@@ -152,6 +157,7 @@ fr:
       participate: "Participer"
       my_cart: "Mon panier"
       search: "Rechercher"
+      sign_in: "Me connecter"
   helpers:
     page_entries_info:
       more_pages:

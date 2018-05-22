@@ -7,11 +7,12 @@ class ProcessOrderJob < ApplicationJob
   def perform(order_id)
     @order = Order.find(order_id)
     set_view
-    # update_order
-    # generate_invoice
-    # generate_certificates
+    update_order
+    generate_invoice
+    generate_certificates
     send_order_confirmation
     send_gift_certificates
+    @order.fulfilled! if @email.email?
   end
 
   private

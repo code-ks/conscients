@@ -66,10 +66,14 @@ class Order < ApplicationRecord
   aasm enum: true do
     state :in_cart, initial: true
     state :paid
-    state :fullfilled
+    state :fulfilled
 
     event :pay, after: :process_order do
       transitions from: :in_cart, to: :paid
+    end
+
+    event :fulfill, after: :fulfill_order do
+      transitions from: :paid, to: :fulfilled
     end
   end
 
@@ -160,10 +164,18 @@ class Order < ApplicationRecord
     end
   end
 
+  def certicates
+    line_items.select { |line_item| line_item.certificate.attached? }.map(&:certificate)
+  end
+
   private
 
   def process_order
     ProcessOrderJob.perform_later(id)
+  end
+
+  def fulfill_order
+    ClientMailer.with(order: self).order_fulfillment.deliver_later unless email?
   end
 
   def eligible_to_coupon

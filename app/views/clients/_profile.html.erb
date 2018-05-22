@@ -1,0 +1,49 @@
+<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h2 class="my-4">Mon compte</h2>
+
+      <h4 class="my-4">email: <%= current_client.email %></h4>
+      <%= link_to "Change your password", edit_client_registration_path, class: "btn btn-orange" %>
+    </div>
+
+    <div class="col-sm-6">
+
+      <h2 class="my-4">Mes adresses</h2>
+
+      <div class="row">
+        <% current_client.addresses.each do |address| %>
+
+          <div class="col-sm-6 mb-3">
+            <div class="border text-center p-3">
+              <span class="font-weight-bold">Address Type: <%= t("activerecord.attributes.address.address_type.#{address.address_type}") %></span></br></br>
+              <% if address.email? %>
+                <%= address.email %></br>
+              <% else %>
+                <%= address.full_name %></br>
+                <% if address.company.present? %>
+                  <%= address.company %></br>
+                <% end %>
+                <% if address.address_1.present? %>
+                  <%= address.address_1 %></br>
+                <% end %>
+                <% if address.address_2.present? %>
+                  <%= address.address_2 %></br>
+                <% end %>
+                <%= address.city %> <%= address.zip_code %></br>
+                <% if address.country.present? %>
+                  <%= address.country %></br>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

@@ -16,4 +16,9 @@ class ClientMailer < ApplicationMailer
     end
     mail to: @order.client_email
   end
+
+  def order_fulfillment
+    @order = params[:order]
+    mail to: @order.client_email
+  end
 end
