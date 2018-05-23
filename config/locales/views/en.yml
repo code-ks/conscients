@@ -2,6 +2,7 @@ en:
   pages:
     home:
       hello: "Test EN"
+      searching: "Search"
     about:
       test: "Youpi"
   products:

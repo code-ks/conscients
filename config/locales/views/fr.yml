@@ -2,6 +2,7 @@ fr:
   pages:
     home:
       hello: "Test"
+      searching: "Ma recherche"
     about:
       test: "Youpi"
   products:
@@ -179,6 +180,8 @@ fr:
       search: "Rechercher"
       sign_in: "Me connecter"
   helpers:
+    placeholder:
+      search: "Ma recherche..."
     page_entries_info:
       more_pages:
         display_entries: "%{entry_name}  <b>%{first} - %{last}</b> sur <b>%{total}</b> au total"

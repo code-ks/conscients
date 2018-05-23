@@ -1,0 +1,40 @@
+/* -------------------------------------
+ * Fonts
+ * ------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:300,400,500|Roboto:100,300,400');
+$body-font: 'Frank Ruhl Libre', serif;
+$headers-font: 'Roboto', sans-serif;
+
+
+/* -------------------------------------
+ * Colors
+ * ------------------------------------- */
+$conscients-coral: #FAAD71;
+$conscients-light-green: #9CCEA2;
+$conscients-green: #73C6A1;
+$conscients-black: #383731;
+$conscients-grey: #54534A;
+$conscients-light-grey: #726f64;
+$conscients-very-light-grey: #d8d7d4;
+$conscients-yellow: #FFC425;
+$conscients-red: #F05133;
+$conscients-blue: #17a2b8;
+
+/* -------------------------------------
+ * Sizing
+ * ------------------------------------- */
+$container-width: 95vw;
+
+/* -------------------------------------
+ * Screen
+ * ------------------------------------- */
+// xsmall phone
+$screen-xs: 440px;
+// tablet
+$screen-sm: 768px;
+//medium laptop
+$screen-md: 992px;
+//large laptop
+$screen-lg: 1200px;
+
+

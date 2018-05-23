@@ -1,0 +1,50 @@
+.navbar-top-font {
+  font-family: "Frank Ruhl Libre", "serif";
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  color: $conscients-grey;
+}
+
+.menu-wrapper {
+  background-color: white;
+  // padding: 8px 0px;
+  border-bottom: 0.5px dotted $conscients-very-light-grey;
+}
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: $container-width;
+  box-sizing: border-box;
+  background-color: white;
+  font-family: "Roboto", "sans-serif";
+  text-transform: Uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.8rem;
+  color: $conscients-grey;
+}
+
+.top-menu-left {
+  width: 20%;
+}
+
+.top-menu-center {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  color: $conscients-grey;
+}
+
+.top-menu-right {
+  justify-content: flex-end;
+  align-items: center;
+  width: 20%;
+}
+
+.top-menu-item {
+}
+
+
+
