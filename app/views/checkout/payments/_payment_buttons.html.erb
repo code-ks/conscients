@@ -1,0 +1,11 @@
+<div class="my-5">
+  <p class="text-center font-weight-bold"><%= t('.select_payment_method') %></p>
+  <div class="d-flex justify-content-around">
+
+    <%= render 'stripe_button', cart: cart %>
+
+    <%= link_to "Paypal", create_paypal_payments_path, method: :post,  class: "btn btn-lg btn-dark" %>
+
+    <%= link_to t('.bank_transfer'), create_bank_transfer_payments_path, method: :post, class: "btn btn-lg btn-dark" %>
+  </div>
+</div>

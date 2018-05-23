@@ -14,22 +14,37 @@ Rails.application.routes.draw do
                        controllers: { omniauth_callbacks: 'clients/omniauth_callbacks' }
 
   scope '(:locale)', locale: /en/ do
-    root to: 'pages#home'
-
     devise_for :clients, skip: :omniauth_callbacks
 
+    resource :clients, only: :show
     resources :categories, only: [] do
       resources :products, only: :index
     end
     resources :products, only: :show, shallow: true do
       resources :line_items, only: %i[create destroy]
     end
+    resource :invoices, only: [] do
+      scope module: :invoices do
+        resources :downloads, only: :new
+      end
+    end
+    resource :certificates, only: [] do
+      scope module: :certificates do
+        resources :downloads, only: :new
+      end
+    end
     scope module: :checkout do
       resources :carts, only: :show
       resources :deliveries, only: %i[new create]
-      resources :paiements, only: :new
+      resources :payments, only: %i[new] do
+        collection do
+          post 'create_stripe'
+          post 'create_paypal'
+          post 'create_bank_transfer'
+          get 'paypal_success'
+        end
+      end
       resources :coupon_to_order_additions, only: :create
     end
-    get ':id', to: 'high_voltage/pages#show', as: :page, format: false
   end
 end

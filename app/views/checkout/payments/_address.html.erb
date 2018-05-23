@@ -1,0 +1,25 @@
+<div class="col-6">
+
+  <div class="border text-center p-3">
+    <h4><%= t(title_key) %></h4>
+    <% if address.email? %>
+      <p><%= address.email %></p>
+    <% else %>
+      <p><%= address.full_name %></p>
+      <% if address.company %>
+        <p><%= address.company %></p>
+      <% end %>
+      <% if address.address_1 %>
+        <p><%= address.address_1 %></p>
+      <% end %>
+      <% if address.address_2 %>
+        <p><%= address.address_2 %></p>
+      <% end %>
+      <p><%= address.city %> <%= address.zip_code %></p>
+      <% if address.country %>
+        <p><%= address.country %></p>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

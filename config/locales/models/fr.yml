@@ -107,6 +107,9 @@ fr:
         country: "Pays"
         title: "Nom de l'adresse"
         client: "Client"
+        address_type:
+          postal: "Postale"
+          email: "Email"
       client:
         email: "Email"
         encrypted_password: "Mot de passe encrypté"

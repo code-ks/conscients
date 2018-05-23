@@ -1,0 +1,105 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+span {
+  display: block;
+}
+
+th {
+  height: 50px;
+}
+
+td {
+  padding: 15px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mr-50 {
+  margin-right: 50px;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+}
+
+.flex {
+  display: -webkit-box;
+}
+
+.grey-certificate {
+  color: #51524D;
+}
+
+.full-page {
+  height: 1031px;
+  width: 1559px;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.certificate-number {
+  position: absolute;
+  top: 194px;
+  left: 338px;
+  font-size: 14px;
+}
+
+.tree-quantity {
+  position: absolute;
+  text-transform: uppercase;
+  top: 210px;
+  left: 168px;
+  text-align: right;
+  width: 312px;
+  font-size: 30px;
+}
+
+.identity-box {
+  position: absolute;
+  text-align: center;
+  width: 312px;
+  left: 168px;
+  top: 535px;
+}
+
+.recipient-name {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.recipient-message {
+  font-size: 17px;
+}
+
+.information-box {
+  position: absolute;
+  text-align: center;
+  width: 312px;
+  left: 168px;
+  top: 670px;
+  font-size: 14px;
+}
+
+.certificate-date {
+  position: absolute;
+  text-transform: uppercase;
+  left: 600px;
+  top: 693px;
+}

@@ -2,12 +2,18 @@
   <div class="d-flex justify-content-between align-items-center">
     <div>
       <div><%= locale_links %></div>
-      <div><%= link_to t('.about'), root_path, class: 'mr-2' %><%= link_to t('.participate') %></div>
+      <div><%= link_to t('.about'), page_path('about'), class: 'mr-2' %><%= link_to t('.participate') %></div>
     </div>
     <%= link_to root_path do %>
       <%= image_tag "logo.jpg" %>
     <% end %>
-    <div><%= link_to t('.my_account'), root_path %></div>
+    <div>
+      <% if current_client %>
+        <%= link_to t('.my_account'), clients_path %>
+      <% else %>
+        <%= link_to t('.sign_in'), new_client_session_path %>
+      <% end %>
+    </div>
   </div>
 </nav>
 <div class="navbar sticky-top d-flex justify-content-between bg-white">
@@ -37,7 +43,11 @@
     <%= fa_icon "bars", class: "c-pointer", data: { toggle: "dropdown" } %>
     <div class="dropdown-menu dropdown-menu-right">
       <%= link_to t('.my_cart'), root_path, class: 'dropdown-item' %>
-      <%= link_to t('.my_account'), root_path, class: 'dropdown-item' %>
+      <% if current_client %>
+        <%= link_to t('.my_account'), clients_path, class: 'dropdown-item' %>
+      <% else %>
+        <%= link_to t('.sign_in'), new_client_session_path, class: 'dropdown-item' %>
+      <% end %>
       <div class="dropdown-divider"></div>
       <% Category.main.each do |category| %>
         <%= link_to category.name, category_products_path(category), class: 'dropdown-item'  %>

@@ -40,6 +40,9 @@ en:
           age: "Age"
       address:
         title: "Address title"
+        address_type:
+          postal: "Postal"
+          email: "Email"
       client:
         newsletter_subscriber: "Subscribed to the newsletter?"
       coupon:

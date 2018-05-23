@@ -35,6 +35,10 @@ class Coupon < ApplicationRecord
   validates :name, :valid_from, :valid_until, presence: true
   validate :amount_or_percentage
 
+  def list_of_clients
+    orders.pluck(:client_id)
+  end
+
   private
 
   def amount_or_percentage

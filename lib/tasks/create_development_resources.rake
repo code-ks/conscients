@@ -104,6 +104,9 @@ task create_development_resources: :environment do
   )
   product.images.attach(io: File.open('lib/assets/certificate-background.jpeg'),
                         filename: 'certificate-background.jpeg', content_type: 'image/jpeg')
+  product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpeg'),
+                                        filename: 'certificate-background.jpeg',
+                                        content_type: 'image/jpeg')
   ProductSku.create(product: product)
 
   product = Product.create!(
@@ -119,6 +122,8 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
+  product.images.attach(io: File.open('lib/assets/certificate-background.jpeg'),
+                        filename: 'certificate-background.jpeg', content_type: 'image/jpeg')
   product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpeg'),
                                         filename: 'certificate-background.jpeg',
                                         content_type: 'image/jpeg')
@@ -148,7 +153,7 @@ task create_development_resources: :environment do
     tree_specie: 'capirona, boleina',
     producer_name: 'Eber Vaqui Saldana',
     trees_quantity: 100,
-    base_certificate_uuid: SecureRandom.uuid,
+    base_certificate_uuid: SecureRandom.uuid.slice(0, 10),
     latitude: -13.524001,
     longitude: -72.007402
   )
