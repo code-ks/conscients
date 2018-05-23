@@ -23,6 +23,16 @@ Rails.application.routes.draw do
     resources :products, only: :show, shallow: true do
       resources :line_items, only: %i[create destroy]
     end
+    resource :invoices, only: [] do
+      scope module: :invoices do
+        resources :downloads, only: :new
+      end
+    end
+    resource :certificates, only: [] do
+      scope module: :certificates do
+        resources :downloads, only: :new
+      end
+    end
     scope module: :checkout do
       resources :carts, only: :show
       resources :deliveries, only: %i[new create]

@@ -2,22 +2,24 @@
 
   <div class="row">
     <div class="col-sm-6">
-      <h2 class="my-4">Mon compte</h2>
+      <h2 class="my-4"><%= t('.my_account') %></h2>
 
-      <h4 class="my-4">email: <%= current_client.email %></h4>
-      <%= link_to "Change your password", edit_client_registration_path, class: "btn btn-orange" %>
+      <h4 class="my-4"><%= t('.client_email', email: current_client.email) %></h4>
+      <%= link_to t('.edit_password'), edit_client_registration_path, class: "btn btn-orange" %>
     </div>
 
     <div class="col-sm-6">
 
-      <h2 class="my-4">Mes adresses</h2>
+      <h2 class="my-4"><%= t('.my_addresses') %></h2>
 
       <div class="row">
         <% current_client.addresses.each do |address| %>
 
           <div class="col-sm-6 mb-3">
             <div class="border text-center p-3">
-              <span class="font-weight-bold">Address Type: <%= t("activerecord.attributes.address.address_type.#{address.address_type}") %></span></br></br>
+              <span class="font-weight-bold">
+                <%= t('.address_type', type: t("activerecord.attributes.address.address_type.#{address.address_type}")) %>
+              </span></br></br>
               <% if address.email? %>
                 <%= address.email %></br>
               <% else %>
@@ -44,6 +46,5 @@
     </div>
 
   </div>
-
 
 </div>

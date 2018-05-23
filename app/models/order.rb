@@ -62,6 +62,8 @@ class Order < ApplicationRecord
            :amount_cents, :percentage, :list_of_clients, to: :coupon, prefix: true
   delegate :email, :stripe_customer_id, to: :client, prefix: true
 
+  scope :finished, -> { paid.merge(Order.fulfilled) }
+
   include AASM
   aasm enum: true do
     state :in_cart, initial: true
@@ -162,10 +164,6 @@ class Order < ApplicationRecord
     elsif params == 'email'
       email!
     end
-  end
-
-  def certicates
-    line_items.select { |line_item| line_item.certificate.attached? }.map(&:certificate)
   end
 
   private

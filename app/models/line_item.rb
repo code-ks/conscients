@@ -42,11 +42,42 @@ class LineItem < ApplicationRecord
 
   delegate :certificable?, :classic?, :personnalized?, :tree?, :product, :product_images,
            :product_name, :product_ttc_price_cents, :product_weight, :certificate_background,
-           to: :product_sku
+           :producer_latitude, :producer_longitude, to: :product_sku
   delegate :client_full_name, to: :order
+  delegate :latitude, :longitude, :project_name, :project_type,
+           to: :tree_plantation, prefix: true, allow_nil: true
 
   scope :to_deliver_by_email, -> { where("delivery_email <> ''") }
-  scope :certificable, -> { select { |line_item| line_item.certificate.attached? } }
+  scope :certificable, lambda {
+    includes(:certificate_attachment).select { |line_item| line_item.certificate.attached? }
+  }
+
+  def tree_marker
+    {
+      lat: tree_plantation_latitude.to_f,
+      lng: tree_plantation_longitude.to_f,
+      infoWindow: { content: "<h5>#{tree_plantation_project_name}</h5>\
+      #{tree_plantation_project_type}" },
+      icon: ActionController::Base.helpers.asset_path('tree_marker.png')
+    }
+  end
+
+  def producer_marker
+    {
+      lat: producer_latitude.to_f,
+      lng: producer_longitude.to_f,
+      infoWindow: { content: "<h5>#{product_name}</h5>" },
+      icon: ActionController::Base.helpers.asset_path('craftstore_marker.png')
+    }
+  end
+
+  def tree_marker?
+    tree_plantation_latitude && tree_plantation_longitude
+  end
+
+  def producer_marker?
+    producer_latitude && producer_longitude
+  end
 
   def added_quantity
     quantity - quantity_was

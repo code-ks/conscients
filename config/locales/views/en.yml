@@ -45,6 +45,26 @@ en:
       coordinates: "GPS Latitude: %{lat} - GPS Longitude: %{long}"
       tree_specie: "Specie: %{tree_specie}"
       tree_producer: "Producer: %{tree_producer}"
+  clients:
+    show:
+      profile: "Profile"
+      orders_list: "My orders"
+      impact: "My impact"
+    profile:
+      my_account: "My account"
+      client_email: "Email: %{email}"
+      my_addresses: "My addresses"
+      address_type: "Address type: %{type}"
+      edit_password: "Edit my password"
+    orders_list:
+      date: "Order Date"
+      amount: "Amount"
+      invoice: "Invoice"
+      certificates: "Certificates"
+    impact:
+      trees_planted: "trees planted"
+      tonnes_of_co2: "tonnes of Co2 captured"
+      tree_species: "Tree species planted"
   checkout:
     carts:
       show:

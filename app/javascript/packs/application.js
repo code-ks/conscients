@@ -7,6 +7,7 @@ import { definitionsFromContext } from "stimulus/webpack-helpers";
 import "./show_on_scroll";
 import "../plugins/bootstrap";
 import "../plugins/flatpickr";
+import "../plugins/gmaps";
 
 Rails.start();
 Turbolinks.start();
