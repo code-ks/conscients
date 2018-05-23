@@ -17,7 +17,14 @@ fr:
       variant: "Variante"
       visit: "Visite"
       event: "Evénement"
+      blog_post: "Articles de blog"
     attributes:
+      blog_post:
+        title_fr: "Titre en français"
+        title_en: "Titre en anglais"
+        body_fr: "Contenu en français"
+        body_en: "Contenu en anglais"
+        position: "Position"
       admin_user:
         email: "Email"
         current_sign_in_at: "Connection actuelle le"

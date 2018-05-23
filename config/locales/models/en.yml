@@ -17,7 +17,11 @@ en:
       variant: "Variant"
       visit: "Visit"
       event: "Event"
+      blog_post: "Blog Post"
     attributes:
+      blog_post:
+        body: "Content"
+        position: "Position"
       admin_user:
         email: "Email"
         current_sign_in_at: "Current Sign In At"

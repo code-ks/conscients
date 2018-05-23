@@ -8,6 +8,7 @@ import "./show_on_scroll";
 import "../plugins/bootstrap";
 import "../plugins/flatpickr";
 import "../plugins/gmaps";
+import "../plugins/quill";
 
 Rails.start();
 Turbolinks.start();
