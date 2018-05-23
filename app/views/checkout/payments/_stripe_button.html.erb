@@ -1,0 +1,31 @@
+<%= form_with url: create_stripe_payments_path, method: :post, id: "stripe-charge-form" do |form| %>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+
+  <%= hidden_field_tag 'stripe_token' %>
+
+  <button id="stripe-payment-button" class="btn btn-dark btn-lg"><%= t('.card') %></button>
+
+  <script>
+    const handler = StripeCheckout.configure({
+      key: "<%= Rails.application.credentials.dig(Rails.env.to_sym, :stripe_publishable_key) %>",
+      image: "<%= image_url("logo.jpg") %>",
+      token(token, args) {
+        document.getElementById("stripe_token").value = token.id;
+        document.getElementById("stripe-charge-form").submit();
+      }
+    });
+
+    document
+      .getElementById("stripe-payment-button")
+      .addEventListener("click", e => {
+        handler.open({
+          name: "Conscients",
+          email: "<%= cart.client_email %>",
+          amount: <%= cart.ttc_price_all_included_cents %>,
+          currency: "eur",
+          locale
+        });
+        e.preventDefault();
+      });
+  </script>
+<% end %>

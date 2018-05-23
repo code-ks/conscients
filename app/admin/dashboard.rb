@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+class JsonbInput < Formtastic::Inputs::StringInput
+end
+
 ActiveAdmin.register_page 'Dashboard' do
   menu priority: 1, label: proc { I18n.t('active_admin.dashboard') }
 

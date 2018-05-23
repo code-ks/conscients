@@ -28,8 +28,13 @@ Metrics/BlockLength:
     - config/environments/development.rb
     - Guardfile
     - config/initializers/simple_form_bootstrap.rb
+    - config/routes.rb
     - lib/tasks/*
     - app/admin/*
+
+Metrics/ClassLength:
+  Exclude:
+    - app/models/order.rb
 
 Lint/UselessAssignment:
   Exclude:

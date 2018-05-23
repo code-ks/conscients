@@ -17,9 +17,11 @@
 #  payment_method         :integer          default("stripe"), not null
 #  recipient_message      :text
 #  customer_note          :text
+#  payment_date           :datetime
 #  client_id              :bigint(8)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  payment_details        :jsonb
 #
 # Foreign Keys
 #
@@ -37,11 +39,14 @@ class Order < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_many :product_skus, through: :line_items
   has_many :products, through: :product_skus
+  has_one_attached :invoice
 
   accepts_nested_attributes_for :line_items
+  attr_accessor :active_admin_requested_event
 
-  monetize :total_price_cents
-  monetize :delivery_fees_cents
+  monetize :total_price_cents, :ttc_price_cents, :delivery_fees_cents,
+           :ttc_price_all_included_cents, :coupon_discount_cents, :ttc_price_with_coupon_cents,
+           :current_delivery_fees_cents, :main_delivery_fees_cents, :printing_fees_cents
 
   enum delivery_method: { postal: 0, email: 1 }
   enum payment_method: { stripe: 0, paypal: 1, bank_transfer: 2 }
@@ -53,34 +58,73 @@ class Order < ApplicationRecord
   validates :aasm_state, presence: true, inclusion: { in: aasm_states.keys }
   validate :eligible_to_coupon
 
-  delegate :client, to: :coupon, prefix: true
-  delegate :product, to: :coupon, prefix: true
-  delegate :amount_min_order, to: :coupon, prefix: true
-  delegate :valid_from, to: :coupon, prefix: true
-  delegate :valid_until, to: :coupon, prefix: true
-  delegate :amount, to: :coupon, prefix: true
-  delegate :percentage, to: :coupon, prefix: true
+  delegate :client, :product, :amount_min_order, :valid_from, :valid_until,
+           :amount_cents, :percentage, :list_of_clients, to: :coupon, prefix: true
+  delegate :email, :stripe_customer_id, to: :client, prefix: true
+
+  scope :finished, -> { paid.merge(Order.fulfilled) }
 
   include AASM
   aasm enum: true do
     state :in_cart, initial: true
     state :paid
-    state :fullfilled
+    state :fulfilled
+
+    event :pay, after: :process_order do
+      transitions from: :in_cart, to: :paid
+    end
+
+    event :fulfill, after: :fulfill_order do
+      transitions from: :paid, to: :fulfilled
+    end
   end
 
-  def ttc_price
-    line_items.sum(&:ttc_price)
+  def ttc_price_cents
+    line_items.sum(&:ttc_price_cents)
   end
 
-  def coupon_discount
-    coupon_percentage ? ttc_price * coupon_percentage : coupon_amount
+  def coupon_discount_cents
+    return 0 unless coupon
+    coupon_percentage ? ttc_price_cents * coupon_percentage : coupon_amount_cents
   end
 
-  def ttc_price_with_coupon
-    ttc_price - coupon_discount
+  def ttc_price_with_coupon_cents
+    ttc_price_cents - coupon_discount_cents
   end
 
-  def current_delivery_fees; end
+  def current_delivery_fees_cents
+    return 0 if email?
+    main_delivery_fees_cents + printing_fees_cents
+  end
+
+  def main_delivery_fees_cents
+    DELIVERY_FEES.select { |weight| weight.member?(total_weight) }.values.dig(0, symbol_region) || 0
+  end
+
+  def printing_fees_cents
+    return 0 if email?
+    line_items.inject(0) do |sum, line_item|
+      line_item.certificable? ? sum + PRINTING_FEES * line_item.quantity : sum
+    end
+  end
+
+  def total_weight
+    line_items.includes(:product_sku).sum(&:product_weight) || 0
+  end
+
+  def symbol_region
+    if delivery_address&.country == ('FR' || nil)
+      :france
+    elsif EUROPE.include?(delivery_address&.country)
+      :europe
+    else
+      :world
+    end
+  end
+
+  def ttc_price_all_included_cents
+    ttc_price_with_coupon_cents + current_delivery_fees_cents
+  end
 
   def last_added
     line_items.last
@@ -96,6 +140,10 @@ class Order < ApplicationRecord
 
   def tree_only?
     products.pluck(:product_type).uniq == ['tree']
+  end
+
+  def include_trees?
+    products.pluck(:product_type).include?('tree')
   end
 
   def set_email_delivery_address
@@ -120,18 +168,30 @@ class Order < ApplicationRecord
 
   private
 
+  def process_order
+    ProcessOrderJob.perform_later(id)
+  end
+
+  def fulfill_order
+    ClientMailer.with(order: self).order_fulfillment.deliver_later unless email?
+  end
+
   def eligible_to_coupon
     return unless coupon &&
-                  (not_coupon_client || no_eligible_product_in_cart ||
-                    order_too_small_for_coupon || coupon_not_valid)
+                  (not_coupon_client || no_eligible_product_in_cart || coupon_used_by_client
+                   order_too_small_for_coupon || coupon_not_valid)
   end
 
   def not_coupon_client
-    coupon_client &&  coupon_client != Current&.visit&.client
+    coupon_client && coupon_client != client
   end
 
   def no_eligible_product_in_cart
     coupon_product && !products.include?(coupon_product)
+  end
+
+  def coupon_used_by_client
+    coupon_list_of_clients.include?(client_id)
   end
 
   def order_too_small_for_coupon

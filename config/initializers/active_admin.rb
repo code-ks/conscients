@@ -175,6 +175,7 @@ ActiveAdmin.setup do |config|
   config.meta_tags = meta_tags_options
   config.meta_tags_for_logged_out_pages = meta_tags_options
 
+  config.skip_before_action :set_current_visit
   # == Removing Breadcrumbs
   #
   # Breadcrumbs are enabled by default. You can customize them for individual

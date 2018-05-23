@@ -1,0 +1,11 @@
+<p><%= t(".greatings") %></p>
+
+<% if @order.email? %>
+  <p><%= t(".core_email") %></p>
+<% elsif @order.include_trees? %>
+  <p><%= t(".core_postal_with_tree") %></p>
+<% else %>
+  <p><%= t(".core_postal_without_tree") %></p>
+<% end %>
+
+<p><%= t(".thanks")%></p>

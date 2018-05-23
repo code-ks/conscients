@@ -4,12 +4,18 @@
   <div class="d-flex justify-content-between align-items-top navbar-top-font">
     <div>
       <div><%= locale_links %></div>
-      <div><%= link_to t('.about'), root_path, class: 'mr-2' %></%= link_to t('.participate') %></div>
+      <div><%= link_to t('.about'), page_path('about'), class: 'mr-2' %><%= link_to t('.participate') %></div>
     </div>
     <%= link_to root_path do %>
       <%= image_tag "logo-conscients-bebe-bio.png", class: "logo-padding" %>
     <% end %>
-    <div><%= link_to t('.my_account'), root_path %></div>
+    <div>
+      <% if current_client %>
+        <%= link_to t('.my_account'), clients_path %>
+      <% else %>
+        <%= link_to t('.sign_in'), new_client_session_path %>
+      <% end %>
+    </div>
   </div>
   </div>
 </nav>
@@ -60,14 +66,18 @@
     </div>
     <!-- Dropdown right small devices -->
     <div class="dropdown d-md-none">
-    <%= fa_icon "bars", class: "c-pointer", data: { toggle: "dropdown" } %>
+      <%= fa_icon "bars", class: "c-pointer", data: { toggle: "dropdown" } %>
       <div class="dropdown-menu dropdown-menu-right">
         <%= link_to t('shared.navbar.my_cart'), cart_path(@cart), class: 'dropdown-item' %>
-        <%= link_to t('shared.navbar.my_account'), root_path, class: 'dropdown-item' %>
-          <div class="dropdown-divider"></div>
-          <% Category.main.each do |category| %>
+        <% if current_client %>
+          <%= link_to t('shared.navbar.my_account'), root_path, class: 'dropdown-item' %>
+        <% else %>
+          <%= link_to t('shared.navbar.sign_in'), new_client_session_path, class: 'dropdown-item' %>
+        <% end %>
+        <div class="dropdown-divider"></div>
+        <% Category.main.each do |category| %>
           <%= link_to category.name, category_products_path(category), class: 'dropdown-item'  %>
-          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

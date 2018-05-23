@@ -23,10 +23,54 @@ fr:
       go_to_cart: "Valider mon panier"
       plant_more_trees: "Planter d'autres arbres !"
       continue_purchases: "Poursuivre mes achats"
+  invoices:
+    new:
+      order: "Commande"
+      delivery_address: "Adresse de livraison"
+      billing_address: "Adresse de facturation"
+      product_name: "Produit"
+      quantity: "Quantité commandée"
+      price: "Prix"
+      delivery_fees: "Frais de livraison"
+      coupon_discount: "Réduction"
+      total_price: "Prix total"
+  certificates:
+    new:
+      tree_quantity:
+        one: "1 arbre"
+        other: "%{count} arbres"
+      project_name: "Projet: %{project_name}"
+      project_type: "Type: %{project_type}"
+      project_partner: "Partenaire: %{project_partner}"
+      plantation_uuid: "Parcelle: %{plantation_uuid}"
+      coordinates: "GPS Latitude: %{lat} - GPS Longitude: %{long}"
+      tree_specie: "Espèce: %{tree_specie}"
+      tree_producer: "Producteur: %{tree_producer}"
+  clients:
+    show:
+      profile: "Profil"
+      orders_list: "Mes commandes"
+      impact: "Mon empreinte"
+    profile:
+      my_account: "Mon compte"
+      client_email: "Email: %{email}"
+      my_addresses: "Mes adresses"
+      address_type: "Type d'adresse: %{type}"
+      edit_password: "Changer mon mot de passe"
+    orders_list:
+      date: "Date de la commande"
+      amount: "Montant"
+      invoice: "Facture"
+      certificates: "Certificats"
+    impact:
+      trees_planted: "arbres plantés"
+      tonnes_of_co2: "tonnes de Co2 compensées"
+      tree_species: "Espèces d'arbres plantées"
   checkout:
     carts:
       show:
         cart: "Panier"
+        cart_empty: "Panier vide"
         selection: "Sélection"
         quantity: "Quantité"
         personalized_product: "Produit personnalisé"
@@ -37,6 +81,7 @@ fr:
     deliveries:
       top_description:
         title: "Livraison"
+        address: "Adresse pour l'envoi du certificat"
         email: "Email pour l'envoi du certificat"
         description: "Vous pouvez renseigner l'email de la personne à qui envoyer le certificat dans le récupitulatif à droite."
         description_details: "(Vous recevrez une copie de l'email pour télécharger le certificat)"
@@ -51,11 +96,12 @@ fr:
         total_price: "Total"
       breadcrumb:
         cart: "Panier"
+        delivery: "Livraison"
       delivery_form:
         total_price: "Prix total"
         without_delivery_fees: "(frais de ports exclus, calculés à l'écran suivant)"
         delivery_is_billing: "Utiliser l'adresse de livraison comme adresse de facturation"
-        go_to_paiement: "Passer au paiement"
+        go_to_payment: "Passer au paiement"
         general_sales_conditions: "J'ai lu les conditions générales de ventes et j'y adhère sans réserve"
         delivery_address: "Adresse de livraison"
         billing_address: "Addresse de facturation"
@@ -65,6 +111,58 @@ fr:
       add_coupon:
         coupon_name: "Nom du bon de réduction"
         add_coupon: "Ajouter"
+    payments:
+      breadcrumb:
+        cart: "Panier"
+        delivery: "Livraison"
+        payment: "Paiement"
+      new:
+        title: "Paiement"
+      address:
+        billing: "Adresse de facturation"
+        delivery: "Adresse de livraison"
+      payment_buttons:
+        select_payment_method: "Sélectionner le mode de paiement"
+        bank_transfer: "Virement bancaire"
+      stripe_button:
+        card: "CB"
+      line_items_table:
+        selection: "Sélection"
+        quantity: "Quantité"
+        delivery: "Livraison"
+        total_price: "Total"
+      add_coupon:
+        coupon_name: "Nom du bon de réduction"
+        add_coupon: "Ajouter"
+      price:
+        sub_total: "Sous total"
+        total_price: "Prix total"
+        from_discount: "de reduction"
+        delivery_fees: "Frais de livraison"
+  client_mailer:
+    bank_account_details:
+      subject: "Validez votre commande"
+      greatings: "Bonjour"
+      core: "Pour confirmer votre commande, merci d'effectuer un virement de %{amount} au RIB ci-joint. Votre commande sera confirmée et expédiée dès que le virement sera reçu."
+      thanks: "Merci beaucoup"
+    order_confirmation:
+      subject: "Votre commande est confirmée"
+      greatings: "Bonjour"
+      core_email: "Votre commande a bien été confirmée. Veuillez la trouver ci-jointe ainsi que votre facture."
+      core_postal_with_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-joints vos certificats d'arbres ainsi que votre facture"
+      core_postal_without_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-jointe votre facture"
+      thanks: "Merci beaucoup"
+    order_fulfillment:
+      subject: "Votre commande a été confirmée"
+      greatings: "Bonjour"
+      core: "Votre commande a été expédiée. Vous devriez la recevoir dans les prochains jours."
+      thanks: "Merci beaucoup"
+  recipient_mailer:
+    gift_certificate:
+      subject: "Quelqu'un a planté un arbre pour vous"
+      greatings: "Bonjour"
+      core: "%{name} a planté un arbre pour vous. Veuillez trouver le certificat ci-joint et rendez-vous sur www.conscients.com pour en planter par vous même."
+      thanks: "Merci beaucoup"
   devise:
     sessions:
       new:
@@ -80,6 +178,7 @@ fr:
       participate: "Participer"
       my_cart: "Mon panier"
       search: "Rechercher"
+      sign_in: "Me connecter"
   helpers:
     placeholder:
       search: "Ma recherche..."
@@ -112,3 +211,9 @@ fr:
       create:
         alert: "Bon de réduction incorrect"
         notice: "Le bon de réduction a été ajouté à votre commande"
+    payments:
+      create:
+        alert: "Un problème est survenu lors de votre paiement"
+        notice: "Votre commande a été validée. Nous vous remercions"
+      create_bank_transfer:
+        notice: "Un email vous a été envoyé avec les instructions pour réaliser le virement"

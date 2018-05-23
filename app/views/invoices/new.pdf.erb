@@ -1,0 +1,85 @@
+<div>
+  <%= wicked_pdf_image_tag "logo.jpg" %>
+  <h1><%= t('.order') %> #<%= @order.id %> - <%= I18n.l(@order.payment_date, format: :long_no_time).titleize %></h1>
+
+  <div class='mb-20 flex space-between'>
+
+    <div class='mr-50'>
+      <h4><%= t('.delivery_address') %></h4>
+      <% if @delivery_address.email? %>
+        <span><%= @delivery_address.email %></span>
+      <% else %>
+        <span><%= @delivery_address.first_name %> <%= @delivery_address.last_name %></span>
+        <% if @delivery_address.company %>
+          <span><%= @delivery_address.company %></span>
+        <% end %>
+        <% if @delivery_address.address_1 %>
+          <span><%= @delivery_address.address_1 %></span>
+        <% end %>
+        <% if @delivery_address.address_2 %>
+          <span><%= @delivery_address.address_2 %></span>
+        <% end %>
+        <span><%= @delivery_address.city %> <%= @delivery_address.zip_code %></span>
+        <% if @delivery_address.country %>
+          <span><%= @delivery_address.country %></span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div>
+      <h4><%= t('.billing_address') %></h4>
+      <% if @billing_address.email? %>
+        <span><%= @billing_address.email %></span>
+      <% else %>
+        <span><%= @billing_address.first_name %> <%= @billing_address.last_name %></span>
+        <% if @billing_address.company %>
+          <span><%= @billing_address.company %></span>
+        <% end %>
+        <% if @billing_address.address_1 %>
+          <span><%= @billing_address.address_1 %></span>
+        <% end %>
+        <% if @billing_address.address_2 %>
+          <span><%= @billing_address.address_2 %></span>
+        <% end %>
+        <span><%= @billing_address.city %> <%= @billing_address.zip_code %></span>
+        <% if @billing_address.country %>
+          <span><%= @billing_address.country %></span>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+  <table class="mb-20">
+    <thead class="bold">
+      <tr>
+        <th scope="col"><%= t('.product_name') %></th>
+        <th scope="col"><%= t('.quantity') %></th>
+        <th scope="col"><%= t('.price') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.line_items.includes(:product_sku).each do |line_item| %>
+        <tr>
+          <td><%= line_item.product_sku.to_s %></td>
+          <td><%= line_item.quantity %></td>
+          <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td><%= t('.delivery_fees') %></td>
+        <td></td>
+        <td><%= humanized_money_with_symbol @order.delivery_fees %></td>
+      </tr>
+      <% if @order.coupon %>
+        <tr>
+          <td><%= t('.coupon_discount') %></td>
+          <td></td>
+          <td>- <%= humanized_money_with_symbol @order.coupon_discount %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h2 class='right'><%= t('.total_price') %> <%= humanized_money_with_symbol @order.total_price %></h2>
+</div>

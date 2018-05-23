@@ -23,6 +23,7 @@
 #  updated_at             :datetime         not null
 #  provider               :string
 #  uid                    :string
+#  stripe_customer_id     :string
 #
 
 class Client < ApplicationRecord
@@ -60,10 +61,31 @@ class Client < ApplicationRecord
     end
   end
 
+  def markers
+    markers = []
+    line_items.includes(:tree_plantation, :product_sku).map do |line_item|
+      markers << line_item.tree_marker if line_item.tree_marker?
+      markers << line_item.producer_marker if line_item.producer_marker?
+    end
+    markers.uniq
+  end
+
+  def tree_species_planted
+    tree_plantations.map(&:tree_specie).uniq
+  end
+
+  def quantity_of_trees_planted
+    line_items.certificable.sum(&:quantity)
+  end
+
+  def tonne_co2_captured
+    quantity_of_trees_planted.fdiv(3.5).round(2)
+  end
+
   def subscribe_to_mailing_list
     return unless Rails.env.production?
     list_id = I18n.locale == :fr ? '53e2a5b32b' : 'fde901016c'
-    SubscribeClientToMailingList.perform_later(list_id, id)
+    SubscribeClientToMailingListJob.perform_later(list_id, id)
   end
 
   def lower_case_md5_hashed_email
