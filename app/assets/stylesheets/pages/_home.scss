@@ -27,7 +27,7 @@
     height: 70vh;
     width: 95vw;
     margin: 0 auto;
-    overflow: visible;
+    // overflow: visible;
       @media (min-width: $screen-sm){
         height: 60vh;
         width: 85vw;
@@ -45,16 +45,16 @@
     background-color: purple;
   }
   .occasions-card{
-    height: 100%;
-    width: 100%;
+    // height: 100%;
+    // width: 100%;
     border: 1px solid $conscients-light-grey;
     background-color: white;
     text-align: center;
-    overflow: scroll;
+    // overflow: scroll;
       @media (min-width: $screen-sm) {
         /* On screens that are equal to screen md or more ie desktop*/
         height: 85%;
-        width: 40%;
+        width: 38%;
         position: absolute;
         margin-top: auto;
         margin-bottom: auto;
@@ -64,20 +64,36 @@
       }
   }
 
-  .occasions-card-content {
+  .occasions-card-content-box {
+    // background-color: yellow;
+    box-sizing: border-box;
+    overflow: hidden;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    justify-content: space-around;
+    color: $conscients-grey;
   }
+  .occasions-card-title {
+    margin: auto;
+  }
+
   .occasions-card-img {
-    height: 50%;
-    // height: 250px;
-    // width: 250px;
-    // margin-top: 30px;
-    // margin-bottom: 30px;
-    // background-size: cover !important;
+    max-height: 65%;
+    min-height: 0; //to avoid overflow
+    max-width: 100%;
+    margin-top: 1px;
   }
+  .occasions-card-description {
+    // margin: auto;
+    padding-right: 12px;
+    padding-left: 12px;
+    // background-color: pink;
+    p {
+      margin-bottom: 5px;
+      color: $conscients-grey;
+    }
+  }
+
 
