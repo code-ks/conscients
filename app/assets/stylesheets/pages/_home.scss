@@ -24,34 +24,39 @@
 // OCCASIONS BOX
   .occasions-container{
     position: relative;
-    height: 70vh;
     width: 95vw;
     margin: 0 auto;
-    // overflow: visible;
-      @media (min-width: $screen-sm){
+      @include for-tablet-landscape-up {
+      // @media (min-width: $screen-sm){
         height: 60vh;
         width: 85vw;
       }
   }
   .occasions-img-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 65%;
-    background-size: cover !important;
-    background-position: center;
-    text-align: left;
-    background-color: purple;
+    display: none;
+      @include for-tablet-landscape-up {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 65%;
+        background-size: cover !important;
+        background-position: center;
+        text-align: left;
+        background-color: purple;
+      }
   }
+
   .occasions-card{
-    // height: 100%;
-    // width: 100%;
     border: 1px solid $conscients-light-grey;
     background-color: white;
     text-align: center;
-    // overflow: scroll;
-      @media (min-width: $screen-sm) {
+      @include for-tablet-portrait-only {
+        border: none;
+      }
+      @include for-tablet-landscape-up {
+      // @media (min-width: $screen-sm) {
         /* On screens that are equal to screen md or more ie desktop*/
         height: 85%;
         width: 38%;
