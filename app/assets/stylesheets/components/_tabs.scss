@@ -2,7 +2,9 @@
   display: flex;
   justify-content: center;
   color: $conscients-light-grey;
-  // padding: 10px 10px 0 10px;
+      @include for-tablet-landscape-up {
+    padding-bottom: 16px;
+    }
 }
 // .tabs a {
 // }
@@ -20,7 +22,8 @@
 .tab {
   flex: 0 0 25%;
   text-align: center;
-  padding: 20px 0;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .tab.active {
@@ -28,4 +31,7 @@
   // border-bottom: 1px solid $conscients-grey;
   text-decoration: underline;
   text-underline-position: under;
+  @include for-phone-only {
+    text-decoration : none;
+  }
 }

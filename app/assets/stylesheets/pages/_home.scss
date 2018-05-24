@@ -8,6 +8,9 @@
     color: $conscients-grey;
     text-align: center;
     text-transform: none;
+      @include for-phone-only {
+        font-size: 1.5rem;
+      }
   }
   h3{
     font-family: "Roboto", "sans-serif";
@@ -15,12 +18,26 @@
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
     color: conscients-grey;
+      @include for-phone-only {
+        font-size : 0.5rem;
+      }
   }
   p{
 
   }
 }
 
+.home-title-padding {
+  padding-top: 48px;
+  padding-bottom: 16px;
+  @include for-tablet-landscape-up {
+    padding-bottom: 48px
+  }
+}
+
+.home-sub-title-padding {
+
+}
 // OCCASIONS BOX
   .occasions-container{
     position: relative;
