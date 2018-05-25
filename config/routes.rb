@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :blog_posts
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -12,11 +11,14 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   devise_for :clients, only: :omniauth_callbacks,
-                       controllers: { omniauth_callbacks: 'clients/omniauth_callbacks' }
+  controllers: { omniauth_callbacks: 'clients/omniauth_callbacks' }
 
   scope '(:locale)', locale: /en/ do
     devise_for :clients, skip: :omniauth_callbacks
 
+    namespace :admin do
+      resources :blog_posts
+    end
     resource :clients, only: :show
     resources :categories, only: [] do
       resources :products, only: :index

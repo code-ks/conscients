@@ -20,11 +20,18 @@ fr:
       blog_post: "Articles de blog"
     attributes:
       blog_post:
-        title_fr: "Titre en français"
-        title_en: "Titre en anglais"
-        body_fr: "Contenu en français"
-        body_en: "Contenu en anglais"
+        content_fr: "Contenu en français"
+        content_en: "Contenu en anglais"
+        seo_title: "Titre SEO"
+        seo_title_en: "Titre SEO en anglais"
+        seo_title_fr: "Titre SEO en français"
+        meta_description: "Meta Description"
+        meta_description_en: "Meta Description en anglais"
+        meta_description_fr: "Meta Description en français"
+        published_fr: "Publier en français?"
+        published_en: "Publier en anglais?"
         position: "Position"
+        main_image: "Image Principale"
       admin_user:
         email: "Email"
         current_sign_in_at: "Connection actuelle le"

@@ -66,6 +66,27 @@ fr:
       trees_planted: "arbres plantés"
       tonnes_of_co2: "tonnes de Co2 compensées"
       tree_species: "Espèces d'arbres plantées"
+  admin:
+    blog_posts:
+      navlinks:
+        index: "Aller à la liste des articles"
+        new: "Créer un article"
+        edit: "Modifier article"
+        destroy: "Détruire article"
+        confirm: "Êtes-vous sûr?"
+        show: "Montrer article"
+        admin: "Se rendre dans l'interface administrateur"
+      edit:
+        title: "Modifier article"
+      index:
+        title: "Liste des articles"
+        links: "Liens"
+        show: "Montrer article"
+        edit: "Modifier article"
+        destroy: "Détruire article"
+        confirm: "Êtes-vous sûr?"
+      new:
+        title: "Créer un article"
   checkout:
     carts:
       show:

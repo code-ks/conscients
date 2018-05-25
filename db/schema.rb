@@ -125,10 +125,12 @@ ActiveRecord::Schema.define(version: 2018_05_23_104207) do
   end
 
   create_table "blog_posts", force: :cascade do |t|
-    t.string "title_fr"
-    t.string "title_en"
-    t.text "body"
+    t.text "content"
     t.string "slug"
+    t.string "seo_title"
+    t.string "meta_description"
+    t.boolean "published_fr", default: false, null: false
+    t.boolean "published_en", default: false, null: false
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

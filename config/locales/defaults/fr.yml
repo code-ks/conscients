@@ -3,9 +3,13 @@ fr:
     product_management: "Gestion des produits"
     order_management: "Gestion des commandes"
     client_management: "Gestion des clients"
+    blog_management: "Gestion du Blog"
   paypal:
     delivery_fees: "Frais de livraison"
     total_price: "Prix total"
   time:
     formats:
       long_no_time: "%d %B %Y"
+  namespace:
+    'true': "Oui"
+    'false': "Non"

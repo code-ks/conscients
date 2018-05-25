@@ -4,28 +4,34 @@
 #
 # Table name: blog_posts
 #
-#  id         :bigint(8)        not null, primary key
-#  title_fr   :string
-#  title_en   :string
-#  body       :text
-#  slug       :string
-#  position   :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :bigint(8)        not null, primary key
+#  content          :text
+#  slug             :string
+#  seo_title        :string
+#  meta_description :string
+#  published_fr     :boolean          default(FALSE), not null
+#  published_en     :boolean          default(FALSE), not null
+#  position         :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 class BlogPost < ApplicationRecord
+  has_one_attached :main_image
+
   extend Mobility
-  translates :title, backend: :column
-  translates :body, :slug
+  translates :content, :slug, :seo_title, :meta_description
 
   include FriendlyId
-  friendly_id :name, use: %i[slugged mobility]
+  friendly_id :seo_title, use: %i[slugged mobility]
 
   acts_as_list
 
+  validates :content_fr, :seo_title_fr, :meta_description_fr, presence: true, if: :published_fr?
+  validates :content_en, :seo_title_en, :meta_description_en, presence: true, if: :published_en?
+
   default_scope { i18n.friendly.in_order }
   scope :in_order, -> { order(position: :asc) }
-  scope :en, -> { where("title_en <> ''") }
-  scope :fr, -> { where("title_fr <> ''") }
+  scope :published_en, -> { where(published_en: true) }
+  scope :published_fr, -> { where(published_fr: true) }
 end

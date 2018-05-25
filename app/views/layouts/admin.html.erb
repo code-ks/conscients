@@ -10,9 +10,11 @@
     <%= stylesheet_pack_tag 'application' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="container m-5">
+      <%= render 'admin/blog_posts/navlinks' %>
+      <%= yield %>
+    </div>
     <%= javascript_tag "window.locale = #{I18n.locale.to_s.inspect};" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval': 'false', 'data-turbolinks-suppress-warning': 'true' %>
   </body>

@@ -1,0 +1,38 @@
+<h1><%= t('.title') %></h1>
+
+<% if @blog_posts.any? %>
+  <div class="table-responsive text-center">
+    <table class="table border-table-cart">
+      <thead>
+        <tr>
+          <th scope="col"><%= t('activerecord.attributes.blog_post.main_image') %></th>
+          <th scope="col"><%= t('activerecord.attributes.blog_post.seo_title_fr') %></th>
+          <th scope="col"><%= t('activerecord.attributes.blog_post.published_fr') %></th>
+          <th scope="col"><%= t('activerecord.attributes.blog_post.published_en') %></th>
+          <th scope="col"><%= t('.links') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @blog_posts.each do |blog_post| %>
+          <tr class="table-cart-bordered">
+            <td>
+              <% if blog_post.main_image.attached? %>
+                <%= image_tag(blog_post.main_image, height: 100) %>
+              <% end %>
+            </th>
+            <td><%= blog_post.seo_title_fr %></th>
+            <td><%= t("namespace.#{blog_post.published_fr.to_s}") %></td>
+            <td><%= t("namespace.#{blog_post.published_en.to_s}") %></td>
+            <td>
+              <%= link_to t('.show'), admin_blog_post_path(blog_post), class: "btn btn-orange my-1" %>
+              <%= link_to t('.edit'), edit_admin_blog_post_path(blog_post), class: "btn btn-orange my-1" %>
+              <%= link_to t('.destroy'), admin_blog_post_path(blog_post), method: :delete, class: "btn btn-orange my-1", data: { confirm: t('.confirm') } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <h2>Pas de blog posts</h2>
+<% end %>
