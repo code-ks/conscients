@@ -200,6 +200,7 @@ fr:
       my_cart: "Mon panier"
       search: "Rechercher"
       sign_in: "Me connecter"
+      blog: "Blog"
   helpers:
     placeholder:
       search: "Ma recherche..."

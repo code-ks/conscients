@@ -200,6 +200,7 @@ en:
       my_cart: "My cart"
       search: "Search"
       sign_in: "Connect"
+      blog: "Blog"
   active_admin:
     resource:
       show:

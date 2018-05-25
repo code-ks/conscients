@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  scope '/(:locale)', locale: /ru|en/ do
-  end
-
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 
@@ -19,6 +16,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :blog_posts
     end
+    resources :blog_posts, only: %i[index show]
     resource :clients, only: :show
     resources :categories, only: [] do
       resources :products, only: :index

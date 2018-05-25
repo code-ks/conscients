@@ -11,5 +11,6 @@ environment.plugins.prepend(
     Popper: ["popper.js", "default"]
   })
 );
+
 environment.loaders.append("erb", erb);
 module.exports = environment;
