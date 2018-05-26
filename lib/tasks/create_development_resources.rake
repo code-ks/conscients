@@ -21,7 +21,7 @@ task create_development_resources: :environment do
   product = Product.create!(
     name_fr: 'Top livre',
     name_en: 'Top book',
-    description: "Un top livre qui vaut vraiment le coup et que tout\
+    description_short: "Un top livre qui vaut vraiment le coup et que tout\
     le monde devrait lire parce qu'il est vraiment bien",
     ht_price_cents: 1000,
     weight: 1000,
@@ -36,7 +36,7 @@ task create_development_resources: :environment do
   product = Product.create!(
     name_fr: 'Top livre 2',
     name_en: 'Top book 2',
-    description: "Un deuxième top livre qui vaut vraiment le coup et que tout\
+    description_short: "Un deuxième top livre qui vaut vraiment le coup et que tout\
     le monde devrait lire parce qu'il est vraiment bien",
     ht_price_cents: 1000,
     weight: 1000,
@@ -51,7 +51,7 @@ task create_development_resources: :environment do
   product = Product.create!(
     name_fr: 'Top vêtement garçon',
     name_en: 'Great boy cloth',
-    description: "Un top vetement garçon qui vaut vraiment le coup et que tout\
+    description_short: "Un top vetement garçon qui vaut vraiment le coup et que tout\
     le monde devrait porter parce qu'il est vraiment bien",
     ht_price_cents: 1200,
     weight: 500,
@@ -71,7 +71,7 @@ task create_development_resources: :environment do
   product = Product.create!(
     name_fr: 'Top vêtement fille',
     name_en: 'Great girl cloth',
-    description: "Un top vetement fille qui vaut vraiment le coup et que tout\
+    description_short: "Un top vetement fille qui vaut vraiment le coup et que tout\
     le monde devrait porter parce qu'il est vraiment bien",
     ht_price_cents: 1200,
     weight: 500,
@@ -91,7 +91,7 @@ task create_development_resources: :environment do
   product = Product.create!(
     name_fr: 'Livre et arbre',
     name_en: 'Book and tree',
-    description: "Un top bundle livre + arbre qui vaut vraiment le coup et que tout\
+    description_short: "Un top bundle livre + arbre qui vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",
     ht_price_cents: 1700,
     weight: 1000,
@@ -112,7 +112,7 @@ task create_development_resources: :environment do
   product = Product.create!(
     name_fr: 'Arbre',
     name_en: 'Top Tree',
-    description: "Un arbre qui vaut vraiment le coup et que tout\
+    description_short: "Un arbre qui vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",
     ht_price_cents: 500,
     product_type: 2,
@@ -155,7 +155,8 @@ task create_development_resources: :environment do
     trees_quantity: 100,
     base_certificate_uuid: SecureRandom.uuid.slice(0, 10),
     latitude: -13.524001,
-    longitude: -72.007402
+    longitude: -72.007402,
+    color_certificate: '#ff0000'
   )
 
   Coupon.create!(name: 'MYREDUC', amount_cents: 1000, amount_min_order_cents: 3000,

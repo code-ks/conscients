@@ -6,7 +6,8 @@
     <div class="col-lg-4 col-md-5 col-xs-12 order-md-first">
       <h2><%= @product.name %></h2>
       <p class="font-weight-bold"><%= humanized_money_with_symbol @product.ttc_price %></p>
-      <p><%= @product.description %></p>
+      <p><%= @product.description_short %></p>
+      <p><%= @product.description_long %></p>
 
       <hr>
       <div id="new_line_item">

@@ -4,11 +4,13 @@ ActiveAdmin.register Product do
   menu parent: I18n.t('active_admin.product_management')
   config.sort_order = 'position_asc'
 
-  permit_params :name_fr, :name_en, :description, :description_en, :ht_price_cents, :position,
-                :tax_rate, :weight, :product_type, :published, :ht_buying_price_cents,
-                :seo_title, :seo_title_en, :meta_description, :meta_description_en,
-                :keywords, :keywords_en, :slug, :slug_en, :producer_latitude,
-                :producer_longitude, :certificate_background, images: []
+  permit_params :name_fr, :name_en, :description_short, :description_short_en,
+                :description_long, :description_long_en, :class, :class_en,
+                :ht_price_cents, :position, :tax_rate, :weight, :product_type,
+                :published, :ht_buying_price_cents, :seo_title, :seo_title_en,
+                :meta_description, :meta_description_en, :keywords, :keywords_en, :slug,
+                :slug_en, :producer_latitude, :producer_longitude, :certificate_background,
+                images: []
 
   includes :text_translations, :images_attachments, :certificate_background_attachment
 
@@ -34,8 +36,10 @@ ActiveAdmin.register Product do
     column :name_en
     column :slug_fr
     column :slug_en
-    column :description_fr
-    column :description_en
+    column :description_short_fr
+    column :description_short_en
+    column :description_long_fr
+    column :description_long_en
     column :images do |product|
       if product.images.attached?
         ul do
@@ -77,8 +81,10 @@ ActiveAdmin.register Product do
       f.input :name_en
       f.input :slug_fr
       f.input :slug_en
-      f.input :description_fr
-      f.input :description_en
+      f.input :description_short_fr
+      f.input :description_short_en
+      f.input :description_long_fr
+      f.input :description_long_en
       f.input :images, as: :file, input_html: { multiple: true },
               hint: if product.images.attached?
                       ul do
@@ -117,8 +123,10 @@ ActiveAdmin.register Product do
       row :name_en
       row :slug_fr
       row :slug_en
-      row :description_fr
-      row :description_en
+      row :description_short_fr
+      row :description_short_en
+      row :description_long_fr
+      row :description_long_en
       row :images do |product|
         if product.images.attached?
           ul do

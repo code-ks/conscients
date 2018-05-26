@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_104207) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "slug"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
@@ -290,7 +291,9 @@ ActiveRecord::Schema.define(version: 2018_05_23_104207) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.text "description"
+    t.string "description_short"
+    t.text "description_long"
+    t.string "product_class"
     t.integer "ht_price_cents", default: 0, null: false
     t.string "ht_price_currency", default: "EUR", null: false
     t.decimal "tax_rate", precision: 4, scale: 2, default: "20.0", null: false
@@ -332,6 +335,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_104207) do
     t.string "project_type"
     t.string "partner", null: false
     t.string "plantation_uuid", null: false
+    t.string "color_certificate", null: false
     t.string "base_certificate_uuid", null: false
     t.decimal "latitude", precision: 11, scale: 8, null: false
     t.decimal "longitude", precision: 11, scale: 8, null: false

@@ -2,7 +2,9 @@ class CreateProducts < ActiveRecord::Migration[5.2]
   def change
     create_table :products do |t|
       t.string :name
-      t.text :description
+      t.string :description_short
+      t.text :description_long
+      t.string :product_class
       t.monetize :ht_price, null: false
       t.decimal :tax_rate, precision: 4, scale: 2, default: 20, null: false
       t.integer :weight, default: 0

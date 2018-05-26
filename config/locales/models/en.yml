@@ -68,7 +68,8 @@ en:
           paypal: "Paypal"
           bank_tranfer: "Bank Transfer"
       tree_plantation:
-        trees_quantity: "Available tree_quantity"
+        trees_quantity: "Available tree quantity"
+        color_certificate: "Color of the certificate"
       line_item:
         quantity: "Quantity in stock"
     errors:
@@ -81,6 +82,8 @@ en:
           attributes:
             trees_quantity:
               greater_than_or_equal_to: "in stock too limited"
+            color_certificate:
+              format: "Much be a valid HEX color"
         coupon:
           amount_or_percentage: "Amount or percentage must be filled but not both"
         order:

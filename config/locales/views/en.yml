@@ -76,6 +76,7 @@ en:
         confirm: "Are your sure?"
         show: "Show Blog Post"
         admin: "Go to admin dashboard"
+        no_blog_posts: "No blog posts"
       edit:
         title: "Edit Blog Post"
       index:

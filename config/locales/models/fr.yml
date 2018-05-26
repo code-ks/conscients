@@ -41,6 +41,9 @@ fr:
         name: "Nom"
         name_en: "Nom en anglais"
         name_fr: "Nom en français"
+        description: "Description"
+        description_en: "Description en anglais"
+        description_fr: "Description en français"
         slug: "URL"
         slug_en: "URL en anglais"
         slug_fr: "URL en français"
@@ -55,9 +58,15 @@ fr:
         name: "Nom"
         name_en: "Nom en anglais"
         name_fr: "Nom en français"
-        description: "Description"
-        description_en: "Description en anglais"
-        description_fr: "Description en français"
+        description_short: "Description courte"
+        description_short_en: "Description courte en anglais"
+        description_short_fr: "Description courte en français"
+        description_long: "Description longue"
+        description_long_en: "Description longue en anglais"
+        description_long_fr: "Description longue en français"
+        product_class: "Classe de produit"
+        product_class_fr: "Classe de produit en français"
+        product_class_en: "Classe de produit en anglais"
         ht_price_cents: "Prix hors taxe (en centimes)"
         ht_price_currency: "Devise de vente"
         taxe_rate: "Taux de TVA"
@@ -207,6 +216,7 @@ fr:
         tree_specie: "Espèce d'arbre"
         producer_name: "Nom du producteur"
         trees_quantity: "Quantité d'arbres disponibles"
+        color_certificate: "Couleur du certificate"
     errors:
       models:
         product_sku:
@@ -217,6 +227,8 @@ fr:
           attributes:
             trees_quantity:
               greater_than_or_equal_to: "en stock trop faible"
+            color_certificate:
+              format: "Doit être une couleur HEX valide"
         coupon:
           amount_or_percentage: "Montant ou pourcentage doit être rempli mais pas les 2"
         order:

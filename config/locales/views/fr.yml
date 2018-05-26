@@ -85,6 +85,7 @@ fr:
         edit: "Modifier article"
         destroy: "Détruire article"
         confirm: "Êtes-vous sûr?"
+        no_blog_posts: "Pas d'articles"
       new:
         title: "Créer un article"
   checkout:
