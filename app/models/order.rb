@@ -63,6 +63,8 @@ class Order < ApplicationRecord
   delegate :addresses, :email, :stripe_customer_id, to: :client, prefix: true
 
   scope :finished, -> { paid.merge(Order.fulfilled) }
+  scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
+  scope :cart_to_destroy, -> { in_cart.two_days_old }
 
   include AASM
   aasm enum: true do
