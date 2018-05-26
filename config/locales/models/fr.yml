@@ -15,8 +15,8 @@ fr:
       tree_plantation: "Plantation d'arbres"
       variabilization: "Variabilisation"
       variant: "Variante"
-      visit: "Visite"
-      event: "Evénement"
+      ahoy/event: "Evénement"
+      ahoy/visit: "Visite"
       blog_post: "Articles de blog"
     attributes:
       blog_post:
@@ -130,7 +130,7 @@ fr:
         country: "Pays"
         title: "Nom de l'adresse"
         client: "Client"
-        address_type:
+        address_types:
           postal: "Postale"
           email: "Email"
       client:
@@ -187,6 +187,10 @@ fr:
         delivery_email: "Email du destinataire"
       order:
         aasm_state: "Etat de la commande"
+        aasm_states:
+          in_cart: "Panier"
+          paid: "Payé"
+          fulfilled: "Livré"
         coupon: "Coupon"
         delivery_address: "Adresse de livraison"
         billing_address: "Adresse de facturation"
@@ -209,6 +213,8 @@ fr:
       tree_plantation:
         project_name: "Nom du projet"
         project_type: "Type de projet"
+        project_type_fr: "Type de projet FR"
+        project_type_en: "Type de projet EN"
         plantation_uuid: "Identifiant de la plantation"
         base_certificate_uuid: "Base de l'identifiant de certificat"
         latitude: "Latitude"
@@ -217,6 +223,30 @@ fr:
         producer_name: "Nom du producteur"
         trees_quantity: "Quantité d'arbres disponibles"
         color_certificate: "Couleur du certificate"
+      ahoy/event:
+        visit: "Visite"
+        user: "Utilisateur"
+        name: "Nom"
+        properties: "Propriétés"
+        time: "Date et heure"
+      ahoy/visit:
+        user: "Utilisateur"
+        ip: "IP"
+        referrer: "Referrer"
+        referring_domain: "Domaine du referrer"
+        search_keyword: "Mot clé de recherche"
+        landing_page: "Landing page"
+        browser: "Navigateur"
+        os: "Système d'opération"
+        device_type: "Type d'appareil"
+        country: "Pays"
+        region: "Région"
+        city: "Ville"
+        utm_souce: "Source UTM"
+        utm_medium: "Medium UTM"
+        utm_term: "Terme UTM"
+        utm_content: "Contenu UTM"
+        utm_campaign: "Campagne UTM"
     errors:
       models:
         product_sku:

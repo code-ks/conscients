@@ -226,6 +226,8 @@ fr:
     resource:
       show:
         remove_images: "Supprimer les images liées au produit"
+        download_invoice: "Télécharger la facture"
+        download_certificate: "Télécharger le certificat"
   flash:
     line_items:
       create:

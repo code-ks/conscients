@@ -4,6 +4,8 @@ fr:
     order_management: "Gestion des commandes"
     client_management: "Gestion des clients"
     blog_management: "Gestion du Blog"
+    current_state: "Statut actuel"
+    change_state: "Nouveau statut"
   paypal:
     delivery_fees: "Frais de livraison"
     total_price: "Prix total"

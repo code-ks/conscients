@@ -4,6 +4,8 @@ en:
     order_management: "Order Management"
     client_management: "Client Management"
     blog_management: "Blog Management"
+    current_state: "Current state"
+    change_state: "New state"
   paypal:
     delivery_fees: "Delivery fees"
     total_price: "Total price"

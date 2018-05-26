@@ -61,6 +61,10 @@ class Client < ApplicationRecord
     end
   end
 
+  def to_s
+    email
+  end
+
   def markers
     markers = []
     line_items.includes(:tree_plantation, :product_sku).map do |line_item|

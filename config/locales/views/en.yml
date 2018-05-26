@@ -206,6 +206,8 @@ en:
     resource:
       show:
         remove_images: "Remove images linked to the product"
+        download_invoice: "Download invoice"
+        download_certificate: "Download certificate"
   flash:
     line_items:
       create:

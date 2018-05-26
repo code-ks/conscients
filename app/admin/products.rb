@@ -2,13 +2,14 @@
 
 ActiveAdmin.register Product do
   menu parent: I18n.t('active_admin.product_management')
+
   config.sort_order = 'position_asc'
 
-  permit_params :name_fr, :name_en, :description_short, :description_short_en,
-                :description_long, :description_long_en, :class, :class_en,
+  permit_params :name_fr, :name_en, :description_short_fr, :description_short_en,
+                :description_long_fr, :description_long_en, :product_class_fr, :product_class_en,
                 :ht_price_cents, :position, :tax_rate, :weight, :product_type,
-                :published, :ht_buying_price_cents, :seo_title, :seo_title_en,
-                :meta_description, :meta_description_en, :keywords, :keywords_en, :slug,
+                :published, :ht_buying_price_cents, :seo_title_fr, :seo_title_en,
+                :meta_description_fr, :meta_description_en, :keywords_fr, :keywords_en, :slug_fr,
                 :slug_en, :producer_latitude, :producer_longitude, :certificate_background,
                 images: []
 
@@ -40,6 +41,8 @@ ActiveAdmin.register Product do
     column :description_short_en
     column :description_long_fr
     column :description_long_en
+    column :product_class_fr
+    column :product_class_en
     column :images do |product|
       if product.images.attached?
         ul do
@@ -85,6 +88,8 @@ ActiveAdmin.register Product do
       f.input :description_short_en
       f.input :description_long_fr
       f.input :description_long_en
+      f.input :product_class_fr
+      f.input :product_class_en
       f.input :images, as: :file, input_html: { multiple: true },
               hint: if product.images.attached?
                       ul do
@@ -127,6 +132,8 @@ ActiveAdmin.register Product do
       row :description_short_en
       row :description_long_fr
       row :description_long_en
+      row :product_class_fr
+      row :product_class_en
       row :images do |product|
         if product.images.attached?
           ul do

@@ -46,6 +46,10 @@ class TreePlantation < ApplicationRecord
     end
   end
 
+  def to_s
+    project_name
+  end
+
   def generate_certificate_number
     base_certificate_uuid + "-#{format '%03d', trees_quantity}"
   end
