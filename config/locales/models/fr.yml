@@ -15,9 +15,23 @@ fr:
       tree_plantation: "Plantation d'arbres"
       variabilization: "Variabilisation"
       variant: "Variante"
-      visit: "Visite"
-      event: "Evénement"
+      ahoy/event: "Evénement"
+      ahoy/visit: "Visite"
+      blog_post: "Articles de blog"
     attributes:
+      blog_post:
+        content_fr: "Contenu en français"
+        content_en: "Contenu en anglais"
+        seo_title: "Titre SEO"
+        seo_title_en: "Titre SEO en anglais"
+        seo_title_fr: "Titre SEO en français"
+        meta_description: "Meta Description"
+        meta_description_en: "Meta Description en anglais"
+        meta_description_fr: "Meta Description en français"
+        published_fr: "Publier en français?"
+        published_en: "Publier en anglais?"
+        position: "Position"
+        main_image: "Image Principale"
       admin_user:
         email: "Email"
         current_sign_in_at: "Connection actuelle le"
@@ -27,6 +41,9 @@ fr:
         name: "Nom"
         name_en: "Nom en anglais"
         name_fr: "Nom en français"
+        description: "Description"
+        description_en: "Description en anglais"
+        description_fr: "Description en français"
         slug: "URL"
         slug_en: "URL en anglais"
         slug_fr: "URL en français"
@@ -41,9 +58,15 @@ fr:
         name: "Nom"
         name_en: "Nom en anglais"
         name_fr: "Nom en français"
-        description: "Description"
-        description_en: "Description en anglais"
-        description_fr: "Description en français"
+        description_short: "Description courte"
+        description_short_en: "Description courte en anglais"
+        description_short_fr: "Description courte en français"
+        description_long: "Description longue"
+        description_long_en: "Description longue en anglais"
+        description_long_fr: "Description longue en français"
+        product_class: "Classe de produit"
+        product_class_fr: "Classe de produit en français"
+        product_class_en: "Classe de produit en anglais"
         ht_price_cents: "Prix hors taxe (en centimes)"
         ht_price_currency: "Devise de vente"
         taxe_rate: "Taux de TVA"
@@ -107,6 +130,9 @@ fr:
         country: "Pays"
         title: "Nom de l'adresse"
         client: "Client"
+        address_types:
+          postal: "Postale"
+          email: "Email"
       client:
         email: "Email"
         encrypted_password: "Mot de passe encrypté"
@@ -161,6 +187,10 @@ fr:
         delivery_email: "Email du destinataire"
       order:
         aasm_state: "Etat de la commande"
+        aasm_states:
+          in_cart: "Panier"
+          paid: "Payé"
+          fulfilled: "Livré"
         coupon: "Coupon"
         delivery_address: "Adresse de livraison"
         billing_address: "Adresse de facturation"
@@ -183,6 +213,8 @@ fr:
       tree_plantation:
         project_name: "Nom du projet"
         project_type: "Type de projet"
+        project_type_fr: "Type de projet FR"
+        project_type_en: "Type de projet EN"
         plantation_uuid: "Identifiant de la plantation"
         base_certificate_uuid: "Base de l'identifiant de certificat"
         latitude: "Latitude"
@@ -190,6 +222,31 @@ fr:
         tree_specie: "Espèce d'arbre"
         producer_name: "Nom du producteur"
         trees_quantity: "Quantité d'arbres disponibles"
+        color_certificate: "Couleur du certificate"
+      ahoy/event:
+        visit: "Visite"
+        user: "Utilisateur"
+        name: "Nom"
+        properties: "Propriétés"
+        time: "Date et heure"
+      ahoy/visit:
+        user: "Utilisateur"
+        ip: "IP"
+        referrer: "Referrer"
+        referring_domain: "Domaine du referrer"
+        search_keyword: "Mot clé de recherche"
+        landing_page: "Landing page"
+        browser: "Navigateur"
+        os: "Système d'opération"
+        device_type: "Type d'appareil"
+        country: "Pays"
+        region: "Région"
+        city: "Ville"
+        utm_souce: "Source UTM"
+        utm_medium: "Medium UTM"
+        utm_term: "Terme UTM"
+        utm_content: "Contenu UTM"
+        utm_campaign: "Campagne UTM"
     errors:
       models:
         product_sku:
@@ -200,6 +257,8 @@ fr:
           attributes:
             trees_quantity:
               greater_than_or_equal_to: "en stock trop faible"
+            color_certificate:
+              format: "Doit être une couleur HEX valide"
         coupon:
           amount_or_percentage: "Montant ou pourcentage doit être rempli mais pas les 2"
         order:

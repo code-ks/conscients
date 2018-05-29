@@ -15,9 +15,13 @@ en:
       tree_plantation: "Tree Plantation"
       variabilization: "Variabilization"
       variant: "Variant"
-      visit: "Visit"
-      event: "Event"
+      ahoy/visit: "Visit"
+      ahoy/event: "Event"
+      blog_post: "Blog Post"
     attributes:
+      blog_post:
+        published_fr: "Publish in French?"
+        published_en: "Publish in English?"
       admin_user:
         email: "Email"
         current_sign_in_at: "Current Sign In At"
@@ -40,6 +44,9 @@ en:
           age: "Age"
       address:
         title: "Address title"
+        address_types:
+          postal: "Postal"
+          email: "Email"
       client:
         newsletter_subscriber: "Subscribed to the newsletter?"
       coupon:
@@ -50,6 +57,10 @@ en:
         amount_min_order_currency: "Currency of the minimum of the order"
       order:
         aasm_state: "State of the order"
+        aasm_states:
+          in_cart: "Cart"
+          paid: "Paid"
+          fulfilled: "Fulfilled"
         delivery_methods:
           single_address: "Delivery to an address"
           email: "Delivery by email"
@@ -61,9 +72,14 @@ en:
           paypal: "Paypal"
           bank_tranfer: "Bank Transfer"
       tree_plantation:
-        trees_quantity: "Available tree_quantity"
+        trees_quantity: "Available tree quantity"
+        color_certificate: "Color of the certificate"
       line_item:
         quantity: "Quantity in stock"
+      ahoy/event:
+        time: "Date and time"
+      ahoy/visit:
+        os: "Operating System"
     errors:
       models:
         product_sku:
@@ -74,6 +90,8 @@ en:
           attributes:
             trees_quantity:
               greater_than_or_equal_to: "in stock too limited"
+            color_certificate:
+              format: "Much be a valid HEX color"
         coupon:
           amount_or_percentage: "Amount or percentage must be filled but not both"
         order:

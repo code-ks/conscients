@@ -8,7 +8,7 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string :address_2
       t.string :city
       t.string :zip_code
-      t.string :country, default: "France"
+      t.string :country, default: "FR"
       t.string :title
       t.integer :address_type, default: 0, null: false
       t.string :email

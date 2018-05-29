@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register ProductSku do
-  menu parent: I18n.t('i18n.product_management')
+  menu parent: I18n.t('active_admin.product_management')
 
-  actions :all, except: %i[edit update]
+  permit_params :product_id, :sku_id
+
+  actions :all, except: %i[edit update destroy]
 
   index do
     selectable_column
     id_column
-    column :product_sku, &:to_s
+    column :product, &:to_s
     column :sku
     column :quantity
     column :created_at
@@ -19,7 +21,7 @@ ActiveAdmin.register ProductSku do
   show do
     attributes_table do
       row :id
-      row :product_sku
+      row :product
       row :sku
       row :quantity
       row :created_at

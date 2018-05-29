@@ -4,13 +4,14 @@
 #
 # Table name: categories
 #
-#  id         :bigint(8)        not null, primary key
-#  name       :string
-#  slug       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  ancestry   :string
-#  position   :integer
+#  id          :bigint(8)        not null, primary key
+#  name        :string
+#  slug        :string
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  ancestry    :string
+#  position    :integer
 #
 
 class Category < ApplicationRecord
@@ -20,7 +21,7 @@ class Category < ApplicationRecord
   acts_as_list scope: [:ancestry]
 
   extend Mobility
-  translates :slug, :name
+  translates :slug, :name, :description
 
   extend FriendlyId
   friendly_id :name, use: %i[slugged mobility]
@@ -35,6 +36,8 @@ class Category < ApplicationRecord
   class << self
     def last_visited
       find(Ahoy::Event.id_last_category_visited)
+    rescue ::ActiveRecord::RecordNotFound
+      Category.home
     end
   end
 

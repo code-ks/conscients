@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Categorization do
-  menu parent: I18n.t('i18n.product_management')
+  menu parent: I18n.t('active_admin.product_management')
 
   permit_params :product_id, :category_id
 

@@ -1,13 +1,70 @@
 {
   "ignored_warnings": [
     {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "210a1acfccb1e731c1d5b32656998d958369acb43925bf04dd014ba853d8e0ed",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/blog_posts/show.html.erb",
+      "line": 5,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "BlogPost.find(params[:id]).content",
+      "render_path": [{"type":"controller","class":"BlogPostsController","method":"show","line":10,"file":"app/controllers/blog_posts_controller.rb"}],
+      "location": {
+        "type": "template",
+        "template": "blog_posts/show"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "5ae43abdfa79811d9583897e08b191f7cc766a2734a1de2e31027551083fc5ac",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/admin/blog_posts/show.html.erb",
+      "line": 21,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "BlogPost.find(params[:id]).content_fr",
+      "render_path": [{"type":"controller","class":"Admin::BlogPostsController","method":"show","line":14,"file":"app/controllers/admin/blog_posts_controller.rb"}],
+      "location": {
+        "type": "template",
+        "template": "admin/blog_posts/show"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "931fffd384ec38fabcef555b296c5e571b1a5706c06aa87e2d2cc38bbbc4331d",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/admin/blog_posts/show.html.erb",
+      "line": 26,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "BlogPost.find(params[:id]).content_en",
+      "render_path": [{"type":"controller","class":"Admin::BlogPostsController","method":"show","line":14,"file":"app/controllers/admin/blog_posts_controller.rb"}],
+      "location": {
+        "type": "template",
+        "template": "admin/blog_posts/show"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "note": ""
+    },
+    {
       "warning_type": "Dynamic Render Path",
       "warning_code": 15,
       "fingerprint": "9eae49e812d00a0575072aedf9d167c0968f9647d51a66efb364039577ecd1bb",
       "check_name": "Render",
       "message": "Render path contains parameter value",
       "file": "app/views/products/index.html.erb",
-      "line": 8,
+      "line": 12,
       "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
       "code": "render(action => (Category.find(params[:category_id]) or Category.home).products.page(params[:page]).displayable.merge(product_search).merge(product_with_variant), {})",
       "render_path": [{"type":"controller","class":"ProductsController","method":"index","line":6,"file":"app/controllers/products_controller.rb"}],
@@ -20,6 +77,6 @@
       "note": ""
     }
   ],
-  "updated": "2018-04-18 20:58:58 +0800",
+  "updated": "2018-05-29 15:18:42 +0200",
   "brakeman_version": "4.2.1"
 }

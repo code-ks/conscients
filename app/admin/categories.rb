@@ -1,19 +1,16 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Category do
-  menu parent: I18n.t('i18n.product_management')
+  menu parent: I18n.t('active_admin.product_management')
 
   config.sort_order = 'position_asc'
 
-  permit_params :name, :slug, :name_en, :slug_en, :parent, :positon
+  permit_params :name_fr, :slug_fr, :name_en, :slug_en, :positon, :description_fr, :description_en,
+                :parent
 
   includes :text_translations
 
-  controller do
-    def find_resource
-      scoped_collection.friendly.find(params[:id])
-    end
-  end
+  actions :index, :show
 
   index do
     selectable_column
@@ -22,6 +19,8 @@ ActiveAdmin.register Category do
     column :name_en
     column :slug_fr
     column :slug_en
+    column :description_fr
+    column :description_en
     column :ancestry
     column :position
     column :created_at
@@ -36,8 +35,10 @@ ActiveAdmin.register Category do
       f.input :name_en
       f.input :slug_fr
       f.input :slug_en
-      f.input :parent, as: :select, collection: Category.all.collect(&:to_s)
-      f.input :postion
+      f.input :description_fr
+      f.input :description_en
+      f.input :parent, as: :select, collection: Category.all.map(&:to_s)
+      f.input :position
     end
     f.actions
   end
@@ -49,6 +50,8 @@ ActiveAdmin.register Category do
       row :name_en
       row :slug_fr
       row :slug_en
+      row :description_fr
+      row :description_en
       row :ancestry
       row :position
       row :created_at

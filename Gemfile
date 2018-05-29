@@ -32,6 +32,7 @@ gem 'devise', '~> 4.4'
 gem 'devise-i18n', '~> 1.6'
 gem 'gibbon', '~> 3.2'
 gem 'omniauth-facebook', '~> 5.0'
+gem 'postmark-rails', '~> 0.16'
 
 gem 'activeadmin', '~> 1.2'
 gem 'arctic_admin', '~> 1.4'
@@ -40,14 +41,20 @@ gem 'acts_as_list', '~> 0.9'
 gem 'ancestry', '~> 3.0'
 gem 'friendly_id', '~> 5.2'
 gem 'high_voltage', '~> 3.0'
+gem 'meta-tags', '~> 2.9'
 gem 'responders', '~> 2.4'
 
 gem 'aasm', '~> 4.12'
 gem 'money-rails', '~> 1.11'
+gem 'paypal-sdk-rest', '~> 1.7'
+gem 'stripe', '~> 3.13'
 
 gem 'kaminari', '~> 1.1'
 gem 'pg_search', '~> 2.1'
+gem 'wicked_pdf', '~> 1.1'
+gem 'wkhtmltopdf-binary', '~> 0.12'
 
+gem 'country_select', '~> 3.1'
 gem 'font-awesome-rails', git: 'git@github.com:bokmann/font-awesome-rails.git'
 gem 'sass-rails', '~> 5.0'
 
@@ -57,6 +64,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener', '~> 1.6'
+  gem 'letter_opener_web', '~> 1.3'
+
   gem 'listen', '~> 3.1'
   gem 'spring', '~> 2.0'
   gem 'spring-watcher-listen', '~> 2.0'

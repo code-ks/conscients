@@ -23,10 +23,76 @@ en:
       go_to_cart: "Go to my cart"
       plant_more_trees: "Plant more trees !"
       continue_purchases: "Continue my purchases"
+  invoices:
+    new:
+      order: "Order"
+      delivery_address: "Delivery address"
+      billing_address: "Billing address"
+      product_name: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      delivery_fees: "Delivery fees"
+      coupon_discount: "Discount"
+      total_price: "Total price"
+  certificates:
+    new:
+      tree_quantity:
+        one: "1 tree"
+        other: "%{count} treees"
+      project_name: "Project: %{project_name}"
+      project_type: "Type: %{project_type}"
+      project_partner: "Partner: %{project_partner}"
+      plantation_uuid: "Plantation: %{plantation_uuid}"
+      coordinates: "GPS Latitude: %{lat} - GPS Longitude: %{long}"
+      tree_specie: "Specie: %{tree_specie}"
+      tree_producer: "Producer: %{tree_producer}"
+  clients:
+    show:
+      profile: "Profile"
+      orders_list: "My orders"
+      impact: "My impact"
+    profile:
+      my_account: "My account"
+      client_email: "Email: %{email}"
+      my_addresses: "My addresses"
+      address_type: "Address type: %{type}"
+      edit_password: "Edit my password"
+    orders_list:
+      date: "Order Date"
+      amount: "Amount"
+      invoice: "Invoice"
+      certificates: "Certificates"
+    impact:
+      trees_planted: "trees planted"
+      tonnes_of_co2: "tonnes of Co2 captured"
+      tree_species: "Tree species planted"
+  admin:
+    blog_posts:
+      navlinks:
+        index: "Go to the index"
+        new: "Create a Blog Post"
+        edit: "Edit Blog Post"
+        destroy: "Destroy Blog Post"
+        confirm: "Are your sure?"
+        show: "Show Blog Post"
+        admin: "Go to admin dashboard"
+        no_blog_posts: "No blog posts"
+      edit:
+        title: "Edit Blog Post"
+      index:
+        title: "All the Blog Posts"
+        links: "Links"
+        show: "Show Blog Post"
+        edit: "Edit Blog Post"
+        destroy: "Destroy Blog Post"
+        confirm: "Are your sure?"
+      new:
+        title: "Create a Blog Post"
   checkout:
     carts:
       show:
         cart: "Cart"
+        cart_empty: "Empty cart"
         selection: "Selection"
         quantity: "Quantity"
         personalized_product: "Personalized product"
@@ -37,6 +103,7 @@ en:
     deliveries:
       top_description:
         title: "Delivery"
+        address: "Address for the delivery of the certificate"
         email: "Email for the delivery of the certificate"
         description: "You can inquire the email of the person to whom send the certificate in the sumarry on the right."
         description_details: "(You will receive a copie of the email to download the certificate)"
@@ -51,11 +118,12 @@ en:
         total_price: "Total"
       breadcrumb:
         cart: "Cart"
+        delivery: "Delivery"
       delivery_form:
         total_price: "Total price"
         without_delivery_fees: "(excluding delivery fees, calculated in the next screen)"
         delivery_is_billing: "Use the same address for billing and delivery"
-        go_to_paiement: "Go to paiement"
+        go_to_payment: "Go to paiement"
         general_sales_conditions: "I have read the general sales conditions and accept them"
         delivery_address: "Delivery address"
         billing_address: "Billing address"
@@ -65,6 +133,58 @@ en:
       add_coupon:
         coupon_name: "Coupon name"
         add_coupon: "Add"
+    payments:
+      breadcrumb:
+        cart: "Cart"
+        delivery: "Delivery"
+        payment: "Payment"
+      new:
+        title: "Payment"
+      line_items_table:
+        selection: "Selection"
+        quantity: "Quantity"
+        delivery: "Delivery"
+        total_price: "Total"
+      add_coupon:
+        coupon_name: "Coupon name"
+        add_coupon: "Add"
+      address:
+        billing: "Billing address"
+        delivery: "Delivery address"
+      payment_buttons:
+        select_payment_method: "Select your payment method"
+        bank_transfer: "Bank Transfer"
+      stripe_button:
+        card: "Card"
+      price:
+        sub_total: "Sub Total"
+        total_price: "Total price"
+        from_discount: "from discount"
+        delivery_fees: "Delivery fees"
+  client_mailer:
+    bank_account_details:
+      subject: "Please confirm your order"
+      greatings: "Hello"
+      core: "To confirm your order, please send a bank transfer of %{amount} to the joint bank account. Your order will be confirmed and shipped as soon as we receive the transfer"
+      thanks: "Thanks a lot"
+    order_confirmation:
+      subject: "Your order is confirmed"
+      greatings: "Hello"
+      core_email: "Your order is confirmed. Please find it and your invoice attached."
+      core_postal_with_tree: "Your order is confirmed and will be shipped soon. Please find your tree certificates and your invoice attached."
+      core_postal_without_tree: "Your order is confirmed and will be shipped soon. Please find your invoice attached."
+      thanks: "Thanks a lot"
+    order_fulfillment:
+      subject: "Your order has been shipped"
+      greatings: "Hello"
+      core: "Your order has been shipped. You should receive it in the next days."
+      thanks: "Thanks a lot"
+  recipient_mailer:
+    gift_certificate:
+      subject: "Somebody planted a tree for you"
+      greatings: "Hello"
+      core: "%{name} has planted a tree for you. Please find the certificate attached and visit www.conscients.com to plant some by yourself."
+      thanks: "Thanks a lot"
   devise:
     sessions:
       new:
@@ -80,10 +200,14 @@ en:
       participate: "Participate"
       my_cart: "My cart"
       search: "Search"
+      sign_in: "Connect"
+      blog: "Blog"
   active_admin:
     resource:
       show:
         remove_images: "Remove images linked to the product"
+        download_invoice: "Download invoice"
+        download_certificate: "Download certificate"
   flash:
     line_items:
       create:
@@ -92,3 +216,9 @@ en:
       create:
         alert: "Coupon incorrect"
         notice: "The coupon has been added to your order"
+    payments:
+      create:
+        alert: "A problem occured during your payment"
+        notice: "Your order has been confirmed. Thank you!"
+      create_bank_transfer:
+        notice: "You will receive an email with instruction for the bank transfer"
