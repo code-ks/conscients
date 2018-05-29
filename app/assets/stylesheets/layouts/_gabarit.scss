@@ -1,10 +1,24 @@
 // **** BASE RESPONSIVE FONT ****
   body {
+    h1 {
+      font-family: "Frank Ruhl Libre", "serif";
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+      color: $conscients-grey;
+    }
+    h2 {
+      font-family: "Roboto", "sans-serif";
+      text-transform: Uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      color: conscients-grey;
+    }
     p {
       font-family:"Frank Ruhl Libre", "serif";
       color: $conscients-black;
       font-size: 15px;
-        @media (max-width: $screen-xs) {
+        @include for-phone-only {
+        // @media (max-width: $screen-xs) {
           font-size: 13px; /* On screens that are equal to screen xs or less ie smartphone, font turn 13px */
         }
     }

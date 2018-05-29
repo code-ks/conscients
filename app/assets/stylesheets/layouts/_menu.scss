@@ -7,8 +7,8 @@
 
 .menu-wrapper {
   background-color: white;
-  // padding: 8px 0px;
-  border-bottom: 0.5px dotted $conscients-very-light-grey;
+  border-bottom: 1px dotted $conscients-very-light-grey;
+  padding: 16px;
 }
 
 .top-menu {
@@ -21,7 +21,7 @@
   background-color: white;
   font-family: "Roboto", "sans-serif";
   text-transform: Uppercase;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
   font-size: 0.8rem;
   color: $conscients-grey;
 }
@@ -46,5 +46,8 @@
 .top-menu-item {
 }
 
+.btn-white {
+  background-color: white;
+}
 
 
