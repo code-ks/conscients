@@ -1,3 +1,7 @@
+<% set_meta_tags title: I18n.t('meta_tags.products.index.title'),
+                 description: I18n.t('meta_tags.products.index.description'),
+                 keywords: I18n.t('meta_tags.products.index.keywords') %>
+
 <div class="container">
   <% if @products.any? %>
     <%= render 'breadcrumb', category: @category %>

@@ -41,6 +41,7 @@ gem 'acts_as_list', '~> 0.9'
 gem 'ancestry', '~> 3.0'
 gem 'friendly_id', '~> 5.2'
 gem 'high_voltage', '~> 3.0'
+gem 'meta-tags', '~> 2.9'
 gem 'responders', '~> 2.4'
 
 gem 'aasm', '~> 4.12'

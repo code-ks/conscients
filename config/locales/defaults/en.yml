@@ -15,3 +15,23 @@ en:
   namespace:
     'true': "Yes"
     'false': "No"
+  meta_tags:
+    blog_posts:
+      index:
+        title: "Blog"
+        description: "Conscients' Blog"
+        keywords: "Blog, Articles"
+    pages:
+      home:
+        title: "Home page"
+        description: "Conscients' home page"
+        keywords: "Sustainable development, Home"
+      about:
+        title: "About"
+        description: "To know more about Conscients"
+        keywords: "About"
+    products:
+      index:
+        title: "Products lists"
+        description: "Conscients' sustainable products"
+        keywords: "Products, Sustainable development"
