@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_092956) do
+ActiveRecord::Schema.define(version: 2018_05_23_104207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,9 +124,22 @@ ActiveRecord::Schema.define(version: 2018_05_04_092956) do
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
   end
 
+  create_table "blog_posts", force: :cascade do |t|
+    t.text "content"
+    t.string "slug"
+    t.string "seo_title"
+    t.string "meta_description"
+    t.boolean "published_fr", default: false, null: false
+    t.boolean "published_en", default: false, null: false
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "slug"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
@@ -278,7 +291,9 @@ ActiveRecord::Schema.define(version: 2018_05_04_092956) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.text "description"
+    t.string "description_short"
+    t.text "description_long"
+    t.string "product_class"
     t.integer "ht_price_cents", default: 0, null: false
     t.string "ht_price_currency", default: "EUR", null: false
     t.decimal "tax_rate", precision: 4, scale: 2, default: "20.0", null: false
@@ -320,6 +335,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_092956) do
     t.string "project_type"
     t.string "partner", null: false
     t.string "plantation_uuid", null: false
+    t.string "color_certificate", null: false
     t.string "base_certificate_uuid", null: false
     t.decimal "latitude", precision: 11, scale: 8, null: false
     t.decimal "longitude", precision: 11, scale: 8, null: false

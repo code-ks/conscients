@@ -3,9 +3,35 @@ fr:
     product_management: "Gestion des produits"
     order_management: "Gestion des commandes"
     client_management: "Gestion des clients"
+    blog_management: "Gestion du Blog"
+    current_state: "Statut actuel"
+    change_state: "Nouveau statut"
   paypal:
     delivery_fees: "Frais de livraison"
     total_price: "Prix total"
   time:
     formats:
       long_no_time: "%d %B %Y"
+  namespace:
+    'true': "Oui"
+    'false': "Non"
+  meta_tags:
+    blog_posts:
+      index:
+        title: "Blog"
+        description: "Blog du site Conscients"
+        keywords: "Blog, Articles"
+    pages:
+      home:
+        title: "Page d'accueil"
+        description: "Page d'accueil du site Conscients"
+        keywords: "Ecologique, Développement Durable, Accueil, Home"
+      about:
+        title: "A propos"
+        description: "Pour en savoir plus sur Conscients"
+        keywords: "A propos"
+    products:
+      index:
+        title: "Liste des produits"
+        description: "Les produits responsables Conscients"
+        keywords: "Produits, Développement Durable"

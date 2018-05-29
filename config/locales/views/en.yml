@@ -66,6 +66,28 @@ en:
       trees_planted: "trees planted"
       tonnes_of_co2: "tonnes of Co2 captured"
       tree_species: "Tree species planted"
+  admin:
+    blog_posts:
+      navlinks:
+        index: "Go to the index"
+        new: "Create a Blog Post"
+        edit: "Edit Blog Post"
+        destroy: "Destroy Blog Post"
+        confirm: "Are your sure?"
+        show: "Show Blog Post"
+        admin: "Go to admin dashboard"
+        no_blog_posts: "No blog posts"
+      edit:
+        title: "Edit Blog Post"
+      index:
+        title: "All the Blog Posts"
+        links: "Links"
+        show: "Show Blog Post"
+        edit: "Edit Blog Post"
+        destroy: "Destroy Blog Post"
+        confirm: "Are your sure?"
+      new:
+        title: "Create a Blog Post"
   checkout:
     carts:
       show:
@@ -179,10 +201,13 @@ en:
       my_cart: "My cart"
       search: "Search"
       sign_in: "Connect"
+      blog: "Blog"
   active_admin:
     resource:
       show:
         remove_images: "Remove images linked to the product"
+        download_invoice: "Download invoice"
+        download_certificate: "Download certificate"
   flash:
     line_items:
       create:

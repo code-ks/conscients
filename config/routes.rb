@@ -4,18 +4,19 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  scope '/(:locale)', locale: /ru|en/ do
-  end
-
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 
   devise_for :clients, only: :omniauth_callbacks,
-                       controllers: { omniauth_callbacks: 'clients/omniauth_callbacks' }
+  controllers: { omniauth_callbacks: 'clients/omniauth_callbacks' }
 
   scope '(:locale)', locale: /en/ do
     devise_for :clients, skip: :omniauth_callbacks
 
+    namespace :admin do
+      resources :blog_posts
+    end
+    resources :blog_posts, only: %i[index show]
     resource :clients, only: :show
     resources :categories, only: [] do
       resources :products, only: :index

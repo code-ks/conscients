@@ -1,0 +1,24 @@
+ <div class="mb-3">
+
+  <% unless action_name == "index" %>
+    <%= link_to t('.index'), admin_blog_posts_path, class: "btn btn-orange" %>
+  <% end %>
+
+  <% unless action_name == "new" %>
+    <%= link_to t('.new'), new_admin_blog_post_path, class: "btn btn-orange" %>
+  <% end %>
+
+  <% if action_name == "edit" %>
+    <%= link_to t('.show'), admin_blog_post_path(@blog_post), class: "btn btn-orange" %>
+  <% end %>
+
+  <% if action_name == "show" %>
+    <%= link_to t('.edit'), edit_admin_blog_post_path(@blog_post), class: "btn btn-orange" %>
+  <% end %>
+
+  <% if %w[edit show].include?(action_name) %>
+    <%= link_to t('.destroy'), admin_blog_post_path(@blog_post), method: :delete, class: "btn btn-orange", data: { confirm: t('.confirm') } %>
+  <% end %>
+
+  <%= link_to t('.admin'), admin_dashboard_path, class: "btn btn-orange" %>
+</div>

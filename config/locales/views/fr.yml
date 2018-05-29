@@ -66,6 +66,28 @@ fr:
       trees_planted: "arbres plantés"
       tonnes_of_co2: "tonnes de Co2 compensées"
       tree_species: "Espèces d'arbres plantées"
+  admin:
+    blog_posts:
+      navlinks:
+        index: "Aller à la liste des articles"
+        new: "Créer un article"
+        edit: "Modifier article"
+        destroy: "Détruire article"
+        confirm: "Êtes-vous sûr?"
+        show: "Montrer article"
+        admin: "Se rendre dans l'interface administrateur"
+      edit:
+        title: "Modifier article"
+      index:
+        title: "Liste des articles"
+        links: "Liens"
+        show: "Montrer article"
+        edit: "Modifier article"
+        destroy: "Détruire article"
+        confirm: "Êtes-vous sûr?"
+        no_blog_posts: "Pas d'articles"
+      new:
+        title: "Créer un article"
   checkout:
     carts:
       show:
@@ -179,6 +201,7 @@ fr:
       my_cart: "Mon panier"
       search: "Rechercher"
       sign_in: "Me connecter"
+      blog: "Blog"
   helpers:
     placeholder:
       search: "Ma recherche..."
@@ -203,6 +226,8 @@ fr:
     resource:
       show:
         remove_images: "Supprimer les images liées au produit"
+        download_invoice: "Télécharger la facture"
+        download_certificate: "Télécharger le certificat"
   flash:
     line_items:
       create:

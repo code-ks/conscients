@@ -60,9 +60,11 @@ class Order < ApplicationRecord
 
   delegate :client, :product, :amount_min_order, :valid_from, :valid_until,
            :amount_cents, :percentage, :list_of_clients, to: :coupon, prefix: true
-  delegate :email, :stripe_customer_id, to: :client, prefix: true
+  delegate :addresses, :email, :stripe_customer_id, to: :client, prefix: true
 
   scope :finished, -> { paid.merge(Order.fulfilled) }
+  scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
+  scope :cart_to_destroy, -> { in_cart.two_days_old }
 
   include AASM
   aasm enum: true do
@@ -76,6 +78,14 @@ class Order < ApplicationRecord
 
     event :fulfill, after: :fulfill_order do
       transitions from: :paid, to: :fulfilled
+    end
+  end
+
+  def to_s
+    if in_cart?
+      "#{I18n.t('activerecord.attributes.order.aasm_states.in_cart')}: #{client_email}"
+    else
+      "#{I18n.l(payment_date, format: :short)}: #{client_email}"
     end
   end
 

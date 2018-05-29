@@ -5,7 +5,9 @@
 # Table name: products
 #
 #  id                       :bigint(8)        not null, primary key
-#  description              :text
+#  description_short        :string
+#  description_long         :text
+#  product_class            :string
 #  ht_price_cents           :integer          default(0), not null
 #  ht_price_currency        :string           default("EUR"), not null
 #  tax_rate                 :decimal(4, 2)    default(20.0), not null
@@ -41,7 +43,8 @@ class Product < ApplicationRecord
 
   extend Mobility
   translates :name, backend: :column
-  translates :description, :seo_title, :meta_description, :keywords, :slug
+  translates :description_short, :description_long, :seo_title, :meta_description,
+             :keywords, :slug, :product_class
 
   include FriendlyId
   friendly_id :name, use: %i[slugged mobility]
@@ -56,11 +59,11 @@ class Product < ApplicationRecord
 
   enum product_type: { classic: 0, personalized: 1, tree: 2 }
 
-  validates :name_fr, :name_en, :description, :ht_price_cents, :product_type, :published,
-            :seo_title, :meta_description, :slug, :tax_rate, presence: true
+  validates :name_fr, :name_en, :description_short, :ht_price_cents, :product_type,
+            :published, :seo_title, :meta_description, :slug, :tax_rate, presence: true
   validates :name_fr, :name_en, :slug, :seo_title, uniqueness: true
   validates :name_fr, :name_en, :slug, length: { minimum: 3, maximum: 30 }
-  validates :description, :meta_description, length: { minimum: 50, maximum: 500 }
+  validates :description_short, :meta_description, length: { minimum: 50, maximum: 500 }
   validates :seo_title, length: { minimum: 5, maximum: 150 }
   validates :product_type, inclusion: { in: product_types.keys }
   validates :ht_price_cents, numericality: { greater_than_or_equal_to: 1 }

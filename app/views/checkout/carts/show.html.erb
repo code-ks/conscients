@@ -1,4 +1,6 @@
-<div class="container">
+<% set_meta_tags noindex: true %>
+
+<div class="container mb-5">
   <% if @cart.line_items.empty? %>
     <h1 class="text-uppercase my-4"><%= t('.empty_cart') %></h1>
   <% else %>

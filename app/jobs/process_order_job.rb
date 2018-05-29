@@ -12,7 +12,7 @@ class ProcessOrderJob < ApplicationJob
     generate_certificates
     send_order_confirmation
     send_gift_certificates
-    @order.fulfilled! if @email.email?
+    @order.fulfilled! if @order.email?
   end
 
   private

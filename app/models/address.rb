@@ -38,6 +38,10 @@ class Address < ApplicationRecord
   validates :first_name, :last_name, :address_1, :city, :zip_code, :country,
             presence: true, allow_blank: false, if: :postal?
 
+  def to_s
+    "#{address_1} #{zip_code} #{city}"
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end

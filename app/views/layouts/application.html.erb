@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%= Rails.application.class.parent_name %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <%= display_meta_tags site: 'Conscients' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
   </head>
@@ -14,7 +14,6 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_tag "window.locale = #{I18n.locale.to_s.inspect};" %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval': 'false', 'data-turbolinks-suppress-warning': 'true' %>
   </body>
 </html>
