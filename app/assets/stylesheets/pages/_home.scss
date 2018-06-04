@@ -9,7 +9,7 @@
     text-align: center;
     text-transform: none;
       @include for-phone-only {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
   }
   h3{
@@ -22,22 +22,17 @@
         font-size : 0.5rem;
       }
   }
-  p{
-
-  }
 }
 
 .home-title-padding {
-  padding-top: 48px;
+  padding-top: 32px;
   padding-bottom: 16px;
   @include for-tablet-landscape-up {
-    padding-bottom: 48px
+    padding-top: 48px;
+    padding-bottom: 32px
   }
 }
 
-.home-sub-title-padding {
-
-}
 // OCCASIONS BOX
   .occasions-container{
     position: relative;

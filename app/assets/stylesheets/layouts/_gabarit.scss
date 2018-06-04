@@ -16,10 +16,9 @@
     p {
       font-family:"Frank Ruhl Libre", "serif";
       color: $conscients-black;
-      font-size: 15px;
+      font-size: 1rem;
         @include for-phone-only {
-        // @media (max-width: $screen-xs) {
-          font-size: 13px; /* On screens that are equal to screen xs or less ie smartphone, font turn 13px */
+          font-size: 13px;
         }
     }
   }
@@ -35,34 +34,20 @@
     color: white;
   }
 
-  .big-title-min {
-    font-family: "Roboto", "sans-serif";
-    text-align: center;
-    letter-spacing: 0.05rem;
-    font-size: 1.5rem;
-    color: $conscients-grey;
-  }
 
-  .small-title {
-    font-family: "Roboto", "sans-serif";
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 0.1rem;
-    color: $conscients-grey;
-  }
-
-
-  // .small-title-min {
-  //   font-family: "Frank Ruhl Libre", "serif";
-  //   font-size: 0.7rem;
-  //   letter-spacing: 0.1rem;
-  //   color: $conscients-grey;
-  // }
 
 
 // **** PADDING ***
 .logo-padding {
   padding: 16px 0px 24px 0px;
+}
+
+.padding-around {
+  padding : 16px;
+}
+
+.padding-b {
+  padding-bottom : 16px;
 }
 
 // .side-padding {
