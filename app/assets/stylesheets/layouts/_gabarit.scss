@@ -4,6 +4,7 @@
 .bg-red {
   background-color: red;
 }
+
 // **** BASE RESPONSIVE FONT ****
   body {
     color: $conscients-grey;
@@ -32,23 +33,27 @@
     margin: 0 auto;
     width: $container-width;
   }
-  .sub-container-conscients{
-    width: 95vw;
-    margin: 0 auto;
-    background-color: $conscients-green;
-    height: 300px;
-  }
+
   .flex-container {
     display: flex;
   }
 
   .scrolling-wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-    .sw-card {
-      flex: 0 0 auto;
-    }
+    width: 95vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+      display: none;
+      }
+      .sw-card {
+        flex: 0 0 auto;
+        // height: 500px;
+        height: 60vh;
+        margin-right: 5px;
+      }
   }
 
 
