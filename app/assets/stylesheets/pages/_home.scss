@@ -31,6 +31,22 @@
   }
 }
 
+// ARROW CONTAINER
+  .arrow-container {
+    display: flex;
+  }
+  .arrow-item {
+    align-self: center;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: $conscients-very-light-grey;
+    font-weight: 100;
+    a:hover {
+      color: $conscients-grey;
+    }
+  }
+
+
 // OCCASIONS BOX
   .occasions-container{
     position: relative;
@@ -57,13 +73,10 @@
   }
 
   .occasions-card{
-    border: 1px solid $conscients-light-grey;
     background-color: white;
     text-align: center;
-      @include for-tablet-portrait-only {
-        border: none;
-      }
       @include for-tablet-landscape-up {
+        border: 1px solid $conscients-light-grey;
         height: 85%;
         width: 38%;
         position: absolute;
