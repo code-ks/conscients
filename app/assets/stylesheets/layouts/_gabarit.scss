@@ -1,25 +1,23 @@
 // **** BASE RESPONSIVE FONT ****
   body {
+    color: $conscients-grey;
     h1 {
       font-family: "Frank Ruhl Libre", "serif";
       font-size: 2rem;
       letter-spacing: 0.1rem;
-      color: $conscients-grey;
     }
     h2 {
       font-family: "Roboto", "sans-serif";
       text-transform: Uppercase;
       font-size: 0.8rem;
       letter-spacing: 0.1rem;
-      color: conscients-grey;
+        @include for-phone-only {
+          font-size: 10px;
+        }
     }
     p {
       font-family:"Frank Ruhl Libre", "serif";
-      color: $conscients-black;
       font-size: 1rem;
-        @include for-phone-only {
-          font-size: 13px;
-        }
     }
   }
 
@@ -29,33 +27,21 @@
     width: $container-width;
   }
 
-// **** FONTS ***
+// **** PADDING ***
+  .logo-padding {
+    padding: 16px 0px 24px 0px;
+  }
+  .padding-around {
+    padding : 16px;
+  }
+  .padding-b {
+    padding-bottom : 16px;
+  }
+
+// ****TEXT AND LINKS COLORS ****
   .t-white {
     color: white;
   }
-
-
-
-
-// **** PADDING ***
-.logo-padding {
-  padding: 16px 0px 24px 0px;
-}
-
-.padding-around {
-  padding : 16px;
-}
-
-.padding-b {
-  padding-bottom : 16px;
-}
-
-// .side-padding {
-//   padding-left: 1.5rem !important;
-//   padding-right: 1.5rem !important;
-// }
-
-// **** LINKS COLORS ****
   .coral-link {
     a {
       &:hover {

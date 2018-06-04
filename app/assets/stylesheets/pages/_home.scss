@@ -5,7 +5,6 @@
     font-family: "Frank Ruhl Libre", "serif";
     font-size: 2rem;
     letter-spacing: 0.1rem;
-    color: $conscients-grey;
     text-align: center;
     text-transform: none;
       @include for-phone-only {
@@ -17,9 +16,8 @@
     text-transform: Uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
-    color: conscients-grey;
       @include for-phone-only {
-        font-size : 0.5rem;
+        font-size : 10px;
       }
   }
 }
@@ -39,7 +37,6 @@
     width: 95vw;
     margin: 0 auto;
       @include for-tablet-landscape-up {
-      // @media (min-width: $screen-sm){
         height: 60vh;
         width: 85vw;
       }
@@ -56,7 +53,6 @@
         background-size: cover !important;
         background-position: center;
         text-align: left;
-        background-color: purple;
       }
   }
 
@@ -68,8 +64,6 @@
         border: none;
       }
       @include for-tablet-landscape-up {
-      // @media (min-width: $screen-sm) {
-        /* On screens that are equal to screen md or more ie desktop*/
         height: 85%;
         width: 38%;
         position: absolute;
@@ -90,7 +84,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    color: $conscients-grey;
   }
   .occasions-card-title {
     margin: auto;
@@ -109,7 +102,6 @@
     // background-color: pink;
     p {
       margin-bottom: 5px;
-      color: $conscients-grey;
     }
   }
 
