@@ -20,7 +20,7 @@
     <h3>Cadeaux de naissance</h3>
   </a>
   <a class="tab" href="#">
-    <h3>Pour les grands et les parents</h3>
+    <h3>Pour les grands</h3>
   </a>
   <a class="tab" href="#">
     <h3>Offrir un arbre</h3>
@@ -28,10 +28,8 @@
   </div>
 </div>
 
-
-
 <div class="tab-content">
-  <div class="container-conscients arrow-container">
+  <div class="container-conscients flex-container">
     <div class="arrow-item"><%= link_to "<", root_path %></div>
     <div class="occasions-container">
       <div class="occasions-img-box" style="background-image: url('http://www.conscients.com/shop/64-371-thickbox/album-illustre-jeunesse-foret-tropicale.jpg');">
@@ -51,24 +49,17 @@
   </div>
 </div>
 
-<!-- ORIGINAL     -->
-<!-- <div class="tab-content">
-  <div class="occasions-container">
-    <div class="occasions-img-box" style="background-image: url('http://www.conscients.com/shop/64-371-thickbox/album-illustre-jeunesse-foret-tropicale.jpg');">
-    </div>
-    <div class="occasions-card">
-        <div class="occasions-card-content-box home-font">
-          <img class="occasions-card-img" src="http://www.conscients.com/shop/69-396-large/coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.jpg">
-          <div class="occasions-card-description">
-          <h3>my tree-shirt</h3>
-          <p>Body bio 6-12 mois + Trousse bio + Certificat de plantation nominatif</p>
-          <p>42 €</p>
-          </div>
-        </div>
-    </div>
-  </div>
-</div> -->
-<!-- FIN ORIGINAL -->
+<div class="container-conscients home-font home-title-padding">
+  <h2>Vêtements bio 0-5 ans</h2>
+</div>
+<div class="scrolling-wrapper">
+  <div class="sw-card bg-pink"><img class="occasions-card-img" src="http://www.conscients.com/shop/69-396-large/coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.jpg"></div>
+  <div class="sw-card"><img class="occasions-card-img" src="http://www.conscients.com/shop/69-396-large/coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.jpg"></div>
+  <div class="sw-card bg-pink"><img class="occasions-card-img" src="http://www.conscients.com/shop/69-396-large/coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.jpg"></div>
+  <div class="sw-card"><img class="occasions-card-img" src="http://www.conscients.com/shop/69-396-large/coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.jpg"></div>
+  <div class="sw-card bg-pink"><img class="occasions-card-img" src="http://www.conscients.com/shop/69-396-large/coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.jpg"></div>
+  <div class="sw-card"><img class="occasions-card-img" src="http://www.conscients.com/shop/69-396-large/coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.jpg"></div>
+</div>
 
 <div class="container-conscients pt-5">
 <h1 class="flex justify-center"><%= t 'pages.home.hello' %> Hello from <%= Rails.application.class

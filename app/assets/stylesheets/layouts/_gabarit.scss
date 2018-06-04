@@ -1,3 +1,9 @@
+.bg-pink {
+  background-color: pink;
+}
+.bg-red {
+  background-color: red;
+}
 // **** BASE RESPONSIVE FONT ****
   body {
     color: $conscients-grey;
@@ -26,6 +32,26 @@
     margin: 0 auto;
     width: $container-width;
   }
+  .sub-container-conscients{
+    width: 95vw;
+    margin: 0 auto;
+    background-color: $conscients-green;
+    height: 300px;
+  }
+  .flex-container {
+    display: flex;
+  }
+
+  .scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+    .sw-card {
+      flex: 0 0 auto;
+    }
+  }
+
+
 
 // **** PADDING ***
   .logo-padding {
