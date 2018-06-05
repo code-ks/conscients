@@ -1,9 +1,38 @@
 .my-carousel-container{
   display: flex;
+  margin: 0 auto;
+  width: $container-width;
 }
 .box{
   height: 100px;
-  width: 25%;
+  width: 100%;
   background-color: yellow;
   border: 1px solid black;
+  @include for-tablet-landscape-up {
+    width: 25%;
+  }
 }
+
+// // .flex-grid {
+// //   display: flex;
+// // }
+// // .flex-grid .col {
+// //   flex: 1;
+// // }
+// .flex-grid-four {
+//   display: flex;
+//   justify-content: space-between;
+// }
+// .flex-grid-four .col {
+//   width: 25%;
+// }
+
+// @media (max-width: 400px) {
+//   .flex-grid-four {
+//     display: block;
+//     .col {
+//       width: 100%;
+//       margin: 0 0 10px 0;
+//     }
+//   }
+// }
