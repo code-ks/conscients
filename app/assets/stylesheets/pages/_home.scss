@@ -31,19 +31,6 @@
   }
 }
 
-// ARROW CONTAINER
-  .arrow-item {
-    align-self: center;
-    margin: 0 auto;
-    font-size: 2rem;
-    color: $conscients-very-light-grey;
-    font-weight: 100;
-    a:hover {
-      color: $conscients-grey;
-    }
-  }
-
-
 // OCCASIONS BOX
   .occasions-container{
     position: relative;
@@ -73,7 +60,7 @@
     background-color: white;
     text-align: center;
       @include for-tablet-landscape-up {
-        border: 1px solid $conscients-light-grey;
+        border: 1px solid $conscients-very-light-grey;
         height: 85%;
         width: 38%;
         position: absolute;

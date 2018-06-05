@@ -57,7 +57,6 @@
   }
 
 
-
 // **** PADDING ***
   .logo-padding {
     padding: 16px 0px 24px 0px;
@@ -79,6 +78,30 @@
         color: $conscients-coral;
       }
     }
+  }
+
+  // SLIDER ARROW
+  .carousel-control-prev, .carousel-control-next {
+    width: 10%;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    background-size: 100%, 100%;
+    background-image: none;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 40px;
+    color: $conscients-light-grey;
+  }
+
+  .carousel-control-next-icon:after
+  {
+    content: '>';
+  }
+
+  .carousel-control-prev-icon:after {
+    content: '<';
   }
 
 
