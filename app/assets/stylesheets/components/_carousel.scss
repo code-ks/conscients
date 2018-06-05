@@ -5,6 +5,10 @@
   #clothes-carousel {
   }
 
+  #test-carousel {
+
+  }
+
 // CAROUSEL ARROW
   .carousel-control-prev, .carousel-control-next {
     width: 10%;
@@ -34,9 +38,9 @@
       flex: 1 0 auto;
   }
 
-  .row-equal .card {
-     width: 100%;
-  }
+  // .row-equal .card {
+  //    width: 100%;
+  // }
 
   /* ensure equal card height inside carousel */
   .carousel-inner>.row-equal.active,
@@ -44,6 +48,7 @@
   .carousel-inner>.row-equal.prev {
       display: flex;
   }
+
 
   /* prevent flicker during transition */
   .carousel-inner>.row-equal.active.left,
@@ -59,14 +64,38 @@
       overflow:hidden;
   }
 
-  // .carousel-card-img {
-  //   max-height: 65%;
-  //   min-height: 0; //to avoid overflow
-  //   max-width: 100%;
-  //   margin-top: 1px;
-  // }
   .row {
       flex-wrap: nowrap !important;
       overflow: hidden !important;
+      margin: 0 auto;
   }
+
+  .shop-carousel-col {
+    justify-content: center;
+    background-color: pink;
+    margin: 0 auto;
+  }
+  .shop-carousel-card{
+    background-color: red;
+    text-align: center;
+        // height: 85%;
+        height: 350px;
+        max-height: 350px;
+        // width: 38%;
+    border: none;
+    margin: 0 auto;
+  }
+
+
+
+// card sur mon site venant de bootstrap
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     min-width: 0;
+//     word-wrap: break-word;
+//     background-color: #fff;
+//     background-clip: border-box;
+//     border: 1px solid rgba(0, 0, 0, 0.125);
+//     border-radius: 0.25rem;
 
