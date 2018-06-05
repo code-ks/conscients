@@ -1,35 +1,35 @@
 // Specific CSS for your home-page
 // FONTS
-.home-font {
-  h2{
-    font-family: "Frank Ruhl Libre", "serif";
-    font-size: 2rem;
-    letter-spacing: 0.1rem;
-    text-align: center;
-    text-transform: none;
-      @include for-phone-only {
-        font-size: 1.4rem;
-      }
+  .home-font {
+    h2{
+      font-family: "Frank Ruhl Libre", "serif";
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      text-transform: none;
+        @include for-phone-only {
+          font-size: 1.4rem;
+        }
+    }
+    h3{
+      font-family: "Roboto", "sans-serif";
+      text-transform: Uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+        @include for-phone-only {
+          font-size : 10px;
+        }
+    }
   }
-  h3{
-    font-family: "Roboto", "sans-serif";
-    text-transform: Uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.1rem;
-      @include for-phone-only {
-        font-size : 10px;
-      }
-  }
-}
 
-.home-title-padding {
-  padding-top: 32px;
-  padding-bottom: 16px;
-  @include for-tablet-landscape-up {
-    padding-top: 48px;
-    padding-bottom: 32px
+  .home-title-padding {
+    padding-top: 32px;
+    padding-bottom: 16px;
+    @include for-tablet-landscape-up {
+      padding-top: 48px;
+      padding-bottom: 32px
+    }
   }
-}
 
 // OCCASIONS BOX
   .occasions-container{

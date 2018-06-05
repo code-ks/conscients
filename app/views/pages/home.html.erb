@@ -2,31 +2,31 @@
                  description: I18n.t('meta_tags.pages.home.description'),
                  keywords: I18n.t('meta_tags.pages.home.keywords') %>
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.conscients.com/shop/64-373-thickbox/album-illustre-jeunesse-foret-tropicale.jpg');">
-  <div class="banner-content">
-    <h2>This banner</h2>
-    <h1>Will be replaced</h1>
-    <a class="banner-link" href="https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/">by a slideshow</a>
+<!-- BANNER -->
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.conscients.com/shop/64-373-thickbox/album-illustre-jeunesse-foret-tropicale.jpg');">
+    <div class="banner-content">
+      <h2>This banner</h2>
+      <h1>Will be replaced</h1>
+      <a class="banner-link" href="https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/">by a slideshow</a>
+    </div>
   </div>
-</div>
-
-<div class="container-conscients home-font home-title-padding">
-  <h2>Des cadeaux et du sens</h2>
-</div>
-
-<div class="container-conscients home-font padding-b">
-  <div class="tabs">
-    <a class="tab active" href="#">
-    <h3>Cadeaux de naissance</h3>
-  </a>
-  <a class="tab" href="#">
-    <h3>Pour les grands</h3>
-  </a>
-  <a class="tab" href="#">
-    <h3>Offrir un arbre</h3>
-  </a>
+<!-- OCCASIONS TITLE AND TABS-->
+  <div class="container-conscients home-font home-title-padding">
+    <h2>Des cadeaux et du sens</h2>
   </div>
-</div>
+  <div class="container-conscients home-font padding-b">
+    <div class="tabs">
+      <a class="tab active" href="#">
+      <h3>Cadeaux de naissance</h3>
+    </a>
+    <a class="tab" href="#">
+      <h3>Pour les grands</h3>
+    </a>
+    <a class="tab" href="#">
+      <h3>Offrir un arbre</h3>
+    </a>
+    </div>
+  </div>
 
 <!-- ORIGINAL OCCASIONS -->
 <!-- <div class="tab-content">
@@ -104,12 +104,129 @@
   </a>
 </div>
 
-
+<!-- OTHER SLIDER VETEMENTS -->
 <div class="container-conscients home-font home-title-padding">
   <h2>Vêtements bio 0-5 ans</h2>
 </div>
+<!-- DEBUT CAROUSEL -->
+<div id="clothes-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="container p-t-0 m-t-2 carousel-inner">
+<!-- DIV ROW CAROUSEL ITEM ACTIVE         -->
+        <div class="row row-equal carousel-item active m-t-0">
+<!-- COL MD 4             -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-img-top card-img-top-250">
+                        <img class="img-fluid" src="http://www.conscients.com/shop/38-212-large/t-shirt-bio-blanc-tie-break-conscients.jpg" alt="Carousel 1">
+                    </div>
+                    <div class="card-block p-t-2">
+                        <h6 class="small text-wide p-b-2">Insight</h6>
+                        <h2>
+                            <a href>Why Stuff Happens Every Year.</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+<!-- COL MD 4             -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-img-top card-img-top-250">
+                        <img class="img-fluid" src="http://www.conscients.com/shop/50-257-thickbox/debardeur-bio-jaune-tree-hug-conscients.jpg" alt="Carousel 2">
+                    </div>
+                    <div class="card-block p-t-2">
+                        <h6 class="small text-wide p-b-2">Development</h6>
+                        <h2>
+                            <a href>How to Make Every Line Count.</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+<!-- COL MD 4            -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-img-top card-img-top-250">
+                        <img class="img-fluid" src="http://www.conscients.com/shop/10-146-large/combinaison-bio-bebe-noire-slow-conscients.jpg" alt="Carousel 3">
+                    </div>
+                    <div class="card-block p-t-2">
+                        <h6 class="small text-wide p-b-2">Design</h6>
+                        <h2>
+                            <a href>Responsive is Essential.</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- DIV ROW CAROUSEL ITEM         -->
+        <div class="row row-equal carousel-item m-t-0">
+<!-- COL MD 4             -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-img-top card-img-top-250">
+                        <img class="img-fluid" src="http://www.conscients.com/shop/14-145-large/combinaison-bio-bebe-fille-rose-et-prune-bombacha-conscients.jpg" alt="Carousel 4">
+                    </div>
+                    <div class="card-block p-t-2">
+                        <h6 class="small text-wide p-b-2">Another</h6>
+                        <h2>
+                            <a href>Tagline or Call-to-action.</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+<!-- COL MD 4             -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-img-top card-img-top-250">
+                        <img class="img-fluid" src="http://www.conscients.com/shop/50-257-thickbox/debardeur-bio-jaune-tree-hug-conscients.jpg" alt="Carousel 5">
+                    </div>
+                    <div class="card-block p-t-2">
+                        <h6 class="small text-wide p-b-2"><span class="pull-xs-right">12.04</span> Category 1</h6>
+                        <h2>
+                            <a href>This is a Blog Title.</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+<!-- COL MD 4 FADEIN             -->
+            <!-- <div class="col-md-4 fadeIn wow"> -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-img-top card-img-top-250">
+                        <img class="img-fluid" src="http://www.conscients.com/shop/50-257-thickbox/debardeur-bio-jaune-tree-hug-conscients.jpg" alt="Carousel 6">
+                    </div>
+                    <div class="card-block p-t-2">
+                        <h6 class="small text-wide p-b-2">Category 3</h6>
+                        <h2>
+                            <a href>Catchy Title of a Blog Post.</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN DIV ROW         -->
+    </div>
+<!-- FLECHES     -->
+    <a class="carousel-control-prev" href="#clothes-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#clothes-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+<!-- FIN CAROUSEL -->
+</div>
+
+
+
+
+
+
 
 <!-- ///SLIDER SHOP VETEMENTS -->
+<!-- <div class="container-conscients home-font home-title-padding">
+  <h2>Vêtements bio 0-5 ans</h2>
+</div>
+
 <div id="clothes-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -130,7 +247,9 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+</div> -->
+
+
 
 <div class="container-conscients pt-5">
 <h1 class="flex justify-center"><%= t 'pages.home.hello' %> Hello from <%= Rails.application.class
