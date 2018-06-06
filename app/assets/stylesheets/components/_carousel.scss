@@ -9,7 +9,7 @@
 
   }
 
-// CAROUSEL ARROW
+// CAROUSEL ARROW VENANT DU MODELE
   .carousel-control-prev, .carousel-control-next {
     width: 10%;
   }
@@ -64,11 +64,12 @@
       overflow:hidden;
   }
 
-  .row {
-      flex-wrap: nowrap !important;
-      overflow: hidden !important;
-      margin: 0 auto;
-  }
+// MON CSS
+  // .row {
+  //     flex-wrap: nowrap !important;
+  //     overflow: hidden !important;
+  //     margin: 0 auto;
+  // }
 
   .shop-carousel-col {
     justify-content: center;
@@ -85,17 +86,4 @@
     border: none;
     margin: 0 auto;
   }
-
-
-
-// card sur mon site venant de bootstrap
-//     position: relative;
-//     display: flex;
-//     flex-direction: column;
-//     min-width: 0;
-//     word-wrap: break-word;
-//     background-color: #fff;
-//     background-clip: border-box;
-//     border: 1px solid rgba(0, 0, 0, 0.125);
-//     border-radius: 0.25rem;
 
