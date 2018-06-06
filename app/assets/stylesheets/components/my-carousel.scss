@@ -1,6 +1,13 @@
+// .ligne {
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin-right: -15px;
+//     margin-left: -15px;
+// }
 .ligne {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow: visible;
     margin-right: -15px;
     margin-left: -15px;
 }
