@@ -2,30 +2,45 @@
   color: white;
   text-align: center;
   width: 95vw;
-  height: 80vh;
+  height: 40vh;
   background-size: cover !important;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
   margin: 0 auto;
+  @include for-tablet-landscape-up {
+    width: 95vw;
+    height: 80vh;
+  }
 }
 
 .banner-content {
   width: 80vw;
-  margin: 0 auto;
+  padding-bottom: 5%;
   text-align: left;
-  padding-bottom: 200px;
+  padding-left: 50px;
+    @include for-tablet-landscape-up {
+    width: 60vw;
+    }
+    @include for-phone-only {
+      width: 80vw;
+      padding-left: 30px;
+    }
 }
 
 .banner h1 {
   font-family: "Frank Ruhl Libre", "serif";
   font-weight: 300;
-  font-size: 3.5rem;
+  font-size: 2rem;
   letter-spacing: 0.1rem;
   color: white;
-    @media (max-width: $screen-xs) {
-      font-size: 2rem; /* On screens that are equal to screen xs or less ie smartphone, font turn 13px */
-    }
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  @include for-tablet-landscape-up {
+    font-size: 3rem;
+  }
+  @include for-phone-only {
+    font-size: 1.4rem;
+  }
 }
 
 .banner-link {
