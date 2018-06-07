@@ -5,6 +5,33 @@
   background-color: red;
 }
 
+// ROW AND COL
+  .ligne {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      overflow: hidden;
+  }
+  .col-sm-xs-1-col-md4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right:15px;
+    padding-left: 15px;
+      @include for-tablet-landscape-up {
+      flex: O O 25%;
+      max-width: 25%;
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+      }
+  }
+
 // **** BASE RESPONSIVE FONT ****
   body {
     color: $conscients-grey;

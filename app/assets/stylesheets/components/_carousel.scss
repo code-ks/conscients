@@ -9,7 +9,7 @@
 
   }
 
-// CAROUSEL ARROW VENANT DU MODELE
+// CAROUSEL ARROW
   .carousel-control-prev, .carousel-control-next {
     width: 10%;
   }
@@ -31,59 +31,5 @@
     content: '<';
   }
 
-// CAROUSEL CLOTHES CARD SLIDER
-  /* equal card height */
-  .row-equal > div[class*='col-'] {
-      display: flex;
-      flex: 1 0 auto;
-  }
 
-  // .row-equal .card {
-  //    width: 100%;
-  // }
-
-  /* ensure equal card height inside carousel */
-  .carousel-inner>.row-equal.active,
-  .carousel-inner>.row-equal.next,
-  .carousel-inner>.row-equal.prev {
-      display: flex;
-  }
-
-
-  /* prevent flicker during transition */
-  .carousel-inner>.row-equal.active.left,
-  .carousel-inner>.row-equal.active.right {
-      opacity: 0.5;
-      display: flex;
-  }
-
-
-  /* control image height */
-  .card-img-top-250 {
-      max-height: 300px;
-      overflow:hidden;
-  }
-
-// MON CSS
-  // .row {
-  //     flex-wrap: nowrap !important;
-  //     overflow: hidden !important;
-  //     margin: 0 auto;
-  // }
-
-  .shop-carousel-col {
-    justify-content: center;
-    background-color: pink;
-    margin: 0 auto;
-  }
-  .shop-carousel-card{
-    background-color: red;
-    text-align: center;
-        // height: 85%;
-        height: 350px;
-        max-height: 350px;
-        // width: 38%;
-    border: none;
-    margin: 0 auto;
-  }
 
