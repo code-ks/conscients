@@ -8,7 +8,7 @@
       text-align: center;
       text-transform: none;
         @include for-phone-only {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
         }
     }
     h3{
@@ -17,12 +17,15 @@
       font-size: 0.8rem;
       letter-spacing: 0.1rem;
         @include for-phone-only {
-          font-size : 10px;
+          font-size : 0.5rem;
         }
     }
     p {
-      font-weight: 100;
+      font-weight: 300;
       font-size: 0.9rem;
+      @include for-phone-only {
+        font-size: 0.8rem;
+      }
     }
   }
 
