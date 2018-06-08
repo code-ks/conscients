@@ -24,8 +24,10 @@
     width: 60vw;
     }
     @include for-phone-only {
-      width: 80vw;
-      padding-left: 30px;
+      width: 100vw;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      text-align: center;
     }
 }
 
@@ -41,6 +43,7 @@
   }
   @include for-phone-only {
     font-size: 1rem;
+    margin-bottom: 0;
   }
 }
 

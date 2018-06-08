@@ -5,6 +5,10 @@
   background-color: red;
 }
 
+.bg-blue {
+  background-color: lightcyan;
+}
+
 // ROW AND COL
   .ligne {
       display: flex;
@@ -59,6 +63,7 @@
   .container-conscients{
     margin: 0 auto;
     width: $container-width;
+    overflow: hidden;
   }
 
   .flex-container {

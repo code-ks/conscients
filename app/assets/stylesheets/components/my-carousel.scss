@@ -8,9 +8,20 @@
   #test-carousel {
   }
 
+// CAROUSEL SHOP DESKTOP
+  .carousel-shop-desktop {
+    display: none;
+    @include for-tablet-landscape-up {
+      display: block;
+    }
+  }
+
 // CAROUSEL ARROW
   .carousel-control-prev, .carousel-control-next {
     width: 10%;
+    @include for-tablet-portrait-only {
+      width: 40%;
+    }
   }
   .carousel-control-prev-icon,
   .carousel-control-next-icon {

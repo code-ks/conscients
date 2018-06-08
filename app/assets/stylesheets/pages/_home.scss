@@ -8,7 +8,7 @@
       text-align: center;
       text-transform: none;
         @include for-phone-only {
-          font-size: 1.2rem;
+          font-size: 1.1rem;
         }
     }
     h3{
@@ -24,17 +24,22 @@
       font-weight: 300;
       font-size: 0.9rem;
       @include for-phone-only {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
       }
     }
   }
 
+// PADDING
   .home-title-padding {
     padding-top: 32px;
     padding-bottom: 16px;
     @include for-tablet-landscape-up {
       padding-top: 48px;
       padding-bottom: 32px
+    }
+    @include for-phone-only {
+      padding-top: 24px;
+      padding-bottom: 8px;
     }
   }
 
@@ -78,6 +83,9 @@
         bottom: 0;
         right: 0;
       }
+      @include for-phone-only {
+        height: 40vh;
+      }
   }
 
   .occasions-card-content-box {
@@ -107,6 +115,9 @@
     // background-color: pink;
     p {
       margin-bottom: 5px;
+    }
+    @include for-phone-only {
+      width: 60%;
     }
   }
 

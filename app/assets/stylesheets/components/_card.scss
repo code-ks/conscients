@@ -26,56 +26,16 @@
     height: 90%;
   }
 
-// CARDS CONSCIENTS
-  .card-conscients {
-    // height: 440px;
-    position: relative;
-  }
-
-  .card-conscients-img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .card-conscients-content {
-    height: 165px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 15px 0px 15px;
-    text-align: center;
-    margin: 0 auto;
-      @include for-tablet-portrait-only {
-        h3 {
-          font-size: 9px !important;
-          color: red;
-        }
-        p {
-          font-size: 12px !important;
-        }
-      }
-  }
-
-  .card-conscients-product-type {
-    min-height: 2rem;
-  }
-
-  .card-conscients-product-name {
-  // background-color: $success;
-  min-height: 2rem;
+// CARD CONSCIENTS HOMEPAGE _DISPLAY 4 LANDSCAPE
+.card-conscients {
   display: flex;
-  align-items: center;
-    p {
-  margin-top: 0;
-  margin-bottom: 0;
+  flex-direction: column;
 }
-  }
+.card-conscients-content {
+  text-align: center;
+  padding-top: 20px;
+}
 
-  .card-conscients-product-price {
-    padding-top: 1rem;
-    // background-color: pink;
-    // position: absolute;
-    // bottom: 0;
-  }
+.card-conscients-img {
+  max-width: 100%;
+}
