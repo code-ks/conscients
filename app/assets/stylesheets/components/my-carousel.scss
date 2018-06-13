@@ -5,13 +5,27 @@
   #clothes-carousel {
   }
 
-  #test-carousel {
+  #shop-carousel-desktop {
+  }
+
+  #shop-carousel-mobile {
+
   }
 
 // CAROUSEL SHOP DESKTOP
   .carousel-shop-desktop {
     display: none;
     @include for-tablet-landscape-up {
+      display: block;
+    }
+  }
+
+  .carousel-shop-mobile {
+    display: none;
+    @include for-phone-only {
+      display: block;
+    }
+    @include for-tablet-portrait-only {
       display: block;
     }
   }
@@ -59,25 +73,20 @@
 
 
 
-// MON CSS other slider vetements
-  // .row {
-  //     flex-wrap: nowrap !important;
-  //     overflow: hidden !important;
-  //     margin: 0 auto;
-  // }
 
-  .shop-carousel-col {
-    justify-content: center;
-    background-color: pink;
-    margin: 0 auto;
-  }
-  .shop-carousel-card{
-    background-color: red;
-    text-align: center;
-        // height: 85%;
-        height: 350px;
-        max-height: 350px;
-        // width: 38%;
-    border: none;
-    margin: 0 auto;
-  }
+
+  // .shop-carousel-col {
+  //   justify-content: center;
+  //   background-color: pink;
+  //   margin: 0 auto;
+  // }
+  // .shop-carousel-card{
+  //   background-color: red;
+  //   text-align: center;
+  //       // height: 85%;
+  //       height: 350px;
+  //       max-height: 350px;
+  //       // width: 38%;
+  //   border: none;
+  //   margin: 0 auto;
+  // }
