@@ -111,7 +111,15 @@
     }
   }
 
-
+// TRUNCATE
+  .truncate-4-cards {
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+  }
 
 
 
