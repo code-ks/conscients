@@ -16,7 +16,6 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: $container-width;
   box-sizing: border-box;
   background-color: white;
   font-family: "Roboto", "sans-serif";
@@ -24,6 +23,9 @@
   letter-spacing: 0.1rem;
   font-size: 0.8rem;
   color: $conscients-grey;
+  @include for-tablet-landscape-up {
+    width: $container-width;
+  }
 }
 
 .top-menu-left {
