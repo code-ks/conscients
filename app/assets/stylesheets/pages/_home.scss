@@ -55,7 +55,7 @@
     }
   }
 
-// OCCASIONS BOX
+// OCCASIONS BOX AND CARDS
   .occasions-container{
     position: relative;
     width: 95vw;
@@ -94,9 +94,6 @@
         bottom: 0;
         right: 0;
       }
-      // @include for-phone-only {
-      //   height: 40vh;
-      // }
   }
 
   .occasions-card-content-box {
@@ -121,7 +118,7 @@
     }
   }
 
-  .occasions-card-description {
+  .occasions-card-content {
     padding-right: 12px;
     padding-left: 12px;
     p {
@@ -129,23 +126,48 @@
     }
     @include for-phone-only {
       width: 60%;
+      padding-top: 8px;
+    }
+    @include for-tablet-portrait-only {
+      padding-top: 8px;
     }
   }
 
-// SHOP CAROUSEL DESKTOP AND TABLET LANDSCAPE
-  .card-conscients {
+// SHOP CARDS
+  .home-shop-card {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .card-conscients-content {
+  .home-shop-card-content {
     text-align: center;
+    padding-top: 8px;
     @include for-tablet-landscape-up {
       padding-top: 20px;
     }
+    @include for-phone-only {
+      width: 60%;
+    }
+  }
+  .home-shop-card-img {
+    max-width: 100%;
   }
 
-  .card-conscients-img {
-    max-width: 100%;
+// BLOG CARDS
+  .home-blog-card {
+    color: white;
+    text-align: center;
+    height: 465px;
+    background-size: cover !important;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .home-blog-image {
+    // width: 100%;
   }
 
