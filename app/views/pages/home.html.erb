@@ -7,13 +7,13 @@
     <div class="banner-content">
       <h2>Categorie de l'article</h2>
       <h1>Le projet Alto Huayabamba intégré à la réserve de biosphere Gran Pajaten</h1>
-      <a class="banner-link" href="#">lien vers l'article</a>
+      <!-- <a class="banner-link" href="#">lien vers l'article</a> -->
     </div>
   </div>
 
 <!-- OCCASIONS CAROUSEL TITLE AND TABS-->
   <div class="container-conscients home-font home-title-padding">
-    <h2>Des cadeaux et du sens</h2>
+    <h2 class="text-center">Des cadeaux et du sens</h2>
   </div>
   <div class="container-conscients home-font padding-b">
     <div class="tabs">
@@ -85,7 +85,7 @@
 
 <!-- SHOP CAROUSEL TITLE  -->
   <div class="container-conscients home-font home-title-padding">
-    <h2>Vêtements bio 0-5 ans</h2>
+    <h2 class="text-center">Vêtements bio 0-5 ans</h2>
   </div>
 
 <!-- SHOP CAROUSEL DESKTOP AND TABLET LANDSCAPE-->
@@ -229,20 +229,87 @@
     </div>
   </div>
 
-<!-- BLOG EMBBED -->
+<!--   <div class="conscients-presentation home-font text-center py-5 my-5">
+    <div class="conscients-presentation-content">
+      <h3>Le projet conscients</h3>
+      <h2>Conscients blabla brand de quelques lignes uniquement centré au milieu avec les mc qu'il faut</h2>
+      <p>Découvrir le projet</p>
+    </div>
+  </div> -->
+
+<!-- blog embbed tst 3 -->
 <div class="container-conscients home-title-padding">
   <div class="row">
     <div class="col-md-6">
-      <div class="home-blog-card" style="background-image: url('http://www.conscients.com/wp-content/uploads/2016/06/Cyril-Dion-super-yoghiros-preface.jpg');">
-<!--         <img src="http://www.conscients.com/wp-content/uploads/2016/06/Cyril-Dion-super-yoghiros-preface.jpg" style="width:100%" alt=""> -->
+      <div class="home-blog-box" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url('http://www.conscients.com/wp-content/uploads/2015/11/Album-sur-la-foret-en-maternelle.jpg')">
+        <div class="home-blog-contenu home-font">
+          <h3>categorie</h3>
+<!--           <h2>Titre de l'article de la catégorie qui saute une ligne parce qu'il est super long comme titre d'article</h2> -->
+          <p>Titre de l'article de la catégorie qui saute une ligne parce qu'il est super long comme titre d'article</p>
+        </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="home-blog-card" style="background-image: url('http://www.conscients.com/wp-content/uploads/2015/11/Album-sur-la-foret-en-maternelle.jpg');">
-<!--         <img src="http://www.conscients.com/wp-content/uploads/2015/11/Album-sur-la-foret-en-maternelle.jpg" style="width:100%" alt=""> -->
+      <div class="home-blog-box" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url('http://www.conscients.com/wp-content/uploads/2016/06/Cyril-Dion-super-yoghiros-preface.jpg')">
+        <div class="home-blog-contenu home-font">
+          <h3>categorie</h3>
+          <!-- <h2>Titre de l'article de la catégorie</h2> -->
+          <p>Titre de l'article de la catégorie</p>
+        </div>
       </div>
     </div>
   </div>
+
+</div>
+
+
+  <div class="conscients-presentation home-title-padding home-font text-center">
+    <div class="conscients-presentation-content">
+      <h3>Le projet conscients</h3>
+      <h2>Conscients blabla brand de quelques lignes uniquement centré au milieu avec les mc qu'il faut</h2>
+      <p>Découvrir le projet</p>
+    </div>
+  </div>
+
+<!-- blog embbed test 2 -->
+<!-- <div class="container-conscients home-title-padding">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="home-blog-background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)),url('http://www.conscients.com/wp-content/uploads/2016/06/Cyril-Dion-super-yoghiros-preface.jpg')">
+        <div class="home-blog-content home-font">
+          <h3>Categorie</h3>
+          <h2>Titre de l'article de la catégorie</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="home-blog-background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)),url('http://www.conscients.com/wp-content/uploads/2015/11/Album-sur-la-foret-en-maternelle.jpg')">
+        <div class="home-blog-content home-font">
+          <h3>Categorie</h3>
+          <h2>Titre de l'article de la catégorie</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ --><!-- BLOG EMBBED -->
+  <!-- <div class="container-conscients home-title-padding">
+    <div class="row">
+      <div class="col-md-6">
+         <div class="home-blog-card">
+          <img src="http://www.conscients.com/wp-content/uploads/2016/06/Cyril-Dion-super-yoghiros-preface.jpg" style="width:100%" alt="">
+          <div class="home-blog-content home-font">
+            <h3>categorie</h3>
+            <h2>Titre de l'article de la cat</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <img src="http://www.conscients.com/wp-content/uploads/2015/11/Album-sur-la-foret-en-maternelle.jpg" style="width:100%" alt="">
+        </div>
+      </div>
+    </div> -->
+
 </div>
 <div class="container-conscients pt-5">
 <h1 class="flex justify-center"><%= t 'pages.home.hello' %> Hello from <%= Rails.application.class

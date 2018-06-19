@@ -1,5 +1,6 @@
 .banner {
   color: white;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2)!important;
   text-align: center;
   width: 95vw;
   height: 40vh;
@@ -37,7 +38,6 @@
   font-size: 2rem;
   letter-spacing: 0.1rem;
   color: white;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   @include for-tablet-landscape-up {
     font-size: 3rem;
   }

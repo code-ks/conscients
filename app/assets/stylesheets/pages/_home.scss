@@ -5,7 +5,7 @@
       font-family: "Frank Ruhl Libre", "serif";
       font-size: 2rem;
       letter-spacing: 0.1rem;
-      text-align: center;
+      // text-align: center;
       text-transform: none;
         @include for-phone-only {
           font-size: 1.1rem;
@@ -54,6 +54,16 @@
       padding-bottom: 8px;
     }
   }
+
+  // .home-title-padding {
+  //   padding-top: 48px;
+  //   padding-bottom: 48px;
+  //   @include for-tablet-landscape-up {
+  //     padding-top: 60px;
+  //     padding-bottom: 60px;
+  //   }
+
+  // }
 
 // OCCASIONS BOX AND CARDS
   .occasions-container{
@@ -154,20 +164,74 @@
   }
 
 // BLOG CARDS
-  .home-blog-card {
-    color: white;
-    text-align: center;
-    height: 465px;
-    background-size: cover !important;
-    background-position: center;
+
+  .home-blog-box {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    margin: 0 auto;
-    overflow: hidden;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: flex-end;
+    height: 40vh;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    @include for-tablet-portrait-only {
+      height: 30vh;
+    }
+    @include for-tablet-landscape-up {
+      height: 70vh;
+    }
   }
 
-  .home-blog-image {
-    // width: 100%;
+  .home-blog-contenu {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    width: 90%;
+    padding-bottom: 5%;
+    padding-left: 50px;
+  }
+
+
+
+
+
+  .home-blog-background {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 88%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+
+
+
+
+
+  .home-blog-card {
+    position: relative;
+
+  }
+
+
+  .home-blog-content {
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    position: absolute;
+    top: 70%;
+    right: 50px;
+    left: 50PX;
+
+  }
+
+  // PRESENTATION
+  .conscients-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .conscients-presentation-content {
+    width: 50vw;
   }
 
