@@ -165,11 +165,12 @@
 
 // BLOG CARDS
 
-  .home-blog-box {
+  .home-blog-card {
     display: flex;
     flex-direction: column;
-    // align-items: center;
+    align-items: center;
     justify-content: flex-end;
+    text-align: center;
     height: 40vh;
     color: white;
     background-size: cover;
@@ -182,46 +183,48 @@
     }
   }
 
-  .home-blog-contenu {
+  .home-blog-card-content {
+    height: 120px;
+    // background-color: red;
     text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    width: 90%;
+    width: 60%;
     padding-bottom: 5%;
-    padding-left: 50px;
+    // padding-left: 50px;
   }
 
 
 
 
 
-  .home-blog-background {
-    position: relative;
-    display: block;
-    width: 100%;
-    padding-bottom: 88%;
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
+  // .home-blog-background {
+  //   position: relative;
+  //   display: block;
+  //   width: 100%;
+  //   padding-bottom: 88%;
+  //   background-size: 100%;
+  //   background-repeat: no-repeat;
+  // }
 
 
 
 
 
 
-  .home-blog-card {
-    position: relative;
+  // .home-blog-card {
+  //   position: relative;
 
-  }
+  // }
 
 
-  .home-blog-content {
-    color: white;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    position: absolute;
-    top: 70%;
-    right: 50px;
-    left: 50PX;
+  // .home-blog-content {
+  //   color: white;
+  //   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  //   position: absolute;
+  //   top: 70%;
+  //   right: 50px;
+  //   left: 50PX;
 
-  }
+  // }
 
   // PRESENTATION
   .conscients-presentation {
