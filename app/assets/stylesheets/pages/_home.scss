@@ -11,6 +11,7 @@
           font-size: 1.1rem;
         }
     }
+
     h3 {
       font-family: "Roboto", "sans-serif";
       text-transform: Uppercase;
@@ -20,6 +21,7 @@
           font-size : 0.5rem;
         }
     }
+
     h4 {
       font-family: "Frank Ruhl Libre", "serif";
       font-weight: 300;
@@ -28,6 +30,7 @@
         font-size: 0.7rem;
       }
     }
+
     h5 {
     font-family: "Roboto", "sans-serif";
     text-transform: Uppercase;
@@ -37,8 +40,18 @@
         font-size : 0.5rem;
       }
     }
-  }
 
+    a {
+      font-family: "Frank Ruhl Libre", "serif";
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      text-decoration: underline;
+      text-underline-position: under;
+        @include for-phone-only {
+          font-size: 0.5rem;
+        }
+    }
+  }
 
 // PADDING
   .home-title-padding {
@@ -126,6 +139,9 @@
       max-width: 100%;
       margin-top: 1px;
     }
+    @include for-phone-only {
+      height: 30vh;
+    }
   }
 
   .occasions-card-content {
@@ -161,6 +177,9 @@
   }
   .home-shop-card-img {
     max-width: 100%;
+    @include for-phone-only {
+      height: 30vh;
+    }
   }
 
 // BLOG CARDS
@@ -171,13 +190,10 @@
     align-items: center;
     justify-content: flex-end;
     text-align: center;
-    height: 40vh;
+    height: 30vh;
     color: white;
     background-size: cover;
     background-position: center;
-    @include for-tablet-portrait-only {
-      height: 30vh;
-    }
     @include for-tablet-landscape-up {
       height: 70vh;
     }
@@ -187,54 +203,44 @@
     height: 120px;
     // background-color: red;
     text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    width: 60%;
+    width: 80%;
     padding-bottom: 5%;
-    // padding-left: 50px;
+    @include for-tablet-landscape-up {
+      width: 60%;
+    }
   }
 
+  .home-blog-row-mobile {
+    @include for-phone-only {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
 
+  .home-col-portrait {
+    @include for-phone-only {
+      padding-right: 4px !important;
+      padding-left: 4px !important;
+    }
+    @include for-tablet-portrait-only {
+      padding-right: 8px !important;
+      padding-left: 8px !important;
+    }
+  }
 
-
-
-  // .home-blog-background {
-  //   position: relative;
-  //   display: block;
-  //   width: 100%;
-  //   padding-bottom: 88%;
-  //   background-size: 100%;
-  //   background-repeat: no-repeat;
-  // }
-
-
-
-
-
-
-  // .home-blog-card {
-  //   position: relative;
-
-  // }
-
-
-  // .home-blog-content {
-  //   color: white;
-  //   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  //   position: absolute;
-  //   top: 70%;
-  //   right: 50px;
-  //   left: 50PX;
-
-  // }
-
-  // PRESENTATION
+// PRESENTATION
   .conscients-presentation {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
   .conscients-presentation-content {
-    width: 50vw;
+    width: 65vw;
+    @include for-tablet-landscape-up {
+      width: 50vw;
+    }
+
   }
 
