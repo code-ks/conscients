@@ -1,5 +1,27 @@
 // Specific CSS for your home-page
 // FONTS
+  .blog-pics-font {
+    h2 {
+      font-family: "Frank Ruhl Libre", "serif";
+      font-weight: 300;
+      font-size: 0.9rem;
+      text-transform: none;
+      @include for-phone-only {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+      }
+    }
+    h3 {
+      font-family: "Roboto", "sans-serif";
+      text-transform: Uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      @include for-phone-only {
+        font-size : 0.5rem;
+      }
+    }
+  }
+
   .home-font {
     h2{
       font-family: "Frank Ruhl Libre", "serif";
@@ -54,29 +76,40 @@
   }
 
 // PADDING
-  .home-title-padding {
+  .home-occasions-title-padding {
     padding-top: 32px;
     padding-bottom: 16px;
     @include for-tablet-landscape-up {
-      // padding-top: 48px;
       padding-top: 60px;
       padding-bottom: 32px
     }
     @include for-phone-only {
-      // padding-top: 24px;
-      padding-top: 40px;
+      padding-top: 32px;
       padding-bottom: 8px;
     }
   }
 
-  .home-following-title-padding {
-    padding-top: 76px;
-    // padding-bottom: 48px;
-    padding-bottom: 60px;
+  .home-shop-title-padding {
+    padding-top: 48px;
+    padding-bottom: 32px;
+    @include for-tablet-landscape-up {
+      padding-top: 76px;
+      padding-bottom: 60px;
+    }
+    @include for-phone-only {
+      padding-top: 32px;
+      padding-bottom: 16px;
+    }
   }
 
-  .home-following-title-pt {
-    padding-top: 76px;
+  .home-pt {
+    padding-top: 48px;
+    @include for-tablet-landscape-up {
+      padding-top: 76px;
+    }
+    @include for-phone-only {
+      padding-top: 32px;
+    }
   }
 
 // OCCASIONS BOX AND CARDS
@@ -191,7 +224,7 @@
     align-items: center;
     justify-content: flex-end;
     text-align: center;
-    height: 30vh;
+    height: 40vh;
     color: white;
     background-size: cover;
     background-position: center;
@@ -202,14 +235,23 @@
 
   .home-blog-card-content {
     height: 120px;
-    // background-color: red;
     text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     width: 80%;
-    padding-bottom: 5%;
     @include for-tablet-landscape-up {
       width: 60%;
     }
+    @include for-phone-only {
+      height: auto;
+      padding-bottom: 5%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      width: 100%;
+    }
   }
+
+
+
+
 
   .home-blog-row-mobile {
     @include for-phone-only {
@@ -222,6 +264,7 @@
     @include for-phone-only {
       padding-right: 4px !important;
       padding-left: 4px !important;
+      padding-bottom: 8px;
     }
     @include for-tablet-portrait-only {
       padding-right: 8px !important;
