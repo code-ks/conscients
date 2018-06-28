@@ -1,9 +1,14 @@
 <div class="footer home-pt container-conscients">
-  <h1>mon footer qui déchire</h1>
-  <h2><%= t 'shared.footer.site_map'%></h2>
-  <h2><%= t 'shared.footer.payment_shipping'%></h2>
-  <h2><%= t 'shared.footer.terms'%></h2>
-  <h2><%= t 'shared.footer.faq'%></h2>
+<!--   <h2></%= t 'shared.footer.site_map'%></h2>
+  <h2></%= t 'shared.footer.payment_shipping'%></h2>
+  <h2></%= t 'shared.footer.terms'%></h2>
+  <h2></%= t 'shared.footer.faq'%></h2> -->
+          <div>
+            <h2><%= link_to t('shared.footer.site_map'), page_path('site_map')%></h2>
+            <h2><%= link_to t('shared.footer.payment_shipping'), page_path('payment_shipping')%></h2>
+            <h2><%= link_to t('shared.footer.terms'), page_path('terms')%></h2>
+            <h2><%= link_to t('shared.footer.faq'), page_path('faq')%></h2>
 
+          </div>
 </div>
 
