@@ -1,14 +1,14 @@
 <!-- navbar displayed only on medium and large devices -->
 <nav class="navbar bg-white d-none d-md-block coral-link">
   <div class="d-flex justify-content-between align-items-top navbar-top-font">
-    <div>
+    <div class= "navbar-item">
       <div><%= locale_links %></div>
       <div><%= link_to t('.about'), page_path('about'), class: 'mr-2' %><%= link_to t('.participate'), root_path, class: 'mr-2' %><%= link_to t('.blog'), blog_posts_path %></div>
     </div>
     <%= link_to root_path do %>
       <%= image_tag "logo-conscients-bebe-bio.png", class: "logo-padding" %>
     <% end %>
-    <div>
+    <div class="navbar-item text-right">
       <% if current_client %>
         <%= link_to t('.my_account'), clients_path, data: { turbolinks: false } %>
       <% else %>

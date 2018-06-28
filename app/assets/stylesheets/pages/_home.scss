@@ -162,6 +162,7 @@
     align-items: center;
     justify-content: space-around;
   }
+
   .occasions-card-title {
     margin: auto;
   }
@@ -174,6 +175,9 @@
       margin-top: 1px;
     }
     @include for-phone-only {
+      height: 30vh;
+    }
+    @include for-tablet-portrait-only {
       height: 30vh;
     }
   }
@@ -200,6 +204,7 @@
     align-items: center;
   }
   .home-shop-card-content {
+    width: 100%;
     text-align: center;
     padding-top: 8px;
     @include for-tablet-landscape-up {
@@ -209,11 +214,30 @@
       width: 60%;
     }
   }
+  // .home-shop-card-img {
+  //   max-width: 100%;
+  //   @include for-phone-only {
+  //     height: 30vh;
+  //   }
+  //   @include for-tablet-portrait-only {
+  //     height: 30vh;
+  //   }
+  // }
+
   .home-shop-card-img {
     max-width: 100%;
-    @include for-phone-only {
-      height: 30vh;
+    height: 30vh;
+    @include for-tablet-landscape-up {
+      height: auto;
     }
+  }
+  .truncate-4-cards {
+    width: 98%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
   }
 
 // BLOG CARDS
@@ -249,10 +273,6 @@
     }
   }
 
-
-
-
-
   .home-blog-row-mobile {
     @include for-phone-only {
       margin-left: 0px !important;
@@ -275,7 +295,6 @@
 // PRESENTATION
   .conscients-presentation {
     display: flex;
-    // flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -285,6 +304,31 @@
     @include for-tablet-landscape-up {
       width: 50vw;
     }
-
   }
 
+// SOCIAL
+  .social-box {
+    height: 150px;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // padding: 0px 50px;
+    margin-top: 60px;
+  }
+  .social-box-links {
+    // display: flex;
+    // align-items: center;
+    margin: auto;
+  }
+  .social-box-links a {
+  color: $conscients-grey;
+  // opacity: 0.15;
+  opacity: 1;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0px 25px;
+}
+  .social-box-links a:hover {
+    // opacity: 1;
+    opacity: 0.5;
+  }
