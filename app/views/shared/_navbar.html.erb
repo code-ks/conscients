@@ -1,82 +1,82 @@
 <!-- navbar displayed only on medium and large devices -->
-<nav class="navbar bg-white d-none d-md-block coral-link">
-  <div class="d-flex justify-content-between align-items-top navbar-top-font">
-    <div class= "navbar-item">
-      <div><%= locale_links %></div>
-      <div><%= link_to t('.about'), page_path('about'), class: 'mr-2' %><%= link_to t('.participate'), root_path, class: 'mr-2' %><%= link_to t('.blog'), blog_posts_path %></div>
-    </div>
-    <%= link_to root_path do %>
-      <%= image_tag "logo-conscients-bebe-bio.png", class: "logo-padding" %>
-    <% end %>
-    <div class="navbar-item text-right">
-      <% if current_client %>
-        <%= link_to t('.my_account'), clients_path, data: { turbolinks: false } %>
-      <% else %>
-        <%= link_to t('.sign_in'), new_client_session_path %>
+  <nav class="navbar bg-white d-none d-md-block coral-link">
+    <div class="d-flex justify-content-between align-items-top navbar-top-font">
+      <div class= "navbar-item">
+        <div><%= locale_links %></div>
+        <div><%= link_to t('.about'), page_path('about'), class: 'mr-2' %><%= link_to t('.participate'), root_path, class: 'mr-2' %><%= link_to t('.blog'), blog_posts_path %></div>
+      </div>
+      <%= link_to root_path do %>
+        <%= image_tag "logo-conscients-bebe-bio.png", class: "logo-padding" %>
       <% end %>
+      <div class="navbar-item text-right">
+        <% if current_client %>
+          <%= link_to t('.my_account'), clients_path, data: { turbolinks: false } %>
+        <% else %>
+          <%= link_to t('.sign_in'), new_client_session_path %>
+        <% end %>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 <!-- MODAL -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-dialog-conscients" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-      </div>
-      <div class="modal-body">
-        <%= form_with url: category_products_path(@category), method: :get, local: true, class: "form-inline my-2 mx-3 my-lg-0" do |form| %>
-        <%= form.text_field :search, class: "form-control mr-sm-2 input-field", placeholder: true %>
-        <%= form.submit t('.search'), value:"ok", :data => {:disable_with => 'ok'}, class: "btn input-field-button my-2 my-sm-0"%>
-        <% end %>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-conscients" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <%= form_with url: category_products_path(@category), method: :get, local: true, class: "form-inline my-2 mx-3 my-lg-0" do |form| %>
+          <%= form.text_field :search, class: "form-control mr-sm-2 input-field", placeholder: true %>
+          <%= form.submit t('.search'), value:"ok", :data => {:disable_with => 'ok'}, class: "btn input-field-button my-2 my-sm-0"%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 <!-- ***MENU*** -->
-<div class="menu-wrapper sticky-top padding-around">
-  <div class= "top-menu">
-    <div class="top-menu-left">
-      <%= link_to root_path, class: "navbar-brand pt-0" do %>
-      <%= image_tag "logo-conscients-bebe-bio.png", height: 40, class: "d-md-none show-on-scroll" %>
-    <% end %>
-    </div>
-    <div class="top-menu-center coral-link d-none d-md-flex">
-      <% Category.main.each do |category| %>
-        <div class="mx-3"><%= link_to category.name, category_products_path(category) %></div>
-        <% end %>
-    </div>
-    <div class="top-menu-right d-none d-md-flex">
-      <div class="top-menu-item">
-        <!-- Button trigger modal -->
-        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-white navbar-btn">
-        <span class="fa fa-search lg icone" aria-hidden="true" ></span>
-        </button>
+  <div class="menu-wrapper sticky-top padding-around">
+    <div class= "top-menu">
+      <div class="top-menu-left">
+        <%= link_to root_path, class: "navbar-brand pt-0" do %>
+        <%= image_tag "logo-conscients-bebe-bio.png", height: 40, class: "d-md-none show-on-scroll" %>
+      <% end %>
       </div>
-      <div class="top-menu-item icone">
-        <%= link_to cart_path(@cart) do %>
-        <%= fa_icon "shopping-cart lg" %>
-        <span class="badge badge-conscients"><%= @cart.items_number %></span>
-        <% end %>
-      </div>
-    </div>
-    <!-- Dropdown right small devices -->
-    <div class="dropdown d-md-none">
-      <%= fa_icon "bars", class: "c-pointer", data: { toggle: "dropdown" } %>
-      <div class="dropdown-menu dropdown-menu-right">
-        <%= link_to t('shared.navbar.my_cart'), cart_path(@cart), class: 'dropdown-item' %>
-        <% if current_client %>
-          <%= link_to t('shared.navbar.my_account'), clients_path, class: 'dropdown-item', data: { turbolinks: false } %>
-        <% else %>
-          <%= link_to t('shared.navbar.sign_in'), new_client_session_path, class: 'dropdown-item' %>
-        <% end %>
-        <div class="dropdown-divider"></div>
+      <div class="top-menu-center coral-link d-none d-md-flex">
         <% Category.main.each do |category| %>
-          <%= link_to category.name, category_products_path(category), class: 'dropdown-item'  %>
-        <% end %>
+          <div class="mx-3"><%= link_to category.name, category_products_path(category) %></div>
+          <% end %>
+      </div>
+      <div class="top-menu-right d-none d-md-flex">
+        <div class="top-menu-item">
+          <!-- Button trigger modal -->
+          <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-white navbar-btn">
+          <span class="fa fa-search lg icone" aria-hidden="true" ></span>
+          </button>
+        </div>
+        <div class="top-menu-item icone">
+          <%= link_to cart_path(@cart) do %>
+          <%= fa_icon "shopping-cart lg" %>
+          <span class="badge badge-conscients"><%= @cart.items_number %></span>
+          <% end %>
+        </div>
+      </div>
+      <!-- Dropdown right small devices -->
+      <div class="dropdown d-md-none">
+        <%= fa_icon "bars", class: "c-pointer", data: { toggle: "dropdown" } %>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to t('shared.navbar.my_cart'), cart_path(@cart), class: 'dropdown-item' %>
+          <% if current_client %>
+            <%= link_to t('shared.navbar.my_account'), clients_path, class: 'dropdown-item', data: { turbolinks: false } %>
+          <% else %>
+            <%= link_to t('shared.navbar.sign_in'), new_client_session_path, class: 'dropdown-item' %>
+          <% end %>
+          <div class="dropdown-divider"></div>
+          <% Category.main.each do |category| %>
+            <%= link_to category.name, category_products_path(category), class: 'dropdown-item'  %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>

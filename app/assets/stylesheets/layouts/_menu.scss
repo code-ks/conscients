@@ -9,6 +9,12 @@
   width: 30vw;
 }
 
+.navbar-brand {
+  @include for-tablet-portrait-only {
+    padding-bottom: 1.5rem !important;
+  }
+}
+
 .menu-wrapper {
   background-color: white;
   border-bottom: 1px dotted $conscients-very-light-grey;
