@@ -310,23 +310,26 @@
   .social-box {
     height: 150px;
     display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // padding: 0px 50px;
     margin-top: 60px;
+    @include for-phone-only {
+      height: 75px;
+      margin-top: 32px;
+    }
   }
   .social-box-links {
-    // display: flex;
-    // align-items: center;
     margin: auto;
   }
+
   .social-box-links a {
   color: $conscients-grey;
-  // opacity: 0.15;
   opacity: 0.2;
   text-decoration: none;
   font-size: 2.5rem;
   padding: 0px 30px;
+  @include for-phone-only {
+    font-size: 1.5rem;
+    padding: 0px 10px;
+  }
 }
   .social-box-links a:hover {
     // opacity: 1;

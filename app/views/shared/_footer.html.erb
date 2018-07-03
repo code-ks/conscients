@@ -1,14 +1,16 @@
-<div class="footer home-pt container-conscients">
-<!--   <h2></%= t 'shared.footer.site_map'%></h2>
-  <h2></%= t 'shared.footer.payment_shipping'%></h2>
-  <h2></%= t 'shared.footer.terms'%></h2>
-  <h2></%= t 'shared.footer.faq'%></h2> -->
-          <div>
-            <h2><%= link_to t('shared.footer.site_map'), page_path('site_map')%></h2>
-            <h2><%= link_to t('shared.footer.payment_shipping'), page_path('payment_shipping')%></h2>
-            <h2><%= link_to t('shared.footer.terms'), page_path('terms')%></h2>
-            <h2><%= link_to t('shared.footer.faq'), page_path('faq')%></h2>
-
-          </div>
+<!-- <div class="footer home-pt container-conscients"> -->
+<div class="footer container-conscients">
+  <div class="footer-items">
+    <%= link_to t('shared.footer.site_map'), page_path('site_map')%>
+    <%= link_to t('shared.footer.payment_shipping'), page_path('payment_shipping')%>
+    <%= link_to t('shared.footer.terms'), page_path('terms')%>
+    <%= link_to t('shared.footer.faq'), page_path('faq')%>
+  </div>
+  <div class="footer-items d-phone-none">
+    <!-- <div class="icon-vir">VIR</div> -->
+    <div class="footer-icons"><p class="icon-vir">VIR</p></div>
+    <i class="footer-icons fa fa-cc-paypal"></i>
+    <i class="footer-icons fa fa-credit-card"></i>
+  </div>
 </div>
 
