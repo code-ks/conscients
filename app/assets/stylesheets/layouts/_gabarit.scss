@@ -1,26 +1,61 @@
+.bg-pink {
+  background-color: pink;
+}
+.bg-red {
+  background-color: red;
+}
+
+.bg-grey {
+  background-color: $conscients-bg-grey;
+}
+
+// ROW AND COL
+  .ligne {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      overflow: hidden;
+  }
+  .col-sm-xs-1-col-md4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right:15px;
+    padding-left: 15px;
+      @include for-tablet-landscape-up {
+      flex: O O 25%;
+      max-width: 25%;
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+      }
+  }
+
 // **** BASE RESPONSIVE FONT ****
   body {
+    color: $conscients-grey;
     h1 {
       font-family: "Frank Ruhl Libre", "serif";
       font-size: 2rem;
       letter-spacing: 0.1rem;
-      color: $conscients-grey;
     }
     h2 {
       font-family: "Roboto", "sans-serif";
       text-transform: Uppercase;
       font-size: 0.8rem;
       letter-spacing: 0.1rem;
-      color: conscients-grey;
+        @include for-phone-only {
+          font-size: 10px;
+        }
     }
     p {
       font-family:"Frank Ruhl Libre", "serif";
-      color: $conscients-black;
-      font-size: 15px;
-        @include for-phone-only {
-        // @media (max-width: $screen-xs) {
-          font-size: 13px; /* On screens that are equal to screen xs or less ie smartphone, font turn 13px */
-        }
+      font-size: 1rem;
     }
   }
 
@@ -28,49 +63,46 @@
   .container-conscients{
     margin: 0 auto;
     width: $container-width;
+    overflow: hidden;
   }
 
-// **** FONTS ***
+  .flex-container {
+    display: flex;
+  }
+
+  .scrolling-wrapper {
+    width: 95vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+      display: none;
+      }
+      .sw-card {
+        flex: 0 0 auto;
+        // height: 500px;
+        height: 60vh;
+        margin-right: 5px;
+      }
+  }
+
+// **** PADDING ***
+  .logo-padding {
+    padding: 16px 0px 24px 0px;
+  }
+  .padding-around {
+    padding : 16px;
+  }
+  .padding-b {
+    padding-bottom : 16px;
+  }
+
+// ****TEXT AND LINKS COLORS ****
   .t-white {
     color: white;
   }
-
-  .big-title-min {
-    font-family: "Roboto", "sans-serif";
-    text-align: center;
-    letter-spacing: 0.05rem;
-    font-size: 1.5rem;
-    color: $conscients-grey;
-  }
-
-  .small-title {
-    font-family: "Roboto", "sans-serif";
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 0.1rem;
-    color: $conscients-grey;
-  }
-
-
-  // .small-title-min {
-  //   font-family: "Frank Ruhl Libre", "serif";
-  //   font-size: 0.7rem;
-  //   letter-spacing: 0.1rem;
-  //   color: $conscients-grey;
-  // }
-
-
-// **** PADDING ***
-.logo-padding {
-  padding: 16px 0px 24px 0px;
-}
-
-// .side-padding {
-//   padding-left: 1.5rem !important;
-//   padding-right: 1.5rem !important;
-// }
-
-// **** LINKS COLORS ****
   .coral-link {
     a {
       &:hover {
@@ -78,6 +110,7 @@
       }
     }
   }
+
 
 
 
