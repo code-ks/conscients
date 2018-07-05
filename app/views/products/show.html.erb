@@ -8,7 +8,7 @@
       <%= render 'products/carousel', product: @product %>
     </div>
     <div class="col-lg-4 col-md-5 col-xs-12 order-md-first">
-      <h2><%= @product.name %></h2>
+      <h1><%= @product.name %></h1>
       <p class="font-weight-bold"><%= humanized_money_with_symbol @product.ttc_price %></p>
       <p><%= @product.description_short %></p>
       <p><%= @product.description_long %></p>

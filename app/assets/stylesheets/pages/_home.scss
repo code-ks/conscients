@@ -1,50 +1,123 @@
 // Specific CSS for your home-page
 // FONTS
-.home-font {
-  h2{
-    font-family: "Frank Ruhl Libre", "serif";
-    font-size: 2rem;
-    letter-spacing: 0.1rem;
-    color: $conscients-grey;
-    text-align: center;
-    text-transform: none;
+  .blog-pics-font {
+    h2 {
+      font-family: "Frank Ruhl Libre", "serif";
+      font-weight: 300;
+      font-size: 0.9rem;
+      text-transform: none;
       @include for-phone-only {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
       }
+    }
+    h3 {
+      font-family: "Roboto", "sans-serif";
+      text-transform: Uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      @include for-phone-only {
+        font-size : 0.5rem;
+      }
+    }
   }
-  h3{
+
+  .home-font {
+    h2{
+      font-family: "Frank Ruhl Libre", "serif";
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+      // text-align: center;
+      text-transform: none;
+        @include for-phone-only {
+          font-size: 1.1rem;
+        }
+    }
+
+    h3 {
+      font-family: "Roboto", "sans-serif";
+      text-transform: Uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+        @include for-phone-only {
+          font-size : 0.5rem;
+        }
+    }
+
+    h4 {
+      font-family: "Frank Ruhl Libre", "serif";
+      font-weight: 300;
+      font-size: 0.9rem;
+      @include for-phone-only {
+        font-size: 0.7rem;
+      }
+    }
+
+    h5 {
     font-family: "Roboto", "sans-serif";
     text-transform: Uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
-    color: conscients-grey;
       @include for-phone-only {
         font-size : 0.5rem;
       }
+    }
+
+    a {
+      font-family: "Frank Ruhl Libre", "serif";
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      text-decoration: underline;
+      text-underline-position: under;
+        @include for-phone-only {
+          font-size: 0.5rem;
+        }
+    }
   }
-  p{
 
+// PADDING
+  .home-occasions-title-padding {
+    padding-top: 32px;
+    padding-bottom: 16px;
+    @include for-tablet-landscape-up {
+      padding-top: 60px;
+      padding-bottom: 32px
+    }
+    @include for-phone-only {
+      padding-top: 32px;
+      padding-bottom: 8px;
+    }
   }
-}
 
-.home-title-padding {
-  padding-top: 48px;
-  padding-bottom: 16px;
-  @include for-tablet-landscape-up {
-    padding-bottom: 48px
+  .home-shop-title-padding {
+    padding-top: 48px;
+    padding-bottom: 32px;
+    @include for-tablet-landscape-up {
+      padding-top: 76px;
+      padding-bottom: 60px;
+    }
+    @include for-phone-only {
+      padding-top: 32px;
+      padding-bottom: 16px;
+    }
   }
-}
 
-.home-sub-title-padding {
+  .home-pt {
+    padding-top: 48px;
+    @include for-tablet-landscape-up {
+      padding-top: 76px;
+    }
+    @include for-phone-only {
+      padding-top: 32px;
+    }
+  }
 
-}
-// OCCASIONS BOX
+// OCCASIONS BOX AND CARDS
   .occasions-container{
     position: relative;
     width: 95vw;
     margin: 0 auto;
       @include for-tablet-landscape-up {
-      // @media (min-width: $screen-sm){
         height: 60vh;
         width: 85vw;
       }
@@ -61,20 +134,14 @@
         background-size: cover !important;
         background-position: center;
         text-align: left;
-        background-color: purple;
       }
   }
 
   .occasions-card{
-    border: 1px solid $conscients-light-grey;
     background-color: white;
     text-align: center;
-      @include for-tablet-portrait-only {
-        border: none;
-      }
       @include for-tablet-landscape-up {
-      // @media (min-width: $screen-sm) {
-        /* On screens that are equal to screen md or more ie desktop*/
+        border: 1px solid rgba(0,0,0,.125);
         height: 85%;
         width: 38%;
         position: absolute;
@@ -87,7 +154,6 @@
   }
 
   .occasions-card-content-box {
-    // background-color: yellow;
     box-sizing: border-box;
     overflow: hidden;
     height: 100%;
@@ -95,27 +161,177 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    color: $conscients-grey;
   }
+
   .occasions-card-title {
     margin: auto;
   }
 
   .occasions-card-img {
-    max-height: 65%;
-    min-height: 0; //to avoid overflow
-    max-width: 100%;
-    margin-top: 1px;
-  }
-  .occasions-card-description {
-    // margin: auto;
-    padding-right: 12px;
-    padding-left: 12px;
-    // background-color: pink;
-    p {
-      margin-bottom: 5px;
-      color: $conscients-grey;
+    @include for-tablet-landscape-up {
+      max-height: 65%;
+      min-height: 0; //to avoid overflow
+      max-width: 100%;
+      margin-top: 1px;
+    }
+    @include for-phone-only {
+      height: 30vh;
+    }
+    @include for-tablet-portrait-only {
+      height: 30vh;
     }
   }
 
+  .occasions-card-content {
+    padding-right: 12px;
+    padding-left: 12px;
+    p {
+      margin-bottom: 5px;
+    }
+    @include for-phone-only {
+      width: 60%;
+      padding-top: 8px;
+    }
+    @include for-tablet-portrait-only {
+      padding-top: 8px;
+    }
+  }
 
+// SHOP CARDS
+  .home-shop-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-shop-card-content {
+    width: 100%;
+    text-align: center;
+    padding-top: 8px;
+    @include for-tablet-landscape-up {
+      padding-top: 20px;
+    }
+    @include for-phone-only {
+      width: 60%;
+    }
+  }
+  // .home-shop-card-img {
+  //   max-width: 100%;
+  //   @include for-phone-only {
+  //     height: 30vh;
+  //   }
+  //   @include for-tablet-portrait-only {
+  //     height: 30vh;
+  //   }
+  // }
+
+  .home-shop-card-img {
+    max-width: 100%;
+    height: 30vh;
+    @include for-tablet-landscape-up {
+      height: auto;
+    }
+  }
+  .truncate-4-cards {
+    width: 98%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+// BLOG CARDS
+
+  .home-blog-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    height: 40vh;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    @include for-tablet-landscape-up {
+      height: 70vh;
+    }
+  }
+
+  .home-blog-card-content {
+    height: 120px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    width: 80%;
+    @include for-tablet-landscape-up {
+      width: 60%;
+    }
+    @include for-phone-only {
+      height: auto;
+      padding-bottom: 5%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      width: 100%;
+    }
+  }
+
+  .home-blog-row-mobile {
+    @include for-phone-only {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+
+  .home-col-portrait {
+    @include for-phone-only {
+      padding-right: 4px !important;
+      padding-left: 4px !important;
+      padding-bottom: 8px;
+    }
+    @include for-tablet-portrait-only {
+      padding-right: 8px !important;
+      padding-left: 8px !important;
+    }
+  }
+
+// PRESENTATION
+  .conscients-presentation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .conscients-presentation-content {
+    width: 65vw;
+    @include for-tablet-landscape-up {
+      width: 50vw;
+    }
+  }
+
+// SOCIAL
+  .social-box {
+    height: 150px;
+    display: flex;
+    margin-top: 60px;
+    @include for-phone-only {
+      height: 75px;
+      margin-top: 32px;
+    }
+  }
+  .social-box-links {
+    margin: auto;
+  }
+
+  .social-box-links a {
+  color: $conscients-grey;
+  opacity: 0.2;
+  text-decoration: none;
+  font-size: 2.5rem;
+  padding: 0px 30px;
+  @include for-phone-only {
+    font-size: 1.5rem;
+    padding: 0px 10px;
+  }
+}
+  .social-box-links a:hover {
+    // opacity: 1;
+    opacity: 1;
+  }

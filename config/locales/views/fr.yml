@@ -201,7 +201,12 @@ fr:
       my_cart: "Mon panier"
       search: "Rechercher"
       sign_in: "Me connecter"
-      blog: "Blog"
+      blog: "Journal"
+    footer:
+      site_map: "Plan du site"
+      payment_shipping: "Paiement Livraison Retours"
+      terms: "Mentions légales et CGV"
+      faq: "FAQ"
   helpers:
     placeholder:
       search: "Ma recherche..."

@@ -201,7 +201,12 @@ en:
       my_cart: "My cart"
       search: "Search"
       sign_in: "Connect"
-      blog: "Blog"
+      blog: "News"
+    footer:
+      site_map: "Site map"
+      payment_shipping: "Payment and Shipping"
+      terms: "Terms"
+      faq: "FAQ"
   active_admin:
     resource:
       show:
