@@ -16,6 +16,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'uglifier', '~> 4.1'
 gem 'webpacker', '~> 3.4'
 
+gem 'aws-sdk-s3', '~> 1.13', require: false
 gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
 gem 'redis', '~> 4.0'
