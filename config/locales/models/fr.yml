@@ -32,6 +32,7 @@ fr:
         published_en: "Publier en anglais?"
         position: "Position"
         main_image: "Image Principale"
+        image_for_home: "Image pour la page d'accueil"
       admin_user:
         email: "Email"
         current_sign_in_at: "Connection actuelle le"
@@ -179,7 +180,7 @@ fr:
         product_sku: "UGS produit"
         order: "Commande"
         tree_plantation: "Plantation d'arbres"
-        quantity: "Quantité en stock"
+        quantity: "Quantité"
         recipient_name: "Attribué à"
         recipient_message: "Message"
         certificate_date: "Date du certificat"
