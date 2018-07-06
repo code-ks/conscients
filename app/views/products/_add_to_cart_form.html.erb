@@ -35,16 +35,16 @@
     </div>
 
     <div class="form-group row">
-      <%= form.label :recipient_message, class: "col-sm-4 col-form-label" %>
+      <%= form.label :certificate_date, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
-        <%= form.text_area :recipient_message, class: "form-control mr-sm-2" %>
+        <%= form.date_field :certificate_date, class: "form-control mr-sm-2", id: "datepicker" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= form.label :certificate_date, class: "col-sm-4 col-form-label" %>
+      <%= form.label :recipient_message, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
-        <%= form.date_field :certificate_date, class: "form-control mr-sm-2", id: "datepicker" %>
+        <%= form.text_area :recipient_message, class: "form-control mr-sm-2" %>
       </div>
     </div>
 

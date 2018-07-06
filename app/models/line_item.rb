@@ -35,6 +35,7 @@ class LineItem < ApplicationRecord
   monetize :ttc_price_cents
 
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1 }
+  validates :recipient_name, length: { maximum: 60 }
   validates :recipient_message, length: { maximum: 300 }
 
   before_validation :decrement_stock_quantities, prepend: true

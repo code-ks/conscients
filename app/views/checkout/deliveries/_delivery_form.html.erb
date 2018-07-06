@@ -7,9 +7,13 @@
       <%= render 'shared/form_errors', instance: delivery_address %>
       <%= render 'shared/form_errors', instance: billing_address %>
 
-      <div class="form-group">
-        <%= form.text_field :recipient_message, class: "form-control mr-sm-2", placeholder: t('.recipient_message') %>
-      </div>
+      <% unless cart.tree_only? %>
+
+        <div class="form-group">
+          <%= form.text_field :recipient_message, class: "form-control mr-sm-2", placeholder: t('.recipient_message') %>
+        </div>
+
+      <% end %>
 
       <div class="form-group">
         <%= form.text_field :customer_note, class: "form-control mr-sm-2", placeholder: t('.customer_note') %>

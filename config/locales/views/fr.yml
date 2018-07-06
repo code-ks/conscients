@@ -92,7 +92,7 @@ fr:
     carts:
       show:
         cart: "Panier"
-        cart_empty: "Panier vide"
+        empty_cart: "Panier vide"
         selection: "Sélection"
         quantity: "Quantité"
         personalized_product: "Produit personnalisé"

@@ -92,7 +92,7 @@ en:
     carts:
       show:
         cart: "Cart"
-        cart_empty: "Empty cart"
+        empty_cart: "Empty cart"
         selection: "Selection"
         quantity: "Quantity"
         personalized_product: "Personalized product"
