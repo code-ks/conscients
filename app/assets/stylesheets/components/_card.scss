@@ -1,32 +1,32 @@
 // INITIAL
-  .card-hide-hover {
-    display: block;
-  }
+.card-hide-hover {
+  display: block;
+}
 
-  .card-hover-parent:hover .card-hide-hover {
-    display: none;
-  }
+.card-hover-parent:hover .card-hide-hover {
+  display: none;
+}
 
-  .card-hover-parent:hover .card-hover-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.card-hover-parent:hover .card-hover-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .card-show-hover {
-    display: none;
-  }
+.card-show-hover {
+  display: none;
+}
 
-  .card-hover-parent:hover .card-show-hover {
-    display: block;
-  }
+.card-hover-parent:hover .card-show-hover {
+  display: block;
+}
 
-  .card-hover-parent:hover {
-    height: 90%;
-  }
+.card-hover-parent:hover {
+  height: 90%;
+}
 
-  .card-text-ellipsed {
+.card-text-ellipsed {
   overflow: hidden;
   position: relative;
   line-height: 1.2em;

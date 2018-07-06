@@ -12,11 +12,14 @@
       <p class="font-weight-bold"><%= humanized_money_with_symbol @product.ttc_price %></p>
       <p><%= @product.description_short %></p>
       <p><%= @product.description_long %></p>
-
       <hr>
       <div id="new_line_item">
         <%= render 'products/add_to_cart_form', product: @product, line_item: @line_item %>
       </div>
     </div>
+      <div class="social-likes">
+        <div data-service="facebook" title="Share link on Facebook">Facebook</div>
+        <div data-service="twitter" title="Share link on Twitter">Twitter</div>
+      </div>
   </div>
 </div>
