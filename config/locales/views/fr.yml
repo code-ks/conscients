@@ -62,6 +62,7 @@ fr:
       amount: "Montant"
       invoice: "Facture"
       certificates: "Certificats"
+      state: "Statut"
     impact:
       trees_planted: "arbres plantés"
       tonnes_of_co2: "tonnes de Co2 compensées"

@@ -63,9 +63,8 @@ class Order < ApplicationRecord
            :amount_cents, :percentage, :list_of_clients, to: :coupon, prefix: true
   delegate :addresses, :email, :stripe_customer_id, to: :client, prefix: true
 
-  scope :finished, lambda {
-    preparing.merge(Order.fulfilled).merge(Order.delivered).merge(Order.canceled)
-  }
+  scope :order_by_date, -> { order(created_at: :desc) }
+  scope :finished, -> { preparing.merge(Order.fulfilled).merge(Order.delivered) }
   scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
   scope :cart_to_destroy, -> { in_cart.two_days_old }
 

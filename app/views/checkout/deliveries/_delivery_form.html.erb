@@ -72,6 +72,10 @@
         <% end %>
       </span>
 
+      <% unless @cart.coupon %>
+        <%= render 'checkout/deliveries/add_coupon' %>
+      <% end %>
+
       <div class="form-group">
         <%= form.check_box :general_sales_conditions, checked: false, required: true %>
         <%= form.label t('.general_sales_conditions') %>

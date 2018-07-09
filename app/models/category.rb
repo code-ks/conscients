@@ -51,6 +51,10 @@ class Category < ApplicationRecord
     roots.first
   end
 
+  def self.give_a_tree
+    find_by(slug: 'gifts-give-a-tree')
+  end
+
   def should_generate_new_friendly_id?
     name_changed? || super
   end

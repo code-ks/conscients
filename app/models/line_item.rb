@@ -52,6 +52,9 @@ class LineItem < ApplicationRecord
   scope :certificable, lambda {
     includes(:certificate_attachment).select { |line_item| line_item.certificate.attached? }
   }
+  scope :finished, lambda {
+    includes(:order).where(orders: { aasm_state: %w[preparing fulfilled delivered] })
+  }
 
   def tree_marker
     {

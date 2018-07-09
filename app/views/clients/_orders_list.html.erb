@@ -8,12 +8,13 @@
           <th scope="col"><%= t('.amount') %></th>
           <th scope="col"><%= t('.invoice') %></th>
           <th scope="col"><%= t('.certificates') %></th>
+          <th scope="col"><%= t('.state') %></th>
         </tr>
       </thead>
       <tbody>
-        <% current_client.orders.finished.each do |order| %>
+        <% current_client.orders.finished.order_by_date.each do |order| %>
           <tr>
-            <td><%= I18n.l(order.payment_date, format: :long_no_time).titleize %></td>
+            <td><%= I18n.l(order.payment_date || order.created_at, format: :long_no_time).titleize %></td>
             <td><%= humanized_money_with_symbol order.total_price %></td>
             <td>
               <%= link_to new_invoices_download_path(order_id: order.id) do %>
@@ -27,6 +28,7 @@
                 <% end %>
               <% end %>
             </td>
+            <td><%= order.aasm.human_state %></td>
           </tr>
         <% end %>
       </tbody>

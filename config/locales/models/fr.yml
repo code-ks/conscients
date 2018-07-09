@@ -188,7 +188,7 @@ fr:
         delivery_email: "Email du destinataire"
       order:
         aasm_state: "Etat de la commande"
-        aasm_states:
+        aasm_state:
           in_cart: "Panier"
           wainting_for_bank_transfer: "En attente de virement bancaire"
           preparing: "En cours de préparation"
