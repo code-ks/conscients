@@ -5,7 +5,7 @@ fr:
     client_management: "Gestion des clients"
     blog_management: "Gestion du Blog"
     current_state: "Statut actuel"
-    change_state: "Nouveau statut"
+    change_state: "Changement de statut à effectuer"
   paypal:
     delivery_fees: "Frais de livraison"
     total_price: "Prix total"

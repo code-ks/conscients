@@ -59,8 +59,11 @@ en:
         aasm_state: "State of the order"
         aasm_states:
           in_cart: "Cart"
-          paid: "Paid"
+          wainting_for_bank_transfer: "Waiting for bank transfer"
+          preparing: "Preparing"
           fulfilled: "Fulfilled"
+          delivered: "Delivered"
+          canceled: "Canceled"
         delivery_methods:
           single_address: "Delivery to an address"
           email: "Delivery by email"

@@ -37,7 +37,7 @@ ActiveAdmin.register Order do
               label: I18n.t('active_admin.current_state')
       # use the attr_accessor to pass the data
       f.input :active_admin_requested_event, label: I18n.t('active_admin.change_state'),
-              as: :select, collection: f.object.aasm.events(permitted: true).map(&:name)
+      as: :select, collection: f.object.translated_hash_permitted_events
       f.input :client
       f.input :coupon
       f.input :delivery_address, as: :select, selected: f.object.delivery_address,

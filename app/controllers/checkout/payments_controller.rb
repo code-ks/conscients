@@ -19,6 +19,7 @@ class Checkout::PaymentsController < ApplicationController
 
   def create_bank_transfer
     @cart.bank_transfer!
+    @cart.order_by_bank_transfer!
     @cart.update(total_price: @cart.ttc_price_all_included)
     ClientMailer.with(order: @cart).bank_account_details.deliver_later
     redirect_to root_path, notice: t('flash.payments.create_bank_transfer.notice')
