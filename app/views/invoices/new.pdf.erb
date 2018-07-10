@@ -6,7 +6,7 @@
 
     <div>
       <h4><%= t('.billing_address') %></h4>
-      <% if @billing_address.email? %>
+      <% if @billing_address.email %>
         <span><%= @billing_address.email %></span>
       <% else %>
         <span><%= @billing_address.first_name %> <%= @billing_address.last_name %></span>
