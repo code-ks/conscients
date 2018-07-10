@@ -13,8 +13,7 @@
 #
 
 class Variant < ApplicationRecord
-  has_many :variabilizations, dependent: :destroy
-  has_many :product_skus, through: :variabilizations
+  has_many :product_skus, through: :destroy
   has_many :products, through: :product_skus
 
   acts_as_list

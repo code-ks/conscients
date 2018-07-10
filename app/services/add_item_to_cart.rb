@@ -10,7 +10,8 @@ class AddItemToCart
   def perform
     find_or_initialize_line_item
     add_attributes_certicable_line_item if @line_item.certificable?
-    increment_quantity_line_item
+    update_quantity_line_item
+    @line_item
   end
 
   private
@@ -25,8 +26,8 @@ class AddItemToCart
     add_plantation_attributes_to_line_item
   end
 
-  def increment_quantity_line_item
-    @line_item.increment(:quantity, @quantity)
+  def update_quantity_line_item
+    @line_item.assign_attributes(quantity: @quantity)
   end
 
   def set_tree_plantation

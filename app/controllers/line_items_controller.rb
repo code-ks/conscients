@@ -14,6 +14,10 @@ class LineItemsController < ApplicationController
     end
   end
 
+  def update
+    # TODO
+  end
+
   def destroy
     @line_item.destroy
     redirect_back fallback_location: cart_path(@cart)
@@ -52,7 +56,7 @@ class LineItemsController < ApplicationController
   end
 
   def quantity
-    (params.dig(:line_item, :quantity) || 1).to_i
+    params.dig(:line_item, :quantity)
   end
 
   def line_item_params

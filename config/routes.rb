@@ -21,8 +21,8 @@ Rails.application.routes.draw do
     resources :categories, only: [] do
       resources :products, only: :index
     end
-    resources :products, only: :show, shallow: true do
-      resources :line_items, only: %i[create destroy]
+    resources :products, only: :show do
+      resources :line_items, only: %i[create update destroy]
     end
     resource :invoices, only: [] do
       scope module: :invoices do

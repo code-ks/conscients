@@ -1,4 +1,9 @@
 fr:
+  helpers:
+    submit:
+      line_item:
+        create: "Ajouter"
+        update: "Modifier"
   active_admin:
     product_management: "Gestion des produits"
     order_management: "Gestion des commandes"
