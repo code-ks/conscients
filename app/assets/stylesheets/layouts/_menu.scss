@@ -46,10 +46,16 @@
     letter-spacing: 0.1rem;
     font-size: 0.8rem;
     color: $conscients-grey;
+    @include for-tablet-portrait-only {
+      letter-spacing: 0;
+    }
   }
 
   .top-menu-left {
     width: 20%;
+    @include for-tablet-portrait-only {
+      width: auto;
+    }
   }
 
   .top-menu-center {
@@ -63,6 +69,9 @@
     justify-content: flex-end;
     align-items: center;
     width: 20%;
+    @include for-tablet-portrait-only {
+      width: auto;
+    }
   }
 
   .top-menu-item {
