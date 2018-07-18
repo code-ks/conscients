@@ -1,6 +1,7 @@
 <% if category.children.any? %>
-  <div class="font-weight-bold mx-2"><%= t('.category') %></div>
-  <div class="dropdown">
+  <!-- <div class="font-weight-bold mx-2"></%= t('.category') %></div> -->
+  <div class="mr-2 top-menu-font"><%= t('.category') %></div>
+  <div class="dropdown filter-plus-icone">
     <%= fa_icon "plus", class: "c-pointer", data: { toggle: "dropdown" } %>
     <div class="dropdown-menu">
       <% category.children.each do |c| %>
@@ -11,8 +12,9 @@
 <% end %>
 
 <% category.variants_by_category.each do |c| %>
-  <div class="font-weight-bold ml-5 mr-2"><%= c.first.capitalize %></div>
-  <div class="dropdown">
+  <!-- <div class="font-weight-bold ml-5 mr-2"><%= c.first.capitalize %></div> -->
+  <div class="ml-5 mr-2 top-menu-font"><%= c.first.capitalize %></div>
+  <div class="dropdown filter-plus-icone">
     <%= fa_icon "plus", class: "c-pointer", data: { toggle: "dropdown" } %>
     <div class="dropdown-menu">
       <% c.last.each do |variant| %>

@@ -59,6 +59,13 @@
     }
   }
 
+  .description-font {
+    font-family: "Frank Ruhl Libre", "serif";
+    font-weight: 300;
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
 // **** BOXES ****
   .container-conscients{
     margin: 0 auto;
@@ -99,6 +106,11 @@
     padding-bottom : 16px;
   }
 
+// MARGIN
+  .filters-margin {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
 // ****TEXT AND LINKS COLORS ****
   .t-white {
     color: white;
