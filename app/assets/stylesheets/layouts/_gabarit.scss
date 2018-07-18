@@ -1,13 +1,15 @@
-.bg-pink {
-  background-color: pink;
-}
-.bg-red {
-  background-color: red;
-}
+// BACKGROUNDS FOR TEST ERASE AFTER
+  .bg-pink {
+    background-color: pink;
+  }
+  .bg-red {
+    background-color: red;
+  }
 
-.bg-grey {
-  background-color: $conscients-bg-grey;
-}
+// BACKGROUND COLORS
+  .bg-grey {
+    background-color: $conscients-bg-grey;
+  }
 
 // ROW AND COL
   .ligne {
@@ -63,7 +65,7 @@
     font-family: "Frank Ruhl Libre", "serif";
     font-weight: 300;
     font-size: 0.9rem;
-    text-align: justify;
+    // text-align: justify;
   }
 
 // **** BOXES ****
@@ -101,6 +103,10 @@
   }
   .padding-around {
     padding : 16px;
+  }
+  .no-padding-around {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
   .padding-b {
     padding-bottom : 16px;
