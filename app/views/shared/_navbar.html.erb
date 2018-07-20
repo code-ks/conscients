@@ -26,7 +26,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
         </div>
         <div class="modal-body">
-          <%= form_with url: category_products_path(@category), method: :get, local: true, class: "form-inline my-2 mx-3 my-lg-0" do |form| %>
+          <%= form_with url: category_products_path(@current_category), method: :get, local: true, class: "form-inline my-2 mx-3 my-lg-0" do |form| %>
           <%= form.text_field :search, class: "form-control mr-sm-2 input-field", placeholder: true %>
           <%= form.submit t('.search'), value:"ok", :data => {:disable_with => 'ok'}, class: "btn input-field-button my-2 my-sm-0"%>
           <% end %>

@@ -2,14 +2,14 @@
 
 class ProductsController < ApplicationController
   def index
-    @products = @category.products.page(params[:page]).displayable
-                         .merge(product_search)
-                         .merge(product_with_variant)
+    @products = @current_category.products.page(params[:page]).displayable
+                                 .merge(product_search)
+                                 .merge(product_with_variant)
   end
 
   def show
     @product = Product.with_attached_images.find(params[:id])
-    @line_item = LineItem.new
+    @line_item = params[:line_item] ? LineItem.find(params[:line_item]) : LineItem.new
   end
 
   private

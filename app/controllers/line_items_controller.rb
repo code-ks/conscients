@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class LineItemsController < ApplicationController
-  before_action :set_product, :set_product_sku, only: :create
-  before_action :set_line_item, only: :destroy
+  before_action :set_product, :set_variant, :set_product_sku, only: :create
+  before_action :set_line_item, only: %i[update destroy]
 
   respond_to :js, :html
 
@@ -12,6 +12,11 @@ class LineItemsController < ApplicationController
     respond_with(@line_item, location: product_path(@product)) do |format|
       format.html { render 'products/show' } unless @line_item.save
     end
+  end
+
+  def update
+    flash[:alert] = 'Stock trop faible' unless @line_item.update(line_item_params_update)
+    redirect_to cart_path(@cart)
   end
 
   def destroy
@@ -29,35 +34,28 @@ class LineItemsController < ApplicationController
     @product = Product.with_attached_images.find(params[:product_id])
   end
 
+  def set_variant
+    @variant = params.dig(:variant, :id) ? Variant.find(params.dig(:variant, :id)) : nil
+  end
+
   def set_product_sku
     @product_sku = @product.product_skus
-                           .merge(skus_with_variants)
+                           .merge(@variant&.product_skus || @product.product_skus)
                            .first
   end
 
-  def skus_with_variants
-    product_skus = ProductSku.all
-    params[:variants]&.each do |_, value|
-      product_skus = product_skus.merge(product_skus_with_variant(get_variant(value)))
-    end
-    product_skus
-  end
-
-  def product_skus_with_variant(variant)
-    ProductSku.with_variant(variant)
-  end
-
-  def get_variant(value)
-    Variant.find(value)
-  end
-
   def quantity
-    (params.dig(:line_item, :quantity) || 1).to_i
+    params.dig(:line_item, :quantity)
   end
 
   def line_item_params
     params[:line_item] = { empty: true } unless params.key?(:line_item)
     params.require(:line_item).permit(:recipient_name, :recipient_message, :certificate_date)
           .merge(product_sku_id: @product_sku.id)
+  end
+
+  def line_item_params_update
+    params.require(:line_item).permit(:recipient_name, :recipient_message,
+                                      :certificate_date, :quantity)
   end
 end

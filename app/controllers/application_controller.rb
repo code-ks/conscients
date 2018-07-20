@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_category
-    @category = params[:category_id] ? Category.find(params[:category_id]) : Category.home
+    @current_category = params[:category_id] ? Category.find(params[:category_id]) : Category.home
   end
 
   def set_cart

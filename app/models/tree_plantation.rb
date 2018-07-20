@@ -18,10 +18,13 @@
 #  trees_quantity        :integer          default(0), not null
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
+#  base_tree_quantity    :integer
 #
 
 class TreePlantation < ApplicationRecord
   has_many :line_items, dependent: :destroy
+
+  before_create :match_base_tree_quantity
 
   extend Mobility
   translates :project_type
@@ -51,6 +54,10 @@ class TreePlantation < ApplicationRecord
   end
 
   def generate_certificate_number
-    base_certificate_uuid + "-#{format '%03d', trees_quantity}"
+    base_certificate_uuid + "-#{format '%03d', base_tree_quantity - trees_quantity + 1}"
+  end
+
+  def match_base_tree_quantity
+    self.base_tree_quantity = trees_quantity
   end
 end

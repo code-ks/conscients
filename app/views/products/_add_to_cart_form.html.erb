@@ -1,4 +1,4 @@
-<%= form_with model: [product, line_item] do |form| %>
+<%= form_with model: [product, line_item], local: true do |form| %>
   <% if line_item.errors.any? %>
     <ul>
       <% line_item.errors.full_messages.each do |message| %>
@@ -7,20 +7,18 @@
     </ul>
   <% end %>
 
-  <% if product.tree? %>
-    <div class="form-group row">
-      <%= form.label :quantity, class: "col-sm-4 col-form-label" %>
-      <div class="col-sm-8">
-        <%= form.number_field :quantity, value: 1, class: "form-control mr-sm-2" %>
-      </div>
+  <div class="form-group row">
+    <%= form.label :quantity, class: "col-sm-4 col-form-label" %>
+    <div class="col-sm-8">
+      <%= form.number_field :quantity, value: (line_item.quantity.zero? ? 1 : line_item.quantity),class: "form-control mr-sm-2" %>
     </div>
-  <% end %>
+  </div>
 
-  <% product.variants_by_category.each do |c| %>
+  <% if product.variants.any? %>
     <div class="form-group row">
-      <%= form.label c.first, class: "col-sm-4 col-form-label" %>
+      <%= form.label "Age", class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
-        <%= collection_select :variants, c.first, c.last, :id, :value, {}, { class: "form-control mr-sm-2" }  %>
+        <%= collection_select :variant, :id, product.variants.in_stock, :id, :value, { selected: line_item.product_sku&.variant&.id }, { class: "form-control mr-sm-2" }  %>
       </div>
     </div>
   <% end %>
@@ -30,14 +28,7 @@
     <div class="form-group row">
       <%= form.label :recipient_name, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
-        <%= form.text_field :recipient_name, class: "form-control mr-sm-2" %>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <%= form.label :recipient_message, class: "col-sm-4 col-form-label" %>
-      <div class="col-sm-8">
-        <%= form.text_area :recipient_message, class: "form-control mr-sm-2" %>
+        <%= form.text_field :recipient_name, class: "form-control mr-sm-2", maxlength: 60 %>
       </div>
     </div>
 
@@ -45,6 +36,13 @@
       <%= form.label :certificate_date, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
         <%= form.date_field :certificate_date, class: "form-control mr-sm-2", id: "datepicker" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= form.label :recipient_message, class: "col-sm-4 col-form-label" %>
+      <div class="col-sm-8">
+        <%= form.text_area :recipient_message, class: "form-control mr-sm-2", maxlength: 300 %>
       </div>
     </div>
 

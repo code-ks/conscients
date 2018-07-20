@@ -7,6 +7,13 @@
 
 <hr>
 
+<% if @blog_post.image_for_home.attached? %>
+  <h4><%= t('activerecord.attributes.blog_post.main_image') %></h4>
+  <%= image_tag(@blog_post.image_for_home, height: 250) %>
+<% end %>
+
+<hr>
+
 <h4><%= t('activerecord.attributes.blog_post.seo_title_fr') %></h4>
 <%= @blog_post.seo_title_fr %>
 

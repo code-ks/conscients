@@ -10,14 +10,12 @@
   </div>
 <% end %>
 
-<% category.variants_by_category.each do |c| %>
-  <div class="font-weight-bold ml-5 mr-2"><%= c.first.capitalize %></div>
-  <div class="dropdown">
-    <%= fa_icon "plus", class: "c-pointer", data: { toggle: "dropdown" } %>
-    <div class="dropdown-menu">
-      <% c.last.each do |variant| %>
-        <%= link_to variant.value.capitalize, category_products_path(category, variant: variant.id), class: "dropdown-item" %>
-      <% end %>
-    </div>
+<div class="font-weight-bold ml-5 mr-2"><%= t('.variant') %></div>
+<div class="dropdown">
+  <%= fa_icon "plus", class: "c-pointer", data: { toggle: "dropdown" } %>
+  <div class="dropdown-menu">
+    <% category.variants.each do |variant| %>
+      <%= link_to variant.value.capitalize, category_products_path(category, variant: variant.id), class: "dropdown-item" %>
+    <% end %>
   </div>
-<% end %>
+</div>

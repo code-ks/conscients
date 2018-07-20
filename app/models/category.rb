@@ -51,6 +51,10 @@ class Category < ApplicationRecord
     roots.first
   end
 
+  def self.give_a_tree
+    find_by(slug: 'gifts-give-a-tree')
+  end
+
   def should_generate_new_friendly_id?
     name_changed? || super
   end
@@ -60,11 +64,7 @@ class Category < ApplicationRecord
   end
 
   def variants
-    Variant.includes(:text_translations, :variabilizations, :product_skus)
-           .where(variabilizations: { product_skus: { product: products } })
-  end
-
-  def variants_by_category
-    variants.group_by(&:category)
+    Variant.includes(:text_translations, :product_skus)
+           .where(product_skus: { product: products })
   end
 end

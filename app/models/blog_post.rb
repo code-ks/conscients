@@ -18,6 +18,7 @@
 
 class BlogPost < ApplicationRecord
   has_one_attached :main_image
+  has_one_attached :image_for_home
 
   extend Mobility
   translates :content, :slug, :seo_title, :meta_description
