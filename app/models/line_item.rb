@@ -39,6 +39,7 @@ class LineItem < ApplicationRecord
   validates :recipient_message, length: { maximum: 300 }
 
   before_validation :decrement_stock_quantities, prepend: true
+  before_destroy :increment_stock_quantities_destroy
   before_save :update_price
 
   delegate :certificable?, :classic?, :personnalized?, :tree?, :product, :product_images,
@@ -96,5 +97,12 @@ class LineItem < ApplicationRecord
   def decrement_stock_quantities
     product_sku.decrement(:quantity, added_quantity) unless tree?
     tree_plantation.decrement(:quantity, added_quantity) unless classic?
+  end
+
+  def increment_stock_quantities_destroy
+    product_sku.increment(:quantity, quantity) unless tree?
+    product_sku.save
+    tree_plantation.increment(:quantity, quantity) unless classic?
+    tree_plantation.save
   end
 end

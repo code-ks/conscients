@@ -3,7 +3,7 @@
 ActiveAdmin.register ProductSku do
   menu parent: I18n.t('active_admin.product_management')
 
-  permit_params :product_id, :sku_id
+  permit_params :product_id, :sku
 
   actions :all, except: %i[edit update destroy]
 

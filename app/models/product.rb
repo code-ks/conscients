@@ -35,8 +35,7 @@ class Product < ApplicationRecord
   has_many :product_skus, dependent: :destroy
   has_many :line_items, through: :product_skus
   has_many :orders, through: :line_items
-  has_many :variabilizations, through: :product_skus
-  has_many :variants, through: :variabilizations
+  has_many :variants, through: :product_skus
   has_many :coupons, dependent: :destroy
   has_many_attached :images
   has_one_attached :certificate_background
@@ -74,7 +73,7 @@ class Product < ApplicationRecord
   scope :in_order, -> { order(position: :asc) }
   scope :in_stock, -> { joins(:product_skus).where.not(product_skus: { quantity: 0 }) }
   scope :with_variant, lambda { |variant|
-    includes(:variabilizations).where(variabilizations: { variant: variant })
+    includes(:product_skus).where(product_skus: { variant: variant })
   }
   scope :displayable, -> { in_stock.published.with_attached_images }
 

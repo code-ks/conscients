@@ -13,8 +13,7 @@ fr:
       product_sku: "UGS produit"
       stock_entry: "Entrée de stock"
       tree_plantation: "Plantation d'arbres"
-      variabilization: "Variabilisation"
-      variant: "Variante"
+      variant: "Age"
       ahoy/event: "Evénement"
       ahoy/visit: "Visite"
       blog_post: "Articles de blog"
@@ -108,15 +107,7 @@ fr:
         quantity: "Quantité"
         created_at: "Créé le"
         updated_at: "Mise à jour le"
-      variabilization:
-        product_sku: "UGS produit"
-        variant: "Variante"
-        created_at: "Créé le"
-        updated_at: "Mise à jour le"
       variant:
-        category: "Catégorie"
-        categories:
-          age: "Age"
         value: "Valeur"
         created_at: "Créé le"
         updated_at: "Mise à jour le"
@@ -188,7 +179,7 @@ fr:
         delivery_email: "Email du destinataire"
       order:
         aasm_state: "Etat de la commande"
-        aasm_state:
+        aasm_states:
           in_cart: "Panier"
           wainting_for_bank_transfer: "En attente de virement bancaire"
           preparing: "En cours de préparation"

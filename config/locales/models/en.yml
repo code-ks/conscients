@@ -13,8 +13,7 @@ en:
       product_sku: "Product SKU"
       stock_entry: "Stock Entry"
       tree_plantation: "Tree Plantation"
-      variabilization: "Variabilization"
-      variant: "Variant"
+      variant: "Age"
       ahoy/visit: "Visit"
       ahoy/event: "Event"
       blog_post: "Blog Post"
@@ -38,10 +37,6 @@ en:
         ht_price_currency: "Sale currency"
         ht_buying_price_cents: "HT buying price in cents"
         ht_buying_price_currency: "Buying currency"
-      variant:
-        category: "Category"
-        categories:
-          age: "Age"
       address:
         title: "Address title"
         address_types:
@@ -57,7 +52,7 @@ en:
         amount_min_order_currency: "Currency of the minimum of the order"
       order:
         aasm_state: "State of the order"
-        aasm_state:
+        aasm_states:
           in_cart: "Cart"
           wainting_for_bank_transfer: "Waiting for bank transfer"
           preparing: "Preparing"

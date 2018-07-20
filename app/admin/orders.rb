@@ -41,9 +41,9 @@ ActiveAdmin.register Order do
       f.input :client
       f.input :coupon
       f.input :delivery_address, as: :select, selected: f.object.delivery_address,
-              collection: f.object.client_addresses.collect { |a| [a.to_s, a] }
+              collection: f.object.client_addresses&.collect { |a| [a.to_s, a] }
       f.input :billing_address, as: :select, selected: f.object.billing_address,
-              collection: f.object.client_addresses.collect { |a| [a.to_s, a] }
+              collection: f.object.client_addresses&.collect { |a| [a.to_s, a] }
       f.input :delivery_method
       f.input :payment_method
       f.input :recipient_message

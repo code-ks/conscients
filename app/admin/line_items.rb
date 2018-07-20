@@ -7,7 +7,7 @@ ActiveAdmin.register LineItem do
                 :tree_plantation_id, :quantity, :recipient_name, :recipient_message,
                 :certificate_date, :certificate_number, :delivery_email
 
-  includes :order, :tree_plantation, product_sku: :variabilizations
+  includes :order, :tree_plantation, :product_sku
 
   action_item :download_certificate, only: :show, if: proc { line_item.certificate.attached? } do
     link_to t('.download_certificate'),

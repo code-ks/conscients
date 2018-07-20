@@ -64,11 +64,7 @@ class Category < ApplicationRecord
   end
 
   def variants
-    Variant.includes(:text_translations, :variabilizations, :product_skus)
-           .where(variabilizations: { product_skus: { product: products } })
-  end
-
-  def variants_by_category
-    variants.group_by(&:category)
+    Variant.includes(:text_translations, :product_skus)
+           .where(product_skus: { product: products })
   end
 end

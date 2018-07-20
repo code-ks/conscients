@@ -15,6 +15,7 @@ en:
       previous: "Previous"
     filters:
       category: "Category"
+      variant: "Age"
     added_to_cart_modal:
       tree_added_with_recipient: "A tree for %{recipient} has been added to your cart."
       tree_added: "A tree has been added to your cart."

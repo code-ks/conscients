@@ -2,9 +2,9 @@
 
 class ProductsController < ApplicationController
   def index
-    @products = Current.category.products.page(params[:page]).displayable
-                       .merge(product_search)
-                       .merge(product_with_variant)
+    @products = @current_category.products.page(params[:page]).displayable
+                                 .merge(product_search)
+                                 .merge(product_with_variant)
   end
 
   def show

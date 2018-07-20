@@ -10,7 +10,6 @@ task create_development_resources: :environment do
   AdminUser.destroy_all
   Categorization.destroy_all
   ProductSku.destroy_all
-  Variabilization.destroy_all
   Client.destroy_all
   Address.destroy_all
   Coupon.destroy_all
@@ -31,7 +30,7 @@ task create_development_resources: :environment do
     le monde devrait lire parce qu'il est vraiment bien",
     keywords: %w[top livre]
   )
-  ProductSku.create(product: product)
+  ProductSku.create!(product: product)
 
   product = Product.create!(
     name_fr: 'Top livre 2',
@@ -46,7 +45,7 @@ task create_development_resources: :environment do
     le monde devrait lire parce qu'il est vraiment bien",
     keywords: %w[top livre]
   )
-  ProductSku.create(product: product)
+  ProductSku.create!(product: product)
 
   product = Product.create!(
     name_fr: 'Top vêtement garçon',
@@ -61,12 +60,12 @@ task create_development_resources: :environment do
     le monde devrait porter parce qu'il est vraiment bien",
     keywords: %w[top vetement garçon]
   )
-  product_sku = ProductSku.create(product: product)
-  product_sku.variants << Variant.find_by(value: '0 à 3 mois')
-  product_sku = ProductSku.create(product: product)
-  product_sku.variants << Variant.find_by(value: '3 à 6 mois')
-  product_sku = ProductSku.create(product: product)
-  product_sku.variants << Variant.find_by(value: '6 à 12 mois')
+  product_sku = ProductSku.create!(product: product)
+  product_sku.update(variant: Variant.find_by(value: '0 à 3 mois'))
+  product_sku = ProductSku.create!(product: product)
+  product_sku.update(variant: Variant.find_by(value: '3 à 6 mois'))
+  product_sku = ProductSku.create!(product: product)
+  product_sku.update(variant: Variant.find_by(value: '6 à 12 mois'))
 
   product = Product.create!(
     name_fr: 'Top vêtement fille',
@@ -81,12 +80,12 @@ task create_development_resources: :environment do
     le monde devrait porter parce qu'il est vraiment bien",
     keywords: %w[top vetement fille]
   )
-  product_sku = ProductSku.create(product: product)
-  product_sku.variants << Variant.find_by(value: '0 à 3 mois')
-  product_sku = ProductSku.create(product: product)
-  product_sku.variants << Variant.find_by(value: '3 à 6 mois')
-  product_sku = ProductSku.create(product: product)
-  product_sku.variants << Variant.find_by(value: '6 à 12 mois')
+  product_sku = ProductSku.create!(product: product)
+  product_sku.update(variant: Variant.find_by(value: '0 à 3 mois'))
+  product_sku = ProductSku.create!(product: product)
+  product_sku.update(variant: Variant.find_by(value: '3 à 6 mois'))
+  product_sku = ProductSku.create!(product: product)
+  product_sku.update(variant: Variant.find_by(value: '6 à 12 mois'))
 
   product = Product.create!(
     name_fr: 'Livre et arbre',
@@ -107,7 +106,7 @@ task create_development_resources: :environment do
   product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpeg'),
                                         filename: 'certificate-background.jpeg',
                                         content_type: 'image/jpeg')
-  ProductSku.create(product: product)
+  ProductSku.create!(product: product)
 
   product = Product.create!(
     name_fr: 'Arbre',
@@ -127,7 +126,7 @@ task create_development_resources: :environment do
   product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpeg'),
                                         filename: 'certificate-background.jpeg',
                                         content_type: 'image/jpeg')
-  ProductSku.create(product: product)
+  ProductSku.create!(product: product)
 
   Product.all.each do |p|
     p.images.attach(io: File.open('lib/assets/tree.jpeg'),

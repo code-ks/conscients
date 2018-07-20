@@ -61,7 +61,7 @@ class Order < ApplicationRecord
 
   delegate :client, :product, :amount_min_order, :valid_from, :valid_until,
            :amount_cents, :percentage, :list_of_clients, to: :coupon, prefix: true
-  delegate :addresses, :email, :stripe_customer_id, to: :client, prefix: true
+  delegate :addresses, :email, :stripe_customer_id, to: :client, prefix: true, allow_nil: true
 
   scope :order_by_date, -> { order(created_at: :desc) }
   scope :finished, -> { preparing.merge(Order.fulfilled).merge(Order.delivered) }
@@ -108,7 +108,7 @@ class Order < ApplicationRecord
     if payment_date
       "#{I18n.l(payment_date, format: :short)}: #{client_email}"
     else
-      "#{I18n.t('activerecord.attributes.order.aasm_states.in_cart')}: #{client_email}"
+      I18n.t('activerecord.attributes.order.aasm_states.in_cart').to_s
     end
   end
 
