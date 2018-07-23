@@ -21,6 +21,12 @@ fr:
       blog_post:
         content_fr: "Contenu en français"
         content_en: "Contenu en anglais"
+        title: "Titre"
+        title_fr: "Titre en français"
+        title_en: "Titre en anglais"
+        category: "Catégorie"
+        category_fr: "Catégorie en français"
+        category_en: "Catégorie en anglais"
         seo_title: "Titre SEO"
         seo_title_en: "Titre SEO en anglais"
         seo_title_fr: "Titre SEO en français"

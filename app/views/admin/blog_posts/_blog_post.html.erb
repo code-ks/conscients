@@ -9,7 +9,7 @@
       <%= image_tag(blog_post.image_for_home, height: 100) %>
     <% end %>
   </th>
-  <td><%= blog_post.seo_title_fr %></th>
+  <td><%= blog_post.title %></th>
   <td><%= t("namespace.#{blog_post.published_fr.to_s}") %></td>
   <td><%= t("namespace.#{blog_post.published_en.to_s}") %></td>
   <td>
