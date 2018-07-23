@@ -19,7 +19,7 @@
           </h2>
           <%= link_to t('.go_to_cart'), cart_path(@cart), class: "font-weight-bold orange mb-1" %>
           <% if product.tree? %>
-            <%= link_to t('.plant_more_trees'), category_products_path(Category.last_visited), class: "font-weight-bold orange mb-1" %>
+            <%= link_to t('.plant_more_trees'), category_products_path(Category.give_a_tree), class: "font-weight-bold orange mb-1" %>
           <% else %>
             <%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "font-weight-bold orange mb-1" %>
           <% end %>

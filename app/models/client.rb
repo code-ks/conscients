@@ -67,7 +67,7 @@ class Client < ApplicationRecord
 
   def markers
     markers = []
-    line_items.includes(:tree_plantation, :product_sku).map do |line_item|
+    line_items.finished.includes(:tree_plantation, :product_sku).map do |line_item|
       markers << line_item.tree_marker if line_item.tree_marker?
       markers << line_item.producer_marker if line_item.producer_marker?
     end
@@ -75,11 +75,11 @@ class Client < ApplicationRecord
   end
 
   def tree_species_planted
-    tree_plantations.map(&:tree_specie).uniq
+    tree_plantations.pluck(:tree_specie).uniq
   end
 
   def quantity_of_trees_planted
-    line_items.certificable.sum(&:quantity)
+    line_items.finished.certificable.sum(&:quantity)
   end
 
   def tonne_co2_captured

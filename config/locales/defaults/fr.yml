@@ -1,11 +1,16 @@
 fr:
+  helpers:
+    submit:
+      line_item:
+        create: "Ajouter"
+        update: "Modifier"
   active_admin:
     product_management: "Gestion des produits"
     order_management: "Gestion des commandes"
     client_management: "Gestion des clients"
     blog_management: "Gestion du Blog"
     current_state: "Statut actuel"
-    change_state: "Nouveau statut"
+    change_state: "Changement de statut à effectuer"
   paypal:
     delivery_fees: "Frais de livraison"
     total_price: "Prix total"

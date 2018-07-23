@@ -15,6 +15,7 @@ fr:
       previous: "Précédent"
     filters:
       category: "Catégorie"
+      variant: "Age"
     added_to_cart_modal:
       tree_added_with_recipient: "Un arbre pour %{recipient} a été ajouté au panier."
       product_added_with_recipient: "Un produit pour %{recipient} a été ajouté au panier."
@@ -62,6 +63,7 @@ fr:
       amount: "Montant"
       invoice: "Facture"
       certificates: "Certificats"
+      state: "Statut"
     impact:
       trees_planted: "arbres plantés"
       tonnes_of_co2: "tonnes de Co2 compensées"
@@ -92,7 +94,7 @@ fr:
     carts:
       show:
         cart: "Panier"
-        cart_empty: "Panier vide"
+        empty_cart: "Panier vide"
         selection: "Sélection"
         quantity: "Quantité"
         personalized_product: "Produit personnalisé"
@@ -174,10 +176,10 @@ fr:
       core_postal_with_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-joints vos certificats d'arbres ainsi que votre facture"
       core_postal_without_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-jointe votre facture"
       thanks: "Merci beaucoup"
-    order_fulfillment:
+    order_delivery:
       subject: "Votre commande a été confirmée"
       greatings: "Bonjour"
-      core: "Votre commande a été expédiée. Vous devriez la recevoir dans les prochains jours."
+      core: "Votre commande a été livrée. Vous devez pouvoir la trouver dans votre boîte aux lettres."
       thanks: "Merci beaucoup"
   recipient_mailer:
     gift_certificate:

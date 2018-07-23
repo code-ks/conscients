@@ -4,31 +4,9 @@
 
   <div class='mb-20 flex space-between'>
 
-    <div class='mr-50'>
-      <h4><%= t('.delivery_address') %></h4>
-      <% if @delivery_address.email? %>
-        <span><%= @delivery_address.email %></span>
-      <% else %>
-        <span><%= @delivery_address.first_name %> <%= @delivery_address.last_name %></span>
-        <% if @delivery_address.company %>
-          <span><%= @delivery_address.company %></span>
-        <% end %>
-        <% if @delivery_address.address_1 %>
-          <span><%= @delivery_address.address_1 %></span>
-        <% end %>
-        <% if @delivery_address.address_2 %>
-          <span><%= @delivery_address.address_2 %></span>
-        <% end %>
-        <span><%= @delivery_address.city %> <%= @delivery_address.zip_code %></span>
-        <% if @delivery_address.country %>
-          <span><%= @delivery_address.country %></span>
-        <% end %>
-      <% end %>
-    </div>
-
     <div>
       <h4><%= t('.billing_address') %></h4>
-      <% if @billing_address.email? %>
+      <% if @billing_address.email %>
         <span><%= @billing_address.email %></span>
       <% else %>
         <span><%= @billing_address.first_name %> <%= @billing_address.last_name %></span>

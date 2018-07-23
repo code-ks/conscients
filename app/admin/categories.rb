@@ -5,12 +5,10 @@ ActiveAdmin.register Category do
 
   config.sort_order = 'position_asc'
 
-  permit_params :name_fr, :slug_fr, :name_en, :slug_en, :positon, :description_fr, :description_en,
-                :parent
+  permit_params :name_fr, :slug_fr, :name_en, :slug_en, :position, :description_fr, :description_en,
+                :ancestry
 
   includes :text_translations
-
-  actions :index, :show
 
   index do
     selectable_column
@@ -37,7 +35,7 @@ ActiveAdmin.register Category do
       f.input :slug_en
       f.input :description_fr
       f.input :description_en
-      f.input :parent, as: :select, collection: Category.all.map(&:to_s)
+      f.input :ancestry
       f.input :position
     end
     f.actions

@@ -15,6 +15,7 @@ en:
       previous: "Previous"
     filters:
       category: "Category"
+      variant: "Age"
     added_to_cart_modal:
       tree_added_with_recipient: "A tree for %{recipient} has been added to your cart."
       tree_added: "A tree has been added to your cart."
@@ -62,6 +63,7 @@ en:
       amount: "Amount"
       invoice: "Invoice"
       certificates: "Certificates"
+      state: "State"
     impact:
       trees_planted: "trees planted"
       tonnes_of_co2: "tonnes of Co2 captured"
@@ -92,7 +94,7 @@ en:
     carts:
       show:
         cart: "Cart"
-        cart_empty: "Empty cart"
+        empty_cart: "Empty cart"
         selection: "Selection"
         quantity: "Quantity"
         personalized_product: "Personalized product"
@@ -174,10 +176,10 @@ en:
       core_postal_with_tree: "Your order is confirmed and will be shipped soon. Please find your tree certificates and your invoice attached."
       core_postal_without_tree: "Your order is confirmed and will be shipped soon. Please find your invoice attached."
       thanks: "Thanks a lot"
-    order_fulfillment:
+    order_delivery:
       subject: "Your order has been shipped"
       greatings: "Hello"
-      core: "Your order has been shipped. You should receive it in the next days."
+      core: "Your order has been delivered. You can find it in your mail box."
       thanks: "Thanks a lot"
   recipient_mailer:
     gift_certificate:

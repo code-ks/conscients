@@ -35,9 +35,11 @@ class LineItem < ApplicationRecord
   monetize :ttc_price_cents
 
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1 }
+  validates :recipient_name, length: { maximum: 60 }
   validates :recipient_message, length: { maximum: 300 }
 
   before_validation :decrement_stock_quantities, prepend: true
+  before_destroy :increment_stock_quantities_destroy
   before_save :update_price
 
   delegate :certificable?, :classic?, :personnalized?, :tree?, :product, :product_images,
@@ -50,6 +52,9 @@ class LineItem < ApplicationRecord
   scope :to_deliver_by_email, -> { where("delivery_email <> ''") }
   scope :certificable, lambda {
     includes(:certificate_attachment).select { |line_item| line_item.certificate.attached? }
+  }
+  scope :finished, lambda {
+    includes(:order).where(orders: { aasm_state: %w[preparing fulfilled delivered] })
   }
 
   def tree_marker
@@ -92,5 +97,12 @@ class LineItem < ApplicationRecord
   def decrement_stock_quantities
     product_sku.decrement(:quantity, added_quantity) unless tree?
     tree_plantation.decrement(:quantity, added_quantity) unless classic?
+  end
+
+  def increment_stock_quantities_destroy
+    product_sku.increment(:quantity, quantity) unless tree?
+    product_sku.save
+    tree_plantation.increment(:quantity, quantity) unless classic?
+    tree_plantation.save
   end
 end

@@ -50,7 +50,8 @@ class Order < ApplicationRecord
 
   enum delivery_method: { postal: 0, email: 1 }
   enum payment_method: { stripe: 0, paypal: 1, bank_transfer: 2 }
-  enum aasm_state: { in_cart: 0, paid: 1, fulfilled: 2 }
+  enum aasm_state: { in_cart: 0, wainting_for_bank_transfer: 1, preparing: 3,
+                     fulfilled: 4, delivered: 5, canceled: 6 }
 
   validates :total_price_cents, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :delivery_method, presence: true, inclusion: { in: delivery_methods.keys }
@@ -60,32 +61,54 @@ class Order < ApplicationRecord
 
   delegate :client, :product, :amount_min_order, :valid_from, :valid_until,
            :amount_cents, :percentage, :list_of_clients, to: :coupon, prefix: true
-  delegate :addresses, :email, :stripe_customer_id, to: :client, prefix: true
+  delegate :addresses, :email, :stripe_customer_id, to: :client, prefix: true, allow_nil: true
 
-  scope :finished, -> { paid.merge(Order.fulfilled) }
+  scope :order_by_date, -> { order(created_at: :desc) }
+  scope :finished, -> { preparing.merge(Order.fulfilled).merge(Order.delivered) }
   scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
   scope :cart_to_destroy, -> { in_cart.two_days_old }
 
   include AASM
   aasm enum: true do
     state :in_cart, initial: true
-    state :paid
+    state :wainting_for_bank_transfer
+    state :preparing
     state :fulfilled
+    state :delivered
+    state :canceled
 
-    event :pay, after: :process_order do
-      transitions from: :in_cart, to: :paid
+    event :order_by_bank_transfer do
+      transitions from: :in_cart, to: :wainting_for_bank_transfer
     end
 
-    event :fulfill, after: :fulfill_order do
-      transitions from: :paid, to: :fulfilled
+    event :pay, after: :process_order do
+      transitions from: :in_cart, to: :preparing
+      transitions from: :wainting_for_bank_transfer, to: :preparing
+    end
+
+    event :fulfill do
+      transitions from: :preparing, to: :fulfilled
+    end
+
+    event :deliver, after: :deliver_order do
+      transitions from: :preparing, to: :deliver
+      transitions from: :fulfilled, to: :deliver
+    end
+
+    event :cancel do
+      transitions from: :in_cart, to: :canceled
+      transitions from: :wainting_for_bank_transfer, to: :canceled
+      transitions from: :preparing, to: :canceled
+      transitions from: :fulfilled, to: :canceled
+      transitions from: :delivered, to: :canceled
     end
   end
 
   def to_s
-    if in_cart?
-      "#{I18n.t('activerecord.attributes.order.aasm_states.in_cart')}: #{client_email}"
-    else
+    if payment_date
       "#{I18n.l(payment_date, format: :short)}: #{client_email}"
+    else
+      I18n.t('activerecord.attributes.order.aasm_states.in_cart').to_s
     end
   end
 
@@ -176,14 +199,20 @@ class Order < ApplicationRecord
     end
   end
 
+  def translated_hash_permitted_events
+    Hash[I18n.t('activerecord.attributes.order.aasm_events')
+             .select { |k, _| permitted_events_names.include?(k) }
+         .values.zip(permitted_events_names)]
+  end
+
   private
 
   def process_order
     ProcessOrderJob.perform_later(id)
   end
 
-  def fulfill_order
-    ClientMailer.with(order: self).order_fulfillment.deliver_later unless email?
+  def deliver_order
+    ClientMailer.with(order: self).order_delivery.deliver_later unless email?
   end
 
   def eligible_to_coupon
@@ -210,5 +239,9 @@ class Order < ApplicationRecord
 
   def coupon_not_valid
     !Time.zone.today.between?(coupon_valid_from, coupon_valid_until)
+  end
+
+  def permitted_events_names
+    aasm.events(permitted: true).map(&:name)
   end
 end
