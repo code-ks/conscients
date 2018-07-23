@@ -1,62 +1,81 @@
-.navbar-top-font {
-  font-family: "Frank Ruhl Libre", "serif";
-  font-size: 0.7rem;
-  letter-spacing: 0.1rem;
-  color: $conscients-grey;
-}
-
-.navbar-item {
-  width: 30vw;
-}
-
-.navbar-brand {
-  @include for-tablet-portrait-only {
-    padding-bottom: 1.5rem !important;
+// TOP NAVBAR
+  .navbar-top-font {
+    font-family: "Frank Ruhl Libre", "serif";
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    color: $conscients-grey;
   }
-}
 
-.menu-wrapper {
-  background-color: white;
-  border-bottom: 1px dotted $conscients-very-light-grey;
-  padding: 16px;
-}
-
-.top-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  box-sizing: border-box;
-  background-color: white;
-  font-family: "Roboto", "sans-serif";
-  text-transform: Uppercase;
-  letter-spacing: 0.1rem;
-  font-size: 0.8rem;
-  color: $conscients-grey;
-  @include for-tablet-landscape-up {
-    width: $container-width;
+  .navbar-item {
+    width: 30vw;
   }
-}
 
-.top-menu-left {
-  width: 20%;
-}
+  .navbar-brand {
+    @include for-tablet-portrait-only {
+      padding-bottom: 1.5rem !important;
+    }
+  }
 
-.top-menu-center {
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  color: $conscients-grey;
-}
+// TOP MENU
+  .menu-wrapper {
+    background-color: white;
+    border-bottom: 1px dotted $conscients-very-light-grey;
+    padding: 16px;
+  }
 
-.top-menu-right {
-  justify-content: flex-end;
-  align-items: center;
-  width: 20%;
-}
+  .top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: white;
+    // font-family: "Roboto", "sans-serif";
+    // text-transform: Uppercase;
+    // letter-spacing: 0.1rem;
+    // font-size: 0.8rem;
+    color: $conscients-grey;
+    @include for-tablet-landscape-up {
+      width: $container-width;
+    }
+  }
 
-.top-menu-item {
-}
+  .top-menu-font {
+    font-family: "Roboto", "sans-serif";
+    text-transform: Uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+    color: $conscients-grey;
+    @include for-tablet-portrait-only {
+      letter-spacing: 0;
+    }
+  }
+
+  .top-menu-left {
+    width: 20%;
+    @include for-tablet-portrait-only {
+      width: auto;
+    }
+  }
+
+  .top-menu-center {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    color: $conscients-grey;
+  }
+
+  .top-menu-right {
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+    @include for-tablet-portrait-only {
+      width: auto;
+    }
+  }
+
+  .top-menu-item {
+  }
 
 .btn-white {
   background-color: white;
