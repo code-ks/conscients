@@ -68,7 +68,7 @@ class Product < ApplicationRecord
   validates :seo_title, length: { minimum: 5, maximum: 150 }
   validates :product_type, inclusion: { in: product_types.keys }
   validates :ht_price_cents, numericality: { greater_than_or_equal_to: 1 }
-  validates :certificate_background, presence: true, if: :certificable?
+  validates :certificate_background, presence: true, if: :tree?
 
   default_scope { i18n.friendly.in_order }
   scope :published, -> { where(published: true) }

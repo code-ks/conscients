@@ -37,12 +37,13 @@ class LineItem < ApplicationRecord
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1 }
   validates :recipient_name, length: { maximum: 60 }
   validates :recipient_message, length: { maximum: 300 }
+  validates :certificate_date, presence: true, if: :tree?
 
   before_validation :decrement_stock_quantities, prepend: true
   before_destroy :increment_stock_quantities_destroy
   before_save :update_price
 
-  delegate :certificable?, :classic?, :personnalized?, :tree?, :product, :product_images,
+  delegate :classic?, :personalized?, :tree?, :product, :product_images,
            :product_name, :product_ttc_price_cents, :product_weight, :certificate_background,
            :producer_latitude, :producer_longitude, to: :product_sku
   delegate :client_full_name, to: :order
@@ -51,18 +52,19 @@ class LineItem < ApplicationRecord
 
   scope :to_deliver_by_email, -> { where("delivery_email <> ''") }
   scope :certificable, lambda {
-    includes(:certificate_attachment).select { |line_item| line_item.certificate.attached? }
+    select { |line_item| line_item.tree? || line_item.personalized? }
   }
   scope :finished, lambda {
     includes(:order).where(orders: { aasm_state: %w[preparing fulfilled delivered] })
   }
 
-  def tree_marker
+  def self.tree_plantation_marker
     {
-      lat: tree_plantation_latitude.to_f,
-      lng: tree_plantation_longitude.to_f,
-      infoWindow: { content: "<h5>#{tree_plantation_project_name}</h5>\
-      #{tree_plantation_project_type}" },
+      lat: first.tree_plantation_latitude.to_f,
+      lng: first.tree_plantation_longitude.to_f,
+      infoWindow: { content: "<h5>#{first.tree_plantation_project_name}</h5>\
+      #{first.tree_plantation_project_type}</br>\
+      #{I18n.t('clients.impact.trees_planted_amount', quantity: pluck(:quantity).sum)}" },
       icon: ActionController::Base.helpers.asset_path('tree_marker.png')
     }
   end
@@ -96,13 +98,13 @@ class LineItem < ApplicationRecord
 
   def decrement_stock_quantities
     product_sku.decrement(:quantity, added_quantity) unless tree?
-    tree_plantation.decrement(:quantity, added_quantity) unless classic?
+    tree_plantation.decrement(:quantity, added_quantity) if tree?
   end
 
   def increment_stock_quantities_destroy
     product_sku.increment(:quantity, quantity) unless tree?
-    product_sku.save
-    tree_plantation.increment(:quantity, quantity) unless classic?
-    tree_plantation.save
+    product_sku.save unless tree?
+    tree_plantation.increment(:quantity, quantity) if tree?
+    tree_plantation.save if tree?
   end
 end

@@ -18,7 +18,7 @@ class CreatePaypalPayment
   def perform_execution
     raise PayPalError unless execute_paypal_payment
     @cart.paypal!
-    @cart.pay
+    @cart.pay!
   end
 
   private

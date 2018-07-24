@@ -64,7 +64,7 @@ class Order < ApplicationRecord
   delegate :addresses, :email, :stripe_customer_id, to: :client, prefix: true, allow_nil: true
 
   scope :order_by_date, -> { order(created_at: :desc) }
-  scope :finished, -> { preparing.merge(Order.fulfilled).merge(Order.delivered) }
+  scope :finished, -> { preparing.or(Order.fulfilled).or(Order.delivered) }
   scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
   scope :cart_to_destroy, -> { in_cart.two_days_old }
 
@@ -137,7 +137,7 @@ class Order < ApplicationRecord
   def printing_fees_cents
     return 0 if email?
     line_items.inject(0) do |sum, line_item|
-      line_item.certificable? ? sum + PRINTING_FEES * line_item.quantity : sum
+      line_item.tree? ? sum + PRINTING_FEES * line_item.quantity : sum
     end
   end
 

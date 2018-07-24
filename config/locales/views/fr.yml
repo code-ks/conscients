@@ -65,6 +65,7 @@ fr:
       certificates: "Certificats"
       state: "Statut"
     impact:
+      trees_planted_amount: "%{quantity} arbres plantés"
       trees_planted: "arbres plantés"
       tonnes_of_co2: "tonnes de Co2 compensées"
       tree_species: "Espèces d'arbres plantées"
@@ -173,8 +174,9 @@ fr:
       subject: "Votre commande est confirmée"
       greatings: "Bonjour"
       core_email: "Votre commande a bien été confirmée. Veuillez la trouver ci-jointe ainsi que votre facture."
-      core_postal_with_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-joints vos certificats d'arbres ainsi que votre facture"
-      core_postal_without_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-jointe votre facture"
+      core_postal_with_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-joints vos certificats d'arbres ainsi que votre facture."
+      core_postal_without_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-jointe votre facture."
+      go_to_client_space: "Rendez-vous dans votre espace client encore plus d'information."
       thanks: "Merci beaucoup"
     order_delivery:
       subject: "Votre commande a été confirmée"

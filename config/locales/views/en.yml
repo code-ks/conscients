@@ -65,6 +65,7 @@ en:
       certificates: "Certificates"
       state: "State"
     impact:
+      trees_planted_amount: "%{quantity} trees planted"
       trees_planted: "trees planted"
       tonnes_of_co2: "tonnes of Co2 captured"
       tree_species: "Tree species planted"
@@ -175,6 +176,7 @@ en:
       core_email: "Your order is confirmed. Please find it and your invoice attached."
       core_postal_with_tree: "Your order is confirmed and will be shipped soon. Please find your tree certificates and your invoice attached."
       core_postal_without_tree: "Your order is confirmed and will be shipped soon. Please find your invoice attached."
+      go_to_client_space: "For more information, go to your client space."
       thanks: "Thanks a lot"
     order_delivery:
       subject: "Your order has been shipped"
