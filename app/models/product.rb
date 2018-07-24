@@ -27,6 +27,7 @@
 #  updated_at               :datetime         not null
 #  name_en                  :string
 #  name_fr                  :string
+#  position_home            :integer
 #
 
 class Product < ApplicationRecord
@@ -54,6 +55,7 @@ class Product < ApplicationRecord
                   using: { tsearch: { prefix: true } }
 
   acts_as_list
+  acts_as_list column: :position_home
   monetize :ht_price_cents, :ht_buying_price_cents, :ttc_price_cents
 
   enum product_type: { classic: 0, personalized: 1, tree: 2 }
@@ -66,11 +68,12 @@ class Product < ApplicationRecord
   validates :seo_title, length: { minimum: 5, maximum: 150 }
   validates :product_type, inclusion: { in: product_types.keys }
   validates :ht_price_cents, numericality: { greater_than_or_equal_to: 1 }
-  validates :certificate_background, presence: true, if: :certificable?
+  validates :certificate_background, presence: true, if: :tree?
 
   default_scope { i18n.friendly.in_order }
   scope :published, -> { where(published: true) }
   scope :in_order, -> { order(position: :asc) }
+  scope :in_order_home, -> { order(position_home: :asc) }
   scope :in_stock, -> { joins(:product_skus).where.not(product_skus: { quantity: 0 }) }
   scope :with_variant, lambda { |variant|
     includes(:product_skus).where(product_skus: { variant: variant })

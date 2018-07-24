@@ -41,21 +41,36 @@
         <tr>
           <td><%= line_item.product_sku.to_s %></td>
           <td><%= line_item.quantity %></td>
-          <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
+          <td><%= humanized_money_with_symbol line_item.ht_price %></td>
         </tr>
       <% end %>
       <tr>
-        <td><%= t('.delivery_fees') %></td>
+        <td><%= t('.total_price_ht') %></td>
         <td></td>
-        <td><%= humanized_money_with_symbol @order.delivery_fees %></td>
+        <td><%= humanized_money_with_symbol @order.ht_price %></td>
+      </tr>
+      <tr>
+        <td><%= t('.delivery_fees_ht') %></td>
+        <td></td>
+        <td><%= humanized_money_with_symbol @order.current_delivery_fees_ht %></td>
       </tr>
       <% if @order.coupon %>
         <tr>
-          <td><%= t('.coupon_discount') %></td>
+          <td><%= t('.coupon_discount_ht') %></td>
           <td></td>
           <td>- <%= humanized_money_with_symbol @order.coupon_discount %></td>
         </tr>
       <% end %>
+      <tr>
+        <td><%= t('.total_price_ht_all_included') %></td>
+        <td></td>
+        <td><%= humanized_money_with_symbol @order.ht_price_all_included %></td>
+      </tr>
+      <tr>
+        <td><%= t('.total_vat') %></td>
+        <td></td>
+        <td><%= humanized_money_with_symbol @order.total_vat %></td>
+      </tr>
     </tbody>
   </table>
 

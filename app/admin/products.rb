@@ -7,7 +7,7 @@ ActiveAdmin.register Product do
 
   permit_params :name_fr, :name_en, :description_short_fr, :description_short_en,
                 :description_long_fr, :description_long_en, :product_class_fr, :product_class_en,
-                :ht_price_cents, :position, :tax_rate, :weight, :product_type,
+                :ht_price_cents, :position, :position_home, :tax_rate, :weight, :product_type,
                 :published, :ht_buying_price_cents, :seo_title_fr, :seo_title_en,
                 :meta_description_fr, :meta_description_en, :keywords_fr, :keywords_en, :slug_fr,
                 :slug_en, :producer_latitude, :producer_longitude, :certificate_background,
@@ -54,6 +54,7 @@ ActiveAdmin.register Product do
     end
     column :published
     column :position
+    column :position_home
     column :ht_price_cents
     column :ht_buying_price_cents
     column :tax_rate
@@ -100,6 +101,7 @@ ActiveAdmin.register Product do
                     end
       f.input :published
       f.input :position
+      f.input :position_home
       f.input :ht_price_cents
       f.input :ht_buying_price_cents
       f.input :tax_rate
@@ -145,6 +147,7 @@ ActiveAdmin.register Product do
       end
       row :published
       row :position
+      row :position_home
       row :ht_price_cents
       row :ht_buying_price_cents
       row :tax_rate

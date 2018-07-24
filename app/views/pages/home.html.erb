@@ -10,76 +10,190 @@
     </div>
   </div>
 
+  <div data-controller="home-carousel">
 <!-- OCCASIONS CAROUSEL TITLE AND TABS-->
-  <div class="container-conscients home-font home-occasions-title-padding">
-    <h2 class="text-center">Des cadeaux et du sens</h2>
-  </div>
-  <div class="container-conscients home-font padding-b">
-    <div class="tabs">
-      <a class="tab active" href="#">
-      <h3>Cadeaux de naissance</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Pour les grands</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Offrir un arbre</h3>
-    </a>
+    <div class="container-conscients home-font home-occasions-title-padding">
+      <h2 class="text-center">Des cadeaux et du sens</h2>
     </div>
-  </div>
+    <div class="container-conscients home-font padding-b">
+      <div class="tabs">
+        <a class="tab active" href="#" data-action="home-carousel#displayFirst" data-target="home-carousel.firstTab" onclick="return false;">
+          <h3>Cadeaux de naissance</h3>
+        </a>
+        <a class="tab" href="#" data-action="home-carousel#displaySecond" data-target="home-carousel.secondTab" onclick="return false;">
+          <h3>Pour les grands</h3>
+        </a>
+        <a class="tab" href="#" data-action="home-carousel#displayThird" data-target="home-carousel.thirdTab" onclick="return false;">
+          <h3>Offrir un arbre</h3>
+        </a>
+      </div>
+    </div>
 
-<!-- OCCASIONS CAROUSEL-->
-  <div id="occasions-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <!-- <div class="tab-content"> -->
-          <div class="container-conscients flex-container">
-            <div class="occasions-container">
-              <div class="occasions-img-box" style="background-image: url('http://www.conscients.com/shop/64-371-thickbox/album-illustre-jeunesse-foret-tropicale.jpg');">
-              </div>
-              <div class="occasions-card">
+  <!-- OCCASIONS CAROUSEL-->
+    <div id="occasions-carousel-first" class="carousel slide" data-ride="carousel" data-interval="false" data-target="home-carousel.firstCarousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- <div class="tab-content"> -->
+            <div class="container-conscients flex-container">
+              <div class="occasions-container">
+                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.images&.second %>);">
+                </div>
+                <div class="occasions-card">
                   <div class="occasions-card-content-box home-font">
-                    <img class="occasions-card-img" src="http://www.conscients.com/shop/69-396-large/coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.jpg">
+                    <%= image_tag Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.images&.first, class: "occasions-card-img" %>
                     <div class="occasions-card-content">
-                    <h3>my tree-shirt</h3>
-                    <h4>Body bio 6-12 mois + Trousse bio + Certificat de plantation nominatif</h4>
-                    <h5>42 €</h5>
+                      <h3><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.name %></h3>
+                      <h4><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.description_short %></h4>
+                      <h5><%= humanized_money_with_symbol Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.ttc_price %></h5>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
-          </div>
-        <!-- </div> end of tab content-->
-      </div>
-      <div class="carousel-item">
-        <!-- <div class="tab-content"> -->
-          <div class="container-conscients flex-container">
-            <div class="occasions-container">
-              <div class="occasions-img-box" style="background-image: url('http://www.conscients.com/wp-content/uploads/2013/01/coffret-cadeau-naissance-bio2.jpg');">
-              </div>
-              <div class="occasions-card">
-                  <div class="occasions-card-content-box home-font">
-                    <img class="occasions-card-img" src="http://www.conscients.com/shop/50-257-thickbox/debardeur-bio-jaune-tree-hug-conscients.jpg">
-                    <div class="occasions-card-content">
-                    <h3>my tree-shirt</h3>
-                    <h4>Body bio 6-12 mois + Trousse bio + Certificat de plantation nominatif</h4>
-                    <h5>42 €</h5>
+          <!-- </div> end of tab content-->
+        </div>
+        <% Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first(10)&.drop(1).each do |product| %>
+          <div class="carousel-item">
+            <!-- <div class="tab-content"> -->
+              <div class="container-conscients flex-container">
+                <div class="occasions-container">
+                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.images.second %>);">
+                  </div>
+                  <div class="occasions-card">
+                    <div class="occasions-card-content-box home-font">
+                      <%= image_tag product.images.first, class: "occasions-card-img" %>
+                      <div class="occasions-card-content">
+                        <h3><%= product.name %></h3>
+                        <h4><%= product.description_short %></h4>
+                        <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                      </div>
                     </div>
                   </div>
+                </div>
               </div>
-            </div>
+            <!-- </div> end of tab content-->
           </div>
-        <!-- </div> end of tab content-->
+        <% end %>
       </div>
+      <a class="carousel-control-prev" href="#occasions-carousel-first" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#occasions-carousel-first" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#occasions-carousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#occasions-carousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+
+    <div id="occasions-carousel-second" class="carousel slide d-none" data-ride="carousel" data-interval="false" data-target="home-carousel.secondCarousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- <div class="tab-content"> -->
+            <div class="container-conscients flex-container">
+              <div class="occasions-container">
+                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.images&.second %>);">
+                </div>
+                <div class="occasions-card">
+                  <div class="occasions-card-content-box home-font">
+                    <%= image_tag Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.images&.first, class: "occasions-card-img" %>
+                    <div class="occasions-card-content">
+                      <h3><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.name %></h3>
+                      <h4><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.description_short %></h4>
+                      <h5><%= humanized_money_with_symbol Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.ttc_price %></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- </div> end of tab content-->
+        </div>
+        <% Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first(10).drop(1).each do |product| %>
+          <div class="carousel-item">
+            <!-- <div class="tab-content"> -->
+              <div class="container-conscients flex-container">
+                <div class="occasions-container">
+                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.images.second %>);">
+                  </div>
+                  <div class="occasions-card">
+                      <div class="occasions-card-content-box home-font">
+                        <%= image_tag product.images.first, class: "occasions-card-img" %>
+                        <div class="occasions-card-content">
+                          <h3><%= product.name %></h3>
+                          <h4><%= product.description_short %></h4>
+                          <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            <!-- </div> end of tab content-->
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#occasions-carousel-second" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#occasions-carousel-second" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <div id="occasions-carousel-third" class="carousel slide d-none" data-ride="carousel" data-interval="false" data-target="home-carousel.thirdCarousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- <div class="tab-content"> -->
+            <div class="container-conscients flex-container">
+              <div class="occasions-container">
+                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("gifts-give-a-tree").products.in_order_home.first&.images&.second %>);">
+                </div>
+                <div class="occasions-card">
+                  <div class="occasions-card-content-box home-font">
+                    <%= image_tag Category.find("gifts-give-a-tree").products.in_order_home.first&.images&.first, class: "occasions-card-img" %>
+                    <div class="occasions-card-content">
+                      <h3><%= Category.find("gifts-give-a-tree").products.in_order_home.first.name %></h3>
+                      <h4><%= Category.find("gifts-give-a-tree").products.in_order_home.first&.description_short %></h4>
+                      <h5><%= humanized_money_with_symbol Category.find("gifts-give-a-tree").products.in_order_home.first&.ttc_price %></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- </div> end of tab content-->
+        </div>
+        <% Category.find("gifts-give-a-tree").products.in_order_home.first(10).drop(1).each do |product| %>
+          <div class="carousel-item">
+            <!-- <div class="tab-content"> -->
+              <div class="container-conscients flex-container">
+                <div class="occasions-container">
+                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.images.second %>);">
+                  </div>
+                  <div class="occasions-card">
+                      <div class="occasions-card-content-box home-font">
+                        <%= image_tag product.images.first, class: "occasions-card-img" %>
+                        <div class="occasions-card-content">
+                          <h3><%= product.name %></h3>
+                          <h4><%= product.description_short %></h4>
+                          <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            <!-- </div> end of tab content-->
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#occasions-carousel-third" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#occasions-carousel-third" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </div>
 
 <!-- SHOP CAROUSEL TITLE  -->
@@ -93,103 +207,71 @@
       <div class="carousel-item active">
         <div class="carousel-container home-font">
           <div class="row">
-            <div class="col-md-3">
-              <div class="home-shop-card">
-                <img src="http://www.conscients.com/shop/15-168-thickbox/body-manches-longues-coton-bio-vert-callejon-conscients.jpg" alt="" class="home-shop-card-img">
-                <div class="home-shop-card-content">
-                  <h3 class="truncate-4-cards">Album illustré 4-8 ans</h3>
-                  <h4 class="truncate-4-cards">Les Super Yoghiros volent au secours des arbres d'Amazonie</h4>
-                  <h5>59 €</h5>
+            <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(4).each do |product| %>
+              <div class="col-md-3">
+                <div class="home-shop-card">
+                  <%= image_tag(product.images.first, class: "home-shop-card-img") %>
+                  <div class="home-shop-card-content">
+                    <h3 class="truncate-4-cards"><%= product.name %></h3>
+                    <h4 class="truncate-4-cards"><%= product.description_short %></h4>
+                    <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-3">
-              <div class="home-shop-card">
-                <img src="http://www.conscients.com/shop/10-146-large/combinaison-bio-bebe-noire-slow-conscients.jpg" alt="" class="home-shop-card-img">
-                <div class="home-shop-card-content">
-                  <h3 class="truncate-4-cards">combinaison bio bebe</h3>
-                  <h4 class="truncate-4-cards">Combinaison Slow Noire</h4>
-                  <h5>59 €</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="home-shop-card">
-                <img src="http://www.conscients.com/shop/10-146-large/combinaison-bio-bebe-noire-slow-conscients.jpg" alt="" class="home-shop-card-img">
-                <div class="home-shop-card-content">
-                  <h3 class="truncate-4-cards">Combinaison bio bébé</h3>
-                  <h4 class="truncate-4-cards">Bombacha prune et rose</h4>
-                  <h5>59 €</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="home-shop-card">
-                <img src="http://www.conscients.com/shop/10-146-large/combinaison-bio-bebe-noire-slow-conscients.jpg" alt="" class="home-shop-card-img">
-                <div class="home-shop-card-content">
-                  <h3 class="truncate-4-cards">Body bio bébé manches longues</h3>
-                  <h4 class="truncate-4-cards">Body callejon vert</h4>
-                  <h5>59 €</h5>
-                </div>
-              </div>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <div class="carousel-container home-font">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="home-shop-card">
-                <img src="http://www.conscients.com/shop/15-281-large/body-manches-longues-coton-bio-vert-callejon-conscients.jpg" alt="" class="home-shop-card-img">
-                <div class="home-shop-card-content">
-                  <h3 class="truncate-4-cards">Album illustré 4-8 ans</h3>
-                  <h4 class ="truncate-4-cards">Body bio bébé manches longues vert coton pima</h4>
-                  <h5>59 €</h5>
+      <% if Category.find("bebe-vetements-bio-garçon").products.count > 4 %>
+        <div class="carousel-item">
+          <div class="carousel-container home-font">
+            <div class="row">
+              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(12).drop(4).each do |product| %>
+                <div class="col-md-3">
+                  <div class="home-shop-card">
+                    <%= image_tag(product.images.first, class: "home-shop-card-img") %>
+                    <div class="home-shop-card-content">
+                      <h3 class="truncate-4-cards"><%= product.name %></h3>
+                      <h4 class="truncate-4-cards"><%= product.description_short %></h4>
+                      <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="home-shop-card">
-                <img src="http://www.conscients.com/shop/14-145-large/combinaison-bio-bebe-fille-rose-et-prune-bombacha-conscients.jpg" alt="" class="home-shop-card-img">
-                <div class="home-shop-card-content">
-                  <h3 class="truncate-4-cards">combinaison bio bebe</h3>
-                  <h4 class="truncate-4-cards">Combinaison Slow Noire</h4>
-                  <h5>59 €</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="home-shop-card">
-                <img src="http://www.conscients.com/shop/14-145-large/combinaison-bio-bebe-fille-rose-et-prune-bombacha-conscients.jpg" alt="" class="home-shop-card-img">
-                <div class="home-shop-card-content">
-                  <h3 class="truncate-4-cards">Combinaison bio bébé</h3>
-                  <h4 class="truncate-4-cards">Bombacha prune et rose</h4>
-                  <h5>59 €</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="home-shop-card">
-                <img src="http://www.conscients.com/shop/14-145-large/combinaison-bio-bebe-fille-rose-et-prune-bombacha-conscients.jpg" alt="" class="home-shop-card-img">
-                <div class="home-shop-card-content">
-                  <h3 class="truncate-4-cards">Body bio bébé manches longues</h3>
-                  <h4 class="truncate-4-cards">Body callejon vert</h4>
-                  <h5>59 €</h5>
-                </div>
-              </div>
+              <% end %>
             </div>
           </div>
         </div>
-      </div>
-      <a class="carousel-control-prev" href="#shop-carousel-desktop" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#shop-carousel-desktop" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <% end %>
+      <% if Category.find("bebe-vetements-bio-garçon").products.count > 8 %>
+        <div class="carousel-item">
+          <div class="carousel-container home-font">
+            <div class="row">
+              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(12).drop(8).each do |product| %>
+                <div class="col-md-3">
+                  <div class="home-shop-card">
+                    <%= image_tag(product.images.first, class: "home-shop-card-img") %>
+                    <div class="home-shop-card-content">
+                      <h3 class="truncate-4-cards"><%= product.name %></h3>
+                      <h4 class="truncate-4-cards"><%= product.description_short %></h4>
+                      <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% if Category.find("bebe-vetements-bio-garçon").products.count > 4 %>
+        <a class="carousel-control-prev" href="#shop-carousel-desktop" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#shop-carousel-desktop" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      <% end %>
     </div>
   </div>
 
@@ -198,24 +280,26 @@
     <div class="carousel-inner home-font">
       <div class="carousel-item active">
         <div class="home-shop-card">
-          <img src="http://www.conscients.com/shop/69-396-large/coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.jpg" alt="" class="home-shop-card-img">
+          <%= image_tag(Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.images&.first, class: "home-shop-card-img") %>
           <div class="home-shop-card-content">
-            <h3>Album illustré 4-8 ans</h3>
-            <h4 class ="truncate-4-cards">Les Super Yoghiros volent au secours des arbres d'Amazonie</h4>
-            <h5>59 €</h5>
+            <h3><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.name %></h3>
+            <h4 class="truncate-4-cards"><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.description_short %></h4>
+            <h5><%= humanized_money_with_symbol Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.ttc_price %></h5>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <div class="home-shop-card">
-          <img src="http://www.conscients.com/shop/15-168-thickbox/body-manches-longues-coton-bio-vert-callejon-conscients.jpg" alt="" class="home-shop-card-img">
-          <div class="home-shop-card-content">
-            <h3>Album illustré 4-8 ans</h3>
-            <h4 class ="truncate-4-cards">Les Super Yoghiros volent au secours des arbres d'Amazonie</h4>
-            <h5>59 €</h5>
+      <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(10).drop(1).each do |product| %>
+        <div class="carousel-item">
+          <div class="home-shop-card">
+            <%= image_tag(product.images.first, class: "home-shop-card-img") %>
+            <div class="home-shop-card-content">
+              <h3><%= product.name %></h3>
+              <h4 class="truncate-4-cards"><%= product.description_short %></h4>
+              <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
       <a class="carousel-control-prev" href="#shop-carousel-mobile" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -233,10 +317,10 @@
     <div class="row home-blog-row-mobile">
       <% BlogPost.last(2).each do |article| %>
         <div class="col-md-6 home-col-portrait">
-          <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= image_path article.image_for_home %>)">
+          <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= rails_blob_url article.image_for_home %>)">
             <div class="home-blog-card-content blog-pics-font">
-              <h3>categorie</h3>
-              <h2>Titre de l'article de la catégorie qui saute une ligne parce qu'il est super long comme titre d'article</h2>
+              <h3><%= article.category %></h3>
+              <h2><%= article.title %></h2>
             </div>
           </div>
         </div>

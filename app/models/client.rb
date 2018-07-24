@@ -67,9 +67,11 @@ class Client < ApplicationRecord
 
   def markers
     markers = []
-    line_items.finished.includes(:tree_plantation, :product_sku).map do |line_item|
-      markers << line_item.tree_marker if line_item.tree_marker?
+    line_items.finished.includes(:product_sku).map do |line_item|
       markers << line_item.producer_marker if line_item.producer_marker?
+    end
+    tree_plantations.includes(:line_items).map do |tree_plantation|
+      markers << tree_plantation.marker(self)
     end
     markers.uniq
   end

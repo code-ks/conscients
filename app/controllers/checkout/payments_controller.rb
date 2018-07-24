@@ -5,7 +5,7 @@ class Checkout::PaymentsController < ApplicationController
 
   def create_stripe
     CreateStripePayment.new(@cart, params[:stripe_token]).perform
-    redirect_to root_path, notice: t('flash.payments.create.notice')
+    redirect_to payment_path(@cart), notice: t('flash.payments.create.notice')
   rescue Stripe::CardError
     redirect_to new_payment_path, alert: t('flash.payments.create.alert')
   end
@@ -22,13 +22,17 @@ class Checkout::PaymentsController < ApplicationController
     @cart.order_by_bank_transfer!
     @cart.update(total_price: @cart.ttc_price_all_included)
     ClientMailer.with(order: @cart).bank_account_details.deliver_later
-    redirect_to root_path, notice: t('flash.payments.create_bank_transfer.notice')
+    redirect_to payment_path(@cart), notice: t('flash.payments.create_bank_transfer.notice')
   end
 
   def paypal_success
     CreatePaypalPayment.new(@cart, params).perform_execution
-    redirect_to root_path, notice: t('flash.payments.create.notice')
+    redirect_to payment_path(@cart), notice: t('flash.payments.create.notice')
   rescue PayPalError
     redirect_to new_payment_path, alert: t('flash.payments.create.alert')
+  end
+
+  def show
+    @order = Order.find(params[:id])
   end
 end

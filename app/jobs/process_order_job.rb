@@ -43,7 +43,7 @@ class ProcessOrderJob < ApplicationJob
 
   def generate_certificates
     @order.line_items.each do |line_item|
-      next unless line_item.certificable?
+      next unless line_item.tree?
       generate_certificate(line_item)
     end
   end

@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     scope module: :checkout do
       resources :carts, only: :show
       resources :deliveries, only: %i[new create]
-      resources :payments, only: %i[new] do
+      resources :payments, only: %i[new show] do
         collection do
           post 'create_stripe'
           post 'create_paypal'

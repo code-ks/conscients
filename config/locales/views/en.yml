@@ -31,9 +31,11 @@ en:
       billing_address: "Billing address"
       product_name: "Product"
       quantity: "Quantity"
-      price: "Price"
-      delivery_fees: "Delivery fees"
-      coupon_discount: "Discount"
+      price: "Price Excluding Taxes"
+      delivery_fees: "Delivery fees Excluding Taxes"
+      coupon_discount: "Discount Excluding Taxes"
+      total_price_ht_all_included: "Total Excluding Taxes"
+      total_vat: "Total taxes"
       total_price: "Total price"
   certificates:
     new:
@@ -65,6 +67,7 @@ en:
       certificates: "Certificates"
       state: "State"
     impact:
+      trees_planted_amount: "%{quantity} trees planted"
       trees_planted: "trees planted"
       tonnes_of_co2: "tonnes of Co2 captured"
       tree_species: "Tree species planted"
@@ -142,6 +145,11 @@ en:
         payment: "Payment"
       new:
         title: "Payment"
+      show:
+        go_to_client_space: "For more details, go to your client space"
+        order_confirmed: "Thanks a lot! Your order have been received"
+        email_coming: "You will soon receive a confirmation email"
+        bank_transfer_instructions: "To confirm it, please send the total amount of the order (%{amount} euros) by bank transfer to the following account"
       line_items_table:
         selection: "Selection"
         quantity: "Quantity"
@@ -175,6 +183,7 @@ en:
       core_email: "Your order is confirmed. Please find it and your invoice attached."
       core_postal_with_tree: "Your order is confirmed and will be shipped soon. Please find your tree certificates and your invoice attached."
       core_postal_without_tree: "Your order is confirmed and will be shipped soon. Please find your invoice attached."
+      go_to_client_space: "For more information, go to your client space."
       thanks: "Thanks a lot"
     order_delivery:
       subject: "Your order has been shipped"
