@@ -30,7 +30,7 @@ class ProductSku < ApplicationRecord
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :sku, presence: true, uniqueness: true, length: { minimum: 3 }
 
-  delegate :name, :images, :ttc_price_cents, :weight, to: :product, prefix: true
+  delegate :name, :images, :ttc_price_cents, :ht_price_cents, :weight, to: :product, prefix: true
   delegate :classic?, :personalized?, :tree?, :certificate_background,
            :producer_latitude, :producer_longitude, to: :product
 

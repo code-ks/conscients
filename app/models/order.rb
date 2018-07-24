@@ -46,7 +46,9 @@ class Order < ApplicationRecord
 
   monetize :total_price_cents, :ttc_price_cents, :delivery_fees_cents,
            :ttc_price_all_included_cents, :coupon_discount_cents, :ttc_price_with_coupon_cents,
-           :current_delivery_fees_cents, :main_delivery_fees_cents, :printing_fees_cents
+           :current_delivery_fees_cents, :main_delivery_fees_cents, :printing_fees_cents,
+           :ht_price_cents, :current_delivery_fees_ht_cents, :coupon_discount_ht_cents,
+           :ht_price_with_coupon_cents, :ht_price_all_included_cents, :total_vat_cents
 
   enum delivery_method: { postal: 0, email: 1 }
   enum payment_method: { stripe: 0, paypal: 1, bank_transfer: 2 }
@@ -116,18 +118,36 @@ class Order < ApplicationRecord
     line_items.sum(&:ttc_price_cents)
   end
 
+  def ht_price_cents
+    line_items.sum(&:ht_price_cents)
+  end
+
   def coupon_discount_cents
     return 0 unless coupon
     coupon_percentage ? ttc_price_cents * coupon_percentage : coupon_amount_cents
+  end
+
+  def coupon_discount_ht_cents
+    return 0 if ht_price_cents.zero?
+    ratio = ttc_price_cents / ht_price_cents
+    coupon_discount_cents / ratio
   end
 
   def ttc_price_with_coupon_cents
     ttc_price_cents - coupon_discount_cents
   end
 
+  def ht_price_with_coupon_cents
+    ht_price_cents - coupon_discount_ht_cents
+  end
+
   def current_delivery_fees_cents
     return 0 if email?
     main_delivery_fees_cents + printing_fees_cents
+  end
+
+  def current_delivery_fees_ht_cents
+    current_delivery_fees_cents / 1.2
   end
 
   def main_delivery_fees_cents
@@ -157,6 +177,14 @@ class Order < ApplicationRecord
 
   def ttc_price_all_included_cents
     ttc_price_with_coupon_cents + current_delivery_fees_cents
+  end
+
+  def ht_price_all_included_cents
+    ht_price_with_coupon_cents + current_delivery_fees_ht_cents
+  end
+
+  def total_vat_cents
+    ttc_price_all_included_cents - ht_price_all_included_cents
   end
 
   def last_added

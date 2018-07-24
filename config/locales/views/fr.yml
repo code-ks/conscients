@@ -31,9 +31,12 @@ fr:
       billing_address: "Adresse de facturation"
       product_name: "Produit"
       quantity: "Quantité commandée"
-      price: "Prix"
-      delivery_fees: "Frais de livraison"
-      coupon_discount: "Réduction"
+      price: "Prix HT"
+      total_price_ht: "Total HT des produits"
+      total_price_ht_all_included: "Total HT"
+      total_vat: "TVA totale"
+      delivery_fees_ht: "Frais de livraison HT"
+      coupon_discount_ht: "Réduction HT"
       total_price: "Prix total"
   certificates:
     new:
@@ -143,6 +146,11 @@ fr:
         payment: "Paiement"
       new:
         title: "Paiement"
+      show:
+        go_to_client_space: "Pour plus d'informations, rendez-vous dans votre espace client"
+        order_confirmed: "Merci beaucoup! Votre commande a bien été reçue"
+        email_coming: "Vous recevrez bientôt un email de confirmation."
+        bank_transfer_instructions: "Pour la confirmer, merci d'envoyer le montant de la commande (%{amount} euros) au compte bancaire ci-dessous"
       address:
         billing: "Adresse de facturation"
         delivery: "Adresse de livraison"

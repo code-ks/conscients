@@ -31,9 +31,11 @@ en:
       billing_address: "Billing address"
       product_name: "Product"
       quantity: "Quantity"
-      price: "Price"
-      delivery_fees: "Delivery fees"
-      coupon_discount: "Discount"
+      price: "Price Excluding Taxes"
+      delivery_fees: "Delivery fees Excluding Taxes"
+      coupon_discount: "Discount Excluding Taxes"
+      total_price_ht_all_included: "Total Excluding Taxes"
+      total_vat: "Total taxes"
       total_price: "Total price"
   certificates:
     new:
@@ -143,6 +145,11 @@ en:
         payment: "Payment"
       new:
         title: "Payment"
+      show:
+        go_to_client_space: "For more details, go to your client space"
+        order_confirmed: "Thanks a lot! Your order have been received"
+        email_coming: "You will soon receive a confirmation email"
+        bank_transfer_instructions: "To confirm it, please send the total amount of the order (%{amount} euros) by bank transfer to the following account"
       line_items_table:
         selection: "Selection"
         quantity: "Quantity"

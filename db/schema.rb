@@ -217,6 +217,8 @@ ActiveRecord::Schema.define(version: 2018_07_23_143815) do
     t.bigint "order_id"
     t.integer "ttc_price_cents", default: 0, null: false
     t.string "ttc_price_currency", default: "EUR", null: false
+    t.integer "ht_price_cents", default: 0, null: false
+    t.string "ht_price_currency", default: "EUR", null: false
     t.bigint "tree_plantation_id"
     t.integer "quantity", default: 0, null: false
     t.string "recipient_name"

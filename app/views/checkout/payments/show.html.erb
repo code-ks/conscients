@@ -1,0 +1,11 @@
+<div class="container my-5">
+  <h1><%= t(".order_confirmed") %></h1>
+  <% if @order.wainting_for_bank_transfer? %>
+    <p><%= t(".bank_transfer_instructions", amount: @order.total_price) %></p>
+    <%= image_tag "bank_account_details_conscients.jpg", class: "w-100" %>
+  <% end %>
+
+  <p><%= t('.email_coming') %></p>
+
+  <%= link_to t(".go_to_client_space"), clients_path, class: "btn btn-orange" %>
+</div>

@@ -9,6 +9,8 @@
 #  order_id           :bigint(8)
 #  ttc_price_cents    :integer          default(0), not null
 #  ttc_price_currency :string           default("EUR"), not null
+#  ht_price_cents     :integer          default(0), not null
+#  ht_price_currency  :string           default("EUR"), not null
 #  tree_plantation_id :bigint(8)
 #  quantity           :integer          default(0), not null
 #  recipient_name     :string
@@ -32,7 +34,7 @@ class LineItem < ApplicationRecord
   belongs_to :tree_plantation, optional: true, autosave: true
   has_one_attached :certificate
 
-  monetize :ttc_price_cents
+  monetize :ttc_price_cents, :ht_price_cents
 
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1 }
   validates :recipient_name, length: { maximum: 60 }
@@ -44,8 +46,8 @@ class LineItem < ApplicationRecord
   before_save :update_price
 
   delegate :classic?, :personalized?, :tree?, :product, :product_images,
-           :product_name, :product_ttc_price_cents, :product_weight, :certificate_background,
-           :producer_latitude, :producer_longitude, to: :product_sku
+           :product_name, :product_ttc_price_cents, :product_ht_price_cents, :product_weight,
+           :certificate_background, :producer_latitude, :producer_longitude, to: :product_sku
   delegate :client_full_name, to: :order
   delegate :latitude, :longitude, :project_name, :project_type,
            to: :tree_plantation, prefix: true, allow_nil: true
@@ -53,6 +55,9 @@ class LineItem < ApplicationRecord
   scope :to_deliver_by_email, -> { where("delivery_email <> ''") }
   scope :certificable, lambda {
     select { |line_item| line_item.tree? || line_item.personalized? }
+  }
+  scope :certificated, lambda {
+    includes(:certificate_attachment).select { |line_item| line_item.certificate.attached? }
   }
   scope :finished, lambda {
     includes(:order).where(orders: { aasm_state: %w[preparing fulfilled delivered] })
@@ -92,6 +97,7 @@ class LineItem < ApplicationRecord
 
   def update_price
     self.ttc_price_cents = quantity * product_ttc_price_cents
+    self.ht_price_cents = quantity * product_ht_price_cents
   end
 
   private
