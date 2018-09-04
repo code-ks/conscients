@@ -198,7 +198,8 @@
 
 <!-- SHOP CAROUSEL TITLE  -->
   <div class="container-conscients home-font home-shop-title-padding">
-    <h2 class="text-center">Vêtements bio 0-5 ans</h2>
+    <h2 class="text-center">Vêtements bio 0-5 ans </h2>
+    <!-- vêtements bio bébé -->
   </div>
 
 <!-- SHOP CAROUSEL DESKTOP AND TABLET LANDSCAPE-->
@@ -222,11 +223,11 @@
           </div>
         </div>
       </div>
-      <% if Category.find("bebe-vetements-bio-garçon").products.count > 4 %>
+      <% if Category.find("bebes").products.count > 4 %>
         <div class="carousel-item">
           <div class="carousel-container home-font">
             <div class="row">
-              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(12).drop(4).each do |product| %>
+              <% Category.find("bebes").products.in_order_home.first(12).drop(4).each do |product| %>
                 <div class="col-md-3">
                   <div class="home-shop-card">
                     <%= image_tag(product.images.first, class: "home-shop-card-img") %>
@@ -242,11 +243,11 @@
           </div>
         </div>
       <% end %>
-      <% if Category.find("bebe-vetements-bio-garçon").products.count > 8 %>
+      <% if Category.find("bebes").products.count > 8 %>
         <div class="carousel-item">
           <div class="carousel-container home-font">
             <div class="row">
-              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(12).drop(8).each do |product| %>
+              <% Category.find("bebes").products.in_order_home.first(12).drop(8).each do |product| %>
                 <div class="col-md-3">
                   <div class="home-shop-card">
                     <%= image_tag(product.images.first, class: "home-shop-card-img") %>
@@ -262,7 +263,7 @@
           </div>
         </div>
       <% end %>
-      <% if Category.find("bebe-vetements-bio-garçon").products.count > 4 %>
+      <% if Category.find("bebes").products.count > 4 %>
         <a class="carousel-control-prev" href="#shop-carousel-desktop" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -280,15 +281,15 @@
     <div class="carousel-inner home-font">
       <div class="carousel-item active">
         <div class="home-shop-card">
-          <%= image_tag(Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.images&.first, class: "home-shop-card-img") %>
+          <%= image_tag(Category.find("bebes").products.in_order_home.first&.images&.first, class: "home-shop-card-img") %>
           <div class="home-shop-card-content">
-            <h3><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.name %></h3>
-            <h4 class="truncate-4-cards"><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.description_short %></h4>
-            <h5><%= humanized_money_with_symbol Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.ttc_price %></h5>
+            <h3><%= Category.find("bebes").products.in_order_home.first&.name %></h3>
+            <h4 class="truncate-4-cards"><%= Category.find("bebes").products.in_order_home.first&.description_short %></h4>
+            <h5><%= humanized_money_with_symbol Category.find("bebes").products.in_order_home.first&.ttc_price %></h5>
           </div>
         </div>
       </div>
-      <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(10).drop(1).each do |product| %>
+      <% Category.find("bebes").products.in_order_home.first(10).drop(1).each do |product| %>
         <div class="carousel-item">
           <div class="home-shop-card">
             <%= image_tag(product.images.first, class: "home-shop-card-img") %>
