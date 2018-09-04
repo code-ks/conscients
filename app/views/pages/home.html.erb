@@ -207,7 +207,7 @@
       <div class="carousel-item active">
         <div class="carousel-container home-font">
           <div class="row">
-            <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(4).each do |product| %>
+            <% Category.find("bebes").products.in_order_home.first(4).each do |product| %>
               <div class="col-md-3">
                 <div class="home-shop-card">
                   <%= image_tag(product.images.first, class: "home-shop-card-img") %>
