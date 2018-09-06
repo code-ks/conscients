@@ -5,6 +5,12 @@ fr:
       searching: "Ma recherche"
     about:
       test: "Youpi"
+    terms:
+      legal_information: "INFORMATIONS LEGALES
+1 - Informations Editeur
+Editeur : 4U ABEL, SAS au capital de 55 000 €, immatriculée au R.C.S. de PARIS sous le n° 532 174 273 00013. N° TVA Intracommunautaire: FR25532174273. Siège social : 10 passage nationale – 75013 Paris. Directeur de la publication : Carole Piette - Contact : contact@conscients.com - Tél : 09 81 45 68 02
+Legal
+The site www.conscients.com was developed by 4U ABEL, a simplified joint stock company with a capital of 55 000 euros, registered on the corporate and trade register of Paris with the number 532 174 273 00013. Intra-community VAT number : FR25 532 174 273. Head office : 10 passage Nationale – 75013 Paris – France. Publication manager : Carole Piette. Contact : contact@conscients.com"
   products:
     index:
       no_product: "Aucun produit ne répond à ces critères"
