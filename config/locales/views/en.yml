@@ -54,6 +54,8 @@ en:
       conditions_use_six_law_title: "6. Law and jurisdiction"
       conditions_use_six_law_body: "The Terms & Conditions of Use are governed and construed in accordance with French law. Contracts concluded through the Site as well as any dispute arising out from them shall be governed by French law. An amicable solution (through an ombudsman system) shall be considered before any judicial remedies. In the event where this solution would fail, the French Tribunals shall have a non-exclusive jurisdiction to hear these disputes. However, this provision shall not deprive the European consumers from their national statutory rights."
       conditions_sales_title: "Terms and Conditions of Sales"
+      conditions_sales_preamble_title: "Preamble"
+      conditions_sales_preamble_body: ""
       copyright: "© 2018 4U ABEL"
   products:
     index:

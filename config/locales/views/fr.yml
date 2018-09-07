@@ -54,6 +54,8 @@ fr:
       conditions_use_six_law_title: "6. Compétence juridictionnelle et loi applicable :"
       conditions_use_six_law_body: "Les présentes conditions d'utilisation sont soumises à la loi française. Toute difficulté d'interprétation ou d'exécution relève exclusivement des juridictions françaises compétentes. En cas de litige entre un utilisateur et 4U ABEL, le tribunal de commerce de Paris sera seul compétent."
       conditions_sales_title: "Conditions générales de vente"
+      conditions_sales_preamble_title: "Préambule"
+      conditions_sales_preamble_body: ""
       copyright: "Tous droits de reproduction et de représentation réservés. © 2018 4U ABEL"
   products:
     index:
