@@ -55,6 +55,14 @@
           font-size: 10px;
         }
     }
+    // h3 {
+    //   font-family: "Roboto", "sans-serif";
+    //   font-size: 0.8rem;
+    //   letter-spacing: 0.1rem;
+    //     @include for-phone-only {
+    //       font-size: 10px;
+    //     }
+    // }
     p {
       font-family:"Frank Ruhl Libre", "serif";
       font-size: 1rem;
@@ -103,7 +111,16 @@
     padding-left: 0 !important;
   }
   .padding-b {
-    padding-bottom : 16px;
+    padding-bottom: 16px;
+  }
+
+  .padding-t {
+    padding-top: 16px;
+  }
+
+  .padding-tb{
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
 // MARGIN
