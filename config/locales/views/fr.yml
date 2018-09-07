@@ -6,11 +6,41 @@ fr:
     about:
       test: "Youpi"
     terms:
-      legal_information: "INFORMATIONS LEGALES
-1 - Informations Editeur
-Editeur : 4U ABEL, SAS au capital de 55 000 €, immatriculée au R.C.S. de PARIS sous le n° 532 174 273 00013. N° TVA Intracommunautaire: FR25532174273. Siège social : 10 passage nationale – 75013 Paris. Directeur de la publication : Carole Piette - Contact : contact@conscients.com - Tél : 09 81 45 68 02
-Legal
-The site www.conscients.com was developed by 4U ABEL, a simplified joint stock company with a capital of 55 000 euros, registered on the corporate and trade register of Paris with the number 532 174 273 00013. Intra-community VAT number : FR25 532 174 273. Head office : 10 passage Nationale – 75013 Paris – France. Publication manager : Carole Piette. Contact : contact@conscients.com"
+      legal_information_title: "Informations légales"
+      legal_information_body: "Editeur : 4U ABEL, SAS au capital de 55 000 €, immatriculée au R.C.S. de PARIS sous le n° 532 174 273 00013. N° TVA Intracommunautaire: FR25532174273. Siège social : 10 passage nationale – 75013 Paris. Directeur de la publication : Carole Piette - Contact : contact@conscients.com - Tél : 06 23 98 80 93"
+      conditions_use_title: "Conditions générales d'utilisation"
+      conditions_use_one_object_title: ""
+      conditions_use_one_object_body: ""
+      conditions_use_two_personal_data_title: ""
+      conditions_use_two_personal_data_intro: ""
+      conditions_use_two_personal_data_use_collect: ""
+      conditions_use_two_personal_data_use_collect_body: ""
+      conditions_use_two_personal_data_newsletter: ""
+      conditions_use_two_personal_data_newsletter_body: ""
+      conditions_use_two_personal_data_cookies: ""
+      conditions_use_two_personal_data_cookies_body: ""
+      conditions_use_tree_intellectual_property_title: ""
+      conditions_use_tree_intellectual_property_titularite: ""
+      conditions_use_tree_intellectual_property_titularite_body: ""
+      conditions_use_tree_intellectual_links: ""
+      conditions_use_tree_intellectual_links_intro: ""
+      conditions_use_tree_intellectual_links_simple_subtitle: ""
+      conditions_use_tree_intellectual_links_simple_body: ""
+      conditions_use_tree_intellectual_links_framing_subtitle: ""
+      conditions_use_tree_intellectual_links_framing_body: ""
+      conditions_use_tree_intellectual_links_outbound_subtitle: ""
+      conditions_use_tree_intellectual_links_outbound_body: ""
+      conditions_use_four_liability_title: ""
+      conditions_use_four_liability_content: ""
+      conditions_use_four_liability_content_body: ""
+      conditions_use_four_liability_access: ""
+      conditions_use_four_liability_access_body: ""
+      conditions_use_four_liability_download: ""
+      conditions_use_four_liability_download_body: ""
+      conditions_use_five_warning_title: ""
+      conditions_use_five_warning_body: ""
+      conditions_use_six_law_title: ""
+      conditions_use_six_law_body: ""
   products:
     index:
       no_product: "Aucun produit ne répond à ces critères"
@@ -221,10 +251,10 @@ The site www.conscients.com was developed by 4U ABEL, a simplified joint stock c
       sign_in: "Me connecter"
       blog: "Journal"
     footer:
-      site_map: "Plan du site"
-      payment_shipping: "Paiement Livraison Retours"
-      terms: "Mentions légales et CGV"
-      faq: "FAQ"
+      site_map_link: "Plan du site"
+      payment_shipping_link: "Paiement Livraison Retours"
+      terms_link: "Mentions légales et CGV"
+      faq_link: "FAQ"
   helpers:
     placeholder:
       search: "Ma recherche..."
