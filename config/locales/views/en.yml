@@ -5,6 +5,23 @@ en:
       searching: "Search"
     about:
       test: "Youpi"
+    payment_shipping:
+      payment_shipping_title: "Payment and Shipping"
+      secure_title: "Secure payment"
+      secure_body: "You can pay with Credit Card, Paypal or by bank transfer. Credit card transactions are secured by Stripe. Conscients never accesses any financial details."
+      fast_delivery_title: "Delivery"
+      fast_delivery_body: "We treat orders from Monday to Friday, and send them within 48 hours following its confirmation. We use Colissimo service or 'Lettre suivie' depending on the weight and size of the package."
+      shipping_fees_title: "Shipping fees"
+      shipping_fees_body: "We offer the best shipping fees we can. They include costs of treatment and expedition (depending on the volume, weight and destination), and printing costs for tree plantation certificate."
+      flexible_delivery_title: ""
+      flexible_delivery_body: ""
+      returns_title: "Returns"
+      returns_body: "If you are not fully satisfied with your product, no problem ! The product that you return must be in perfect condition, and not worn, used or washed. Send us an email at contact@conscients.com, then you can return the product within 7 days. You will receive a full refund for the item, excluding the return cost."
+      exchange_title: "Exchanges"
+      exchange_body: "The size does not fit ? Send us an email to check we have the size you need (contact@conscients.com), if we do, you can return the item (in perfect condition, not worn, used or washed) within 7 days. When we have received and approved your returned item, the return postage will be deducted from your refund."
+      tree_planting_title: "Planting trees"
+      tree_planting_body: "TO DO"
+
     terms:
       terms_title: "Terms and Conditions"
       legal_information_title: "Legal"
@@ -88,7 +105,6 @@ en:
       conditions_sales_legal_infos_body: ""
       conditions_sales_jurisdiction_title: "Applicable legislation and jurisdiction "
       conditions_sales_jurisdiction_body: "French legislation shall be applicable to any action taken on our website as well as for any purchases made over this, settlement of any disagreement being subject to the French courts in Paris."
-
       copyright: "© 2018 4U ABEL"
   products:
     index:

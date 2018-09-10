@@ -5,6 +5,23 @@ fr:
       searching: "Ma recherche"
     about:
       test: "Youpi"
+    payment_shipping:
+      payment_shipping_title: "Paiement Livraison Retours"
+      secure_title: "Paiement sécurisé"
+      secure_body: "Vous pouvez choisir de régler vos achats par carte de crédit, via Paypal ou par virement bancaire. Les paiements en ligne sont sécurisés à travers Stripe ou Paypal selon le mode de paiement choisi. Les données bancaires sont directement communiquées, via le Site, aux structures directement et uniquement concernées par les opérations de paiement. Le site garantit qu’il ne collecte ni ne conserve aucune donnée relative à la transaction bancaire nécessaire au paiement de la facture. Si vous optez pour un paiement par carte de crédit, toutes les transactions bancaires sont gérées par Stripe, avec un chiffrement sécurisé et dans le respect des normes bancaires les plus strictes."
+      fast_delivery_title: "Livraison rapide"
+      fast_delivery_body: "Nous traitons les commandes du lundi au vendredi, au maximum dans les 48 heures après l'avoir reçue. Elle est expédiée par colissimo ou lettre suivie (selon le format du colis) et livrée en 72h."
+      shipping_fees_title: "Frais de port calculés au plus juste"
+      shipping_fees_body: "Nos frais de port tiennent compte du coût de préparation et d'expédition (celui facturé par La Poste selon le poids, le volume et la destination du colis). Pour les certificats de plantation d'arbres, le coût d'impression est intégré aux frais de port."
+      flexible_delivery_title: "Adresse de livraison flexible"
+      flexible_delivery_body: "Vous pouvez choisir l’adresse de livraison que vous souhaitez au moment de la commande. Si c’est un cadeau, nous pouvons ajouter un mot ou un papier cadeau. Il vous suffit alors de le préciser XXXXXDIRE A QUEL MOMENT"
+      returns_title: "Satisfait ou remboursé"
+      returns_body: "Si notre produit ne vous plaît pas, aucun souci ! Il doit bien sûr être en bon état et ne pas avoir été porté. Envoyez-nous un mail sur contact@conscients.com pour nous prévenir, ensuite vous avez 7 jours pour nous le renvoyer. De notre côté, nous vous rembourserons dans les 15 jours (mais sans les frais de port)."
+      exchange_title: "Echange gratuit"
+      exchange_body: "La taille n’est finalement pas bonne ? Envoyez nous un mail pour vérifier que nous avons la taille que vous voulez en stock (contact@conscients.com), si c’est le cas, vous avez 7 jours pour nous renvoyer l’article en bon état, dès sa réception, nous vous envoyons la taille qu’il vous faut (frais de port en plus)."
+      tree_planting_title: "Plantation d'arbres"
+      tree_planting_body: "TEXT TO DO"
+
     terms:
       terms_title: "Mentions légales et Conditions générales de vente"
       legal_information_title: "Informations légales"
@@ -88,7 +105,6 @@ fr:
       conditions_sales_legal_infos_body: "Le renseignement des informations nominatives collectées aux fins de la vente à distance est obligatoire, ces informations étant indispensables pour le traitement et l'acheminement des commandes, l'établissement des factures et contrats de garantie. Le défaut de renseignement entraîne la non validation de la commande. Conformément à la loi ' Informatique et Libertés ', le traitement des informations nominatives relatives aux clients a fait l'objet d'une déclaration auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL). Le client dispose (article 34 de la loi du 6 janvier 1978) d'un droit d'accès, de modification, de rectification et de suppression des données qui le concernent, qu'il peut exercer auprès de 4U ABEL . De plus, 4U ABEL s'engage à ne pas communiquer, gratuitement ou avec contrepartie, les coordonnées de ses clients à un tiers, sauf en cas d’accord explicite des clients."
       conditions_sales_jurisdiction_title: "11. Force majeure - Loi applicable"
       conditions_sales_jurisdiction_body: "Les obligations réciproques résultant des présentes conditions générales sont susceptibles d'être suspendues en cas de survenance d'un cas fortuit ou de force majeure. Seront notamment considérés comme tels ceux habituellement retenus par la jurisprudence des Cours et tribunaux français. Les présentes conditions générales sont soumises à la loi française en ce qui concerne les règles de fond comme les règles de forme. Tout litige devra faire l'objet d'une tentative de règlement amiable comme précisé à l'article 8."
-
       copyright: "Tous droits de reproduction et de représentation réservés. © 2018 4U ABEL"
   products:
     index:
