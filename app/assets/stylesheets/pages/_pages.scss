@@ -1,0 +1,39 @@
+.page-container {
+  width: 70vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+.summary {
+    display: flex;
+    align-item: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+
+.page-font {
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+  }
+  h2 {
+    font-family: "Frank Ruhl Libre", "serif";
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: none;
+  }
+  h3 {
+    font-family: Roboto, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+
