@@ -2,6 +2,7 @@
   <div class="container-conscients first-title-padding page-font">
     <h1><%= t 'pages.terms.terms_title' %></h1>
   </div>
+
   <div class="page-container page-font">
 <!-- PAGE SUMMARY   -->
     <div class="summary padding-t home-font">
@@ -115,15 +116,6 @@
           <p><%= t 'pages.terms.conditions_sales_price_p_three' %></p>
       </div>
 
-
-
-<% if t 'pages.terms.conditions_sales_payment'.nil? %>
-    <div class="bg-red">
-        <h3><%= t 'pages.terms.conditions_sales_payment' %></h3>
-    </div>
-<% end %>
-
-
       <div class="padding-b">
         <h3><%= t 'pages.terms.conditions_sales_payment' %></h3>
           <p><%= t 'pages.terms.conditions_sales_payment_body' %></p>
@@ -145,8 +137,6 @@
           <p><%= t 'pages.terms.conditions_sales_jurisdiction_body' %></p>
       </div>
     </div>
-
     <p><%= t 'pages.terms.copyright' %></p>
-
   </div>
 
