@@ -5,6 +5,8 @@ fr:
       searching: "Ma recherche"
     about:
       test: "Youpi"
+    contact:
+      contact_title: "Contact"
     payment_shipping:
       payment_shipping_title: "Paiement Livraison Retours"
       secure_title: "Paiement sécurisé"
