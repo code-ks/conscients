@@ -1,136 +1,152 @@
-<div class="container-conscients first-title-padding page-font">
-  <h1><%= t 'pages.terms.terms_title' %></h1>
-</div>
-
-<div class="page-container page-font">
-  <div class="summary padding-t home-font">
-      <%= link_to t('pages.terms.legal_information_title'), "#legal"%>
-      <%= link_to t('pages.terms.conditions_use_title'), "#use"%>
-      <%= link_to t('pages.terms.conditions_sales_title'), "#sales"%>
+<!-- PAGE TITLE -->
+  <div class="container-conscients first-title-padding page-font">
+    <h1><%= t 'pages.terms.terms_title' %></h1>
   </div>
+  <div class="page-container page-font">
+<!-- PAGE SUMMARY   -->
+    <div class="summary padding-t home-font">
+        <%= link_to t('pages.terms.legal_information_title'), "#legal"%>
+        <%= link_to t('pages.terms.conditions_use_title'), "#use"%>
+        <%= link_to t('pages.terms.conditions_sales_title'), "#sales"%>
+    </div>
+<!-- LEGAL INFO       -->
+    <div class="second-title-padding">
+      <h2 class="padding-tb"><a id="legal" class="anchor"><%= t 'pages.terms.legal_information_title' %></a></h2>
+      <p><%= t 'pages.terms.legal_information_body' %></p>
+    </div>
+<!-- USE CONDITIONS     -->
+    <div class="padding-tb">
+      <h2 class="padding-b"><a id="use" class="anchor"><%= t 'pages.terms.conditions_use_title' %></a></h2>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_use_one_object_title' %></h3>
+          <p><%= t 'pages.terms.conditions_use_one_object_body' %></p>
+        </div>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_use_two_personal_data_title' %></h3>
+            <p><%= t 'pages.terms.conditions_use_two_personal_data_intro_p_one' %></p>
+            <p><%= t 'pages.terms.conditions_use_two_personal_data_intro_p_two' %></p>
+              <h4><%= t 'pages.terms.conditions_use_two_personal_data_use_collect' %></h4>
+                <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_one' %></p>
+                <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_two' %></p>
+                <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_three' %></p>
+                <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_four' %></p>
+                <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_five' %></p>
+                <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_six' %></p>
+              <h4><%= t 'pages.terms.conditions_use_two_personal_data_newsletter' %></h4>
+                <p><%= t 'pages.terms.conditions_use_two_personal_data_newsletter_body' %></p>
+              <h4><%= t 'pages.terms.conditions_use_two_personal_data_cookies' %></h4>
+                <p><%= t 'pages.terms.conditions_use_two_personal_data_cookies_body' %></p>
+        </div>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_use_three_intellectual_property_title' %></h3>
+            <h4><%= t 'pages.terms.conditions_use_three_intellectual_property_titularite' %></h4>
+              <p><%= t 'pages.terms.conditions_use_three_intellectual_property_titularite_p_one' %></p>
+              <p><%= t 'pages.terms.conditions_use_three_intellectual_property_titularite_p_two' %></p>
+              <p><%= t 'pages.terms.conditions_use_three_intellectual_property_titularite_p_three' %></p>
+            <h4><%= t 'pages.terms.conditions_use_three_intellectual_links' %></h4>
+              <p><%= t 'pages.terms.conditions_use_three_intellectual_links_intro' %></p>
+              <h5><%= t 'pages.terms.conditions_use_three_intellectual_links_simple_subtitle' %></h5>
+                <p><%= t 'pages.terms.conditions_use_three_intellectual_links_simple_body' %></p>
+              <h5><%= t 'pages.terms.conditions_use_three_intellectual_links_framing_subtitle' %></h5>
+                <p><%= t 'pages.terms.conditions_use_three_intellectual_links_framing_body' %></p>
+              <h5><%= t 'pages.terms.conditions_use_three_intellectual_links_outbound_subtitle' %></h5>
+                <p><%= t 'pages.terms.conditions_use_three_intellectual_links_outbound_body' %></p>
+        </div>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_use_four_liability_title' %></h3>
+            <h4><%= t 'pages.terms.conditions_use_four_liability_content' %></h4>
+              <p><%= t 'pages.terms.conditions_use_four_liability_content_body' %></p>
+            <h4><%= t 'pages.terms.conditions_use_four_liability_access' %></h4>
+              <p><%= t 'pages.terms.conditions_use_four_liability_access_body' %></p>
+            <h4><%= t 'pages.terms.conditions_use_four_liability_download' %></h4>
+              <p><%= t 'pages.terms.conditions_use_four_liability_download_body' %></p>
+        </div>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_use_five_warning_title' %></h3>
+            <p><%= t 'pages.terms.conditions_use_five_warning_p_one' %></p>
+            <p><%= t 'pages.terms.conditions_use_five_warning_p_two' %></p>
+            <p><%= t 'pages.terms.conditions_use_five_warning_p_three' %></p>
+            <p><%= t 'pages.terms.conditions_use_five_warning_p_four' %></p>
+      </div>
+      <div class="padding-b">
+        <h3><%= t 'pages.terms.conditions_use_six_law_title' %></h3>
+          <p><%= t 'pages.terms.conditions_use_six_law_body' %></p>
+      </div>
+    </div>
+<!-- SALES CONDITIONS -->
+    <div class="padding-tb">
+      <h2 class="padding-b"><a id="sales" class="anchor"><%= t 'pages.terms.conditions_sales_title' %></a></h2>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_sales_preamble_title' %></h3>
+            <p><%= t 'pages.terms.conditions_sales_preamble_p_one' %></p>
+            <p><%= t 'pages.terms.conditions_sales_preamble_p_two' %></p>
+            <p><%= t 'pages.terms.conditions_sales_preamble_p_three' %></p>
+        </div>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_sales_contract_title' %></h3>
+            <p><%= t 'pages.terms.conditions_sales_contract_body' %></p>
+        </div>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_sales_product_title' %></h3>
+            <p><%= t 'pages.terms.conditions_sales_product_body' %></p>
+        </div>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_sales_order_title' %></h3>
+            <p><%= t 'pages.terms.conditions_sales_order_body' %></p>
+        </div>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_sales_delivery_title' %></h3>
+            <p><%= t 'pages.terms.conditions_sales_delivery_p_one' %></p>
+            <p><%= t 'pages.terms.conditions_sales_delivery_p_two' %></p>
+            <p><%= t 'pages.terms.conditions_sales_delivery_p_three' %></p>
+            <p><%= t 'pages.terms.conditions_sales_delivery_p_four' %></p>
+        </div>
+        <div class="padding-b">
+          <h3><%= t 'pages.terms.conditions_sales_cancellation_title' %></h3>
+            <p><%= t 'pages.terms.conditions_sales_cancellation_p_one' %></p>
+            <p><%= t 'pages.terms.conditions_sales_cancellation_p_two' %></p>
+            <p><%= t 'pages.terms.conditions_sales_cancellation_p_three' %></p>
+            <p><%= t 'pages.terms.conditions_sales_cancellation_p_four' %></p>
+      </div>
+      <div class="padding-b">
+        <h3><%= t 'pages.terms.conditions_sales_price_title' %></h3>
+          <p><%= t 'pages.terms.conditions_sales_price_p_one' %></p>
+          <p><%= t 'pages.terms.conditions_sales_price_p_two' %></p>
+          <p><%= t 'pages.terms.conditions_sales_price_p_three' %></p>
+      </div>
 
-  <div class="second-title-padding">
-    <h2 class="padding-tb"><a id="legal" class="anchor"><%= t 'pages.terms.legal_information_title' %></a></h2>
-    <p><%= t 'pages.terms.legal_information_body' %></p>
+
+
+<% if t 'pages.terms.conditions_sales_payment'.nil? %>
+    <div class="bg-red">
+        <h3><%= t 'pages.terms.conditions_sales_payment' %></h3>
+    </div>
+<% end %>
+
+
+      <div class="padding-b">
+        <h3><%= t 'pages.terms.conditions_sales_payment' %></h3>
+          <p><%= t 'pages.terms.conditions_sales_payment_body' %></p>
+      </div>
+      <div class="padding-b">
+        <h3><%= t 'pages.terms.conditions_sales_disputes_title' %></h3>
+          <p><%= t 'pages.terms.conditions_sales_disputes_body' %></p>
+      </div>
+      <div class="padding-b">
+        <h3><% t 'pages.terms.conditions_sales_guarantee_title' %></h3>
+          <p><% t 'pages.terms.conditions_sales_guarantee_body' %></p>
+      </div>
+      <div class="padding-b">
+        <h3><%= t 'pages.terms.conditions_sales_legal_infos_title' %></h3>
+          <p><%= t 'pages.terms.conditions_sales_legal_infos_body' %></p>
+      </div>
+      <div class="padding-b">
+        <h3><%= t 'pages.terms.conditions_sales_jurisdiction_title' %></h3>
+          <p><%= t 'pages.terms.conditions_sales_jurisdiction_body' %></p>
+      </div>
+    </div>
+
+    <p><%= t 'pages.terms.copyright' %></p>
+
   </div>
-
-  <div class="padding-tb">
-    <h2 class="padding-b"><a id="use" class="anchor"><%= t 'pages.terms.conditions_use_title' %></a></h2>
-      <div class="padding-b">
-        <h3><%= t 'pages.terms.conditions_use_one_object_title' %></h3>
-        <p><%= t 'pages.terms.conditions_use_one_object_body' %></p>
-      </div>
-      <div class="padding-b">
-        <h3><%= t 'pages.terms.conditions_use_two_personal_data_title' %></h3>
-          <p><%= t 'pages.terms.conditions_use_two_personal_data_intro_p_one' %></p>
-          <p><%= t 'pages.terms.conditions_use_two_personal_data_intro_p_two' %></p>
-            <h4><%= t 'pages.terms.conditions_use_two_personal_data_use_collect' %></h4>
-              <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_one' %></p>
-              <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_two' %></p>
-              <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_three' %></p>
-              <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_four' %></p>
-              <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_five' %></p>
-              <p><%= t 'pages.terms.conditions_use_two_personal_data_use_collect_p_six' %></p>
-            <h4><%= t 'pages.terms.conditions_use_two_personal_data_newsletter' %></h4>
-              <p><%= t 'pages.terms.conditions_use_two_personal_data_newsletter_body' %></p>
-            <h4><%= t 'pages.terms.conditions_use_two_personal_data_cookies' %></h4>
-              <p><%= t 'pages.terms.conditions_use_two_personal_data_cookies_body' %></p>
-      </div>
-
-      <div class="padding-b">
-    <h3><%= t 'pages.terms.conditions_use_three_intellectual_property_title' %></h3>
-    <h4><%= t 'pages.terms.conditions_use_three_intellectual_property_titularite' %></h4>
-    <p><%= t 'pages.terms.conditions_use_three_intellectual_property_titularite_p_one' %></p>
-    <p><%= t 'pages.terms.conditions_use_three_intellectual_property_titularite_p_two' %></p>
-    <p><%= t 'pages.terms.conditions_use_three_intellectual_property_titularite_p_three' %></p>
-
-    <h4><%= t 'pages.terms.conditions_use_three_intellectual_links' %></h4>
-    <p><%= t 'pages.terms.conditions_use_three_intellectual_links_intro' %></p>
-
-    <h5><%= t 'pages.terms.conditions_use_three_intellectual_links_simple_subtitle' %></h5>
-    <p><%= t 'pages.terms.conditions_use_three_intellectual_links_simple_body' %></p>
-
-    <h5><%= t 'pages.terms.conditions_use_three_intellectual_links_framing_subtitle' %></h5>
-    <p><%= t 'pages.terms.conditions_use_three_intellectual_links_framing_body' %></p>
-
-    <h5><%= t 'pages.terms.conditions_use_three_intellectual_links_outbound_subtitle' %></h5>
-    <p><%= t 'pages.terms.conditions_use_three_intellectual_links_outbound_body' %></p>
-      </div>
-
-      <div class="padding-b">
-    <h3><%= t 'pages.terms.conditions_use_four_liability_title' %></h3>
-    <h4><%= t 'pages.terms.conditions_use_four_liability_content' %></h4>
-    <p><%= t 'pages.terms.conditions_use_four_liability_content_body' %></p>
-
-    <h4><%= t 'pages.terms.conditions_use_four_liability_access' %></h4>
-    <p><%= t 'pages.terms.conditions_use_four_liability_access_body' %></p>
-
-    <h4><%= t 'pages.terms.conditions_use_four_liability_download' %></h4>
-    <p><%= t 'pages.terms.conditions_use_four_liability_download_body' %></p>
-      </div>
-
-      <div class="padding-b">
-    <h3><%= t 'pages.terms.conditions_use_five_warning_title' %></h3>
-    <p><%= t 'pages.terms.conditions_use_five_warning_p_one' %></p>
-    <p><%= t 'pages.terms.conditions_use_five_warning_p_two' %></p>
-    <p><%= t 'pages.terms.conditions_use_five_warning_p_three' %></p>
-    <p><%= t 'pages.terms.conditions_use_five_warning_p_four' %></p>
-      </div>
-
-      <div class="padding-b">
-    <h3><%= t 'pages.terms.conditions_use_six_law_title' %></h3>
-    <p><%= t 'pages.terms.conditions_use_six_law_body' %></p>
-      </div>
-  </div>
-
-
-  <div class="padding-tb">
-    <h2 class="padding-b"><a id="sales" class="anchor"><%= t 'pages.terms.conditions_sales_title' %></a></h2>
-    <h3><%= t 'pages.terms.conditions_sales_preamble_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_preamble_p_one' %></p>
-    <p><%= t 'pages.terms.conditions_sales_preamble_p_two' %></p>
-    <p><%= t 'pages.terms.conditions_sales_preamble_p_three' %></p>
-    <h3><%= t 'pages.terms.conditions_sales_contract_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_contract_body' %></p>
-    <h3><%= t 'pages.terms.conditions_sales_product_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_product_body' %></p>
-    <h3><%= t 'pages.terms.conditions_sales_order_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_order_body' %></p>
-    <h3><%= t 'pages.terms.conditions_sales_delivery_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_delivery_p_one' %></p>
-    <p><%= t 'pages.terms.conditions_sales_delivery_p_two' %></p>
-    <p><%= t 'pages.terms.conditions_sales_delivery_p_three' %></p>
-    <p><%= t 'pages.terms.conditions_sales_delivery_p_four' %></p>
-
-    <h3><%= t 'pages.terms.conditions_sales_cancellation_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_cancellation_p_one' %></p>
-    <p><%= t 'pages.terms.conditions_sales_cancellation_p_two' %></p>
-    <p><%= t 'pages.terms.conditions_sales_cancellation_p_three' %></p>
-    <p><%= t 'pages.terms.conditions_sales_cancellation_p_four' %></p>
-
-    <h3><%= t 'pages.terms.conditions_sales_price_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_price_p_one' %></p>
-    <p><%= t 'pages.terms.conditions_sales_price_p_two' %></p>
-    <p><%= t 'pages.terms.conditions_sales_price_p_three' %></p>
-
-    <h3><%= t 'pages.terms.conditions_sales_payment' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_payment_body' %></p>
-
-    <h3><%= t 'pages.terms.conditions_sales_disputes_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_disputes_body' %></p>
-
-    <h3><% t 'pages.terms.conditions_sales_guarantee_title' %></h3>
-    <p><% t 'pages.terms.conditions_sales_guarantee_body' %></p>
-
-    <h3><%= t 'pages.terms.conditions_sales_legal_infos_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_legal_infos_body' %></p>
-
-    <h3><%= t 'pages.terms.conditions_sales_jurisdiction_title' %></h3>
-    <p><%= t 'pages.terms.conditions_sales_jurisdiction_body' %></p>
-
-  </div>
-
-  <p><%= t 'pages.terms.copyright' %></p>
-
-</div>
 
