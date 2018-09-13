@@ -21,7 +21,6 @@ fr:
       exchange_body: "La taille n’est finalement pas bonne ? Envoyez nous un mail pour vérifier que nous avons la taille que vous voulez en stock (contact@conscients.com), si c’est le cas, vous avez 7 jours pour nous renvoyer l’article en bon état, dès sa réception, nous vous envoyons la taille qu’il vous faut (frais de port en plus)."
       tree_planting_title: "Plantation d'arbres"
       tree_planting_body: "TEXT TO DO"
-
     terms:
       terms_title: "Mentions légales & CGV"
       legal_information_title: "Informations légales"
@@ -106,6 +105,28 @@ fr:
       conditions_sales_jurisdiction_title: "11. Force majeure - Loi applicable"
       conditions_sales_jurisdiction_body: "Les obligations réciproques résultant des présentes conditions générales sont susceptibles d'être suspendues en cas de survenance d'un cas fortuit ou de force majeure. Seront notamment considérés comme tels ceux habituellement retenus par la jurisprudence des Cours et tribunaux français. Les présentes conditions générales sont soumises à la loi française en ce qui concerne les règles de fond comme les règles de forme. Tout litige devra faire l'objet d'une tentative de règlement amiable comme précisé à l'article 8."
       copyright: "Tous droits de reproduction et de représentation réservés. © 2018 4U ABEL"
+    faq:
+      faq_title: "FAQ"
+      faq_q_one_title: "Question 1"
+      faq_q_one_body: "Text text text text text text text text text text text text text text text text"
+      faq_q_two_title: "Question 2"
+      faq_q_two_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_three_title: "Question 3"
+      faq_q_three_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_four_title: "Question 4"
+      faq_q_four_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_five_title: "Question 5"
+      faq_q_five_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_six_title: "Question 6"
+      faq_q_six_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_seven_title: "Question 7"
+      faq_q_seven_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_eight_title: "Question 8"
+      faq_q_eight_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_nine_title: "Question 9"
+      faq_q_nine_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_ten_title: "Question 10"
+      faq_q_ten_body: "Text text text text text text text text text text text text text text text text "
   products:
     index:
       no_product: "Aucun produit ne répond à ces critères"

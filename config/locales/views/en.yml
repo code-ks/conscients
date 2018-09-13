@@ -21,7 +21,6 @@ en:
       exchange_body: "The size does not fit ? Send us an email to check we have the size you need (contact@conscients.com), if we do, you can return the item (in perfect condition, not worn, used or washed) within 7 days. When we have received and approved your returned item, the return postage will be deducted from your refund."
       tree_planting_title: "Planting trees"
       tree_planting_body: "TO DO"
-
     terms:
       terms_title: "Terms and Conditions"
       legal_information_title: "Legal"
@@ -106,6 +105,28 @@ en:
       conditions_sales_jurisdiction_title: "Applicable legislation and jurisdiction "
       conditions_sales_jurisdiction_body: "French legislation shall be applicable to any action taken on our website as well as for any purchases made over this, settlement of any disagreement being subject to the French courts in Paris."
       copyright: "© 2018 4U ABEL"
+    faq:
+      faq_title: "FAQ"
+      faq_q_one_title: "Question 1"
+      faq_q_one_body: "Text text text text text text text text text text text text text text text text"
+      faq_q_two_title: "Question 2"
+      faq_q_two_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_three_title: "Question 3"
+      faq_q_three_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_four_title: "Question 4"
+      faq_q_four_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_five_title: "Question 5"
+      faq_q_five_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_six_title: "Question 6"
+      faq_q_six_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_seven_title: "Question 7"
+      faq_q_seven_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_eight_title: "Question 8"
+      faq_q_eight_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_nine_title: "Question9 "
+      faq_q_nine_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_ten_title: "Question 10"
+      faq_q_ten_body: "Text text text text text text text text text text text text text text text text "
   products:
     index:
       no_product: "No product fits these criteria"
