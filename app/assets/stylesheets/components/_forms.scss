@@ -8,3 +8,12 @@
   border-radius: 0;
   box-sizing: content-box;
 }
+
+.label .active {
+  transform: translateY(-140%);
+  font-size: .8rem;
+  transition: .2s ease-out;
+    /* position: absolute; */
+    /* top: .65rem; */
+    /* left: 0; */
+}
