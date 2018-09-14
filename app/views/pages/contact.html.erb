@@ -19,31 +19,32 @@
       <form>
         <div class="row">
           <div class="col-md-6">
-            <div class="md-form mb-0">
-              <input type="text" id="contact-name" class="form-control"> <!-- todo add form-field to class -->
-              <label for="contact-name" class="">Your name</label>
+            <div class="form-inner-box">
+              <input type="text" id="contact-name" class="form-control" placeholder="<%= t 'pages.contact.contact_name' %>">
+              <!-- <label for="contact-name" class="">Your name</label> -->
             </div>
           </div>
           <div class="col-md-6">
-            <div class="md-form mb-0">
-              <input type="text" id="contact-email" class="form-control">
-              <label for="contact-email" class="">Your email</label>
+            <div class="form-inner-box">
+              <input type="text" id="contact-email" class="form-control" placeholder="Votre mail">
+              <!-- <label for="contact-email" class="">Your email</label> -->
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <div class="md-form mb-0">
-              <input type="text" id="contact-Subject" class="form-control">
-              <label for="contact-Subject" class="">Subject</label>
+            <div class="form-inner-box">
+              <input type="text" id="contact-Subject" class="form-control" placeholder="Sujet">
+              <!-- <label for="contact-Subject" class="">Subject</label> -->
             </div>
           </div>
         </div>
         <div class="class row">
           <div class="col-md-12">
-            <div class="md-form">
-              <textarea type="text" id="contact-message" class="form-control md-textarea" rows="3"></textarea>
-              <label for="contact-message">Your message</label>
+            <div class="form-inner-box">
+              <textarea type="text" id="contact-message" class="form-control" rows="3" placeholder="Votre message"></textarea>
+<!--               <textarea type="text" id="contact-message" class="form-control md-textarea" rows="3" placeholder="Votre message"></textarea> -->
+<!--               <label for="contact-message">Your message</label> -->
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ en:
     contact:
       contact_title: "Contact Us"
       contact_intro: "Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you asap to help you."
+      contact_name: "Your name"
     payment_shipping:
       payment_shipping_title: "Payment and Shipping"
       secure_title: "Secure payment"

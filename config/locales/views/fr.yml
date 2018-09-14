@@ -8,6 +8,7 @@ fr:
     contact:
       contact_title: "Contact"
       contact_intro: "Vous avez des questions ? Sur votre commande, les arbres que vous offrez en cadeau, un partenariat ? Ou vous voulez simplement échanger ? N'hésitez pas à nous contacter, nous vous répondrons au plus vite !"
+      contact_name: "Votre nom"
     payment_shipping:
       payment_shipping_title: "Paiement Livraison Retours"
       secure_title: "Paiement sécurisé"
