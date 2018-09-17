@@ -4,6 +4,10 @@
   margin-bottom: 0;
 }
 
+.label-font {
+  font-family:"Frank Ruhl Libre", "serif";
+  font-size: 0.8rem;
+}
 input {
   font-family:"Frank Ruhl Libre", "serif";
   font-size: 1rem;
@@ -32,33 +36,10 @@ input[type=text]:focus, textarea[type=text]:focus {
 
 
 // .form-inner-box input[type=text], textarea {
-// //     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-// //     outline: 0;
-// //     box-shadow: none;
-// //     border: none;
-//     border-bottom: 1px solid $conscients-very-light-grey;
-//     border-radius: 0;
-// //     box-sizing: content-box;
-// //     background-color: transparent;
-//   font-family:"Frank Ruhl Libre", "serif";
-//   font-size: 1rem;
 // }
-
-
 // .form-inner-box .form-control:focus {
-//   background-color: rgba(251, 215, 134, 0.1);
-//   border: none;
-//   border-radius: 0;
-//   background-size: 1px 1em;
-//   box-shadow:
-//     inset 0 -0.175em white,
-//     inset 0 -0.2em rgba(251, 215, 134, 0.9);
-//   display: inline;
 // }
 
-.label-font {
-  font-family:"Frank Ruhl Libre", "serif";
-  font-size: 0.8rem;
-}
+
 
 

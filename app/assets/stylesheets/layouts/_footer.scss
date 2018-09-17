@@ -1,8 +1,10 @@
 .footer {
+  background-color: $conscients-black;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 32px;
   @include for-phone-only {
     justify-content: center;
     height: 35px;
@@ -10,6 +12,7 @@
 }
 
 .footer-items {
+  color: white;
   display: flex;
   align-items: center;
   font-size: 1.5rem;
@@ -18,7 +21,8 @@
   font-family: "Roboto", "sans-serif";
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: $conscients-grey;
+  // color: $conscients-grey;
+  color: white;
   opacity: 1;
   text-decoration: none !important;
   font-size: 0.6rem;
@@ -39,12 +43,14 @@
 
 .footer-icons {
   padding: 0 10px;
-  color: $conscients-grey;
+  // color: $conscients-grey;
+  color: white;
 }
 
 .icon-vir {
   font-family: "Roboto", "sans-serif";
-  border: 1px solid $conscients-grey;
+  // border: 1px solid $conscients-grey;
+  border: 1px solid white;
   border-radius: 10%;
   font-size: 0.6rem;
   padding: 4px 8px;
