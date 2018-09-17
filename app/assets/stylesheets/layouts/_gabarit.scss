@@ -6,9 +6,21 @@
     background-color: red;
   }
 
-// BACKGROUND COLORS
+// BACKGROUND & COLORS
   .bg-grey {
     background-color: $conscients-bg-grey;
+  }
+
+  .color-red {
+    color: $conscients-red;
+  }
+
+  .color-yellow {
+    color: $conscients-yellow;
+  }
+
+  .color-green {
+    color: $conscients-green;
   }
 
 // ROW AND COL

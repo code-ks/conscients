@@ -7,7 +7,7 @@
 </div>
 
 <div class="page-container page-font">
-  <div class="summary padding-t home-font">
+  <div class="summary padding-tb home-font">
     <p><%= t 'pages.contact.contact_intro' %></p>
   </div>
 </div>
@@ -20,48 +20,48 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-inner-box">
-              <input type="text" id="contact-name" class="form-control" placeholder="<%= t 'pages.contact.contact_name' %>">
-              <!-- <label for="contact-name" class="">Your name</label> -->
+              <label for="contact-name" class="label-font"><%= t 'pages.contact.contact_name' %></label>
+              <input type="text" id="contact-name" class="form-control">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-inner-box">
-              <input type="text" id="contact-email" class="form-control" placeholder="Votre mail">
-              <!-- <label for="contact-email" class="">Your email</label> -->
+              <label for="contact-email" class="label-font">Your email</label>
+              <input type="text" id="contact-email" class="form-control">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="form-inner-box">
-              <input type="text" id="contact-Subject" class="form-control" placeholder="Sujet">
-              <!-- <label for="contact-Subject" class="">Subject</label> -->
+              <label for="contact-Subject" class="label-font">Subject</label>
+              <input type="text" id="contact-Subject" class="form-control">
             </div>
           </div>
         </div>
         <div class="class row">
           <div class="col-md-12">
             <div class="form-inner-box">
-              <textarea type="text" id="contact-message" class="form-control" rows="5" placeholder="Votre message"></textarea>
-<!--               <textarea type="text" id="contact-message" class="form-control md-textarea" rows="3" placeholder="Votre message"></textarea> -->
-<!--               <label for="contact-message">Your message</label> -->
+              <label for="contact-message" class="label-font">Your message</label>
+              <textarea type="text" id="contact-message" class="form-control" rows="5"></textarea>
             </div>
           </div>
         </div>
       </form>
       <div class="text-center text-md-left mt-5">
-        <a class="btn btn-primary btn-md">Send</a>
+        <!-- <a class="btn btn-primary btn-md">Send</a> -->
+        <a class="btn btn-green">Send</a>
       </div>
     </div>
     <div class="col-md-3 text-center">
       <ul class="list-unstyled mb-0">
         <li>
-          <i class="fa fa-phone fa-2x mt-4 blue-text"></i>
-          <p>06 23 98 80 93</p>
+          <i class="fa fa-phone fa-2x mt-4 color-green"></i>
+          <p class="label-font">06 23 98 80 93</p>
         </li>
         <li>
-          <i class="fa fa-envelope fa-2x mt-4 blue-text"></i>
-          <p class="mb-0">contact@conscients.com</p>
+          <i class="fa fa-at fa-2x mt-4 color-green"></i>
+          <p class="mb-0 label-font">contact@conscients.com</p>
         </li>
       </ul>
     </div>

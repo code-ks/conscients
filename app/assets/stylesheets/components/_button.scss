@@ -1,3 +1,13 @@
+.btn-green {
+  background-color: $conscients-green;
+  border-radius: 0;
+  font-family: "Roboto", "sans-serif";
+  text-transform: Uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  color: white !important;
+}
+
 .input-field {
     padding: 12px 20px;
     border: 1px solid #e2e2e2;
