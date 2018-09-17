@@ -8,6 +8,13 @@
   font-family:"Frank Ruhl Libre", "serif";
   font-size: 0.8rem;
 }
+
+// CORRIGER BOUTON SUBMIT
+button[type=submit] {
+  outline: none;
+  border: 1px solid $conscients-green;
+}
+
 input {
   font-family:"Frank Ruhl Libre", "serif";
   font-size: 1rem;
@@ -26,7 +33,6 @@ input[type=text], textarea[type=text] {
 input[type=text]:focus, textarea[type=text]:focus {
   outline: 0;
   box-shadow: none;
-  // box-shadow: 0 0 5px rgba(216, 215, 212, 0.9);
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid $conscients-light-grey;
