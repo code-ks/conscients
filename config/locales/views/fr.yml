@@ -331,9 +331,9 @@ fr:
     sessions:
       new:
         title: "Compte client"
-        sign_up: "Créer votre compte"
+        sign_up: "Créer mon compte"
         already_sign_up: "Déjà enregistré?"
-        sign_in: "Se connecter"
+        sign_in: "Me connecter"
         subscribe_to_newsletter: "S'inscrire à la newsletter"
   shared:
     navbar:

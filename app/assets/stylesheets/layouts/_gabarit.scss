@@ -1,3 +1,26 @@
+// sign in page
+.sign-in-out-col {
+  // height: 500px;
+}
+.sign-in-col {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 40%;
+  background-color: red;
+  height: 50px;
+}
+
+.sign-out-col {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 40%;
+  background-color: red;
+  height: 50px;
+}
+
+
 // BACKGROUNDS FOR TEST ERASE AFTER
   .bg-pink {
     background-color: pink;
