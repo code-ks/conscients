@@ -22,6 +22,8 @@ input[type=text], textarea[type=text] {
   margin: 5px 1px 3px 0px;
   border: 1px solid $conscients-very-light-grey;
   border-radius: 0;
+  font-family:"Frank Ruhl Libre", "serif";
+  font-size: 1rem;
 }
 
 input[type=text]:focus, textarea[type=text]:focus {
@@ -30,8 +32,6 @@ input[type=text]:focus, textarea[type=text]:focus {
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid $conscients-light-grey;
-  font-family:"Frank Ruhl Libre", "serif";
-  font-size: 1rem;
 }
 
 
