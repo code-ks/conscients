@@ -39,14 +39,16 @@
                 <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.images&.second %>);">
                 </div>
                 <div class="occasions-card">
-                  <div class="occasions-card-content-box home-font">
-                    <%= image_tag Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
-                    <div class="occasions-card-content">
-                      <h3><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.name %></h3>
-                      <h4><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.description_short %></h4>
-                      <h5><%= humanized_money_with_symbol Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.ttc_price %></h5>
+                  <%= link_to product_path(Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first) do %>
+                    <div class="occasions-card-content-box home-font">
+                      <%= image_tag Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
+                      <div class="occasions-card-content">
+                        <h3><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.name %></h3>
+                        <h4><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.description_short %></h4>
+                        <h5><%= humanized_money_with_symbol Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.ttc_price %></h5>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -60,14 +62,16 @@
                   <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.images.second %>);">
                   </div>
                   <div class="occasions-card">
-                    <div class="occasions-card-content-box home-font">
-                      <%= image_tag product.images.first, class: "occasions-card-img" %>
-                      <div class="occasions-card-content">
-                        <h3><%= product.name %></h3>
-                        <h4><%= product.description_short %></h4>
-                        <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                    <%= link_to product_path(product) do %>
+                      <div class="occasions-card-content-box home-font">
+                        <%= image_tag product.images.first, class: "occasions-card-img" %>
+                        <div class="occasions-card-content">
+                          <h3><%= product.name %></h3>
+                          <h4><%= product.description_short %></h4>
+                          <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                        </div>
                       </div>
-                    </div>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -94,14 +98,16 @@
                 <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.images&.second %>);">
                 </div>
                 <div class="occasions-card">
-                  <div class="occasions-card-content-box home-font">
-                    <%= image_tag Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
-                    <div class="occasions-card-content">
-                      <h3><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.name %></h3>
-                      <h4><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.description_short %></h4>
-                      <h5><%= humanized_money_with_symbol Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.ttc_price %></h5>
+                  <%= link_to product_path(Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first) do %>
+                    <div class="occasions-card-content-box home-font">
+                      <%= image_tag Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
+                      <div class="occasions-card-content">
+                        <h3><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.name %></h3>
+                        <h4><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.description_short %></h4>
+                        <h5><%= humanized_money_with_symbol Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.ttc_price %></h5>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -115,6 +121,7 @@
                   <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.images.second %>);">
                   </div>
                   <div class="occasions-card">
+                    <%= link_to product_path(product) do %>
                       <div class="occasions-card-content-box home-font">
                         <%= image_tag product.images.first, class: "occasions-card-img" %>
                         <div class="occasions-card-content">
@@ -123,6 +130,7 @@
                           <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
                         </div>
                       </div>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -149,14 +157,16 @@
                 <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.images&.second %>);">
                 </div>
                 <div class="occasions-card">
-                  <div class="occasions-card-content-box home-font">
-                    <%= image_tag Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
-                    <div class="occasions-card-content">
-                      <h3><%= Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first.name %></h3>
-                      <h4><%= Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.description_short %></h4>
-                      <h5><%= humanized_money_with_symbol Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.ttc_price %></h5>
+                  <%= link_to product_path(Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first) do %>
+                    <div class="occasions-card-content-box home-font">
+                      <%= image_tag Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
+                      <div class="occasions-card-content">
+                        <h3><%= Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first.name %></h3>
+                        <h4><%= Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.description_short %></h4>
+                        <h5><%= humanized_money_with_symbol Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.ttc_price %></h5>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -170,6 +180,7 @@
                   <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.images.second %>);">
                   </div>
                   <div class="occasions-card">
+                    <%= link_to product_path(product) do %>
                       <div class="occasions-card-content-box home-font">
                         <%= image_tag product.images.first, class: "occasions-card-img" %>
                         <div class="occasions-card-content">
@@ -178,6 +189,7 @@
                           <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
                         </div>
                       </div>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -209,14 +221,16 @@
           <div class="row">
             <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(4).each do |product| %>
               <div class="col-md-3">
-                <div class="home-shop-card">
-                  <%= image_tag(product.images.first, class: "home-shop-card-img") %>
-                  <div class="home-shop-card-content">
-                    <h3 class="truncate-4-cards"><%= product.name %></h3>
-                    <h4 class="truncate-4-cards"><%= product.description_short %></h4>
-                    <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                <%= link_to product_path(product) do %>
+                  <div class="home-shop-card">
+                    <%= image_tag(product.images.first, class: "home-shop-card-img") %>
+                    <div class="home-shop-card-content">
+                      <h3 class="truncate-4-cards"><%= product.name %></h3>
+                      <h4 class="truncate-4-cards"><%= product.description_short %></h4>
+                      <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                    </div>
                   </div>
-                </div>
+                <% end %>
               </div>
             <% end %>
           </div>
@@ -228,14 +242,16 @@
             <div class="row">
               <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(12).drop(4).each do |product| %>
                 <div class="col-md-3">
-                  <div class="home-shop-card">
-                    <%= image_tag(product.images.first, class: "home-shop-card-img") %>
-                    <div class="home-shop-card-content">
-                      <h3 class="truncate-4-cards"><%= product.name %></h3>
-                      <h4 class="truncate-4-cards"><%= product.description_short %></h4>
-                      <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                  <%= link_to product_path(product) do %>
+                    <div class="home-shop-card">
+                      <%= image_tag(product.images.first, class: "home-shop-card-img") %>
+                      <div class="home-shop-card-content">
+                        <h3 class="truncate-4-cards"><%= product.name %></h3>
+                        <h4 class="truncate-4-cards"><%= product.description_short %></h4>
+                        <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                 </div>
               <% end %>
             </div>
@@ -248,14 +264,16 @@
             <div class="row">
               <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(12).drop(8).each do |product| %>
                 <div class="col-md-3">
-                  <div class="home-shop-card">
-                    <%= image_tag(product.images.first, class: "home-shop-card-img") %>
-                    <div class="home-shop-card-content">
-                      <h3 class="truncate-4-cards"><%= product.name %></h3>
-                      <h4 class="truncate-4-cards"><%= product.description_short %></h4>
-                      <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                  <%= link_to product_path(product) do %>
+                    <div class="home-shop-card">
+                      <%= image_tag(product.images.first, class: "home-shop-card-img") %>
+                      <div class="home-shop-card-content">
+                        <h3 class="truncate-4-cards"><%= product.name %></h3>
+                        <h4 class="truncate-4-cards"><%= product.description_short %></h4>
+                        <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                 </div>
               <% end %>
             </div>
@@ -279,25 +297,29 @@
   <div id="shop-carousel-mobile" class="carousel slide carousel-shop-mobile" data-ride="carousel" data-interval="false">
     <div class="carousel-inner home-font">
       <div class="carousel-item active">
-        <div class="home-shop-card">
-          <%= image_tag(Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.images&.first, class: "home-shop-card-img") %>
-          <div class="home-shop-card-content">
-            <h3><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.name %></h3>
-            <h4 class="truncate-4-cards"><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.description_short %></h4>
-            <h5><%= humanized_money_with_symbol Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.ttc_price %></h5>
+        <%= link_to product_path(Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first) do %>
+          <div class="home-shop-card">
+            <%= image_tag(Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.images&.first, class: "home-shop-card-img") %>
+            <div class="home-shop-card-content">
+              <h3><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.name %></h3>
+              <h4 class="truncate-4-cards"><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.description_short %></h4>
+              <h5><%= humanized_money_with_symbol Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.ttc_price %></h5>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
       <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
         <div class="carousel-item">
-          <div class="home-shop-card">
-            <%= image_tag(product.images.first, class: "home-shop-card-img") %>
-            <div class="home-shop-card-content">
-              <h3><%= product.name %></h3>
-              <h4 class="truncate-4-cards"><%= product.description_short %></h4>
-              <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+            <%= link_to product_path(product) do %>
+            <div class="home-shop-card">
+              <%= image_tag(product.images.first, class: "home-shop-card-img") %>
+              <div class="home-shop-card-content">
+                <h3><%= product.name %></h3>
+                <h4 class="truncate-4-cards"><%= product.description_short %></h4>
+                <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
       <a class="carousel-control-prev" href="#shop-carousel-mobile" role="button" data-slide="prev">
@@ -317,12 +339,14 @@
     <div class="row home-blog-row-mobile">
       <% BlogPost.last(2).each do |article| %>
         <div class="col-md-6 home-col-portrait">
-          <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= rails_blob_url article.image_for_home %>)">
-            <div class="home-blog-card-content blog-pics-font">
-              <h3><%= article.category %></h3>
-              <h2><%= article.title %></h2>
+          <%= link_to blog_post_path(article) do %>
+            <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= rails_blob_url article.image_for_home %>)">
+              <div class="home-blog-card-content blog-pics-font">
+                <h3><%= article.category %></h3>
+                <h2><%= article.title %></h2>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
