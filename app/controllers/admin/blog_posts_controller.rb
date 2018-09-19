@@ -50,6 +50,7 @@ class Admin::BlogPostsController < ApplicationController
     params.require(:blog_post).permit(:content_fr, :content_en, :position, :main_image,
                                       :seo_title_fr, :seo_title_en, :meta_description_fr,
                                       :meta_description_en, :published_fr, :published_en,
-                                      :slug_fr, :slug_en)
+                                      :slug_fr, :slug_en, :title_fr, :title_en,
+                                      :category_fr, :category_en, :image_for_home)
   end
 end

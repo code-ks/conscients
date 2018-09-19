@@ -36,14 +36,14 @@
           <!-- <div class="tab-content"> -->
             <div class="container-conscients flex-container">
               <div class="occasions-container">
-                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.images&.second %>);">
+                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.images&.second %>);">
                 </div>
                 <div class="occasions-card">
                   <div class="occasions-card-content-box home-font">
-                    <%= image_tag Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.images&.first, class: "occasions-card-img" %>
+                    <%= image_tag Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
                     <div class="occasions-card-content">
-                      <h3><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.name %></h3>
-                      <h4><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.description_short %></h4>
+                      <h3><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.name %></h3>
+                      <h4><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.description_short %></h4>
                       <h5><%= humanized_money_with_symbol Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.ttc_price %></h5>
                     </div>
                   </div>
@@ -52,7 +52,7 @@
             </div>
           <!-- </div> end of tab content-->
         </div>
-        <% Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first(10)&.drop(1).each do |product| %>
+        <% Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first(10)&.drop(1).each do |product| %>
           <div class="carousel-item">
             <!-- <div class="tab-content"> -->
               <div class="container-conscients flex-container">
@@ -91,15 +91,15 @@
           <!-- <div class="tab-content"> -->
             <div class="container-conscients flex-container">
               <div class="occasions-container">
-                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.images&.second %>);">
+                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.images&.second %>);">
                 </div>
                 <div class="occasions-card">
                   <div class="occasions-card-content-box home-font">
-                    <%= image_tag Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.images&.first, class: "occasions-card-img" %>
+                    <%= image_tag Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
                     <div class="occasions-card-content">
-                      <h3><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.name %></h3>
-                      <h4><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.description_short %></h4>
-                      <h5><%= humanized_money_with_symbol Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first&.ttc_price %></h5>
+                      <h3><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.name %></h3>
+                      <h4><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.description_short %></h4>
+                      <h5><%= humanized_money_with_symbol Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.ttc_price %></h5>
                     </div>
                   </div>
                 </div>
@@ -107,7 +107,7 @@
             </div>
           <!-- </div> end of tab content-->
         </div>
-        <% Category.find("cadeaux-grands-et-les-petits").products.in_order_home.first(10).drop(1).each do |product| %>
+        <% Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
           <div class="carousel-item">
             <!-- <div class="tab-content"> -->
               <div class="container-conscients flex-container">
@@ -146,15 +146,15 @@
           <!-- <div class="tab-content"> -->
             <div class="container-conscients flex-container">
               <div class="occasions-container">
-                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("gifts-give-a-tree").products.in_order_home.first&.images&.second %>);">
+                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.images&.second %>);">
                 </div>
                 <div class="occasions-card">
                   <div class="occasions-card-content-box home-font">
-                    <%= image_tag Category.find("gifts-give-a-tree").products.in_order_home.first&.images&.first, class: "occasions-card-img" %>
+                    <%= image_tag Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
                     <div class="occasions-card-content">
-                      <h3><%= Category.find("gifts-give-a-tree").products.in_order_home.first.name %></h3>
-                      <h4><%= Category.find("gifts-give-a-tree").products.in_order_home.first&.description_short %></h4>
-                      <h5><%= humanized_money_with_symbol Category.find("gifts-give-a-tree").products.in_order_home.first&.ttc_price %></h5>
+                      <h3><%= Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first.name %></h3>
+                      <h4><%= Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.description_short %></h4>
+                      <h5><%= humanized_money_with_symbol Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.ttc_price %></h5>
                     </div>
                   </div>
                 </div>
@@ -162,7 +162,7 @@
             </div>
           <!-- </div> end of tab content-->
         </div>
-        <% Category.find("gifts-give-a-tree").products.in_order_home.first(10).drop(1).each do |product| %>
+        <% Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
           <div class="carousel-item">
             <!-- <div class="tab-content"> -->
               <div class="container-conscients flex-container">
@@ -207,7 +207,7 @@
       <div class="carousel-item active">
         <div class="carousel-container home-font">
           <div class="row">
-            <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(4).each do |product| %>
+            <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(4).each do |product| %>
               <div class="col-md-3">
                 <div class="home-shop-card">
                   <%= image_tag(product.images.first, class: "home-shop-card-img") %>
@@ -226,7 +226,7 @@
         <div class="carousel-item">
           <div class="carousel-container home-font">
             <div class="row">
-              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(12).drop(4).each do |product| %>
+              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(12).drop(4).each do |product| %>
                 <div class="col-md-3">
                   <div class="home-shop-card">
                     <%= image_tag(product.images.first, class: "home-shop-card-img") %>
@@ -246,7 +246,7 @@
         <div class="carousel-item">
           <div class="carousel-container home-font">
             <div class="row">
-              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(12).drop(8).each do |product| %>
+              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(12).drop(8).each do |product| %>
                 <div class="col-md-3">
                   <div class="home-shop-card">
                     <%= image_tag(product.images.first, class: "home-shop-card-img") %>
@@ -280,15 +280,15 @@
     <div class="carousel-inner home-font">
       <div class="carousel-item active">
         <div class="home-shop-card">
-          <%= image_tag(Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.images&.first, class: "home-shop-card-img") %>
+          <%= image_tag(Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.images&.first, class: "home-shop-card-img") %>
           <div class="home-shop-card-content">
-            <h3><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.name %></h3>
-            <h4 class="truncate-4-cards"><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.description_short %></h4>
-            <h5><%= humanized_money_with_symbol Category.find("bebe-vetements-bio-garçon").products.in_order_home.first&.ttc_price %></h5>
+            <h3><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.name %></h3>
+            <h4 class="truncate-4-cards"><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.description_short %></h4>
+            <h5><%= humanized_money_with_symbol Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.ttc_price %></h5>
           </div>
         </div>
       </div>
-      <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.first(10).drop(1).each do |product| %>
+      <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
         <div class="carousel-item">
           <div class="home-shop-card">
             <%= image_tag(product.images.first, class: "home-shop-card-img") %>
