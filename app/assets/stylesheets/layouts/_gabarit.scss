@@ -1,23 +1,39 @@
-// sign in page
-.sign-in-out-col {
-  // height: 500px;
-}
-.sign-in-col {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  width: 40%;
-  background-color: red;
-  height: 50px;
+// tes sign-in
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+    height: 70vh;
+  }
 }
 
-.sign-out-col {
-  position: absolute;
-  bottom: 0;
-  right: 10px;
-  width: 40%;
-  background-color: red;
-  height: 50px;
+.sign-up-box {
+  // background-color: $conscients-light-green;
+  width: 100%;
+    @include for-tablet-landscape-up {
+      height: 100%;
+      width: 60%;
+      border: 1px solid rgba(0,0,0,.125);
+      padding: 40PX;
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+      z-index: 2;
+    }
+}
+.login-box {
+  // background-color: $conscients-green;
+  width: 100%;
+  @include for-tablet-landscape-up {
+    height: 80%;
+    width: 40%;
+    // border: 1px solid rgba(0,0,0,.125);
+    // background-color: $conscients-bg-grey;
+    padding: 40px;
+    border: none;
+    background-color: $conscients-yellow;
+  }
 }
 
 
@@ -46,31 +62,8 @@
     color: $conscients-green;
   }
 
-// ROW AND COL
-  .ligne {
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: -15px;
-      margin-left: -15px;
-      overflow: hidden;
-  }
-  .col-sm-xs-1-col-md4 {
-    flex: 0 0 100%;
-    max-width: 100%;
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right:15px;
-    padding-left: 15px;
-      @include for-tablet-landscape-up {
-      flex: O O 25%;
-      max-width: 25%;
-      position: relative;
-      width: 100%;
-      min-height: 1px;
-      padding-right: 15px;
-      padding-left: 15px;
-      }
+  .color-white {
+    color: white;
   }
 
 // **** BASE RESPONSIVE FONT ****
@@ -187,5 +180,30 @@
     margin-top:-80px;
   }
 
-
+// ROW AND COL
+  // .ligne {
+  //     display: flex;
+  //     flex-wrap: wrap;
+  //     margin-right: -15px;
+  //     margin-left: -15px;
+  //     overflow: hidden;
+  // }
+  // .col-sm-xs-1-col-md4 {
+  //   flex: 0 0 100%;
+  //   max-width: 100%;
+  //   position: relative;
+  //   width: 100%;
+  //   min-height: 1px;
+  //   padding-right:15px;
+  //   padding-left: 15px;
+  //     @include for-tablet-landscape-up {
+  //     flex: O O 25%;
+  //     max-width: 25%;
+  //     position: relative;
+  //     width: 100%;
+  //     min-height: 1px;
+  //     padding-right: 15px;
+  //     padding-left: 15px;
+  //     }
+  // }
 
