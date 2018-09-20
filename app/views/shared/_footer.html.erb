@@ -1,10 +1,22 @@
 <!-- <div class="footer home-pt container-conscients"> -->
-<div class="footer container-conscients">
+<!-- SOCIAL CONTACT AND NEWSLETTER -->
+  <div class="container-conscients social-box bg-grey">
+    <div class="social-box-links">
+      <a href="https://www.facebook.com/conscients/" target="blank"><i class="fa fa-facebook" title="Facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter" title="Twitter"></i></a>
+      <a href="#"><i class="fa fa-instagram" title="Instagram"></i></a>
+      <a href="#"><i class="fa fa-envelope" title="Newsletter"></i></a>
+      <%= link_to page_path('contact') do %>
+        <i class="fa fa-at" title="Contact"></i>
+      <% end %>
+    </div>
+  </div>
+<div class="footer">
   <div class="footer-items">
-    <%= link_to t('shared.footer.site_map'), page_path('site_map')%>
-    <%= link_to t('shared.footer.payment_shipping'), page_path('payment_shipping')%>
-    <%= link_to t('shared.footer.terms'), page_path('terms')%>
-    <%= link_to t('shared.footer.faq'), page_path('faq')%>
+    <%= link_to t('shared.footer.site_map_link'), page_path('site_map')%>
+    <%= link_to t('shared.footer.payment_shipping_link'), page_path('payment_shipping')%>
+    <%= link_to t('shared.footer.terms_link'), page_path('terms')%>
+    <%= link_to t('shared.footer.faq_link'), page_path('faq')%>
   </div>
   <div class="footer-items d-phone-none">
     <!-- <div class="icon-vir">VIR</div> -->

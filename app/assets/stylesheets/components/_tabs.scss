@@ -2,35 +2,42 @@
   display: flex;
   justify-content: center;
   color: $conscients-very-light-grey;
-      @include for-tablet-landscape-up {
-    padding-bottom: 16px;
-    color: $conscients-light-grey;
+    @include for-tablet-landscape-up {
+      display: block;
+      text-align: center;
+      padding-bottom: 16px;
+      color: $conscients-title-grey;
+      white-space: nowrap;
     }
 }
-// .tabs a {
-// }
+.tabs a {
+  text-decoration: none !important;
+}
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
   opacity: 0.8;
 }
-
-
 .tab {
-  flex: 0 0 28%;
+  flex: 0 0 30%;
   text-align: center;
   padding-right: 10px;
   padding-left: 10px;
-    @include for-phone-only {
-      flex: 0 0 33%;
+    @include for-tablet-landscape-up {
+      display: inline-block;
+      margin-right: 40px;
+      margin-left: 40px;
+      padding-right: 0;
+      padding-left: 0;
     }
 }
 
 .tab.active {
   color: $conscients-grey;
-  text-decoration: underline;
-  text-underline-position: under;
-  @include for-phone-only {
-    text-decoration : none;
-  }
+  // text-decoration: underline !important;
+  // text-underline-position: under;
+  text-decoration : none !important;
+    @include for-tablet-landscape-up {
+      box-shadow: 0px -2px $conscients-grey inset;
+    }
 }

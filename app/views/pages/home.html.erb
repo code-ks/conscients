@@ -210,7 +210,8 @@
 
 <!-- SHOP CAROUSEL TITLE  -->
   <div class="container-conscients home-font home-shop-title-padding">
-    <h2 class="text-center">Vêtements bio 0-5 ans</h2>
+    <h2 class="text-center">Vêtements bio 0-5 ans </h2>
+    <!-- vêtements bio bébé -->
   </div>
 
 <!-- SHOP CAROUSEL DESKTOP AND TABLET LANDSCAPE-->
@@ -219,7 +220,7 @@
       <div class="carousel-item active">
         <div class="carousel-container home-font">
           <div class="row">
-            <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(4).each do |product| %>
+            <% Category.find("bebes").products.in_order_home.images_attached.first(4).each do |product| %>
               <div class="col-md-3">
                 <%= link_to product_path(product) do %>
                   <div class="home-shop-card">
@@ -236,11 +237,11 @@
           </div>
         </div>
       </div>
-      <% if Category.find("bebe-vetements-bio-garçon").products.count > 4 %>
+      <% if Category.find("bebes").products.count > 4 %>
         <div class="carousel-item">
           <div class="carousel-container home-font">
             <div class="row">
-              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(12).drop(4).each do |product| %>
+              <% Category.find("bebes").products.in_order_home.images_attached.first(12).drop(4).each do |product| %>
                 <div class="col-md-3">
                   <%= link_to product_path(product) do %>
                     <div class="home-shop-card">
@@ -258,11 +259,11 @@
           </div>
         </div>
       <% end %>
-      <% if Category.find("bebe-vetements-bio-garçon").products.count > 8 %>
+      <% if Category.find("bebes").products.count > 8 %>
         <div class="carousel-item">
           <div class="carousel-container home-font">
             <div class="row">
-              <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(12).drop(8).each do |product| %>
+              <% Category.find("bebes").products.in_order_home.images_attached.first(12).drop(8).each do |product| %>
                 <div class="col-md-3">
                   <%= link_to product_path(product) do %>
                     <div class="home-shop-card">
@@ -280,7 +281,7 @@
           </div>
         </div>
       <% end %>
-      <% if Category.find("bebe-vetements-bio-garçon").products.count > 4 %>
+      <% if Category.find("bebes").products.count > 4 %>
         <a class="carousel-control-prev" href="#shop-carousel-desktop" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -297,18 +298,18 @@
   <div id="shop-carousel-mobile" class="carousel slide carousel-shop-mobile" data-ride="carousel" data-interval="false">
     <div class="carousel-inner home-font">
       <div class="carousel-item active">
-        <%= link_to product_path(Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first) do %>
+        <%= link_to product_path(Category.find("bebes").products.in_order_home.images_attached.first) do %>
           <div class="home-shop-card">
-            <%= image_tag(Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.images&.first, class: "home-shop-card-img") %>
+            <%= image_tag(Category.find("bebes").products.in_order_home.images_attached.first&.images&.first, class: "home-shop-card-img") %>
             <div class="home-shop-card-content">
-              <h3><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.name %></h3>
-              <h4 class="truncate-4-cards"><%= Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.description_short %></h4>
-              <h5><%= humanized_money_with_symbol Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first&.ttc_price %></h5>
+              <h3><%= Category.find("bebes").products.in_order_home.images_attached.first&.name %></h3>
+              <h4 class="truncate-4-cards"><%= Category.find("bebes").products.in_order_home.images_attached.first&.description_short %></h4>
+              <h5><%= humanized_money_with_symbol Category.find("bebes").products.in_order_home.images_attached.first&.ttc_price %></h5>
             </div>
           </div>
         <% end %>
       </div>
-      <% Category.find("bebe-vetements-bio-garçon").products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
+      <% Category.find("bebes").products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
         <div class="carousel-item">
             <%= link_to product_path(product) do %>
             <div class="home-shop-card">
@@ -362,31 +363,16 @@
   </div>
 
 <!-- SOCIAL CONTACT AND NEWSLETTER -->
-  <div class="container-conscients social-box bg-grey">
+<!--   <div class="container-conscients social-box bg-grey">
     <div class="social-box-links">
-      <a href="#"><i class="fa fa-facebook" title="Facebook"></i></a>
+      <a href="https://www.facebook.com/conscients/" target="blank"><i class="fa fa-facebook" title="Facebook"></i></a>
       <a href="#"><i class="fa fa-twitter" title="Twitter"></i></a>
       <a href="#"><i class="fa fa-instagram" title="Instagram"></i></a>
       <a href="#"><i class="fa fa-envelope" title="Newsletter"></i></a>
-      <a href="#"><i class="fa fa-at" title="Contact"></i></a>
+      </%= link_to page_path('contact') do %>
+        <i class="fa fa-at" title="Contact"></i>
+      </% end %>
     </div>
-  </div>
+  </div> -->
 
 
-
-<!-- <div class="container-conscients home-pt">
-<h1 class="flex justify-center"></%= t 'pages.home.hello' %> Hello from </%= Rails.application.class
-                                                                .parent_name %>!</h1>
-</div>
-
-<div class="container-conscients">
-  <p><strong>HIDE CAROUSEL PREV ICON </strong> Nec minus feminae quoque calamitatum participes fuere similium. nam ex hoc quoque sexu peremptae sunt originis altae conplures, adulteriorum flagitiis obnoxiae vel stuprorum. inter quas notiores fuere Claritas et Flaviana, quarum altera cum duceretur ad mortem, indumento, quo vestita erat, abrepto, ne velemen quidem secreto membrorum sufficiens retinere permissa est. ideoque carnifex nefas admisisse convictus inmane, vivus exustus est.Quare hoc quidem praeceptum, cuiuscumque est, ad tollendam amicitiam valet; illud potius praecipiendum fuit, ut eam diligentiam adhiberemus in amicitiis comparandis, ut ne quando amare inciperemus eum, quem aliquando odisse possemus. Quin etiam si minus felices in diligendo fuissemus, ferendum id Scipio potius quam inimicitiarum tempus cogitandum putabat.Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae.
-  </p>
-    <p>Nec minus feminae quoque calamitatum participes fuere similium. nam ex hoc quoque sexu peremptae sunt originis altae conplures, adulteriorum flagitiis obnoxiae vel stuprorum. inter quas notiores fuere Claritas et Flaviana, quarum altera cum duceretur ad mortem, indumento, quo vestita erat, abrepto, ne velemen quidem secreto membrorum sufficiens retinere permissa est. ideoque carnifex nefas admisisse convictus inmane, vivus exustus est.Quare hoc quidem praeceptum, cuiuscumque est, ad tollendam amicitiam valet; illud potius praecipiendum fuit, ut eam diligentiam adhiberemus in amicitiis comparandis, ut ne quando amare inciperemus eum, quem aliquando odisse possemus. Quin etiam si minus felices in diligendo fuissemus, ferendum id Scipio potius quam inimicitiarum tempus cogitandum putabat.Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae.
-  </p>
-    <p>Nec minus feminae quoque calamitatum participes fuere similium. nam ex hoc quoque sexu peremptae sunt originis altae conplures, adulteriorum flagitiis obnoxiae vel stuprorum. inter quas notiores fuere Claritas et Flaviana, quarum altera cum duceretur ad mortem, indumento, quo vestita erat, abrepto, ne velemen quidem secreto membrorum sufficiens retinere permissa est. ideoque carnifex nefas admisisse convictus inmane, vivus exustus est.Quare hoc quidem praeceptum, cuiuscumque est, ad tollendam amicitiam valet; illud potius praecipiendum fuit, ut eam diligentiam adhiberemus in amicitiis comparandis, ut ne quando amare inciperemus eum, quem aliquando odisse possemus. Quin etiam si minus felices in diligendo fuissemus, ferendum id Scipio potius quam inimicitiarum tempus cogitandum putabat.Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae.
-  </p>
-    <p>Nec minus feminae quoque calamitatum participes fuere similium. nam ex hoc quoque sexu peremptae sunt originis altae conplures, adulteriorum flagitiis obnoxiae vel stuprorum. inter quas notiores fuere Claritas et Flaviana, quarum altera cum duceretur ad mortem, indumento, quo vestita erat, abrepto, ne velemen quidem secreto membrorum sufficiens retinere permissa est. ideoque carnifex nefas admisisse convictus inmane, vivus exustus est.Quare hoc quidem praeceptum, cuiuscumque est, ad tollendam amicitiam valet; illud potius praecipiendum fuit, ut eam diligentiam adhiberemus in amicitiis comparandis, ut ne quando amare inciperemus eum, quem aliquando odisse possemus. Quin etiam si minus felices in diligendo fuissemus, ferendum id Scipio potius quam inimicitiarum tempus cogitandum putabat.Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.Non ergo erunt homines deliciis diffluentes audiendi, si quando de amicitia, quam nec usu nec ratione habent cognitam, disputabunt. Nam quis est, pro deorum fidem atque hominum! qui velit, ut neque diligat quemquam nec ipse ab ullo diligatur, circumfluere omnibus copiis atque in omnium rerum abundantia vivere? Haec enim est tyrannorum vita nimirum, in qua nulla fides, nulla caritas, nulla stabilis benevolentiae potest esse fiducia, omnia semper suspecta atque sollicita, nullus locus amicitiae.
-  </p>
-</div>
- -->
