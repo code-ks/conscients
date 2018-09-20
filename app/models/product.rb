@@ -74,11 +74,12 @@ class Product < ApplicationRecord
   scope :published, -> { where(published: true) }
   scope :in_order, -> { order(position: :asc) }
   scope :in_order_home, -> { order(position_home: :asc) }
+  scope :images_attached, -> { joins(:images_attachments) }
   scope :in_stock, -> { joins(:product_skus).where.not(product_skus: { quantity: 0 }) }
   scope :with_variant, lambda { |variant|
     includes(:product_skus).where(product_skus: { variant: variant })
   }
-  scope :displayable, -> { in_stock.published.with_attached_images }
+  scope :displayable, -> { in_stock.published.joins(:images_attachments).images_attached }
 
   def should_generate_new_friendly_id?
     name_fr_changed? || name_en_changed? || super
