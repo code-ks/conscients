@@ -36,10 +36,13 @@
   }
 }
 
+.login-box a {
+  font-family:"Frank Ruhl Libre", "serif";
+}
 
 // BACKGROUNDS FOR TEST ERASE AFTER
   .bg-pink {
-    background-color: pink;
+    background-color: pink !important;
   }
   .bg-red {
     background-color: red;
@@ -95,6 +98,7 @@
       font-family:"Frank Ruhl Libre", "serif";
       font-size: 1rem;
     }
+
   }
 
 

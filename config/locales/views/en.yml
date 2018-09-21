@@ -334,6 +334,8 @@ en:
         already_sign_up: "Already registered?"
         sign_in: "Connect"
         subscribe_to_newsletter: "Subscribe to newsletter"
+        password: "Choose a password"
+        email: "Your email"
   shared:
     navbar:
       about: "About"

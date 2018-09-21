@@ -335,6 +335,8 @@ fr:
         already_sign_up: "Déjà enregistré?"
         sign_in: "Me connecter"
         subscribe_to_newsletter: "S'inscrire à la newsletter"
+        password: "Mot de passe"
+        email: "Email"
   shared:
     navbar:
       about: "A propos"
