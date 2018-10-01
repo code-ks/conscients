@@ -4,12 +4,11 @@
   <h1><%= t '.title' %></h1>
 </div>
 <!-- test   -->
-<div class="page-container page-font padding-t">
+<div class="page-container page-font padding-t position-relative">
 
   <div class="sign-in-container">
     <div class="sign-up-box">
         <h2><%= t('.sign_up') %></h2>
-
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
@@ -31,9 +30,11 @@
             <%= f.password_field :password, autocomplete: "off", class: "form-control mr-sm-2", placeholder: nil %>
           </div>
 
-          <%= f.submit t('.sign_up'), class: "btn btn-green" %>
+          <%= f.submit t('.sign_up'), class: "btn conscients-btn btn-green w-100 mt-3" %>
         <% end %>
+        <button class="fb-connect-btn-w">S'inscrire/Se connecter avec Facebook</button>
     </div>
+
     <div class="login-box color-white">
         <h2><%= t('.sign_in') %></h2>
 
@@ -55,26 +56,15 @@
             </div>
           <% end -%>
 
-          <%= f.submit t('.sign_in'), class: "btn btn-green" %>
+          <%= f.submit t('.sign_in'), class: "btn conscients-btn btn-green w-100" %>
         <% end %>
       <div class="padding-t"><u><%= render "devise/shared/links" %></u></div>
     </div>
   </div>
-  <div>voir pour blue box fb et definir a tjs en frank ruhl mais avant definir a de menu selon la police actuelle</div>
+  </div>
+
+
 </div>
-<div class="ml-5">
-<button type="button" class="fb-connect"><i>Connect with Facebook</i></button>
-</div>
-
-<div class="ml-5">
-  <button class="fb-connect">connect with facebook</button>
-</class>
-
-
-<!-- <button type="button" class="fb-connect"><i class="fa fa-facebook pr-1"></i> Connect with Facebook</button> -->
-
-
-
 
 <!-- original -->
 <!-- <div class="container-conscients page-font padding-t">

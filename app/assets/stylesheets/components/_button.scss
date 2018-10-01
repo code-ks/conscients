@@ -1,31 +1,65 @@
+// overwrite
+button:focus {outline:0;}
 
-.btn-green {
-  background-color: $conscients-green;
-  opacity: 1;
-  border-radius: 0;
-  font-family: "Roboto", "sans-serif";
-  text-transform: Uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.1rem;
-  color: white !important;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16);
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-}
-.btn-green:hover {
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
-}
+//CONSCIENTS BTN
+  .conscients-btn {
+    opacity: 1;
+    border-radius: 0;
+    font-family: "Roboto", "sans-serif";
+    text-transform: Uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  }
 
-.btn-green:active {
-  opacity: 1;
-  background-color: #60b28d;
-  transform: scale(0.9, 0.9);
-}
+  .conscients-btn:hover {
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+  }
 
-// .btn-green:visited {
-// }
+  .conscients-btn:active {
+    opacity: 1;
+    transform: scale(0.9, 0.9);
+  }
+
+// BTN GREEN
+  .btn-green {
+    background-color: $conscients-green;
+    color: white !important;
+    }
+
+  .btn-green:active {
+    background-color: #60b28d;
+  }
+
+// FACEBOOK CONNECT WHITE
+  .fb-connect-btn-w::before {
+      font-family: FontAwesome;
+      content: "\f082";
+      font-size: 1.5em;
+      margin-right: 10px;
+      color: $facebook;
+      text-decoration: underline white;
+  }
+
+  .fb-connect-btn-w {
+    margin-top: 5px;
+    color: $facebook;
+    font-family: "Frank Ruhl Libre", "serif";
+    border: none;
+    background-color: white;
+    // background-color: pink;
+    cursor: pointer;
+  }
+
+  .fb-connect-btn-w:active {
+    opacity: 0.9;
+    text-decoration: underline;
+  }
+
 
 .input-field {
     padding: 12px 20px;
