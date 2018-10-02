@@ -1,0 +1,18 @@
+.filters-margin {
+  // margin-top: 2rem;
+  // margin-bottom: 1rem;
+  margin: 1.5rem 0;
+}
+
+.filters-plus-icone {
+  font-size: 0.6rem;
+}
+
+.filters-dropdown-menu {
+  border-radius: 0;
+  border: $border-grey;
+}
+
+.filters-dropdown-item:hover {
+  background-color: $conscients-bg-grey;
+}

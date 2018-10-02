@@ -27,6 +27,10 @@
     color: white;
   }
 
+  .title-grey {
+    color: $conscients-title-grey;
+  }
+
 // **** BASE RESPONSIVE FONT ****
   body {
     color: $conscients-grey;
@@ -109,12 +113,6 @@
 
   .padding-r {
     padding-right: 16px;
-  }
-
-// MARGIN
-  .filters-margin {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
   }
 
 // ****TEXT AND LINKS COLORS ****

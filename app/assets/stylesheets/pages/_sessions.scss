@@ -14,7 +14,7 @@
     @include for-tablet-landscape-up {
       height: 100%;
       width: 60%;
-      border: 1px solid rgba(0,0,0,.125);
+      border: $border-grey;
       padding: 40PX;
       box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
       z-index: 2;

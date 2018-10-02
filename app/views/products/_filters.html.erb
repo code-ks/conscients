@@ -1,21 +1,21 @@
 <% if category.children.any? %>
   <div class="top-menu-font"><%= t('.category') %></div>
-  <div class="dropdown filter-plus-icone">
-    <%= fa_icon "plus", class: "c-pointer mr-5 ml-2", data: { toggle: "dropdown" } %>
-    <div class="dropdown-menu">
+  <div class="dropdown">
+    <%= fa_icon "angle-down", class: "c-pointer mr-5 ml-2", data: { toggle: "dropdown" } %>
+    <div class="dropdown-menu filters-dropdown-menu">
       <% category.children.each do |c| %>
-        <%= link_to c.name, category_products_path(c), class: "dropdown-item" %>
+        <%= link_to c.name, category_products_path(c), class: "dropdown-item filters-dropdown-item top-menu-font" %>
       <% end %>
     </div>
   </div>
 <% end %>
 
 <div class="top-menu-font"><%= t('.variant') %></div>
-<div class="dropdown filter-plus-icone">
-  <%= fa_icon "plus", class: "c-pointer ml-2", data: { toggle: "dropdown" } %>
-  <div class="dropdown-menu">
+<div class="dropdown">
+  <%= fa_icon "angle-down", class: "c-pointer ml-2", data: { toggle: "dropdown" } %>
+  <div class="dropdown-menu filters-dropdown-menu">
     <% category.variants.each do |variant| %>
-      <%= link_to variant.value.capitalize, category_products_path(category, variant: variant.id), class: "dropdown-item" %>
+      <%= link_to variant.value.capitalize, category_products_path(category, variant: variant.id), class: "dropdown-item filters-dropdown-item top-menu-font" %>
     <% end %>
   </div>
 </div>
