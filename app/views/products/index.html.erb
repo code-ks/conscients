@@ -13,8 +13,9 @@
     <div class="carousel-container summary">
       <p><%= @current_category.description%></p>
     </div>
+    <div class="side-line-filter"></div>
 <div class="summary">
-    <div class="d-flex align-items-center filters-margin">
+    <div class="d-flex align-items-center filters-margin side-line-filter-hide">
       <div class="top-menu-font title-grey mb-0 pr-5">Filtrer par :</div>
       <%= render 'filters', category: @current_category %>
     </div>

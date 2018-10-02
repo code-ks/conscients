@@ -16,3 +16,18 @@
 .filters-dropdown-item:hover {
   background-color: $conscients-bg-grey;
 }
+
+
+.side-line-filter {
+  width: 40vw;
+  margin: 0 auto;
+  padding-top: 2.5rem;
+  border-bottom: 1px dotted #d8d7d4;
+}
+
+.side-line-filter-hide {
+    margin-top: -12px;
+    background-color: white;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
