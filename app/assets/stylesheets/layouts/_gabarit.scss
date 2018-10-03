@@ -134,6 +134,14 @@
     }
   }
 
+  .read-more {
+    color: $conscients-coral;
+  }
+  .read-more:hover {
+    color: $conscients-coral;
+    text-decoration: underline;
+  }
+
 // ANCHOR
   .anchor {
     display:block;
