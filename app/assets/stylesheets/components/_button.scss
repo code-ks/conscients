@@ -35,6 +35,17 @@ button:focus {outline:0;}
     background-color: #60b28d;
   }
 
+// BTN BLACK
+
+  .btn-black {
+    background-color: $conscients-black;
+    color: white !important;
+  }
+
+  .btn-black:active{
+    background-color: black;
+  }
+
 // FACEBOOK CONNECT WHITE
   .fb-connect-btn-w::before {
       font-family: FontAwesome;
