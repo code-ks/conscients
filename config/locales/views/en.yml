@@ -140,6 +140,7 @@ en:
       no_product: "No product fits these criteria"
     product:
       see_product: "See"
+      read_more: "Read more"
     carousel:
       next: "Next"
       previous: "Previous"

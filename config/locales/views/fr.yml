@@ -140,6 +140,7 @@ fr:
       no_product: "Aucun produit ne répond à ces critères"
     product:
       see_product: "Voir"
+      read_more: "En savoir plus"
     carousel:
       next: "Suivant"
       previous: "Précédent"
