@@ -1,20 +1,3 @@
-.no-padding-ul {
-  padding-left: 0;
-}
-.angle-down-list:before {
-  font-family: FontAwesome;
-  content: "\f107";
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-.angle-down-list {
-  list-style: none;
-  font-family: frank ruhl libre;
-  background-color: $conscients-red;
-  border: 1px solid #dd452a;
-}
-
 
 // BACKGROUNDS FOR TEST ERASE AFTER
   .bg-pink {
@@ -82,6 +65,7 @@
     font-family: "Roboto", "sans-serif";
     letter-spacing: 0.1rem;
   }
+
 
 // **** BOXES ****
   .container-conscients{
@@ -152,12 +136,29 @@
     }
   }
 
-  .read-more {
+// READ MORE / BACK TO TOP
+  .read-more, .back-to-top {
     color: $conscients-red;
   }
-  .read-more:hover {
+  .read-more:hover, .back-to-top:hover {
     color: $conscients-red;
     text-decoration: underline;
+    // font-weight: bold;
+  }
+
+
+  .read-more:after {
+    font-family: FontAwesome;
+    content: "\f107";
+    padding-left: 10px;
+    text-decoration: underline white;
+  }
+
+  .back-to-top:after {
+    font-family: FontAwesome;
+    content: "\f106";
+    padding-left: 10px;
+    text-decoration: underline white;
   }
 
 // ANCHOR

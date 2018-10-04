@@ -141,6 +141,8 @@ en:
     product:
       see_product: "See"
       read_more: "Read more"
+      back_to_top: "Back to top"
+      social_share: "Share on "
     carousel:
       next: "Next"
       previous: "Previous"
