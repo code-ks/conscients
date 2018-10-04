@@ -1,25 +1,28 @@
 <% set_meta_tags noindex: true %>
 
-<div class="container mb-5">
+<div class="container-conscients mb-5">
   <% if @cart.line_items.empty? %>
     <h1 class="text-uppercase my-4"><%= t('.empty_cart') %></h1>
   <% else %>
-    <h1 class="text-uppercase my-4"><%= t('.cart') %></h1>
-    <div class="table-responsive text-center">
+    <!-- <h1 class="text-uppercase my-4"></%= t('.cart') %></h1> -->
+    <div class="first-title-padding page-font">
+    <h1><%= t('.cart') %></h1>
+    </div>
+    <div class="table-responsive padding-t">
       <table class="table border-table-cart">
         <thead>
-          <tr>
-            <th scope="col"><%= t('.selection') %></th>
-            <th scope="col"></th>
-            <th scope="col"><%= t('.quantity') %></th>
-            <th scope="col"><%= t('.personalized_product') %></th>
-            <th scope="col"><%= t('.total_price') %></th>
-            <th scope="col"></th>
+          <tr class="bg-grey">
+            <th scope="col" class="th-font"><%= t('.selection') %></th>
+            <th scope="col" class="th-font"></th>
+            <th scope="col" class="th-font"><%= t('.quantity') %></th>
+            <th scope="col" class="th-font"><%= t('.personalized_product') %></th>
+            <th scope="col" class="th-font"><%= t('.total_price') %></th>
+            <th scope="col" class="th-font"></th>
           </tr>
         </thead>
         <tbody>
           <% @cart.line_items.includes(:product_sku).each do |line_item| %>
-            <tr class="table-cart-bordered">
+            <tr class="table-cart-bordered th-body-font">
               <td><%= image_tag(line_item.product_images.first, height: 100) %></th>
               <td>
                 <div><%= line_item.product_sku.to_s %></div>
@@ -50,11 +53,11 @@
         <div class="h4">
           <%= t('.total_price') %> <span class="orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></span>
         </div>
-        <div class="mb-3"><%= t('.without_delivery_fees') %></div>
+        <div class="mb-3"><p><%= t('.without_delivery_fees') %></p></div>
         <% if @cart.tree_only? %>
-          <%= link_to t('.validate'), new_delivery_path(delivery_type: "email"), class: "btn btn-orange" %>
+          <%= link_to t('.validate'), new_delivery_path(delivery_type: "email"), class: "btn conscients-btn btn-green" %>
         <% else %>
-          <%= link_to t('.validate'), new_delivery_path(delivery_type: "postal"), class: "btn btn-orange" %>
+          <%= link_to t('.validate'), new_delivery_path(delivery_type: "postal"), class: "btn conscients-btn btn-green" %>
         <% end %>
       </div>
     </div>
