@@ -1,6 +1,6 @@
 <% set_meta_tags noindex: true %>
 
-<div class="container-conscients mb-5">
+<div class="container mb-5">
   <% if @cart.line_items.empty? %>
     <h1 class="text-uppercase my-4"><%= t('.empty_cart') %></h1>
   <% else %>
@@ -11,7 +11,7 @@
     <div class="table-responsive padding-t">
       <table class="table border-table-cart">
         <thead>
-          <tr class="bg-grey">
+          <tr>
             <th scope="col" class="th-font"><%= t('.selection') %></th>
             <th scope="col" class="th-font"></th>
             <th scope="col" class="th-font"><%= t('.quantity') %></th>
@@ -48,10 +48,10 @@
       </table>
     </div>
     <div class="d-flex justify-content-between align-items-end">
-      <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "orange" %></div>
+      <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "color-green" %></div>
       <div class="d-flex flex-column align-items-end">
         <div class="h4">
-          <%= t('.total_price') %> <span class="orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></span>
+          <%= t('.total_price') %> <span class="color-yellow font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></span>
         </div>
         <div class="mb-3"><p><%= t('.without_delivery_fees') %></p></div>
         <% if @cart.tree_only? %>
