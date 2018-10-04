@@ -1,5 +1,5 @@
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
+  <ol class="breadcrumb pl-0">
     <% category.path.each do |c| %>
       <li class="breadcrumb-item <%= "active" if c == category %>">
         <%= link_to c.name, category_products_path(c) %>

@@ -1,0 +1,39 @@
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+    height: 80vh;
+  }
+}
+
+.sign-up-box {
+  width: 100%;
+    @include for-tablet-landscape-up {
+      height: 100%;
+      width: 60%;
+      border: $border-grey;
+      padding: 40PX;
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+      z-index: 2;
+    }
+}
+.login-box {
+  width: 100%;
+  @include for-tablet-landscape-up {
+    height: 80%;
+    width: 40%;
+    padding: 40px;
+    border: none;
+    background-color: $conscients-yellow;
+  }
+}
+
+
+
+
+
+
+

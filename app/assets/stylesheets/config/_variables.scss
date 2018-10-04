@@ -5,7 +5,6 @@
 $body-font: 'Frank Ruhl Libre', serif;
 $headers-font: 'Roboto', sans-serif;
 
-
 /* -------------------------------------
  * Colors
  * ------------------------------------- */
@@ -22,6 +21,8 @@ $conscients-title-grey: #a6a6a6;
 $conscients-yellow: #FFC425;
 $conscients-red: #F05133;
 $conscients-blue: #17a2b8;
+// $blue:    #17a2b8 !default;
+$facebook: #3b5898;
 
 
 /* -------------------------------------
@@ -41,4 +42,7 @@ $screen-md: 992px;
 //large laptop
 $screen-lg: 1200px;
 
-
+/* -------------------------------------
+ * Border
+ * ------------------------------------- */
+$border-grey: 1px solid rgba(0,0,0,.125);

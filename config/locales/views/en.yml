@@ -140,6 +140,7 @@ en:
       no_product: "No product fits these criteria"
     product:
       see_product: "See"
+      read_more: "Read more"
     carousel:
       next: "Next"
       previous: "Previous"
@@ -334,6 +335,8 @@ en:
         already_sign_up: "Already registered?"
         sign_in: "Connect"
         subscribe_to_newsletter: "Subscribe to newsletter"
+        password: "Choose a password"
+        email: "Your email"
   shared:
     navbar:
       about: "About"

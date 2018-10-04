@@ -1,29 +1,6 @@
-// sign in page
-.sign-in-out-col {
-  // height: 500px;
-}
-.sign-in-col {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  width: 40%;
-  background-color: red;
-  height: 50px;
-}
-
-.sign-out-col {
-  position: absolute;
-  bottom: 0;
-  right: 10px;
-  width: 40%;
-  background-color: red;
-  height: 50px;
-}
-
-
 // BACKGROUNDS FOR TEST ERASE AFTER
   .bg-pink {
-    background-color: pink;
+    background-color: pink !important;
   }
   .bg-red {
     background-color: red;
@@ -46,31 +23,15 @@
     color: $conscients-green;
   }
 
-// ROW AND COL
-  .ligne {
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: -15px;
-      margin-left: -15px;
-      overflow: hidden;
+  .color-white {
+    color: white;
   }
-  .col-sm-xs-1-col-md4 {
-    flex: 0 0 100%;
-    max-width: 100%;
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right:15px;
-    padding-left: 15px;
-      @include for-tablet-landscape-up {
-      flex: O O 25%;
-      max-width: 25%;
-      position: relative;
-      width: 100%;
-      min-height: 1px;
-      padding-right: 15px;
-      padding-left: 15px;
-      }
+
+  .color-coral {
+    color: $conscients-coral;
+  }
+  .title-grey {
+    color: $conscients-title-grey;
   }
 
 // **** BASE RESPONSIVE FONT ****
@@ -90,20 +51,19 @@
           font-size: 10px;
         }
     }
-    // h3 {
-    //   font-family: "Roboto", "sans-serif";
-    //   font-size: 0.8rem;
-    //   letter-spacing: 0.1rem;
-    //     @include for-phone-only {
-    //       font-size: 10px;
-    //     }
-    // }
     p {
       font-family:"Frank Ruhl Libre", "serif";
       font-size: 1rem;
     }
+    a {
+      font-family:"Frank Ruhl Libre", "serif";
+    }
   }
 
+  .price-font {
+    font-family: "Roboto", "sans-serif";
+    letter-spacing: 0.1rem;
+  }
 
 // **** BOXES ****
   .container-conscients{
@@ -162,12 +122,6 @@
     padding-right: 16px;
   }
 
-// MARGIN
-  .filters-margin {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-
 // ****TEXT AND LINKS COLORS ****
   .t-white {
     color: white;
@@ -180,6 +134,14 @@
     }
   }
 
+  .read-more {
+    color: $conscients-coral;
+  }
+  .read-more:hover {
+    color: $conscients-coral;
+    text-decoration: underline;
+  }
+
 // ANCHOR
   .anchor {
     display:block;
@@ -187,5 +149,30 @@
     margin-top:-80px;
   }
 
-
+// ROW AND COL
+  // .ligne {
+  //     display: flex;
+  //     flex-wrap: wrap;
+  //     margin-right: -15px;
+  //     margin-left: -15px;
+  //     overflow: hidden;
+  // }
+  // .col-sm-xs-1-col-md4 {
+  //   flex: 0 0 100%;
+  //   max-width: 100%;
+  //   position: relative;
+  //   width: 100%;
+  //   min-height: 1px;
+  //   padding-right:15px;
+  //   padding-left: 15px;
+  //     @include for-tablet-landscape-up {
+  //     flex: O O 25%;
+  //     max-width: 25%;
+  //     position: relative;
+  //     width: 100%;
+  //     min-height: 1px;
+  //     padding-right: 15px;
+  //     padding-left: 15px;
+  //     }
+  // }
 

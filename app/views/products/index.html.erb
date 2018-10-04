@@ -5,22 +5,23 @@
 <div class="container-conscients">
   <% if @products.any? %>
     <%= render 'breadcrumb', category: @current_category %>
-<!--     <div class="d-flex align-items-center mb-4">
-      </%= render 'filters', category: @current_category %>
-    </div> -->
 
-    <div class="flex-container category-desciption">
-<!--     <img src="http://www.conscients.com/shop/themes/matrice/img/offrir-un-arbre-pour-une-naissance-cadeau-bio-écolo-original.png" alt=""> -->
-      <div class="description-font text-justify">
-      <!-- <h1></%= @current_category.name %></h1> -->
-        Texte de <%= @current_category.name%> avec <a href="">mots clés</a>.Il y a tant d’occasion de faire de petits cadeaux et c’est si bon de faire plaisir. Mais vous n’avez pas envie d’acheter des babioles inutiles. Alors, offrir un arbre est l’idée qu’il vous faut. Un arbre en cadeau de naissance, d’anniversaire, de baptême, de mariage, pour noël, pour dire merci… Un arbre planté en Amazonie, dont vous recevrez le certificat nominatif et le fichier de géolocalisation par e-mail. Chaque arbre cadeau sera un petit geste répété qui, au final, aura un grand impact pour notre planète.
-      </div>
+  <div class="container-conscients page-font">
+    <h1><%= @current_category.name%></h1>
+  </div>
+
+    <div class="carousel-container summary">
+      <p><%= @current_category.description%></p>
     </div>
-
-
-    <div class="d-flex align-items-center filters-margin">
+    <div class="side-line-filter"></div>
+<div class="summary">
+    <div class="d-flex align-items-center filters-margin side-line-filter-hide">
+      <div class="top-menu-font title-grey mb-0 pr-5">Filtrer par :</div>
       <%= render 'filters', category: @current_category %>
     </div>
+</div>
+
+
     <div class="card-deck">
       <%= render @products %>
     </div>
@@ -29,3 +30,4 @@
     <h2><%= t('.no_product') %></h2>
   <% end %>
 </div>
+
