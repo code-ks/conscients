@@ -28,6 +28,41 @@
     font-weight: 400;
 }
 
-.th-body-font {
+.td-font {
   font-family: "Frank Ruhl Libre", "serif";
 }
+
+.conscients-table-responsive {
+  table-layout: fixed;
+  // table-layout: auto;
+  width: 100%;
+  // border: $border-grey;
+}
+
+
+.first-col-fix-width td:nth-child(1),
+.first-col-fix-width th:nth-child(1)  {
+  width: 70px;
+  // background-color: green;
+}
+.first-col-fix-width td:nth-child(2), .first-col-fix-width td:nth-child(4),
+.first-col-fix-width th:nth-child(2), .first-col-fix-width th:nth-child(4){
+  width: 60%;
+  // background-color: pink;
+}
+
+.first-col-fix-width td:nth-child(3), .first-col-fix-width td:nth-child(5),
+.first-col-fix-width th:nth-child(3), .first-col-fix-width th:nth-child(5) {
+  width: 40%;
+  // background-color: blue;
+}
+
+.first-col-fix-width td:nth-child(6),
+.first-col-fix-width th:nth-child(6) {
+  width: 10%;
+  // background-color: red;
+}
+
+// .conscients-td-responsive {
+//   word-wrap: break-word;
+// }
