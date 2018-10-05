@@ -10,86 +10,51 @@
     </div>
     <table class="conscients-table-responsive first-col-fix-width">
       <thead>
-        <tr>
-          <th class="th-font">Selection</th>
-          <th class="th-font">..</th>
-          <th class="th-font">Quantité</th>
-          <th class="th-font">Produit personnalisé</th>
-          <th class="th-font">Total</th>
-          <th class="th-font">..</th>
+        <tr class="top-tr text-center">
+          <th class="th-font"><%= t('.selection') %></th>
+          <th class="th-font"></th>
+          <th class="th-font"><%= t('.quantity') %></th>
+          <th class="th-font"><%= t('.personalized_product') %></th>
+          <th class="th-font"><%= t('.total_price') %></th>
+          <th class="th-font"></th>
         </tr>
       </thead>
       <tbody>
-        <tr class="border td-font">
-          <td>1</td>
-          <td>1.2</td>
-          <td>1.3</td>
-          <td>1.4</td>
-          <td>1.5</td>
-          <td>1.6</td>
-        </tr>
-        <tr class="border td-font">
-          <td>2</td>
-          <td>2.2</td>
-          <td>2.3</td>
-          <td>2.4</td>
-          <td>2.5</td>
-          <td>2.6</td>
-        </tr>
+        <% @cart.line_items.includes(:product_sku).each do |line_item| %>
+          <tr class="border-bottom-dotted td-font text-center">
+            <td class="cart-img"><%= image_tag(line_item.product_images.first) %></td>
+            <td>
+              <div><%= line_item.product_sku.to_s %></div>
+              <div><%= line_item.recipient_name if line_item&.recipient_name&.present? %></div>
+            </td>
+            <td><%= line_item.quantity %></td>
+            <td>
+              <div><%= l(line_item.certificate_date, format: :default) if line_item&.certificate_date&.present? %></div>
+              <div><%= line_item.recipient_message if line_item&.recipient_message&.present? %></div>
+            </td>
+            <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
+            <td>
+              <%= link_to product_path(line_item.product, line_item: line_item) do %>
+                <%= fa_icon "pencil", class: "c-pointer mr-3" %>
+              <% end %>
+              <%= link_to product_line_item_path(line_item.product, line_item), method: :delete do %>
+                <%= fa_icon "times", class: "c-pointer mr-3" %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
       </tbody>
     </table>
 
 <div><h1 class="color-white">spacing</h1><h1 class="color-white">spacing</h1></div>
 
-    <!-- <div class="table-responsive padding-t"> -->
-    <!-- <div class="table padding-t"> -->
-      <table class="table border-table-cart">
-      <!-- <table class="conscients-table-responsive first-col-fix-width"> -->
-        <thead>
-          <tr>
-            <th scope="col" class="th-font"><%= t('.selection') %></th>
-            <th scope="col" class="th-font"></th>
-            <th scope="col" class="th-font"><%= t('.quantity') %></th>
-            <th scope="col" class="th-font"><%= t('.personalized_product') %></th>
-            <th scope="col" class="th-font"><%= t('.total_price') %></th>
-            <th scope="col" class="th-font"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @cart.line_items.includes(:product_sku).each do |line_item| %>
-            <tr class="table-cart-bordered td-font">
-              <!-- <td></%= image_tag(line_item.product_images.first, height: 100) %></th> -->
-              <td><%= image_tag(line_item.product_images.first, width: 50) %></td>
-              <td>
-                <div><%= line_item.product_sku.to_s %></div>
-                <div><%= line_item.recipient_name if line_item&.recipient_name&.present? %></div>
-              </td>
-              <td><%= line_item.quantity %></td>
-              <td>
-                <div><%= l(line_item.certificate_date, format: :default) if line_item&.certificate_date&.present? %></div>
-                <div><%= line_item.recipient_message if line_item&.recipient_message&.present? %></div>
-              </td>
-              <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
-              <td>
-                <%= link_to product_path(line_item.product, line_item: line_item) do %>
-                  <%= fa_icon "pencil", class: "c-pointer mr-3" %>
-                <% end %>
-                <%= link_to product_line_item_path(line_item.product, line_item), method: :delete do %>
-                  <%= fa_icon "times", class: "c-pointer mr-3" %>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <!-- </div> -->
     <div class="d-flex justify-content-between align-items-end">
       <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "color-green" %></div>
       <div class="d-flex flex-column align-items-end">
-        <div class="h4">
-          <%= t('.total_price') %> <span class="color-yellow font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></span>
+        <div class="total-font">
+          <%= t('.total_price') %> <span class="color-green"><%= humanized_money_with_symbol @cart.ttc_price %></span>
         </div>
-        <div class="mb-3"><p><%= t('.without_delivery_fees') %></p></div>
+        <div class="mb-3 total-comment-font"><p><%= t('.without_delivery_fees') %></p></div>
         <% if @cart.tree_only? %>
           <%= link_to t('.validate'), new_delivery_path(delivery_type: "email"), class: "btn conscients-btn btn-green" %>
         <% else %>
