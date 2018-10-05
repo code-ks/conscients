@@ -16,7 +16,7 @@
 // carole
 
 .cart-img img {
-  width: 50px;
+  width: 35px;
   @include for-tablet-landscape-up {
     width: 100px;
   }
@@ -30,17 +30,18 @@
   // background-color: #fbf9f9;
 }
 .th-font {
-    // font-family: "Frank Ruhl Libre", "serif";
-    // color: $conscients-light-grey;
-    // font-weight: 400;
     font-family: "Frank Ruhl Libre", "serif";
     padding-bottom: 10PX;
     padding-top: 10PX;
     font-family: roboto;
-    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
     font-weight: 300;
+    font-size: 0.5rem;
+    word-wrap: break-word;
+    @include for-tablet-landscape-up {
+      font-size: 0.7rem;
+      letter-spacing: 0.1rem;
+    }
 }
 td {
   padding-top: 0.5rem;
@@ -49,6 +50,9 @@ td {
 .td-font {
   font-family: "Frank Ruhl Libre", "serif";
   font-weight: 300;
+  @include for-phone-only {
+    font-size: 0.6rem;
+  }
 }
 
 .conscients-table-responsive {
@@ -61,29 +65,39 @@ td {
 .first-col-fix-width td:nth-child(1),
 .first-col-fix-width th:nth-child(1)  {
   width: 13%;
-  // background-color: green;
+  @include for-phone-only {
+    width: 13%;
+  }
 }
 .first-col-fix-width td:nth-child(2),
 .first-col-fix-width th:nth-child(2),{
   width: 25%;
-  // background-color: blue;
+  @include for-phone-only {
+    width: 28%;
+  }
 }
 
 .first-col-fix-width td:nth-child(3), .first-col-fix-width td:nth-child(5),
 .first-col-fix-width th:nth-child(3), .first-col-fix-width th:nth-child(5){
   width: 10%;
-  // background-color: pink;
+  @include for-phone-only {
+    width: 8%;
+  }
 }
 .first-col-fix-width td:nth-child(4),
 .first-col-fix-width th:nth-child(4) {
   width: 37%;
-  // background-color: red;
+  @include for-phone-only {
+    width: 32%;
+  }
 }
 
 .first-col-fix-width td:nth-child(6),
 .first-col-fix-width th:nth-child(6) {
   width: 5%;
-  // background-color: red;
+  @include for-phone-only {
+    width: 11%;
+  }
 }
 // .conscients-td-responsive {
 //   word-wrap: break-word;
@@ -101,3 +115,18 @@ td {
   letter-spacing: 0.1rem;
   font-weight: 300;
 }
+
+.continue-shopping {
+  padding: 0.375rem 0.75rem;
+  font-family: "Roboto", "sans-serif";
+  text-transform: Uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.continue-shopping:before {
+  font-family: FontAwesome;
+  content: "\f104";
+  padding-right: 10px;
+}
+

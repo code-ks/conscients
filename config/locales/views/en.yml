@@ -233,7 +233,7 @@ en:
         cart: "Cart"
         empty_cart: "Empty cart"
         selection: "Selection"
-        quantity: "Quantity"
+        quantity: "Qty"
         personalized_product: "Personalized product"
         total_price: "Total"
         without_delivery_fees: "This price does not include delivery fees"

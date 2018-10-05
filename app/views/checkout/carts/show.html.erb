@@ -8,7 +8,7 @@
     <div class="first-title-padding page-font">
     <h1><%= t('.cart') %></h1>
     </div>
-    <table class="conscients-table-responsive first-col-fix-width">
+    <table class="conscients-table-responsive first-col-fix-width mb-3">
       <thead>
         <tr class="top-tr text-center">
           <th class="th-font"><%= t('.selection') %></th>
@@ -46,15 +46,15 @@
       </tbody>
     </table>
 
-<div><h1 class="color-white">spacing</h1><h1 class="color-white">spacing</h1></div>
+
 
     <div class="d-flex justify-content-between align-items-end">
-      <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "color-green" %></div>
+      <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "continue-shopping color-green" %></div>
       <div class="d-flex flex-column align-items-end">
         <div class="total-font">
           <%= t('.total_price') %> <span class="color-green"><%= humanized_money_with_symbol @cart.ttc_price %></span>
         </div>
-        <div class="mb-3 total-comment-font"><p><%= t('.without_delivery_fees') %></p></div>
+        <div class="mb-5 total-comment-font"><p><%= t('.without_delivery_fees') %></p></div>
         <% if @cart.tree_only? %>
           <%= link_to t('.validate'), new_delivery_path(delivery_type: "email"), class: "btn conscients-btn btn-green" %>
         <% else %>
