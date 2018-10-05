@@ -142,6 +142,7 @@ fr:
       see_product: "Voir"
       read_more: "En savoir plus"
       back_to_top: "Retour haut de page"
+      car_max_message: "110 caractères max"
       social_share: "Partager sur "
     carousel:
       next: "Suivant"

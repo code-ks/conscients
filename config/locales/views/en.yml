@@ -142,6 +142,7 @@ en:
       see_product: "See"
       read_more: "Read more"
       back_to_top: "Back to top"
+      car_max_message: "Max 110 characters"
       social_share: "Share on "
     carousel:
       next: "Next"
