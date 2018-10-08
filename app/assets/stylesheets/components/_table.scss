@@ -16,7 +16,7 @@
 // carole
 
 .cart-img img {
-  width: 35px;
+  width: 30px;
   @include for-tablet-landscape-up {
     width: 100px;
   }
@@ -44,17 +44,32 @@
     }
 }
 td {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  // padding-top: 0.5rem;
+  // padding-bottom: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .td-font {
   font-family: "Frank Ruhl Libre", "serif";
   font-weight: 300;
   @include for-phone-only {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 }
 
+.heart-before:before {
+  font-family: FontAwesome;
+  content: "\f004";
+  color: $conscients-red;
+  font-size: 0.5rem;
+  padding-right: 5px;
+}
+.heart-before:white {
+  font-family: FontAwesome;
+  content: "\f004";
+  color: white;
+  font-size: 0.5rem;
+}
 .conscients-table-responsive {
   table-layout: fixed;
   width: 100%;
@@ -66,7 +81,8 @@ td {
 .first-col-fix-width th:nth-child(1)  {
   width: 13%;
   @include for-phone-only {
-    width: 13%;
+    width: 10%;
+    // background-color: red;
   }
 }
 .first-col-fix-width td:nth-child(2),
@@ -74,21 +90,33 @@ td {
   width: 25%;
   @include for-phone-only {
     width: 28%;
+    // background-color: pink;
   }
 }
 
-.first-col-fix-width td:nth-child(3), .first-col-fix-width td:nth-child(5),
-.first-col-fix-width th:nth-child(3), .first-col-fix-width th:nth-child(5){
+.first-col-fix-width td:nth-child(3),
+.first-col-fix-width th:nth-child(3),{
   width: 10%;
   @include for-phone-only {
     width: 8%;
+    // background-color: yellow;
   }
 }
 .first-col-fix-width td:nth-child(4),
 .first-col-fix-width th:nth-child(4) {
   width: 37%;
   @include for-phone-only {
-    width: 32%;
+    width: 33%;
+    // background-color: green;
+  }
+}
+
+.first-col-fix-width td:nth-child(5),
+.first-col-fix-width th:nth-child(5) {
+  width: 10%;
+  @include for-phone-only {
+    width: 15%;
+    // background-color: green;
   }
 }
 
@@ -96,7 +124,8 @@ td {
 .first-col-fix-width th:nth-child(6) {
   width: 5%;
   @include for-phone-only {
-    width: 11%;
+    width: 6%;
+    // background-color: cyan;
   }
 }
 // .conscients-td-responsive {

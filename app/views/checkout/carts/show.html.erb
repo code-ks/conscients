@@ -11,10 +11,10 @@
     <table class="conscients-table-responsive first-col-fix-width mb-3">
       <thead>
         <tr class="top-tr text-center">
-          <th class="th-font"><%= t('.selection') %></th>
+          <th class="th-font text-nowrap"><%= t('.selection') %></th>
           <th class="th-font"></th>
           <th class="th-font"><%= t('.quantity') %></th>
-          <th class="th-font"><%= t('.personalized_product') %></th>
+          <th class="th-font text-left"><%= t('.personalized_product') %></th>
           <th class="th-font"><%= t('.total_price') %></th>
           <th class="th-font"></th>
         </tr>
@@ -24,21 +24,37 @@
           <tr class="border-bottom-dotted td-font text-center">
             <td class="cart-img"><%= image_tag(line_item.product_images.first) %></td>
             <td>
-              <div><%= line_item.product_sku.to_s %></div>
-              <div><%= line_item.recipient_name if line_item&.recipient_name&.present? %></div>
+              <div class="text-left"><%= line_item.product_sku.to_s %></div>
+<!--               <div class="td-mobile-left"></%= line_item.recipient_name if line_item&.recipient_name&.present? %></div> -->
+
+              <div class="text-left">
+                <% if line_item&.recipient_name&.present? %>
+                <span class= "heart-before"><%= line_item.recipient_name %></span>
+                <% else %>
+                <%= "" %>
+                <% end %>
+              </div>
             </td>
             <td><%= line_item.quantity %></td>
             <td>
-              <div><%= l(line_item.certificate_date, format: :default) if line_item&.certificate_date&.present? %></div>
-              <div><%= line_item.recipient_message if line_item&.recipient_message&.present? %></div>
+<!--               <div class="td-mobile-left heart-before"></%= l(line_item.certificate_date, format: :default) if line_item&.certificate_date&.present? %></div> -->
+
+              <div class="text-left">
+                <% if line_item&.certificate_date&.present?%>
+                  <span class="heart-before"><%= l(line_item.certificate_date, format: :default)%></span>
+                <% else %>
+                  <%= ""%>
+                <% end %>
+              </div>
+              <div class="text-left"><%= line_item.recipient_message if line_item&.recipient_message&.present? %></div>
             </td>
             <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
             <td>
               <%= link_to product_path(line_item.product, line_item: line_item) do %>
-                <%= fa_icon "pencil", class: "c-pointer mr-3" %>
+                <%= fa_icon "pencil", class: "c-pointer" %>
               <% end %>
               <%= link_to product_line_item_path(line_item.product, line_item), method: :delete do %>
-                <%= fa_icon "times", class: "c-pointer mr-3" %>
+                <%= fa_icon "times", class: "c-pointer" %>
               <% end %>
             </td>
           </tr>
