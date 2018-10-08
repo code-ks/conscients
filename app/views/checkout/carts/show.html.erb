@@ -23,7 +23,7 @@
         <% @cart.line_items.includes(:product_sku).each do |line_item| %>
           <tr class="border-bottom-dotted td-font text-center">
             <td class="cart-img"><%= image_tag(line_item.product_images.first) %></td>
-            <td>
+            <td class= pl-2>
               <div class="text-left"><%= line_item.product_sku.to_s %></div>
 <!--               <div class="td-mobile-left"></%= line_item.recipient_name if line_item&.recipient_name&.present? %></div> -->
 
@@ -36,7 +36,7 @@
               </div>
             </td>
             <td><%= line_item.quantity %></td>
-            <td>
+            <td class= px-2>
 <!--               <div class="td-mobile-left heart-before"></%= l(line_item.certificate_date, format: :default) if line_item&.certificate_date&.present? %></div> -->
 
               <div class="text-left">

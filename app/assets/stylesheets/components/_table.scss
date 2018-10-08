@@ -160,6 +160,7 @@ td {
   letter-spacing: 0.1rem;
   @include for-phone-only {
     font-size: 0.6rem;
+    color: $conscients-grey;
   }
 }
 
