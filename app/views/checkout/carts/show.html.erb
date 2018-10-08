@@ -65,7 +65,7 @@
 
 
     <div class="d-flex justify-content-between align-items-end">
-      <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "continue-shopping color-green" %></div>
+      <div><%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "continue-shopping color-green text-nowrap" %></div>
       <div class="d-flex flex-column align-items-end">
         <div class="total-font">
           <%= t('.total_price') %> <span class="color-green"><%= humanized_money_with_symbol @cart.ttc_price %></span>

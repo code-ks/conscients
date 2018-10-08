@@ -53,7 +53,7 @@ td {
   font-family: "Frank Ruhl Libre", "serif";
   font-weight: 300;
   @include for-phone-only {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -136,6 +136,9 @@ td {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  @include for-phone-only {
+    font-size: 0.8rem;
+  }
 }
 .total-comment-font p{
   font-family: roboto;
@@ -143,6 +146,10 @@ td {
   font-size: 0.7rem;
   letter-spacing: 0.1rem;
   font-weight: 300;
+  @include for-phone-only {
+    font-size: 0.6rem;
+    text-align: right;
+  }
 }
 
 .continue-shopping {
@@ -151,6 +158,9 @@ td {
   text-transform: Uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
+  @include for-phone-only {
+    font-size: 0.6rem;
+  }
 }
 
 .continue-shopping:before {
