@@ -115,6 +115,8 @@ fr:
         updated_at: "Mise à jour le"
       variant:
         value: "Valeur"
+        value_fr: "Valeur FR"
+        value_en: "Valeur EN"
         created_at: "Créé le"
         updated_at: "Mise à jour le"
       address:

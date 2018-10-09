@@ -3,6 +3,24 @@
 MoneyRails.configure do |config|
   # To set the default currency
   #
+
+  eur_options = {
+    "priority": 2,
+    "iso_code": 'EUR',
+    "name": 'Euro',
+    "symbol": '€',
+    "alternate_symbols": [],
+    "subunit": 'Cent',
+    "subunit_to_unit": 100,
+    "symbol_first": false,
+    "html_entity": '&#x20AC;',
+    "decimal_mark": ',',
+    "thousands_separator": '.',
+    "iso_numeric": '978',
+    "smallest_denomination": 1
+  }
+
+  Money::Currency.register eur_options
   config.default_currency = :eur
 
   # Set default bank object

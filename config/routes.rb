@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       resources :blog_posts
     end
     resources :blog_posts, only: %i[index show]
+    resources :contacts, only: :create
+    resources :newsletter_subscriptions, only: :create
     resource :clients, only: :show
     resources :categories, only: [] do
       resources :products, only: :index

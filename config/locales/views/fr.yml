@@ -135,6 +135,14 @@ fr:
       faq_q_nine_body: "Text text text text text text text text text text text text text text text text "
       faq_q_ten_title: "Question 10"
       faq_q_ten_body: "Text text text text text text text text text text text text text text text text "
+    breadcrumb:
+      about: 'A propos'
+      contact: 'Contact'
+      faq: 'FAQ'
+      participate: 'B2B'
+      payment_shipping: 'Paiements, Livraison, Retours'
+      site_map: 'Plan du site'
+      terms: 'Mentions légales et CGV'
   products:
     index:
       no_product: "Aucun produit ne répond à ces critères"
@@ -169,6 +177,11 @@ fr:
       delivery_fees_ht: "Frais de livraison HT"
       coupon_discount_ht: "Réduction HT"
       total_price: "Prix total"
+  blog_posts:
+    index:
+      journal: 'Journal'
+    show:
+      journal: 'Journal'
   certificates:
     new:
       tree_quantity:
@@ -338,6 +351,8 @@ fr:
         subscribe_to_newsletter: "S'inscrire à la newsletter"
         password: "Mot de passe"
         email: "Email"
+        forgot_your_password: "Mot de passe oublié?"
+        sign_in_with_provider: "S'inscrire/Se connecter avec Facebook"
   shared:
     navbar:
       about: "A propos"
@@ -347,11 +362,13 @@ fr:
       search: "Rechercher"
       sign_in: "Me connecter"
       blog: "Journal"
+      sign_out: "Me déconnecter"
     footer:
       site_map_link: "Plan du site"
       payment_shipping_link: "Paiement Livraison Retours"
       terms_link: "Mentions légales et CGV"
       faq_link: "FAQ"
+      subscribe_to_newsletter: "M'inscrire à la newsletter"
   helpers:
     placeholder:
       search: "Ma recherche..."
@@ -379,6 +396,13 @@ fr:
         download_invoice: "Télécharger la facture"
         download_certificate: "Télécharger le certificat"
   flash:
+    newsletter_subscription:
+      create:
+        alert: "Vous n'avez pas pu être inscrit à la newsletter"
+        notice: 'Vous avez été inscrit à la newsletter'
+    contact:
+      create:
+        notice: "Votre message a bien été envoyé"
     line_items:
       create:
         notice: "Produit bien ajouté au panier"
