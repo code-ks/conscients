@@ -151,30 +151,6 @@
     }
   }
 
-// READ MORE / BACK TO TOP
-  .read-more, .back-to-top {
-    color: $conscients-red;
-  }
-  .read-more:hover, .back-to-top:hover {
-    color: $conscients-red;
-    text-decoration: underline;
-    // font-weight: bold;
-  }
-
-
-  .read-more:after {
-    font-family: FontAwesome;
-    content: "\f107";
-    padding-left: 10px;
-    text-decoration: underline white;
-  }
-
-  .back-to-top:after {
-    font-family: FontAwesome;
-    content: "\f106";
-    padding-left: 10px;
-    text-decoration: underline white;
-  }
 
 // ANCHOR
   .anchor {
