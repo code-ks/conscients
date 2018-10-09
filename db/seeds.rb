@@ -9,7 +9,8 @@ Category.create!(name_fr: 'Coups de Coeur', slug_fr: 'coups-de-coeur',
                  name_en: 'Favorites', slug_en: 'favorites', parent: node)
 
 first_child = Category.create!(name_fr: 'Bébés', slug_fr: 'bebes',
-                               name_en: 'Babies', slug_en: 'babies', parent: node)
+                               name_en: 'Babies', slug_en: 'babies', parent: node,
+                               home_display: 4)
 Category.create!(name_fr: 'Vêtements bio garçon', slug_fr: 'bebe-vetements-bio-garçon',
                  name_en: 'Cloths bio boy', slug_en: 'baby-cloths-bio-boy', parent: first_child)
 Category.create!(name_fr: 'Vêtements bio fille', slug_fr: 'bebe-vetements-bio-fille',
@@ -38,13 +39,16 @@ Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'enfants-give-a-tree',
 first_child = Category.create!(name_fr: 'Cadeaux', slug_fr: 'cadeaux',
                               name_en: 'Gifts', slug_en: 'gifts', parent: node)
 Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'gifts-give-a-tree',
-                 name_en: 'Give a tree', slug_en: 'gifts-give-a-tree', parent: first_child)
+                 name_en: 'Give a tree', slug_en: 'gifts-give-a-tree', parent: first_child,
+                 home_display: 3)
 Category.create!(name_fr: 'Cadeaux de naissance', slug_fr: 'cadeaux-cadeaux-de-naissance',
-                 name_en: 'Birth gifts', slug_en: 'gifts-birth-gifts', parent: first_child)
+                 name_en: 'Birth gifts', slug_en: 'gifts-birth-gifts', parent: first_child,
+                 home_display: 1)
 second_child = Category.create!(name_fr: 'Pour les grands et les petits',
                                 slug_fr: 'cadeaux-grands-et-les-petits',
                                 name_en: 'For bigs and smalls',
-                                slug_en: 'gifts-for-big-and-smalls', parent: first_child)
+                                slug_en: 'gifts-for-big-and-smalls', parent: first_child,
+                                home_display: 2)
 Category.create!(name_fr: 'Cadeaux de naissance',
                 slug_fr: 'cadeaux-pour-tous-de-naissance', name_en: 'Birth gifts',
                 slug_en: 'gifts-for-everybody-birth-gifts', parent: second_child)

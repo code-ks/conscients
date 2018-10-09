@@ -39,6 +39,7 @@ class Product < ApplicationRecord
   has_many :variants, through: :product_skus
   has_many :coupons, dependent: :destroy
   has_many_attached :images
+  has_one_attached :background_image
   has_one_attached :certificate_background
 
   extend Mobility
@@ -69,6 +70,7 @@ class Product < ApplicationRecord
   validates :product_type, inclusion: { in: product_types.keys }
   validates :ht_price_cents, numericality: { greater_than_or_equal_to: 1 }
   validates :certificate_background, presence: true, if: :tree?
+  validates :background_image, presence: true
 
   default_scope { i18n.friendly.in_order }
   scope :published, -> { where(published: true) }

@@ -155,6 +155,7 @@ fr:
     filters:
       category: "Catégorie"
       variant: "Age"
+      back_to_everything: "Tous les âges"
     added_to_cart_modal:
       tree_added_with_recipient: "Un arbre pour %{recipient} a été ajouté au panier."
       product_added_with_recipient: "Un produit pour %{recipient} a été ajouté au panier."

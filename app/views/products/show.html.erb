@@ -20,7 +20,7 @@
     </div>
       <hr>
       <a id="product-description-anchor" class="anchor">
-      <p><%= @product.description_long %></p>
+      <p><%= simple_format(@product.description_long) %></p>
       <div class="social-likes">
         <div data-service="facebook" title="Share link on Facebook">Facebook</div>
         <div data-service="twitter" title="Share link on Twitter">Twitter</div>

@@ -11,7 +11,7 @@ ActiveAdmin.register Product do
                 :published, :ht_buying_price_cents, :seo_title_fr, :seo_title_en,
                 :meta_description_fr, :meta_description_en, :keywords_fr, :keywords_en, :slug_fr,
                 :slug_en, :producer_latitude, :producer_longitude, :certificate_background,
-                images: []
+                :background_image, images: []
 
   includes :text_translations, :images_attachments, :certificate_background_attachment
 
@@ -68,6 +68,9 @@ ActiveAdmin.register Product do
     column :keywords_en
     column :producer_latitude
     column :producer_longitude
+    column :background_image do |product|
+      image_tag(product.background_image, height: 200) if product.background_image.attached?
+    end
     column :certificate_background do |product|
       if product.certificate_background.attached?
         image_tag(product.certificate_background, height: 200)
@@ -87,8 +90,8 @@ ActiveAdmin.register Product do
       f.input :slug_en
       f.input :description_short_fr
       f.input :description_short_en
-      f.input :description_long_fr
-      f.input :description_long_en
+      f.input :description_long_fr, as: :text
+      f.input :description_long_en, as: :text
       f.input :product_class_fr
       f.input :product_class_en
       f.input :images, as: :file, input_html: { multiple: true },
@@ -113,6 +116,10 @@ ActiveAdmin.register Product do
       f.input :meta_description_en
       f.input :keywords_fr
       f.input :keywords_en
+      f.input :background_image, as: :file,
+              hint: if product.background_image.attached?
+                      image_tag(f.object.background_image, height: 200)
+                    end
       f.input :certificate_background, as: :file,
               hint: if product.certificate_background.attached?
                       image_tag(f.object.certificate_background, height: 200)
@@ -161,6 +168,9 @@ ActiveAdmin.register Product do
       row :keywords_en
       row :producer_latitude
       row :producer_longitude
+      row :background_image do |product|
+        image_tag(product.background_image, height: 200) if product.background_image.attached?
+      end
       row :certificate_background do |product|
         if product.certificate_background.attached?
           image_tag(product.certificate_background, height: 200)
