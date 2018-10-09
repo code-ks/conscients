@@ -309,9 +309,10 @@
 
 // SOCIAL
   .social-box {
-    height: 150px;
+    height: 200px;
     display: flex;
     margin-top: 60px;
+    align-items: center;
     @include for-phone-only {
       height: 75px;
       margin-top: 32px;

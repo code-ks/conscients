@@ -4,9 +4,7 @@ function refreshForm(innerHTML) {
 }
 
 <% if @line_item.errors.any? %>
-  <% line_item = LineItem.new %>
-  <% line_item.errors.merge!(@line_item.errors) %>
-  refreshForm('<%= j render "products/add_to_cart_form", product: @product, line_item: line_item %>');
+  refreshForm('<%= j render "products/add_to_cart_form", product: @product, line_item: @line_item %>');
 <% else %>
   refreshForm('<%= j render "products/add_to_cart_form", product: @product, line_item: LineItem.new %>');
   launchModal('#added_to_cart_modal');

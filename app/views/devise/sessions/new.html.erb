@@ -8,59 +8,60 @@
 
   <div class="sign-in-container">
     <div class="sign-up-box">
-        <h2><%= t('.sign_up') %></h2>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
+      <h2><%= t('.sign_up') %></h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-          <div class="form-group">
-            <%= f.check_box :newsletter_subscriber %>
-            <%= f.label t('.subscribe_to_newsletter') %>
-          </div>
+        <div class="form-group">
+          <%= f.check_box :newsletter_subscriber %>
+          <%= f.label t('.subscribe_to_newsletter') %>
+        </div>
 
-          <div class="form-group">
-          <label for="contact-name" class="label-font"><%= t '.email' %></label>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mr-sm-2", placeholder: nil %>
-          </div>
+        <div class="form-group">
+        <label for="contact-name" class="label-font"><%= t '.email' %></label>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mr-sm-2", placeholder: nil %>
+        </div>
 
-          <div class="form-group">
-          <label for="contact-name" class="label-font"><%= t '.password' %></label>
-            <% if @minimum_password_length %>
-            <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-            <% end %>
-            <%= f.password_field :password, autocomplete: "off", class: "form-control mr-sm-2", placeholder: nil %>
-          </div>
+        <div class="form-group">
+        <label for="contact-name" class="label-font"><%= t '.password' %></label>
+          <% if @minimum_password_length %>
+          <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control mr-sm-2", placeholder: nil %>
+        </div>
 
-          <%= f.submit t('.sign_up'), class: "btn conscients-btn btn-green w-100 mt-3" %>
-        <% end %>
-        <button class="fb-connect-btn-w">S'inscrire/Se connecter avec Facebook</button>
+        <%= f.submit t('.sign_up'), class: "btn conscients-btn btn-green w-100 mt-3" %>
+      <% end %>
+    <button class="fb-connect-btn-w"><%= link_to t('.sign_in_with_provider', provider: OmniAuth::Utils.camelize(:facebook)), omniauth_authorize_path(resource_name, :facebook) %></button>
     </div>
 
     <div class="login-box color-white">
-        <h2><%= t('.sign_in') %></h2>
+      <h2><%= t('.sign_in') %></h2>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+        <label for="contact-name" class="label-font"><%= t '.email' %></label>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mr-sm-2", placeholder: nil %>
+        </div>
+
+        <div class="form-group">
+        <label for="contact-name" class="label-font"><%= t '.password' %></label>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control mr-sm-2", placeholder: nil %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
           <div class="form-group">
-          <label for="contact-name" class="label-font"><%= t '.email' %></label>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mr-sm-2", placeholder: nil %>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
           </div>
+        <% end -%>
 
-          <div class="form-group">
-          <label for="contact-name" class="label-font"><%= t '.password' %></label>
-            <%= f.password_field :password, autocomplete: "off", class: "form-control mr-sm-2", placeholder: nil %>
-          </div>
-
-          <% if devise_mapping.rememberable? -%>
-            <div class="form-group">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-          <% end -%>
-
-          <%= f.submit t('.sign_in'), class: "btn conscients-btn btn-green w-100" %>
-        <% end %>
-      <div class="padding-t"><u><%= render "devise/shared/links" %></u></div>
+        <%= f.submit t('.sign_in'), class: "btn conscients-btn btn-green w-100" %>
+      <% end %>
+    <div class="padding-t">
+      <%= link_to t(".forgot_your_password"), new_password_path(resource_name) %><br />
     </div>
-  </div>
+
   </div>
 
 

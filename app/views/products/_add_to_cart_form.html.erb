@@ -28,7 +28,7 @@
     <div class="form-group row">
       <%= form.label :recipient_name, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
-        <%= form.text_field :recipient_name, class: "form-control mr-sm-2", maxlength: 60 %>
+        <%= form.text_field :recipient_name, class: "form-control mr-sm-2", maxlength: 32 %>
       </div>
     </div>
 
@@ -42,7 +42,7 @@
     <div class="form-group row">
       <%= form.label :recipient_message, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
-        <%= form.text_area :recipient_message, class: "form-control mr-sm-2", maxlength: 300 %>
+        <%= form.text_area :recipient_message, class: "form-control mr-sm-2", maxlength: 110 %>
       </div>
     </div>
 

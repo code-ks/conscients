@@ -4,18 +4,21 @@
 #
 # Table name: categories
 #
-#  id          :bigint(8)        not null, primary key
-#  name        :string
-#  slug        :string
-#  description :text
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  ancestry    :string
-#  position    :integer
+#  id           :bigint(8)        not null, primary key
+#  name         :string
+#  slug         :string
+#  description  :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  ancestry     :string
+#  position     :integer
+#  home_display :integer
 #
 
 class Category < ApplicationRecord
   has_many :categorizations, dependent: :destroy
+
+  before_destroy :stop_destroy
 
   has_ancestry
   acts_as_list scope: [:ancestry]
@@ -28,6 +31,7 @@ class Category < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 3, maximum: 40 }
   validates :slug, presence: true, uniqueness: true, length: { minimum: 3, maximum: 40 }
+  validates :home_display, uniqueness: true
 
   default_scope { i18n.friendly.in_order }
   scope :in_order, -> { order(position: :asc) }

@@ -10,7 +10,7 @@
       <% end %>
       <div class="navbar-item text-right">
         <% if current_client %>
-          <%= link_to t('.my_account'), clients_path, data: { turbolinks: false } %>
+          <%= link_to t('.my_account'), clients_path, data: { turbolinks: false } %> | <%= link_to t('.sign_out'), destroy_client_session_path, method: :delete %>
         <% else %>
           <%= link_to t('.sign_in'), new_client_session_path %>
         <% end %>

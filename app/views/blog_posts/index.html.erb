@@ -3,6 +3,18 @@
                  keywords: I18n.t('meta_tags.blog_posts.index.keywords') %>
 
 <div class="container my-5">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <%= link_to t('.home'), root_path %>
+      </li>
+      <li class="breadcrumb-item active">
+        <%= link_to t(".journal"), blog_posts_path %>
+      </li>
+    </ol>
+  </nav>
+
   <%= render @blog_posts %>
 
   <div class="d-flex justify-content-center"><%= paginate @blog_posts %></div>
