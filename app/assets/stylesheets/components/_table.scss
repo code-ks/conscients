@@ -13,178 +13,170 @@
      vertical-align: middle;
 }
 
-// carole
-.conscients-table-responsive {
-  table-layout: fixed;
-  width: 100%;
-  @include for-phone-only {
-    border: 1px solid $conscients-grey;
-  }
-  @include for-tablet-portrait-only {
-    border: 1px solid $conscients-grey;
-  }
-}
-// CART HEAD
-.table th {
-    padding-bottom: 0;
-}
-
-.top-tr {
-  background-color: $conscients-bg-grey;
-}
-.th-font {
-    padding-bottom: 10PX;
-    padding-top: 10PX;
-    font-family: "Roboto", "sans-serif";
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 0.5rem;
-    word-wrap: break-word;
-    @include for-tablet-landscape-up {
-      font-size: 0.7rem;
-      letter-spacing: 0.1rem;
+/* -------------------------------------
+ * CART TABLE
+ * ------------------------------------- */
+  .conscients-table-responsive {
+    table-layout: fixed;
+    width: 100%;
+    @include for-phone-only {
+      border: 1px solid $conscients-grey;
     }
-}
-
-// BODY CART
-.cart-img img {
-  width: 25px;
-  @include for-tablet-landscape-up {
-    width: 100px;
+    @include for-tablet-portrait-only {
+      border: 1px solid $conscients-grey;
+    }
   }
-}
-td {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.td-font {
-  font-family: "Frank Ruhl Libre", "serif";
-  font-weight: 300;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
-  @include for-phone-only {
+
+  // CART HEAD //
+  .table th {
+      padding-bottom: 0;
+  }
+
+  .top-tr {
+    background-color: $conscients-bg-grey;
+  }
+  .th-font {
+      padding-bottom: 10PX;
+      padding-top: 10PX;
+      font-family: "Roboto", "sans-serif";
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 0.5rem;
+      word-wrap: break-word;
+      @include for-tablet-landscape-up {
+        font-size: 0.7rem;
+        letter-spacing: 0.1rem;
+      }
+  }
+
+  // CART BODY //
+  .cart-img img {
+    width: 25px;
+    @include for-tablet-landscape-up {
+      width: 100px;
+    }
+  }
+  td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .td-font {
+    font-family: "Frank Ruhl Libre", "serif";
+    font-weight: 300;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    @include for-phone-only {
+      font-size: 0.7rem;
+    }
+  }
+
+  .heart-before:before {
+    font-family: FontAwesome;
+    content: "\f004";
+    color: $conscients-red;
+    font-size: 0.5rem;
+    padding-right: 5px;
+  }
+  .heart-before:white {
+    font-family: FontAwesome;
+    content: "\f004";
+    color: white;
+    font-size: 0.5rem;
+  }
+
+  // CART BODY COL SIZE //
+  .first-col-fix-width td:nth-child(1),
+  .first-col-fix-width th:nth-child(1)  {
+    width: 13%;
+    @include for-phone-only {
+      width: 9%;
+    }
+  }
+  .first-col-fix-width td:nth-child(2),
+  .first-col-fix-width th:nth-child(2),{
+    width: 25%;
+    @include for-phone-only {
+      width: 27%;
+    }
+  }
+
+  .first-col-fix-width td:nth-child(3),
+  .first-col-fix-width th:nth-child(3),{
+    width: 10%;
+    @include for-phone-only {
+      width: 8%;
+    }
+  }
+  .first-col-fix-width td:nth-child(4),
+  .first-col-fix-width th:nth-child(4) {
+    width: 37%;
+    @include for-phone-only {
+      width: 33%;
+    }
+  }
+
+  .first-col-fix-width td:nth-child(5),
+  .first-col-fix-width th:nth-child(5) {
+    width: 10%;
+    @include for-phone-only {
+      width: 17%;
+    }
+  }
+
+  .first-col-fix-width td:nth-child(6),
+  .first-col-fix-width th:nth-child(6) {
+    width: 5%;
+    @include for-phone-only {
+      width: 6%;
+    }
+  }
+
+// CART TABLE FONTS
+  .total-font{
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    @include for-phone-only {
+      font-size: 0.8rem;
+    }
+  }
+  .total-comment-font p{
+    font-family: roboto;
+    text-transform: uppercase;
     font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    @include for-phone-only {
+      font-size: 0.6rem;
+      text-align: right;
+      margin-bottom: 2rem;
+    }
   }
-}
 
-.heart-before:before {
-  font-family: FontAwesome;
-  content: "\f004";
-  color: $conscients-red;
-  font-size: 0.5rem;
-  padding-right: 5px;
-}
-.heart-before:white {
-  font-family: FontAwesome;
-  content: "\f004";
-  color: white;
-  font-size: 0.5rem;
-}
-
-
-
-
-.first-col-fix-width td:nth-child(1),
-.first-col-fix-width th:nth-child(1)  {
-  width: 13%;
-  @include for-phone-only {
-    width: 9%;
-    // background-color: red;
-  }
-}
-.first-col-fix-width td:nth-child(2),
-.first-col-fix-width th:nth-child(2),{
-  width: 25%;
-  @include for-phone-only {
-    width: 27%;
-    // background-color: pink;
-  }
-}
-
-.first-col-fix-width td:nth-child(3),
-.first-col-fix-width th:nth-child(3),{
-  width: 10%;
-  @include for-phone-only {
-    width: 8%;
-    // background-color: yellow;
-  }
-}
-.first-col-fix-width td:nth-child(4),
-.first-col-fix-width th:nth-child(4) {
-  width: 37%;
-  @include for-phone-only {
-    width: 33%;
-    // background-color: green;
-  }
-}
-
-.first-col-fix-width td:nth-child(5),
-.first-col-fix-width th:nth-child(5) {
-  width: 10%;
-  @include for-phone-only {
-    width: 17%;
-    // background-color: green;
-  }
-}
-
-.first-col-fix-width td:nth-child(6),
-.first-col-fix-width th:nth-child(6) {
-  width: 5%;
-  @include for-phone-only {
-    width: 6%;
-    // background-color: cyan;
-  }
-}
-// .conscients-td-responsive {
-//   word-wrap: break-word;
-// }
-
-.total-font{
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  @include for-phone-only {
+  .continue-shopping {
+    color: $conscients-green;
+    font-family: "Roboto", "sans-serif";
+    text-transform: Uppercase;
     font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    @include for-phone-only {
+      font-size: 0.6rem;
+    }
   }
-}
-.total-comment-font p{
-  font-family: roboto;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 0.1rem;
-  font-weight: 300;
-  margin-bottom: 3rem;
-  @include for-phone-only {
-    font-size: 0.6rem;
-    text-align: right;
-    margin-bottom: 2rem;
+
+  .continue-shopping:before {
+    font-family: FontAwesome;
+    content: "\f104";
+    padding-right: 10px;
   }
-}
 
-.continue-shopping {
-  color: $conscients-green;
-  // padding: 0 0.75rem;
-  font-family: "Roboto", "sans-serif";
-  text-transform: Uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.1rem;
-  @include for-phone-only {
-    font-size: 0.6rem;
+  .continue-shopping:hover {
+    color: $conscients-green;
+    text-decoration: underline;
   }
-}
-
-.continue-shopping:before {
-  font-family: FontAwesome;
-  content: "\f104";
-  padding-right: 10px;
-}
-
-.continue-shopping:hover {
-  color: $conscients-green;
-  text-decoration: underline;
-}
 
