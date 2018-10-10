@@ -2,6 +2,8 @@
                  description: I18n.t('meta_tags.pages.contact.description'),
                  keywords: I18n.t('meta_tags.pages.contact.keywords') %>
 
+<%= render 'pages/breadcrumb', page_name: 'contact' %>
+
 <div class="container-conscients first-title-padding page-font">
   <h1><%= t 'pages.contact.contact_title' %></h1>
 </div>
@@ -16,42 +18,41 @@
 <div class="page-container">
   <div class="row">
     <div class="col-md-9 mb-5">
-      <form>
+      <%= form_with url: contacts_path, method: :post, local: true do |form| %>
         <div class="row">
           <div class="col-md-6">
             <div class="contact-form-inner-box">
-              <label for="contact-name" class="label-font"><%= t 'pages.contact.contact_name' %></label>
-              <input type="text" id="contact-name" class="form-control">
+              <%= form.label t('pages.contact.contact_name'), class: 'label-font', for: 'contact-name' %><label for="contact-name" class="label-font"><%=  %></label>
+              <%= form.text_field :contact_name, class: 'form-control', required: true %>
             </div>
           </div>
           <div class="col-md-6">
             <div class="contact-form-inner-box">
-              <label for="contact-email" class="label-font"><%= t 'pages.contact.contact_email' %></label>
-              <input type="text" id="contact-email" class="form-control">
+              <%= form.label t('pages.contact.contact_email'), class: 'label-font', for: 'contact-email' %><label for="contact-email" class="label-font"><%=  %></label>
+              <%= form.email_field :contact_email, class: 'form-control', required: true %>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="contact-form-inner-box">
-              <label for="contact-Subject" class="label-font"><%= t 'pages.contact.contact_subject' %></label>
-              <input type="text" id="contact-Subject" class="form-control">
+              <%= form.label t('pages.contact.contact_subject'), class: 'label-font', for: 'contact-subject' %><label for="contact-subject" class="label-font"><%=  %></label>
+              <%= form.text_field :contact_subject, class: 'form-control', required: true %>
             </div>
           </div>
         </div>
         <div class="class row">
           <div class="col-md-12">
             <div class="contact-form-inner-box">
-              <label for="contact-message" class="label-font"><%= t 'pages.contact.contact_message' %></label>
-              <textarea type="text" id="contact-message" class="form-control" rows="10"></textarea>
+              <%= form.label t('pages.contact.contact_message'), class: 'label-font', for: 'contact-message' %><label for="contact-message" class="label-font"><%=  %></label>
+              <%= form.text_area :contact_message, class: 'form-control', required: true, rows: "10" %>
             </div>
           </div>
         </div>
-      </form>
-      <div class="text-center text-md-left mt-5">
-        <!-- <a href="" class="btn btn-green"></%= t 'pages.contact.contact_send' %></a> -->
-         <button type="submit" class="btn conscients-btn btn-green"><%= t 'pages.contact.contact_send' %></button>
-      </div>
+        <div class="text-center text-md-left mt-5">
+          <%= form.submit t('pages.contact.contact_send'), class: 'btn conscients-btn btn-green' %>
+        </div>
+      <% end %>
     </div>
     <div class="col-md-3 text-center">
       <ul class="list-unstyled">
@@ -68,5 +69,3 @@
     </div>
   </div>
 </div>
-
-

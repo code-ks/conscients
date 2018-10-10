@@ -16,5 +16,6 @@
     <% category.variants.each do |variant| %>
       <%= link_to variant.value.capitalize, category_products_path(category, variant: variant.id), class: "dropdown-item filters-dropdown-item top-menu-font" %>
     <% end %>
+    <%= link_to t('.back_to_everything'), category_products_path(category), class: "dropdown-item filters-dropdown-item top-menu-font" %>
   </div>
 </div>

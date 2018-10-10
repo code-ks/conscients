@@ -135,6 +135,14 @@ en:
       faq_q_nine_body: "Text text text text text text text text text text text text text text text text "
       faq_q_ten_title: "Question 10"
       faq_q_ten_body: "Text text text text text text text text text text text text text text text text "
+    breadcrumb:
+      about: 'About'
+      contact: 'Contact'
+      faq: 'FAQ'
+      participate: 'B2B'
+      payment_shipping: 'Payments, Shippings, Returns'
+      site_map: 'Site Map'
+      terms: 'Terms'
   products:
     index:
       no_product: "No product fits these criteria"
@@ -150,6 +158,7 @@ en:
     filters:
       category: "Category"
       variant: "Age"
+      back_to_everything: "All the ages"
     added_to_cart_modal:
       tree_added_with_recipient: "A tree for %{recipient} has been added to your cart."
       tree_added: "A tree has been added to your cart."
@@ -171,6 +180,11 @@ en:
       total_price_ht_all_included: "Total Excluding Taxes"
       total_vat: "Total taxes"
       total_price: "Total price"
+  blog_posts:
+    index:
+      journal: 'Journal'
+    show:
+      journal: 'Journal'
   certificates:
     new:
       tree_quantity:
@@ -354,11 +368,15 @@ en:
       search: "Search"
       sign_in: "Connect"
       blog: "News"
+      sign_out: "Sign out"
+      forgot_your_password: "Forgot your password?"
+      sign_in_with_provider: "Sign-up/Sign-in with Facebook"
     footer:
       site_map_link: "Site map"
       payment_shipping_link: "Payment and Shipping"
       terms_link: "Terms"
       faq_link: "FAQ"
+      subscribe_to_newsletter: "Subscribe me to the newsletter"
   active_admin:
     resource:
       show:
@@ -366,6 +384,13 @@ en:
         download_invoice: "Download invoice"
         download_certificate: "Download certificate"
   flash:
+    contact:
+      create:
+        notice: "Your message has been sent"
+    newsletter_subscription:
+      create:
+        alert: "You could not be subscribed to the newsletter"
+        notice: 'You have been subscribed to the newsletter'
     line_items:
       create:
         notice: "Product correctly added to your cart"

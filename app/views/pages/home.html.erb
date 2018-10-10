@@ -36,16 +36,16 @@
           <!-- <div class="tab-content"> -->
             <div class="container-conscients flex-container">
               <div class="occasions-container">
-                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.images&.second %>);">
+                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.background_image %>);">
                 </div>
                 <div class="occasions-card">
-                  <%= link_to product_path(Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first) do %>
+                  <%= link_to product_path(Category.find_by(home_display: 1).products.in_order_home.images_attached.first) do %>
                     <div class="occasions-card-content-box home-font">
-                      <%= image_tag Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
+                      <%= image_tag Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
                       <div class="occasions-card-content">
-                        <h3><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.name %></h3>
-                        <h4><%= Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first&.description_short %></h4>
-                        <h5><%= humanized_money_with_symbol Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.first&.ttc_price %></h5>
+                        <h3><%= Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.name %></h3>
+                        <h4><%= Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.description_short %></h4>
+                        <h5><%= humanized_money_with_symbol Category.find_by(home_display: 1).products.in_order_home.first&.ttc_price %></h5>
                       </div>
                     </div>
                   <% end %>
@@ -54,12 +54,12 @@
             </div>
           <!-- </div> end of tab content-->
         </div>
-        <% Category.find("cadeaux-cadeaux-de-naissance").products.in_order_home.images_attached.first(10)&.drop(1).each do |product| %>
+        <% Category.find_by(home_display: 1).products.in_order_home.images_attached.first(10)&.drop(1).each do |product| %>
           <div class="carousel-item">
             <!-- <div class="tab-content"> -->
               <div class="container-conscients flex-container">
                 <div class="occasions-container">
-                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.images.second %>);">
+                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.background_image %>);">
                   </div>
                   <div class="occasions-card">
                     <%= link_to product_path(product) do %>
@@ -95,16 +95,16 @@
           <!-- <div class="tab-content"> -->
             <div class="container-conscients flex-container">
               <div class="occasions-container">
-                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.images&.second %>);">
+                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.background_image %>);">
                 </div>
                 <div class="occasions-card">
-                  <%= link_to product_path(Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first) do %>
+                  <%= link_to product_path(Category.find_by(home_display: 2).products.in_order_home.images_attached.first) do %>
                     <div class="occasions-card-content-box home-font">
-                      <%= image_tag Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
+                      <%= image_tag Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
                       <div class="occasions-card-content">
-                        <h3><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.name %></h3>
-                        <h4><%= Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.description_short %></h4>
-                        <h5><%= humanized_money_with_symbol Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first&.ttc_price %></h5>
+                        <h3><%= Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.name %></h3>
+                        <h4><%= Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.description_short %></h4>
+                        <h5><%= humanized_money_with_symbol Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.ttc_price %></h5>
                       </div>
                     </div>
                   <% end %>
@@ -113,12 +113,12 @@
             </div>
           <!-- </div> end of tab content-->
         </div>
-        <% Category.find("cadeaux-grands-et-les-petits").products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
+        <% Category.find_by(home_display: 2).products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
           <div class="carousel-item">
             <!-- <div class="tab-content"> -->
               <div class="container-conscients flex-container">
                 <div class="occasions-container">
-                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.images.second %>);">
+                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.background_image %>);">
                   </div>
                   <div class="occasions-card">
                     <%= link_to product_path(product) do %>
@@ -154,16 +154,16 @@
           <!-- <div class="tab-content"> -->
             <div class="container-conscients flex-container">
               <div class="occasions-container">
-                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.images&.second %>);">
+                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.background_image %>);">
                 </div>
                 <div class="occasions-card">
-                  <%= link_to product_path(Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first) do %>
+                  <%= link_to product_path(Category.find_by(home_display: 3).products.in_order_home.images_attached.first) do %>
                     <div class="occasions-card-content-box home-font">
-                      <%= image_tag Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
+                      <%= image_tag Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
                       <div class="occasions-card-content">
-                        <h3><%= Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first.name %></h3>
-                        <h4><%= Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.description_short %></h4>
-                        <h5><%= humanized_money_with_symbol Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first&.ttc_price %></h5>
+                        <h3><%= Category.find_by(home_display: 3).products.in_order_home.images_attached.first.name %></h3>
+                        <h4><%= Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.description_short %></h4>
+                        <h5><%= humanized_money_with_symbol Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.ttc_price %></h5>
                       </div>
                     </div>
                   <% end %>
@@ -172,12 +172,12 @@
             </div>
           <!-- </div> end of tab content-->
         </div>
-        <% Category.find("gifts-give-a-tree").products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
+        <% Category.find_by(home_display: 3).products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
           <div class="carousel-item">
             <!-- <div class="tab-content"> -->
               <div class="container-conscients flex-container">
                 <div class="occasions-container">
-                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.images.second %>);">
+                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.background_image %>);">
                   </div>
                   <div class="occasions-card">
                     <%= link_to product_path(product) do %>
@@ -222,7 +222,7 @@
       <div class="carousel-item active">
         <div class="carousel-container home-font">
           <div class="row">
-            <% Category.find("bebes").products.in_order_home.images_attached.first(4).each do |product| %>
+            <% Category.find_by(home_display: 4).products.in_order_home.images_attached.first(4).each do |product| %>
               <div class="col-md-3">
                 <%= link_to product_path(product) do %>
                   <div class="home-shop-card">
@@ -239,11 +239,11 @@
           </div>
         </div>
       </div>
-      <% if Category.find("bebes").products.count > 4 %>
+      <% if Category.find_by(home_display: 4).products.count > 4 %>
         <div class="carousel-item">
           <div class="carousel-container home-font">
             <div class="row">
-              <% Category.find("bebes").products.in_order_home.images_attached.first(12).drop(4).each do |product| %>
+              <% Category.find_by(home_display: 4).products.in_order_home.images_attached.first(12).drop(4).each do |product| %>
                 <div class="col-md-3">
                   <%= link_to product_path(product) do %>
                     <div class="home-shop-card">
@@ -261,11 +261,11 @@
           </div>
         </div>
       <% end %>
-      <% if Category.find("bebes").products.count > 8 %>
+      <% if Category.find_by(home_display: 4).products.count > 8 %>
         <div class="carousel-item">
           <div class="carousel-container home-font">
             <div class="row">
-              <% Category.find("bebes").products.in_order_home.images_attached.first(12).drop(8).each do |product| %>
+              <% Category.find_by(home_display: 4).products.in_order_home.images_attached.first(12).drop(8).each do |product| %>
                 <div class="col-md-3">
                   <%= link_to product_path(product) do %>
                     <div class="home-shop-card">
@@ -283,7 +283,7 @@
           </div>
         </div>
       <% end %>
-      <% if Category.find("bebes").products.count > 4 %>
+      <% if Category.find_by(home_display: 4).products.count > 4 %>
         <a class="carousel-control-prev" href="#shop-carousel-desktop" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -300,18 +300,18 @@
   <div id="shop-carousel-mobile" class="carousel slide carousel-shop-mobile" data-ride="carousel" data-interval="false">
     <div class="carousel-inner home-font">
       <div class="carousel-item active">
-        <%= link_to product_path(Category.find("bebes").products.in_order_home.images_attached.first) do %>
+        <%= link_to product_path(Category.find_by(home_display: 4).products.in_order_home.images_attached.first) do %>
           <div class="home-shop-card">
-            <%= image_tag(Category.find("bebes").products.in_order_home.images_attached.first&.images&.first, class: "home-shop-card-img") %>
+            <%= image_tag(Category.find_by(home_display: 4).products.in_order_home.images_attached.first&.images&.first, class: "home-shop-card-img") %>
             <div class="home-shop-card-content">
-              <h3><%= Category.find("bebes").products.in_order_home.images_attached.first&.name %></h3>
-              <h4 class="truncate-4-cards"><%= Category.find("bebes").products.in_order_home.images_attached.first&.description_short %></h4>
-              <h5><%= humanized_money_with_symbol Category.find("bebes").products.in_order_home.images_attached.first&.ttc_price %></h5>
+              <h3><%= Category.find_by(home_display: 4).products.in_order_home.images_attached.first&.name %></h3>
+              <h4 class="truncate-4-cards"><%= Category.find_by(home_display: 4).products.in_order_home.images_attached.first&.description_short %></h4>
+              <h5><%= humanized_money_with_symbol Category.find_by(home_display: 4).products.in_order_home.images_attached.first&.ttc_price %></h5>
             </div>
           </div>
         <% end %>
       </div>
-      <% Category.find("bebes").products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
+      <% Category.find_by(home_display: 4).products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
         <div class="carousel-item">
             <%= link_to product_path(product) do %>
             <div class="home-shop-card">
@@ -376,5 +376,3 @@
       </% end %>
     </div>
   </div> -->
-
-
