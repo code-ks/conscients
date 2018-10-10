@@ -12,7 +12,7 @@
 .first-title-padding {
   padding-top: 30px;
 }
-.second-title-padding {
+.terms-second-title-padding {
   padding-top: 50px;
   padding-bottom: 16px;
 }
@@ -23,6 +23,9 @@
     text-align: center;
     padding-top: 16px;
     padding-bottom: 16px;
+    @include for-phone-only {
+      font-size: 2rem;
+    }
   }
 
   h2 {
@@ -30,7 +33,9 @@
     font-size: 2rem;
     font-weight: 400;
     text-transform: none;
-    // text-align: center;
+    @include for-phone-only {
+      font-size: 1.5rem;
+    }
   }
 
   h3 {
@@ -39,6 +44,9 @@
     letter-spacing: 0.1rem;
     padding-bottom: 1rem;
     padding-top: 1rem;
+    @include for-phone-only {
+      font-size: 1.3rem;
+    }
   }
 
   h4 {
@@ -48,6 +56,9 @@
     letter-spacing: 0.1rem;
     padding-bottom: 1rem;
     padding-top: 1rem;
+    @include for-phone-only {
+      font-size: 0.9rem;
+    }
   }
 
   h5 {
@@ -57,6 +68,9 @@
     letter-spacing: 0.1rem;
     padding-bottom: 1rem;
     padding-top: 1rem;
+    @include for-phone-only {
+      font-size: 0.7rem;
+    }
   }
 }
 

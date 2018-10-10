@@ -1,3 +1,8 @@
+//border
+.border-bottom-dotted {
+  border-bottom: 1px dotted $conscients-very-light-grey;
+}
+
 // BACKGROUNDS FOR TEST ERASE AFTER
   .bg-pink {
     background-color: pink !important;
@@ -11,6 +16,9 @@
     background-color: $conscients-bg-grey;
   }
 
+  .bg-yellow {
+    background-color: $conscients-yellow;
+  }
   .color-red {
     color: $conscients-red;
   }
@@ -30,6 +38,10 @@
   .color-coral {
     color: $conscients-coral;
   }
+
+  .color-red {
+    color: $conscients-red;
+  }
   .title-grey {
     color: $conscients-title-grey;
   }
@@ -41,6 +53,7 @@
       font-family: "Frank Ruhl Libre", "serif";
       font-size: 2rem;
       letter-spacing: 0.1rem;
+      font-weight: 400;
     }
     h2 {
       font-family: "Roboto", "sans-serif";
@@ -60,10 +73,7 @@
     }
   }
 
-  .price-font {
-    font-family: "Roboto", "sans-serif";
-    letter-spacing: 0.1rem;
-  }
+
 
 // **** BOXES ****
   .container-conscients{
@@ -113,6 +123,10 @@
     padding-top: 16px;
   }
 
+  .no-padding-t {
+    padding-top: 0 !important;
+  }
+
   .padding-tb{
     padding-top: 16px;
     padding-bottom: 16px;
@@ -120,6 +134,10 @@
 
   .padding-r {
     padding-right: 16px;
+  }
+
+  .padding-b-sixpix {
+    padding-bottom: 0.375rem;
   }
 
 // ****TEXT AND LINKS COLORS ****
@@ -134,13 +152,6 @@
     }
   }
 
-  .read-more {
-    color: $conscients-coral;
-  }
-  .read-more:hover {
-    color: $conscients-coral;
-    text-decoration: underline;
-  }
 
 // ANCHOR
   .anchor {

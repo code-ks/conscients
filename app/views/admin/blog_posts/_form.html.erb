@@ -2,7 +2,8 @@
   <% if blog_post.errors.any? %>
     <ul>
       <% blog_post.errors.full_messages.each do |message| %>
-        <li class="font-weight-bold text-danger"><%= message %></li>
+        <!-- <li class="font-weight-bold text-danger"><%= message %></li> -->
+        <li class="color-white angle-down-list"><%= message %></li>
       <% end %>
     </ul>
   <% end %>

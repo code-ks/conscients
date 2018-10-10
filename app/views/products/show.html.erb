@@ -8,6 +8,7 @@
       <%= render 'products/carousel', product: @product %>
     </div>
     <div class="col-lg-4 col-md-5 col-xs-12 order-md-first">
+    <a id="product-name-anchor">
       <h1><%= @product.name %></h1>
       <p class="price-font mt-3"><%= humanized_money_with_symbol @product.ttc_price %></p>
       <p><%= @product.description_short %></p>
@@ -18,12 +19,19 @@
         <%= render 'products/add_to_cart_form', product: @product, line_item: @line_item %>
       </div>
     </div>
-      <hr>
-      <a id="product-description-anchor" class="anchor">
-      <p><%= simple_format(@product.description_long) %></p>
-      <div class="social-likes">
-        <div data-service="facebook" title="Share link on Facebook">Facebook</div>
-        <div data-service="twitter" title="Share link on Twitter">Twitter</div>
-      </div>
+    <hr>
+    <a id="product-description-anchor" class='anchor'>
+    <div class="page-font pb-2">
+    <h3><%= t 'products.product.read_more' %></h3>
+    </div>
+    <p><%= simple_format(@product.description_long) %></p>
+    <div class="d-flex justify-content-end"><%= link_to t('products.product.back_to_top'), "#product-name-anchor", class: "back-to-top"%></div>
+    <hr>
+    <div class="social-likes small-font-phone">
+      <div class="d-flex align-items-center title-grey"><%= t 'products.product.social_share' %></div>
+      <div data-service="facebook" title="Share link on Facebook">Facebook</div>
+      <div data-service="twitter" title="Share link on Twitter">Twitter</div>
+      <div class="pinterest" title="Share image on Pinterest" data-media="">Pinterest</div>
+    </div>
   </div>
 </div>

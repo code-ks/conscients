@@ -13,3 +13,24 @@
 .alert-warning {
   background: $red;
 }
+
+/* -------------------------------------
+ * Message error on product certificate
+* ------------------------------------- */
+
+.no-padding-ul {
+  padding-left: 0;
+}
+.angle-down-list:before {
+  font-family: FontAwesome;
+  content: "\f107";
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.angle-down-list {
+  list-style: none;
+  font-family: frank ruhl libre;
+  background-color: $conscients-red;
+  border: 1px solid #dd452a;
+}

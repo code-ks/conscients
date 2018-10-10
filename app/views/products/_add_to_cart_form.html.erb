@@ -1,8 +1,8 @@
 <%= form_with model: [product, line_item], local: !line_item.new_record? do |form| %>
   <% if line_item.errors.any? %>
-    <ul>
+    <ul class="no-padding-ul">
       <% line_item.errors.full_messages.each do |message| %>
-        <li class="font-weight-bold text-danger"><%= message %></li>
+        <li class="color-white angle-down-list"><%= message %></li>
       <% end %>
     </ul>
   <% end %>
@@ -28,7 +28,7 @@
     <div class="form-group row">
       <%= form.label :recipient_name, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
-        <%= form.text_field :recipient_name, class: "form-control mr-sm-2", maxlength: 32 %>
+        <%= form.text_field :recipient_name, class: "form-control mr-sm-2", maxlength: 32, required: true %>
       </div>
     </div>
 
@@ -43,6 +43,7 @@
       <%= form.label :recipient_message, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
         <%= form.text_area :recipient_message, class: "form-control mr-sm-2", maxlength: 110 %>
+        <p class="color-green font-italic mb-0"><%= t 'products.product.car_max_message' %></p>
       </div>
     </div>
 

@@ -1,0 +1,14 @@
+  .price-font {
+    font-family: "Roboto", "sans-serif";
+    letter-spacing: 0.1rem;
+  }
+
+  .small-font-phone {
+    @include for-phone-only {
+      font-size: 0.8rem !important;
+  }
+  }
+
+  .small-p {
+    font-size: 0.8rem;
+  }
