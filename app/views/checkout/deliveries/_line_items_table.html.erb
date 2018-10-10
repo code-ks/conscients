@@ -20,7 +20,7 @@
           </td>
           <td><%= line_item.quantity %></td>
           <td>
-            <% if line_item.tree? %>
+            <% if line_item.tree?&cart.tree_only? %>
               <%= form.fields_for :line_items, line_item do |j| %>
                 <div class="form-group col-10">
                   <%= j.email_field :delivery_email, class: "form-control mr-sm-2", placeholder: true %>

@@ -1,34 +1,37 @@
 <%= form_with model: cart, url: deliveries_path, method: :post, local: true do |form| %>
 
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-6">
 
       <%= render 'shared/form_errors', instance: cart %>
       <%= render 'shared/form_errors', instance: delivery_address %>
       <%= render 'shared/form_errors', instance: billing_address %>
+
+      <% if cart.email? %>
+
+        <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
+
+        <p class="small-p">
+        <!-- dessous: vous aimeriez un envoi postal? -->
+          <%= t('.go_to_postal_delivery') %>
+          <!-- dessous: lien oui je souhaite un envoi postal quand certif only -->
+          <%= link_to new_delivery_path(delivery_type: "postal") do %>
+            <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
+          <% end %>
+        </p>
+
+
+      <% else %>
+<h4><%= t('.delivery_address') %></h4>
+        <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
+
+      <% end %>
 
       <% unless cart.tree_only? %>
 
         <div class="form-group">
           <%= form.text_field :recipient_message, class: "form-control mr-sm-2", placeholder: t('.recipient_message') %>
         </div>
-
-      <% end %>
-
-      <div class="form-group">
-        <%= form.text_field :customer_note, class: "form-control mr-sm-2", placeholder: t('.customer_note') %>
-      </div>
-
-
-      <h4><%= t('.delivery_address') %></h4>
-
-      <% if cart.email? %>
-
-        <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
-
-      <% else %>
-
-        <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
 
       <% end %>
 
@@ -51,9 +54,14 @@
           <%= render 'postal_billing_address_form', billing_address: billing_address, form: form %>
 
         </div>
+      <!-- dessous : souhaitez vous nous adresser un message -->
+      <div class="form-group">
+        <%= form.text_field :customer_note, class: "form-control mr-sm-2", placeholder: t('.customer_note') %>
+      </div>
+      <!-- fin envoi message -->
       </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-6 border">
       <div class="mb-2">
 
         <%= render 'line_items_table', cart: cart, form: form %>

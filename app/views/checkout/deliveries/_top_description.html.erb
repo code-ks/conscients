@@ -1,45 +1,53 @@
-<div class="shop-first-title-padding shop-font no-padding-t col-md-12">
-  <h1 class=""><%= t('.title') %></h1>
+<div>
+  <div class="shop-first-title-padding shop-font no-padding-t">
+    <h1 class=""><%= t('.title') %></h1>
+  </div>
   <% if cart.email? %>
-    <!-- <h2 class="my-4"></%= t('.email') %></h2> -->
-    <p class="my-4 bg-pink">
-    <!-- dessous: vous aimeriez un envoi postal? -->
-      <%= t('.go_to_postal_delivery') %>
-      <!-- dessous: lien oui je souhaite un envoi postal quand certif only -->
-      <%= link_to new_delivery_path(delivery_type: "postal") do %>
-        <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
-      <% end %>
-    </p>
+    <div class="page-font padding-b">
+      <p><strong><%= t('.description_email_delivery') %></strong> <%= t('.description_email_delivery_details') %></p>
+    </div>
   <% else %>
-    <!-- <h2 class="my-4"></%= t('.address') %></h2> -->
-    <p class="my-4 bg-red">
-    <!-- dessous: votre commande sera envoyee a ladresse ci dessous -->
-      <%= t('.description_postal_delivery') %>
-      <!-- dessous: si on decoche produit et ne reste quarbre -->
+  <div class="page-font bg-pink"></div>
+    <%= t('.description_postal_delivery') %>
       <% if cart.tree_only? %>
-        <!-- dessous: non retour à lenvoi par mail uniquement -->
         <%= link_to new_delivery_path(delivery_type: "email") do %>
           <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_email_delivery_link') %></span>
+          <% end %>
         <% end %>
-      <% end %>
-    </p>
   <% end %>
-</div>
 
-<div class= "bg-pink padding-b">--------TEST CAROLE--------</div>
-<div class= "bg-grey">
-<% if cart.email? %>
-  <div>
-  <p><%= t('.description_email_delivery') %> <%= t('.description_email_delivery_details') %></p>
-  </div>
-<% else %>
-  <%= t('.description_postal_delivery') %>
-  <% if cart.tree_only? %>
-      <%= link_to new_delivery_path(delivery_type: "email") do %>
-        <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_email_delivery_link') %></span>
-        <% end %>
-      <% end %>
-<% end %>
 
-</div>
-<div class= "bg-pink padding-b">--------TEST CAROLE END --------</div>
+
+
+
+<!--   <:% if cart.email? %> -->
+    <!-- <h2 class="my-4"></%= t('.email') %></h2> -->
+<!--     <p class="my-4 bg-pink"> -->
+    <!---******* dessous: vous aimeriez un envoi postal? -->
+<!--       <:%= t('.go_to_postal_delivery') %> -->
+      <!--******* dessous: lien oui je souhaite un envoi postal quand certif only -->
+<!--       </%= link_to new_delivery_path(delivery_type: "postal") do %>
+        <span class="orange font-weight-bold"></%= fa_icon "plus" %> </%= t('.go_to_postal_delivery_link') %></span>
+      </% end %> -->
+<!--     </p>
+  </% else %>
+ -->    <!-- <h2 class="my-4"></%= t('.address') %></h2> -->
+<!--     <p class="my-4 bg-red"> -->
+    <!-- *******dessous: votre commande sera envoyee a ladresse ci dessous -->
+<!--       </%= t('.description_postal_delivery') %> -->
+      <!-- *******dessous: si on decoche produit et ne reste quarbre -->
+<!--       </% if cart.tree_only? %> -->
+        <!-- *******dessous: non retour à lenvoi par mail uniquement -->
+<!--         </%= link_to new_delivery_path(delivery_type: "email") do %>
+          <span class="orange font-weight-bold"></%= fa_icon "plus" %> </%= t('.go_to_email_delivery_link') %></span> -->
+ <!--        </% end %>
+      </% end %>
+    </p>
+  </% end %>
+</div> -->
+
+
+
+
+
+
