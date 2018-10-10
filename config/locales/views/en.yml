@@ -251,6 +251,8 @@ en:
         go_to_postal_delivery_link: "Yes, I want a postal delivery"
         description_postal_delivery: "Your order will be sent to the bellow address, delivery fees are calculated based on weight"
         go_to_email_delivery_link: "No, back to email delivery"
+        description_email_delivery: "We'll send you the certificate at the email mentioned below"
+        description_email_delivery_details: "(you will also find it in your account). If you want us to email the certificate's recipient too, simply provide the email adress on the right table."
       line_items_table:
         selection: "Selection"
         quantity: "Quantity"

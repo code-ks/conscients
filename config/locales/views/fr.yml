@@ -252,6 +252,8 @@ fr:
         go_to_postal_delivery_link: "Oui, je souhaite un envoi postal"
         description_postal_delivery: "Votre commande sera envoyée à l'adresse ci-dessous, les frais de port sont calculés en fonction du poids"
         go_to_email_delivery_link: "Non, retour à l'envoi par email uniquement"
+        description_email_delivery: "Le certificat vous sera envoyé par email à l'adresse ci-dessous"
+        description_email_delivery_details: "(vous le retrouverez également dans votre compte). Si vous souhaitez que nous envoyions aussi le certificat à son destinataire, vous pouvez renseigner son email dans le tableau à droite."
       line_items_table:
         selection: "Sélection"
         quantity: "Quantité"

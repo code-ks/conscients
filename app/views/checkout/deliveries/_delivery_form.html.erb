@@ -1,7 +1,7 @@
 <%= form_with model: cart, url: deliveries_path, method: :post, local: true do |form| %>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
 
       <%= render 'shared/form_errors', instance: cart %>
       <%= render 'shared/form_errors', instance: delivery_address %>
@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <div class="mb-2">
 
         <%= render 'line_items_table', cart: cart, form: form %>
