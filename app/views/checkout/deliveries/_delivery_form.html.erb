@@ -1,7 +1,23 @@
+  <div class="row">
+    <div class="col-md-6 box-shadow">
+  <% if cart.email? %>
+    <div class="page-font padding-b">
+      <p><strong><%= t('.description_email_delivery') %></strong> <%= t('.description_email_delivery_details') %></p>
+    </div>
+  <% else %>
+  <div class="page-font bg-pink"></div>
+    <%= t('.description_postal_delivery') %>
+      <% if cart.tree_only? %>
+        <%= link_to new_delivery_path(delivery_type: "email") do %>
+          <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_email_delivery_link') %></span>
+          <% end %>
+        <% end %>
+  <% end %>
+
 <%= form_with model: cart, url: deliveries_path, method: :post, local: true do |form| %>
 
-  <div class="row">
-    <div class="col-md-6">
+<!--   <div class="row">
+    <div class="col-md-6"> -->
 
       <%= render 'shared/form_errors', instance: cart %>
       <%= render 'shared/form_errors', instance: delivery_address %>
@@ -61,24 +77,59 @@
       <!-- fin envoi message -->
       </div>
     </div>
-    <div class="col-md-6 border">
+    <div class="col-md-6">
       <div class="mb-2">
 
         <%= render 'line_items_table', cart: cart, form: form %>
 
       </div>
 
-    <div class="d-flex flex-column align-items-end">
-
-      <span class="d-flex flex-column align-items-end">
-        <div class="font-weight-bold"><%= t('.total_price') %></div>
-        <span><%= t('.without_delivery_fees') %></span>
-        <div class="h4 orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></div>
-        <% if @cart.coupon %>
-          <div class="h6">- <%= humanized_money_with_symbol @cart.coupon_discount %> <%= t('.from_discount') %></div>
-          <div class="h4 orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price_with_coupon %></div>
+    <!-- DIV ENGLOBANTE <div class="d-flex flex-column align-items-end bg-red"> -->
+    <div class="text-right">
+      <div class= "d-flex justify-content-end total-font">
+        <div class="">
+        <% if cart.email? %>
+          <%= t('.total_price') %>
+        <% else %>
+          sous total
         <% end %>
-      </span>
+        </div>
+        <div class="color-green w-25"> <%= humanized_money_with_symbol @cart.ttc_price %></div>
+      </div>
+      <div class= "d-flex justify-content-end total-font">
+        <% if @cart.coupon %>
+        <div class=""><%= t('.from_discount') %></div>
+        <div class="color-green w-25">- <%= humanized_money_with_symbol @cart.coupon_discount %></div>
+        <% end %>
+      </div>
+<!--       <div class= "d-flex justify-content-end total-font">
+        <div class="">Sous total avec reduction</div>
+        <div class="color-green w-25"><%= humanized_money_with_symbol @cart.ttc_price_with_coupon %></div>
+      </div> -->
+      <div class= "d-flex justify-content-end total-font">
+        <div class="">
+        <% if cart.email? %>
+          total avec reduction
+        <% else %>
+          sous total avec reduction
+        <% end %>
+        </div>
+        <div class="color-green w-25"><%= humanized_money_with_symbol @cart.ttc_price_with_coupon %></div>
+      </div>
+        <span class="total-comment-font"><p class="mb-0"><% unless cart.email? %><%= t('.without_delivery_fees') %><% end %></p></span>
+
+
+
+
+<!--       <span class="d-flex flex-column align-items-end bg-pink">
+        <div class="total-font"></%= t('.total_price') %></div>
+        <span class="total-comment-font"><p class="mb-0"></%= t('.without_delivery_fees') %></p></span>
+        <div class="total-font color-green"><%= humanized_money_with_symbol @cart.ttc_price %></div>
+        </% if @cart.coupon %>
+          <div class="total-comment-font color-green"><p class="mb-0">- <%= humanized_money_with_symbol @cart.coupon_discount %> </%= t('.from_discount') %></p></div>
+          <div class="total-font color-green"><%= humanized_money_with_symbol @cart.ttc_price_with_coupon %></div>
+        </% end %>
+      </span> -->
 
       <% unless @cart.coupon %>
         <%= render 'checkout/deliveries/add_coupon' %>
@@ -92,7 +143,7 @@
       <%= form.hidden_field :address_type, value: cart.delivery_method %>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-      <%= form.submit t('.go_to_payment'), class: "btn btn-orange"%>
+      <%= form.submit t('.go_to_payment'), class: "btn conscients-btn conscients-btn-phone btn-green"%>
     </div>
   </div>
 <% end %>

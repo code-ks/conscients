@@ -277,6 +277,8 @@ fr:
         cart: "Panier"
         delivery: "Livraison"
       delivery_form:
+        description_email_delivery: "Le certificat vous sera envoyé par email à l'adresse ci-dessous"
+        description_email_delivery_details: "(vous le retrouverez également dans votre compte). Si vous souhaitez que nous envoyions aussi le certificat à son destinataire, vous pouvez renseigner son email dans le tableau à droite."
         go_to_postal_delivery: "Vous aimeriez une impression et un envoi postal ? (Frais d'impression et de port en sus)"
         go_to_postal_delivery_link: "Oui, je souhaite un envoi postal"
         total_price: "Prix total"

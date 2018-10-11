@@ -3,6 +3,13 @@
   border-bottom: 1px dotted $conscients-very-light-grey;
 }
 
+.border-grey {
+  border: $border-grey;
+}
+
+.box-shadow {
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+}
 // BACKGROUNDS FOR TEST ERASE AFTER
   .bg-pink {
     background-color: pink !important;

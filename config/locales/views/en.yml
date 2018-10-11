@@ -276,6 +276,8 @@ en:
         cart: "Cart"
         delivery: "Delivery"
       delivery_form:
+        description_email_delivery: "We'll send you the certificate at the email mentioned below"
+        description_email_delivery_details: "(you will also find it in your account). If you want us to email the certificate's recipient too, simply provide the email adress on the right table."
         go_to_postal_delivery: "Would you like a printed certificate and postal delivery? (Additional printing and delivery fees)"
         go_to_postal_delivery_link: "Yes, I want a postal delivery"
         total_price: "Total price"
