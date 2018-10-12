@@ -1,6 +1,7 @@
   <div class="row">
     <div class="col-md-6 yellow-delivery-box">
   <% if cart.email? %>
+  <h4 class="color-red padding-t"><%= t('.email') %></h4>
     <div class="page-font color-white">
       <p><%= t('.description_email_delivery')%> <br>
           <%= link_to new_delivery_path(delivery_type: "postal") do %>
@@ -9,6 +10,7 @@
         </p>
     </div>
   <% else %>
+  <h4 class="color-red padding-t"><%= t('.delivery_address') %></h4>
     <div class="page-font color-white">
       <p><%= t('.description_postal_delivery') %> <br>
         <% if cart.tree_only? %>
@@ -33,11 +35,11 @@
 
         <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
 
-        <p class="p-08R"><%= t('.description_email_delivery_details') %></p>
+        <p class="p-08R color-white"><%= t('.description_email_delivery_details') %></p>
 
 
       <% else %>
-<h4><%= t('.delivery_address') %></h4>
+<!-- <h4 class="color-white padding-t"></%= t('.delivery_address') %></h4> -->
         <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
 
       <% end %>
@@ -50,7 +52,7 @@
 
       <% end %>
 
-      <h4><%= t('.billing_address') %></h4>
+      <h4 class="color-white padding-t"><%= t('.billing_address') %></h4>
 
 
       <div data-controller="billing-address">

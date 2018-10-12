@@ -276,6 +276,7 @@ en:
         cart: "Cart"
         delivery: "Delivery"
       delivery_form:
+        email: "Certificat sent by email"
         description_email_delivery: "We'll send you the certificate at the email mentioned below (you'll also find it in your account"
         description_email_delivery_details: "If you want us to email the certificate's recipient too, simply provide the email adress on the right table."
         description_postal_delivery: "Please indicate your delivery address bellow, delivery fees are calculated based on weight"

@@ -1,11 +1,11 @@
 <%= form.fields_for "billing_address", billing_address do |g| %>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <div class="form-group">
         <%= g.text_field :first_name, class: "form-control mr-sm-2", placeholder: true, data: { target: "billing-address.requireable" } %>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <div class="form-group">
         <%= g.text_field :last_name, class: "form-control mr-sm-2", placeholder: true, data: { target: "billing-address.requireable" } %>
       </div>
@@ -15,24 +15,24 @@
     <%= g.text_field :company, class: "form-control mr-sm-2", placeholder: true %>
   </div>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <div class="form-group">
         <%= g.text_field :address_1, class: "form-control mr-sm-2", placeholder: true, data: { target: "billing-address.requireable" } %>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <div class="form-group">
         <%= g.text_field :address_2, class: "form-control mr-sm-2", placeholder: true %>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <div class="form-group">
         <%= g.text_field :city, class: "form-control mr-sm-2", placeholder: true, data: { target: "billing-address.requireable" } %>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <div class="form-group">
         <%= g.text_field :zip_code, class: "form-control mr-sm-2", placeholder: true, data: { target: "billing-address.requireable" } %>
       </div>
