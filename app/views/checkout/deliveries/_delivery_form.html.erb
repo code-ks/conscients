@@ -1,17 +1,23 @@
   <div class="row">
-    <div class="col-md-6 box-shadow">
+    <div class="col-md-6 yellow-delivery-box">
   <% if cart.email? %>
-    <div class="page-font padding-b">
-      <p><strong><%= t('.description_email_delivery') %></strong> <%= t('.description_email_delivery_details') %></p>
+    <div class="page-font color-white">
+      <p><%= t('.description_email_delivery')%> <br>
+          <%= link_to new_delivery_path(delivery_type: "postal") do %>
+            <span class="choose-delivery-link"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
+          <% end %>
+        </p>
     </div>
   <% else %>
-  <div class="page-font bg-pink"></div>
-    <%= t('.description_postal_delivery') %>
-      <% if cart.tree_only? %>
-        <%= link_to new_delivery_path(delivery_type: "email") do %>
-          <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_email_delivery_link') %></span>
+    <div class="page-font color-white">
+      <p><%= t('.description_postal_delivery') %> <br>
+        <% if cart.tree_only? %>
+          <%= link_to new_delivery_path(delivery_type: "email") do %>
+            <span class="choose-delivery-link"><%= fa_icon "plus" %> <%= t('.go_to_email_delivery_link') %></span>
+            <% end %>
           <% end %>
-        <% end %>
+        </p>
+    </div>
   <% end %>
 
 <%= form_with model: cart, url: deliveries_path, method: :post, local: true do |form| %>
@@ -27,14 +33,7 @@
 
         <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
 
-        <p class="small-p">
-        <!-- dessous: vous aimeriez un envoi postal? -->
-          <%= t('.go_to_postal_delivery') %>
-          <!-- dessous: lien oui je souhaite un envoi postal quand certif only -->
-          <%= link_to new_delivery_path(delivery_type: "postal") do %>
-            <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
-          <% end %>
-        </p>
+        <p class="p-08R"><%= t('.description_email_delivery_details') %></p>
 
 
       <% else %>
