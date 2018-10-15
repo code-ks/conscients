@@ -104,7 +104,7 @@
         <%= render 'checkout/deliveries/add_coupon' %>
       <% end %>
 
-      <div class="pay-box-on-delivery-form">
+
       <div class="form-group">
         <%= form.check_box :general_sales_conditions, checked: false, required: true %>
         <%= form.label t('.general_sales_conditions') %>
@@ -114,7 +114,7 @@
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
       <%= form.submit t('.go_to_payment'), class: "btn conscients-btn conscients-btn-phone btn-green"%>
-      </div>
+
     </div>
   </div>
 <% end %>
