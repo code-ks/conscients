@@ -1,19 +1,16 @@
- <!-- <div class="table-responsive text-center"> -->
-  <!-- <table class="table border-table-cart"> -->
   <table class="conscients-table-responsive small-first-col-fix-width">
     <thead>
       <tr class= "top-tr">
         <th class="small-th-font text-nowrap pl-md-2"><%= t('.selection') %></th>
         <th class="small-th-font"></th>
         <th class="small-th-font text-center"><%= t('.qty') %></th>
-        <% if cart.email? %><th class="th-font"><%= t('.delivery') %></th><% end %>
+        <% if cart.email? %><th class="small-th-font"><%= t('.delivery') %></th><% end %>
         <th class="small-th-font text-center"><%= t('.tot') %></th>
         <th class="small-th-font"></th>
       </tr>
     </thead>
     <tbody>
       <% cart.line_items.includes(:product_sku).each do |line_item| %>
-        <!-- <tr class="table-cart-bordered"> -->
         <tr class="border-bottom-dotted border-top-dotted small-td-font">
           <td class="small-cart-img pl-md-2"><%= image_tag(line_item.product_images.first) %></th>
           <td>
@@ -22,40 +19,15 @@
           </td>
           <td class="text-center"><%= line_item.quantity %></td>
 
-            <% if cart.email? %>
-              <%= form.fields_for :line_items, line_item do |j| %>
-              <td>
-                <div class="form-group">
-                  <%= j.email_field :delivery_email, class: "form-control f-08R", placeholder: true %>
-                </div>
-<!--                 <div class="form-group col-10">
-                  </%= j.email_field :delivery_email, class: "form-control mr-sm-2", placeholder: true %>
-                </div> -->
-              </td>
-              <% end %>
+          <% if cart.email? %>
+            <%= form.fields_for :line_items, line_item do |j| %>
+            <td>
+              <div class="form-group">
+                <%= j.email_field :delivery_email, class: "form-control f-08R", placeholder: true %>
+              </div>
+            </td>
             <% end %>
-
-
-<!--           <td>
-            </% if cart.email? %>
-              </%= form.fields_for :line_items, line_item do |j| %>
-                <div class="form-group col-10">
-                  </%= j.email_field :delivery_email, class: "form-control mr-sm-2", placeholder: true %>
-                </div>
-              </% end %>
-            </% end %>
-          </td> -->
-
-<!--           <td>
-            </% if line_item.tree?&cart.tree_only?&cart.email? %>
-              </%= form.fields_for :line_items, line_item do |j| %>
-                <div class="form-group col-10">
-                  </%= j.email_field :delivery_email, class: "form-control mr-sm-2", placeholder: true %>
-                </div>
-              </% end %>
-            </% end %>
-          </td>  -->
-
+          <% end %>
 
           <td class="text-center"><%= humanized_money_with_symbol line_item.ttc_price %></td>
           <td class= text-center>

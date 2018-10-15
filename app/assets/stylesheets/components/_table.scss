@@ -22,12 +22,11 @@
     @include for-phone-only {
       border: 1px solid $conscients-grey;
     }
-    @include for-tablet-portrait-only {
-      border: 1px solid $conscients-grey;
-    }
+    // @include for-tablet-portrait-only {
+    //   border: 1px solid $conscients-grey;
+    // }
   }
 
-  // CART HEAD //
   .table th {
       padding-bottom: 0;
   }
@@ -135,7 +134,7 @@
     }
   }
 
-// CART TABLE FONTS
+  // CART TABLE FONTS
   .total-font{
     font-size: 1rem;
     text-transform: uppercase;
@@ -180,9 +179,9 @@
     text-decoration: underline;
   }
 
-/* -------------------------------------
+/* -------------------------------------------------
  * CART TABLE ON DELIVERY AND PAIEMENT (SMALL CART)
- * ------------------------------------- */
+ * ------------------------------------------------- */
 
   .small-cart-img img {
     width: 25px;
@@ -190,7 +189,6 @@
       width: 40px;
     }
   }
-
 
   .small-th-font {
       padding-bottom: 10PX;
@@ -201,10 +199,11 @@
       font-size: 0.5rem;
       word-wrap: break-word;
       @include for-tablet-landscape-up {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
         letter-spacing: 0.1rem;
       }
   }
+
   .small-td-font {
     font-family: "Frank Ruhl Libre", "serif";
     font-weight: 300;
@@ -220,22 +219,32 @@
     // }
   }
 
-// Image
+  .small-total-font{
+    font-size: 0.8rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    // @include for-phone-only {
+    //   font-size: 0.8rem;
+    // }
+  }
+
+  // Image
   .small-first-col-fix-width td:nth-child(1), .small-first-col-fix-width th:nth-child(1) {
     width: 10%;
   }
 
-// Quantity
+  // Quantity
   .small-first-col-fix-width td:nth-child(3), .small-first-col-fix-width th:nth-child(3){
     width: 10%;
   }
 
-// Price
+  // Price
   .small-first-col-fix-width td:nth-last-child(-n+2), .small-first-col-fix-width th:nth-last-child(-n+2){
     width: 12%;
   }
 
-// Edit
+  // Edit
   .small-first-col-fix-width td:last-child,
   .small-first-col-fix-width th:last-child{
     width: 6%;
