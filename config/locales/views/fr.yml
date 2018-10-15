@@ -271,8 +271,10 @@ fr:
       line_items_table:
         selection: "Sélection"
         quantity: "Quantité"
-        delivery: "Livraison"
+        qty: "Qté"
+        delivery: "Destinataire"
         total_price: "Total"
+        tot: "Tot"
       breadcrumb:
         cart: "Panier"
         delivery: "Livraison"

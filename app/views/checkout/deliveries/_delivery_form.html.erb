@@ -35,7 +35,7 @@
 
         <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
 
-        <p class="p-08R color-white"><%= t('.description_email_delivery_details') %></p>
+        <p class="f-08R color-white"><%= t('.description_email_delivery_details') %></p>
 
 
       <% else %>
@@ -78,7 +78,7 @@
       <!-- fin envoi message -->
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 pl-md-0 pt-md-3">
       <div class="mb-2">
 
         <%= render 'line_items_table', cart: cart, form: form %>

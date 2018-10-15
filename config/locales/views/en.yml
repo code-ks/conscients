@@ -270,8 +270,10 @@ en:
       line_items_table:
         selection: "Selection"
         quantity: "Quantity"
-        delivery: "Delivery"
+        qty: "Qty"
+        delivery: "Recipient"
         total_price: "Total"
+        tot: "Tot"
       breadcrumb:
         cart: "Cart"
         delivery: "Delivery"
