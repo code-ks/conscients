@@ -50,8 +50,8 @@
   <div class="checkout-steps-box border">
     <div class=box-green>
       <% if cart.email? %>
-        <h4 class="padding-t color-white"><%= t('.email') %></h4>
-        <div class="page-font color-white">
+        <h2 class="color-white"><%= t('.email') %></h4>
+        <div class="color-white">
           <p><%= t('.description_email_delivery')%> <br>
           <%= link_to new_delivery_path(delivery_type: "postal") do %>
             <span class="choose-delivery-link"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
@@ -100,10 +100,10 @@
       </div>
     </div>
 
-    <div class= border>
-      <div class="form-group">
+    <div class= "delivery-validation-box">
+      <div class="form-group d-flex align-items-center justify-content-end">
         <%= form.check_box :general_sales_conditions, checked: false, required: true %>
-        <%= form.label t('.general_sales_conditions') %>
+        <%= form.label t('.general_sales_conditions'), class: "mb-0 ml-1" %>
       </div>
 
       <%= form.hidden_field :address_type, value: cart.delivery_method %>

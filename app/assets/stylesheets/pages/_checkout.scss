@@ -30,6 +30,10 @@
 
 .checkout-cart-box {
   width: 100%;
+  padding: 40px;
+  border: $border-grey;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+  z-index: 1;
   @include for-tablet-landscape-up {
     width: 50%;
   }
@@ -37,15 +41,25 @@
 
 .checkout-steps-box {
   width: 100%;
+  z-index: 2;
   @include for-tablet-landscape-up {
     width: 50%;
   }
 }
 
 .box-green {
+  padding: 40px;
   background-color: $conscients-green;
+  // box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+  @include for-tablet-landscape-up {
+  margin-top: 20px;
+  }
 }
 
+.delivery-validation-box {
+  text-align: right;
+  padding: 40px 0px 0 40px;
+}
 // DELIVERY
 .yellow-delivery-box {
   box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
