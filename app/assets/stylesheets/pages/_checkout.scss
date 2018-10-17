@@ -35,7 +35,7 @@
   box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
   z-index: 1;
   @include for-tablet-landscape-up {
-    width: 50%;
+    width: 49%;
   }
 }
 
@@ -43,7 +43,7 @@
   width: 100%;
   z-index: 2;
   @include for-tablet-landscape-up {
-    width: 50%;
+    width: 51%;
   }
 }
 
@@ -52,7 +52,7 @@
   background-color: $conscients-green;
   // box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
   @include for-tablet-landscape-up {
-  margin-top: 20px;
+  margin-top: 16px;
   }
 }
 
@@ -67,6 +67,15 @@
   padding: 40px;
   z-index: 1;
 }
+
+ .choose-delivery-link {
+    // color: $conscients-red;
+    color: $conscients-dark-green;
+    font-family: "Roboto", "sans-serif";
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.6rem;
+ }
 
 .pay-box-on-delivery-form {
     @include for-tablet-landscape-up {
