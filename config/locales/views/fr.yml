@@ -279,6 +279,7 @@ fr:
         cart: "Panier"
         delivery: "Livraison"
       delivery_form:
+        my_cart: "Mon panier"
         email: "Envoi du certificat par email"
         description_email_delivery: "Vous recevrez votre certificat par email à l'adresse ci-dessous (vous le retrouverez également dans votre compte). "
         description_email_delivery_details: "Si vous souhaitez que nous envoyions aussi le certificat à son destinataire, vous pouvez renseigner son email dans le tableau à droite."
