@@ -1,4 +1,4 @@
-.shop-first-title-padding {
+.ckeckout-first-title-padding {
   padding-top: 30px;
   padding-bottom: 30px;
   @include for-phone-only {
@@ -7,7 +7,7 @@
   }
 }
 
-.shop-font {
+.checkout-font {
   h1 {
     font-size: 3rem;
     font-weight: 400;
@@ -18,6 +18,32 @@
       font-size: 2rem;
     }
   }
+}
+
+.checkout-box {
+  display:flex;
+  flex-direction: column;
+    @include for-tablet-landscape-up {
+      flex-direction: row;
+    }
+}
+
+.checkout-cart-box {
+  width: 100%;
+  @include for-tablet-landscape-up {
+    width: 50%;
+  }
+}
+
+.checkout-steps-box {
+  width: 100%;
+  @include for-tablet-landscape-up {
+    width: 50%;
+  }
+}
+
+.box-green {
+  background-color: $conscients-green;
 }
 
 // DELIVERY
