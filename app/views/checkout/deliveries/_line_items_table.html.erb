@@ -13,7 +13,7 @@
       <% cart.line_items.includes(:product_sku).each do |line_item| %>
         <tr class="border-bottom-dotted border-top-dotted small-td-font">
           <td class="small-cart-img pl-md-2"><%= image_tag(line_item.product_images.first) %></th>
-          <td>
+          <td class="pl-md-2">
             <div><%= line_item.product_sku.to_s %></div>
             <div><%= line_item.recipient_name if line_item&.recipient_name&.present? %></div>
           </td>
@@ -31,8 +31,13 @@
 
           <td class="text-center"><%= humanized_money_with_symbol line_item.ttc_price %></td>
           <td class= text-center>
+          <!-- add edit but go back to cart after editing-->
+              <%= link_to product_path(line_item.product, line_item: line_item) do %>
+                <%= fa_icon "pencil", class: "c-pointer" %>
+              <% end %>
+          <!-- end add edit            -->
             <%= link_to product_line_item_path(line_item.product, line_item), method: :delete do %>
-              <%= fa_icon "times", class: "c-pointer mr-3" %>
+              <%= fa_icon "times", class: "c-pointer" %>
             <% end %>
           </td>
         </tr>
