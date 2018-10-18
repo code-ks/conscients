@@ -13,7 +13,7 @@
       </div>
     </div>
     <div>
-      <div class= "d-flex justify-content-end small-total-font">
+      <div class= "d-flex justify-content-end small-total-font padding-t">
         <div class="">
         <% if cart.email? %>
           <%= t('.total_price') %>
@@ -75,7 +75,7 @@
       <% end %>
       <% if cart.email? %>
         <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
-        <p class="f-08R color-white"><%= t('.description_email_delivery_details') %></p>
+        <p class="f-08R color-white asterix-before"> <%= t('.description_email_delivery_details') %></p>
       <% else %>
         <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
       <% end %>

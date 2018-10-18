@@ -39,6 +39,16 @@
   }
 }
 
+  .asterix-before:before {
+    content: "*";
+    color: $conscients-red;
+  }
+
+  .asterix-after:after {
+    content: "*";
+    color: $conscients-red;
+  }
+
  .recipient-email {
     .form-control, input[type=email] {
       border: none;
