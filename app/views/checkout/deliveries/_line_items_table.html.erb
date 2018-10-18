@@ -22,7 +22,7 @@
           <% if cart.email? %>
             <%= form.fields_for :line_items, line_item do |j| %>
             <td>
-              <div class="form-group">
+              <div class="form-group mb-0 recipient-email">
                 <%= j.email_field :delivery_email, class: "form-control f-08R", placeholder: true %>
               </div>
             </td>
@@ -31,10 +31,10 @@
 
           <td class="text-center"><%= humanized_money_with_symbol line_item.ttc_price %></td>
           <td class= text-center>
-          <!-- add edit but go back to cart after editing-->
-              <%= link_to product_path(line_item.product, line_item: line_item) do %>
-                <%= fa_icon "pencil", class: "c-pointer" %>
-              <% end %>
+          <!-- VOIR SI ON GARDE OU PASadd edit but go back to cart after editing-->
+<!--               </%= link_to product_path(line_item.product, line_item: line_item) do %>
+                </%= fa_icon "pencil", class: "c-pointer color-red" %>
+              </% end %> -->
           <!-- end add edit            -->
             <%= link_to product_line_item_path(line_item.product, line_item), method: :delete do %>
               <%= fa_icon "times", class: "c-pointer" %>

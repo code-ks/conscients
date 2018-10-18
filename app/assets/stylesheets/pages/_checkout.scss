@@ -39,6 +39,20 @@
   }
 }
 
+ .recipient-email {
+    .form-control, input[type=email] {
+      border: none;
+      font-weight: 300;
+    }
+  .form-control::-webkit-input-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300;}  /* WebKit, Blink, Edge */
+  .form-control:-moz-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300; }  /* Mozilla Firefox 4 to 18 */
+  .form-control::-moz-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300; }  /* Mozilla Firefox 19+ */
+  .form-control:-ms-input-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300; }  /* Internet Explorer 10-11 */
+  .form-control::-ms-input-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300; }  /* Microsoft Edge */
+
+  }
+
+
 .checkout-steps-box {
   width: 100%;
   z-index: 2;
@@ -60,6 +74,9 @@
   text-align: right;
   padding: 40px 0px 0 40px;
 }
+
+
+
 // DELIVERY
 .yellow-delivery-box {
   box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
