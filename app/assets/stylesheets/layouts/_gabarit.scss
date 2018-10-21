@@ -22,11 +22,15 @@
     background-color: red;
   }
 
+// BACKGROUND & COLORS
+
+  .bg-light-green {
+    background-color: $conscients-light-green;
+  }
   .bg-green {
     background-color: $conscients-green;
   }
 
-// BACKGROUND & COLORS
   .bg-grey {
     background-color: $conscients-bg-grey;
   }
@@ -35,7 +39,7 @@
     background-color: $conscients-yellow;
   }
   .color-red {
-    color: $conscients-red;
+    color: $conscients-red !important;
   }
 
   .color-yellow {

@@ -64,7 +64,7 @@
       <% else %>
         <h2 class="color-white padding-b"><%= t('.delivery_address') %></h2>
         <div class="page-font color-white">
-          <p><%= t('.description_postal_delivery') %> <br>
+          <p><%= t('.description_postal_delivery') %>
           <% if cart.tree_only? %>
             <%= link_to new_delivery_path(delivery_type: "email") do %>
               <span class="choose-delivery-link"><%= fa_icon "plus" %> <%= t('.go_to_email_delivery_link') %></span>
@@ -81,7 +81,7 @@
       <% end %>
 
       <% unless cart.tree_only? %>
-        <div class="form-group">
+        <div class="form-group box-green-input">
           <%= form.text_field :recipient_message, class: "form-control mr-sm-2", placeholder: t('.recipient_message') %>
         </div>
       <% end %>
@@ -89,7 +89,7 @@
       <h2 class="color-white padding-t"><%= t('.billing_address') %></h2>
       <div data-controller="billing-address">
         <% if cart.postal? %>
-          <div class="form-group">
+          <div class="form-group color-white">
             <%= form.check_box :delivery_is_billing, checked: true, data: { action: "billing-address#toggleDisplay", target: "billing-address.checkable" } %>
             <%= form.label t('.delivery_is_billing') %>
           </div>
@@ -98,7 +98,7 @@
           <%= render 'postal_billing_address_form', billing_address: billing_address, form: form %>
       </div>
       <!-- dessous : souhaitez vous nous adresser un message -->
-      <div class="form-group">
+      <div class="form-group box-green-input">
         <%= form.text_field :customer_note, class: "form-control mr-sm-2", placeholder: t('.customer_note') %>
       </div>
       <!-- fin envoi message -->

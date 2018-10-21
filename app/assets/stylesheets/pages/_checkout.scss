@@ -75,17 +75,58 @@
 .box-green {
   padding: 40px;
   background-color: $conscients-green;
-  // box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
-  @include for-tablet-landscape-up {
-  margin-top: 16px;
+    input::placeholder {
+      color: $conscients-medium-green !important;
+      font-size: 0.9rem;
+    }
+    @include for-tablet-landscape-up {
+      margin-top: 16px;
+    }
+}
+
+
+.box-green-input {
+  .form-control, input[type=text] {
+    background: $conscients-light-green;
+    border: 1px solid $conscients-green;
+    color: $conscients-dark-green;
+    font-size: 0.9rem;
   }
 }
 
-.box-green-input {
-  .form-control, input[type=text]{
-    background: $conscients-light-green;
-    border: 1px solid $conscients-green;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,.16), 0 -1px 1px $conscients-green, 0 1px 0 $conscients-green;
+.box-green-select {
+  select {
+    background-color: $conscients-light-green;
+    border: none;
+    width: 100%;
+    color: $conscients-dark-green;
+    font-size: 0.9rem;
+  }
+}
+
+.box-green-select {
+  select:focus {
+    outline: 0;
+  }
+}
+
+.div-color {
+  background-color: $conscients-light-green;
+}
+
+.autofill-green {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: $conscients-grey;
+    -webkit-box-shadow: 0 0 0px 1000px $conscients-light-green inset;
+    transition: background-color 5000s ease-in-out 0s;
   }
 }
 
