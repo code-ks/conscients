@@ -7,6 +7,9 @@
 <div class="checkout-box page-font padding-t">
   <div class="checkout-cart-box">
     <h2 class="padding-b"><%= t('.my_cart') %></h2>
+    <% if cart.email? %>
+      <p class="display-phone-tablet-portait-only f-08R asterix-before padding-b"> <%= t('.description_email_delivery_details') %></p>
+    <% end %>
     <div>
       <div class="mb-2">
         <%= render 'line_items_table', cart: cart, form: form %>
@@ -75,7 +78,7 @@
       <% end %>
       <% if cart.email? %>
         <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
-        <p class="f-08R color-white asterix-before padding-b"> <%= t('.description_email_delivery_details') %></p>
+        <p class="display-landscape-up-only f-08R color-white asterix-before padding-b"> <%= t('.description_email_delivery_details') %></p>
       <% else %>
         <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
       <% end %>
@@ -105,6 +108,10 @@
       </div>
     </div>
 
+
+  </div>
+
+</div>
     <div class= "delivery-validation-box">
       <div class="form-group d-flex align-items-center justify-content-end">
         <%= form.check_box :general_sales_conditions, checked: false, required: true %>
@@ -116,7 +123,5 @@
 
       <%= form.submit t('.go_to_payment'), class: "btn conscients-btn conscients-btn-phone btn-green"%>
     </div>
-  </div>
-</div>
 <!-- FIN TEST CAROLE -->
 <% end %>
