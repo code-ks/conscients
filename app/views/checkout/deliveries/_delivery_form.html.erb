@@ -53,7 +53,7 @@
   <div class="checkout-steps-box page-font">
     <div class=box-green>
       <% if cart.email? %>
-        <h2 class="color-white padding-b"><%= t('.email') %></h4>
+        <h2 class="color-white"><%= t('.email') %></h4>
         <div class="color-white">
           <p><%= t('.description_email_delivery')%>
           <%= link_to new_delivery_path(delivery_type: "postal") do %>
@@ -62,7 +62,7 @@
           </p>
         </div>
       <% else %>
-        <h2 class="color-white padding-b"><%= t('.delivery_address') %></h2>
+        <h2 class="color-white"><%= t('.delivery_address') %></h2>
         <div class="page-font color-white">
           <p><%= t('.description_postal_delivery') %>
           <% if cart.tree_only? %>
@@ -75,7 +75,7 @@
       <% end %>
       <% if cart.email? %>
         <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
-        <p class="f-08R color-white asterix-before"> <%= t('.description_email_delivery_details') %></p>
+        <p class="f-08R color-white asterix-before padding-b"> <%= t('.description_email_delivery_details') %></p>
       <% else %>
         <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
       <% end %>
