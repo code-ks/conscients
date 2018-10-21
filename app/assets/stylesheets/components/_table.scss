@@ -19,9 +19,9 @@
   .conscients-table-responsive {
     table-layout: fixed;
     width: 100%;
-    @include for-phone-only {
-      border: 1px solid $conscients-grey;
-    }
+    // @include for-phone-only {
+    //   border: 1px solid $conscients-grey;
+    // }
     // @include for-tablet-portrait-only {
     //   border: 1px solid $conscients-grey;
     // }

@@ -48,15 +48,16 @@
 // CART ON DELIVERY
 .checkout-cart-box {
   width: 100%;
-  padding: 40px;
+  padding: 1rem;
   border: $border-grey;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
   z-index: 1;
   @include for-phone-only {
     order: 2;
   }
   @include for-tablet-landscape-up {
     width: 49%;
+    padding: 40px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
   }
 }
 
@@ -93,34 +94,51 @@
 }
 
 .box-green {
-  padding: 40px;
-  background-color: $conscients-green;
+  padding: 1rem;
     input::placeholder {
-      color: $conscients-medium-green !important;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     @include for-tablet-landscape-up {
       margin-top: 16px;
+      padding: 40px;
+      background-color: $conscients-green;
+        input::placeholder {
+          color: $conscients-medium-green !important;
+          font-size: 0.9rem;
+        }
     }
+}
+
+.box-green-text {
+  @include for-tablet-landscape-up {
+    color: white;
+  }
 }
 
 
 .box-green-input {
   .form-control, input[type=text] {
-    background: $conscients-light-green;
-    border: 1px solid $conscients-green;
-    color: $conscients-dark-green;
-    font-size: 0.9rem;
+    font-family: 0.8rem;
+  }
+  @include for-tablet-landscape-up {
+    .form-control, input[type=text] {
+      background: $conscients-light-green;
+      border: 1px solid $conscients-green;
+      color: $conscients-dark-green;
+      font-size: 0.9rem;
+    }
   }
 }
 
 .box-green-select {
-  select {
-    background-color: $conscients-light-green;
-    border: none;
-    width: 100%;
-    color: $conscients-dark-green;
-    font-size: 0.9rem;
+  @include for-tablet-landscape-up {
+    select {
+      background-color: $conscients-light-green;
+      border: none;
+      width: 100%;
+      color: $conscients-dark-green;
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -131,7 +149,11 @@
 }
 
 .div-color {
-  background-color: $conscients-light-green;
+  border: $border-grey;
+  @include for-tablet-landscape-up {
+    background-color: $conscients-light-green;
+    border: none;
+  }
 }
 
 .autofill-green {
@@ -166,14 +188,19 @@
 }
 
  .choose-delivery-link {
-    // color: $conscients-red;
-    color: $conscients-dark-green;
-    font-family: "Roboto", "sans-serif";
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    // font-size: 0.6rem;
-    font-size: 0.55rem;
+  color: $conscients-red;
+  font-family: "Frank Ruhl Libre", "serif";
+  font-size: 0.7rem;
+    @include for-tablet-landscape-up {
+      color: $conscients-dark-green;
+      font-family: "Roboto", "sans-serif";
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      font-size: 0.55rem;
+    }
  }
+
+
 
 .pay-box-on-delivery-form {
     @include for-tablet-landscape-up {

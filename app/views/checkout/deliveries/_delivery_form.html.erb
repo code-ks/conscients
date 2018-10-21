@@ -56,8 +56,8 @@
   <div class="checkout-steps-box page-font">
     <div class=box-green>
       <% if cart.email? %>
-        <h2 class="color-white"><%= t('.email') %></h4>
-        <div class="color-white">
+        <h2 class="box-green-text pb-resp-16"><%= t('.email') %></h4>
+        <div class="box-green-text ">
           <p><%= t('.description_email_delivery')%>
           <%= link_to new_delivery_path(delivery_type: "postal") do %>
             <span class="choose-delivery-link"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
@@ -65,8 +65,8 @@
           </p>
         </div>
       <% else %>
-        <h2 class="color-white"><%= t('.delivery_address') %></h2>
-        <div class="page-font color-white">
+        <h2 class="box-green-text pb-resp-16"><%= t('.delivery_address') %></h2>
+        <div class="page-font box-green-text ">
           <p><%= t('.description_postal_delivery') %>
           <% if cart.tree_only? %>
             <%= link_to new_delivery_path(delivery_type: "email") do %>
@@ -78,7 +78,7 @@
       <% end %>
       <% if cart.email? %>
         <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
-        <p class="display-landscape-up-only f-08R color-white asterix-before padding-b"> <%= t('.description_email_delivery_details') %></p>
+        <p class="display-landscape-up-only f-08R box-green-text asterix-before padding-b"> <%= t('.description_email_delivery_details') %></p>
       <% else %>
         <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
       <% end %>
@@ -89,10 +89,10 @@
         </div>
       <% end %>
 
-      <h2 class="color-white padding-t"><%= t('.billing_address') %></h2>
+      <h2 class="box-green-text padding-t pt-resp-32"><%= t('.billing_address') %></h2>
       <div data-controller="billing-address">
         <% if cart.postal? %>
-          <div class="form-group color-white">
+          <div class="form-group box-green-text ">
             <%= form.check_box :delivery_is_billing, checked: true, data: { action: "billing-address#toggleDisplay", target: "billing-address.checkable" } %>
             <%= form.label t('.delivery_is_billing') %>
           </div>
