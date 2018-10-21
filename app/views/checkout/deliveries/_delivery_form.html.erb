@@ -4,6 +4,7 @@
       <%= render 'shared/form_errors', instance: billing_address %>
 
 
+
 <div class="checkout-box page-font padding-t">
   <div class="checkout-cart-box">
     <h2 class="padding-b"><%= t('.my_cart') %></h2>
@@ -107,21 +108,23 @@
       <!-- fin envoi message -->
       </div>
     </div>
+  </div>
+</div>
 
 
+<div class= "delivery-validation-box">
+  <div class="form-group d-flex align-items-baseline justify-content-end">
+    <%= form.check_box :general_sales_conditions, checked: false, required: true %>
+    <%= form.label t('.general_sales_conditions'), class: "mb-0 ml-1" %>
   </div>
 
+  <%= form.hidden_field :address_type, value: cart.delivery_method %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <%= form.submit t('.go_to_payment'), class: "btn conscients-btn conscients-btn-phone btn-green"%>
 </div>
-    <div class= "delivery-validation-box">
-      <div class="form-group d-flex align-items-baseline justify-content-end">
-        <%= form.check_box :general_sales_conditions, checked: false, required: true %>
-        <%= form.label t('.general_sales_conditions'), class: "mb-0 ml-1" %>
-      </div>
 
-      <%= form.hidden_field :address_type, value: cart.delivery_method %>
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-      <%= form.submit t('.go_to_payment'), class: "btn conscients-btn conscients-btn-phone btn-green"%>
-    </div>
-<!-- FIN TEST CAROLE -->
+
+
 <% end %>

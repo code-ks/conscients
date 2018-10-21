@@ -1,12 +1,13 @@
 <div>
-  <span class="d-flex flex-column align-items-end">
-    <div class="font-weight-bold"><%= t('.sub_total') %></div>
-    <div class="h4 orange font-weight-bold"><%= humanized_money_with_symbol cart.ttc_price %></div>
+  <!-- <span class="d-flex flex-column align-items-end"> -->
+  <div class= "d-flex flex-column align-items-end small-total-font padding-t">
+    <div class=""><%= t('.sub_total') %></div>
+    <div class="color-green"><%= humanized_money_with_symbol cart.ttc_price %></div>
     <% if @cart.coupon %>
-      <div class="h6">- <%= humanized_money_with_symbol cart.coupon_discount %> <%= t('.from_discount') %></div>
+      <div class="">- <%= humanized_money_with_symbol cart.coupon_discount %> <%= t('.from_discount') %></div>
     <% end %>
       <div class="h6">+ <%= humanized_money_with_symbol cart.current_delivery_fees %> <%= t('.delivery_fees') %></div>
-      <div class="font-weight-bold"><%= t('.total_price') %></div>
-      <div class="h4 orange font-weight-bold"><%= humanized_money_with_symbol cart.ttc_price_all_included %></div>
-  </span>
+      <div class=""><%= t('.total_price') %></div>
+      <div class="color-green"><%= humanized_money_with_symbol cart.ttc_price_all_included %></div>
+  </div>
 </div>

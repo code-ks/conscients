@@ -31,20 +31,25 @@
 
 // CART ON DELIVERY
   .checkout-cart-box {
+    order: 2;
     width: 100%;
     padding: 1rem;
     z-index: 1;
-    @include for-phone-only {
-      order: 2;
-    }
-    @include for-tablet-portrait-only {
-      order: 2;
-    }
+    // @include for-phone-only {
+    //   order: 2;
+    // }
+    // @include for-tablet-portrait-only {
+    //   order: 2;
+    // }
     @include for-tablet-landscape-up {
       width: 49%;
       padding: 40px;
       border: $border-grey;
+      border: 1px solid $conscients-very-light-grey;
       box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+      margin-top: 24px;
+      // border-left: 1px solid $conscients-very-light-grey;
+      box-shadow: 2px 2px 2px #eff2f1;
     }
   }
 
@@ -87,11 +92,14 @@
   }
 
   .box-green {
+    order: 1;
     padding: 1rem;
       @include for-tablet-landscape-up {
-        margin-top: 16px;
+        box-shadow: 2px 0px 3px 0 rgba(0, 0, 0, 0.16);
+        // margin-top: 16px;
         padding: 40px;
         background-color: $conscients-green;
+        height: 100%;
           input::placeholder {
             color: $conscients-medium-green !important;
             font-size: 0.9rem;
