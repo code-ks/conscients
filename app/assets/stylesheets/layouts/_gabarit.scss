@@ -1,3 +1,55 @@
+.div-around {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  @include for-tablet-landscape-up {
+  height: 100vh;
+  }
+
+}
+
+.cart-delivery {
+  display: flex;
+  flex-direction: column;
+  @include for-tablet-landscape-up {
+  flex-direction: row;
+  }
+}
+
+.cart {
+  background-color: yellow;
+  @include for-tablet-landscape-up {
+    height: 100vh;
+    width: 50%;
+    overflow: scroll;
+  }
+  @include for-phone-only {
+    order: 2;
+  }
+  @include for-tablet-portrait-only {
+    order: 2;
+  }
+}
+
+.delivery {
+  background-color: pink;
+  @include for-tablet-landscape-up {
+    width: 50%;
+  }
+  @include for-phone-only {
+    order: 1;
+  }
+  @include for-tablet-portrait-only {
+    order: 1;
+  }
+}
+.payment {
+  background-color: green;
+  @include for-tablet-landscape-up {
+  width: 50%;
+  align-self: flex-end;
+  }
+}
 // **** BASE RESPONSIVE FONT ****
   body {
     color: $conscients-grey;

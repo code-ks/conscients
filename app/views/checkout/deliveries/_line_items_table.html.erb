@@ -12,7 +12,7 @@
     <tbody>
       <% cart.line_items.includes(:product_sku).each do |line_item| %>
         <tr class="border-bottom-dotted border-top-dotted small-td-font">
-          <td class="small-cart-img pl-md-2"><%= image_tag(line_item.product_images.first) %></th>
+          <td class="small-cart-img pl-md-2"><%= image_tag(line_item.product_images.first) %></td>
           <td class="pl-md-2">
             <div><%= line_item.product_sku.to_s %></div>
             <div><%= line_item.recipient_name if line_item&.recipient_name&.present? %></div>
