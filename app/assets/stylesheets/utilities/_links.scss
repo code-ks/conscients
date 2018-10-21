@@ -1,3 +1,11 @@
+  .coral-link {
+    a {
+      &:hover {
+        color: $conscients-coral;
+      }
+    }
+  }
+
   .underlined-link {
       font-family: "Frank Ruhl Libre", "serif";
       font-size: 0.9rem;

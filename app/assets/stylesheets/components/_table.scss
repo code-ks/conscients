@@ -207,21 +207,14 @@
   .small-td-font {
     font-family: "Frank Ruhl Libre", "serif";
     font-weight: 300;
-    font-size: 0.8rem;
-    // word-wrap: break-word;
-    // -webkit-hyphens: auto;
-    // -moz-hyphens: auto;
-    // -ms-hyphens: auto;
-    // -o-hyphens: auto;
-    // hyphens: auto;
-    // @include for-phone-only {
-    //   font-size: 0.7rem;
-    // }
+    font-size: 0.7rem;
+    @include for-tablet-landscape-up {
+      font-size: 0.8rem;
+    }
   }
 
   .small-total-font{
     font-size: 0.8rem;
-
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     // @include for-phone-only {

@@ -8,7 +8,7 @@
   <div class="checkout-cart-box">
     <h2 class="padding-b"><%= t('.my_cart') %></h2>
     <% if cart.email? %>
-      <p class="display-phone-tablet-portait-only f-08R asterix-before padding-b"> <%= t('.description_email_delivery_details') %></p>
+      <p class="display-phone-tablet-portait-only padding-b"> <%= t('.description_email_delivery_details_phone') %></p>
     <% end %>
     <div>
       <div class="mb-2">
@@ -89,7 +89,7 @@
         </div>
       <% end %>
 
-      <h2 class="box-green-text padding-t pt-resp-32"><%= t('.billing_address') %></h2>
+      <h2 class="box-green-text padding-t pt-resp-32 pb-resp-16"><%= t('.billing_address') %></h2>
       <div data-controller="billing-address">
         <% if cart.postal? %>
           <div class="form-group box-green-text ">
@@ -113,7 +113,7 @@
 
 </div>
     <div class= "delivery-validation-box">
-      <div class="form-group d-flex align-items-center justify-content-end">
+      <div class="form-group d-flex align-items-baseline justify-content-end">
         <%= form.check_box :general_sales_conditions, checked: false, required: true %>
         <%= form.label t('.general_sales_conditions'), class: "mb-0 ml-1" %>
       </div>

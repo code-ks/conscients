@@ -1,0 +1,14 @@
+.display-landscape-up-only {
+  @include for-phone-only {
+    display: none;
+  }
+  @include for-tablet-portrait-only {
+    display: none;
+  }
+}
+
+.display-phone-tablet-portait-only {
+  @include for-tablet-landscape-up {
+    display: none;
+  }
+}

@@ -1,65 +1,52 @@
-// classer
-
-.display-landscape-up-only {
-  @include for-phone-only {
-    display: none;
-  }
-  @include for-tablet-portrait-only {
-    display: none;
-  }
-}
-
-.display-phone-tablet-portait-only {
-  @include for-tablet-landscape-up {
-    display: none;
-  }
-}
-
-.checkout-first-title-padding {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  @include for-phone-only {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  }
-}
-
-.checkout-font {
-  h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    text-align: center;
-    padding-top: 16px;
-    padding-bottom: 16px;
+//ON TOP
+  .checkout-first-title-padding {
+    padding-top: 30px;
+    padding-bottom: 30px;
     @include for-phone-only {
-      font-size: 2rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
     }
   }
-}
 
-.checkout-box {
-  display:flex;
-  flex-direction: column;
-    @include for-tablet-landscape-up {
-      flex-direction: row;
+  .checkout-font {
+    h1 {
+      font-size: 3rem;
+      font-weight: 400;
+      text-align: center;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      @include for-phone-only {
+        font-size: 2rem;
+      }
     }
-}
+  }
+
+  .checkout-box {
+    display:flex;
+    flex-direction: column;
+      @include for-tablet-landscape-up {
+        flex-direction: row;
+      }
+  }
 
 // CART ON DELIVERY
-.checkout-cart-box {
-  width: 100%;
-  padding: 1rem;
-  border: $border-grey;
-  z-index: 1;
-  @include for-phone-only {
-    order: 2;
+  .checkout-cart-box {
+    width: 100%;
+    padding: 1rem;
+    z-index: 1;
+    @include for-phone-only {
+      order: 2;
+    }
+    @include for-tablet-portrait-only {
+      order: 2;
+    }
+    @include for-tablet-landscape-up {
+      width: 49%;
+      padding: 40px;
+      border: $border-grey;
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+    }
   }
-  @include for-tablet-landscape-up {
-    width: 49%;
-    padding: 40px;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
-  }
-}
 
   .asterix-before:before {
     content: "*";
@@ -84,108 +71,93 @@
 
   }
 
-// ADRESS ON DELIVERY
-.checkout-steps-box {
-  width: 100%;
-  z-index: 2;
-  @include for-tablet-landscape-up {
-    width: 51%;
-  }
-}
-
-.box-green {
-  padding: 1rem;
-    input::placeholder {
-      font-size: 0.8rem;
-    }
+  .recipient-email-font-size {
+    font-size: 0.7rem !important;
     @include for-tablet-landscape-up {
-      margin-top: 16px;
-      padding: 40px;
-      background-color: $conscients-green;
-        input::placeholder {
-          color: $conscients-medium-green !important;
-          font-size: 0.9rem;
-        }
-    }
-}
-
-.box-green-text {
-  @include for-tablet-landscape-up {
-    color: white;
-  }
-}
-
-
-.box-green-input {
-  .form-control, input[type=text] {
-    font-family: 0.8rem;
-  }
-  @include for-tablet-landscape-up {
-    .form-control, input[type=text] {
-      background: $conscients-light-green;
-      border: 1px solid $conscients-green;
-      color: $conscients-dark-green;
-      font-size: 0.9rem;
+      font-size: 0.8rem !important;
     }
   }
-}
+// ADRESS ON DELIVERY
+  .checkout-steps-box {
+    width: 100%;
+    z-index: 2;
+    @include for-tablet-landscape-up {
+      width: 51%;
+    }
+  }
 
-.box-green-select {
-  @include for-tablet-landscape-up {
-    select {
+  .box-green {
+    padding: 1rem;
+      @include for-tablet-landscape-up {
+        margin-top: 16px;
+        padding: 40px;
+        background-color: $conscients-green;
+          input::placeholder {
+            color: $conscients-medium-green !important;
+            font-size: 0.9rem;
+          }
+      }
+  }
+
+  .box-green-text {
+    @include for-tablet-landscape-up {
+      color: white;
+    }
+  }
+
+
+  .box-green-input {
+    @include for-tablet-landscape-up {
+      .form-control, input[type=text] {
+        background: $conscients-light-green;
+        border: 1px solid $conscients-green;
+        color: $conscients-dark-green;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .box-green-select {
+    @include for-tablet-landscape-up {
+      select {
+        background-color: $conscients-light-green;
+        border: none;
+        width: 100%;
+        color: $conscients-dark-green;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .box-green-select {
+    select:focus {
+      outline: 0;
+    }
+  }
+
+  .div-color {
+    border: $border-grey;
+    @include for-tablet-landscape-up {
       background-color: $conscients-light-green;
       border: none;
-      width: 100%;
-      color: $conscients-dark-green;
-      font-size: 0.9rem;
     }
   }
-}
 
-.box-green-select {
-  select:focus {
-    outline: 0;
+  .autofill-green {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      -webkit-text-fill-color: $conscients-grey;
+      -webkit-box-shadow: 0 0 0px 1000px $conscients-light-green inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
   }
-}
-
-.div-color {
-  border: $border-grey;
-  @include for-tablet-landscape-up {
-    background-color: $conscients-light-green;
-    border: none;
-  }
-}
-
-.autofill-green {
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus
-  textarea:-webkit-autofill,
-  textarea:-webkit-autofill:hover
-  textarea:-webkit-autofill:focus,
-  select:-webkit-autofill,
-  select:-webkit-autofill:hover,
-  select:-webkit-autofill:focus {
-    -webkit-text-fill-color: $conscients-grey;
-    -webkit-box-shadow: 0 0 0px 1000px $conscients-light-green inset;
-    transition: background-color 5000s ease-in-out 0s;
-  }
-}
-
-.delivery-validation-box {
-  text-align: right;
-  padding: 40px 0px 0 40px;
-}
-
-
-
-// DELIVERY
-.yellow-delivery-box {
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
-  background-color: $conscients-yellow;
-  padding: 40px;
-  z-index: 1;
-}
 
  .choose-delivery-link {
   color: $conscients-red;
@@ -199,6 +171,22 @@
       font-size: 0.55rem;
     }
  }
+// VALIDATION
+  .delivery-validation-box {
+    text-align: right;
+    padding: 40px 0px 0 40px;
+  }
+
+
+// DELIVERY
+.yellow-delivery-box {
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+  background-color: $conscients-yellow;
+  padding: 40px;
+  z-index: 1;
+}
+
+
 
 
 

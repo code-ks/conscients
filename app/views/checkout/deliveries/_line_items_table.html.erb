@@ -1,6 +1,6 @@
   <table class="conscients-table-responsive small-first-col-fix-width">
     <thead>
-      <tr class= "top-tr">
+      <tr class= "top-tr display-landscape-up-only">
         <th class="small-th-font text-nowrap pl-md-2"><%= t('.selection') %></th>
         <th class="small-th-font"></th>
         <th class="small-th-font text-center"><%= t('.qty') %></th>
@@ -23,7 +23,7 @@
             <%= form.fields_for :line_items, line_item do |j| %>
             <td>
               <div class="form-group mb-0 recipient-email">
-                <%= j.email_field :delivery_email, class: "form-control f-08R", placeholder: true %>
+                <%= j.email_field :delivery_email, class: "form-control recipient-email-font-size", placeholder: true %>
               </div>
             </td>
             <% end %>
