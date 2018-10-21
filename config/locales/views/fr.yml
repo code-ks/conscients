@@ -280,9 +280,9 @@ fr:
         delivery: "Livraison"
       delivery_form:
         my_cart: "Mon panier"
-        email: "Envoi du certificat par email"
+        email: "Email de livraison"
         description_email_delivery: "Vous recevrez votre certificat par email à l'adresse ci-dessous (vous le retrouverez également dans votre compte). "
-        description_email_delivery_details: "Si vous souhaitez que nous envoyions aussi le certificat à son destinataire, vous pouvez renseigner son email dans le tableau à droite."
+        description_email_delivery_details: "Si vous souhaitez que nous envoyions aussi le certificat à son destinataire, vous pouvez renseigner son email dans le tableau « Mon panier »."
         description_postal_delivery: "Indiquez nous ici l'adresse de livraison. Les frais de port seront calculés en fonction du poids et de la destination."
         go_to_email_delivery_link: "Non, retour à l'envoi par email uniquement"
         go_to_postal_delivery: "OLD"
