@@ -319,7 +319,7 @@ fr:
         delivery: "Adresse de livraison"
       payment_buttons:
         select_payment_method: "Mode de paiement"
-        bank_transfer: "Virement bancaire"
+        bank_transfer: "Virement"
       stripe_button:
         card: "CB"
       line_items_table:

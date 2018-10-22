@@ -51,6 +51,12 @@ button:focus {outline:0;}
     background-color: black;
   }
 
+// BTN WHITE
+  .btn-white {
+    background-color: white;
+  }
+
+
 // FACEBOOK CONNECT WHITE
   .fb-connect-btn-w::before {
       font-family: FontAwesome;
@@ -76,12 +82,12 @@ button:focus {outline:0;}
     text-decoration: underline;
   }
 
-// PAYMENTS BUTTON
 
-  .paypal-btn {
-    font-family: FontAwesome;
-    content: "\f14";
-  }
+
+  // .paypal-btn {
+  //   font-family: FontAwesome;
+  //   content: "\f14";
+  // }
 
 .input-field {
     padding: 12px 20px;
@@ -105,29 +111,29 @@ button:focus {outline:0;}
   text-transform: uppercase;
   font-size: 0.75rem;
 }
-.dark-button {
-    // padding: 12px 20px;
-    // border: 1px solid #e2e2e2;
-    // text-transform: uppercase;
-    // font-size: 0.75rem;
-    // font-family: "brandon-grotesque","Arial","sans-serif";
-    // background: $conscients-grey;
-    // letter-spacing: 0.15em;
-    // width: 100%;
-    // border-radius: 0;
-    border: 1px solid #343434;
-    background: $conscients-grey;
-    color: #fff;
-    padding: 13px 28px;
-    line-height: normal;
-    border-radius: 0;
-    text-transform: uppercase;
-    font-family: "brandon-grotesque","Arial","sans-serif";
-    font-size: 0.8125rem;
-    background: none;
-    letter-spacing: 0.2em;
-    text-align: center;
-    transition: all 0.25s ease-in-out;
-    border: none;
-    -webkit-appearance: none;
-}
+// .dark-button {
+//     // padding: 12px 20px;
+//     // border: 1px solid #e2e2e2;
+//     // text-transform: uppercase;
+//     // font-size: 0.75rem;
+//     // font-family: "brandon-grotesque","Arial","sans-serif";
+//     // background: $conscients-grey;
+//     // letter-spacing: 0.15em;
+//     // width: 100%;
+//     // border-radius: 0;
+//     border: 1px solid #343434;
+//     background: $conscients-grey;
+//     color: #fff;
+//     padding: 13px 28px;
+//     line-height: normal;
+//     border-radius: 0;
+//     text-transform: uppercase;
+//     font-family: "brandon-grotesque","Arial","sans-serif";
+//     font-size: 0.8125rem;
+//     background: none;
+//     letter-spacing: 0.2em;
+//     text-align: center;
+//     transition: all 0.25s ease-in-out;
+//     border: none;
+//     -webkit-appearance: none;
+// }

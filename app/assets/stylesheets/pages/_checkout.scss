@@ -240,6 +240,40 @@
     padding: 40px 0px 0 40px;
   }
 
+// PAYMENT BOX
+  .payment-box {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    @include for-tablet-landscape-up {
+      flex-direction: row;
+      padding-top: 16px;
+      height: 50px;
+    }
+  }
+// PAYMENTS BUTTON
+
+  .btn-pay {
+    height: 100%;
+    // border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    // border: $border-grey;
+    @include for-tablet-landscape-up {
+      width: 130px !important;
+      margin-top: 0;
+      // width: 30%;
+    }
+
+  }
+  // .credit-card {
+  //   // color: #2673b6;
+  //   color: $conscients-black;
+  //   margin-bottom: 0;
+  // }
+
+
+
 
 // DELIVERY
 .yellow-delivery-box {
