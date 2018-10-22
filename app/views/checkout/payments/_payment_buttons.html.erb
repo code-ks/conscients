@@ -1,11 +1,21 @@
-<div class="my-5">
-  <p class="text-center font-weight-bold"><%= t('.select_payment_method') %></p>
-  <div class="d-flex justify-content-around">
+<div class="">
+  <h2 class="box-green-text pb-resp-16"><%= t('.select_payment_method') %></h2>
+  <p class="box-green-text">Sélectionnez parmi les modes de paiements proposés</p>
+  <!-- <p class="text-center font-weight-bold"></%= t('.select_payment_method') %></p> -->
+  <div class="d-flex justify-content-around padding-t">
 
     <%= render 'stripe_button', cart: cart %>
 
-    <%= link_to "Paypal", create_paypal_payments_path, method: :post,  class: "btn btn-lg btn-dark" %>
+ <!--    </%= link_to "Paypal", create_paypal_payments_path, method: :post,  class: "paypal-btn" %> -->
+  <%= link_to create_paypal_payments_path, method: :post, class: "btn conscients-btn" do %>
+    Payer avec <%= fa_icon "cc-paypal", class: "c-pointer" %>
+  <% end %>
 
-    <%= link_to t('.bank_transfer'), create_bank_transfer_payments_path, method: :post, class: "btn btn-lg btn-dark" %>
+  <%= link_to t('.bank_transfer'), create_bank_transfer_payments_path, method: :post, class: "btn conscients-btn" %>
+
   </div>
 </div>
+
+
+
+

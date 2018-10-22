@@ -307,6 +307,7 @@ en:
         payment: "Payment"
       new:
         title: "Payment"
+        my_cart: "My cart"
       show:
         go_to_client_space: "For more details, go to your client space"
         order_confirmed: "Thanks a lot! Your order have been received"
@@ -324,7 +325,7 @@ en:
         billing: "Billing address"
         delivery: "Delivery address"
       payment_buttons:
-        select_payment_method: "Select your payment method"
+        select_payment_method: "Payment method"
         bank_transfer: "Bank Transfer"
       stripe_button:
         card: "Card"

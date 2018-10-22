@@ -3,7 +3,7 @@
 
   <%= hidden_field_tag 'stripe_token' %>
 
-  <button id="stripe-payment-button" class="btn btn-dark btn-lg"><%= t('.card') %></button>
+  <button id="stripe-payment-button" class="btn conscients-btn"><%= t('.card') %> <i class="fa fa-credit-card"></i></button>
 
   <script>
     const handler = StripeCheckout.configure({

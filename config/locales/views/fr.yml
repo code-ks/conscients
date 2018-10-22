@@ -308,6 +308,7 @@ fr:
         payment: "Paiement"
       new:
         title: "Paiement"
+        my_cart: "Mon panier"
       show:
         go_to_client_space: "Pour plus d'informations, rendez-vous dans votre espace client"
         order_confirmed: "Merci beaucoup! Votre commande a bien été reçue"
@@ -317,7 +318,7 @@ fr:
         billing: "Adresse de facturation"
         delivery: "Adresse de livraison"
       payment_buttons:
-        select_payment_method: "Sélectionner le mode de paiement"
+        select_payment_method: "Mode de paiement"
         bank_transfer: "Virement bancaire"
       stripe_button:
         card: "CB"

@@ -76,6 +76,12 @@ button:focus {outline:0;}
     text-decoration: underline;
   }
 
+// PAYMENTS BUTTON
+
+  .paypal-btn {
+    font-family: FontAwesome;
+    content: "\f14";
+  }
 
 .input-field {
     padding: 12px 20px;

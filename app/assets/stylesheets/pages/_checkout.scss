@@ -31,7 +31,6 @@
 
 // CART ON DELIVERY
   .checkout-cart-box {
-    order: 2;
     width: 100%;
     padding: 1rem;
     z-index: 1;
@@ -92,7 +91,6 @@
   }
 
   .box-green {
-    order: 1;
     padding: 1rem;
       @include for-tablet-landscape-up {
         box-shadow: 2px 0px 3px 0 rgba(0, 0, 0, 0.16);
@@ -113,6 +111,42 @@
     }
   }
 
+  .box-green-text-checked {
+    @include for-tablet-landscape-up {
+      color: $conscients-dark-green;
+    }
+  }
+
+  .unchecked:before {
+    font-family: FontAwesome;
+    content: "\f0c8";
+    padding-right: 10px;
+    font-size: 1rem;
+  }
+  .checked:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+    // content: "\f14a";
+    padding-right: 10px;
+    font-size: 1rem;
+  }
+
+  .box-green-address-checked {
+    // padding-top: 16px;
+    p {
+    color: $conscients-dark-green;
+    font-size: 0.9rem;
+    font-family: "Roboto", "sans-serif";
+    text-transform: Uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    // text-transform: lowercase;
+    }
+  }
+
+  // .box-green-address-checked:first-letter {
+  //   text-transform: uppercase;
+  // }
 
   .box-green-input {
     @include for-tablet-landscape-up {
@@ -179,6 +213,27 @@
       font-size: 0.55rem;
     }
  }
+
+// CHANGE ORDER
+  .cart-on-top {
+    @include for-phone-only {
+      order: 1;
+    }
+    @include for-tablet-portrait-only {
+      order: 1
+    }
+  }
+
+  .delivery-below {
+    @include for-phone-only {
+      order: 2;
+    }
+    @include for-tablet-portrait-only {
+      order: 2;
+    }
+  }
+
+
 // VALIDATION
   .delivery-validation-box {
     text-align: right;

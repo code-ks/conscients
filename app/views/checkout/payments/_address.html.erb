@@ -1,7 +1,11 @@
 <!-- <div class="col-6"> -->
 
   <!-- <div class="border text-center p-3"> -->
-    <h4><%= t(title_key) %></h4>
+
+    <h2 class="box-green-text-checked pb-resp-16"><%= t(title_key) %></h2>
+    <div class="d-flex align-items-start pt-2 pb-4">
+    <i class="fa fa-check pr-2 box-green-text-checked"></i>
+    <div class="box-green-address-checked">
     <% if address.email? %>
       <p><%= address.email %></p>
     <% else %>
@@ -20,6 +24,8 @@
         <p><%= address.country %></p>
       <% end %>
     <% end %>
+    </div>
+    </div>
   <!-- </div> -->
 
 <!-- </div> -->
