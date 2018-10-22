@@ -34,22 +34,22 @@
         <% end %>
       </div>
 <!-- ******** PRIX AVEC REDUCTION ********  -->
-<!--       <div class= "d-flex justify-content-end small-total-font">
+      <div class= "d-flex justify-content-end small-total-font">
         <div class="">
-        </% if cart.email? %>
+        <% if cart.email? %>
           total avec reduction
-        </% else %>
+        <% else %>
           sous total avec reduction
-        </% end %>
+        <% end %>
         </div>
         <div class="color-green pl-2"><%= humanized_money_with_symbol @cart.ttc_price_with_coupon %></div>
-      </div> -->
+      </div>
 <!-- ******** FIN PRIX AVEC REDUCTION ********  -->
         <span class="total-comment-font"><p class="mb-0"><% unless cart.email? %><%= t('.without_delivery_fees') %><% end %></p></span>
 <!-- ******** AJOUTER REDUCTION ********  -->
-<!--       </% unless @cart.coupon %>
-        </%= render 'checkout/deliveries/add_coupon' %>
-      </% end %> -->
+      <% unless @cart.coupon %>
+        <%= render 'checkout/deliveries/add_coupon' %>
+      <% end %>
 <!-- ******** FIN AJOUTER REDUCTION ********       -->
     </div>
   </div>
