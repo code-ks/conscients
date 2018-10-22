@@ -6,10 +6,16 @@
 
   <h1 class="my-4"><%= t('.title').upcase %></h1>
 
-<!-- test  -->
-<div class="div-around">
-  <div class="cart-delivery">
-    <div class= "cart border">
+<!-- TEST 2 -->
+<div class="checkout-box page-font padding-t">
+  <div class="checkout-steps-box">
+    <div class="box-green">
+      <%= render 'address', address: @cart.billing_address, title_key: ".billing" %>
+      <%= render 'address', address: @cart.delivery_address, title_key: ".delivery" %>
+      <%= render 'payment_buttons', cart: @cart %>
+    </div>
+  </div>
+  <div class="checkout-cart-box">
       <p>PANIER traduire</p>
       <%= render 'line_items_table', cart: @cart %>
 
@@ -24,16 +30,42 @@
             <%= render 'checkout/payments/price', cart: @cart %>
           </div>
         <% end %>
-    </div>
+  </div>
+</div>
+<!-- TEST 2 -->
+
+
+
+
+<!-- test 1-->
+<div class="div-around">
+  <div class="cart-delivery">
+    <div class= "cart border">
+      <p>PANIER traduire</p>
+<!--       </%= render 'line_items_table', cart: @cart %>
+
+        </% if @cart.coupon %>
+          <div class="mt-3 d-flex justify-content-end align-items-start">
+            </%= render 'checkout/payments/price', cart: @cart %>
+          </div>
+        </% else %>
+          <div class="text-left"></%= render 'checkout/payments/add_coupon' %></div>
+          <!- <div class="mt-3 d-flex justify-content-between align-items-start"> -->
+<!--           <div class="bg-white">
+            </%= render 'checkout/payments/price', cart: @cart %>
+          </div>
+        </% end %> -->
+     </div>
+
     <div class="delivery border">
       <p>delivery</p>
-      <%= render 'address', address: @cart.billing_address, title_key: ".billing" %>
-      <%= render 'address', address: @cart.delivery_address, title_key: ".delivery" %>
+<!--       </%= render 'address', address: @cart.billing_address, title_key: ".billing" %>
+      </%= render 'address', address: @cart.delivery_address, title_key: ".delivery" %> -->
     </div>
   </div>
   <div class="payment border">
     <p>paiement</p>
-    <%= render 'payment_buttons', cart: @cart %>
+<!--     </%= render 'payment_buttons', cart: @cart %> -->
   </div>
 </div>
 <!-- test   -->
