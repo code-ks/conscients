@@ -216,6 +216,12 @@
     // }
   }
 
+  .desktop-border {
+    @include for-tablet-landscape-up {
+      border-bottom: 1px dotted $conscients-very-light-grey;
+      border-top: 1px dotted $conscients-very-light-grey;
+    }
+  }
   // Image
   .small-first-col-fix-width td:nth-child(1), .small-first-col-fix-width th:nth-child(1) {
     width: 11%;
