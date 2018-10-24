@@ -4,7 +4,7 @@
 
   <%= render 'checkout/payments/breadcrumb', cart: @cart %>
 
-<div class="container display-landscape-up-only">
+<div class="container">
   <div class="checkout-first-title-padding checkout-font no-padding-t">
     <h1 class=""><%= t('.title') %></h1>
   </div>
@@ -71,3 +71,32 @@
     </div>
   </div> -->
 </div>
+
+
+<!-- de dilery -->
+<!-- ******** MONTANT DE REDUCTION ********  -->
+<!--           <div class= "d-flex justify-content-end small-total-font">
+            </% if @cart.coupon %>
+            <div class=""></%= t('.from_discount') %></div>
+            <div class="color-green pl-2">- <%= humanized_money_with_symbol @cart.coupon_discount %></div>
+            </% end %>
+          </div> -->
+<!-- ******** MONTANT DE REDUCTION FIN********  -->
+
+<!-- ******** PRIX AVEC REDUCTION ********  -->
+  <!--         <div class= "d-flex justify-content-end small-total-font">
+            <div class="">
+            </% if cart.email? %>
+              total avec reduction
+            </% else %>
+              sous total avec reduction
+            </% end %>
+            </div>
+            <div class="color-green pl-2"><%= humanized_money_with_symbol @cart.ttc_price_with_coupon %></div>
+          </div> -->
+<!-- ******** FIN PRIX AVEC REDUCTION ********  -->
+<!-- ******** AJOUTER REDUCTION ********  -->
+  <!--         </% unless @cart.coupon %>
+            </%= render 'checkout/deliveries/add_coupon' %>
+          </% end %> -->
+<!-- ******** FIN AJOUTER REDUCTION ********       -->
