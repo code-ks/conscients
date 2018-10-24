@@ -19,12 +19,6 @@
   .conscients-table-responsive {
     table-layout: fixed;
     width: 100%;
-    // @include for-phone-only {
-    //   border: 1px solid $conscients-grey;
-    // }
-    // @include for-tablet-portrait-only {
-    //   border: 1px solid $conscients-grey;
-    // }
   }
 
   .table th {
@@ -225,20 +219,39 @@
   // Image
   .small-first-col-fix-width td:nth-child(1), .small-first-col-fix-width th:nth-child(1) {
     width: 11%;
+    @include for-phone-only {
+      display: none;
+    }
   }
 
+  // Product
+    .small-first-col-fix-width td:nth-child(2), .small-first-col-fix-width th:nth-child(2) {
+    @include for-phone-only {
+      padding-left: 0.25rem;
+    }
+  }
   // Quantity
   .small-first-col-fix-width td:nth-child(3), .small-first-col-fix-width th:nth-child(3){
     width: 10%;
+    @include for-phone-only {
+      padding-left: 0.25rem;
+    }
   }
 
   // Price
   .small-first-col-fix-width td:nth-last-child(-n+2), .small-first-col-fix-width th:nth-last-child(-n+2){
     width: 12%;
+    @include for-phone-only {
+      width: 20%;
+      padding-left: 0.25rem;
+    }
   }
 
   // Edit
   .small-first-col-fix-width td:last-child,
   .small-first-col-fix-width th:last-child{
     width: 6%;
+    @include for-phone-only {
+      padding-left: 0.25rem;
+    }
   }

@@ -1,9 +1,7 @@
 .display-landscape-up-only {
-  @include for-phone-only {
-    display: none;
-  }
-  @include for-tablet-portrait-only {
-    display: none;
+  display: none;
+  @include for-tablet-landscape-up {
+    display: block;
   }
 }
 
