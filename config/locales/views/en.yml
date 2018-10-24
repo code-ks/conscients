@@ -254,6 +254,8 @@ en:
         without_delivery_fees: "This price does not include delivery fees"
         validate: "Validate"
         continue_purchases: "Continue my purchases"
+      breadcrumb:
+        cart: "Cart"
     deliveries:
       top_description:
         title: "Delivery"
