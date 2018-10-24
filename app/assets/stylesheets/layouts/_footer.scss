@@ -10,15 +10,15 @@
   @include for-phone-only {
     justify-content: center;
     height: 35px;
-    position: fixed;
-    bottom: 0;
-    background: white;
+    // position: fixed;
+    // bottom: 0;
+    // background: white;
   }
-  @include for-tablet-portrait-only {
-    position: fixed;
-    bottom: 0;
-    background: white;
-  }
+  // @include for-tablet-portrait-only {
+  //   position: fixed;
+  //   bottom: 0;
+  //   background: white;
+  // }
 }
 
 .footer-items {

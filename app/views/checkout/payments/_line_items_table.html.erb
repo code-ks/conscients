@@ -10,7 +10,7 @@
     </thead> -->
     <tbody>
       <% cart.line_items.includes(:product_sku).each do |line_item| %>
-        <tr class="border-bottom-dotted border-top-dotted small-td-font">
+        <tr class="desktop-border small-td-font">
           <td class="small-cart-img pl-md-2"><%= image_tag(line_item.product_images.first) %></td>
           <td class="pl-md-2">
             <div><%= line_item.product_sku.to_s %></div>
