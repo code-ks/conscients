@@ -4,7 +4,7 @@
       <%= render 'shared/form_errors', instance: billing_address %>
 
 
-<div class="container">
+<!-- <div class="container no-overflow"> -->
   <div class="checkout-box page-font padding-t">
 
 <!-- ******** DELIVERY START (fin checkout step box)********  -->
@@ -13,7 +13,7 @@
         <% if cart.email? %>
           <h2 class="box-green-text pb-resp-16"><%= t('.email') %></h4>
           <div class="box-green-text ">
-            <p><%= t('.description_email_delivery')%>
+            <p class="text-justify"><%= t('.description_email_delivery')%>
             <%= link_to new_delivery_path(delivery_type: "postal") do %>
               <span class="choose-delivery-link"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
             <% end %>
@@ -145,7 +145,7 @@
 
   </div>
   <!-- ******** dessus fin checkout box********  -->
-</div>
+<!-- </div> -->
 <!-- ******** dessus fin container ********  -->
 
 <% end %>
