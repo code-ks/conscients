@@ -1,3 +1,41 @@
+  .mobile-cart {
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+  }
+
+  .desktop-cart {
+    @include for-phone-only {
+      display: none;
+    }
+    @include for-tablet-portrait-only {
+      display: none;
+    }
+  }
+
+// REVEAL CART ON MOBILE
+  // .side-label:hover {
+  //   text-decoration: underline;
+  // }
+
+  .side-label {
+    cursor: pointer;
+  }
+
+  .reveler-panier {
+    display: none;
+    margin: 10px 0 0 35px;
+  }
+
+  #panier:checked ~ .reveler-panier {
+    display: block;
+    // color: red;
+    // background-color: black;
+  }
+
+
+
+
 //ON TOP
   .checkout-first-title-padding {
     padding-top: 30px;
@@ -29,7 +67,7 @@
       }
   }
 
-// CART ON DELIVERY
+// CART
   .checkout-cart-box {
     width: 100%;
     padding: 1rem;
@@ -76,7 +114,7 @@
       font-size: 0.8rem !important;
     }
   }
-// ADRESS ON DELIVERY
+// ADRESS
   .checkout-steps-box {
     width: 100%;
     z-index: 2;
@@ -231,8 +269,11 @@
 
 // VALIDATION
   .delivery-validation-box {
-    text-align: right;
-    padding: 40px 0px 0 40px;
+    @include for-tablet-landscape-up {
+      color: white;
+    }
+    // text-align: right;
+    // padding: 40px 0px 0 40px;
   }
 
 // PAYMENT BOX
@@ -261,31 +302,4 @@
     }
 
   }
-  // .credit-card {
-  //   // color: #2673b6;
-  //   color: $conscients-black;
-  //   margin-bottom: 0;
-  // }
 
-
-
-
-// DELIVERY
-.yellow-delivery-box {
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
-  background-color: $conscients-yellow;
-  padding: 40px;
-  z-index: 1;
-}
-
-
-
-
-
-.pay-box-on-delivery-form {
-    @include for-tablet-landscape-up {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    }
-}

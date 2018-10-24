@@ -8,7 +8,7 @@
 <div class="checkout-box page-font padding-t">
 
 <!-- ******** DELIVERY ********  -->
-  <div class="checkout-steps-box page-font">
+  <div class="checkout-steps-box page-font delivery-below">
     <div class=box-green>
       <% if cart.email? %>
         <h2 class="box-green-text pb-resp-16"><%= t('.email') %></h4>
@@ -61,13 +61,38 @@
       </div>
       <!-- fin envoi message -->
       </div>
+
+ <!-- ******** VALIDATION ********  -->
+<div class= "delivery-validation-box padding-t">
+  <div class="form-group d-flex align-items-baseline">
+    <%= form.check_box :general_sales_conditions, checked: false, required: true %>
+    <%= form.label t('.general_sales_conditions'), class: "mb-0 ml-1" %>
+  </div>
+
+  <%= form.hidden_field :address_type, value: cart.delivery_method %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <%= form.submit t('.go_to_payment'), class: "btn conscients-btn conscients-btn-phone btn-white color-grey w-100"%>
+</div>
+<!-- ******** VALIDATION END ********  -->
+
     </div>
   </div>
 <!-- ******** DELIVERY END ********  -->
 
 <!-- ******** CART ********  -->
-  <div class="checkout-cart-box d-flex flex-column justify-content-between">
-  <div>
+  <!-- <div class="checkout-cart-box d-flex flex-column justify-content-between"> -->
+  <div class="checkout-cart-box d-flex flex-column cart-on-top">
+
+  <div class="mobile-cart">
+    <input id="panier" name="panier" type="checkbox">
+    <label for="panier" class="side-label">panier -</label>
+    <div class="reveler-panier">
+panier
+    </div>
+  </div>
+
+  <div class="desktop-cart">
     <h2 class="padding-b"><%= t('.my_cart') %></h2>
     <% if cart.email? %>
       <p class="display-phone-tablet-portait-only padding-b"> <%= t('.description_email_delivery_details_phone') %></p>
@@ -114,19 +139,7 @@
 <!-- ******** FIN AJOUTER REDUCTION ********       -->
     </div>
   </div>
- <!-- ******** VALIDATION ********  -->
-<div class= "delivery-validation-box">
-  <div class="form-group d-flex align-items-baseline justify-content-end">
-    <%= form.check_box :general_sales_conditions, checked: false, required: true %>
-    <%= form.label t('.general_sales_conditions'), class: "mb-0 ml-1" %>
-  </div>
-
-  <%= form.hidden_field :address_type, value: cart.delivery_method %>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-  <%= form.submit t('.go_to_payment'), class: "btn conscients-btn conscients-btn-phone btn-green"%>
 </div>
-<!-- ******** VALIDATION END ********  -->
   </div>
 <!-- ******** CART END********  -->
 </div>
