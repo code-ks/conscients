@@ -155,41 +155,24 @@
     }
   }
 
-  .box-green-text-checked {
-    @include for-tablet-landscape-up {
-      color: $conscients-dark-green;
-    }
-  }
+  // .box-green-text-checked {
+  //   @include for-tablet-landscape-up {
+  //     color: $conscients-dark-green;
+  //   }
+  // }
 
-  .unchecked:before {
-    font-family: FontAwesome;
-    content: "\f0c8";
-    padding-right: 10px;
-    font-size: 1rem;
-  }
-  .checked:before {
-    font-family: FontAwesome;
-    content: "\f00c";
-    // content: "\f14a";
-    padding-right: 10px;
-    font-size: 1rem;
-  }
-
-  .box-green-address-checked {
-    // padding-top: 16px;
-    p {
-    color: $conscients-dark-green;
-    font-size: 0.9rem;
-    font-family: "Roboto", "sans-serif";
-    text-transform: Uppercase;
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-    // text-transform: lowercase;
-    }
-  }
-
-  // .box-green-address-checked:first-letter {
-  //   text-transform: uppercase;
+  // .unchecked:before {
+  //   font-family: FontAwesome;
+  //   content: "\f0c8";
+  //   padding-right: 10px;
+  //   font-size: 1rem;
+  // }
+  // .checked:before {
+  //   font-family: FontAwesome;
+  //   content: "\f00c";
+  //   // content: "\f14a";
+  //   padding-right: 10px;
+  //   font-size: 1rem;
   // }
 
   .box-green-input {

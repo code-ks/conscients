@@ -303,7 +303,7 @@ fr:
         from_discount: "de reduction"
       add_coupon:
         coupon_name: "Nom du bon de réduction"
-        add_coupon: "Ajouter"
+        add_coupon: "Appliquer"
     payments:
       breadcrumb:
         cart: "Panier"
@@ -312,14 +312,17 @@ fr:
       new:
         title: "Paiement"
         my_cart: "Mon panier"
+        addresses: "Adresses"
+        billing: "Facturé à :"
+        delivery: "Distribué à: "
       show:
         go_to_client_space: "Pour plus d'informations, rendez-vous dans votre espace client"
         order_confirmed: "Merci beaucoup! Votre commande a bien été reçue"
         email_coming: "Vous recevrez bientôt un email de confirmation."
         bank_transfer_instructions: "Pour la confirmer, merci d'envoyer le montant de la commande (%{amount} euros) au compte bancaire ci-dessous"
       address:
-        billing: "Adresse de facturation"
-        delivery: "Adresse de livraison"
+        billing: "Facturé à :"
+        delivery: "Distribué à :"
       payment_buttons:
         select_payment_method: "Mode de paiement"
         bank_transfer: "Virement"
@@ -332,7 +335,7 @@ fr:
         total_price: "Total"
       add_coupon:
         coupon_name: "Nom du bon de réduction"
-        add_coupon: "Ajouter"
+        add_coupon: "Appliquer"
       price:
         sub_total: "Sous total"
         total_price: "Prix total"

@@ -311,6 +311,9 @@ en:
       new:
         title: "Payment"
         my_cart: "My cart"
+        addresses: "Addresses"
+        billing: "Billing address"
+        delivery: "Delivery address"
       show:
         go_to_client_space: "For more details, go to your client space"
         order_confirmed: "Thanks a lot! Your order have been received"

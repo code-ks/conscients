@@ -13,14 +13,23 @@
 <div class="checkout-box page-font padding-t">
   <div class="checkout-steps-box delivery-below">
     <div class="box-green">
-      <%= render 'address', address: @cart.delivery_address, title_key: ".delivery" %>
-      <%= render 'address', address: @cart.billing_address, title_key: ".billing" %>
+    <h2 class="box-green-text pb-resp-16"><%= t('.addresses') %></h2>
+      <div class="adresses">
+        <div class="adresses-delivery">
+          <p class="box-green-text"><%= t('.delivery') %></p>
+          <%= render 'address', address: @cart.delivery_address, title_key: ".delivery" %>
+        </div>
+        <div class="adresses-billing">
+          <p class="box-green-text"><%= t('.billing') %></p>
+          <%= render 'address', address: @cart.billing_address, title_key: ".billing" %>
+        </div>
+      </div>
       <%= render 'payment_buttons', cart: @cart %>
     </div>
   </div>
   <div class="checkout-cart-box cart-on-top">
-    <div class="mobile-cart bg-grey border">
 
+    <div class="mobile-cart bg-grey border">
       <input id="cart-mobile" name="panier" type="checkbox" checked>
       <label for="panier" class="side-label px-2 my-2">Afficher mon panier - <%= humanized_money_with_symbol @cart.ttc_price_all_included %></label>
       <div class="reveal-cart bg-white">
@@ -33,14 +42,16 @@
             </div>
           <% else %>
             <div class="text-left"><%= render 'checkout/payments/add_coupon' %></div>
-            <div class="bg-white">
+            <div class="">
               <%= render 'checkout/payments/price', cart: @cart %>
             </div>
           <% end %>
-
         </div>
       </div>
+
     </div>
+
+            <div class="text-left d-md-none"><%= render 'checkout/payments/add_coupon' %></div>
 
     <div class="desktop-cart">
     <h2 class="padding-b"><%= t('.my_cart') %></h2>

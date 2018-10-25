@@ -1,0 +1,43 @@
+.adresses {
+  @include for-tablet-landscape-up {
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: hsl(153, 40%, 59%);
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+.adresses-delivery {
+  @include for-tablet-landscape-up {
+    width: 50%;
+    padding: 16px;
+    text-align: center;
+  }
+}
+
+.adresses-billing {
+  @include for-tablet-landscape-up {
+    width: 50%;
+    border-left: 1px solid white;
+    padding: 16px;
+    text-align: center;
+  }
+}
+
+  .adresses-details {
+    p {
+    font-weight: 300;
+    font-family: "Roboto", "sans-serif";
+    text-transform: Uppercase;
+    font-size: 0.7rem;
+    margin-bottom: 0;
+    letter-spacing: 0.1rem;
+    @include for-tablet-landscape-up {
+      color: white;
+    }
+    }
+  }
+
+
