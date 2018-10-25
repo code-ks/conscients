@@ -9,6 +9,13 @@
     background-color: $conscients-bg-grey;
   }
 
+  .bg-grey-resp {
+    background-color: $conscients-bg-grey;
+    @include for-tablet-landscape-up {
+      background: none;
+    }
+  }
+
   .bg-yellow {
     background-color: $conscients-yellow;
   }

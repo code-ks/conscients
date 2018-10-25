@@ -11,10 +11,12 @@
     <h1><%= t('.cart') %></h1>
     </div>
     <div class="padding-t"></div>
-    <table class="conscients-table-responsive first-col-fix-width mb-3">
+
+  <div class="table-div border-resp">
+    <table class="conscients-table-responsive first-col-fix-width">
       <thead>
         <tr class="top-tr text-center">
-          <th class="th-font text-nowrap"><%= t('.selection') %></th>
+          <th class="th-font text-nowrap pl-1"><%= t('.selection') %></th>
           <th class="th-font"></th>
           <th class="th-font"><%= t('.quantity') %></th>
           <th class="th-font text-left"><%= t('.personalized_product') %></th>
@@ -24,7 +26,7 @@
       </thead>
       <tbody>
         <% @cart.line_items.includes(:product_sku).each do |line_item| %>
-          <tr class="border-bottom-dotted td-font text-center">
+          <tr class="desktop-border-bottom td-font text-center">
             <td class="cart-img"><%= image_tag(line_item.product_images.first) %></td>
             <td class= pl-2>
               <div class="text-left"><%= line_item.product_sku.to_s %></div>
@@ -48,7 +50,7 @@
               <div class="text-left"><%= line_item.recipient_message if line_item&.recipient_message&.present? %></div>
             </td>
             <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
-            <td class="pl-1">
+            <td class="pl-1 pr-1">
               <%= link_to product_path(line_item.product, line_item: line_item) do %>
                 <%= fa_icon "pencil", class: "c-pointer" %>
               <% end %>
@@ -61,21 +63,28 @@
       </tbody>
     </table>
 
-    <div class= "d-flex flex-column">
-      <div class= "align-self-end total-font">
+    <div class= "d-flex flex-column bg-grey-resp padding-tb">
+      <div class= "align-self-end total-font pr-1">
         <%= t('.total_price') %> <span class="color-green"><%= humanized_money_with_symbol @cart.ttc_price %></span>
       </div>
-      <div class="align-self-end total-comment-font">
+      <div class="align-self-end total-comment-font pr-1">
         <p><%= t('.without_delivery_fees') %></p>
       </div>
-      <div class="d-flex justify-content-between">
-        <%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "continue-shopping text-nowrap align-self-center" %>
-        <% if @cart.tree_only? %>
-          <%= link_to t('.validate'), new_delivery_path(delivery_type: "email"), class: "btn conscients-btn conscients-btn-phone btn-green" %>
-        <% else %>
-          <%= link_to t('.validate'), new_delivery_path(delivery_type: "postal"), class: "btn conscients-btn conscients-btn-phone btn-green" %>
-        <% end %>
-      </div>
     </div>
+
+  </div>
+
+  <div class="table-div mt-3">
+    <div class="d-flex justify-content-between">
+      <%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "continue-shopping text-nowrap align-self-center" %>
+      <% if @cart.tree_only? %>
+        <%= link_to t('.validate'), new_delivery_path(delivery_type: "email"), class: "btn conscients-btn conscients-btn-phone btn-green" %>
+      <% else %>
+        <%= link_to t('.validate'), new_delivery_path(delivery_type: "postal"), class: "btn conscients-btn conscients-btn-phone btn-green" %>
+      <% end %>
+    </div>
+  </div>
+
+
   <% end %>
 </div>

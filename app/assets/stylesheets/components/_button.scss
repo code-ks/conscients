@@ -57,7 +57,23 @@ button:focus {outline:0;}
   }
 
 
+// BTN DELIVERY
+  .btn-delivery {
+    background-color: $conscients-green;
+    color: white !important;
+    height: 3rem;
+    width: 100%;
+    @include for-tablet-landscape-up {
+      background-color: $conscients-dark-green;
+    }
+  }
 
+  .btn-delivery:active {
+    background-color: #60b28d;
+    @include for-tablet-landscape-up {
+      background-color: $conscients-green;
+    }
+  }
 
 
 

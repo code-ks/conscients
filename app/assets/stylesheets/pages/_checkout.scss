@@ -193,6 +193,9 @@
   // }
 
   .box-green-input {
+      .form-control, input[type=text] {
+        font-size: 0.7rem;
+      }
     @include for-tablet-landscape-up {
       .form-control, input[type=text] {
         background: $conscients-light-green;
@@ -204,6 +207,9 @@
   }
 
   .box-green-select {
+      select {
+        font-size: 0.7rem;
+      }
     @include for-tablet-landscape-up {
       select {
         background-color: $conscients-light-green;
@@ -257,7 +263,6 @@
       font-size: 0.55rem;
     }
  }
-
 
 // VALIDATION
   .delivery-validation-box {

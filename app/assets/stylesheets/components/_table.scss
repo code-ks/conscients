@@ -16,11 +16,30 @@
 /* -------------------------------------
  * CART TABLE
  * ------------------------------------- */
+  .table-div {
+    margin-right: 16px;
+    margin-left: 16px;
+    // border: 1px solid #dee2e6;
+    @include for-tablet-landscape-up {
+      margin-right: 0;
+      margin-left: 0;
+      // border: none;
+    }
+  }
+
+  .border-resp {
+    border: 1px solid #dee2e6;
+    @include for-tablet-landscape-up {
+      border: none;
+    }
+  }
+
   .conscients-table-responsive {
     table-layout: fixed;
     width: 100%;
   }
 
+  // HEADERS //
   .table th {
       padding-bottom: 0;
   }
@@ -28,19 +47,7 @@
   .top-tr {
     background-color: $conscients-bg-grey;
   }
-  .th-font {
-      padding-bottom: 10PX;
-      padding-top: 10PX;
-      font-family: "Roboto", "sans-serif";
-      text-transform: uppercase;
-      font-weight: 300;
-      font-size: 0.5rem;
-      word-wrap: break-word;
-      @include for-tablet-landscape-up {
-        font-size: 0.7rem;
-        letter-spacing: 0.1rem;
-      }
-  }
+
 
   // CART BODY //
   .cart-img img {
@@ -53,33 +60,8 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-  .td-font {
-    font-family: "Frank Ruhl Libre", "serif";
-    font-weight: 300;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -o-hyphens: auto;
-    hyphens: auto;
-    @include for-phone-only {
-      font-size: 0.7rem;
-    }
-  }
 
-  .heart-before:before {
-    font-family: FontAwesome;
-    content: "\f004";
-    color: $conscients-red;
-    font-size: 0.5rem;
-    padding-right: 5px;
-  }
-  .heart-before:white {
-    font-family: FontAwesome;
-    content: "\f004";
-    color: white;
-    font-size: 0.5rem;
-  }
+
 
   // CART BODY COL SIZE ON SHOW CARTS//
   .first-col-fix-width td:nth-child(1),
@@ -128,7 +110,55 @@
     }
   }
 
-  // CART TABLE FONTS
+// CART TABLE FONTS //
+ // Headers font
+
+  .th-font {
+      color: $conscients-title-grey;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      font-family: "Roboto", "sans-serif";
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 0.7rem;
+      word-wrap: break-word;
+      letter-spacing: 0.1rem;
+      @include for-phone-only {
+        font-size: 0.5rem;
+        letter-spacing: normal;
+      }
+  }
+
+
+  // Body font
+  .td-font {
+    font-family: "Frank Ruhl Libre", "serif";
+    font-weight: 300;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    @include for-phone-only {
+      font-size: 0.7rem;
+    }
+  }
+
+  .heart-before:before {
+    font-family: FontAwesome;
+    content: "\f004";
+    color: $conscients-red;
+    font-size: 0.5rem;
+    padding-right: 5px;
+  }
+  .heart-before:white {
+    font-family: FontAwesome;
+    content: "\f004";
+    color: white;
+    font-size: 0.5rem;
+  }
+
   .total-font{
     font-size: 1rem;
     text-transform: uppercase;
@@ -143,11 +173,12 @@
     font-size: 0.7rem;
     letter-spacing: 0.1rem;
     font-weight: 300;
-    margin-bottom: 3rem;
+    // margin-bottom: 3rem;
     @include for-phone-only {
-      font-size: 0.6rem;
+      font-size: 0.5rem;
       text-align: right;
-      margin-bottom: 2rem;
+      // margin-bottom: 2rem;
+
     }
   }
 
@@ -216,12 +247,6 @@
     // }
   }
 
-  .desktop-border {
-    @include for-tablet-landscape-up {
-      border-bottom: 1px dotted $conscients-very-light-grey;
-      border-top: 1px dotted $conscients-very-light-grey;
-    }
-  }
   // Image
   .small-first-col-fix-width td:nth-child(1), .small-first-col-fix-width th:nth-child(1) {
     width: 11%;
