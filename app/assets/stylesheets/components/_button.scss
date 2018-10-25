@@ -57,30 +57,7 @@ button:focus {outline:0;}
   }
 
 
-// FACEBOOK CONNECT WHITE
-  .fb-connect-btn-w::before {
-      font-family: FontAwesome;
-      content: "\f082";
-      font-size: 1.5em;
-      margin-right: 10px;
-      color: $facebook;
-      text-decoration: underline white;
-  }
 
-  .fb-connect-btn-w {
-    margin-top: 5px;
-    color: $facebook;
-    font-family: "Frank Ruhl Libre", "serif";
-    border: none;
-    background-color: white;
-    // background-color: pink;
-    cursor: pointer;
-  }
-
-  .fb-connect-btn-w:active {
-    opacity: 0.9;
-    text-decoration: underline;
-  }
 
 
 
