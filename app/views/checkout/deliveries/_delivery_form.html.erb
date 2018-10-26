@@ -30,7 +30,7 @@
       <% end %>
       <% if cart.email? %>
         <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
-        <p class="display-landscape-up-only f-08R box-green-text asterix-before padding-b"> <%= t('.description_email_delivery_details') %></p>
+        <p class="display-landscape-up-only f-08R box-green-text padding-b"> <%= t('.description_email_delivery_details') %></p>
       <% else %>
         <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
       <% end %>

@@ -1,15 +1,15 @@
 <div class="padding-t mb-5">
-  <h2 class="box-green-text pb-resp-16"><%= t('.select_payment_method') %></h2>
+  <h2 class="box-green-text pt-resp-16 pb-resp-16"><%= t('.select_payment_method') %></h2>
   <p class="box-green-text"><%= t('.select_payment_method_details') %></p>
   <div class="payment-box">
 
     <%= render 'stripe_button', cart: cart %>
 
-  <%= link_to create_paypal_payments_path, method: :post, class: "btn conscients-btn btn-white btn-pay" do %>
+  <%= link_to create_paypal_payments_path, method: :post, class: "btn conscients-btn btn-white btn-pay border-paypal" do %>
     <%= image_tag "paypal.png", title: "PAYPAL", height: 20 %>
   <% end %>
 
-  <%= link_to t('.bank_transfer'), create_bank_transfer_payments_path, method: :post, title: t('.bank_transfer'), class: "btn conscients-btn btn-white btn-pay" %>
+  <%= link_to t('.bank_transfer'), create_bank_transfer_payments_path, method: :post, title: t('.bank_transfer'), class: "btn conscients-btn btn-white btn-pay border-green" %>
 
   </div>
 </div>

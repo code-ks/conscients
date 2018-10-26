@@ -12,11 +12,13 @@
   border: none;
 }
 .alert-info {
-  background: $conscients-green;
-  opacity: 1;
+  // background: $conscients-green;
+  background-color: $conscients-black;
+  // opacity: 1;
 }
 .alert-warning {
-  background: $conscients-red;
+  // background: $conscients-red;
+  background-color: $conscients-black;
 }
 
 /* -------------------------------------
