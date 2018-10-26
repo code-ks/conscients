@@ -200,6 +200,7 @@ fr:
       tree_producer: "Producteur: %{tree_producer}"
   clients:
     show:
+      my_account: "Mon compte"
       profile: "Profil"
       orders_list: "Mes commandes"
       impact: "Mon empreinte"

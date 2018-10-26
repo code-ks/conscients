@@ -199,6 +199,7 @@ en:
       tree_producer: "Producer: %{tree_producer}"
   clients:
     show:
+      my_account: "My account"
       profile: "Profile"
       orders_list: "My orders"
       impact: "My impact"
