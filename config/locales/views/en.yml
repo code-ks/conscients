@@ -325,8 +325,9 @@ en:
         delivery: "Delivery"
         total_price: "Total"
       add_coupon:
+        coupon_label: "Coupon"
         coupon_name: "Coupon name"
-        add_coupon: "Add"
+        add_coupon: "Apply"
       address:
         billing: "Billing address"
         delivery: "Delivery address"

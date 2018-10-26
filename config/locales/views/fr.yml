@@ -334,7 +334,8 @@ fr:
         delivery: "Livraison"
         total_price: "Total"
       add_coupon:
-        coupon_name: "Nom du bon de réduction"
+        coupon_label: "Bon de réduction"
+        coupon_name: "Code"
         add_coupon: "Appliquer"
       price:
         sub_total: "Sous total"

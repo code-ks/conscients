@@ -51,18 +51,20 @@
 
     </div>
 
-            <div class="text-left d-md-none"><%= render 'checkout/payments/add_coupon' %></div>
-
+<!--             <div class="text-left d-md-none"></%= render 'checkout/payments/add_coupon' %></div>
+ -->
     <div class="desktop-cart">
     <h2 class="padding-b"><%= t('.my_cart') %></h2>
       <%= render 'line_items_table', cart: @cart %>
-
         <% if @cart.coupon %>
           <div class="mt-3 d-flex justify-content-end align-items-start">
             <%= render 'checkout/payments/price', cart: @cart %>
           </div>
         <% else %>
-          <div class="text-left"><%= render 'checkout/payments/add_coupon' %></div>
+          <div class="bg-grey coupon-div">
+            <div class="total-comment-font text-right mb-2">bon de réduction</div>
+            <div class="text-left"><%= render 'checkout/payments/add_coupon' %></div>
+          </div>
           <div class="bg-white">
             <%= render 'checkout/payments/price', cart: @cart %>
           </div>

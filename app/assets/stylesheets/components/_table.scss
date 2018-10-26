@@ -167,10 +167,10 @@
       font-size: 0.8rem;
     }
   }
-  .total-comment-font p{
+  .total-comment-font, .total-comment-font p{
     font-family: "Roboto", "sans-serif";
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 0.7rem !important;
     letter-spacing: 0.1rem;
     font-weight: 300;
     // margin-bottom: 3rem;
