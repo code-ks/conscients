@@ -1,20 +1,18 @@
 <div>
-  <!-- <span class="d-flex flex-column align-items-end"> -->
   <div class= "d-flex justify-content-end total-comment-font">
     <p class="mb-1"><%= t('.sub_total') %></p>
     <p class="color-green mb-1 pl-2"><%= humanized_money_with_symbol cart.ttc_price %></p>
   </div>
     <% if @cart.coupon %>
-      <div class= "d-flex justify-content-end total-comment-font padding-t">
+      <div class= "d-flex justify-content-end total-comment-font">
         <p class="mb-1"><%= t('.from_discount') %></p>
         <p class="color-green mb-1 pl-2">- <%= humanized_money_with_symbol cart.coupon_discount %></p>
       </div>
-<!--       <div class="">- </%= humanized_money_with_symbol cart.coupon_discount %> </%= t('.from_discount') %></div> -->
     <% end %>
 
   <div class= "d-flex justify-content-end total-comment-font">
     <p><%= t('.delivery_fees') %> </p>
-    <p class="color-green pl-2">+<%= humanized_money_with_symbol cart.current_delivery_fees %> </p>
+    <p class="color-green pl-2">+ <%= humanized_money_with_symbol cart.current_delivery_fees %> </p>
   </div>
 
   <div class= "d-flex justify-content-end small-total-font">

@@ -19,11 +19,16 @@
   .table-div {
     margin-right: 16px;
     margin-left: 16px;
-    // border: 1px solid #dee2e6;
     @include for-tablet-landscape-up {
       margin-right: 0;
       margin-left: 0;
-      // border: none;
+    }
+  }
+
+  .next-div {
+    margin-top: 2rem;
+    @include for-tablet-landscape-up {
+      margin-top: 1rem;
     }
   }
 
@@ -183,13 +188,12 @@
   }
 
   .continue-shopping {
+    @include for-tablet-landscape-up {
     color: $conscients-green;
     font-family: "Roboto", "sans-serif";
     text-transform: Uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
-    @include for-phone-only {
-      font-size: 0.6rem;
     }
   }
 

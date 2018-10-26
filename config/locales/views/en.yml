@@ -299,7 +299,7 @@ en:
         billing_address: "Billing address"
         customer_note: "Would you like to send us a message?"
         recipient_message: "Is it a gift? Write a note that we will add to the package"
-        from_discount: "from discount"
+        from_discount: "discount"
       add_coupon:
         coupon_name: "Coupon name"
         add_coupon: "Add"
@@ -311,6 +311,7 @@ en:
       new:
         title: "Payment"
         my_cart: "My cart"
+        coupon_label: "Coupon"
         addresses: "Addresses"
         billing: "Billing address"
         delivery: "Delivery address"
@@ -325,7 +326,6 @@ en:
         delivery: "Delivery"
         total_price: "Total"
       add_coupon:
-        coupon_label: "Coupon"
         coupon_name: "Coupon name"
         add_coupon: "Apply"
       address:
@@ -333,14 +333,15 @@ en:
         delivery: "Delivery address"
       payment_buttons:
         select_payment_method: "Payment method"
+        select_payment_method_details: "Select among the payment methods offered :"
         bank_transfer: "Bank Transfer"
       stripe_button:
         card: "Card"
       price:
         sub_total: "Sub Total"
         total_price: "Total price"
-        from_discount: "from discount"
-        delivery_fees: "Delivery fees"
+        from_discount: "discount"
+        delivery_fees: "Preparation & delivery"
   client_mailer:
     bank_account_details:
       subject: "Please confirm your order"

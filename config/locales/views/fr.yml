@@ -292,7 +292,7 @@ fr:
         go_to_postal_delivery_link: "Je souhaite aussi un envoi postal (Frais d'impression et de port en sus)"
         total_price: "Prix total"
         sub_total: "Sous total"
-        without_delivery_fees: "(frais de ports exclus, calculés à l'écran suivant)"
+        without_delivery_fees: "(frais de port exclus, calculés à l'écran suivant)"
         delivery_is_billing: "Utiliser l'adresse de livraison comme adresse de facturation"
         go_to_payment: "Passer au paiement"
         general_sales_conditions: "J'ai lu les conditions générales de ventes et j'y adhère sans réserve"
@@ -300,7 +300,7 @@ fr:
         billing_address: "Addresse de facturation"
         customer_note: "Souhaitez-vous nous addresser un message?"
         recipient_message: "C'est un cadeau? Ecrivez un mot que nous rajouterons au colis"
-        from_discount: "de reduction"
+        from_discount: "reduction"
       add_coupon:
         coupon_name: "Nom du bon de réduction"
         add_coupon: "Appliquer"
@@ -312,6 +312,7 @@ fr:
       new:
         title: "Paiement"
         my_cart: "Mon panier"
+        coupon_label: "Bon de réduction"
         addresses: "Adresses"
         billing: "Facturé à :"
         delivery: "Distribué à: "
@@ -325,6 +326,7 @@ fr:
         delivery: "Distribué à :"
       payment_buttons:
         select_payment_method: "Mode de paiement"
+        select_payment_method_details: "Sélectionnez parmi les modes de paiements proposés :"
         bank_transfer: "Virement"
       stripe_button:
         card: "CB"
@@ -334,14 +336,13 @@ fr:
         delivery: "Livraison"
         total_price: "Total"
       add_coupon:
-        coupon_label: "Bon de réduction"
         coupon_name: "Code"
         add_coupon: "Appliquer"
       price:
         sub_total: "Sous total"
         total_price: "Prix total"
-        from_discount: "de reduction"
-        delivery_fees: "Frais de livraison"
+        from_discount: "reduction"
+        delivery_fees: "Préparation & livraison"
   client_mailer:
     bank_account_details:
       subject: "Validez votre commande"

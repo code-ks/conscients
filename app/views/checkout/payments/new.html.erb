@@ -35,13 +35,16 @@
       <div class="reveal-cart bg-white">
       <%= render 'line_items_table', cart: @cart %>
         <div class= "padding-tb px-1 bg-grey">
-
           <% if @cart.coupon %>
             <div class="mt-3 d-flex justify-content-end align-items-start">
               <%= render 'checkout/payments/price', cart: @cart %>
             </div>
           <% else %>
-            <div class="text-left"><%= render 'checkout/payments/add_coupon' %></div>
+            <div class="coupon-div">
+              <div class="total-comment-font text-right mb-2"> <%= t('.coupon_label') %></div>
+              <div class="text-left"><%= render 'checkout/payments/add_coupon' %></div>
+            </div>
+<!--             <div class="text-left"></%= render 'checkout/payments/add_coupon' %></div> -->
             <div class="">
               <%= render 'checkout/payments/price', cart: @cart %>
             </div>
@@ -57,12 +60,12 @@
     <h2 class="padding-b"><%= t('.my_cart') %></h2>
       <%= render 'line_items_table', cart: @cart %>
         <% if @cart.coupon %>
-          <div class="mt-3 d-flex justify-content-end align-items-start">
+          <div class="mt-3 d-flex justify-content-end">
             <%= render 'checkout/payments/price', cart: @cart %>
           </div>
         <% else %>
           <div class="bg-grey coupon-div">
-            <div class="total-comment-font text-right mb-2">bon de réduction</div>
+            <div class="total-comment-font text-right mb-2"> <%= t('.coupon_label') %></div>
             <div class="text-left"><%= render 'checkout/payments/add_coupon' %></div>
           </div>
           <div class="bg-white">

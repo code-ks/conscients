@@ -271,14 +271,12 @@
 
   .btn-pay {
     height: 100%;
-    // border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
-    // border: $border-grey;
     @include for-tablet-landscape-up {
       width: 130px !important;
       margin-top: 0;
-      // width: 30%;
+      color: $conscients-dark-green;
     }
 
   }
