@@ -39,7 +39,7 @@ class LineItem < ApplicationRecord
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1 }
   validates :recipient_name, presence: true, if: :tree?
   validates :recipient_name, length: { maximum: 32 }
-  validates :recipient_message, presence: true, if: :tree?
+  # validates :recipient_message, presence: true, if: :tree?
   validates :recipient_message, length: { maximum: 110 }
   validates :certificate_date, presence: true, if: :tree?
 
