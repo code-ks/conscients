@@ -13,7 +13,6 @@
       <p class="price-font mt-3"><%= humanized_money_with_symbol @product.ttc_price %></p>
       <p><%= @product.description_short %></p>
       <%= link_to t('products.product.read_more'), "#product-description-anchor", class: "read-more"%>
-<!--       </%= link_to "Read more", "#product-description-anchor", class: "your-class" %> -->
       <hr>
       <div id="new_line_item">
         <%= render 'products/add_to_cart_form', product: @product, line_item: @line_item %>
