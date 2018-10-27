@@ -8,7 +8,23 @@
       <% end %>
     </div>
   </div>
+
+<!-- if category parent is node and if category has no children > display nothing -->
+
+<!-- keep category filter when on children -->
+<% else %>
+  <div class="top-menu-font"><%= t('.category') %></div>
+  <div class="dropdown">
+    <%= fa_icon "angle-down", class: "c-pointer mr-5 ml-2", data: { toggle: "dropdown" } %>
+    <div class="dropdown-menu filters-dropdown-menu">
+      <% category.parent.children.each do |c| %>
+        <%= link_to c.name, category_products_path(c), class: "dropdown-item filters-dropdown-item top-menu-font" %>
+      <% end %>
+    </div>
+  </div>
+<!-- keep category filter when on children END-->
 <% end %>
+<!-- if category products have variants then display following div -->
 <div class="top-menu-font"><%= t('.variant') %></div>
 <div class="dropdown">
   <%= fa_icon "angle-down", class: "c-pointer ml-2", data: { toggle: "dropdown" } %>
