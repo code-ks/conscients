@@ -7,7 +7,10 @@
     h3 {
       font-family: "Frank Ruhl libre", "serif";
       font-weight: 400;
-      font-size: 1.5rem;
+      font-size: 1rem;
+      @include for-tablet-landscape-up {
+        font-size: 1.5rem;
+      }
     }
   }
 

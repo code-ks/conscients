@@ -25,6 +25,11 @@
     color: $conscients-title-grey;
   }
 
+  .title-grey-phone {
+    @include for-phone-only {
+      color: $conscients-title-grey;
+    }
+  }
   // .color-paypal-dark {
   //   color: #003087;
   // }

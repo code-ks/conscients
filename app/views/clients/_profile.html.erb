@@ -1,10 +1,10 @@
 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
   <div class="row">
-    <div class="col-sm-6 profile-font border-right">
+    <div class="col-sm-6 profile-font border-right mb-3 p-3">
       <!-- <h2 class="my-4"></%= t('.my_account') %></h2> -->
 
-      <h3 class="my-4"><%= t('.client_email', email: current_client.email) %></h3>
+      <h3 class="my-md-3"><%= t('.client_email', email: current_client.email) %></h3>
       <%= link_to t('.edit_password'), edit_client_registration_path, class: "red-link" %>
     </div>
 
@@ -16,10 +16,10 @@
         <% current_client.addresses.each do |address| %>
 
           <div class="col-sm-6 mb-3">
-            <div class="text-center top-menu-font p-3">
-              <span class="font-weight-bold">
+            <div class="text-center-md top-menu-font f-07R-phone p-md-3">
+              <span class="font-weight-bold title-grey-phone">
                 <%= t('.address_type', type: t("activerecord.attributes.address.address_types.#{address.address_type}")) %>
-              </span></br></br>
+              </span></br>
               <% if address.email? %>
                 <%= address.email %></br>
               <% else %>
