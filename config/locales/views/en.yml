@@ -205,7 +205,7 @@ en:
       impact: "impact"
     profile:
       my_account: "My account"
-      client_email: "Email: %{email}"
+      client_email: "ID: %{email}"
       my_addresses: "My addresses"
       address_type: "Address type: %{type}"
       edit_password: "Edit my password"

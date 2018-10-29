@@ -18,10 +18,10 @@
   }
 
 // READ MORE / BACK TO TOP
-  .read-more, .back-to-top {
+  .red-link, .read-more, .back-to-top {
     color: $conscients-red;
   }
-  .read-more:hover, .back-to-top:hover {
+  .red-link:hover, .read-more:hover, .back-to-top:hover {
     color: $conscients-red;
     text-decoration: underline;
     // font-weight: bold;
