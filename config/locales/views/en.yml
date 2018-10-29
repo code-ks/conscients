@@ -200,9 +200,9 @@ en:
   clients:
     show:
       my_account: "My account"
-      profile: "My profile"
-      orders_list: "My orders"
-      impact: "My impact"
+      profile: "profile"
+      orders_list: "orders"
+      impact: "impact"
     profile:
       my_account: "My account"
       client_email: "Email: %{email}"

@@ -3,12 +3,6 @@
     letter-spacing: 0.1rem;
   }
 
-  .small-font-phone {
-    @include for-phone-only {
-      font-size: 0.8rem !important;
-  }
-  }
-
   .fw-300 {
     font-weight: 300 !important;
   }
@@ -16,9 +10,23 @@
   .f-07R {
     font-size: 0.7rem !important;
   }
+
+  .f-07R-phone {
+    @include for-phone-only {
+      font-size: 0.7rem !important;
+    }
+  }
+
   .f-08R {
     font-size: 0.8rem !important;
   }
+
+ .f-08R-phone {
+    @include for-phone-only {
+      font-size: 0.8rem !important;
+    }
+  }
+
   .f-09R {
     font-size: 0.9rem !important;
   }

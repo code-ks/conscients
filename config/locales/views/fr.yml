@@ -201,9 +201,9 @@ fr:
   clients:
     show:
       my_account: "Mon compte"
-      profile: "Mon profil"
-      orders_list: "Mes commandes"
-      impact: "Mon empreinte"
+      profile: "profil"
+      orders_list: "commandes"
+      impact: "empreinte"
     profile:
       my_account: "Mon compte"
       client_email: "Email: %{email}"
