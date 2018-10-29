@@ -67,6 +67,12 @@
     border-bottom: 2px solid $conscients-grey;
   }
 
+  .conscients-tab-content {
+    @include for-tablet-landscape-up {
+      margin-top: 3rem;
+      padding-top: 0.5rem;
+    }
+  }
   // .conscients-nav-item {
   //   @include for-tablet-landscape-up {
   //     width: 33%;

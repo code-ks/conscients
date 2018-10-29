@@ -15,7 +15,7 @@
       <div class="row">
         <% current_client.addresses.each do |address| %>
 
-          <div class="col-sm-6 mb-3">
+          <div class="col-sm-6 mb-3 no-overflow-n-wrap">
             <div class="text-center-md top-menu-font f-07R-phone p-md-3">
               <span class="font-weight-bold title-grey-phone">
                 <%= t('.address_type', type: t("activerecord.attributes.address.address_types.#{address.address_type}")) %>
