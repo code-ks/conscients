@@ -1,43 +1,74 @@
-.tabs {
-  display: flex;
-  justify-content: center;
-  color: $conscients-very-light-grey;
-    @include for-tablet-landscape-up {
-      display: block;
-      text-align: center;
-      padding-bottom: 16px;
-      color: $conscients-title-grey;
-      white-space: nowrap;
-    }
-}
-.tabs a {
-  text-decoration: none !important;
-}
-.tabs a:hover {
-  cursor: pointer;
-  text-decoration: none;
-  opacity: 0.8;
-}
-.tab {
-  flex: 0 0 30%;
-  text-align: center;
-  padding-right: 10px;
-  padding-left: 10px;
-    @include for-tablet-landscape-up {
-      display: inline-block;
-      margin-right: 40px;
-      margin-left: 40px;
-      padding-right: 0;
-      padding-left: 0;
-    }
-}
+/* -------------------------------------
+ * Home tabs
+ * ------------------------------------- */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    color: $conscients-very-light-grey;
+      @include for-tablet-landscape-up {
+        display: block;
+        text-align: center;
+        padding-bottom: 16px;
+        color: $conscients-title-grey;
+        white-space: nowrap;
+      }
+  }
+  .tabs a {
+    text-decoration: none !important;
+  }
+  .tabs a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  .tab {
+    flex: 0 0 30%;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+      @include for-tablet-landscape-up {
+        display: inline-block;
+        margin-right: 40px;
+        margin-left: 40px;
+        padding-right: 0;
+        padding-left: 0;
+      }
+  }
 
-.tab.active {
-  color: $conscients-grey;
-  // text-decoration: underline !important;
-  // text-underline-position: under;
-  text-decoration : none !important;
+  .tab.active {
+    color: $conscients-grey;
+    // text-decoration: underline !important;
+    // text-underline-position: under;
+    text-decoration : none !important;
+      @include for-tablet-landscape-up {
+        box-shadow: 0px -2px $conscients-grey inset;
+      }
+  }
+
+/* -------------------------------------
+ * Clients show tabs
+ * ------------------------------------- */
+
+  .conscients-nav-tabs {
+    border-bottom: none !important;
     @include for-tablet-landscape-up {
-      box-shadow: 0px -2px $conscients-grey inset;
+      width: 50%;
+      margin: 0 auto;
     }
-}
+  }
+
+ .conscients-nav-tabs .conscients-nav-link {
+    border-radius: 0 !important;
+    border: transparent;
+    color: $conscients-title-grey;
+ }
+
+  .conscients-nav-tabs .conscients-nav-link.active {
+    border-bottom: 2px solid $conscients-grey;
+  }
+
+  // .conscients-nav-item {
+  //   @include for-tablet-landscape-up {
+  //     width: 33%;
+  //   }
+  // }

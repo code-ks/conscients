@@ -201,7 +201,7 @@ fr:
   clients:
     show:
       my_account: "Mon compte"
-      profile: "Profil"
+      profile: "Mon profil"
       orders_list: "Mes commandes"
       impact: "Mon empreinte"
     profile:
