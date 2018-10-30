@@ -1,0 +1,37 @@
+.impact-background {
+  @include for-tablet-landscape-up {
+    background-color: black;
+    color: white;
+    margin: 1rem;
+  }
+}
+
+.impact-info {
+  margin-bottom: 1rem;
+  @include for-tablet-landscape-up {
+    text-align: right;
+    margin-top: 1rem;
+  }
+}
+.impact-btn {
+  font-family: "Frank Ruhl libre", "serif";
+  font-size: 1rem;
+  @include for-tablet-landscape-up {
+    font-family: "Roboto", "sans-serif";
+    text-transform: Uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+.impact-btn .badge {
+    background-color: $conscients-green;
+    color: white;
+  @include for-tablet-landscape-up {
+    color: white;
+    background-color: black;
+    font-size: 1.2rem;
+    top: 0;
+    padding: 0;
+  }
+}

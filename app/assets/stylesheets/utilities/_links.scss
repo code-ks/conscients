@@ -18,6 +18,23 @@
   }
 
 // READ MORE / BACK TO TOP
+  .yellow-link {
+    color: $conscients-yellow;
+  }
+
+  .yellow-link:hover {
+    color: $conscients-yellow;
+    text-decoration: underline;
+  }
+
+  .green-link {
+    color: $conscients-green;
+  }
+
+  .green-link:hover {
+    color: $conscients-dark-green;
+    text-decoration: underline;
+  }
   .red-link, .read-more, .back-to-top {
     color: $conscients-red;
   }

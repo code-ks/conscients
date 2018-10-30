@@ -1,0 +1,42 @@
+.client-id {
+  @include for-phone-only {
+  padding-left: 0.5rem;
+}
+}
+
+.profile-address {
+  @include for-phone-only {
+    background-color: $conscients-bg-grey;
+    border: $border-grey;
+  }
+  @include for-tablet-landscape-up {
+    background: none;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+.profile-address-title {
+  padding: 0.5rem;
+  @include for-phone-only {
+    color: #a6a6a6;
+    font-size: 0.5rem;
+    font-weight: 300;
+  }
+  @include for-tablet-landscape-up {
+    font-weight: 400;
+  }
+}
+.profile-address-details {
+  background-color: white;
+  padding: 0.5rem;
+  @include for-phone-only {
+    font-size: 0.7rem;
+    font-family: "Frank Ruhl libre", "serif";
+    text-transform: none;
+  }
+  @include for-tablet-landscape-up {
+    background: transparent;
+    padding: 0;
+  }
+}
