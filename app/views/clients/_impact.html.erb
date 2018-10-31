@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
-  <div class="row impact-background">
+  <div class="row impact-background pb-md-5">
     <div class="col-12 impact-info">
       <div class="btn impact-btn c-default">
         <span class="badge badge-light"><%= current_client.quantity_of_trees_planted %></span> <%= t('.trees_planted') %>
@@ -14,12 +14,12 @@
       <div id="map" class="w-100 h-450p" data-markers="<%= @markers.to_json %>"></div>
     </div>
 
-      <h2><%= t('.tree_species') %></h2>
+<!--       <h2></%= t('.tree_species') %></h2>
       <ul>
-        <% current_client.tree_species_planted.each do |specie| %>
-          <li><%= specie %></li>
-        <% end %>
-      </ul>
+        </% current_client.tree_species_planted.each do |specie| %>
+          <li></%= specie %></li>
+        </% end %>
+      </ul> -->
 
   </div>
 

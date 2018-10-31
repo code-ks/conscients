@@ -1,7 +1,7 @@
 .impact-background {
   @include for-tablet-landscape-up {
     background-color: black;
-    color: white;
+    // color: white;
     margin: 1rem;
   }
 }
@@ -21,6 +21,7 @@
     text-transform: Uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
+    color: white;
   }
 }
 

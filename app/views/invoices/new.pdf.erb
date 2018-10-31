@@ -2,9 +2,63 @@
   <%= wicked_pdf_image_tag "logo.jpg" %>
   <h1><%= t('.order') %> #<%= @order.id %> - <%= I18n.l(@order.payment_date, format: :long_no_time).titleize %></h1>
 
+<table class="mb-20">
+  <thead>
+    <tr>
+      <th><%= t('.billing_address') %></th>
+      <th><%= t('.delivery_address') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+      <% if @billing_address.email %>
+        <span><%= @billing_address.email %></span>
+      <% else %>
+        <span><%= @billing_address.first_name %> <%= @billing_address.last_name %></span>
+        <% if @billing_address.company %>
+          <span><%= @billing_address.company %></span>
+        <% end %>
+        <% if @billing_address.address_1 %>
+          <span><%= @billing_address.address_1 %></span>
+        <% end %>
+        <% if @billing_address.address_2 %>
+          <span><%= @billing_address.address_2 %></span>
+        <% end %>
+        <span><%= @billing_address.city %> <%= @billing_address.zip_code %></span>
+        <% if @billing_address.country %>
+          <span><%= @billing_address.country %></span>
+        <% end %>
+      <% end %>
+      </td>
+      <td>
+      <% if @delivery_address.email %>
+        <span><%= @delivery_address.email %></span>
+      <% else %>
+        <span><%= @delivery_address.first_name %> <%= @delivery_address.last_name %></span>
+        <% if @delivery_address.company %>
+          <span><%= @delivery_address.company %></span>
+        <% end %>
+        <% if @delivery_address.address_1 %>
+          <span><%= @delivery_address.address_1 %></span>
+        <% end %>
+        <% if @delivery_address.address_2 %>
+          <span><%= @delivery_address.address_2 %></span>
+        <% end %>
+        <span><%= @delivery_address.city %> <%= @billing_address.zip_code %></span>
+        <% if @delivery_address.country %>
+          <span><%= @delivery_address.country %></span>
+        <% end %>
+      <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
   <div class='mb-20 flex space-between'>
 
-    <div>
+<div class="adresses-row">
+    <div class="adresses-col">
       <h4><%= t('.billing_address') %></h4>
       <% if @billing_address.email %>
         <span><%= @billing_address.email %></span>
@@ -25,6 +79,29 @@
         <% end %>
       <% end %>
     </div>
+
+      <div class="adresses-col">
+      <h4><%= t('.delivery_address') %></h4>
+      <% if @delivery_address.email %>
+        <span><%= @delivery_address.email %></span>
+      <% else %>
+        <span><%= @delivery_address.first_name %> <%= @delivery_address.last_name %></span>
+        <% if @delivery_address.company %>
+          <span><%= @delivery_address.company %></span>
+        <% end %>
+        <% if @delivery_address.address_1 %>
+          <span><%= @delivery_address.address_1 %></span>
+        <% end %>
+        <% if @delivery_address.address_2 %>
+          <span><%= @delivery_address.address_2 %></span>
+        <% end %>
+        <span><%= @delivery_address.city %> <%= @billing_address.zip_code %></span>
+        <% if @delivery_address.country %>
+          <span><%= @delivery_address.country %></span>
+        <% end %>
+      <% end %>
+    </div>
+</div>
 
   </div>
 
