@@ -35,6 +35,13 @@ button:focus {outline:0;}
     background-color: #60b28d;
   }
 
+// BTN RED
+
+  .btn-red {
+    background-color: $conscients-red;
+    color: white !important;
+  }
+
 // BTN BLACK
 
   .btn-black {
