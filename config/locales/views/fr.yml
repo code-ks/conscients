@@ -169,7 +169,8 @@ fr:
       continue_purchases: "Poursuivre mes achats"
   invoices:
     new:
-      order: "Commande"
+      order: "Facture"
+      delivered_to: "Commande livrée à :"
       delivery_address: "Adresse de livraison"
       billing_address: "Adresse de facturation"
       product_name: "Produit"

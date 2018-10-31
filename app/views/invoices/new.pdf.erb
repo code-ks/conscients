@@ -1,108 +1,41 @@
-<div>
-  <%= wicked_pdf_image_tag "logo.jpg" %>
-  <h1><%= t('.order') %> #<%= @order.id %> - <%= I18n.l(@order.payment_date, format: :long_no_time).titleize %></h1>
+<div class="frankruhl">
 
-<table class="mb-20">
-  <thead>
+  <div class="invoice-top">
+    <table>
     <tr>
-      <th><%= t('.billing_address') %></th>
-      <th><%= t('.delivery_address') %></th>
+      <td><%= wicked_pdf_image_tag "logo.jpg" %></td>
+      <td class="align-right">4U ABEL SAS<br>10 passage nationale<br>75013 Paris<br>Tel: 0622222222</td>
     </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-      <% if @billing_address.email %>
-        <span><%= @billing_address.email %></span>
-      <% else %>
-        <span><%= @billing_address.first_name %> <%= @billing_address.last_name %></span>
-        <% if @billing_address.company %>
-          <span><%= @billing_address.company %></span>
-        <% end %>
-        <% if @billing_address.address_1 %>
-          <span><%= @billing_address.address_1 %></span>
-        <% end %>
-        <% if @billing_address.address_2 %>
-          <span><%= @billing_address.address_2 %></span>
-        <% end %>
-        <span><%= @billing_address.city %> <%= @billing_address.zip_code %></span>
-        <% if @billing_address.country %>
-          <span><%= @billing_address.country %></span>
-        <% end %>
-      <% end %>
-      </td>
-      <td>
-      <% if @delivery_address.email %>
-        <span><%= @delivery_address.email %></span>
-      <% else %>
-        <span><%= @delivery_address.first_name %> <%= @delivery_address.last_name %></span>
-        <% if @delivery_address.company %>
-          <span><%= @delivery_address.company %></span>
-        <% end %>
-        <% if @delivery_address.address_1 %>
-          <span><%= @delivery_address.address_1 %></span>
-        <% end %>
-        <% if @delivery_address.address_2 %>
-          <span><%= @delivery_address.address_2 %></span>
-        <% end %>
-        <span><%= @delivery_address.city %> <%= @billing_address.zip_code %></span>
-        <% if @delivery_address.country %>
-          <span><%= @delivery_address.country %></span>
-        <% end %>
-      <% end %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    </table>
+  </div>
 
-  <div class='mb-20 flex space-between'>
-
-<div class="adresses-row">
-    <div class="adresses-col">
-      <h4><%= t('.billing_address') %></h4>
-      <% if @billing_address.email %>
-        <span><%= @billing_address.email %></span>
-      <% else %>
-        <span><%= @billing_address.first_name %> <%= @billing_address.last_name %></span>
-        <% if @billing_address.company %>
-          <span><%= @billing_address.company %></span>
-        <% end %>
-        <% if @billing_address.address_1 %>
-          <span><%= @billing_address.address_1 %></span>
-        <% end %>
-        <% if @billing_address.address_2 %>
-          <span><%= @billing_address.address_2 %></span>
-        <% end %>
-        <span><%= @billing_address.city %> <%= @billing_address.zip_code %></span>
-        <% if @billing_address.country %>
-          <span><%= @billing_address.country %></span>
-        <% end %>
-      <% end %>
-    </div>
-
-      <div class="adresses-col">
-      <h4><%= t('.delivery_address') %></h4>
-      <% if @delivery_address.email %>
-        <span><%= @delivery_address.email %></span>
-      <% else %>
-        <span><%= @delivery_address.first_name %> <%= @delivery_address.last_name %></span>
-        <% if @delivery_address.company %>
-          <span><%= @delivery_address.company %></span>
-        <% end %>
-        <% if @delivery_address.address_1 %>
-          <span><%= @delivery_address.address_1 %></span>
-        <% end %>
-        <% if @delivery_address.address_2 %>
-          <span><%= @delivery_address.address_2 %></span>
-        <% end %>
-        <span><%= @delivery_address.city %> <%= @billing_address.zip_code %></span>
-        <% if @delivery_address.country %>
-          <span><%= @delivery_address.country %></span>
-        <% end %>
-      <% end %>
-    </div>
-</div>
-
+  <div class="invoice-top-under">
+    <table>
+      <tr>
+        <td>
+        <span class="bold"><%= t('.billing_address') %></span> <br>
+          <% if @billing_address.email %>
+            <span><%= @billing_address.email %></span>
+          <% else %>
+            <span><%= @billing_address.first_name %> <%= @billing_address.last_name %></span>
+            <% if @billing_address.company %>
+              <span><%= @billing_address.company %></span>
+            <% end %>
+            <% if @billing_address.address_1 %>
+              <span><%= @billing_address.address_1 %></span>
+            <% end %>
+            <% if @billing_address.address_2 %>
+              <span><%= @billing_address.address_2 %></span>
+            <% end %>
+            <span><%= @billing_address.city %> <%= @billing_address.zip_code %></span>
+            <% if @billing_address.country %>
+              <span><%= @billing_address.country %></span>
+            <% end %>
+          <% end %>
+        </td>
+        <td class="align-right"><h2><%= t('.order') %> #<%= @order.id %><br> <%= I18n.l(@order.payment_date, format: :long_no_time).titleize %></h2></td>
+      </tr>
+    </table>
   </div>
 
   <table class="mb-20">
@@ -122,34 +55,59 @@
         </tr>
       <% end %>
       <tr>
-        <td><%= t('.total_price_ht') %></td>
+        <td class="bold"><%= t('.total_price_ht') %></td>
         <td></td>
-        <td><%= humanized_money_with_symbol @order.ht_price %></td>
+        <td class="bold"><%= humanized_money_with_symbol @order.ht_price %></td>
       </tr>
       <tr>
-        <td><%= t('.delivery_fees_ht') %></td>
+        <td class="bold"><%= t('.delivery_fees_ht') %></td>
         <td></td>
-        <td><%= humanized_money_with_symbol @order.current_delivery_fees_ht %></td>
+        <td class="bold"><%= humanized_money_with_symbol @order.current_delivery_fees_ht %></td>
       </tr>
       <% if @order.coupon %>
         <tr>
-          <td><%= t('.coupon_discount_ht') %></td>
+          <td class="bold"><%= t('.coupon_discount_ht') %></td>
           <td></td>
-          <td>- <%= humanized_money_with_symbol @order.coupon_discount %></td>
+          <td class="bold">- <%= humanized_money_with_symbol @order.coupon_discount %></td>
         </tr>
       <% end %>
       <tr>
-        <td><%= t('.total_price_ht_all_included') %></td>
+        <td class="bold"><%= t('.total_price_ht_all_included') %></td>
         <td></td>
-        <td><%= humanized_money_with_symbol @order.ht_price_all_included %></td>
+        <td class="bold"><%= humanized_money_with_symbol @order.ht_price_all_included %></td>
       </tr>
       <tr>
-        <td><%= t('.total_vat') %></td>
+        <td class="bold"><%= t('.total_vat') %></td>
         <td></td>
-        <td><%= humanized_money_with_symbol @order.total_vat %></td>
+        <td class="bold"><%= humanized_money_with_symbol @order.total_vat %></td>
       </tr>
     </tbody>
   </table>
 
-  <h2 class='right'><%= t('.total_price') %> <%= humanized_money_with_symbol @order.total_price %></h2>
+  <div class="mt-30">
+    <h2 class="align-right"><%= t('.total_price') %> <%= humanized_money_with_symbol @order.total_price %></h2>
+  </div>
+
+  <div class="invoice-bottom">
+    <h4 class="delivered-to"><%= t('.delivered_to') %></h4>
+    <% if @delivery_address.email %>
+      <span><%= @delivery_address.email %></span>
+    <% else %>
+      <span><%= @delivery_address.first_name %> <%= @delivery_address.last_name %></span>
+      <% if @delivery_address.company %>
+        <span><%= @delivery_address.company %></span>
+      <% end %>
+      <% if @delivery_address.address_1 %>
+        <span><%= @delivery_address.address_1 %></span>
+      <% end %>
+      <% if @delivery_address.address_2 %>
+        <span><%= @delivery_address.address_2 %></span>
+      <% end %>
+      <span><%= @delivery_address.city %> <%= @billing_address.zip_code %></span>
+      <% if @delivery_address.country %>
+        <span><%= @delivery_address.country %></span>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>

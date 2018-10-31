@@ -19,6 +19,8 @@ span {
 
 th {
   height: 50px;
+  text-align: left;
+  padding-left: 15px;
 }
 
 td {
@@ -111,12 +113,53 @@ td {
   top: 693px;
 }
 
-// INVOICE STYLE
-.adresses-row {
-  display: flex;
-  width: 100%;
+// INVOICE NEW CSS
+
+.frankruhl{
+  font-family: "Frank Ruhl Libre", "serif";
 }
 
-.adresses-col {
-  width: 50%;
+.invoice-top {
+  color: #5c5c54;
+  border-bottom: 1px solid #5c5c54;
+  table, th, td {
+    border: none;
+  }
+  td {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.invoice-top-under {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  table, th, td {
+    border: none;
+  }
+  td {
+    padding-right: 0;
+  }
+}
+
+.invoice-bottom {
+  padding: 15px;
+  font-style: italic;
+  text-align: right;
+  color: #5c5c54;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.delivered-to {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 8px !important;
 }
