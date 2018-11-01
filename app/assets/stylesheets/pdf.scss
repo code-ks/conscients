@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=300');
+// @import url('https://fonts.googleapis.com/css?family=300');
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:300,400,500|Roboto:100,300,400|Muli:200,300,400,600');
 
 body {
   // font-family: 'Roboto', sans-serif;
@@ -53,7 +54,7 @@ td {
 // CERTIFICATE NEW CSS
 
 .grey-certificate {
-  color: #51524D;
+  color: #54534A;
 }
 
 .full-page {
@@ -68,19 +69,21 @@ td {
 
 .certificate-number {
   position: absolute;
-  top: 194px;
-  left: 338px;
-  font-size: 14px;
+  top: 200px;
+  left: 333px;
+  font-size: 16px;
 }
 
 .tree-quantity {
   position: absolute;
   text-transform: uppercase;
-  top: 210px;
+  top: 230px;
   left: 168px;
   text-align: right;
-  width: 312px;
-  font-size: 30px;
+  // width: 312px;
+  width: 307px;
+  font-size: 28px;
+  // font-weight: 600;
 }
 
 .identity-box {
@@ -95,11 +98,12 @@ td {
 .recipient-name {
   text-transform: uppercase;
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 28px;
+  line-height: 1.7rem;
 }
 
 .recipient-message {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .information-box {
@@ -108,7 +112,8 @@ td {
   width: 312px;
   left: 168px;
   top: 670px;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.1rem;
 }
 
 .certificate-date {

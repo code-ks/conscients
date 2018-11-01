@@ -196,7 +196,7 @@ fr:
       project_type: "Type: %{project_type}"
       project_partner: "Partenaire: %{project_partner}"
       plantation_uuid: "Parcelle: %{plantation_uuid}"
-      coordinates: "GPS Latitude: %{lat} - GPS Longitude: %{long}"
+      coordinates: "GPS Lat: %{lat} - Long: %{long}"
       tree_specie: "Espèce: %{tree_specie}"
       tree_producer: "Producteur: %{tree_producer}"
   clients:

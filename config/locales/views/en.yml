@@ -194,10 +194,10 @@ en:
       project_name: "Project: %{project_name}"
       project_type: "Type: %{project_type}"
       project_partner: "Partner: %{project_partner}"
-      plantation_uuid: "Plantation: %{plantation_uuid}"
-      coordinates: "GPS Latitude: %{lat} - GPS Longitude: %{long}"
+      plantation_uuid: "Parcel: %{plantation_uuid}"
+      coordinates: "GPS Lat: %{lat} - Long: %{long}"
       tree_specie: "Specie: %{tree_specie}"
-      tree_producer: "Producer: %{tree_producer}"
+      tree_producer: "Farmer: %{tree_producer}"
   clients:
     show:
       my_account: "My account"
