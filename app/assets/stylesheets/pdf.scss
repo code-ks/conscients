@@ -34,6 +34,10 @@ td {
   font-weight: bold;
 }
 
+.mb-5 {
+  margin-bottom: 5px;
+}
+
 .mb-20 {
   margin-bottom: 20px;
 }
@@ -82,23 +86,38 @@ td {
   text-align: right;
   // width: 312px;
   width: 307px;
-  font-size: 28px;
+  font-size: 26px;
   // font-weight: 600;
 }
 
 .identity-box {
   position: absolute;
   text-align: center;
-  // vertical-align: center;
   width: 312px;
-  left: 168px;
-  top: 535px;
+  left: 162px;
+  // top: 535px;
+  top: 550px;
+  // vertical-align: center;
+  height: 150px;
+  background-color: yellow;
+}
+
+.identity-centered-box {
+  height: 149px;
+  line-height: 149px;
+  text-align: center;
+}
+
+.identity-centered-span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 
 .recipient-name {
   text-transform: uppercase;
   margin-bottom: 10px;
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1.7rem;
 }
 
@@ -111,7 +130,8 @@ td {
   text-align: center;
   width: 312px;
   left: 168px;
-  top: 670px;
+  // top: 670px;
+  bottom: 225px;
   font-size: 15px;
   line-height: 1.1rem;
 }
