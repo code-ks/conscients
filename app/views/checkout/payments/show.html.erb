@@ -1,6 +1,6 @@
 <div class="page-container my-5 page-font first-title-padding text-center">
-  <h1>Merci !</h1>
-  <h2 classe="padding-t"><%= t(".order_confirmed") %></h2>
+  <h1><%= t(".order_confirmed") %></h1>
+  <h2 classe="padding-t"><%= t(".order_confirmed_details") %></h2>
   <% if @order.wainting_for_bank_transfer? %>
     <h2><%= t(".bank_transfer_instructions", amount: @order.total_price) %></h2>
     <%= image_tag "bank_account_details_conscients.jpg", class: "w-100" %>
@@ -10,4 +10,6 @@
 
   <%= link_to t(".go_to_client_space"), clients_path, class: "follow-link red-link" %>
 </div>
+
+
 
