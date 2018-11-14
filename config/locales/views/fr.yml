@@ -319,11 +319,12 @@ fr:
         billing: "Facturé à :"
         delivery: "Distribué à: "
       show:
-        go_to_client_space: "Pour plus d'informations, rendez-vous dans votre espace client"
+        go_to_client_space: "Retrouvez toutes les informations liées à votre commande sur votre compte"
         order_confirmed: "Merci !"
-        order_confirmed_details: "Votre commande a bien été reçue."
-        email_coming: "Vous recevrez bientôt un email de confirmation."
-        bank_transfer_instructions: "Pour la confirmer, merci d'effectuer un virement de %{amount} euros. Un email avec les informations pour réaliser le virement vous a été envoyé. TRAD A FAIRE"
+        order_validation: "Votre commande a été validée."
+        order_received: "Votre commande a bien été reçue."
+        email_coming: "Vous recevrez bientôt un email de confirmation avec la facture."
+        bank_transfer_instructions: "Elle sera expédiée dès réception de votre virement de %{amount} € au compte bancaire ci-dessous."
       address:
         billing: "Facturé à :"
         delivery: "Distribué à :"

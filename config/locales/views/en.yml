@@ -318,11 +318,12 @@ en:
         billing: "Billing address"
         delivery: "Delivery address"
       show:
-        go_to_client_space: "For more details, go to your client space"
-        order_confirmed: "Thanks a lot!"
-        order_confirmed_details: "Your order have been received."
-        email_coming: "You will soon receive a confirmation email"
-        bank_transfer_instructions: "To confirm it, please send the total amount of the order (%{amount} euros) by bank transfer to the following account"
+        go_to_client_space: "Find all information relating to your orders in your account"
+        order_confirmed: "Thank you!"
+        order_validation: "Your order has been confirmed."
+        order_received: "Your order has been received."
+        email_coming: "You will soon receive a detailed email."
+        bank_transfer_instructions: "To confirm it, please send the amount of %{amount} € by bank transfer to the following account."
       line_items_table:
         selection: "Selection"
         quantity: "Quantity"
