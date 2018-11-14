@@ -3,17 +3,14 @@
   <% if @order.wainting_for_bank_transfer? %>
     <h2 class="text-center"><%= t(".order_received") %>
     <%= t(".bank_transfer_instructions", amount: @order.total_price) %></h2>
-<!--     <div class="padding-b">
-    </%= image_tag "bank_account_details_conscients.jpg", class: "w-100" %>
-    </div> -->
     <div class="my-5 p-3 border-black">
         <div class="border-bottom bank-info-font font-weight-bold">Banque</div>
         <table class="conscients-table-responsive">
           <thead>
             <tr>
-              <th class="th-font">Domiciliation</th>
-              <th class="th-font">BIC (Bank Identifier Code)</th>
-              <th class="th-font">Titulaire du compte / Account Owner</th>
+              <th class="th-font"><%= t(".domiciliation") %></th>
+              <th class="th-font">BIC</th>
+              <th class="th-font"><%= t('.account_owner')%></th>
             </tr>
           </thead>
           <tbody>
@@ -24,15 +21,15 @@
             </tr>
           </tbody>
         </table>
-        <div class="border-bottom bank-info-font font-weight-bold pt-5">RIB - Identifiant national de compte bancaire</div>
+        <div class="border-bottom bank-info-font font-weight-bold pt-md-5"><%= t('.rib')%></div>
         <table class="conscients-table-responsive">
           <thead>
             <tr>
-              <th class="th-font">Banque</th>
-              <th class="th-font">Guichet</th>
-              <th class="th-font">N°compte</th>
-              <th class="th-font">Clé</th>
-              <th class="th-font">Devise</th>
+              <th class="th-font"><%= t('.bank')%></th>
+              <th class="th-font"><%= t('.counter')%></th>
+              <th class="th-font"><%= t('.account_number')%></th>
+              <th class="th-font"><%= t('.key')%></th>
+              <th class="th-font"><%= t('.currency')%></th>
             </tr>
           </thead>
           <tbody>
@@ -45,7 +42,7 @@
             </tr>
           </tbody>
         </table>
-        <div class="pt-5 border-bottom bank-info-font font-weight-bold">IBAN - International Bank Account Number</div>
+        <div class="pt-md-5 border-bottom bank-info-font font-weight-bold"><%= t('.iban')%></div>
         <table class="conscients-table-responsive">
           <tbody>
             <tr>
