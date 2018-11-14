@@ -334,6 +334,7 @@ fr:
         account_number: "N° Compte"
         key: "Clé"
         currency: "Devise"
+        contact_us: "N'hésitez pas à nous contacter pour toute question !"
       address:
         billing: "Facturé à :"
         delivery: "Distribué à :"

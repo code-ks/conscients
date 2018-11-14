@@ -333,6 +333,7 @@ en:
         account_number: "Account number"
         key: "Key"
         currency: "Currency"
+        contact_us: "Feel free to contact us for any question !"
       line_items_table:
         selection: "Selection"
         quantity: "Quantity"
