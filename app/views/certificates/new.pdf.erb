@@ -4,13 +4,18 @@
     <span style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= @line_item.certificate_number %></span>
   </div>
   <div class="tree-quantity">
-    <%= t('.tree_quantity', count: @line_item.quantity) %>
+    <span class="recipient-name" style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= t('.tree_quantity', count: @line_item.quantity) %></span>
   </div>
   <div class="identity-box">
-    <span class="recipient-name" style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= @line_item.recipient_name %></span>
-    <span class="recipient-message" style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= @line_item.recipient_message %></span>
+    <div class="identity-centered-box">
+    <span class="identity-centered-span">
+      <span class="recipient-name" style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= @line_item.recipient_name %></span>
+      <span class="recipient-message" style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= @line_item.recipient_message %></span>
+    </span>
+    </div>
   </div>
   <div class="information-box">
+    <span class="barre">- - - - -</span>
     <span><%= t('.project_name', project_name: @line_item.tree_plantation.project_name) %></span>
     <span><%= t('.project_type', project_type: @line_item.tree_plantation.project_type) %></span>
     <span><%= t('.project_partner', project_partner: @line_item.tree_plantation.partner) %></span>

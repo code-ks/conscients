@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=300');
+// @import url('https://fonts.googleapis.com/css?family=300');
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:300,400,500|Roboto:100,300,400|Muli:200,300,400,600');
 
 body {
-  font-family: 'Roboto', sans-serif;
+  // font-family: 'Roboto', sans-serif;
+  // font-weight: 300;
+  font-family: 'Muli', sans-serif;
 }
 
 table {
@@ -19,6 +22,8 @@ span {
 
 th {
   height: 50px;
+  text-align: left;
+  padding-left: 15px;
 }
 
 td {
@@ -46,12 +51,15 @@ td {
   display: -webkit-box;
 }
 
+// CERTIFICATE NEW CSS
+
 .grey-certificate {
-  color: #51524D;
+  color: #54534A;
 }
 
 .full-page {
-  height: 1031px;
+  // height: 1031px;
+  height: 1060px;
   width: 1559px;
 }
 
@@ -61,37 +69,60 @@ td {
 
 .certificate-number {
   position: absolute;
-  top: 194px;
-  left: 338px;
-  font-size: 14px;
+  top: 200px;
+  left: 333px;
+  font-size: 16px;
 }
 
 .tree-quantity {
   position: absolute;
   text-transform: uppercase;
-  top: 210px;
+  top: 230px;
   left: 168px;
   text-align: right;
-  width: 312px;
-  font-size: 30px;
+  // width: 312px;
+  width: 307px;
+  font-size: 26px;
+  // font-weight: 600;
 }
 
 .identity-box {
   position: absolute;
   text-align: center;
   width: 312px;
-  left: 168px;
-  top: 535px;
+  left: 162px;
+  // top: 535px;
+  top: 545px;
+  // vertical-align: center;
+  height: 150px;
+  // background-color: yellow;
+}
+
+.identity-centered-box {
+  height: 149px;
+  line-height: 149px;
+  text-align: center;
+}
+
+.identity-centered-span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 
 .recipient-name {
   text-transform: uppercase;
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 26px;
+  line-height: 1.7rem;
 }
 
 .recipient-message {
-  font-size: 17px;
+  font-size: 16px;
+}
+
+.barre {
+  margin-bottom: 10px;
 }
 
 .information-box {
@@ -99,8 +130,10 @@ td {
   text-align: center;
   width: 312px;
   left: 168px;
-  top: 670px;
-  font-size: 14px;
+  // top: 670px;
+  bottom: 225px;
+  font-size: 15px;
+  line-height: 1.1rem;
 }
 
 .certificate-date {
@@ -108,5 +141,57 @@ td {
   text-transform: uppercase;
   width: 500px;
   left: 600px;
-  top: 693px;
+  top: 719px;
+  font-size: 16px;
+}
+
+// INVOICE NEW CSS
+
+.frankruhl{
+  font-family: "Frank Ruhl Libre", "serif";
+}
+
+.invoice-top {
+  color: #5c5c54;
+  border-bottom: 1px solid #5c5c54;
+  table, th, td {
+    border: none;
+  }
+  td {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.invoice-top-under {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  table, th, td {
+    border: none;
+  }
+  td {
+    padding-right: 0;
+  }
+}
+
+.invoice-bottom {
+  padding: 15px;
+  font-style: italic;
+  text-align: right;
+  color: #5c5c54;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.delivered-to {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 8px !important;
 }

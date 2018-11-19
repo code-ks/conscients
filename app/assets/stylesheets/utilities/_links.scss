@@ -1,7 +1,7 @@
-  .coral-link {
+  .yellow-over {
     a {
       &:hover {
-        color: $conscients-coral;
+        color: $conscients-yellow;
       }
     }
   }
@@ -18,10 +18,27 @@
   }
 
 // READ MORE / BACK TO TOP
-  .read-more, .back-to-top {
+  .yellow-link {
+    color: $conscients-yellow;
+  }
+
+  .yellow-link:hover {
+    color: $conscients-yellow;
+    text-decoration: underline;
+  }
+
+  .green-link {
+    color: $conscients-green;
+  }
+
+  .green-link:hover {
+    color: $conscients-dark-green;
+    text-decoration: underline;
+  }
+  .red-link, .read-more, .back-to-top {
     color: $conscients-red;
   }
-  .read-more:hover, .back-to-top:hover {
+  .red-link:hover, .read-more:hover, .back-to-top:hover {
     color: $conscients-red;
     text-decoration: underline;
     // font-weight: bold;
@@ -41,4 +58,12 @@
     text-decoration: underline white;
   }
 
+  .follow-link {
+    font-weight: 500;
+  }
 
+  .follow-link:before {
+    font-family: FontAwesome;
+    content: "\f105";
+    padding-right: 10px;
+  }

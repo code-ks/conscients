@@ -1,5 +1,5 @@
 <!-- navbar displayed only on medium and large devices -->
-  <nav class="navbar bg-white d-none d-md-block coral-link">
+  <nav class="navbar bg-white d-none d-md-block yellow-over">
     <div class="d-flex justify-content-between align-items-top navbar-top-font">
       <div class= "navbar-item">
         <div><%= locale_links %></div>
@@ -43,7 +43,7 @@
         <%= image_tag "logo-conscients-bebe-bio.png", height: 40, class: "d-md-none show-on-scroll" %>
       <% end %>
       </div>
-      <div class="top-menu-center coral-link d-none d-md-flex">
+      <div class="top-menu-center yellow-over d-none d-md-flex">
         <% Category.main.each do |category| %>
           <div class="mx-3"><%= link_to category.name, category_products_path(category) %></div>
           <% end %>

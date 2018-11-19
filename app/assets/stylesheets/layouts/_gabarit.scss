@@ -6,6 +6,11 @@
   height: 100vh;
 }
 
+.no-overflow-n-wrap {
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
 // **** BASE RESPONSIVE FONT ****
   body {
     color: $conscients-grey;

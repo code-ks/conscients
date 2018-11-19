@@ -169,7 +169,8 @@ fr:
       continue_purchases: "Poursuivre mes achats"
   invoices:
     new:
-      order: "Commande"
+      order: "Facture"
+      delivered_to: "Commande livrée à :"
       delivery_address: "Adresse de livraison"
       billing_address: "Adresse de facturation"
       product_name: "Produit"
@@ -195,20 +196,20 @@ fr:
       project_type: "Type: %{project_type}"
       project_partner: "Partenaire: %{project_partner}"
       plantation_uuid: "Parcelle: %{plantation_uuid}"
-      coordinates: "GPS Latitude: %{lat} - GPS Longitude: %{long}"
+      coordinates: "GPS Lat: %{lat} - Long: %{long}"
       tree_specie: "Espèce: %{tree_specie}"
       tree_producer: "Producteur: %{tree_producer}"
   clients:
     show:
       my_account: "Mon compte"
-      profile: "Profil"
-      orders_list: "Mes commandes"
-      impact: "Mon empreinte"
+      profile: "profil"
+      orders_list: "commandes"
+      impact: "empreinte"
     profile:
       my_account: "Mon compte"
-      client_email: "Email: %{email}"
+      client_email: "Identifiant: %{email}"
       my_addresses: "Mes adresses"
-      address_type: "Type d'adresse: %{type}"
+      address_type: "Adresse %{type}"
       edit_password: "Changer mon mot de passe"
     orders_list:
       date: "Date de la commande"
