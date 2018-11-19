@@ -16,18 +16,35 @@
 /* -------------------------------------
  * CART TABLE
  * ------------------------------------- */
-  .conscients-table-responsive {
-    table-layout: fixed;
-    width: 100%;
-    @include for-phone-only {
-      border: 1px solid $conscients-grey;
-    }
-    @include for-tablet-portrait-only {
-      border: 1px solid $conscients-grey;
+  .table-div {
+    margin-right: 16px;
+    margin-left: 16px;
+    @include for-tablet-landscape-up {
+      margin-right: 0;
+      margin-left: 0;
     }
   }
 
-  // CART HEAD //
+  .next-div {
+    margin-top: 2rem;
+    @include for-tablet-landscape-up {
+      margin-top: 1rem;
+    }
+  }
+
+  .border-resp {
+    border: 1px solid #dee2e6;
+    @include for-tablet-landscape-up {
+      border: none;
+    }
+  }
+
+  .conscients-table-responsive {
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  // HEADERS //
   .table th {
       padding-bottom: 0;
   }
@@ -35,19 +52,7 @@
   .top-tr {
     background-color: $conscients-bg-grey;
   }
-  .th-font {
-      padding-bottom: 10PX;
-      padding-top: 10PX;
-      font-family: "Roboto", "sans-serif";
-      text-transform: uppercase;
-      font-weight: 300;
-      font-size: 0.5rem;
-      word-wrap: break-word;
-      @include for-tablet-landscape-up {
-        font-size: 0.7rem;
-        letter-spacing: 0.1rem;
-      }
-  }
+
 
   // CART BODY //
   .cart-img img {
@@ -60,35 +65,10 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-  .td-font {
-    font-family: "Frank Ruhl Libre", "serif";
-    font-weight: 300;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -o-hyphens: auto;
-    hyphens: auto;
-    @include for-phone-only {
-      font-size: 0.7rem;
-    }
-  }
 
-  .heart-before:before {
-    font-family: FontAwesome;
-    content: "\f004";
-    color: $conscients-red;
-    font-size: 0.5rem;
-    padding-right: 5px;
-  }
-  .heart-before:white {
-    font-family: FontAwesome;
-    content: "\f004";
-    color: white;
-    font-size: 0.5rem;
-  }
 
-  // CART BODY COL SIZE //
+
+  // CART BODY COL SIZE ON SHOW CARTS//
   .first-col-fix-width td:nth-child(1),
   .first-col-fix-width th:nth-child(1)  {
     width: 13%;
@@ -135,7 +115,55 @@
     }
   }
 
-// CART TABLE FONTS
+// CART TABLE FONTS //
+ // Headers font
+
+  .th-font {
+      color: $conscients-title-grey;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      font-family: "Roboto", "sans-serif";
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 0.7rem;
+      word-wrap: break-word;
+      letter-spacing: 0.1rem;
+      @include for-phone-only {
+        font-size: 0.5rem;
+        letter-spacing: normal;
+      }
+  }
+
+
+  // Body font
+  .td-font {
+    font-family: "Frank Ruhl Libre", "serif";
+    font-weight: 300;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    @include for-phone-only {
+      font-size: 0.7rem;
+    }
+  }
+
+  .heart-before:before {
+    font-family: FontAwesome;
+    content: "\f004";
+    color: $conscients-red;
+    font-size: 0.5rem;
+    padding-right: 5px;
+  }
+  .heart-before:white {
+    font-family: FontAwesome;
+    content: "\f004";
+    color: white;
+    font-size: 0.5rem;
+  }
+
   .total-font{
     font-size: 1rem;
     text-transform: uppercase;
@@ -144,28 +172,28 @@
       font-size: 0.8rem;
     }
   }
-  .total-comment-font p{
-    font-family: roboto;
+  .total-comment-font, .total-comment-font p{
+    font-family: "Roboto", "sans-serif";
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 0.7rem !important;
     letter-spacing: 0.1rem;
     font-weight: 300;
-    margin-bottom: 3rem;
+    // margin-bottom: 3rem;
     @include for-phone-only {
-      font-size: 0.6rem;
+      font-size: 0.5rem;
       text-align: right;
-      margin-bottom: 2rem;
+      // margin-bottom: 2rem;
+
     }
   }
 
   .continue-shopping {
+    @include for-tablet-landscape-up {
     color: $conscients-green;
     font-family: "Roboto", "sans-serif";
     text-transform: Uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
-    @include for-phone-only {
-      font-size: 0.6rem;
     }
   }
 
@@ -180,3 +208,85 @@
     text-decoration: underline;
   }
 
+/* -------------------------------------------------
+ * CART TABLE ON DELIVERY AND PAIEMENT (SMALL CART)
+ * ------------------------------------------------- */
+
+  .small-cart-img img {
+    width: 25px;
+    @include for-tablet-landscape-up {
+      width: 40px;
+    }
+  }
+
+  .small-th-font {
+      padding-bottom: 10PX;
+      padding-top: 10PX;
+      font-family: "Roboto", "sans-serif";
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 0.5rem;
+      word-wrap: break-word;
+      @include for-tablet-landscape-up {
+        font-size: 0.5rem;
+        letter-spacing: 0.1rem;
+      }
+  }
+
+  .small-td-font {
+    font-family: "Frank Ruhl Libre", "serif";
+    font-weight: 300;
+    font-size: 0.7rem;
+    @include for-tablet-landscape-up {
+      font-size: 0.8rem;
+    }
+  }
+
+  .small-total-font{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    // @include for-phone-only {
+    //   font-size: 0.8rem;
+    // }
+  }
+
+  // Image
+  .small-first-col-fix-width td:nth-child(1), .small-first-col-fix-width th:nth-child(1) {
+    width: 11%;
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  // Product
+    .small-first-col-fix-width td:nth-child(2), .small-first-col-fix-width th:nth-child(2) {
+    @include for-phone-only {
+      padding-left: 0.25rem;
+    }
+  }
+  // Quantity
+  .small-first-col-fix-width td:nth-child(3), .small-first-col-fix-width th:nth-child(3){
+    width: 10%;
+    @include for-phone-only {
+      padding-left: 0.25rem;
+    }
+  }
+
+  // Price
+  .small-first-col-fix-width td:nth-last-child(-n+2), .small-first-col-fix-width th:nth-last-child(-n+2){
+    width: 12%;
+    @include for-phone-only {
+      width: 20%;
+      padding-left: 0.25rem;
+    }
+  }
+
+  // Edit
+  .small-first-col-fix-width td:last-child,
+  .small-first-col-fix-width th:last-child{
+    width: 6%;
+    @include for-phone-only {
+      padding-left: 0.25rem;
+    }
+  }

@@ -1,0 +1,16 @@
+// put under container
+.cart-full-page-mobile {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// add class on html
+.cart-price-and-validation {
+  flex-grow: 2;
+  justify-content: space-between;
+}
+
+// create a div for price and total
+.cart-price {
+}

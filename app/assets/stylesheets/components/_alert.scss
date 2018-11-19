@@ -6,12 +6,19 @@
   margin: 0;
   text-align: center;
   color: white;
+  font-family: "Frank Ruhl libre", "serif";
+  font-weight: 300;
+  border-radius: 0;
+  border: none;
 }
 .alert-info {
-  background: $green;
+  // background: $conscients-green;
+  background-color: $conscients-black;
+  // opacity: 1;
 }
 .alert-warning {
-  background: $red;
+  // background: $conscients-red;
+  background-color: $conscients-black;
 }
 
 /* -------------------------------------

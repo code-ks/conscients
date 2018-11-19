@@ -1,12 +1,12 @@
 <% set_meta_tags noindex: true %>
 
-<div class="container mb-5">
+<div class="container mb-5 no-overflow">
 
   <%= render 'checkout/deliveries/breadcrumb', cart: @cart %>
 
-    <div class="row">
+    <!-- <div class="row"> -->
       <%= render 'checkout/deliveries/top_description', cart: @cart %>
-    </div>
+    <!-- </div> -->
 
     <%= render 'checkout/deliveries/delivery_form', cart: @cart, delivery_address: @delivery_address, billing_address: @billing_address %>
 

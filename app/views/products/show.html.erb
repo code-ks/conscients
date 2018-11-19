@@ -8,19 +8,18 @@
       <%= render 'products/carousel', product: @product %>
     </div>
     <div class="col-lg-4 col-md-5 col-xs-12 order-md-first">
-    <a id="product-name-anchor">
+    <a id="product-name-anchor"></a>
       <h1><%= @product.name %></h1>
       <p class="price-font mt-3"><%= humanized_money_with_symbol @product.ttc_price %></p>
       <p><%= @product.description_short %></p>
       <%= link_to t('products.product.read_more'), "#product-description-anchor", class: "read-more"%>
-<!--       </%= link_to "Read more", "#product-description-anchor", class: "your-class" %> -->
       <hr>
       <div id="new_line_item">
         <%= render 'products/add_to_cart_form', product: @product, line_item: @line_item %>
       </div>
     </div>
     <hr>
-    <a id="product-description-anchor" class='anchor'>
+    <a id="product-description-anchor" class='anchor'></a>
     <div class="page-font pb-2">
     <h3><%= t 'products.product.read_more' %></h3>
     </div>

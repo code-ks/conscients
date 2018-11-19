@@ -1,98 +1,139 @@
 <%= form_with model: cart, url: deliveries_path, method: :post, local: true do |form| %>
-
-  <div class="row">
-    <div class="col-md-6">
-
       <%= render 'shared/form_errors', instance: cart %>
       <%= render 'shared/form_errors', instance: delivery_address %>
       <%= render 'shared/form_errors', instance: billing_address %>
 
+<div class="checkout-box page-font padding-t">
+<!-- ******** DELIVERY START (fin checkout step box)********  -->
+  <div class="checkout-steps-box page-font delivery-below">
+    <div class=box-green>
       <% if cart.email? %>
-
-        <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
-
-        <p class="small-p">
-        <!-- dessous: vous aimeriez un envoi postal? -->
-          <%= t('.go_to_postal_delivery') %>
-          <!-- dessous: lien oui je souhaite un envoi postal quand certif only -->
+        <h2 class="box-green-text pb-resp-16"><%= t('.email') %></h4>
+        <div class="box-green-text ">
+          <p class="text-justify"><%= t('.description_email_delivery')%>
           <%= link_to new_delivery_path(delivery_type: "postal") do %>
-            <span class="orange font-weight-bold"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
+            <span class="choose-delivery-link"><%= fa_icon "plus" %> <%= t('.go_to_postal_delivery_link') %></span>
           <% end %>
-        </p>
-
-
+          </p>
+        </div>
       <% else %>
-<h4><%= t('.delivery_address') %></h4>
-        <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
-
+        <h2 class="box-green-text pb-resp-16"><%= t('.delivery_address') %></h2>
+        <div class="page-font box-green-text ">
+          <p><%= t('.description_postal_delivery') %>
+          <% if cart.tree_only? %>
+            <%= link_to new_delivery_path(delivery_type: "email") do %>
+              <span class="choose-delivery-link"><%= fa_icon "plus" %> <%= t('.go_to_email_delivery_link') %></span>
+            <% end %>
+          <% end %>
+          </p>
+        </div>
       <% end %>
-
+      <% if cart.email? %>
+        <%= render 'email_address_form', string: "delivery_address", instance: delivery_address, form: form %>
+        <p class="display-landscape-up-only f-08R box-green-text padding-b"> <%= t('.description_email_delivery_details') %></p>
+      <% else %>
+        <%= render 'postal_delivery_address_form', delivery_address: delivery_address, form: form %>
+      <% end %>
       <% unless cart.tree_only? %>
-
-        <div class="form-group">
+        <div class="form-group box-green-input">
           <%= form.text_field :recipient_message, class: "form-control mr-sm-2", placeholder: t('.recipient_message') %>
         </div>
-
       <% end %>
-
-      <h4><%= t('.billing_address') %></h4>
-
-
-      <div data-controller="billing-address">
-
-        <% if cart.postal? %>
-
-          <div class="form-group">
-            <%= form.check_box :delivery_is_billing, checked: true, data: { action: "billing-address#toggleDisplay", target: "billing-address.checkable" } %>
-            <%= form.label t('.delivery_is_billing') %>
+  <!-- ******** BILLING ********  -->
+      <div class="padding-b">
+        <h2 class="box-green-text padding-t pt-resp-32 pb-resp-16">
+          <%= t('.billing_address') %>
+        </h2>
+        <div data-controller="billing-address">
+          <% if cart.postal? %>
+            <div class="form-group box-green-text d-flex align-items-baseline mb-2">
+              <%= form.check_box :delivery_is_billing, checked: true, data: { action: "billing-address#toggleDisplay", target: "billing-address.checkable" } %>
+              <%= form.label t('.delivery_is_billing'), class: "ml-1" %>
+            </div>
+          <% end %>
+          <div data-target="billing-address.hideable" class="<%= "d-none" if cart.postal? %>">
+            <%= render 'postal_billing_address_form', billing_address: billing_address, form: form %>
           </div>
-
-        <% end %>
-
-        <div data-target="billing-address.hideable" class="<%= "d-none" if cart.postal? %>">
-
-          <%= render 'postal_billing_address_form', billing_address: billing_address, form: form %>
-
         </div>
-      <!-- dessous : souhaitez vous nous adresser un message -->
-      <div class="form-group">
-        <%= form.text_field :customer_note, class: "form-control mr-sm-2", placeholder: t('.customer_note') %>
+        <div class="form-group box-green-input">
+          <%= form.text_field :customer_note, class: "form-control mr-sm-2", placeholder: t('.customer_note') %>
+        </div>
       </div>
-      <!-- fin envoi message -->
+  <!-- ******** BILLING END ********  -->
+  <!-- ******** VALIDATION********  -->
+      <div class= "delivery-validation-box padding-t">
+        <div class="form-group d-flex align-items-baseline">
+          <%= form.check_box :general_sales_conditions, checked: false, required: true %>
+          <%= form.label t('.general_sales_conditions'), class: "mb-0 ml-1" %>
+        </div>
+
+        <%= form.hidden_field :address_type, value: cart.delivery_method %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+        <%= form.submit t('.go_to_payment'), class: "btn conscients-btn btn-delivery mt-2"%>
       </div>
-    </div>
-    <div class="col-md-6 border">
-      <div class="mb-2">
-
-        <%= render 'line_items_table', cart: cart, form: form %>
-
-      </div>
-
-    <div class="d-flex flex-column align-items-end">
-
-      <span class="d-flex flex-column align-items-end">
-        <div class="font-weight-bold"><%= t('.total_price') %></div>
-        <span><%= t('.without_delivery_fees') %></span>
-        <div class="h4 orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price %></div>
-        <% if @cart.coupon %>
-          <div class="h6">- <%= humanized_money_with_symbol @cart.coupon_discount %> <%= t('.from_discount') %></div>
-          <div class="h4 orange font-weight-bold"><%= humanized_money_with_symbol @cart.ttc_price_with_coupon %></div>
-        <% end %>
-      </span>
-
-      <% unless @cart.coupon %>
-        <%= render 'checkout/deliveries/add_coupon' %>
-      <% end %>
-
-      <div class="form-group">
-        <%= form.check_box :general_sales_conditions, checked: false, required: true %>
-        <%= form.label t('.general_sales_conditions') %>
-      </div>
-
-      <%= form.hidden_field :address_type, value: cart.delivery_method %>
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-      <%= form.submit t('.go_to_payment'), class: "btn btn-orange"%>
+  <!-- ******** VALIDATION END ********  -->
     </div>
   </div>
+<!-- ******** DELIVERY END (fin checkout step box)********  -->
+
+<!-- ******** CART ********  -->
+  <div class="checkout-cart-box d-flex flex-column cart-on-top">
+<!-- ******** CART MOBILE********  -->
+    <div class="mobile-cart bg-grey border">
+      <input id="cart-mobile" name="panier" type="checkbox">
+      <label for="panier" class="side-label px-2 my-2">Afficher mon panier - <%= humanized_money_with_symbol @cart.ttc_price %></label>
+      <div class="reveal-cart bg-white">
+          <%= render 'line_items_table', cart: cart, form: form %>
+        <div class= "padding-tb px-1 bg-grey">
+          <div class= "d-flex justify-content-end small-total-font">
+            <div class="">
+              <% if cart.email? %>
+                <%= t('.total_price') %>
+              <% else %>
+                <%= t('.sub_total') %>
+              <% end %>
+            </div>
+            <div class="color-green pl-2">
+              <%= humanized_money_with_symbol @cart.ttc_price %>
+            </div>
+          </div>
+          <span class="total-comment-font text-right"><p class="mb-0"><% unless cart.email? %><%= t('.without_delivery_fees') %><% end %></p></span>
+          <% if cart.email? %>
+            <p class="f-07R fw-300 text-right pt-1 mb-0"> <%= t('.description_email_delivery_details_phone') %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+<!-- ******** CART DESKTOP********  -->
+    <div class="desktop-cart">
+      <h2 class="padding-b"><%= t('.my_cart') %></h2>
+      <% if cart.email? %>
+        <p class="display-phone-tablet-portait-only padding-b"> <%= t('.description_email_delivery_details_phone') %></p>
+      <% end %>
+      <div>
+        <div class="mb-2">
+          <%= render 'line_items_table', cart: cart, form: form %>
+        </div>
+      </div>
+      <div>
+        <div class= "d-flex justify-content-end small-total-font padding-t">
+          <div class="">
+            <% if cart.email? %>
+              <%= t('.total_price') %>
+            <% else %>
+              <%= t('.sub_total') %>
+            <% end %>
+          </div>
+          <div class="color-green pl-2">
+            <%= humanized_money_with_symbol @cart.ttc_price %>
+          </div>
+        </div>
+        <span class="total-comment-font text-right"><p class="mb-0"><% unless cart.email? %><%= t('.without_delivery_fees') %><% end %></p></span>
+      </div>
+    </div>
+    <!-- ******** CART DESKTOP END********  -->
+  </div>
+<!-- ******** CART END (checkout cart box) ********  -->
+</div>
 <% end %>

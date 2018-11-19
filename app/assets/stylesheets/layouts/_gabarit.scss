@@ -1,50 +1,10 @@
-//border
-.border-bottom-dotted {
-  border-bottom: 1px dotted $conscients-very-light-grey;
+.no-overflow {
+  overflow: hidden;
 }
 
-// BACKGROUNDS FOR TEST ERASE AFTER
-  .bg-pink {
-    background-color: pink !important;
-  }
-  .bg-red {
-    background-color: red;
-  }
-
-// BACKGROUND & COLORS
-  .bg-grey {
-    background-color: $conscients-bg-grey;
-  }
-
-  .bg-yellow {
-    background-color: $conscients-yellow;
-  }
-  .color-red {
-    color: $conscients-red;
-  }
-
-  .color-yellow {
-    color: $conscients-yellow;
-  }
-
-  .color-green {
-    color: $conscients-green;
-  }
-
-  .color-white {
-    color: white;
-  }
-
-  .color-coral {
-    color: $conscients-coral;
-  }
-
-  .color-red {
-    color: $conscients-red;
-  }
-  .title-grey {
-    color: $conscients-title-grey;
-  }
+.heigt-100vh {
+  height: 100vh;
+}
 
 // **** BASE RESPONSIVE FONT ****
   body {
@@ -104,53 +64,11 @@
       }
   }
 
-// **** PADDING ***
-  .logo-padding {
-    padding: 16px 0px 24px 0px;
-  }
-  .padding-around {
-    padding : 16px;
-  }
-  .no-padding-around {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
-  .padding-b {
-    padding-bottom: 16px;
-  }
-
-  .padding-t {
-    padding-top: 16px;
-  }
-
-  .no-padding-t {
-    padding-top: 0 !important;
-  }
-
-  .padding-tb{
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .padding-r {
-    padding-right: 16px;
-  }
-
-  .padding-b-sixpix {
-    padding-bottom: 0.375rem;
-  }
-
 // ****TEXT AND LINKS COLORS ****
-  .t-white {
-    color: white;
-  }
-  .coral-link {
-    a {
-      &:hover {
-        color: $conscients-coral;
-      }
-    }
-  }
+  // .t-white {
+  //   color: white;
+  // }
+
 
 
 // ANCHOR

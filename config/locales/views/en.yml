@@ -199,6 +199,7 @@ en:
       tree_producer: "Producer: %{tree_producer}"
   clients:
     show:
+      my_account: "My account"
       profile: "Profile"
       orders_list: "My orders"
       impact: "My impact"
@@ -254,6 +255,8 @@ en:
         without_delivery_fees: "This price does not include delivery fees"
         validate: "Validate"
         continue_purchases: "Continue my purchases"
+      breadcrumb:
+        cart: "Cart"
     deliveries:
       top_description:
         title: "Delivery"
@@ -263,22 +266,32 @@ en:
         description_details: "(You will receive a copie of the email to download the certificate)"
         go_to_postal_delivery: "TOP DES Would you like a printed certificate and postal delivery? (Additional printing and delivery fees)"
         go_to_postal_delivery_link: "TOP DES Yes, I want a postal delivery"
-        description_postal_delivery: "Please indicate your delivery address bellow, delivery fees are calculated based on weight"
-        go_to_email_delivery_link: "No, back to email delivery"
+        description_postal_delivery: "TOP Please indicate your delivery address bellow, delivery fees are calculated based on weight"
+        go_to_email_delivery_link: "TOP No, back to email delivery"
         description_email_delivery: "We'll send you the certificate at the email mentioned below"
         description_email_delivery_details: "(you will also find it in your account). If you want us to email the certificate's recipient too, simply provide the email adress on the right table."
       line_items_table:
         selection: "Selection"
         quantity: "Quantity"
-        delivery: "Delivery"
+        qty: "Qty"
+        delivery: "Recipient"
         total_price: "Total"
+        tot: "Tot"
       breadcrumb:
         cart: "Cart"
         delivery: "Delivery"
       delivery_form:
-        go_to_postal_delivery: "Would you like a printed certificate and postal delivery? (Additional printing and delivery fees)"
-        go_to_postal_delivery_link: "Yes, I want a postal delivery"
+        my_cart: "My cart"
+        email: "Delivery email"
+        description_email_delivery: "We'll send you the certificate at the email mentioned below (you'll also find it in your account"
+        description_email_delivery_details: "If you want us to email the certificate's recipient too, simply provide the email adress on « My cart » table."
+        description_email_delivery_details_phone: "If you enter recipient email, we'll send him the certificate too (optional)."
+        description_postal_delivery: "Please indicate your delivery address bellow, delivery fees are calculated based on weight"
+        go_to_email_delivery_link: "No, back to email delivery"
+        go_to_postal_delivery: "OLD"
+        go_to_postal_delivery_link: "I also want a postal delivery (Additional printing and delivery fees)"
         total_price: "Total price"
+        sub_total: "Subtotal"
         without_delivery_fees: "(excluding delivery fees, calculated in the next screen)"
         delivery_is_billing: "Use the same address for billing and delivery"
         go_to_payment: "Go to paiement"
@@ -287,7 +300,7 @@ en:
         billing_address: "Billing address"
         customer_note: "Would you like to send us a message?"
         recipient_message: "Is it a gift? Write a note that we will add to the package"
-        from_discount: "from discount"
+        from_discount: "discount"
       add_coupon:
         coupon_name: "Coupon name"
         add_coupon: "Add"
@@ -298,6 +311,11 @@ en:
         payment: "Payment"
       new:
         title: "Payment"
+        my_cart: "My cart"
+        coupon_label: "Coupon"
+        addresses: "Addresses"
+        billing: "Billing address"
+        delivery: "Delivery address"
       show:
         go_to_client_space: "For more details, go to your client space"
         order_confirmed: "Thanks a lot! Your order have been received"
@@ -310,20 +328,21 @@ en:
         total_price: "Total"
       add_coupon:
         coupon_name: "Coupon name"
-        add_coupon: "Add"
+        add_coupon: "Apply"
       address:
         billing: "Billing address"
         delivery: "Delivery address"
       payment_buttons:
-        select_payment_method: "Select your payment method"
+        select_payment_method: "Payment method"
+        select_payment_method_details: "Select among the payment methods offered :"
         bank_transfer: "Bank Transfer"
       stripe_button:
         card: "Card"
       price:
         sub_total: "Sub Total"
         total_price: "Total price"
-        from_discount: "from discount"
-        delivery_fees: "Delivery fees"
+        from_discount: "discount"
+        delivery_fees: "Preparation & delivery"
   client_mailer:
     bank_account_details:
       subject: "Please confirm your order"

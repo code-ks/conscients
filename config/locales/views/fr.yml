@@ -200,6 +200,7 @@ fr:
       tree_producer: "Producteur: %{tree_producer}"
   clients:
     show:
+      my_account: "Mon compte"
       profile: "Profil"
       orders_list: "Mes commandes"
       impact: "Mon empreinte"
@@ -255,6 +256,8 @@ fr:
         without_delivery_fees: "Ce prix n'inclut pas les frais de port"
         validate: "Valider"
         continue_purchases: "Poursuivre mes achats"
+      breadcrumb:
+        cart: "Panier"
     deliveries:
       top_description:
         title: "Livraison"
@@ -264,23 +267,33 @@ fr:
         description_details: "(Vous recevrez une copie de l'email pour télécharger le certificat)"
         go_to_postal_delivery: "TOP DES Vous aimeriez une impression et un envoi postal ? (Frais d'impression et de port en sus)"
         go_to_postal_delivery_link: "TOP DES Oui, je souhaite un envoi postal"
-        description_postal_delivery: "Indiquez nous ici l'adresse de livraison. Les frais de port seront calculés en fonction du poids et de la destination."
+        description_postal_delivery: "TOP Indiquez nous ici l'adresse de livraison. Les frais de port seront calculés en fonction du poids et de la destination."
         go_to_email_delivery_link: "Non, retour à l'envoi par email uniquement"
         description_email_delivery: "Le certificat vous sera envoyé par email à l'adresse ci-dessous"
         description_email_delivery_details: "(vous le retrouverez également dans votre compte). Si vous souhaitez que nous envoyions aussi le certificat à son destinataire, vous pouvez renseigner son email dans le tableau à droite."
       line_items_table:
         selection: "Sélection"
         quantity: "Quantité"
-        delivery: "Livraison"
+        qty: "Qté"
+        delivery: "Destinataire"
         total_price: "Total"
+        tot: "Tot"
       breadcrumb:
         cart: "Panier"
         delivery: "Livraison"
       delivery_form:
-        go_to_postal_delivery: "Vous aimeriez une impression et un envoi postal ? (Frais d'impression et de port en sus)"
-        go_to_postal_delivery_link: "Oui, je souhaite un envoi postal"
+        my_cart: "Mon panier"
+        email: "Email de livraison"
+        description_email_delivery: "Vous recevrez votre certificat par email à l'adresse ci-dessous (vous le retrouverez également dans votre compte). "
+        description_email_delivery_details: "Si vous souhaitez que nous envoyions aussi le certificat à son destinataire, vous pouvez renseigner son email dans le tableau « Mon panier »."
+        description_email_delivery_details_phone: "Si vous renseignez l'email du destinataire, nous lui enverrons également le certificat par email (optionnel)."
+        description_postal_delivery: "Indiquez nous ici l'adresse de livraison. Les frais de port seront calculés en fonction du poids et de la destination."
+        go_to_email_delivery_link: "Non, retour à l'envoi par email uniquement"
+        go_to_postal_delivery: "OLD"
+        go_to_postal_delivery_link: "Je souhaite aussi un envoi postal (Frais d'impression et de port en sus)"
         total_price: "Prix total"
-        without_delivery_fees: "(frais de ports exclus, calculés à l'écran suivant)"
+        sub_total: "Sous total"
+        without_delivery_fees: "(frais de port exclus, calculés à l'écran suivant)"
         delivery_is_billing: "Utiliser l'adresse de livraison comme adresse de facturation"
         go_to_payment: "Passer au paiement"
         general_sales_conditions: "J'ai lu les conditions générales de ventes et j'y adhère sans réserve"
@@ -288,10 +301,10 @@ fr:
         billing_address: "Addresse de facturation"
         customer_note: "Souhaitez-vous nous addresser un message?"
         recipient_message: "C'est un cadeau? Ecrivez un mot que nous rajouterons au colis"
-        from_discount: "de reduction"
+        from_discount: "reduction"
       add_coupon:
         coupon_name: "Nom du bon de réduction"
-        add_coupon: "Ajouter"
+        add_coupon: "Appliquer"
     payments:
       breadcrumb:
         cart: "Panier"
@@ -299,17 +312,23 @@ fr:
         payment: "Paiement"
       new:
         title: "Paiement"
+        my_cart: "Mon panier"
+        coupon_label: "Bon de réduction"
+        addresses: "Adresses"
+        billing: "Facturé à :"
+        delivery: "Distribué à: "
       show:
         go_to_client_space: "Pour plus d'informations, rendez-vous dans votre espace client"
         order_confirmed: "Merci beaucoup! Votre commande a bien été reçue"
         email_coming: "Vous recevrez bientôt un email de confirmation."
         bank_transfer_instructions: "Pour la confirmer, merci d'envoyer le montant de la commande (%{amount} euros) au compte bancaire ci-dessous"
       address:
-        billing: "Adresse de facturation"
-        delivery: "Adresse de livraison"
+        billing: "Facturé à :"
+        delivery: "Distribué à :"
       payment_buttons:
-        select_payment_method: "Sélectionner le mode de paiement"
-        bank_transfer: "Virement bancaire"
+        select_payment_method: "Mode de paiement"
+        select_payment_method_details: "Sélectionnez parmi les modes de paiements proposés :"
+        bank_transfer: "Virement"
       stripe_button:
         card: "CB"
       line_items_table:
@@ -318,13 +337,13 @@ fr:
         delivery: "Livraison"
         total_price: "Total"
       add_coupon:
-        coupon_name: "Nom du bon de réduction"
-        add_coupon: "Ajouter"
+        coupon_name: "Code"
+        add_coupon: "Appliquer"
       price:
         sub_total: "Sous total"
         total_price: "Prix total"
-        from_discount: "de reduction"
-        delivery_fees: "Frais de livraison"
+        from_discount: "reduction"
+        delivery_fees: "Préparation & livraison"
   client_mailer:
     bank_account_details:
       subject: "Validez votre commande"
