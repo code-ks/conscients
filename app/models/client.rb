@@ -65,16 +65,18 @@ class Client < ApplicationRecord
     email
   end
 
+  # rubocop:disable Metrics/AbcSize
   def markers
     markers = []
     line_items.finished.includes(:product_sku).map do |line_item|
       markers << line_item.producer_marker if line_item.producer_marker?
     end
     tree_plantations.includes(:line_items).map do |tree_plantation|
-      markers << tree_plantation.marker(self)
+      markers << tree_plantation.marker(self) if tree_plantation.line_items.finished.any?
     end
     markers.uniq
   end
+  # rubocop:enable Metrics/AbcSize
 
   def tree_species_planted
     tree_plantations.pluck(:tree_specie).uniq

@@ -10,7 +10,7 @@
   <div class="form-group row">
     <%= form.label :quantity, class: "col-sm-4 col-form-label" %>
     <div class="col-sm-8">
-      <%= form.number_field :quantity, value: (line_item.quantity.zero? ? 1 : line_item.quantity),class: "form-control mr-sm-2", required: true %>
+      <%= form.number_field :quantity, value: (line_item.quantity.zero? ? 1 : line_item.quantity),class: "form-control mr-sm-2", required: true, min: 1 %>
     </div>
   </div>
 

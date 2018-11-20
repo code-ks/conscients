@@ -28,9 +28,9 @@
 class Address < ApplicationRecord
   belongs_to :client
   has_many :delivery_orders, class_name: 'Order',
-            foreign_key: 'delivery_address_id', dependent: :nullify
+            foreign_key: 'delivery_address_id', dependent: :restrict_with_error
   has_many :billing_orders, class_name: 'Order',
-           foreign_key: 'billing_address_id', dependent: :nullify
+           foreign_key: 'billing_address_id', dependent: :restrict_with_error
 
   enum address_type: { postal: 0, email: 1 }
 

@@ -4,7 +4,7 @@ class AddItemToCart
   def initialize(cart, line_item_params, quantity)
     @cart = cart
     @line_item_params = line_item_params
-    @quantity = quantity
+    @quantity = quantity.to_i
   end
 
   def perform
@@ -27,7 +27,7 @@ class AddItemToCart
   end
 
   def update_quantity_line_item
-    @line_item.assign_attributes(quantity: @quantity)
+    @line_item.assign_attributes(quantity: @line_item.quantity + @quantity)
   end
 
   def set_tree_plantation

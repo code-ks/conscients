@@ -21,6 +21,7 @@ class LineItemsController < ApplicationController
 
   def destroy
     @line_item.destroy
+    @cart.to_correct_delivery_type
     redirect_back fallback_location: cart_path(@cart)
   end
 

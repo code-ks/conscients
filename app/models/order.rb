@@ -64,9 +64,12 @@ class Order < ApplicationRecord
   delegate :client, :product, :amount_min_order, :valid_from, :valid_until,
            :amount_cents, :percentage, :list_of_clients, to: :coupon, prefix: true
   delegate :addresses, :email, :stripe_customer_id, to: :client, prefix: true, allow_nil: true
+  delegate :empty?, to: :line_items
 
   scope :order_by_date, -> { order(created_at: :desc) }
-  scope :finished, -> { preparing.or(Order.fulfilled).or(Order.delivered) }
+  scope :finished, lambda {
+    preparing.or(Order.wainting_for_bank_transfer).or(Order.fulfilled).or(Order.delivered)
+  }
   scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
   scope :cart_to_destroy, -> { in_cart.two_days_old }
 
@@ -110,7 +113,7 @@ class Order < ApplicationRecord
     if payment_date
       "#{I18n.l(payment_date, format: :short)}: #{client_email}"
     else
-      I18n.t('activerecord.attributes.order.aasm_states.in_cart').to_s
+      I18n.t('activerecord.attributes.order.aasm_state.in_cart').to_s
     end
   end
 
@@ -219,12 +222,8 @@ class Order < ApplicationRecord
     billing_address || client.postal_address || build_billing_address
   end
 
-  def to_correct_delivery_type(params)
-    if params == 'postal'
-      postal!
-    elsif params == 'email'
-      email!
-    end
+  def to_correct_delivery_type
+    tree_only? ? email! : postal!
   end
 
   def translated_hash_permitted_events

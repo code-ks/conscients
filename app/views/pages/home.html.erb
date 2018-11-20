@@ -36,8 +36,7 @@
           <!-- <div class="tab-content"> -->
             <div class="container-conscients flex-container">
               <div class="occasions-container">
-                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.background_image %>);">
-                </div>
+                <%= image_tag Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.background_image, class: 'occasions-img-box' %>
                 <div class="occasions-card">
                   <%= link_to product_path(Category.find_by(home_display: 1).products.in_order_home.images_attached.first) do %>
                     <div class="occasions-card-content-box home-font">
@@ -59,8 +58,7 @@
             <!-- <div class="tab-content"> -->
               <div class="container-conscients flex-container">
                 <div class="occasions-container">
-                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.background_image %>);">
-                  </div>
+                  <%= image_tag product.background_image, class: 'occasions-img-box' %>
                   <div class="occasions-card">
                     <%= link_to product_path(product) do %>
                       <div class="occasions-card-content-box home-font">
@@ -95,8 +93,7 @@
           <!-- <div class="tab-content"> -->
             <div class="container-conscients flex-container">
               <div class="occasions-container">
-                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.background_image %>);">
-                </div>
+                <%= image_tag Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.background_image, class: 'occasions-img-box' %>
                 <div class="occasions-card">
                   <%= link_to product_path(Category.find_by(home_display: 2).products.in_order_home.images_attached.first) do %>
                     <div class="occasions-card-content-box home-font">
@@ -118,7 +115,7 @@
             <!-- <div class="tab-content"> -->
               <div class="container-conscients flex-container">
                 <div class="occasions-container">
-                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.background_image %>);">
+                  <%= image_tag product.background_image, class: "occasions-img-box" %>
                   </div>
                   <div class="occasions-card">
                     <%= link_to product_path(product) do %>
@@ -154,7 +151,7 @@
           <!-- <div class="tab-content"> -->
             <div class="container-conscients flex-container">
               <div class="occasions-container">
-                <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.background_image %>);">
+                <%= image_tag Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.background_image, class: 'occasions-img-box' %>
                 </div>
                 <div class="occasions-card">
                   <%= link_to product_path(Category.find_by(home_display: 3).products.in_order_home.images_attached.first) do %>
@@ -177,7 +174,8 @@
             <!-- <div class="tab-content"> -->
               <div class="container-conscients flex-container">
                 <div class="occasions-container">
-                  <div class="occasions-img-box" style="background-image: url(<%= rails_blob_url product.background_image %>);">
+                  <%= image_tag product.background_image, class: "occasions-img-box" %>
+                  </div>
                   </div>
                   <div class="occasions-card">
                     <%= link_to product_path(product) do %>

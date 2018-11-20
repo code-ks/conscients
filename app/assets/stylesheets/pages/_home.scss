@@ -256,6 +256,7 @@
     color: white;
     background-size: cover;
     background-position: center;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4));
     @include for-tablet-landscape-up {
       height: 70vh;
     }
