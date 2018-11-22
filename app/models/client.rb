@@ -24,6 +24,14 @@
 #  provider               :string
 #  uid                    :string
 #  stripe_customer_id     :string
+#  invitation_token       :string
+#  invitation_created_at  :datetime
+#  invitation_sent_at     :datetime
+#  invitation_accepted_at :datetime
+#  invitation_limit       :integer
+#  invited_by_type        :string
+#  invited_by_id          :bigint(8)
+#  invitations_count      :integer          default(0)
 #
 
 class Client < ApplicationRecord
@@ -42,7 +50,7 @@ class Client < ApplicationRecord
   has_many :visits, dependent: :destroy, class_name: 'Ahoy::Visit', foreign_key: 'user_id'
   has_many :events, dependent: :destroy, class_name: 'Ahoy::Event', foreign_key: 'user_id'
 
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
 
