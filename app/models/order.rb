@@ -137,11 +137,13 @@ class Order < ApplicationRecord
   end
 
   def ttc_price_with_coupon_cents
-    ttc_price_cents - coupon_discount_cents
+    result = ttc_price_cents - coupon_discount_cents
+    result.positive? ? result : 0
   end
 
   def ht_price_with_coupon_cents
-    ht_price_cents - coupon_discount_ht_cents
+    result = ht_price_cents - coupon_discount_ht_cents
+    result.positive? ? result : 0
   end
 
   def current_delivery_fees_cents
@@ -179,11 +181,13 @@ class Order < ApplicationRecord
   end
 
   def ttc_price_all_included_cents
-    ttc_price_with_coupon_cents + current_delivery_fees_cents
+    result = ttc_price_with_coupon_cents + current_delivery_fees_cents
+    result.positive? ? result : 0
   end
 
   def ht_price_all_included_cents
-    ht_price_with_coupon_cents + current_delivery_fees_ht_cents
+    result = ht_price_with_coupon_cents + current_delivery_fees_ht_cents
+    result.positive? ? result : 0
   end
 
   def total_vat_cents

@@ -331,8 +331,7 @@ en:
         coupon_name: "Coupon name"
         add_coupon: "Apply"
       address:
-        billing: "Billing address"
-        delivery: "Delivery address"
+        certificates_delivered_by_email: "The certificates will also be delivered by email to their recipients"
       payment_buttons:
         select_payment_method: "Payment method"
         select_payment_method_details: "Select among the payment methods offered :"

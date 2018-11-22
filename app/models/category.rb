@@ -76,6 +76,6 @@ class Category < ApplicationRecord
 
   def variants
     Variant.includes(:text_translations, :product_skus)
-           .where(product_skus: { product: products })
+           .where(product_skus: { product: products.displayable })
   end
 end

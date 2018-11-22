@@ -324,8 +324,7 @@ fr:
         email_coming: "Vous recevrez bientôt un email de confirmation."
         bank_transfer_instructions: "Pour la confirmer, merci d'envoyer le montant de la commande (%{amount} euros) au compte bancaire ci-dessous"
       address:
-        billing: "Facturé à :"
-        delivery: "Distribué à :"
+        certificates_delivered_by_email: "Les certificats seront également envoyés aux email de leurs destinataires"
       payment_buttons:
         select_payment_method: "Mode de paiement"
         select_payment_method_details: "Sélectionnez parmi les modes de paiements proposés :"

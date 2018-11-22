@@ -67,11 +67,10 @@
       <div class= "align-self-end total-font pr-1">
         <%= t('.total_price') %> <span class="color-green"><%= humanized_money_with_symbol @cart.ttc_price %></span>
       </div>
-    <% if @cart.tree_only? %>
-    <% else %>
-          <div class="align-self-end total-comment-font pr-1">
-            <p><%= t('.without_delivery_fees') %></p>
-          </div>
+    <% if !@cart.tree_only? %>
+      <div class="align-self-end total-comment-font pr-1">
+        <p><%= t('.without_delivery_fees') %></p>
+      </div>
     <% end %>
     </div>
   </div>
