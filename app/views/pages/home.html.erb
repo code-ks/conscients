@@ -3,363 +3,50 @@
                  keywords: I18n.t('meta_tags.pages.home.keywords') %>
 
 <!-- BANNER -->
-  <div class="banner" style="background-image: url('http://conscients.com/wp-content/uploads/2012/09/robe-bio-fille-conscients-des-nos-premiers-pas1.jpg1_.jpg');">
-    <div class="banner-content">
-      <h2>Sous titre indiqué en admin</h2>
-      <h1>Admin : img accueil, titre, changer font color pour le banner content</h1>
-    </div>
+<div class="banner" style="background-image: url('http://conscients.com/wp-content/uploads/2012/09/robe-bio-fille-conscients-des-nos-premiers-pas1.jpg1_.jpg');">
+  <div class="banner-content">
+    <h2>Sous titre indiqué en admin</h2>
+    <h1>Admin : img accueil, titre, changer font color pour le banner content</h1>
   </div>
+</div>
 
-  <div data-controller="home-carousel">
-<!-- OCCASIONS CAROUSEL TITLE AND TABS-->
-    <div class="container-conscients home-font home-occasions-title-padding">
-      <h2 class="text-center">Des cadeaux et du sens</h2>
-    </div>
-    <div class="container-conscients home-font padding-b">
-      <div class="tabs">
-        <a class="tab active" href="#" data-action="home-carousel#displayFirst" data-target="home-carousel.firstTab" onclick="return false;">
-          <h3>Cadeaux de naissance</h3>
-        </a>
-        <a class="tab" href="#" data-action="home-carousel#displaySecond" data-target="home-carousel.secondTab" onclick="return false;">
-          <h3>Pour les grands</h3>
-        </a>
-        <a class="tab" href="#" data-action="home-carousel#displayThird" data-target="home-carousel.thirdTab" onclick="return false;">
-          <h3>Offrir un arbre</h3>
-        </a>
-      </div>
-    </div>
 
-  <!-- OCCASIONS CAROUSEL-->
-    <div id="occasions-carousel-first" class="carousel slide" data-ride="carousel" data-interval="false" data-target="home-carousel.firstCarousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <!-- <div class="tab-content"> -->
-            <div class="container-conscients flex-container">
-              <div class="occasions-container">
-                <%= image_tag Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.background_image, class: 'occasions-img-box' %>
-                <div class="occasions-card">
-                  <%= link_to product_path(Category.find_by(home_display: 1).products.in_order_home.images_attached.first) do %>
-                    <div class="occasions-card-content-box home-font">
-                      <%= image_tag Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
-                      <div class="occasions-card-content">
-                        <h3><%= Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.name %></h3>
-                        <h4><%= Category.find_by(home_display: 1).products.in_order_home.images_attached.first&.description_short %></h4>
-                        <h5><%= humanized_money_with_symbol Category.find_by(home_display: 1).products.in_order_home.first&.ttc_price %></h5>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          <!-- </div> end of tab content-->
-        </div>
-        <% Category.find_by(home_display: 1).products.in_order_home.images_attached.first(10)&.drop(1).each do |product| %>
-          <div class="carousel-item">
-            <!-- <div class="tab-content"> -->
-              <div class="container-conscients flex-container">
-                <div class="occasions-container">
-                  <%= image_tag product.background_image, class: 'occasions-img-box' %>
-                  <div class="occasions-card">
-                    <%= link_to product_path(product) do %>
-                      <div class="occasions-card-content-box home-font">
-                        <%= image_tag product.images.first, class: "occasions-card-img" %>
-                        <div class="occasions-card-content">
-                          <h3><%= product.name %></h3>
-                          <h4><%= product.description_short %></h4>
-                          <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
-                        </div>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            <!-- </div> end of tab content-->
-          </div>
-        <% end %>
-      </div>
-      <a class="carousel-control-prev" href="#occasions-carousel-first" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#occasions-carousel-first" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
 
-    <div id="occasions-carousel-second" class="carousel slide d-none" data-ride="carousel" data-interval="false" data-target="home-carousel.secondCarousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <!-- <div class="tab-content"> -->
-            <div class="container-conscients flex-container">
-              <div class="occasions-container">
-                <%= image_tag Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.background_image, class: 'occasions-img-box' %>
-                <div class="occasions-card">
-                  <%= link_to product_path(Category.find_by(home_display: 2).products.in_order_home.images_attached.first) do %>
-                    <div class="occasions-card-content-box home-font">
-                      <%= image_tag Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
-                      <div class="occasions-card-content">
-                        <h3><%= Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.name %></h3>
-                        <h4><%= Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.description_short %></h4>
-                        <h5><%= humanized_money_with_symbol Category.find_by(home_display: 2).products.in_order_home.images_attached.first&.ttc_price %></h5>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          <!-- </div> end of tab content-->
-        </div>
-        <% Category.find_by(home_display: 2).products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
-          <div class="carousel-item">
-            <!-- <div class="tab-content"> -->
-              <div class="container-conscients flex-container">
-                <div class="occasions-container">
-                  <%= image_tag product.background_image, class: "occasions-img-box" %>
-                  </div>
-                  <div class="occasions-card">
-                    <%= link_to product_path(product) do %>
-                      <div class="occasions-card-content-box home-font">
-                        <%= image_tag product.images.first, class: "occasions-card-img" %>
-                        <div class="occasions-card-content">
-                          <h3><%= product.name %></h3>
-                          <h4><%= product.description_short %></h4>
-                          <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
-                        </div>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            <!-- </div> end of tab content-->
-          </div>
-        <% end %>
-      </div>
-      <a class="carousel-control-prev" href="#occasions-carousel-second" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#occasions-carousel-second" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+<div data-controller="home-carousel">
 
-    <div id="occasions-carousel-third" class="carousel slide d-none" data-ride="carousel" data-interval="false" data-target="home-carousel.thirdCarousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <!-- <div class="tab-content"> -->
-            <div class="container-conscients flex-container">
-              <div class="occasions-container">
-                <%= image_tag Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.background_image, class: 'occasions-img-box' %>
-                </div>
-                <div class="occasions-card">
-                  <%= link_to product_path(Category.find_by(home_display: 3).products.in_order_home.images_attached.first) do %>
-                    <div class="occasions-card-content-box home-font">
-                      <%= image_tag Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.images&.first, class: "occasions-card-img" %>
-                      <div class="occasions-card-content">
-                        <h3><%= Category.find_by(home_display: 3).products.in_order_home.images_attached.first.name %></h3>
-                        <h4><%= Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.description_short %></h4>
-                        <h5><%= humanized_money_with_symbol Category.find_by(home_display: 3).products.in_order_home.images_attached.first&.ttc_price %></h5>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          <!-- </div> end of tab content-->
-        </div>
-        <% Category.find_by(home_display: 3).products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
-          <div class="carousel-item">
-            <!-- <div class="tab-content"> -->
-              <div class="container-conscients flex-container">
-                <div class="occasions-container">
-                  <%= image_tag product.background_image, class: "occasions-img-box" %>
-                  </div>
-                  </div>
-                  <div class="occasions-card">
-                    <%= link_to product_path(product) do %>
-                      <div class="occasions-card-content-box home-font">
-                        <%= image_tag product.images.first, class: "occasions-card-img" %>
-                        <div class="occasions-card-content">
-                          <h3><%= product.name %></h3>
-                          <h4><%= product.description_short %></h4>
-                          <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
-                        </div>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            <!-- </div> end of tab content-->
-          </div>
-        <% end %>
-      </div>
-      <a class="carousel-control-prev" href="#occasions-carousel-third" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#occasions-carousel-third" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div>
+  <%= render 'top_carousel', categories: @categories %>
 
-<div class="d-md-none text-center mt-4 fa-small-grey"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
+  <div class="d-md-none text-center mt-4 fa-small-grey"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
 
-<!-- SHOP CAROUSEL TITLE  -->
-  <div class="container-conscients home-font home-shop-title-padding">
-    <h2 class="text-center">Vêtements bio 0-5 ans </h2>
-    <!-- vêtements bio bébé -->
-  </div>
+  <%= render 'bottom_carousel', category: @categories.fourth %>
 
-<!-- SHOP CAROUSEL DESKTOP AND TABLET LANDSCAPE-->
-  <div id="shop-carousel-desktop" class="carousel slide carousel-shop-desktop" data-ride="carousel" data-interval="false">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="carousel-container home-font">
-          <div class="row">
-            <% Category.find_by(home_display: 4).products.in_order_home.images_attached.first(4).each do |product| %>
-              <div class="col-md-3">
-                <%= link_to product_path(product) do %>
-                  <div class="home-shop-card">
-                    <%= image_tag(product.images.first, class: "home-shop-card-img") %>
-                    <div class="home-shop-card-content">
-                      <h3 class="truncate-4-cards"><%= product.name %></h3>
-                      <h4 class="truncate-4-cards"><%= product.description_short %></h4>
-                      <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <% if Category.find_by(home_display: 4).products.count > 4 %>
-        <div class="carousel-item">
-          <div class="carousel-container home-font">
-            <div class="row">
-              <% Category.find_by(home_display: 4).products.in_order_home.images_attached.first(12).drop(4).each do |product| %>
-                <div class="col-md-3">
-                  <%= link_to product_path(product) do %>
-                    <div class="home-shop-card">
-                      <%= image_tag(product.images.first, class: "home-shop-card-img") %>
-                      <div class="home-shop-card-content">
-                        <h3 class="truncate-4-cards"><%= product.name %></h3>
-                        <h4 class="truncate-4-cards"><%= product.description_short %></h4>
-                        <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <% if Category.find_by(home_display: 4).products.count > 8 %>
-        <div class="carousel-item">
-          <div class="carousel-container home-font">
-            <div class="row">
-              <% Category.find_by(home_display: 4).products.in_order_home.images_attached.first(12).drop(8).each do |product| %>
-                <div class="col-md-3">
-                  <%= link_to product_path(product) do %>
-                    <div class="home-shop-card">
-                      <%= image_tag(product.images.first, class: "home-shop-card-img") %>
-                      <div class="home-shop-card-content">
-                        <h3 class="truncate-4-cards"><%= product.name %></h3>
-                        <h4 class="truncate-4-cards"><%= product.description_short %></h4>
-                        <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <% if Category.find_by(home_display: 4).products.count > 4 %>
-        <a class="carousel-control-prev" href="#shop-carousel-desktop" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#shop-carousel-desktop" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      <% end %>
-    </div>
-  </div>
-
-<!-- SHOP CAROUSEL MOBILE -->
-  <div id="shop-carousel-mobile" class="carousel slide carousel-shop-mobile" data-ride="carousel" data-interval="false">
-    <div class="carousel-inner home-font">
-      <div class="carousel-item active">
-        <%= link_to product_path(Category.find_by(home_display: 4).products.in_order_home.images_attached.first) do %>
-          <div class="home-shop-card">
-            <%= image_tag(Category.find_by(home_display: 4).products.in_order_home.images_attached.first&.images&.first, class: "home-shop-card-img") %>
-            <div class="home-shop-card-content">
-              <h3><%= Category.find_by(home_display: 4).products.in_order_home.images_attached.first&.name %></h3>
-              <h4 class="truncate-4-cards"><%= Category.find_by(home_display: 4).products.in_order_home.images_attached.first&.description_short %></h4>
-              <h5><%= humanized_money_with_symbol Category.find_by(home_display: 4).products.in_order_home.images_attached.first&.ttc_price %></h5>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <% Category.find_by(home_display: 4).products.in_order_home.images_attached.first(10).drop(1).each do |product| %>
-        <div class="carousel-item">
-            <%= link_to product_path(product) do %>
-            <div class="home-shop-card">
-              <%= image_tag(product.images.first, class: "home-shop-card-img") %>
-              <div class="home-shop-card-content">
-                <h3><%= product.name %></h3>
-                <h4 class="truncate-4-cards"><%= product.description_short %></h4>
-                <h5><%= humanized_money_with_symbol product.ttc_price %></h5>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-      <a class="carousel-control-prev" href="#shop-carousel-mobile" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#shop-carousel-mobile" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-
-    </div>
-  </div>
+</div>
 
 <!-- BLOG 2 LAST ARTICLES -->
-  <div class="container-conscients home-pt">
-    <div class="row home-blog-row-mobile">
-      <% BlogPost.last(2).each do |article| %>
-        <div class="col-md-6 home-col-portrait">
-          <%= link_to blog_post_path(article) do %>
-            <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= rails_blob_url article.image_for_home %>)">
-              <div class="home-blog-card-content blog-pics-font">
-                <h3><%= article.category %></h3>
-                <h2><%= article.title %></h2>
-              </div>
+<div class="container-conscients home-pt">
+  <div class="row home-blog-row-mobile">
+    <% BlogPost.last(2).each do |article| %>
+      <div class="col-md-6 home-col-portrait">
+        <%= link_to blog_post_path(article) do %>
+          <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= rails_blob_url article.image_for_home %>)">
+            <div class="home-blog-card-content blog-pics-font">
+              <h3><%= article.category %></h3>
+              <h2><%= article.title %></h2>
             </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
+</div>
 
 <!-- BRAND PREZ -->
-  <div class="conscients-presentation home-pt home-font text-center">
-    <div class="conscients-presentation-content padding-around ">
-      <h3>Le projet conscients</h3>
-      <h2>Conscients blabla brand de quelques lignes uniquement centré au milieu avec les mc qu'il faut</h2>
-      <a href="#" class="underlined-link">Découvrir le projet</a>
-    </div>
+<div class="conscients-presentation home-pt home-font text-center">
+  <div class="conscients-presentation-content padding-around ">
+    <h3>Le projet conscients</h3>
+    <h2>Conscients blabla brand de quelques lignes uniquement centré au milieu avec les mc qu'il faut</h2>
+    <a href="#" class="underlined-link">Découvrir le projet</a>
   </div>
+</div>
 
 <!--   </%= render 'shared/before_footer' %> -->

@@ -82,6 +82,7 @@ class Product < ApplicationRecord
     includes(:product_skus).where(product_skus: { variant: variant })
   }
   scope :displayable, -> { in_stock.published.joins(:images_attachments).images_attached }
+  scope :home_displayable, -> { displayable.in_order_home }
 
   def should_generate_new_friendly_id?
     name_fr_changed? || name_en_changed? || super

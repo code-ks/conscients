@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'clients/omniauth_callbacks' }
 
   scope '(:locale)', locale: /en/ do
+    root to: 'pages#home'
     devise_for :clients, skip: :omniauth_callbacks
 
     namespace :admin do

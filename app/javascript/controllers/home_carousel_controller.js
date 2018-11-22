@@ -2,38 +2,38 @@ import { Controller } from "stimulus";
 
 export default class extends Controller {
   static targets = [
-    "firstTab",
-    "secondTab",
-    "thirdTab",
-    "firstCarousel",
-    "secondCarousel",
-    "thirdCarousel"
+    "Tab0",
+    "Tab1",
+    "Tab2",
+    "Carousel0",
+    "Carousel1",
+    "Carousel2"
   ];
 
-  displayFirst() {
-    this.firstTabTarget.classList.add("active");
-    this.secondTabTarget.classList.remove("active");
-    this.thirdTabTarget.classList.remove("active");
-    this.firstCarouselTarget.classList.remove("d-none");
-    this.secondCarouselTarget.classList.add("d-none");
-    this.thirdCarouselTarget.classList.add("d-none");
+  display0() {
+    this.Tab0Target.classList.add("active");
+    this.Tab1Target.classList.remove("active");
+    this.Tab2Target.classList.remove("active");
+    this.Carousel0Target.classList.remove("d-none");
+    this.Carousel1Target.classList.add("d-none");
+    this.Carousel2Target.classList.add("d-none");
   }
 
-  displaySecond() {
-    this.firstTabTarget.classList.remove("active");
-    this.secondTabTarget.classList.add("active");
-    this.thirdTabTarget.classList.remove("active");
-    this.firstCarouselTarget.classList.add("d-none");
-    this.secondCarouselTarget.classList.remove("d-none");
-    this.thirdCarouselTarget.classList.add("d-none");
+  display1() {
+    this.Tab0Target.classList.remove("active");
+    this.Tab1Target.classList.add("active");
+    this.Tab2Target.classList.remove("active");
+    this.Carousel0Target.classList.add("d-none");
+    this.Carousel1Target.classList.remove("d-none");
+    this.Carousel2Target.classList.add("d-none");
   }
 
-  displayThird() {
-    this.firstTabTarget.classList.remove("active");
-    this.secondTabTarget.classList.remove("active");
-    this.thirdTabTarget.classList.add("active");
-    this.firstCarouselTarget.classList.add("d-none");
-    this.secondCarouselTarget.classList.add("d-none");
-    this.thirdCarouselTarget.classList.remove("d-none");
+  display2() {
+    this.Tab0Target.classList.remove("active");
+    this.Tab1Target.classList.remove("active");
+    this.Tab2Target.classList.add("active");
+    this.Carousel0Target.classList.add("d-none");
+    this.Carousel1Target.classList.add("d-none");
+    this.Carousel2Target.classList.remove("d-none");
   }
 }

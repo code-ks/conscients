@@ -33,8 +33,9 @@ class Category < ApplicationRecord
   validates :slug, presence: true, uniqueness: true, length: { minimum: 3, maximum: 40 }
   validates :home_display, uniqueness: true, allow_nil: true
 
-  default_scope { i18n.friendly.in_order }
+  default_scope { i18n.friendly }
   scope :in_order, -> { order(position: :asc) }
+  scope :in_order_home, -> { order(home_display: :asc) }
   scope :main, -> { home.children }
 
   class << self
@@ -53,6 +54,12 @@ class Category < ApplicationRecord
 
   def self.home
     roots.first
+  end
+
+  def self.displayable
+    select do |category|
+      category.products.displayable.any?
+    end
   end
 
   def self.give_a_tree
