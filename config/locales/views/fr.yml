@@ -210,6 +210,7 @@ fr:
       client_email: "Identifiant: %{email}"
       my_addresses: "Mes adresses"
       address_type: "Adresse %{type}"
+      postal_address_type: "Adresse de %{type}"
       edit_password: "Changer mon mot de passe"
     orders_list:
       date: "Date de la commande"

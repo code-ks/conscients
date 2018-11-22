@@ -209,6 +209,7 @@ en:
       client_email: "ID: %{email}"
       my_addresses: "My addresses"
       address_type: "Address type: %{type}"
+      postal_address_type: "%{type} address"
       edit_password: "Edit my password"
     orders_list:
       date: "Order Date"

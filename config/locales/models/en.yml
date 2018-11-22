@@ -42,6 +42,9 @@ en:
         address_types:
           postal: "Postal"
           email: "Email"
+        postal_address_types:
+          delivery: "Delivery"
+          billing: "Billing"
       client:
         newsletter_subscriber: "Subscribed to the newsletter?"
       coupon:

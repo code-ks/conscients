@@ -17,12 +17,15 @@
 
       <div class="row">
 
-        <% current_client.addresses.each do |address| %>
+        <% current_client.addresses.email.each do |address| %>
 
           <div class="col-sm-6 mb-3 no-overflow-n-wrap">
             <div class="profile-address top-menu-font">
               <div class="profile-address-title">
-                <%= t('.address_type', type: t("activerecord.attributes.address.address_types.#{address.address_type}")) %>
+                <%= t('.address_type', type: t("activerecord.attributes.address.address_types.#{address.address_type}")) %></br>
+                <% if address.postal_address_type? %>
+                  <%= t('.postal_address_type', type: t("activerecord.attributes.address.postal_address_types.#{address.postal_address_type}")) %></br>
+                <% end %>
               </div>
               <div class="profile-address-details">
                 <% if address.email? %>
@@ -55,6 +58,3 @@
   </div>
 
 </div>
-
-
-

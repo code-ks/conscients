@@ -133,6 +133,9 @@ fr:
         address_types:
           postal: "Postale"
           email: "Email"
+        postal_address_types:
+          delivery: "Livraison"
+          billing: "Facturation"
       client:
         email: "Email"
         encrypted_password: "Mot de passe encrypté"

@@ -219,11 +219,11 @@ class Order < ApplicationRecord
   end
 
   def set_postal_delivery_address
-    delivery_address || client.postal_address || build_delivery_address
+    delivery_address || client.delivery_address || client.postal_address || build_delivery_address
   end
 
   def set_billing_address
-    billing_address || client.postal_address || build_billing_address
+    billing_address || client.billing_address || client.postal_address || build_billing_address
   end
 
   def to_correct_delivery_type
