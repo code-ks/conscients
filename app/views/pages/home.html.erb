@@ -14,11 +14,15 @@
 
 <div data-controller="home-carousel">
 
-  <%= render 'top_carousel', categories: @categories %>
+  <% if @categories.third %>
+    <%= render 'top_carousel', categories: @categories %>
+  <% end %>
 
   <div class="d-md-none text-center mt-4 fa-small-grey"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
 
-  <%= render 'bottom_carousel', category: @categories.fourth %>
+  <% if @categories.fourth %>
+    <%= render 'bottom_carousel', category: @categories.fourth %>
+  <% end %>
 
 </div>
 

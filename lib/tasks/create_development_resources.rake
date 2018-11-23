@@ -130,12 +130,12 @@ task create_development_resources: :environment do
   ProductSku.create!(product: product)
 
   Product.all.each do |p|
-    p.images.attach(io: File.open('lib/assets/tree.jpg'),
-                   filename: 'tree.jpg', content_type: 'image/jpg')
-    p.background_image.attach(io: File.open('lib/assets/tree.jpg'),
-                   filename: 'tree.jpg', content_type: 'image/jpg')
+    p.images.attach(io: File.open('lib/assets/tree.jpeg'),
+                   filename: 'tree.jpeg', content_type: 'image/jpg')
+    p.background_image.attach(io: File.open('lib/assets/tree.jpeg'),
+                   filename: 'tree.jpeg', content_type: 'image/jpg')
     p.images.attach(io: File.open('lib/assets/book.jpg'),
-                   filename: 'book.jpg', content_type: 'image/jpg')
+                   filename: 'book.jpeg', content_type: 'image/jpg')
     8.times do
       Categorization.find_or_create_by!(product: p, category: Category.all.sample)
     end
