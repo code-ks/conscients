@@ -1,16 +1,16 @@
 <div class="p-relative grey-certificate">
   <%= wicked_pdf_image_tag(@background_url, class: "full-page") %>
   <div class="certificate-number">
-    <span style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= @line_item.certificate_number %></span>
+    <span style="color:<%= @line_item.color_certificate %>"><%= @line_item.certificate_number %></span>
   </div>
   <div class="tree-quantity">
-    <span class="recipient-name" style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= t('.tree_quantity', count: @line_item.quantity) %></span>
+    <span class="recipient-name" style="color:<%= @line_item.color_certificate %>"><%= t('.tree_quantity', count: @line_item.quantity) %></span>
   </div>
   <div class="identity-box">
     <div class="identity-centered-box">
     <span class="identity-centered-span">
-      <span class="recipient-name" style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= @line_item.recipient_name %></span>
-      <span class="recipient-message" style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= @line_item.recipient_message %></span>
+      <span class="recipient-name" style="color:<%= @line_item.color_certificate %>"><%= @line_item.recipient_name %></span>
+      <span class="recipient-message" style="color:<%= @line_item.color_certificate %>"><%= @line_item.recipient_message %></span>
     </span>
     </div>
   </div>
@@ -25,6 +25,6 @@
     <span><%= t('.tree_producer', tree_producer: @line_item.tree_plantation.producer_name) %></span>
   </div>
   <div class="certificate-date">
-    <span style="color:<%= @line_item.tree_plantation.color_certificate %>"><%= I18n.l(@line_item.certificate_date, format: :long) %></span>
+    <span style="color:<%= @line_item.color_certificate %>"><%= I18n.l(@line_item.certificate_date, format: :long) %></span>
   </div>
 </div>

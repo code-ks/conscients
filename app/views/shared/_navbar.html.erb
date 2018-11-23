@@ -44,7 +44,7 @@
       <% end %>
       </div>
       <div class="top-menu-center yellow-over d-none d-md-flex">
-        <% Category.main.each do |category| %>
+        <% Category.in_order.main.each do |category| %>
           <div class="mx-3"><%= link_to category.name, category_products_path(category) %></div>
           <% end %>
           <div class="mx-3"><%= link_to t('.blog'), blog_posts_path %></div>
@@ -74,7 +74,7 @@
             <%= link_to t('shared.navbar.sign_in'), new_client_session_path, class: 'dropdown-item' %>
           <% end %>
           <div class="dropdown-divider"></div>
-          <% Category.main.each do |category| %>
+          <% Category.in_order.main.each do |category| %>
             <%= link_to category.name, category_products_path(category), class: 'dropdown-item'  %>
           <% end %>
         </div>

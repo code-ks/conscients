@@ -15,6 +15,7 @@ class LinkDeliveryInfoToCart
     find_or_initialize_delivery_address
     find_or_initialize_billing_address
     add_delivery_information_to_cart
+    manage_postal_address_type
     [@cart, @delivery_address, @billing_address]
   end
 
@@ -31,6 +32,16 @@ class LinkDeliveryInfoToCart
       else
         @client.addresses.find_or_initialize_by(@billing_address_params)
       end
+  end
+
+  def manage_postal_address_type
+    return unless @delivery_address.postal?
+    if @delivery_address == @billing_address
+      @delivery_address.postal_address_type = nil
+    else
+      @delivery_address.postal_address_type = 'delivery'
+      @billing_address.postal_address_type = 'billing'
+    end
   end
 
   def add_delivery_information_to_cart

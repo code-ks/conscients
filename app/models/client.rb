@@ -24,6 +24,14 @@
 #  provider               :string
 #  uid                    :string
 #  stripe_customer_id     :string
+#  invitation_token       :string
+#  invitation_created_at  :datetime
+#  invitation_sent_at     :datetime
+#  invitation_accepted_at :datetime
+#  invitation_limit       :integer
+#  invited_by_type        :string
+#  invited_by_id          :bigint(8)
+#  invitations_count      :integer          default(0)
 #
 
 class Client < ApplicationRecord
@@ -33,6 +41,8 @@ class Client < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_one :email_address, -> { order(created_at: :desc).email }, class_name: 'Address'
   has_one :postal_address, -> { order(created_at: :desc).postal }, class_name: 'Address'
+  has_one :delivery_address, -> { order(created_at: :desc).delivery }, class_name: 'Address'
+  has_one :billing_address, -> { order(created_at: :desc).billing }, class_name: 'Address'
   has_many :line_items, through: :orders
   has_many :product_skus, through: :line_items
   has_many :products, through: :product_skus
@@ -40,7 +50,7 @@ class Client < ApplicationRecord
   has_many :visits, dependent: :destroy, class_name: 'Ahoy::Visit', foreign_key: 'user_id'
   has_many :events, dependent: :destroy, class_name: 'Ahoy::Event', foreign_key: 'user_id'
 
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
 
@@ -65,16 +75,18 @@ class Client < ApplicationRecord
     email
   end
 
+  # rubocop:disable Metrics/AbcSize
   def markers
     markers = []
     line_items.finished.includes(:product_sku).map do |line_item|
       markers << line_item.producer_marker if line_item.producer_marker?
     end
     tree_plantations.includes(:line_items).map do |tree_plantation|
-      markers << tree_plantation.marker(self)
+      markers << tree_plantation.marker(self) if tree_plantation.line_items.finished.any?
     end
     markers.uniq
   end
+  # rubocop:enable Metrics/AbcSize
 
   def tree_species_planted
     tree_plantations.pluck(:tree_specie).uniq

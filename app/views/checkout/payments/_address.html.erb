@@ -1,7 +1,8 @@
 <div class="adresses-details">
 <% if address.email? %>
   <p><%= address.email %></p>
-  <p class= "color-red">TODO : add recipient email</p>
+  <br>
+  <p><%= t('.certificates_delivered_by_email') %></p>
 <% else %>
     <p><%= address.full_name %></p>
   <% if address.company %>

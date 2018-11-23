@@ -37,11 +37,15 @@ en:
         ht_price_currency: "Sale currency"
         ht_buying_price_cents: "HT buying price in cents"
         ht_buying_price_currency: "Buying currency"
+        color_certificate: "Color of the certificate"
       address:
         title: "Address title"
         address_types:
           postal: "Postal"
           email: "Email"
+        postal_address_types:
+          delivery: "Delivery"
+          billing: "Billing"
       client:
         newsletter_subscriber: "Subscribed to the newsletter?"
       coupon:
@@ -52,13 +56,12 @@ en:
         amount_min_order_currency: "Currency of the minimum of the order"
       order:
         aasm_state: "State of the order"
-        aasm_states:
-          in_cart: "Cart"
-          wainting_for_bank_transfer: "Waiting for bank transfer"
-          preparing: "Preparing"
-          fulfilled: "Fulfilled"
-          delivered: "Delivered"
-          canceled: "Canceled"
+        aasm_state/in_cart: "Cart"
+        aasm_state/wainting_for_bank_transfer: "Waiting for bank transfer"
+        aasm_state/preparing: "Preparing"
+        aasm_state/fulfilled: "Fulfilled"
+        aasm_state/delivered: "Delivered"
+        aasm_state/canceled: "Canceled"
         delivery_methods:
           single_address: "Delivery to an address"
           email: "Delivery by email"
@@ -71,7 +74,6 @@ en:
           bank_tranfer: "Bank Transfer"
       tree_plantation:
         trees_quantity: "Available tree quantity"
-        color_certificate: "Color of the certificate"
       line_item:
         quantity: "Quantity in stock"
       ahoy/event:
@@ -88,6 +90,8 @@ en:
           attributes:
             trees_quantity:
               greater_than_or_equal_to: "in stock too limited"
+        product:
+          attributes:
             color_certificate:
               format: "Much be a valid HEX color"
         coupon:

@@ -10,6 +10,14 @@ ActiveAdmin.register Category do
 
   includes :text_translations
 
+  controller do
+    # clear blank attr on save
+    def save_resource(object)
+      object.ancestry = nil if object.ancestry == ''
+      super
+    end
+  end
+
   index do
     selectable_column
     id_column

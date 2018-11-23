@@ -209,6 +209,7 @@ en:
       client_email: "ID: %{email}"
       my_addresses: "My addresses"
       address_type: "Address type: %{type}"
+      postal_address_type: "%{type} address"
       edit_password: "Edit my password"
     orders_list:
       date: "Order Date"
@@ -343,8 +344,7 @@ en:
         coupon_name: "Coupon name"
         add_coupon: "Apply"
       address:
-        billing: "Billing address"
-        delivery: "Delivery address"
+        certificates_delivered_by_email: "The certificates will also be delivered by email to their recipients"
       payment_buttons:
         select_payment_method: "Payment method"
         select_payment_method_details: "Select among the payment methods offered :"
@@ -374,6 +374,12 @@ en:
       subject: "Your order has been shipped"
       greatings: "Hello"
       core: "Your order has been delivered. You can find it in your mail box."
+      thanks: "Thanks a lot"
+    tree_plantation_update:
+      subject: "New information about your trees"
+      greatings: "Hello"
+      core: "The tree plantation of one of your orders has been updated."
+      go_to_client_space: "For more information, go to your client space."
       thanks: "Thanks a lot"
   recipient_mailer:
     gift_certificate:

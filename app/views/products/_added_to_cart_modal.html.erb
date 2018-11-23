@@ -2,9 +2,9 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <%= link_to category_products_path(Category.last_visited), class: 'close' do %>
           <span aria-hidden="true">&times;</span>
-        </button>
+        <% end %>
         <div class="d-flex justify-content-between align-items-center flex-column m-5">
           <h2 class="mb-5">
             <% if product.tree? && cart.recipient_last_product.present? %>

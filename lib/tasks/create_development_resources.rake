@@ -117,6 +117,7 @@ task create_development_resources: :environment do
     product_type: 2,
     ht_buying_price_cents: 400,
     seo_title: 'Super Top arbre',
+    color_certificate: '#ff0000',
     meta_description: "Un arbre qui vaut vraiment le coup et que tout\
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
@@ -156,8 +157,7 @@ task create_development_resources: :environment do
     trees_quantity: 100,
     base_certificate_uuid: SecureRandom.uuid.slice(0, 10),
     latitude: -13.524001,
-    longitude: -72.007402,
-    color_certificate: '#ff0000'
+    longitude: -72.007402
   )
 
   Coupon.create!(name: 'MYREDUC', amount_cents: 1000, amount_min_order_cents: 3000,

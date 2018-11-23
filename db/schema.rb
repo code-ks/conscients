@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_09_145207) do
+ActiveRecord::Schema.define(version: 2018_11_22_173920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_10_09_145207) do
     t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "postal_address_type"
     t.index ["address_type"], name: "index_addresses_on_address_type"
     t.index ["client_id"], name: "index_addresses_on_client_id"
   end
@@ -180,7 +181,19 @@ ActiveRecord::Schema.define(version: 2018_10_09_145207) do
     t.string "provider"
     t.string "uid"
     t.string "stripe_customer_id"
+    t.string "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer "invitation_limit"
+    t.string "invited_by_type"
+    t.bigint "invited_by_id"
+    t.integer "invitations_count", default: 0
     t.index ["email"], name: "index_clients_on_email", unique: true
+    t.index ["invitation_token"], name: "index_clients_on_invitation_token", unique: true
+    t.index ["invitations_count"], name: "index_clients_on_invitations_count"
+    t.index ["invited_by_id"], name: "index_clients_on_invited_by_id"
+    t.index ["invited_by_type", "invited_by_id"], name: "index_clients_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
   end
 
@@ -321,6 +334,7 @@ ActiveRecord::Schema.define(version: 2018_10_09_145207) do
     t.string "name_en"
     t.string "name_fr"
     t.integer "position_home"
+    t.string "color_certificate"
     t.index ["ht_price_cents"], name: "index_products_on_ht_price_cents"
     t.index ["name_en"], name: "index_products_on_name_en"
     t.index ["name_fr"], name: "index_products_on_name_fr"
@@ -342,17 +356,17 @@ ActiveRecord::Schema.define(version: 2018_10_09_145207) do
     t.string "project_name", null: false
     t.string "project_type"
     t.string "partner", null: false
-    t.string "plantation_uuid", null: false
-    t.string "color_certificate", null: false
+    t.string "plantation_uuid"
     t.string "base_certificate_uuid", null: false
     t.decimal "latitude", precision: 11, scale: 8, null: false
     t.decimal "longitude", precision: 11, scale: 8, null: false
-    t.string "tree_specie", null: false
-    t.string "producer_name", null: false
+    t.string "tree_specie"
+    t.string "producer_name"
     t.integer "trees_quantity", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "base_tree_quantity"
+    t.boolean "is_full", default: false
   end
 
   create_table "variants", force: :cascade do |t|

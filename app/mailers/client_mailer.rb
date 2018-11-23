@@ -21,4 +21,9 @@ class ClientMailer < ApplicationMailer
     @order = params[:order]
     mail to: @order.client_email
   end
+
+  def tree_plantation_update
+    @order = params[:order]
+    mail to: @order.client_email
+  end
 end

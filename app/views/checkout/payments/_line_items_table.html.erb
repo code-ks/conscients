@@ -16,12 +16,8 @@
             <div><%= line_item.product_sku.to_s %></div>
             <div><%= line_item.recipient_name if line_item&.recipient_name&.present? %></div>
           </td>
+          <td class="text-center"><%= line_item.delivery_email %></td>
           <td class="text-center"><%= line_item.quantity %></td>
-<!-- adresse recipient -->
-<!--           </% if cart.email? %>
-            <td><%= line_item.delivery_email %></td>
-          </% end %> -->
-<!-- adresse recipient end -->
           <td class="text-center"><%= humanized_money_with_symbol line_item.ttc_price %></td>
           <td class="text-center">
             <%= link_to product_line_item_path(line_item.product, line_item), method: :delete do %>
@@ -33,4 +29,3 @@
       <% end %>
     </tbody>
   </table>
-

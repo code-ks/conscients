@@ -4,7 +4,7 @@
 
   <%= render 'checkout/carts/breadcrumb', cart: @cart %>
 
-  <% if @cart.line_items.empty? %>
+  <% if @cart.empty? %>
     <h1 class="text-uppercase my-4"><%= t('.empty_cart') %></h1>
   <% else %>
     <div class="checkout-first-title-padding checkout-font no-padding-t">
@@ -67,11 +67,10 @@
       <div class= "align-self-end total-font pr-1">
         <%= t('.total_price') %> <span class="color-green"><%= humanized_money_with_symbol @cart.ttc_price %></span>
       </div>
-    <% if @cart.tree_only? %>
-    <% else %>
-          <div class="align-self-end total-comment-font pr-1">
-            <p><%= t('.without_delivery_fees') %></p>
-          </div>
+    <% if !@cart.tree_only? %>
+      <div class="align-self-end total-comment-font pr-1">
+        <p><%= t('.without_delivery_fees') %></p>
+      </div>
     <% end %>
     </div>
   </div>
@@ -79,11 +78,7 @@
   <div class="table-div next-div">
     <div class="d-flex justify-content-between">
       <%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "continue-shopping text-nowrap align-self-center" %>
-      <% if @cart.tree_only? %>
-        <%= link_to t('.validate'), new_delivery_path(delivery_type: "email"), class: "btn conscients-btn btn-green" %>
-      <% else %>
-        <%= link_to t('.validate'), new_delivery_path(delivery_type: "postal"), class: "btn conscients-btn btn-green" %>
-      <% end %>
+      <%= link_to t('.validate'), new_delivery_path, class: "btn conscients-btn btn-green" unless @cart.empty? %>
     </div>
   </div>
 

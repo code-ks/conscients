@@ -29,6 +29,8 @@
 #
 
 class LineItem < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   belongs_to :product_sku, autosave: true
   belongs_to :order
   belongs_to :tree_plantation, optional: true, autosave: true
@@ -51,6 +53,7 @@ class LineItem < ApplicationRecord
            :product_name, :product_ttc_price_cents, :product_ht_price_cents, :product_weight,
            :certificate_background, :producer_latitude, :producer_longitude, to: :product_sku
   delegate :client_full_name, to: :order
+  delegate :color_certificate, to: :product_sku, allow_nil: true
   delegate :latitude, :longitude, :project_name, :project_type,
            to: :tree_plantation, prefix: true, allow_nil: true
 
@@ -62,7 +65,8 @@ class LineItem < ApplicationRecord
     includes(:certificate_attachment).select { |line_item| line_item.certificate.attached? }
   }
   scope :finished, lambda {
-    includes(:order).where(orders: { aasm_state: %w[preparing fulfilled delivered] })
+    includes(:order).where(orders: { aasm_state:
+      %w[preparing wainting_for_bank_transfer fulfilled delivered] })
   }
 
   def self.tree_plantation_marker
@@ -102,7 +106,24 @@ class LineItem < ApplicationRecord
     self.ht_price_cents = quantity * product_ht_price_cents
   end
 
+  def generate_certificate(view)
+    pdf = WickedPdf.new.pdf_from_string(
+      view.render(template: 'certificates/new', layout: 'layouts/pdf',
+                   locals: { '@line_item': self,
+                             '@background_url': url_certificate },
+                   margin: { top: 0, bottom: 0, left: 0, right: 0 }),
+      orientation: 'Landscape'
+    )
+    certificate.attach(io: StringIO.new(pdf),
+                                filename: "certificate##{id}.pdf",
+                                content_type: 'application/pdf')
+  end
+
   private
+
+  def url_certificate
+    url_for(certificate_background)
+  end
 
   def decrement_stock_quantities
     product_sku.decrement(:quantity, added_quantity) unless tree?
