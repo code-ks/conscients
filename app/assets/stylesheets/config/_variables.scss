@@ -1,0 +1,52 @@
+/* -------------------------------------
+ * Fonts
+ * ------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:300,400,500|Roboto:100,300,400|Muli:200,300,400,600|Advent+Pro:100');
+$body-font: 'Frank Ruhl Libre', serif;
+$headers-font: 'Roboto', sans-serif;
+
+/* -------------------------------------
+ * Colors
+ * ------------------------------------- */
+$conscients-coral: #FAAD71;
+// $conscients-light-green: #acdcc7;
+$conscients-light-green: #bee4d4;
+$conscients-medium-green: #5ba986;
+$conscients-green: #73C6A1;
+$conscients-dark-green: #4a7c65;
+$fluo-green: #43febd;
+$conscients-black: #383731;
+$conscients-grey: #54534A;
+$conscients-light-grey: #726f64;
+$conscients-very-light-grey: #d8d7d4;
+// $conscients-bg-grey: #f6f5f5;
+$conscients-bg-grey: #fbf9f9;
+$conscients-title-grey: #a6a6a6;
+$conscients-yellow: #FFC425;
+$conscients-red: #F05133;
+$conscients-blue: #17a2b8;
+// $blue:    #17a2b8 !default;
+$facebook: #3b5898;
+
+
+/* -------------------------------------
+ * Sizing
+ * ------------------------------------- */
+$container-width: 95vw;
+
+/* -------------------------------------
+ * Screen
+ * ------------------------------------- */
+// xsmall phone
+$screen-xs: 440px;
+// tablet
+$screen-sm: 768px;
+//medium laptop
+$screen-md: 992px;
+//large laptop
+$screen-lg: 1200px;
+
+/* -------------------------------------
+ * Border
+ * ------------------------------------- */
+$border-grey: 1px solid rgba(0,0,0,.125);

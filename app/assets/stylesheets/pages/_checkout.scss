@@ -1,0 +1,287 @@
+// CHANGE ORDER
+  .cart-on-top {
+    order: 1;
+    @include for-tablet-landscape-up {
+      order: 2;
+    }
+  }
+
+  .delivery-below {
+    order: 2;
+    @include for-tablet-landscape-up {
+      order: 1;
+    }
+  }
+
+  .mobile-cart {
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+  }
+
+  .desktop-cart {
+    display: none;
+    @include for-tablet-landscape-up {
+      display: block;
+    }
+  }
+
+// REVEAL CART ON MOBILE
+  .side-label {
+    cursor: pointer;
+  }
+
+  .reveal-cart {
+    display: none;
+    // margin: 10px 0 0 35px;
+  }
+
+  #cart-mobile {
+    margin-left: 10px;
+  }
+
+  #cart-mobile:checked ~ .reveal-cart {
+    display: block;
+  }
+
+//ON TOP
+
+  .checkout-first-title-padding {
+    padding-top: 20px;
+    padding-bottom: 0;
+    @include for-tablet-landscape-up {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  .checkout-font {
+    h1 {
+      font-size: 3rem;
+      font-weight: 400;
+      text-align: center;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      @include for-phone-only {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .checkout-box {
+    display:flex;
+    flex-direction: column;
+    padding-top: 0;
+      @include for-tablet-landscape-up {
+        flex-direction: row;
+        padding-top: 16px;
+      }
+  }
+
+// CART
+  .checkout-cart-box {
+    width: 100%;
+    padding: 1rem;
+    z-index: 1;
+    @include for-tablet-landscape-up {
+      width: 49%;
+      padding: 40px;
+      border: $border-grey;
+      border: 1px solid $conscients-very-light-grey;
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+      margin-top: 24px;
+      margin-bottom: 24px;
+      // border-left: 1px solid $conscients-very-light-grey;
+      box-shadow: 2px 2px 2px #eff2f1;
+    }
+  }
+
+  .asterix-before:before {
+    content: "*";
+    color: $conscients-red;
+  }
+
+  .asterix-after:after {
+    content: "*";
+    color: $conscients-red;
+  }
+
+ .recipient-email {
+    .form-control, input[type=email] {
+      border: none;
+      font-weight: 300;
+    }
+  .form-control::-webkit-input-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300;}  /* WebKit, Blink, Edge */
+  .form-control:-moz-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300; }  /* Mozilla Firefox 4 to 18 */
+  .form-control::-moz-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300; }  /* Mozilla Firefox 19+ */
+  .form-control:-ms-input-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300; }  /* Internet Explorer 10-11 */
+  .form-control::-ms-input-placeholder { color: #b3b1a8; text-decoration: underline; font-weight: 300; }  /* Microsoft Edge */
+
+  }
+
+  .recipient-email-font-size {
+    font-size: 0.7rem !important;
+    @include for-tablet-landscape-up {
+      font-size: 0.8rem !important;
+    }
+  }
+// ADRESS
+  .checkout-steps-box {
+    width: 100%;
+    z-index: 2;
+    @include for-tablet-landscape-up {
+      width: 51%;
+    }
+  }
+
+  .box-green {
+    padding: 1rem;
+      @include for-tablet-landscape-up {
+        box-shadow: 2px 0px 3px 0 rgba(0, 0, 0, 0.16);
+        // margin-top: 16px;
+        padding: 40px;
+        background-color: $conscients-green;
+        height: 100%;
+          input::placeholder {
+            color: $conscients-medium-green !important;
+            font-size: 0.9rem;
+          }
+      }
+  }
+
+  .box-green-text {
+    @include for-tablet-landscape-up {
+      color: white;
+    }
+  }
+
+  // .box-green-text-checked {
+  //   @include for-tablet-landscape-up {
+  //     color: $conscients-dark-green;
+  //   }
+  // }
+
+  // .unchecked:before {
+  //   font-family: FontAwesome;
+  //   content: "\f0c8";
+  //   padding-right: 10px;
+  //   font-size: 1rem;
+  // }
+  // .checked:before {
+  //   font-family: FontAwesome;
+  //   content: "\f00c";
+  //   // content: "\f14a";
+  //   padding-right: 10px;
+  //   font-size: 1rem;
+  // }
+
+  .box-green-input {
+      .form-control, input[type=text] {
+        font-size: 0.7rem;
+      }
+    @include for-tablet-landscape-up {
+      .form-control, input[type=text] {
+        background: $conscients-light-green;
+        border: 1px solid $conscients-green;
+        color: $conscients-dark-green;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .box-green-select {
+      select {
+        font-size: 0.7rem;
+      }
+    @include for-tablet-landscape-up {
+      select {
+        background-color: $conscients-light-green;
+        border: none;
+        width: 100%;
+        color: $conscients-dark-green;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .box-green-select {
+    select:focus {
+      outline: 0;
+    }
+  }
+
+  .div-color {
+    border: $border-grey;
+    @include for-tablet-landscape-up {
+      background-color: $conscients-light-green;
+      border: none;
+    }
+  }
+
+  .autofill-green {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      -webkit-text-fill-color: $conscients-grey;
+      -webkit-box-shadow: 0 0 0px 1000px $conscients-light-green inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+ .choose-delivery-link {
+  color: $conscients-red;
+  font-family: "Frank Ruhl Libre", "serif";
+  font-size: 0.7rem;
+    @include for-tablet-landscape-up {
+      color: $conscients-dark-green;
+      font-family: "Roboto", "sans-serif";
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      font-size: 0.55rem;
+    }
+ }
+
+// VALIDATION
+  .delivery-validation-box {
+    @include for-tablet-landscape-up {
+      color: white;
+    }
+    // text-align: right;
+    // padding: 40px 0px 0 40px;
+  }
+
+// PAYMENT BOX
+  .payment-box {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    @include for-tablet-landscape-up {
+      flex-direction: row;
+      padding-top: 16px;
+      height: 50px;
+    }
+  }
+// PAYMENTS BUTTON
+
+  .btn-pay {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 2.5rem;
+    color: $conscients-green;
+    box-shadow: inset 0 0 3px rgba(255,255,255,.76), 0 1px 3px rgba(196,192,200,.85);
+    @include for-tablet-landscape-up {
+      height: 100%;
+      width: 130px !important;
+      margin-top: 0;
+      color: $conscients-dark-green;
+      border: 1px solid $conscients-dark-green;
+    }
+
+  }
+

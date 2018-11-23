@@ -1,0 +1,9 @@
+<%= form.fields_for string, instance do |g| %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group box-green-input">
+        <%= g.text_field :email, class: "form-control mr-sm-2", placeholder: true, required: true %>
+      </div>
+    </div>
+  </div>
+<% end %>

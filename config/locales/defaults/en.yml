@@ -1,1 +1,42 @@
 en:
+  helpers:
+    submit:
+      line_item:
+        create: "Add"
+        update: "Update"
+  active_admin:
+    product_management: "Product Management"
+    order_management: "Order Management"
+    client_management: "Client Management"
+    blog_management: "Blog Management"
+    current_state: "Current state"
+    change_state: "New state"
+  paypal:
+    delivery_fees: "Delivery fees"
+    total_price: "Total price"
+  time:
+    formats:
+      long_no_time: "%B %d, %Y"
+  namespace:
+    'true': "Yes"
+    'false': "No"
+  meta_tags:
+    blog_posts:
+      index:
+        title: "Blog"
+        description: "Conscients' Blog"
+        keywords: "Blog, Articles"
+    pages:
+      home:
+        title: "Home page"
+        description: "Conscients' home page"
+        keywords: "Sustainable development, Home"
+      about:
+        title: "About"
+        description: "To know more about Conscients"
+        keywords: "About"
+    products:
+      index:
+        title: "Products lists"
+        description: "Conscients' sustainable products"
+        keywords: "Products, Sustainable development"

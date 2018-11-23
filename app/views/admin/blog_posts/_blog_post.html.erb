@@ -1,0 +1,20 @@
+<tr class="table-cart-bordered">
+  <td>
+    <% if blog_post.main_image.attached? %>
+      <%= image_tag(blog_post.main_image, height: 100) %>
+    <% end %>
+  </th>
+  <td>
+    <% if blog_post.image_for_home.attached? %>
+      <%= image_tag(blog_post.image_for_home, height: 100) %>
+    <% end %>
+  </th>
+  <td><%= blog_post.title %></th>
+  <td><%= t("namespace.#{blog_post.published_fr.to_s}") %></td>
+  <td><%= t("namespace.#{blog_post.published_en.to_s}") %></td>
+  <td>
+    <%= link_to t('.show'), admin_blog_post_path(blog_post), class: "btn btn-orange my-1" %>
+    <%= link_to t('.edit'), edit_admin_blog_post_path(blog_post), class: "btn btn-orange my-1" %>
+    <%= link_to t('.destroy'), admin_blog_post_path(blog_post), method: :delete, class: "btn btn-orange my-1", data: { confirm: t('.confirm') } %>
+  </td>
+</tr>

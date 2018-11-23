@@ -1,0 +1,47 @@
+  <table class="conscients-table-responsive small-first-col-fix-width">
+<!--     <thead>
+      <tr class= "top-tr display-landscape-up-only">
+        <th class="small-th-font text-nowrap pl-md-2"></%= t('.selection') %></th>
+        <th class="small-th-font"></th>
+        <th class="small-th-font text-center"></%= t('.qty') %></th>
+        </% if cart.email? %><th class="small-th-font asterix-after"></%= t('.delivery') %> </th></% end %>
+        <th class="small-th-font text-center"></%= t('.tot') %></th>
+        <th class="small-th-font"></th>
+      </tr>
+    </thead> -->
+    <tbody>
+      <% cart.line_items.includes(:product_sku).each do |line_item| %>
+        <tr class="desktop-border small-td-font">
+          <td class="small-cart-img pl-md-2"><%= image_tag(line_item.product_images.first) %></td>
+          <td class="pl-md-2">
+            <div><%= line_item.product_sku.to_s %></div>
+            <div><%= line_item.recipient_name if line_item&.recipient_name&.present? %></div>
+          </td>
+          <td class="text-center"><%= line_item.quantity %></td>
+
+          <% if cart.email? %>
+            <%= form.fields_for :line_items, line_item do |j| %>
+            <td>
+              <div class="form-group mb-0 recipient-email">
+                <%= j.email_field :delivery_email, class: "form-control recipient-email-font-size", placeholder: true %>
+              </div>
+            </td>
+            <% end %>
+          <% end %>
+
+          <td class="text-center"><%= humanized_money_with_symbol line_item.ttc_price %></td>
+          <td class= text-center>
+          <!-- VOIR SI ON GARDE OU PASadd edit but go back to cart after editing-->
+<!--               </%= link_to product_path(line_item.product, line_item: line_item) do %>
+                </%= fa_icon "pencil", class: "c-pointer color-red" %>
+              </% end %> -->
+          <!-- end add edit            -->
+            <%= link_to product_line_item_path(line_item.product, line_item), method: :delete do %>
+              <%= fa_icon "times", class: "c-pointer" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<!-- </div> -->

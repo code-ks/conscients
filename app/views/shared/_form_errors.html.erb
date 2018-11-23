@@ -1,0 +1,8 @@
+<% if instance.errors.any? %>
+  <ul>
+    <% instance.errors.full_messages.each do |message| %>
+      <!-- <li class="font-weight-bold text-danger"><%= message %></li> -->
+      <li class="color-white angle-down-list"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

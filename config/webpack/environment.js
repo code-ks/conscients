@@ -1,6 +1,7 @@
-const {environment} = require("@rails/webpacker");
+const { environment } = require("@rails/webpacker");
 
 const webpack = require("webpack");
+const erb = require("./loaders/erb");
 
 environment.plugins.prepend(
   "Provide",
@@ -11,4 +12,5 @@ environment.plugins.prepend(
   })
 );
 
+environment.loaders.append("erb", erb);
 module.exports = environment;

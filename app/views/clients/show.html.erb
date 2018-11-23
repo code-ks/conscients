@@ -1,0 +1,28 @@
+<% set_meta_tags noindex: true %>
+
+<div class="container-conscients first-title-padding page-font">
+  <h1><%= t '.my_account' %></h1>
+</div>
+
+<div class="container mt-md-4 mb-5">
+  <ul class="nav nav-tabs conscients-nav-tabs top-menu-font nav-fill mb-3" id="myTab" role="tablist">
+    <li class="nav-item conscients-nav-item">
+      <a class="nav-link conscients-nav-link active f-07R-phone" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><%= t('.profile') %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link conscients-nav-link f-07R-phone" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><%= t('.orders_list') %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link conscients-nav-link f-07R-phone" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><%= t('.impact') %></a>
+    </li>
+  </ul>
+  <!-- <div class="tab-content mt-md-5 pt-md-2" id="myTabContent"> -->
+  <div class="tab-content conscients-tab-content" id="myTabContent">
+    <%= render 'profile' %>
+    <%= render 'orders_list' %>
+    <%= render 'impact' %>
+  </div>
+</div>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+

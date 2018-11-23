@@ -1,0 +1,13 @@
+<%= t(".greatings") %>
+
+<% if @order.email? %>
+  <%= t(".core_email") %>
+<% elsif @order.include_trees? %>
+  <%= t(".core_postal_with_tree") %>
+<% else %>
+  <%= t(".core_postal_without_tree") %>
+<% end %>
+
+<%= link_to t(".go_to_client_space"), clients_url %>
+
+<%= t(".thanks")%>

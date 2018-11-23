@@ -1,0 +1,12 @@
+function refreshForm(innerHTML) {
+  const newLineItemForm = document.getElementById('new_line_item');
+  newLineItemForm.innerHTML = innerHTML;
+}
+
+<% if @line_item.errors.any? %>
+  refreshForm('<%= j render "products/add_to_cart_form", product: @product, line_item: @line_item %>');
+<% else %>
+  refreshForm('<%= j render "products/add_to_cart_form", product: @product, line_item: LineItem.new %>');
+  launchModal('#added_to_cart_modal');
+<% end %>
+launchFlatpickr("#datepicker");

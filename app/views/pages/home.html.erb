@@ -1,1 +1,52 @@
-<h1 class="flex justify-center">Hello from <%= Rails.application.class.parent_name %>!</h1>
+<% set_meta_tags title: I18n.t('meta_tags.pages.home.title'),
+                 description: I18n.t('meta_tags.pages.home.description'),
+                 keywords: I18n.t('meta_tags.pages.home.keywords') %>
+
+<!-- BANNER -->
+<div class="banner" style="background-image: url('http://conscients.com/wp-content/uploads/2012/09/robe-bio-fille-conscients-des-nos-premiers-pas1.jpg1_.jpg');">
+  <div class="banner-content">
+    <h2>Sous titre indiqué en admin</h2>
+    <h1>Admin : img accueil, titre, changer font color pour le banner content</h1>
+  </div>
+</div>
+
+
+
+<div data-controller="home-carousel">
+
+  <%= render 'top_carousel', categories: @categories %>
+
+  <div class="d-md-none text-center mt-4 fa-small-grey"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></div>
+
+  <%= render 'bottom_carousel', category: @categories.fourth %>
+
+</div>
+
+<!-- BLOG 2 LAST ARTICLES -->
+<div class="container-conscients home-pt">
+  <div class="row home-blog-row-mobile">
+    <% BlogPost.last(2).each do |article| %>
+      <div class="col-md-6 home-col-portrait">
+        <%= link_to blog_post_path(article) do %>
+          <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= rails_blob_url article.image_for_home %>)">
+            <div class="home-blog-card-content blog-pics-font">
+              <h3><%= article.category %></h3>
+              <h2><%= article.title %></h2>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- BRAND PREZ -->
+<div class="conscients-presentation home-pt home-font text-center">
+  <div class="conscients-presentation-content padding-around ">
+    <h3>Le projet conscients</h3>
+    <h2>Conscients blabla brand de quelques lignes uniquement centré au milieu avec les mc qu'il faut</h2>
+    <a href="#" class="underlined-link">Découvrir le projet</a>
+  </div>
+</div>
+
+<!--   </%= render 'shared/before_footer' %> -->

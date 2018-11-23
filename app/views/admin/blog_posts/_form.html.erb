@@ -1,0 +1,105 @@
+<%= form_with(model: [:admin, blog_post], local: true, id: "blog-post-form") do |form| %>
+  <% if blog_post.errors.any? %>
+    <ul>
+      <% blog_post.errors.full_messages.each do |message| %>
+        <!-- <li class="font-weight-bold text-danger"><%= message %></li> -->
+        <li class="color-white angle-down-list"><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :content_fr %>
+    <div id="content-fr-editor" class="h-450p w-100"></div>
+    <%= form.hidden_field :content_fr, id: "content-fr" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :content_en %>
+    <div id="content-en-editor" class="h-450p w-100"></div>
+    <%= form.hidden_field :content_en, id: "content-en" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :title_fr %>
+    <%= form.text_field :title_fr, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :title_en %>
+    <%= form.text_field :title_en, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :seo_title_fr %>
+    <%= form.text_field :seo_title_fr, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :seo_title_en %>
+    <%= form.text_field :seo_title_en, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category_fr %>
+    <%= form.text_field :category_fr, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category_en %>
+    <%= form.text_field :category_en, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :main_image %></br>
+    <% if blog_post.main_image.attached? %>
+      <%= image_tag(blog_post.main_image, height: 200, class: "my-3") %></br>
+    <% end %>
+    <%= form.file_field :main_image %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image_for_home %></br>
+    <% if blog_post.image_for_home.attached? %>
+      <%= image_tag(blog_post.image_for_home, height: 200, class: "my-3") %></br>
+    <% end %>
+    <%= form.file_field :image_for_home %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :slug_fr %>
+    <%= form.text_field :slug_fr, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :slug_en %>
+    <%= form.text_field :slug_en, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :meta_description_fr %>
+    <%= form.text_field :meta_description_fr, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :meta_description_en %>
+    <%= form.text_field :meta_description_en, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :position %>
+    <%= form.number_field :position, class: "form-control mr-sm-2" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :published_fr %>
+    <%= form.check_box :published_fr %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :published_en %>
+    <%= form.check_box :published_en %>
+  </div>
+
+  <%= form.submit class: "btn btn-orange"%>
+<% end %>

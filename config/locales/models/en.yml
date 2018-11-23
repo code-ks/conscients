@@ -1,4 +1,100 @@
 en:
   activerecord:
     models:
+      admin_user: "Admin"
+      address: "Address"
+      category: "Category"
+      categorization: "Categorization"
+      client: "Client"
+      coupon: "Coupon"
+      line_item: "Line Item"
+      order: "Order"
+      product: "Product"
+      product_sku: "Product SKU"
+      stock_entry: "Stock Entry"
+      tree_plantation: "Tree Plantation"
+      variant: "Age"
+      ahoy/visit: "Visit"
+      ahoy/event: "Event"
+      blog_post: "Blog Post"
     attributes:
+      blog_post:
+        published_fr: "Publish in French?"
+        published_en: "Publish in English?"
+      admin_user:
+        email: "Email"
+        current_sign_in_at: "Current Sign In At"
+        sign_in_count: "Sign In Count"
+      category:
+        name_en: "English name"
+        slug_en: "English URL"
+      product:
+        product_types:
+          classic: "Classic"
+          personalized: "Personalized"
+          tree: "Tree"
+        ht_price_cents: "HT price in cents"
+        ht_price_currency: "Sale currency"
+        ht_buying_price_cents: "HT buying price in cents"
+        ht_buying_price_currency: "Buying currency"
+        color_certificate: "Color of the certificate"
+      address:
+        title: "Address title"
+        address_types:
+          postal: "Postal"
+          email: "Email"
+        postal_address_types:
+          delivery: "Delivery"
+          billing: "Billing"
+      client:
+        newsletter_subscriber: "Subscribed to the newsletter?"
+      coupon:
+        percentage: "Value in pourcentage"
+        amount_cents: "Value of the discount"
+        amount_currency: "Currency of the discount"
+        amount_min_order_cents: "Minimum amount of the order"
+        amount_min_order_currency: "Currency of the minimum of the order"
+      order:
+        aasm_state: "State of the order"
+        aasm_state/in_cart: "Cart"
+        aasm_state/wainting_for_bank_transfer: "Waiting for bank transfer"
+        aasm_state/preparing: "Preparing"
+        aasm_state/fulfilled: "Fulfilled"
+        aasm_state/delivered: "Delivered"
+        aasm_state/canceled: "Canceled"
+        delivery_methods:
+          single_address: "Delivery to an address"
+          email: "Delivery by email"
+        delivery_fees_cents: "Delivery fees in cents"
+        total_price_cents: "Total price in cents"
+        total_price_currency: "Order currency"
+        payment_methods:
+          stripe: "Stripe"
+          paypal: "Paypal"
+          bank_tranfer: "Bank Transfer"
+      tree_plantation:
+        trees_quantity: "Available tree quantity"
+      line_item:
+        quantity: "Quantity in stock"
+      ahoy/event:
+        time: "Date and time"
+      ahoy/visit:
+        os: "Operating System"
+    errors:
+      models:
+        product_sku:
+          attributes:
+            quantity:
+              greater_than_or_equal_to: "in stock too limited"
+        tree_plantation:
+          attributes:
+            trees_quantity:
+              greater_than_or_equal_to: "in stock too limited"
+        product:
+          attributes:
+            color_certificate:
+              format: "Much be a valid HEX color"
+        coupon:
+          amount_or_percentage: "Amount or percentage must be filled but not both"
+        order:
+          not_eligible_to_coupon: "Your order is not eligible to this coupon"

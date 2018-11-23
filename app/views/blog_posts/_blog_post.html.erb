@@ -1,0 +1,10 @@
+<%= image_tag(blog_post.main_image, height: 200) %>
+
+<div class="ql-displayer my-3">
+  <%= sanitize blog_post.content.gsub(/<img.*?>/, '').truncate(1000), tags: %w(a h1 h2 h3 h4 h5 h6 p ol ul li span), attributes: %w(class style href) %>
+</div>
+
+<%= link_to "Read Article", blog_post_path(blog_post), class: "btn btn-orange" %>
+
+<hr>
+

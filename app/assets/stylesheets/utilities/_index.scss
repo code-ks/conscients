@@ -1,0 +1,47 @@
+@import "filters";
+@import "fonts";
+@import "links";
+@import "display";
+@import "padding";
+@import "background";
+@import "borders";
+@import "colors";
+
+
+
+a {
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+textarea { resize: none; }
+
+.form-control[readonly] {
+  background-color: white;
+}
+
+.orange {
+  color: $conscients-coral;
+}
+
+.btn-orange {
+  background-color: $orange;
+  border-color: $orange;
+  color: white;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.c-default {
+  cursor: default !important;
+}
+
+.h-450p {
+  height: 450px !important;
+}
+

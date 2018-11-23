@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to t('.cart'), cart_path(cart) %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to t('.delivery'), new_delivery_path(delivery_type: @cart.delivery_method) %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to t('.payment'), new_payment_path %>
+    </li>
+  </ol>
+</nav>

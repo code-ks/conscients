@@ -1,0 +1,20 @@
+<% set_meta_tags title: @blog_post.seo_title,
+                 description: @blog_post.meta_description %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to t('.home'), root_path %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to t(".journal"), blog_posts_path %>
+    </li>
+    <li class="breadcrumb-item active">
+      <%= link_to @blog_post.title, blog_post_path(@blog_post) %>
+    </li>
+  </ol>
+</nav>
+
+<div class="container my-5 ql-displayer my-3">
+  <%= @blog_post.content.html_safe %>
+</div>

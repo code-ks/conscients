@@ -1,0 +1,38 @@
+  <div class="container-conscients social-box bg-grey">
+    <div class="social-box-links">
+      <div>
+        <a href="https://www.facebook.com/conscients/" target="blank"><i class="fa fa-facebook" title="Facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter" title="Twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram" title="Instagram"></i></a>
+        <%= link_to page_path('contact') do %>
+          <i class="fa fa-at" title="Contact"></i>
+        <% end %>
+      </div>
+      <% unless current_client&.newsletter_subscriber %>
+        <%= form_with url: newsletter_subscriptions_path, method: :post, local: true, id: 'form_for_newsletter', class: "form-inline" do |form| %>
+          <div class="form-group">
+            <%= form.label 'Email', for: :email %>
+            <%= form.email_field :email, required: true %>
+          </div>
+          <%= form.submit t('.subscribe_to_newsletter'), class: 'btn conscients-btn btn-green' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+<div class="footer">
+  <div class="footer-items">
+    <%= link_to t('shared.footer.site_map_link'), page_path('site_map')%>
+    <%= link_to t('shared.footer.payment_shipping_link'), page_path('payment_shipping')%>
+    <%= link_to t('shared.footer.terms_link'), page_path('terms')%>
+    <%= link_to t('shared.footer.faq_link'), page_path('faq')%>
+  </div>
+  <div class="footer-items d-phone-none">
+    <!-- <div class="icon-vir">VIR</div> -->
+    <div class="footer-icons"><p class="icon-vir" title="Paiement par virement">VIR</p></div>
+    <i class="footer-icons fa fa-cc-paypal" title="Paiement par Paypal"></i>
+    <i class="footer-icons fa fa-credit-card" title="Paiement par carte bancaire"></i>
+  </div>
+</div>
+
+

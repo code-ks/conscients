@@ -1,0 +1,99 @@
+//ID
+  #occasions-carousel {
+  }
+
+  #clothes-carousel {
+  }
+
+  #shop-carousel-desktop {
+  }
+
+  #shop-carousel-mobile {
+
+  }
+
+//BOXES
+  .carousel-container{
+    margin: 0 auto;
+    width: 85vw;
+    overflow: hidden;
+  }
+
+// CAROUSEL SHOP DESKTOP
+  .carousel-shop-desktop {
+    display: none;
+    @include for-tablet-landscape-up {
+      display: block;
+    }
+  }
+
+  .carousel-shop-mobile {
+    display: none;
+    @include for-phone-only {
+      display: block;
+    }
+    @include for-tablet-portrait-only {
+      display: block;
+    }
+  }
+
+// CAROUSEL ARROW
+  .carousel-control-prev, .carousel-control-next {
+    width: 10%;
+    @include for-tablet-portrait-only {
+      width: 40%;
+    }
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    background-size: 100%, 100%;
+    background-image: none;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 40px;
+    color: $conscients-light-grey;
+  }
+  .carousel-control-next-icon:after
+  {
+    content: '>';
+  }
+  .carousel-control-prev-icon:after {
+    content: '<';
+  }
+
+.my-carousel-container{
+  display: flex;
+  margin: 0 auto;
+  width: $container-width;
+}
+.box{
+  height: 100px;
+  width: 100%;
+  background-color: yellow;
+  border: 1px solid black;
+  @include for-tablet-landscape-up {
+    width: 25%;
+  }
+}
+
+
+
+
+
+
+  // .shop-carousel-col {
+  //   justify-content: center;
+  //   background-color: pink;
+  //   margin: 0 auto;
+  // }
+  // .shop-carousel-card{
+  //   background-color: red;
+  //   text-align: center;
+  //       // height: 85%;
+  //       height: 350px;
+  //       max-height: 350px;
+  //       // width: 38%;
+  //   border: none;
+  //   margin: 0 auto;
+  // }

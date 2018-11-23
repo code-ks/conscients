@@ -1,0 +1,76 @@
+<div class="page-container my-5 page-font first-title-padding">
+  <h1 class="text-center"><%= t(".order_confirmed") %></h1>
+  <% if @order.wainting_for_bank_transfer? %>
+    <h2 class="text-center"><%= t(".order_received") %>
+    <%= t(".bank_transfer_instructions", amount: @order.total_price) %></h2>
+    <div class="my-5 p-3 border-black">
+        <div class="border-bottom bank-info-font font-weight-bold">Banque</div>
+        <table class="conscients-table-responsive">
+          <thead>
+            <tr>
+              <th class="th-font"><%= t(".domiciliation") %></th>
+              <th class="th-font">BIC</th>
+              <th class="th-font"><%= t('.account_owner')%></th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="bank-info-font pt-0">CIC PARIS LE MARAIS <br>58 rue du Temple <br>75003 Paris</td>
+            <td class="bank-info-font pt-0">CMCIFRPP</td>
+            <td class="bank-info-font pt-0">4 U ABEL <br>10 passage national <br>75013 PARIS</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="border-bottom bank-info-font font-weight-bold pt-md-5"><%= t('.rib')%></div>
+        <table class="conscients-table-responsive">
+          <thead>
+            <tr>
+              <th class="th-font"><%= t('.bank')%></th>
+              <th class="th-font"><%= t('.counter')%></th>
+              <th class="th-font"><%= t('.account_number')%></th>
+              <th class="th-font"><%= t('.key')%></th>
+              <th class="th-font"><%= t('.currency')%></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="bank-info-font pt-0">30066</td>
+              <td class="bank-info-font pt-0">10854</td>
+              <td class="bank-info-font pt-0">00020065701</td>
+              <td class="bank-info-font pt-0">51</td>
+              <td class="bank-info-font pt-0">EUR</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pt-md-5 border-bottom bank-info-font font-weight-bold"><%= t('.iban')%></div>
+        <table class="conscients-table-responsive">
+          <tbody>
+            <tr>
+              <td class="bank-info-font">FR76</td>
+              <td class="bank-info-font">3006</td>
+              <td class="bank-info-font">6108</td>
+              <td class="bank-info-font">5400</td>
+              <td class="bank-info-font">0200</td>
+              <td class="bank-info-font">6570</td>
+              <td class="bank-info-font">151</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  <% else %>
+    <div class="text-center">
+      <h2><%= t(".order_validation") %></h2>
+      <h2 class="mb-5"><%= t('.email_coming') %></h2>
+    </div>
+  <% end %>
+
+  <div class="padding-tb text-center"><%= link_to t(".go_to_client_space"), clients_path, class: "follow-link red-link" %>
+  </div>
+  <div class="text-center">
+    <%= link_to t('.contact_us'), page_path('contact'), class: "follow-link red-link"%>
+  </div>
+</div>
+
+
+
+

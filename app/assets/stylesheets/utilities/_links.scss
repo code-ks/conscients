@@ -1,0 +1,69 @@
+  .yellow-over {
+    a {
+      &:hover {
+        color: $conscients-yellow;
+      }
+    }
+  }
+
+  .underlined-link {
+      font-family: "Frank Ruhl Libre", "serif";
+      font-size: 0.9rem;
+      letter-spacing: 0.1rem;
+      text-decoration: underline;
+      text-underline-position: under;
+      @include for-phone-only {
+        font-size: 0.7rem;
+      }
+  }
+
+// READ MORE / BACK TO TOP
+  .yellow-link {
+    color: $conscients-yellow;
+  }
+
+  .yellow-link:hover {
+    color: $conscients-yellow;
+    text-decoration: underline;
+  }
+
+  .green-link {
+    color: $conscients-green;
+  }
+
+  .green-link:hover {
+    color: $conscients-dark-green;
+    text-decoration: underline;
+  }
+  .red-link, .read-more, .back-to-top {
+    color: $conscients-red;
+  }
+  .red-link:hover, .read-more:hover, .back-to-top:hover {
+    color: $conscients-red;
+    text-decoration: underline;
+    // font-weight: bold;
+  }
+
+  .read-more:after {
+    font-family: FontAwesome;
+    content: "\f107";
+    padding-left: 10px;
+    text-decoration: underline white;
+  }
+
+  .back-to-top:after {
+    font-family: FontAwesome;
+    content: "\f106";
+    padding-left: 10px;
+    text-decoration: underline white;
+  }
+
+  .follow-link {
+    font-weight: 500;
+  }
+
+  .follow-link:before {
+    font-family: FontAwesome;
+    content: "\f105";
+    padding-right: 10px;
+  }

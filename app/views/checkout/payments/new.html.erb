@@ -1,0 +1,74 @@
+<% set_meta_tags noindex: true %>
+
+<div class="container">
+
+  <%= render 'checkout/payments/breadcrumb', cart: @cart %>
+
+  <div class="container">
+    <div class="checkout-first-title-padding checkout-font no-padding-t">
+      <h1 class=""><%= t('.title') %></h1>
+    </div>
+  </div>
+
+  <div class="checkout-box page-font padding-t">
+    <div class="checkout-steps-box delivery-below">
+      <div class="box-green">
+        <h2 class="box-green-text pb-resp-16"><%= t('.addresses') %></h2>
+        <div class="adresses">
+          <div class="adresses-delivery">
+            <p class="box-green-text"><%= t('.delivery') %></p>
+            <%= render 'address', address: @cart.delivery_address, title_key: ".delivery" %>
+          </div>
+          <div class="adresses-billing pt-resp-16">
+            <p class="box-green-text"><%= t('.billing') %></p>
+            <%= render 'address', address: @cart.billing_address, title_key: ".billing" %>
+          </div>
+        </div>
+        <%= render 'payment_buttons', cart: @cart %>
+      </div>
+    </div>
+    <div class="checkout-cart-box cart-on-top">
+
+      <div class="mobile-cart bg-grey border">
+        <input id="cart-mobile" name="panier" type="checkbox" checked>
+        <label for="panier" class="side-label px-2 my-2">Afficher mon panier - <%= humanized_money_with_symbol @cart.ttc_price_all_included %></label>
+        <div class="reveal-cart bg-white">
+        <%= render 'line_items_table', cart: @cart %>
+          <div class= "padding-tb px-1 bg-grey">
+            <% if @cart.coupon %>
+              <div class="mt-3 d-flex justify-content-end align-items-start">
+                <%= render 'checkout/payments/price', cart: @cart %>
+              </div>
+            <% else %>
+              <div class="coupon-div">
+                <div class="total-comment-font text-right mb-2"> <%= t('.coupon_label') %></div>
+                <div class="text-left"><%= render 'checkout/payments/add_coupon' %></div>
+              </div>
+              <div class="">
+                <%= render 'checkout/payments/price', cart: @cart %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="desktop-cart">
+      <h2 class="padding-b"><%= t('.my_cart') %></h2>
+        <%= render 'line_items_table', cart: @cart %>
+          <% if @cart.coupon %>
+            <div class="mt-3 d-flex justify-content-end">
+              <%= render 'checkout/payments/price', cart: @cart %>
+            </div>
+          <% else %>
+            <div class="bg-grey coupon-div">
+              <div class="total-comment-font text-right mb-2"> <%= t('.coupon_label') %></div>
+              <div class="text-left"><%= render 'checkout/payments/add_coupon' %></div>
+            </div>
+            <div class="bg-white">
+              <%= render 'checkout/payments/price', cart: @cart %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

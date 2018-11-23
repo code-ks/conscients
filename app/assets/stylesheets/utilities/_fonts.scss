@@ -1,0 +1,43 @@
+  .price-font {
+    font-family: "Roboto", "sans-serif";
+    letter-spacing: 0.1rem;
+  }
+
+  .profile-font {
+    h3 {
+      font-family: "Frank Ruhl libre", "serif";
+      font-weight: 400;
+      font-size: 1rem;
+      @include for-tablet-landscape-up {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .fw-300 {
+    font-weight: 300 !important;
+  }
+
+  .f-07R {
+    font-size: 0.7rem !important;
+  }
+
+  .f-07R-phone {
+    @include for-phone-only {
+      font-size: 0.7rem !important;
+    }
+  }
+
+  .f-08R {
+    font-size: 0.8rem !important;
+  }
+
+ .f-08R-phone {
+    @include for-phone-only {
+      font-size: 0.8rem !important;
+    }
+  }
+
+  .f-09R {
+    font-size: 0.9rem !important;
+  }

@@ -1,0 +1,36 @@
+<% set_meta_tags title: @product.seo_title,
+                 description: @product.meta_description,
+                 keywords: @product.keywords %>
+
+<div class="container my-5">
+  <div class="row h-100">
+    <div class="col-lg-8 col-md-7 col-xs-12 order-md-last">
+      <%= render 'products/carousel', product: @product %>
+    </div>
+    <div class="col-lg-4 col-md-5 col-xs-12 order-md-first">
+    <a id="product-name-anchor"></a>
+      <h1><%= @product.name %></h1>
+      <p class="price-font mt-3"><%= humanized_money_with_symbol @product.ttc_price %></p>
+      <p><%= @product.description_short %></p>
+      <%= link_to t('products.product.read_more'), "#product-description-anchor", class: "read-more"%>
+      <hr>
+      <div id="new_line_item">
+        <%= render 'products/add_to_cart_form', product: @product, line_item: @line_item %>
+      </div>
+    </div>
+    <hr>
+    <a id="product-description-anchor" class='anchor'></a>
+    <div class="page-font pb-2">
+    <h3><%= t 'products.product.read_more' %></h3>
+    </div>
+    <p><%= simple_format(@product.description_long) %></p>
+    <div class="d-flex justify-content-end"><%= link_to t('products.product.back_to_top'), "#product-name-anchor", class: "back-to-top"%></div>
+    <hr>
+    <div class="social-likes f-08R-phone">
+      <div class="d-flex align-items-center title-grey"><%= t 'products.product.social_share' %></div>
+      <div data-service="facebook" title="Share link on Facebook">Facebook</div>
+      <div data-service="twitter" title="Share link on Twitter">Twitter</div>
+      <div class="pinterest" title="Share image on Pinterest" data-media="">Pinterest</div>
+    </div>
+  </div>
+</div>

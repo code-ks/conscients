@@ -1,0 +1,90 @@
+<% set_meta_tags noindex: true %>
+
+<% if @blog_post.main_image.attached? %>
+  <h4><%= t('activerecord.attributes.blog_post.main_image') %></h4>
+  <%= image_tag(@blog_post.main_image, height: 250) %>
+<% end %>
+
+<hr>
+
+<% if @blog_post.image_for_home.attached? %>
+  <h4><%= t('activerecord.attributes.blog_post.image_for_home') %></h4>
+  <%= image_tag(@blog_post.image_for_home, height: 250) %>
+<% end %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.title_fr') %></h4>
+<%= @blog_post.title_fr %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.title_en') %></h4>
+<%= @blog_post.title_en %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.seo_title_fr') %></h4>
+<%= @blog_post.seo_title_fr %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.seo_title_en') %></h4>
+<%= @blog_post.seo_title_en %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.category_fr') %></h4>
+<%= @blog_post.category_fr %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.category_en') %></h4>
+<%= @blog_post.category_en %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.content_fr') %></h4>
+<%= @blog_post.content_fr.html_safe %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.content_en') %></h4>
+<%= @blog_post.content_en.html_safe %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.slug_fr') %></h4>
+<%= @blog_post.slug_fr %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.slug_en') %></h4>
+<%= @blog_post.slug_en %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.meta_description_fr') %></h4>
+<%= @blog_post.meta_description_fr %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.meta_description_en') %></h4>
+<%= @blog_post.meta_description_en %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.position') %></h4>
+<%= @blog_post.position %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.published_fr') %></h4>
+<%=  t("namespace.#{@blog_post.published_fr.to_s}") %>
+
+<hr>
+
+<h4><%= t('activerecord.attributes.blog_post.published_en') %></h4>
+<%=  t("namespace.#{@blog_post.published_en.to_s}") %>
+
+<hr>

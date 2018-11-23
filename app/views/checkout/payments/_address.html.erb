@@ -1,0 +1,22 @@
+<div class="adresses-details">
+<% if address.email? %>
+  <p><%= address.email %></p>
+  <br>
+  <p><%= t('.certificates_delivered_by_email') %></p>
+<% else %>
+    <p><%= address.full_name %></p>
+  <% if address.company %>
+    <p><%= address.company %></p>
+  <% end %>
+  <% if address.address_1 %>
+    <p><%= address.address_1 %></p>
+  <% end %>
+  <% if address.address_2 %>
+    <p><%= address.address_2 %></p>
+  <% end %>
+    <p> <%= address.zip_code %> <%= address.city %> </p>
+  <% if address.country %>
+    <p><%= address.country %></p>
+  <% end %>
+<% end %>
+</div>

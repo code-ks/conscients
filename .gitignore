@@ -19,6 +19,8 @@
 /node_modules
 /yarn-error.log
 
+/lib/assets/customers_export.csv
+
 /public/assets
 .byebug_history
 

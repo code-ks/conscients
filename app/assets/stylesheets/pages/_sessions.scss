@@ -1,0 +1,89 @@
+.session-page-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  @include for-tablet-landscape-up {
+    width: 70vw;
+
+  }
+}
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 16px;
+  padding-left: 16px;
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+    height: 80vh;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-bottom: 40px;
+  }
+}
+
+.sign-up-box {
+  width: 100%;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  border-top: 1px dotted $conscients-very-light-grey;
+  @include for-tablet-landscape-up {
+    height: 100%;
+    width: 60%;
+    border: $border-grey;
+    padding: 40px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.16);
+    z-index: 2;
+    }
+}
+.login-box {
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-top: 1px dotted $conscients-very-light-grey;
+  border-bottom: 1px dotted $conscients-very-light-grey;
+  @include for-tablet-landscape-up {
+    height: 80%;
+    width: 40%;
+    padding: 40px;
+    border: none;
+    background-color: $conscients-yellow;
+    color: white;
+  }
+}
+
+// FACEBOOK CONNECT WHITE
+  .fb-connect-btn-w::before {
+      font-family: FontAwesome;
+      content: "\f082";
+      font-size: 1.5em;
+      margin-right: 10px;
+      color: $facebook;
+      text-decoration: underline white;
+  }
+
+  .fb-connect-btn-w {
+    margin-top: 10px;
+    color: $facebook;
+    font-family: "Frank Ruhl Libre", "serif";
+    border: none;
+    background-color: white;
+    // background-color: pink;
+    cursor: pointer;
+    @include for-tablet-landscape-up {
+      margin-top: 5px;
+    }
+  }
+
+  .fb-connect-btn-w:active {
+    opacity: 0.9;
+    text-decoration: underline;
+  }
+
+
+
+
+

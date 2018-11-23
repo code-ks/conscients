@@ -1,0 +1,87 @@
+<% set_meta_tags noindex: true %>
+
+<div class="container mb-5">
+
+  <%= render 'checkout/carts/breadcrumb', cart: @cart %>
+
+  <% if @cart.empty? %>
+    <h1 class="text-uppercase my-4"><%= t('.empty_cart') %></h1>
+  <% else %>
+    <div class="checkout-first-title-padding checkout-font no-padding-t">
+    <h1><%= t('.cart') %></h1>
+    </div>
+    <div class="padding-t"></div>
+
+  <div class="table-div border-resp">
+    <table class="conscients-table-responsive first-col-fix-width">
+      <thead>
+        <tr class="top-tr text-center">
+          <th class="th-font text-nowrap pl-1"><%= t('.selection') %></th>
+          <th class="th-font"></th>
+          <th class="th-font"><%= t('.quantity') %></th>
+          <th class="th-font text-left"><%= t('.personalized_product') %></th>
+          <th class="th-font"><%= t('.tot_price') %></th>
+          <th class="th-font"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart.line_items.includes(:product_sku).each do |line_item| %>
+          <tr class="desktop-border-bottom td-font text-center">
+            <td class="cart-img"><%= image_tag(line_item.product_images.first) %></td>
+            <td class= pl-2>
+              <div class="text-left"><%= line_item.product_sku.to_s %></div>
+              <div class="text-left">
+                <% if line_item&.recipient_name&.present? %>
+                <span class= "heart-before"><%= line_item.recipient_name %></span>
+                <% else %>
+                <%= "" %>
+                <% end %>
+              </div>
+            </td>
+            <td><%= line_item.quantity %></td>
+            <td class= px-2>
+              <div class="text-left">
+                <% if line_item&.certificate_date&.present?%>
+                  <span class="heart-before"><%= l(line_item.certificate_date, format: :default)%></span>
+                <% else %>
+                  <%= ""%>
+                <% end %>
+              </div>
+              <div class="text-left"><%= line_item.recipient_message if line_item&.recipient_message&.present? %></div>
+            </td>
+            <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
+            <td class="pl-1 pr-1">
+              <%= link_to product_path(line_item.product, line_item: line_item) do %>
+                <%= fa_icon "pencil", class: "c-pointer" %>
+              <% end %>
+              <%= link_to product_line_item_path(line_item.product, line_item), method: :delete do %>
+                <%= fa_icon "times", class: "c-pointer" %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+
+    <div class= "d-flex flex-column bg-grey-resp padding-tb">
+      <div class= "align-self-end total-font pr-1">
+        <%= t('.total_price') %> <span class="color-green"><%= humanized_money_with_symbol @cart.ttc_price %></span>
+      </div>
+    <% if !@cart.tree_only? %>
+      <div class="align-self-end total-comment-font pr-1">
+        <p><%= t('.without_delivery_fees') %></p>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="table-div next-div">
+    <div class="d-flex justify-content-between">
+      <%= link_to t('.continue_purchases'), category_products_path(Category.last_visited), class: "continue-shopping text-nowrap align-self-center" %>
+      <%= link_to t('.validate'), new_delivery_path, class: "btn conscients-btn btn-green" unless @cart.empty? %>
+    </div>
+  </div>
+
+
+  <% end %>
+</div>

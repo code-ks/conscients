@@ -1,0 +1,112 @@
+.no-overflow {
+  overflow: hidden;
+}
+
+.heigt-100vh {
+  height: 100vh;
+}
+
+.no-overflow-n-wrap {
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+// **** BASE RESPONSIVE FONT ****
+  body {
+    color: $conscients-grey;
+    h1 {
+      font-family: "Frank Ruhl Libre", "serif";
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+      font-weight: 400;
+    }
+    h2 {
+      font-family: "Roboto", "sans-serif";
+      text-transform: Uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+        @include for-phone-only {
+          font-size: 10px;
+        }
+    }
+    p {
+      font-family:"Frank Ruhl Libre", "serif";
+      font-size: 1rem;
+    }
+    a {
+      font-family:"Frank Ruhl Libre", "serif";
+    }
+  }
+
+
+
+// **** BOXES ****
+  .container-conscients{
+    margin: 0 auto;
+    width: $container-width;
+    overflow: hidden;
+  }
+
+  .flex-container {
+    display: flex;
+  }
+
+  .scrolling-wrapper {
+    width: 95vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+      display: none;
+      }
+      .sw-card {
+        flex: 0 0 auto;
+        // height: 500px;
+        height: 60vh;
+        margin-right: 5px;
+      }
+  }
+
+// ****TEXT AND LINKS COLORS ****
+  // .t-white {
+  //   color: white;
+  // }
+
+
+
+// ANCHOR
+  .anchor {
+    display:block;
+    padding-top:80px;
+    margin-top:-80px;
+  }
+
+// ROW AND COL
+  // .ligne {
+  //     display: flex;
+  //     flex-wrap: wrap;
+  //     margin-right: -15px;
+  //     margin-left: -15px;
+  //     overflow: hidden;
+  // }
+  // .col-sm-xs-1-col-md4 {
+  //   flex: 0 0 100%;
+  //   max-width: 100%;
+  //   position: relative;
+  //   width: 100%;
+  //   min-height: 1px;
+  //   padding-right:15px;
+  //   padding-left: 15px;
+  //     @include for-tablet-landscape-up {
+  //     flex: O O 25%;
+  //     max-width: 25%;
+  //     position: relative;
+  //     width: 100%;
+  //     min-height: 1px;
+  //     padding-right: 15px;
+  //     padding-left: 15px;
+  //     }
+  // }
+

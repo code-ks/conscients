@@ -1,1 +1,484 @@
 fr:
+  pages:
+    home:
+      hello: "Test"
+      searching: "Ma recherche"
+    about:
+      test: "Youpi"
+    contact:
+      contact_title: "Contact"
+      contact_intro: "Vous avez des questions ? Sur votre commande, les arbres que vous offrez en cadeau, un partenariat ? Ou vous voulez simplement échanger ? N'hésitez pas à nous contacter, nous vous répondrons au plus vite !"
+      contact_name: "Votre nom"
+      contact_email: "Votre email"
+      contact_subject: "Sujet du message"
+      contact_message: "Votre message"
+      contact_send: "Envoyer"
+    payment_shipping:
+      payment_shipping_title: "Paiement Livraison Retours"
+      secure_title: "Paiement sécurisé"
+      secure_body: "Vous pouvez choisir de régler vos achats par carte de crédit, via Paypal ou par virement bancaire. Les paiements en ligne sont sécurisés à travers Stripe ou Paypal selon le mode de paiement choisi. Les données bancaires sont directement communiquées, via le Site, aux structures directement et uniquement concernées par les opérations de paiement. Le site garantit qu’il ne collecte ni ne conserve aucune donnée relative à la transaction bancaire nécessaire au paiement de la facture. Si vous optez pour un paiement par carte de crédit, toutes les transactions bancaires sont gérées par Stripe, avec un chiffrement sécurisé et dans le respect des normes bancaires les plus strictes."
+      fast_delivery_title: "Livraison rapide"
+      fast_delivery_body: "Nous traitons les commandes du lundi au vendredi, au maximum dans les 48 heures après l'avoir reçue. Elle est expédiée par colissimo ou lettre suivie (selon le format du colis) et livrée en 72h."
+      shipping_fees_title: "Frais de port calculés au plus juste"
+      shipping_fees_body: "Nos frais de port tiennent compte du coût de préparation et d'expédition (celui facturé par La Poste selon le poids, le volume et la destination du colis). Pour les certificats de plantation d'arbres, le coût d'impression est intégré aux frais de port."
+      flexible_delivery_title: "Adresse de livraison flexible"
+      flexible_delivery_body: "Vous pouvez choisir l’adresse de livraison que vous souhaitez au moment de la commande. Si c’est un cadeau, nous pouvons ajouter un mot ou un papier cadeau. Il vous suffit alors de le préciser XXXXXDIRE A QUEL MOMENT"
+      returns_title: "Satisfait ou remboursé"
+      returns_body: "Si notre produit ne vous plaît pas, aucun souci ! Il doit bien sûr être en bon état et ne pas avoir été porté. Envoyez-nous un mail sur contact@conscients.com pour nous prévenir, ensuite vous avez 7 jours pour nous le renvoyer. De notre côté, nous vous rembourserons dans les 15 jours (mais sans les frais de port)."
+      exchange_title: "Echange gratuit"
+      exchange_body: "La taille n’est finalement pas bonne ? Envoyez nous un mail pour vérifier que nous avons la taille que vous voulez en stock (contact@conscients.com), si c’est le cas, vous avez 7 jours pour nous renvoyer l’article en bon état, dès sa réception, nous vous envoyons la taille qu’il vous faut (frais de port en plus)."
+      tree_planting_title: "Plantation d'arbres"
+      tree_planting_body: "TEXT TO DO"
+    terms:
+      terms_title: "Mentions légales & CGV"
+      legal_information_title: "Informations légales"
+      legal_information_body: "Editeur : 4U ABEL, SAS au capital de 55 000 €, immatriculée au R.C.S. de PARIS sous le n° 532 174 273 00013. N° TVA Intracommunautaire: FR25532174273. Siège social : 10 passage nationale – 75013 Paris. Directeur de la publication : Carole Piette - Contact : contact@conscients.com - Tél : 06 23 98 80 93"
+      conditions_use_title: "Conditions générales d'utilisation"
+      conditions_use_one_object_title: "1. Objet "
+      conditions_use_one_object_body: "Les présentes conditions générales d'utilisation ont pour objet de définir et de fixer les modalités dans lesquelles 4U ABEL met à votre disposition son site Internet www.conscients.com ainsi que les conditions dans lesquelles vous accédez et consulter ce site. "
+      conditions_use_two_personal_data_title: "2. Données personnelles "
+      conditions_use_two_personal_data_intro_p_one: "Conformément à l'article 15 de la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, le site a été déclaré auprès de la Commission nationale de l'informatique et des libertés. Numéros d'agrément CNIL : 1535649 v 0"
+      conditions_use_two_personal_data_intro_p_two: "Conformément à l'article 34 de la loi ' Informatique et Libertés ' N° 78-17 du 6 janvier 1978, vous disposez d'un droit d'accès, de modification, de rectification et de suppression des données qui vous concernent. Pour exercer de droit, vous pouver adresser un mail à contact@conscients.com ou écrire à 4U ABEL, Données personnelles, 10 passage nationale - 75013 Paris."
+      conditions_use_two_personal_data_use_collect: "2.1 Collecte et utilisation de données personnelles "
+      conditions_use_two_personal_data_use_collect_p_one: "Les données personnelles sont des informations qui, par un moyen direct ou indirect, permettent de désigner momentanément un utilisateur et de le rattacher éventuellement aux données collectées."
+      conditions_use_two_personal_data_use_collect_p_two: "D'une façon générale, vous pouvez visiter notre site sur Internet sans avoir à décliner votre identité et à fournir des informations personnelles vous concernant. Cependant, nous pouvons parfois vous demander des informations. Par exemple, pour traiter une commande, établir une correspondance, ou soumettre une candidature à un poste. Nous pouvons compléter ces informations pour conclure une transaction ou offrir un meilleur service. Dans ces cas vous êtes spécifiquement prévenu. Vous êtes alors informé du caractère obligatoire ou facultatif des informations que vous êtes invité à fournir ainsi que les personnes ou les organismes destinataires des informations."
+      conditions_use_two_personal_data_use_collect_p_three: "Les données personnelles peuvent être utilisées, par exemple, dans le cas d'une personnalisation du site. Les données personnelles collectées dans ces cas ne peuvent être vendues ou échangées qu’avec votre accord. Vous en êtes alors explicitement informé et votre consentement préalable est nécessaire."
+      conditions_use_two_personal_data_use_collect_p_four: "Lors de chaque collecte de renseignements, vous avez toujours la possibilité d'indiquer si vous désirez ou non recevoir des offres promotionnelles ou des informations, notamment les offres de produits, services et d'évènements de 4U ABEL. En outre, au fur et à mesure de la création de Newsletters, 4U ABEL se réserve le droit de vous contacter à propos de votre abonnement à celles-ci."
+      conditions_use_two_personal_data_use_collect_p_five: "Pour les services proposés par un tiers, via un lien disponible sur ce site, ce tiers est le seul responsable de la gestion et de la collecte de vos données personnelles que vous lui communiquerez à l'occasion de sa prestation. 4U ABEL ne collecte ni ne conserve les données fournies à cette occasion."
+      conditions_use_two_personal_data_use_collect_p_six: "Si vous diffusez volontairement une donnée personnelle dans des commentaires par exemple, vous êtes averti qu'elle peut être collectée par un tiers. Son utilisation ultérieure n'est alors en aucune façon soumise au contrôle de 4U ABEL qui décline toute responsabilité à cet égard."
+      conditions_use_two_personal_data_newsletter: "2.2 Publicité électronique "
+      conditions_use_two_personal_data_newsletter_body: "L'envoi de courrier électronique à des fins de publicité suppose que vous ayez exprimé votre accord préalable sauf concernant les données électroniques que 4U ABEL a obtenu directement dans le cadre d'une vente d'un produit ou d'un service, lorsque les publicités visent des produits et services analogues. Vous pouvez vous opposer sans frais à l'utilisation de ces coordonnées par courrier envoyé à l'adresse indiquée à l'article 2.1 ou par mail à contact@conscients.com"
+      conditions_use_two_personal_data_cookies: "2.3 Cookies "
+      conditions_use_two_personal_data_cookies_body: "Des informations non personnelles peuvent être automatiquement collectées par 4U ABEL au cours de la navigation sur le site par l'intermédiaire de 'cookies'. Les cookies sont de petits fichiers texte utilisés par un site Web pour reconnaître un utilisateur et ainsi faciliter et personnaliser son utilisation du site. Les cookies ne sont pas des programmes, ils ne peuvent en aucun cas et en aucune manière troubler ou endommager le système de l'internaute, ni détruire des fichiers ou altérer un programme. Ils sont utilisés, notamment pour obtenir des informations relatives aux pages consultées et aux dates et heures de consultation. 4U ABEL ne contrôle pas l'utilisation faite des cookies produits par des tiers, par exemple par des annonceurs, ou ceux résultant de l'usage de partie du site hébergé chez un tiers. Vous pouvez à tout moment vous prémunir de l'usage des cookies en utilisant les fonctions de votre logiciel de navigation. Toutefois il est rappelé que certaines fonctionnalités du site nécessitent impérativement l'utilisation de cookies (personnalisation, alerte, etc.)."
+      conditions_use_three_intellectual_property_title: "3. Propriété intellectuelle "
+      conditions_use_three_intellectual_property_titularite: "3.1 Titularité des droits "
+      conditions_use_three_intellectual_property_titularite_p_one: "Les éléments contenus sur le site tels que notamment le texte, le son, les images, la vidéo, la musique, les logiciels et les bases de données sont la propriété de 4U ABEL et/ou de ses partenaires. En vertu des règles relatives à la propriété intellectuelle, toute reproduction (y compris par téléchargement, impression etc), représentation, adaptation, traduction, transformation et/ou transfert vers un autre site d'un ou de plusieurs des éléments précités est interdite sans l'autorisation préalable et écrite de 4U ABEL et/ou du titulaire des droits. Toute utilisation non autorisée de ce contenu constitue un délit de contrefaçon et peut donner lieu à des poursuites judiciaires civiles et/ou pénales et au paiement de dommages et intérêts."
+      conditions_use_three_intellectual_property_titularite_p_two: "L'ensemble de ce site relève des législations française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents iconographiques et photographiques. Par conséquent, aucune de ces informations ne peut être reproduite, modifiée, rediffusée, traduite, exploitée commercialement ou réutilisée de quelque manière que ce soit sans l'accord préalable écrit de 4U ABEL."
+      conditions_use_three_intellectual_property_titularite_p_three: "Les marques de 4U ABEL et de ses partenaires, y compris les logos figurant sur le site sont des marques déposées, protégées à ce titre par le droit de la propriété industrielle (article L 713-2 du Code de la Propriété Intellectuelle et s.). Sauf autorisation expresse et préalable de leurs propriétaires, l'utilisation de ces marques ou logos est prohibée. Toute utilisation non autorisée d'une marque ou d'un logo protégé constitue un délit de contrefaçon et peut être poursuivi devant les autorités judiciaires."
+      conditions_use_three_intellectual_links: "3.2 Liens hypertextes "
+      conditions_use_three_intellectual_links_intro: "Quelque soit le type de lien établi à partir d'un site Internet extérieur, dit ' Site Liant ', vers celui de 4U ABEL cette dernière se réserve le droit de s'opposer à son établissement. En outre, il est rappelé qu'aucune reproduction d'éléments du site Internet de 4U ABEL n'est autorisée."
+      conditions_use_three_intellectual_links_simple_subtitle: "3.2.1 : Liens hypertextes simples "
+      conditions_use_three_intellectual_links_simple_body: "Le lien hypertexte simple se définit comme un lien donnant seulement accès à la page d'accueil du site de www.conscients.com. A l'exception des cas où le Site Liant diffuserait des informations et/ou contenus ayant un caractère illégal et/ ou à caractère politique, religieux, pornographique ou xénophobe, il est possible de créer un lien simple d'un site quelconque vers le site de www.conscients.com à condition d'en avertir préalablement 4U ABEL par le biais d'un courriel adressé à contact@conscients.com"
+      conditions_use_three_intellectual_links_framing_subtitle: "3.2.2 : Liens hypertextes profonds et transclusion "
+      conditions_use_three_intellectual_links_framing_body: "Le lien hypertexte profond se définit comme un lien donnant accès à une page du site de 4U ABEL sans passer par sa page d'accueil. La transclusion permet d'accéder à une partie du site de 4U ABEL en la faisant apparaître dans un cadre du Site Liant (il s'agit de la technique dite du 'framing') ou en donnant un accès direct à une ou plusieurs oeuvre(s) (photos, son, texte, vidéo, etc…) comme l'écoute d'un son, le visionnage d'une image ou d'une vidéo. Tout établissement de lien hypertexte profond ainsi que toute transclusion, quelqu'en soit la forme, sont interdits à moins que 4U ABEL ne l'autorise expressément et par écrit. Enfin, le lien hypertexte ne doit, en aucune façon, permettre de mettre en place un système facilitant l'envoi massif de messages, tel qu'un message pré-rédigé adressé à une adresse mail liée au site de 4U ABEL."
+      conditions_use_three_intellectual_links_outbound_subtitle: "3.2.3 Liens hypertextes depuis le site de 4U ABEL"
+      conditions_use_three_intellectual_links_outbound_body: "Des liens hypertextes contenus sur le site peuvent renvoyer vers d'autres sites web. Votre visite sur ces sites s'effectue sous votre seule responsabilité. 4U ABEL ne peut être tenue pour responsable de vous avoir proposé ce lien hypertexte et des contenus figurant sur ces sites. Vous ne pouvez en aucun cas engager la responsabilité de 4U ABEL pour des dommages directs ou indirects subis du fait de l'utilisation d'un site tiers accessible à partir du site www.conscients.com."
+      conditions_use_four_liability_title: "4. Responsabilité "
+      conditions_use_four_liability_content: "4.1 Contenu éditorial "
+      conditions_use_four_liability_content_body: "Vous reconnaissez accepter que le site de 4U ABEL puisse présenter certaines inexactitudes quant à son contenu. La responsabilité de 4U ABEL ne saurait être retenue en raison d'un dommage direct ou indirect, incident ou accessoire, résultant de l'utilisation du site ou d'une quelconque information obtenue sur le site. Enfin, 4U ABEL ne saurait être tenue pour responsable si des idées ou images contenues sur le site heurtaient certaines personnes particulièrement sensibles."
+      conditions_use_four_liability_access: "4.2 Accès au site "
+      conditions_use_four_liability_access_body: "Le site de 4U ABEL est accessible 24 heures sur 24. Toutefois 4U ABEL ne peut voir sa responsabilité engagée en raison d'une impossibilité technique de connexion, que celle-ci soit due à un cas de force majeure, à une opération de maintenance, à une mise à jour éditoriale, à une grève interne ou externe, à une panne de réseau ou à une coupure EDF, à une mauvaise configuration ou utilisation de l'ordinateur de l'utilisateur ou à toute autre cause dépendant ou non de sa volonté. De même le taux et le temps de transfert des données du serveur de 4U ABEL vers le réseau Internet ne sont pas garantis par 4U ABEL. 4U ABEL ne garantit pas que le serveur et le site soient exempts de virus. Ainsi, 4U ABEL ne peut être tenue pour responsable en cas de contamination par un virus de votre matériel informatique."
+      conditions_use_four_liability_download: "4.3 Téléchargement "
+      conditions_use_four_liability_download_body: "L'écoute et le téléchargement d'un document audio, quand celui-ci est expressément autorisé, sont effectués par vos soins. Vous vous engagez à utiliser ce document à des fins strictement personnelles et supportez ainsi les risques liés à son utilisation. 4U ABEL ne saurait voir sa responsabilité engagée, quelque soit le fondement de responsabilité invoqué, de tout dommage direct ou indirect, incident, accessoire ou spécial, y compris mais non limitativement, de tout dommage résultant d'un arrêt d'utilisation, de la perte de données et informations affectant votre ordinateur et résultant d'un téléchargement d’un document. La responsabilité technique du stockage et de la diffusion de fichiers audio téléchargeables ainsi que la responsabilité technique de la mise en oeuvre et du fonctionnement du logiciel d'exploitation de ces fichiers est assurée par le prestataire technique de 4U ABEL Ainsi, la responsabilité financière et juridique résultant des téléchargements relève du domaine exclusif de ce prestataire."
+      conditions_use_five_warning_title: "5. Avertissement "
+      conditions_use_five_warning_p_one: "4U ABEL se réserve la possibilité de limiter ou supprimer l'accès d’un utilisateur à ses services nécessitant un identifiant dans le cas du non-respect de ces conditions générales ou dans le cas de plainte déposé à son encontre. 4U ABEL se réserve la faculté de supprimer l'accès à son site à l'utilisateur qui :"
+      conditions_use_five_warning_p_two: "- diffuse sur le site des messages de nature publicitaire ou promotionnelle, contraires à l'ordre public ou aux bonnes moeurs, violents, racistes, révisionnistes, faisant l'apologie des crimes de guerre, injurieux ou grossiers, contraires aux droits d'auteur ou droits voisins, au droit applicable aux bases de données, au droit des marques, au droit à l'image, au droit au respect de la vie privée ou qui enfreindraient toute autre disposition législative ou réglementaire en vigueur;"
+      conditions_use_five_warning_p_three: "- génère une surcharge du serveur, notamment en utilisant le site pour l'envoi de publicité non sollicitée."
+      conditions_use_five_warning_p_four: "La nullité, d'une ou plusieurs dispositions prévues dans les conditions générales d'utilisation, prononcée par une décision de justice n'entraîne pas la nullité des autres dispositions."
+      conditions_use_six_law_title: "6. Compétence juridictionnelle et loi applicable "
+      conditions_use_six_law_body: "Les présentes conditions d'utilisation sont soumises à la loi française. Toute difficulté d'interprétation ou d'exécution relève exclusivement des juridictions françaises compétentes. En cas de litige entre un utilisateur et 4U ABEL, le tribunal de commerce de Paris sera seul compétent."
+      conditions_sales_title: "Conditions générales de vente"
+      conditions_sales_preamble_title: "Préambule"
+      conditions_sales_preamble_p_one: "4U ABEL est une société par actions simplifiée de droit français dont le siège social est situé au 10 passage nationale 75013 Paris – France et enregistrée au Greffe du Tribunal de Commerce de Paris sous le numéro RCS 532 174 273 00013, ci-après dénommée ' 4U ABEL '. 4U ABEL est propriétaire de la marque ' Conscients '."
+      conditions_sales_preamble_p_two: "Les articles suivants définissent les conditions générales de vente et de prestation de service de la société 4U ABEL dans le cadre de son site Internet www.conscients.com. Les présentes conditions générales de vente sont en permanence accessibles dans des formats informatiques permettant leur impression et/ou leur téléchargement, de manière à pouvoir procéder à leur reproduction ou à leur sauvegarde. Toute reproduction, intégrale ou partielle, est systématiquement soumise à l'autorisation des propriétaires."
+      conditions_sales_preamble_p_three: ""
+      conditions_sales_contract_title: "1. Acceptation des conditions"
+      conditions_sales_contract_body: "Le client reconnaît avoir pris connaissance, au moment de la passation de commande, des conditions générales de vente énoncées sur cet écran et déclare expressément les accepter sans réserve. Les présentes conditions générales de vente régissent les relations contractuelles entre 4U ABEL et son client dans le cadre d'un achat sur le site www.conscients.com, les deux parties les acceptant sans réserve. Elles couvrent toutes les étapes nécessaires à la passation de commande, le paiement, le suivi et la livraison. Ces conditions générales de vente prévaudront sur toutes autres conditions figurant dans tout autre document, sauf dérogation préalable, expresse et écrite. Si une condition venait à faire défaut, elle serait considérée être régie par les usages en vigueur dans le secteur de la vente à distance dont les sociétés ont siège en France. La société 4U ABEL s'engage à respecter toutes les dispositions du Code de la Consommation relatives à la vente à distance. 4U ABEL peut à tout moment et sans préavis modifier les présentes conditions générales, les modifications étant alors applicables uniquement aux commandes effectuées postérieurement à leur date de mise en œuvre."
+      conditions_sales_product_title: "2. Produits"
+      conditions_sales_product_body: "Les photographies, textes, graphismes, ainsi que toutes les informations et caractéristiques illustrant et/ou accompagnant les produits, n'entrent pas dans le champ contractuel. En conséquence, en cas d'erreur ou d'omission d'un quelconque de ces éléments ou en cas de modification desdits éléments, la responsabilité de 4U ABEL ne pourrait être engagée. L'acheteur demeure seul juge de la compatibilité des produits commandés avec les matériels de présentation d'ores et déjà en sa possession."
+      conditions_sales_order_title: "3. Commande"
+      conditions_sales_order_body: "Les systèmes d'enregistrement automatique sont considérés comme valant preuve, de la nature, du contenu et de la date de la commande. Les produits mis en vente sur le site www.conscients.com sont assortis d'un descriptif. Le client souhaitant acheter un de ces produits l'ajoute à son panier d'achat en cliquant sur le bouton ' Ajouter au panier '. Il est alors dirigé vers son panier. Il dispose à ce stade de la possibilité de supprimer tout ou partie des articles de son panier d'achat et par voie de conséquence dans le récapitulatif, et a la possibilité de revenir à son panier d'achat sans valider la commande. Pour finaliser sa commande, il doit cliquer sur le bouton ' Finaliser ma commande ' qui figure sous son panier d'achats. Si le client ne s’était pas identifié au préalable, il est dirigé vers une page d’identification. S’il possède déjà un compte, il peut alors s’identifier en renseignant son adresse email et son mot de passe. Sinon, il doit créer son compte. Une fois identifié, le client doit saisir ses coordonnées de facturation et de livraison, confirmer la livraison et renseigner son mode de paiement. Il accède alors à une page lui proposant un récapitulatif de tous les articles figurant dans sa prochaine commande. Si le récapitulatif contenant les prix des produits et les frais de livraison tels qu'annoncés par ailleurs sur le site www.conscients.com lui conviennent, le client peut procéder au paiement sécurisé en cliquant sur le bouton ' Valider mon paiement ', qui le dirigera sur le serveur sécurisé dudit établissement bancaire. Les coordonnées bancaires de l'acheteur ne sont donc à aucun moment en possession de la société 4U ABEL; leur conservation et le maintien de leur intégrité relève donc de la responsabilité de l'établissement bancaire. La validation du paiement par l'acheteur sur le serveur sécurisé de l'établissement bancaire confirme la commande. La vente est réputée conclue au moment du débit du compte du client pour les paiements par cartes de paiement. 4U ABEL confirme l'acceptation de sa commande au client par un courrier électronique adressé à l'adresse mail que celui-ci aura communiqué, en rappelant notamment le détail des articles commandés, le prix total TTC incluant le montant des frais de livraison, et les délais de livraison envisagés. 4U ABEL se réserve le droit d'annuler toute commande d'un client avec lequel subsisterait un litige, relatif notamment au paiement d'une commande antérieure. Par ailleurs, les informations énoncées par l'acheteur, lors de la prise de commande engagent celui-ci : en cas d'erreur dans le libellé des coordonnées du destinataire, 4U ABEL ne saurait être tenu responsable de l'impossibilité dans laquelle il pourrait être de livrer le produit."
+      conditions_sales_delivery_title: "4. Livraison"
+      conditions_sales_delivery_p_one: "Les livraisons à destination de la France Métropolitaine y compris la Corse, de Monaco, d'Andorre et du Secteur Postal 69000 sont effectuées par La Poste en Colissimo ou Lettre Suivie (selon le poids et le volume du colis). Les livraisons à destination des DOM (Départements d'Outre Mer – Guadeloupe, Guyane, Martinique, Réunion), des TOM (Territoires d'Outre Mer – Nouvelle Calédonie, Polynésie Française, Wallis et Futuna, Terres Australes et Antarctiques Françaises), des Collectivités territoriales (Mayotte, Saint-Pierre-et-Miquelon) et hors de France sont effectuées par La Poste en Colissimo International ou en Lettre suivie internationale (selon le poids et le volume du colis). Toutes les informations relatives aux conditions de livraisons des services Colissimo et Lettre Suivie sont disponibles sur le site web de La Poste."
+      conditions_sales_delivery_p_two: "Apres confirmation de la commande, 4U ABEL s'engage à déposer auprès de son transporteur (La Poste, ou tout autre transporteur le cas échéant) le ou les colis contenant les différents articles commandés par l'acheteur, et ce dans un délai maximum de 7 jours ouvrés. La Poste, ou tout autre transporteur, s'engage par contrat avec 4U ABEL à livrer la commande à l'adresse de l'acheteur fournie par 4U ABEL. 4U ABEL ne peut être tenue responsable d’un retard de livraison du à son transporteur. Les produits achetés sont livrés à l'adresse de livraison fournie par le client lors de sa commande en ligne ou hors-ligne. Dans le cas où l'adresse de livraison est différente de l'adresse de facturation, il convient pour le client d'indiquer ces deux adresses distinctes dans la rubrique prévue à cet effet, lors de la commande. Il appartient de même au client de fournir toutes informations utiles à la livraison lors de sa commande afin de permettre au transporteur de procéder à la livraison. En cas d'informations erronées ou incomplètes ayant entraîné l'impossibilité pour le transporteur de procéder à la livraison, une seconde livraison sera effectuée après le retour par le transporteur de la marchandise à la société 4U ABEL ceci moyennant le versement préalable du montant de nouveaux frais de port de la part du client. Pour les livraisons hors de la France métropolitaine le client s'engage à régler toutes les taxes dues a l'importation de produits, droit de douane, taxe sur la valeur ajoutée, et toutes autres taxes dues en vertu des lois du pays de réception de la commande."
+      conditions_sales_delivery_p_three: "Toutes les commandes passées à 4U ABEL par l'intermédiaire du site www.conscients.com sont destinées à l'usage personnel des clients. Les clients ou les destinataires des produits s'interdisent toute revente partielle ou totale des produits. 4U ABEL  se dégage de fait de toute responsabilité juridique si l'acquittement des taxes n'était pas effectué par le client. Les retards éventuels de livraison ne donnent pas le droit à l'acheteur de réclamer des dommages et intérêts. En cas de défauts apparents, l'acheteur bénéficie du droit de retour dans les conditions prévues dans ces conditions générales de ventes. Sont considérés comme cas de force majeure déchargeant le vendeur de son obligation de livrer, la guerre, l'émeute, l'incendie, les grèves, les accidents et l'impossibilité d'être approvisionné. Les marchandises voyagent toujours aux risques et périls du destinataire. Le client est tenu de toujours vérifier son colis à l'arrivée. Le client dispose d'un délai de 48 heures pour faire d'éventuelles réserves auprès du transporteur en cas de manquant ou de dégradation. Pour des raisons de disponibilité, une commande peut être livrée en plusieurs fois au client. Le client ne règle alors qu'une seule fois les frais de port. Si le client souhaite deux lieux de livraison différents, il passe alors deux commandes, et paye les frais de livraison pour deux commandes distinctes. Le colis est déposé sans signature dans la boîte à lettres du destinataire. Si la boîte à lettres ne peut contenir le colis, un avis de passage y est déposé. Il avis indique les coordonnées du Bureau de Poste où le destinataire pourra retirer l'envoi. La durée de mise en instance est de 15 jours consécutifs. Au-delà de ce délai, le colis est retourné à l'expéditeur. Il ne pourra alors être expédié de nouveau qu’après le règlement par le client de nouveaux frais de port. Dans le cas d'envois en Colissimo International une nouvelle présentation chez le destinataire peut être effectuée selon les opérateurs postaux des pays de destination. En cas de refus de la livraison par le client, celui-ci sera remboursé du montant de sa commande déduction faite des frais de port."
+      conditions_sales_delivery_p_four: "Retard- perte : Le transporteur s'engage sur des délais de livraison et est donc seul responsable de leur observation. En cas de non-respect de ces délais, il convient pour le client de prendre directement contact, dans un premier temps, avec le transporteur concerné afin de vérifier que les produits commandés ne font pas l'objet d'une mise en instance. En cas de retard ou de difficulté pour localiser les produits commandés, le client peut contacter la société 4U ABEL en envoyant un courrier électronique à l'adresse contact@conscients.com qui fera le nécessaire afin de tenter de localiser le colis éventuellement égaré par le transporteur. En pareille hypothèse, la société 4U ABEL est dépendante des délais imposés par les transporteurs concernant la déclaration de perte et le remboursement de l'envoi. Aucun remboursement du client ne pourra donc avoir lieu avant que le transporteur n'ait déclaré égarés les produits commandés. Sitôt la déclaration de perte effectuée par le transporteur, la société 4U ABEL procédera au remboursement, à l’échange d'article ou à la remise de bons d'achat au client."
+      conditions_sales_cancellation_title: "5. Rétractation"
+      conditions_sales_cancellation_p_one: "Le client dispose d'un délai de rétractation lui permettant de retourner à ses frais son achat à 4U ABEL pour échange ou remboursement dans un délai de sept jours francs à compter de la livraison de sa commande, en application des dispositions des articles L 121-16 et suivants du Code de la consommation. Si ce délai expire normalement un samedi, un dimanche ou un jour férié ou chômé, il est prorogé jusqu'au premier jour ouvrable suivant. "
+      conditions_sales_cancellation_p_two: "Cet échange ou remboursement s’effectuera sans pénalités, à l’exception des frais de retour. Le client doit impérativement faire part préalablement de son intention de retourner le colis dans le cadre de l'exercice de son droit de rétractation par mail à contact@conscients.com . Les produits livrés doivent être retournés en parfait état de revente, intacts, dans leur emballage d'origine, aux frais du client et sous sa responsabilité, à charge pour lui de procéder à l'assurance du transport, à l'adresse suivante : 4U ABEL, 10 passage nationale 75013 Paris. "
+      conditions_sales_cancellation_p_three: "Sous réserve du respect des dispositions ci-dessus, la société 4U ABEL procédera au remboursement des produits commandés pour le montant porté sur le bon de commande, hors frais de port, dans les 15 jours suivant la réception des produits."
+      conditions_sales_cancellation_p_four: ""
+      conditions_sales_price_title: "6. Prix"
+      conditions_sales_price_p_one: "Sur le site www.conscients.com, les prix sont exprimés en euros et toutes taxes comprises. Les prix indiqués sur les fiches des produits ne comprennent pas la participation aux frais de port. Le prix indiqué lors de la confirmation de commande est le prix définitif, exprimé toutes taxes comprises et incluant en particulier la TVA pour la France et les pays de l’Union Européenne. Ce prix comprend le prix des produits, les frais de manutention, d'emballage et de conservation des produits, ainsi que la participation aux frais de transport. Il est payable au comptant le jour de la commande effective."
+      conditions_sales_price_p_two: ""
+      conditions_sales_price_p_three: ""
+      conditions_sales_payment: "7. Paiement"
+      conditions_sales_payment_body: "L'acheteur déclare expressément disposer de toutes les autorisations nécessaires aux fins d'utilisation du mode de paiement qu'il a choisi au moment de la validation de sa commande. Il s'engage en outre à s'assurer de sa solvabilité avant toute commande. La société 4U ABEL se ménage la possibilité de suspendre ou d'annuler toute commande ou livraison en cas de refus de délivrance d'autorisation de paiement de la part des organismes financiers interrogés, selon le mode de paiement choisi par l'acheteur. L'acheteur est en outre prévenu que la société 4U ABEL peut procéder à l'analyse et/ou à la vérification des commandes passées afin de se prémunir contre d'éventuelles fraudes, et dans ce cadre, elle se réserve la possibilité de demander au client tout justificatif qu'elle jugerait utile. Elle se réserve à l'issue de cette procédure la possibilité de suspendre ou d'annuler toute commande ou livraison, même en cas d'autorisation de paiement délivré par les organismes financiers concernés, dans les cas où cette analyse et/ou ces vérifications donneraient à penser que ladite commande est passée en fraude des droits d'un tiers. Elle ne saurait en outre supporter aucune responsabilité en cas de malversation ou d'utilisation frauduleuse d'un quelconque moyen de paiement qui n'aurait pas été détecté par cette procédure d'analyse et/ou de vérification. Le paiement s'effectue par virement bancaire, paypal ou carte bancaire portant le sigle CB, Visa ou Mastercard. Le numéro de carte bancaire du client est donc dirigé vers le site paypal. La commande validée par le client ne sera considérée effective que lorsque les centres de paiement bancaire concernés auront donné leur accord. En cas de refus desdits centres, la commande sera automatiquement annulée et le client prévenu par courrier électronique. Par ailleurs, 4U ABEL se réserve le droit de refuser toute commande d'un client avec lequel existerait un litige."
+      conditions_sales_disputes_title: "8. Litiges"
+      conditions_sales_disputes_body: "Le présent contrat est soumis au droit français. 4U ABEL ne peut être tenu pour responsable des dommages de toute nature, tant matériels qu'immatériels ou corporels, qui pourraient résulter d'un mauvais fonctionnement ou de la mauvaise utilisation des produits commercialisés. Il en est de même pour les éventuelles modifications des produits résultant des fabricants. La responsabilité de 4U ABEL sera, en tout état de cause, limitée au montant de la commande et ne saurait être mise en cause pour de simples erreurs ou omissions qui auraient pu subsister malgré toutes les précautions prises dans la présentation des produits. En cas de difficultés dans l'application du présent contrat, l'acheteur a la possibilité, avant toute action en justice, de rechercher une solution amiable notamment avec l'aide : d'une association professionnelle de la branche, d'une association de consommateurs ou de tout autre conseil de son choix. Il est rappelé que la recherche de la solution amiable n'interrompt pas le ' bref délai ' de la garantie légale, ni la durée de la garantie contractuelle. Il est rappelé qu'en règle générale et sous réserve de l'appréciation des Tribunaux, le respect des dispositions du présent contrat relatives à la garantie contractuelle suppose que l'acheteur honore ses engagements financiers envers le vendeur. En cas de litige, le client s'adressera par priorité à l'entreprise pour obtenir une solution amiable. A défaut, le Tribunal de Commerce de Paris est seul compétent, quels que soient le lieu de livraison et le mode de paiement acceptés."
+      conditions_sales_guarantee_title: "9. Garantie"
+      conditions_sales_guarantee_body: "En cas de produit défectueux ou d'erreur de livraison, le client pourra demander à ce que le produit soit échangé. Il devra pour cela avertir la société 4U ABEL par courrier électronique à l'adresse contact@conscients.com et retourner à ses frais dans un premier temps le(s) article(s) en parfait état de revente, intact et dans son (leur) emballage d'origine. Après constatation du défaut, 4U ABEL procèdera au remboursement des frais engagés, sous réserve de la présentation d’un justificatif. Les dégradations entraînées par une mauvaise utilisation du produit ou par une cause extérieure (telle que le non respect des conditions de lavage) ne sauraient donner lieu à garantie. Les dispositions du présent article ne sauraient priver le consommateur de la garantie légale décrite à l'article L 211-1 du Code de la consommation. Dans tous les cas 4U ABEL ne pourra être tenu responsable du non respect des dispositions réglementaires et législatives en vigueur dans le pays de réception. La responsabilité de 4U ABEL est systématiquement limitée à la valeur du produit mis en cause, à sa date de vente, et ce sans possibilité de recours envers la marque ou la société productrice du produit. En toute hypothèse, le client bénéficie de la garantie légale d'éviction et des vices cachés (Art.1625 et suivants du Code Civil). A la condition que l'acheteur fasse la preuve du défaut caché, le vendeur doit légalement en réparer toutes les conséquences (art.1641 et suivants du code civil) ; si l'acheteur s'adresse aux tribunaux, il doit le faire dans un ' bref délai ' à compter de la découverte du défaut caché (art.1648 du Code Civil)."
+      conditions_sales_legal_infos_title: "10. Informations légales"
+      conditions_sales_legal_infos_body: "Le renseignement des informations nominatives collectées aux fins de la vente à distance est obligatoire, ces informations étant indispensables pour le traitement et l'acheminement des commandes, l'établissement des factures et contrats de garantie. Le défaut de renseignement entraîne la non validation de la commande. Conformément à la loi ' Informatique et Libertés ', le traitement des informations nominatives relatives aux clients a fait l'objet d'une déclaration auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL). Le client dispose (article 34 de la loi du 6 janvier 1978) d'un droit d'accès, de modification, de rectification et de suppression des données qui le concernent, qu'il peut exercer auprès de 4U ABEL . De plus, 4U ABEL s'engage à ne pas communiquer, gratuitement ou avec contrepartie, les coordonnées de ses clients à un tiers, sauf en cas d’accord explicite des clients."
+      conditions_sales_jurisdiction_title: "11. Force majeure - Loi applicable"
+      conditions_sales_jurisdiction_body: "Les obligations réciproques résultant des présentes conditions générales sont susceptibles d'être suspendues en cas de survenance d'un cas fortuit ou de force majeure. Seront notamment considérés comme tels ceux habituellement retenus par la jurisprudence des Cours et tribunaux français. Les présentes conditions générales sont soumises à la loi française en ce qui concerne les règles de fond comme les règles de forme. Tout litige devra faire l'objet d'une tentative de règlement amiable comme précisé à l'article 8."
+      copyright: "Tous droits de reproduction et de représentation réservés. © 2018 4U ABEL"
+    faq:
+      faq_title: "FAQ"
+      faq_q_one_title: "Question 1"
+      faq_q_one_body: "Text text text text text text text text text text text text text text text text"
+      faq_q_two_title: "Question 2"
+      faq_q_two_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_three_title: "Question 3"
+      faq_q_three_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_four_title: "Question 4"
+      faq_q_four_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_five_title: "Question 5"
+      faq_q_five_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_six_title: "Question 6"
+      faq_q_six_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_seven_title: "Question 7"
+      faq_q_seven_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_eight_title: "Question 8"
+      faq_q_eight_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_nine_title: "Question 9"
+      faq_q_nine_body: "Text text text text text text text text text text text text text text text text "
+      faq_q_ten_title: "Question 10"
+      faq_q_ten_body: "Text text text text text text text text text text text text text text text text "
+    breadcrumb:
+      about: 'A propos'
+      contact: 'Contact'
+      faq: 'FAQ'
+      participate: 'B2B'
+      payment_shipping: 'Paiements, Livraison, Retours'
+      site_map: 'Plan du site'
+      terms: 'Mentions légales et CGV'
+  products:
+    index:
+      no_product: "Aucun produit ne répond à ces critères"
+    product:
+      see_product: "Voir"
+      read_more: "En savoir plus"
+      back_to_top: "Retour haut de page"
+      car_max_message: "110 caractères max"
+      social_share: "Partager sur "
+    carousel:
+      next: "Suivant"
+      previous: "Précédent"
+    filters:
+      category: "Catégorie"
+      variant: "Age"
+      back_to_everything: "Tous les âges"
+    added_to_cart_modal:
+      tree_added_with_recipient: "Un arbre pour %{recipient} a été ajouté au panier."
+      product_added_with_recipient: "Un produit pour %{recipient} a été ajouté au panier."
+      tree_added: "Un arbre a été ajouté au panier."
+      product_added: "Produit ajouté au panier."
+      go_to_cart: "Valider mon panier"
+      plant_more_trees: "Planter d'autres arbres !"
+      continue_purchases: "Poursuivre mes achats"
+  invoices:
+    new:
+      order: "Facture"
+      delivered_to: "Commande livrée à :"
+      delivery_address: "Adresse de livraison"
+      billing_address: "Adresse de facturation"
+      product_name: "Produit"
+      quantity: "Quantité commandée"
+      price: "Prix HT"
+      total_price_ht: "Total HT des produits"
+      total_price_ht_all_included: "Total HT"
+      total_vat: "TVA totale"
+      delivery_fees_ht: "Frais de livraison HT"
+      coupon_discount_ht: "Réduction HT"
+      total_price: "Prix total"
+  blog_posts:
+    index:
+      journal: 'Journal'
+    show:
+      journal: 'Journal'
+  certificates:
+    new:
+      tree_quantity:
+        one: "1 arbre"
+        other: "%{count} arbres"
+      project_name: "Projet: %{project_name}"
+      project_type: "Type: %{project_type}"
+      project_partner: "Partenaire: %{project_partner}"
+      plantation_uuid: "Parcelle: %{plantation_uuid}"
+      coordinates: "GPS Lat: %{lat} - Long: %{long}"
+      tree_specie: "Espèce: %{tree_specie}"
+      tree_producer: "Producteur: %{tree_producer}"
+  clients:
+    show:
+      my_account: "Mon compte"
+      profile: "profil"
+      orders_list: "commandes"
+      impact: "empreinte"
+    profile:
+      my_account: "Mon compte"
+      client_email: "Identifiant: %{email}"
+      my_addresses: "Mes adresses"
+      address_type: "Adresse %{type}"
+      postal_address_type: "Adresse de %{type}"
+      edit_password: "Changer mon mot de passe"
+    orders_list:
+      date: "Date de la commande"
+      amount: "Montant"
+      invoice: "Facture"
+      certificates: "Certificats"
+      state: "Statut"
+    impact:
+      trees_planted_amount: "%{quantity} arbres plantés"
+      trees_planted: "arbres plantés"
+      tonnes_of_co2: "tonnes de Co2 compensées"
+      tree_species: "Espèces d'arbres plantées"
+  admin:
+    blog_posts:
+      navlinks:
+        index: "Aller à la liste des articles"
+        new: "Créer un article"
+        edit: "Modifier article"
+        destroy: "Détruire article"
+        confirm: "Êtes-vous sûr?"
+        show: "Montrer article"
+        admin: "Se rendre dans l'interface administrateur"
+      edit:
+        title: "Modifier article"
+      index:
+        title: "Liste des articles"
+        links: "Liens"
+        show: "Montrer article"
+        edit: "Modifier article"
+        destroy: "Détruire article"
+        confirm: "Êtes-vous sûr?"
+        no_blog_posts: "Pas d'articles"
+      new:
+        title: "Créer un article"
+  checkout:
+    carts:
+      show:
+        cart: "Panier"
+        empty_cart: "Panier vide"
+        selection: "Sélection"
+        quantity: "Qté"
+        personalized_product: "Personnalisation"
+        tot_price: "Tot"
+        total_price: "Total"
+        without_delivery_fees: "Ce prix n'inclut pas les frais de port"
+        validate: "Valider"
+        continue_purchases: "Poursuivre mes achats"
+      breadcrumb:
+        cart: "Panier"
+    deliveries:
+      top_description:
+        title: "Livraison"
+        address: "Adresse pour l'envoi du certificat"
+        email: "Email pour l'envoi du certificat"
+        description: "Vous pouvez renseigner l'email de la personne à qui envoyer le certificat dans le récupitulatif à droite."
+        description_details: "(Vous recevrez une copie de l'email pour télécharger le certificat)"
+        go_to_postal_delivery: "TOP DES Vous aimeriez une impression et un envoi postal ? (Frais d'impression et de port en sus)"
+        go_to_postal_delivery_link: "TOP DES Oui, je souhaite un envoi postal"
+        description_postal_delivery: "TOP Indiquez nous ici l'adresse de livraison. Les frais de port seront calculés en fonction du poids et de la destination."
+        go_to_email_delivery_link: "Non, retour à l'envoi par email uniquement"
+        description_email_delivery: "Le certificat vous sera envoyé par email à l'adresse ci-dessous"
+        description_email_delivery_details: "(vous le retrouverez également dans votre compte). Si vous souhaitez que nous envoyions aussi le certificat à son destinataire, vous pouvez renseigner son email dans le tableau à droite."
+      line_items_table:
+        selection: "Sélection"
+        quantity: "Quantité"
+        qty: "Qté"
+        delivery: "Destinataire"
+        total_price: "Total"
+        tot: "Tot"
+      breadcrumb:
+        cart: "Panier"
+        delivery: "Livraison"
+      delivery_form:
+        my_cart: "Mon panier"
+        email: "Email de livraison"
+        description_email_delivery: "Vous recevrez votre certificat par email à l'adresse ci-dessous (vous le retrouverez également dans votre compte). "
+        description_email_delivery_details: "Si vous souhaitez que nous envoyions aussi le certificat à son destinataire, vous pouvez renseigner son email dans le tableau « Mon panier »."
+        description_email_delivery_details_phone: "Si vous renseignez l'email du destinataire, nous lui enverrons également le certificat par email (optionnel)."
+        description_postal_delivery: "Indiquez nous ici l'adresse de livraison. Les frais de port seront calculés en fonction du poids et de la destination."
+        go_to_email_delivery_link: "Non, retour à l'envoi par email uniquement"
+        go_to_postal_delivery: "OLD"
+        go_to_postal_delivery_link: "Je souhaite aussi un envoi postal (Frais d'impression et de port en sus)"
+        total_price: "Prix total"
+        sub_total: "Sous total"
+        without_delivery_fees: "(frais de port exclus, calculés à l'écran suivant)"
+        delivery_is_billing: "Utiliser l'adresse de livraison comme adresse de facturation"
+        go_to_payment: "Passer au paiement"
+        general_sales_conditions: "J'ai lu les conditions générales de ventes et j'y adhère sans réserve"
+        delivery_address: "Adresse de livraison"
+        billing_address: "Addresse de facturation"
+        customer_note: "Souhaitez-vous nous addresser un message?"
+        recipient_message: "C'est un cadeau? Ecrivez un mot que nous rajouterons au colis"
+        from_discount: "reduction"
+      add_coupon:
+        coupon_name: "Nom du bon de réduction"
+        add_coupon: "Appliquer"
+    payments:
+      breadcrumb:
+        cart: "Panier"
+        delivery: "Livraison"
+        payment: "Paiement"
+      new:
+        title: "Paiement"
+        my_cart: "Mon panier"
+        coupon_label: "Bon de réduction"
+        addresses: "Adresses"
+        billing: "Facturé à :"
+        delivery: "Distribué à: "
+      show:
+        go_to_client_space: "Retrouvez toutes les informations liées à votre commande sur votre compte"
+        order_confirmed: "Merci !"
+        order_validation: "Votre commande a été validée."
+        order_received: "Votre commande a bien été reçue."
+        email_coming: "Vous recevrez bientôt un email de confirmation avec la facture."
+        bank_transfer_instructions: "Elle sera expédiée dès réception de votre virement de %{amount} € au compte bancaire ci-dessous."
+        domiciliation: "Domiciliation"
+        account_owner : "Titulaire du compte"
+        rib: "RIB - Identifiant national de compte bancaire"
+        iban: "IBAN - Identifiant international de compte bancaire"
+        bank: "Banque"
+        counter: "Guichet"
+        account_number: "N° Compte"
+        key: "Clé"
+        currency: "Devise"
+        contact_us: "N'hésitez pas à nous contacter pour toute question !"
+      address:
+        certificates_delivered_by_email: "Les certificats seront également envoyés aux email de leurs destinataires"
+      payment_buttons:
+        select_payment_method: "Mode de paiement"
+        select_payment_method_details: "Sélectionnez parmi les modes de paiements proposés :"
+        bank_transfer: "Virement"
+      stripe_button:
+        card: "CB"
+      line_items_table:
+        selection: "Sélection"
+        quantity: "Quantité"
+        delivery: "Livraison"
+        total_price: "Total"
+      add_coupon:
+        coupon_name: "Code"
+        add_coupon: "Appliquer"
+      price:
+        sub_total: "Sous total"
+        total_price: "Prix total"
+        from_discount: "reduction"
+        delivery_fees: "Préparation & livraison"
+  client_mailer:
+    bank_account_details:
+      subject: "Validez votre commande"
+      greatings: "Bonjour"
+      core: "Pour confirmer votre commande, merci d'effectuer un virement de %{amount} au RIB ci-joint. Votre commande sera confirmée et expédiée dès que le virement sera reçu."
+      thanks: "Merci beaucoup"
+    order_confirmation:
+      subject: "Votre commande est confirmée"
+      greatings: "Bonjour"
+      core_email: "Votre commande a bien été confirmée. Veuillez la trouver ci-jointe ainsi que votre facture."
+      core_postal_with_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-joints vos certificats d'arbres ainsi que votre facture."
+      core_postal_without_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-jointe votre facture."
+      go_to_client_space: "Rendez-vous dans votre espace client encore plus d'information."
+      thanks: "Merci beaucoup"
+    order_delivery:
+      subject: "Votre commande a été confirmée"
+      greatings: "Bonjour"
+      core: "Votre commande a été livrée. Vous devez pouvoir la trouver dans votre boîte aux lettres."
+      thanks: "Merci beaucoup"
+    tree_plantation_update:
+      subject: "Des informations ont été rajouté au sujet de vos arbres plantés"
+      greatings: "Bonjour"
+      core: "La parcelle de plantation des arbres d'une de vos commandes a été mise à jour."
+      go_to_client_space: "Rendez-vous dans votre espace client encore plus d'information."
+      thanks: "Merci beaucoup"
+  recipient_mailer:
+    gift_certificate:
+      subject: "Quelqu'un a planté un arbre pour vous"
+      greatings: "Bonjour"
+      core: "%{name} a planté un arbre pour vous. Veuillez trouver le certificat ci-joint et rendez-vous sur www.conscients.com pour en planter par vous même."
+      thanks: "Merci beaucoup"
+  devise:
+    sessions:
+      new:
+        title: "Compte client"
+        sign_up: "Créer mon compte"
+        already_sign_up: "Déjà enregistré?"
+        sign_in: "Me connecter"
+        subscribe_to_newsletter: "S'inscrire à la newsletter"
+        password: "Mot de passe"
+        email: "Email"
+        forgot_your_password: "Mot de passe oublié?"
+        sign_in_with_provider: "S'inscrire/Se connecter avec Facebook"
+    invitations:
+      send_instructions: "Un e-mail d'invitation a été envoyé à %{email}."
+      invitation_token_invalid: "Le jeton d'invitation fourni n'est pas valide!"
+      updated: 'Votre mot de passe a été défini avec succès. Vous êtes maintenant connecté.'
+      no_invitations_remaining: "Il n'y a plus d'invitations restantes"
+      invitation_removed: 'Votre invitation a été supprimée.'
+      new:
+        header: "Envoyer une invitation"
+        submit_button: "Envoyer une invitation"
+      edit:
+        header: "Définir votre mot de passe"
+        submit_button: "Définir mon mot de passe"
+    mailer:
+      invitation_instructions:
+        subject: 'Instruction de confirmation'
+        hello: 'Bonjour %{email}'
+        someone_invited_you: "Quelqu'un vous a invité à rejoindre %{url}, vous pouvez accepter cette invitation via le lien ci-dessous."
+        accept: "Accepter l'invitation"
+        ignore: "Si vous ne souhaitez pas accepter cette invitation, veuillez ignorer cet e-mail.<br />Votre compte ne sera pas créé tant que vous n'accéderez pas au lien ci-dessous et que vous ayez défini votre mot de passe."
+  shared:
+    navbar:
+      about: "A propos"
+      my_account: "Mon compte"
+      participate: "Participer"
+      my_cart: "Mon panier"
+      search: "Rechercher"
+      sign_in: "Me connecter"
+      blog: "Journal"
+      sign_out: "Me déconnecter"
+    footer:
+      site_map_link: "Plan du site"
+      payment_shipping_link: "Paiement Livraison Retours"
+      terms_link: "Mentions légales et CGV"
+      faq_link: "FAQ"
+      subscribe_to_newsletter: "M'inscrire à la newsletter"
+  helpers:
+    placeholder:
+      search: "Ma recherche..."
+    page_entries_info:
+      more_pages:
+        display_entries: "%{entry_name}  <b>%{first} - %{last}</b> sur <b>%{total}</b> au total"
+      one_page:
+        display_entries:
+          one: "<b>%{count}</b> %{entry_name}"
+          other: "<b>tous les %{count}</b> %{entry_name}"
+    submit:
+      line_item:
+        create: "Ajouter au panier"
+  views:
+    pagination:
+      first: "&laquo; Premier"
+      last: Dernier &raquo;
+      next: Suivant &rsaquo;
+      previous: "&lsaquo; Précédent"
+      truncate: "&hellip;"
+  active_admin:
+    resource:
+      show:
+        remove_images: "Supprimer les images liées au produit"
+        download_invoice: "Télécharger la facture"
+        download_certificate: "Télécharger le certificat"
+  flash:
+    newsletter_subscription:
+      create:
+        alert: "Vous n'avez pas pu être inscrit à la newsletter"
+        notice: 'Vous avez été inscrit à la newsletter'
+    contact:
+      create:
+        notice: "Votre message a bien été envoyé"
+    line_items:
+      create:
+        notice: "Produit bien ajouté au panier"
+    coupon_to_order_additions:
+      create:
+        alert: "Bon de réduction incorrect"
+        notice: "Le bon de réduction a été ajouté à votre commande"
+    payments:
+      create:
+        alert: "Un problème est survenu lors de votre paiement"
+        notice: "Votre commande a été validée. Nous vous remercions"
+      create_bank_transfer:
+        notice: "Un email vous a été envoyé avec les instructions pour réaliser le virement"

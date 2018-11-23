@@ -20,15 +20,40 @@ Style/ClassAndModuleChildren:
 Rails/InverseOf:
   Enabled: false
 
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
 Metrics/BlockLength:
   Exclude:
     - config/environments/development.rb
     - Guardfile
     - config/initializers/simple_form_bootstrap.rb
+    - config/routes.rb
     - lib/tasks/*
+    - app/admin/*
+    - app/models/order.rb
+
+Metrics/ClassLength:
+  Exclude:
+    - app/models/order.rb
+
+Lint/UselessAssignment:
+  Exclude:
+    - app/models/category.rb
 
 Layout/AlignHash:
   Enabled: False
+
+Style/AsciiComments:
+  Enabled: False
+
+Style/DoubleNegation:
+  Enabled: False
+
+Rails/OutputSafety:
+  Exclude:
+    - app/helpers/internationalization_helper.rb
+    - config/environment.rb
 
 GlobalVars:
   AllowedVariables:
@@ -37,4 +62,3 @@ GlobalVars:
 Rails/Output:
   Exclude:
     - db/seeds.rb
-

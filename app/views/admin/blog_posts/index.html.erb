@@ -1,0 +1,25 @@
+<% set_meta_tags noindex: true %>
+
+<h1><%= t('.title') %></h1>
+
+<% if @blog_posts.any? %>
+  <div class="table-responsive text-center">
+    <table class="table border-table-cart">
+      <thead>
+        <tr>
+          <th scope="col"><%= t('activerecord.attributes.blog_post.main_image') %></th>
+          <th scope="col"><%= t('activerecord.attributes.blog_post.image_for_home') %></th>
+          <th scope="col"><%= t('activerecord.attributes.blog_post.title') %></th>
+          <th scope="col"><%= t('activerecord.attributes.blog_post.published_fr') %></th>
+          <th scope="col"><%= t('activerecord.attributes.blog_post.published_en') %></th>
+          <th scope="col"><%= t('.links') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @blog_posts %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <h2><%= t('.no_blog_posts') %></h2>
+<% end %>

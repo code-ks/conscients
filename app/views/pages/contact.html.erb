@@ -1,0 +1,72 @@
+<% set_meta_tags title: I18n.t('meta_tags.pages.contact.title'),
+                 description: I18n.t('meta_tags.pages.contact.description'),
+                 keywords: I18n.t('meta_tags.pages.contact.keywords') %>
+
+<%= render 'pages/breadcrumb', page_name: 'contact' %>
+
+<div class="container-conscients first-title-padding page-font">
+  <h1><%= t 'pages.contact.contact_title' %></h1>
+</div>
+
+<div class="page-container page-font">
+  <div class="summary padding-tb">
+    <p><%= t 'pages.contact.contact_intro' %></p>
+  </div>
+</div>
+
+
+<div class="page-container">
+  <div class="row">
+    <div class="col-md-9 mb-5">
+      <%= form_with url: contacts_path, method: :post, local: true do |form| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="contact-form-inner-box">
+              <%= form.label t('pages.contact.contact_name'), class: 'label-font', for: 'contact-name' %><label for="contact-name" class="label-font"><%=  %></label>
+              <%= form.text_field :contact_name, class: 'form-control', required: true %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="contact-form-inner-box">
+              <%= form.label t('pages.contact.contact_email'), class: 'label-font', for: 'contact-email' %><label for="contact-email" class="label-font"><%=  %></label>
+              <%= form.email_field :contact_email, class: 'form-control', required: true %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="contact-form-inner-box">
+              <%= form.label t('pages.contact.contact_subject'), class: 'label-font', for: 'contact-subject' %><label for="contact-subject" class="label-font"><%=  %></label>
+              <%= form.text_field :contact_subject, class: 'form-control', required: true %>
+            </div>
+          </div>
+        </div>
+        <div class="class row">
+          <div class="col-md-12">
+            <div class="contact-form-inner-box">
+              <%= form.label t('pages.contact.contact_message'), class: 'label-font', for: 'contact-message' %><label for="contact-message" class="label-font"><%=  %></label>
+              <%= form.text_area :contact_message, class: 'form-control', required: true, rows: "10" %>
+            </div>
+          </div>
+        </div>
+        <div class="text-center text-md-left mt-5">
+          <%= form.submit t('pages.contact.contact_send'), class: 'btn conscients-btn btn-green' %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-3 text-center">
+      <ul class="list-unstyled">
+        <li>
+          <i class="fa fa-phone fa-2x mt-4 color-red"></i>
+          <p class="label-font">06 23 98 80 93</p>
+        </li>
+        <li>
+          <i class="fa fa-at fa-2x mt-4 color-yellow"></i>
+          <!-- <a href="mailto:contact@conscients.com"><i class="fa fa-at fa-2x mt-4 color-yellow"></i></a> -->
+          <p class="label-font">contact@conscients.com</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<%= render 'shared/before_footer' %>
