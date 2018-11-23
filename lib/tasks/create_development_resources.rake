@@ -134,7 +134,7 @@ task create_development_resources: :environment do
                    filename: 'tree.jpeg', content_type: 'image/jpeg')
     p.background_image.attach(io: File.open('lib/assets/tree.jpeg'),
                    filename: 'tree.jpeg', content_type: 'image/jpeg')
-    p.images.attach(io: File.open('lib/assets/book.jpg'),
+    p.images.attach(io: File.open('lib/assets/book.jpeg'),
                    filename: 'book.jpeg', content_type: 'image/jpeg')
     8.times do
       Categorization.find_or_create_by!(product: p, category: Category.all.sample)
