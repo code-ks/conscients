@@ -56,11 +56,13 @@ class Category < ApplicationRecord
     roots.first
   end
 
+  # rubocop:disable Style/RedundantSelf
   def self.displayable
-    select do |category|
+    self.select do |category|
       category.products.displayable.any?
     end
   end
+  # rubocop:enable Style/RedundantSelf
 
   def self.give_a_tree
     find_by(slug: 'gifts-give-a-tree')
