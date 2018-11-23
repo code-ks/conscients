@@ -57,7 +57,7 @@ gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary', '~> 0.12'
 
 gem 'country_select', '~> 3.1'
-gem 'font-awesome-rails', git: 'git@github.com:bokmann/font-awesome-rails.git'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'sass-rails', '~> 5.0'
 
 group :development, :test do

@@ -1,10 +1,3 @@
-GIT
-  remote: git@github.com:bokmann/font-awesome-rails.git
-  revision: 8ffeaf32fdcf5402c81ee254874e3a69af50c90d
-  specs:
-    font-awesome-rails (4.7.0.4)
-      railties (>= 3.2, < 6.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -168,6 +161,8 @@ GEM
     faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     formatador (0.2.5)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
@@ -500,7 +495,7 @@ DEPENDENCIES
   devise (~> 4.4)
   devise-i18n (~> 1.6)
   devise_invitable (~> 1.7, >= 1.7.5)
-  font-awesome-rails!
+  font-awesome-rails (~> 4.7, >= 4.7.0.4)
   friendly_id (~> 5.2)
   friendly_id-mobility (~> 0.5)
   gibbon (~> 3.2)
