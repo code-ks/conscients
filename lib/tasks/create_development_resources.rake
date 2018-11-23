@@ -131,11 +131,11 @@ task create_development_resources: :environment do
 
   Product.all.each do |p|
     p.images.attach(io: File.open('lib/assets/tree.jpeg'),
-                   filename: 'tree.jpeg', content_type: 'image/jpg')
+                   filename: 'tree.jpeg', content_type: 'image/jpeg')
     p.background_image.attach(io: File.open('lib/assets/tree.jpeg'),
-                   filename: 'tree.jpeg', content_type: 'image/jpg')
+                   filename: 'tree.jpeg', content_type: 'image/jpeg')
     p.images.attach(io: File.open('lib/assets/book.jpg'),
-                   filename: 'book.jpeg', content_type: 'image/jpg')
+                   filename: 'book.jpeg', content_type: 'image/jpeg')
     8.times do
       Categorization.find_or_create_by!(product: p, category: Category.all.sample)
     end
