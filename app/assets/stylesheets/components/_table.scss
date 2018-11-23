@@ -290,3 +290,26 @@
       padding-left: 0.25rem;
     }
   }
+
+/* -------------------------------------------------
+ * BANK INFO TABLE
+ * ------------------------------------------------- */
+  .bank-info-font {
+      // color: $conscients-title-grey;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      font-family: "Roboto", "sans-serif";
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 0.7rem;
+      word-wrap: break-word;
+      letter-spacing: 0.1rem;
+      vertical-align: top;
+      @include for-phone-only {
+        font-size: 0.5rem;
+        letter-spacing: normal;
+      }
+  }
+
+
+

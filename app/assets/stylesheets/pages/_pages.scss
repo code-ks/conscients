@@ -1,7 +1,11 @@
 .page-container {
-  width: 70vw;
+  width: 85vw;
   margin: 0 auto;
   overflow: hidden;
+  @include for-tablet-landscape-up {
+  width: 70vw;
+  }
+
 }
 .summary {
     display: flex;
