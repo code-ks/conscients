@@ -80,6 +80,7 @@ class TreePlantation < ApplicationRecord
 
   def update_is_full_and_send_emails
     return unless finalized?
+
     update(is_full: true)
     UpdateCertificatesJob.perform_later(id) unless new_record?
   end

@@ -11,12 +11,14 @@ class CreatePaypalPayment
   def perform_creation
     @payment = generate_paypal_payment
     raise PayPalError unless @payment.create
+
     @cart.update(payment_details: @payment.to_json)
     return_redirect_url
   end
 
   def perform_execution
     raise PayPalError unless execute_paypal_payment
+
     @cart.paypal!
     @cart.pay!
   end

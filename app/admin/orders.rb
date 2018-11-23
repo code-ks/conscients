@@ -24,6 +24,7 @@ ActiveAdmin.register Order do
       # whitelist to ensure we don't run an arbitrary method
       safe_event = (order.aasm.events(permitted: true).map(&:name) & [event.to_sym]).first
       raise "Forbidden event #{event} requested on instance #{your_model.id}" unless safe_event
+
       # launch the event with bang
       order.send("#{safe_event}!")
     end

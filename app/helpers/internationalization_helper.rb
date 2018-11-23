@@ -12,6 +12,7 @@ module InternationalizationHelper
 
   def correct_locale(locale)
     return if locale == I18n.default_locale
+
     locale
   end
 end

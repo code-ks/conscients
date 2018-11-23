@@ -43,6 +43,7 @@ class Coupon < ApplicationRecord
 
   def amount_or_percentage
     return if !!amount ^ !!percentage
+
     errors.add(:base, I18n.t('activerecord.errors.models.coupon.amount_or_percentage'))
   end
 end

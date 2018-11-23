@@ -127,11 +127,13 @@ class Order < ApplicationRecord
 
   def coupon_discount_cents
     return 0 unless coupon
+
     coupon_percentage ? ttc_price_cents * coupon_percentage : coupon_amount_cents
   end
 
   def coupon_discount_ht_cents
     return 0 if ht_price_cents.zero?
+
     ratio = ttc_price_cents / ht_price_cents
     coupon_discount_cents / ratio
   end
@@ -148,6 +150,7 @@ class Order < ApplicationRecord
 
   def current_delivery_fees_cents
     return 0 if email?
+
     main_delivery_fees_cents + printing_fees_cents
   end
 
@@ -161,6 +164,7 @@ class Order < ApplicationRecord
 
   def printing_fees_cents
     return 0 if email?
+
     line_items.inject(0) do |sum, line_item|
       line_item.tree? ? sum + PRINTING_FEES * line_item.quantity : sum
     end

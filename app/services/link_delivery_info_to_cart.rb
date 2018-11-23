@@ -36,6 +36,7 @@ class LinkDeliveryInfoToCart
 
   def manage_postal_address_type
     return unless @delivery_address.postal?
+
     if @delivery_address == @billing_address
       @delivery_address.postal_address_type = nil
     else
