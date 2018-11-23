@@ -11,7 +11,7 @@ ActiveAdmin.register Product do
                 :published, :ht_buying_price_cents, :seo_title_fr, :seo_title_en,
                 :meta_description_fr, :meta_description_en, :keywords_fr, :keywords_en, :slug_fr,
                 :slug_en, :producer_latitude, :producer_longitude, :certificate_background,
-                :background_image, images: []
+                :background_image, :color_certificate, images: []
 
   includes :text_translations, :images_attachments, :certificate_background_attachment
 
@@ -76,6 +76,7 @@ ActiveAdmin.register Product do
         image_tag(product.certificate_background, height: 200)
       end
     end
+    column :color_certificate
     column :created_at
     column :updated_at
     actions
@@ -124,6 +125,7 @@ ActiveAdmin.register Product do
               hint: if product.certificate_background.attached?
                       image_tag(f.object.certificate_background, height: 200)
                     end
+      f.input :color_certificate
       f.input :producer_latitude
       f.input :producer_longitude
     end
@@ -176,6 +178,7 @@ ActiveAdmin.register Product do
           image_tag(product.certificate_background, height: 200)
         end
       end
+      row :color_certificate
       row :created_at
       row :updated_at
     end

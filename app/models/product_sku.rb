@@ -33,6 +33,7 @@ class ProductSku < ApplicationRecord
   delegate :name, :images, :ttc_price_cents, :ht_price_cents, :weight, to: :product, prefix: true
   delegate :classic?, :personalized?, :tree?, :certificate_background,
            :producer_latitude, :producer_longitude, to: :product
+  delegate :color_certificate, to: :product, allow_nil: true
 
   default_scope { includes(:product, :variant) }
   scope :in_stock, -> { where('quantity > ?', 0) }

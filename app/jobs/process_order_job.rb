@@ -8,7 +8,7 @@ class ProcessOrderJob < ApplicationJob
     @order = Order.find(order_id)
     set_view
     update_order
-    generate_invoice
+    @order.generate_invoice
     generate_certificates
     send_order_confirmation
     send_gift_certificates
@@ -44,25 +44,8 @@ class ProcessOrderJob < ApplicationJob
   def generate_certificates
     @order.line_items.each do |line_item|
       next unless line_item.tree?
-      generate_certificate(line_item)
+      line_item.generate_certificate(@view)
     end
-  end
-
-  def generate_certificate(line_item)
-    pdf = WickedPdf.new.pdf_from_string(
-      @view.render(template: 'certificates/new', layout: 'layouts/pdf',
-                   locals: { '@line_item': line_item,
-                             '@background_url': get_url_certificate(line_item) },
-                   margin: { top: 0, bottom: 0, left: 0, right: 0 }),
-      orientation: 'Landscape'
-    )
-    line_item.certificate.attach(io: StringIO.new(pdf),
-                                 filename: "certificate##{line_item.id}.pdf",
-                                 content_type: 'application/pdf')
-  end
-
-  def get_url_certificate(line_item)
-    url_for(line_item.certificate_background)
   end
 
   def send_order_confirmation

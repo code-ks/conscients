@@ -364,6 +364,12 @@ fr:
       greatings: "Bonjour"
       core: "Votre commande a été livrée. Vous devez pouvoir la trouver dans votre boîte aux lettres."
       thanks: "Merci beaucoup"
+    tree_plantation_update:
+      subject: "Des informations ont été rajouté au sujet de vos arbres plantés"
+      greatings: "Bonjour"
+      core: "La parcelle de plantation des arbres d'une de vos commandes a été mise à jour."
+      go_to_client_space: "Rendez-vous dans votre espace client encore plus d'information."
+      thanks: "Merci beaucoup"
   recipient_mailer:
     gift_certificate:
       subject: "Quelqu'un a planté un arbre pour vous"

@@ -113,7 +113,7 @@ class Order < ApplicationRecord
     if payment_date
       "#{I18n.l(payment_date, format: :short)}: #{client_email}"
     else
-      I18n.t('activerecord.attributes.order.aasm_state.in_cart').to_s
+      I18n.t('activerecord.attributes.order.aasm_state/in_cart').to_s
     end
   end
 

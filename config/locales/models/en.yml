@@ -37,6 +37,7 @@ en:
         ht_price_currency: "Sale currency"
         ht_buying_price_cents: "HT buying price in cents"
         ht_buying_price_currency: "Buying currency"
+        color_certificate: "Color of the certificate"
       address:
         title: "Address title"
         address_types:
@@ -73,7 +74,6 @@ en:
           bank_tranfer: "Bank Transfer"
       tree_plantation:
         trees_quantity: "Available tree quantity"
-        color_certificate: "Color of the certificate"
       line_item:
         quantity: "Quantity in stock"
       ahoy/event:
@@ -90,6 +90,8 @@ en:
           attributes:
             trees_quantity:
               greater_than_or_equal_to: "in stock too limited"
+        product:
+          attributes:
             color_certificate:
               format: "Much be a valid HEX color"
         coupon:

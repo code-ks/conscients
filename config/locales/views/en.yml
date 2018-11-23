@@ -363,6 +363,12 @@ en:
       greatings: "Hello"
       core: "Your order has been delivered. You can find it in your mail box."
       thanks: "Thanks a lot"
+    tree_plantation_update:
+      subject: "New information about your trees"
+      greatings: "Hello"
+      core: "The tree plantation of one of your orders has been updated."
+      go_to_client_space: "For more information, go to your client space."
+      thanks: "Thanks a lot"
   recipient_mailer:
     gift_certificate:
       subject: "Somebody planted a tree for you"

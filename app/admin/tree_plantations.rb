@@ -4,7 +4,7 @@ ActiveAdmin.register TreePlantation do
   menu parent: I18n.t('active_admin.product_management')
 
   permit_params :project_name, :project_type_fr, :project_type_en, :partner, :plantation_uuid,
-                :color_certificate, :base_certificate_uuid, :latitude, :longitude,
+                :base_certificate_uuid, :latitude, :longitude,
                 :tree_specie, :producer_name, :trees_quantity
 
   index do
@@ -15,7 +15,6 @@ ActiveAdmin.register TreePlantation do
     column :project_type_en
     column :partner
     column :plantation_uuid
-    column :color_certificate
     column :base_certificate_uuid
     column :latitude
     column :longitude
@@ -35,7 +34,6 @@ ActiveAdmin.register TreePlantation do
       f.input :project_type_en
       f.input :partner
       f.input :plantation_uuid
-      f.input :color_certificate
       f.input :base_certificate_uuid
       f.input :latitude
       f.input :longitude
@@ -54,7 +52,6 @@ ActiveAdmin.register TreePlantation do
       row :project_type_en
       row :partner
       row :plantation_uuid
-      row :color_certificate
       row :base_certificate_uuid
       row :latitude
       row :longitude

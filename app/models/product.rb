@@ -28,6 +28,7 @@
 #  name_en                  :string
 #  name_fr                  :string
 #  position_home            :integer
+#  color_certificate        :string
 #
 
 class Product < ApplicationRecord
@@ -70,6 +71,9 @@ class Product < ApplicationRecord
   validates :product_type, inclusion: { in: product_types.keys }
   validates :ht_price_cents, numericality: { greater_than_or_equal_to: 1 }
   validates :certificate_background, presence: true, if: :tree?
+  validates :color_certificate, presence: true,
+                                format: { with: /\A#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})\z/ },
+                                if: :tree?
   validates :background_image, presence: true
 
   default_scope { i18n.friendly.in_order }
