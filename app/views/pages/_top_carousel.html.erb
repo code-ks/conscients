@@ -6,7 +6,7 @@
   <div class="tabs">
     <% categories.first(3).each_with_index do |category, index| %>
       <a class="tab <%= "active" if index.zero? %>" href="#" data-action="home-carousel#display<%= index %>" data-target="home-carousel.Tab<%= index %>" onclick="return false;">
-        <h3><%= category.name%></h3>
+        <h3><%= category.name %></h3>
       </a>
     <% end %>
   </div>
