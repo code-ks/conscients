@@ -55,6 +55,7 @@ gem 'kaminari', '~> 1.1'
 gem 'pg_search', '~> 2.1'
 gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary', '~> 0.12'
+gem 'wkhtmltopdf-heroku', '~> 2.12', '>= 2.12.4.0'
 
 gem 'country_select', '~> 3.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-Rails.application.routes.default_url_options[:host] = 'conscients.herokuapp.com'
+Rails.application.routes.default_url_options[:host] = 'conscients-staging.herokuapp.com'
 
-# Production configs for the app
+# Staging configs for the app
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
@@ -64,7 +64,7 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [:request_id]
 
-  # Use a different cache store in production.
+  # Use a different cache store in staging.
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
@@ -74,7 +74,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method     = :postmark
   config.action_mailer.postmark_settings   = { api_token: Rails.application.credentials.postmark }
-  config.action_mailer.default_url_options = { host: 'conscients.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'conscients-staging.herokuapp.com' }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

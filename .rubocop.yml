@@ -62,3 +62,10 @@ GlobalVars:
 Rails/Output:
   Exclude:
     - db/seeds.rb
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
