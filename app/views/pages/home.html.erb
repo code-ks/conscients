@@ -29,17 +29,32 @@
 <!-- BLOG 2 LAST ARTICLES -->
 <div class="container-conscients home-pt">
   <div class="row home-blog-row-mobile">
-    <% BlogPost.last(2).each do |article| %>
-      <div class="col-md-6 home-col-portrait">
-        <%= link_to blog_post_path(article) do %>
-          <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= rails_blob_url article.image_for_home %>)">
-            <div class="home-blog-card-content blog-pics-font">
-              <h3><%= article.category %></h3>
-              <h2><%= article.title %></h2>
+    <% if I18n.locale == :fr %>
+      <% BlogPost.published_fr.last(2).each do |article| %>
+        <div class="col-md-6 home-col-portrait">
+          <%= link_to blog_post_path(article) do %>
+            <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= rails_blob_url article.image_for_home %>)">
+              <div class="home-blog-card-content blog-pics-font">
+                <h3><%= article.category %></h3>
+                <h2><%= article.title %></h2>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <% BlogPost.published_en.last(2).each do |article| %>
+        <div class="col-md-6 home-col-portrait">
+          <%= link_to blog_post_path(article) do %>
+            <div class="home-blog-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(<%= rails_blob_url article.image_for_home %>)">
+              <div class="home-blog-card-content blog-pics-font">
+                <h3><%= article.category %></h3>
+                <h2><%= article.title %></h2>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
