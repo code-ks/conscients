@@ -45,7 +45,7 @@ class Product < ApplicationRecord
   extend Mobility
   translates :name, backend: :column
   translates :description_short, :description_long, :seo_title, :meta_description,
-             :keywords, :slug, :product_class
+             :keywords, :slug
 
   include FriendlyId
   friendly_id :name, use: %i[slugged mobility]

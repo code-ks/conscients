@@ -6,7 +6,7 @@ ActiveAdmin.register Product do
   config.sort_order = 'position_asc'
 
   permit_params :name_fr, :name_en, :description_short_fr, :description_short_en,
-                :description_long_fr, :description_long_en, :product_class_fr, :product_class_en,
+                :description_long_fr, :description_long_en,
                 :ht_price_cents, :position, :position_home, :tax_rate, :weight, :product_type,
                 :published, :ht_buying_price_cents, :seo_title_fr, :seo_title_en,
                 :meta_description_fr, :meta_description_en, :keywords_fr, :keywords_en, :slug_fr,
@@ -41,8 +41,6 @@ ActiveAdmin.register Product do
     column :description_short_en
     column :description_long_fr
     column :description_long_en
-    column :product_class_fr
-    column :product_class_en
     column :images do |product|
       if product.images.attached?
         ul do
@@ -93,8 +91,6 @@ ActiveAdmin.register Product do
       f.input :description_short_en
       f.input :description_long_fr, as: :text
       f.input :description_long_en, as: :text
-      f.input :product_class_fr
-      f.input :product_class_en
       f.input :images, as: :file, input_html: { multiple: true },
               hint: if product.images.attached?
                       ul do
@@ -143,8 +139,6 @@ ActiveAdmin.register Product do
       row :description_short_en
       row :description_long_fr
       row :description_long_en
-      row :product_class_fr
-      row :product_class_en
       row :images do |product|
         if product.images.attached?
           ul do
