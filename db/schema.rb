@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_22_173920) do
+ActiveRecord::Schema.define(version: 2018_11_24_130857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -313,7 +313,6 @@ ActiveRecord::Schema.define(version: 2018_11_22_173920) do
   create_table "products", force: :cascade do |t|
     t.string "description_short"
     t.text "description_long"
-    t.string "product_class"
     t.integer "ht_price_cents", default: 0, null: false
     t.string "ht_price_currency", default: "EUR", null: false
     t.decimal "tax_rate", precision: 4, scale: 2, default: "20.0", null: false

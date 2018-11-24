@@ -29,8 +29,9 @@ class Category < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: %i[slugged mobility]
 
-  validates :name, presence: true, length: { minimum: 3, maximum: 40 }
-  validates :slug, presence: true, uniqueness: true, length: { minimum: 3, maximum: 40 }
+  validates :name_fr, :name_en, :slug_fr, :slug_en,
+            presence: true, length: { minimum: 3, maximum: 40 }
+  validates :slug, uniqueness: true
   validates :home_display, uniqueness: true, allow_nil: true
 
   default_scope { i18n.friendly }

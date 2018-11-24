@@ -7,7 +7,6 @@
 #  id                       :bigint(8)        not null, primary key
 #  description_short        :string
 #  description_long         :text
-#  product_class            :string
 #  ht_price_cents           :integer          default(0), not null
 #  ht_price_currency        :string           default("EUR"), not null
 #  tax_rate                 :decimal(4, 2)    default(20.0), not null
