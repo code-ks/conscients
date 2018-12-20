@@ -51,7 +51,8 @@ class LineItem < ApplicationRecord
 
   delegate :classic?, :personalized?, :tree?, :product, :product_images,
            :product_name, :product_ttc_price_cents, :product_ht_price_cents, :product_weight,
-           :certificate_background, :producer_latitude, :producer_longitude, to: :product_sku
+           :certificate_background, :producer_latitude, :producer_longitude,
+           to: :product_sku, allow_nil: true
   delegate :client_full_name, to: :order
   delegate :color_certificate, to: :product_sku, allow_nil: true
   delegate :latitude, :longitude, :project_name, :project_type,
@@ -131,9 +132,9 @@ class LineItem < ApplicationRecord
   end
 
   def increment_stock_quantities_destroy
-    product_sku.increment(:quantity, quantity) unless tree?
-    product_sku.save unless tree?
-    tree_plantation.increment(:quantity, quantity) if tree?
-    tree_plantation.save if tree?
+    product_sku&.increment(:quantity, quantity) unless tree?
+    product_sku&.save unless tree?
+    tree_plantation&.increment(:quantity, quantity) if tree?
+    tree_plantation&.save if tree?
   end
 end

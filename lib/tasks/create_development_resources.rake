@@ -101,11 +101,11 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
-  product.images.attach(io: File.open('lib/assets/certificate-background.jpeg'),
-                        filename: 'certificate-background.jpeg', content_type: 'image/jpeg')
-  product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpeg'),
-                                        filename: 'certificate-background.jpeg',
-                                        content_type: 'image/jpeg')
+  product.images.attach(io: File.open('lib/assets/certificate-background.jpg'),
+                        filename: 'certificate-background.jpg', content_type: 'image/jpg')
+  product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpg'),
+                                        filename: 'certificate-background.jpg',
+                                        content_type: 'image/jpg')
   ProductSku.create!(product: product)
 
   product = Product.create!(
@@ -122,11 +122,11 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
-  product.images.attach(io: File.open('lib/assets/certificate-background.jpeg'),
-                        filename: 'certificate-background.jpeg', content_type: 'image/jpeg')
-  product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpeg'),
-                                        filename: 'certificate-background.jpeg',
-                                        content_type: 'image/jpeg')
+  product.images.attach(io: File.open('lib/assets/certificate-background.jpg'),
+                        filename: 'certificate-background.jpg', content_type: 'image/jpg')
+  product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpg'),
+                                        filename: 'certificate-background.jpg',
+                                        content_type: 'image/jpg')
   ProductSku.create!(product: product)
 
   Product.all.each do |p|
