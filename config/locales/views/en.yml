@@ -388,6 +388,11 @@ en:
       core: "%{name} has planted a tree for you. Please find the certificate attached and visit www.conscients.com to plant some by yourself."
       thanks: "Thanks a lot"
   devise:
+    clients:
+      edit:
+        edit_account: "Edit my account"
+        edit_title: "Change ID or password"
+        new_pw: "New password"
     sessions:
       new:
         title: "Client account"

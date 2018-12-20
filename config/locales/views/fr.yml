@@ -389,6 +389,11 @@ fr:
       core: "%{name} a planté un arbre pour vous. Veuillez trouver le certificat ci-joint et rendez-vous sur www.conscients.com pour en planter par vous même."
       thanks: "Merci beaucoup"
   devise:
+    clients:
+      edit:
+        edit_account: "Editer mon compte"
+        edit_title: "Modifier mes identifiants"
+        new_pw: "Nouveau mot de passe"
     sessions:
       new:
         title: "Compte client"
