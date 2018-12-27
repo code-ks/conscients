@@ -393,6 +393,10 @@ en:
         edit_account: "Edit my account"
         edit_title: "Change ID or password"
         new_pw: "New password"
+    passwords:
+      new:
+        intro: "Enter your e-mail address below and we will send you an e-mail to reset your password."
+        ok: "ok"
     sessions:
       new:
         title: "Client account"

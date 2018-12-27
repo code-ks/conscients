@@ -394,6 +394,10 @@ fr:
         edit_account: "Editer mon compte"
         edit_title: "Modifier mes identifiants"
         new_pw: "Nouveau mot de passe"
+    passwords:
+      new:
+        intro: "Saisissez votre adresse e-mail ci-dessous si vous souhaitez recevoir un e-mail vous permettant de réinitialiser votre mot de passe."
+        ok: "ok"
     registrations:
       new:
         sign_in_with_provider: "S'inscrire/Se connecter avec Facebook"
