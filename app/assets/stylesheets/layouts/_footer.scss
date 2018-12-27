@@ -1,3 +1,56 @@
+.footer-two {
+  background-color : $conscients-black;
+  display: flex;
+  // width: 95vw;
+  // margin: 0 auto;
+  // flex-direction: column;
+  @include for-tablet-landscape-up {
+    background-color: white;
+    // flex-direction: row;
+    width: 95vw;
+    margin: 0 auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer-items-two {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0;
+  }
+}
+// resoudre pbm div hidden pour centrer les items
+
+.footer-items-two a {
+  color: white;
+  font-family: "Frank Ruhl Libre", "serif";
+  font-size: 0.8rem;
+  @include for-tablet-landscape-up {
+    font-family: "Roboto", "sans-serif";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $conscients-grey;
+    opacity: 1;
+    text-decoration: none !important;
+    font-size: 0.6rem;
+    padding-right: 70px;
+  }
+}
+
+.footer-items-two a:hover {
+  opacity: 0.5;
+}
+
+
 .footer {
   width: 95vw;
   margin: 0 auto;
