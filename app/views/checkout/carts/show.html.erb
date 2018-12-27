@@ -5,7 +5,9 @@
   <%= render 'checkout/carts/breadcrumb', cart: @cart %>
 
   <% if @cart.empty? %>
-    <h1 class="text-uppercase my-4"><%= t('.empty_cart') %></h1>
+    <div class="container-conscients first-title-padding page-font">
+    <h1><%= t('.empty_cart') %></h1>
+    </div>
   <% else %>
     <div class="checkout-first-title-padding checkout-font no-padding-t">
     <h1><%= t('.cart') %></h1>
