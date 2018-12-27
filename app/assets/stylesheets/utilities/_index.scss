@@ -8,6 +8,17 @@
 @import "colors";
 
 
+#error_explanation {
+  color: $conscients-red;
+}
+#error_explanation h2 {
+  font-size: 0.8rem;
+}
+#error_explanation li {
+  font-family: "Frank Ruhl Libre", "serif";
+  // color: $conscients-red;
+  font-size: 1rem;
+}
 
 a {
   color: inherit;

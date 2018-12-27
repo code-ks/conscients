@@ -394,6 +394,9 @@ fr:
         edit_account: "Editer mon compte"
         edit_title: "Modifier mes identifiants"
         new_pw: "Nouveau mot de passe"
+    registrations:
+      new:
+        sign_in_with_provider: "S'inscrire/Se connecter avec Facebook"
     sessions:
       new:
         title: "Compte client"
