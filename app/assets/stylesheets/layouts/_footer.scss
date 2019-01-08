@@ -1,12 +1,14 @@
 .footer-two {
+  padding: 10px 0 10px 0;
   background-color : $conscients-black;
   display: flex;
   // width: 95vw;
   // margin: 0 auto;
-  // flex-direction: column;
+  flex-direction: column;
   @include for-tablet-landscape-up {
+    padding: 0;
     background-color: white;
-    // flex-direction: row;
+    flex-direction: row;
     width: 95vw;
     margin: 0 auto;
     height: 50px;
@@ -18,23 +20,33 @@
 
 .footer-items-two {
   display: flex;
-  flex-direction: column;
-  padding: 1rem;
+  // flex-direction: column;
   align-items: center;
+  font-size: 1.5rem;
   @include for-tablet-landscape-up {
-    flex-direction: row;
+    // flex-direction: row;
     align-items: center;
-    font-size: 1.5rem;
     padding: 0;
   }
 }
-// resoudre pbm div hidden pour centrer les items
+
+.footer-items-no-icons {
+  flex-direction: column;
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+  }
+}
+.footer-items-with-icons {
+  justify-content: center;
+}
 
 .footer-items-two a {
+  padding-top: 10px;
   color: white;
   font-family: "Frank Ruhl Libre", "serif";
   font-size: 0.8rem;
   @include for-tablet-landscape-up {
+    padding-top: 0;
     font-family: "Roboto", "sans-serif";
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -107,9 +119,14 @@
 
 .footer-icons {
   // padding: 0 10px;
-  padding-left: 20px;
-  color: $conscients-grey;
-  // color: white;
+  // padding-left: 20px;
+  color: white;
+  padding: 20px 5px 20px 5px;
+  @include for-tablet-landscape-up {
+    color: $conscients-grey;
+    // padding-left: 20px;
+    padding: 0 0 0 20px;
+  }
 }
 
 .icon-vir {
