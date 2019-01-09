@@ -419,11 +419,14 @@ en:
       forgot_your_password: "Forgot your password?"
       sign_in_with_provider: "Sign-up/Sign-in with Facebook"
     footer:
+      about: "About us"
+      participate: "Participate"
       site_map_link: "Site map"
       payment_shipping_link: "Payment and Shipping"
       terms_link: "Terms"
       faq_link: "FAQ"
-      subscribe_to_newsletter: "Subscribe me to the newsletter"
+      my_email: "My email"
+      subscribe_to_newsletter: "> Subscribe me to the newsletter"
   active_admin:
     resource:
       show:

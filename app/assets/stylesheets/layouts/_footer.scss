@@ -1,39 +1,68 @@
 // BOTTOM SOCIAL LINKS
-  .sticky-left-label {
-    border: 1px solid lightgrey;
-    padding: 3px 3px 3px 3px;
-    margin: 5px -1px 3px 3px !important;
-    background-color: lightgrey;
+  .social-box {
+    display: flex;
+    align-items: center;
+    @include for-tablet-landscape-up {
+      justify-content: space-between;
+      width: 95vw;
+      margin: 0 auto;
+      padding-right: 20px;
+    }
   }
 
-    .social-box {
-      height: 200px;
-      display: flex;
-      margin-top: 60px;
-      align-items: center;
-      @include for-phone-only {
-        height: 75px;
-        margin-top: 32px;
+  .social-links {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .social-links a {
+    @include for-tablet-landscape-up {
+      color: $conscients-grey;
+      opacity: 0.2;
+      text-decoration: none;
+      font-size: 2.5rem;
+      padding: 0 20px;
+    }
+  }
+
+  .social-links a:hover {
+    opacity: 1;
+  }
+
+  .news-subscribe {
+    .form-group, input[type=email], input::placeholder {
+      background-color: white;
+      border: none;
+      border-radius: 1px;
+      color: #a7a6a1;
+      font-weight: 300;
+      @include for-tablet-landscape-up {
+        font-size: 0.9rem;
+        padding-left: 2px;
       }
-    }
-    .social-box-links {
-      margin: auto;
-    }
-
-    .social-box-links a {
-    color: $conscients-grey;
-    opacity: 0.2;
-    text-decoration: none;
-    font-size: 2.5rem;
-    padding: 0px 30px;
-    @include for-phone-only {
-      font-size: 1.5rem;
-      padding: 0px 10px;
+      // font-size: 0.8rem;
     }
   }
-    .social-box-links a:hover {
-      opacity: 1;
-    }
+
+  .news-subscribe-link {
+    border: none;
+    background: none;
+    color: $conscients-grey;
+    opacity: 0.5;
+    cursor: pointer;
+      @include for-tablet-landscape-up {
+        font-size: 0.9rem;
+      }
+    // font-size: 0.8rem;
+  }
+
+  .news-subscribe-link:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+
+
+
 
 //BOTTOM FOOTER
   .footer {
@@ -124,3 +153,34 @@
       display: none;
     }
   }
+
+
+// OLD
+  //   .social-box {
+  //     height: 200px;
+  //     display: flex;
+  //     margin-top: 60px;
+  //     align-items: center;
+  //     @include for-phone-only {
+  //       height: 75px;
+  //       margin-top: 32px;
+  //     }
+  //   }
+  //   .social-box-links {
+  //     margin: auto;
+  //   }
+
+  //   .social-box-links a {
+  //   color: $conscients-grey;
+  //   opacity: 0.2;
+  //   text-decoration: none;
+  //   font-size: 2.5rem;
+  //   padding: 0px 30px;
+  //   @include for-phone-only {
+  //     font-size: 1.5rem;
+  //     padding: 0px 10px;
+  //   }
+  // }
+  //   .social-box-links a:hover {
+  //     opacity: 1;
+  //   }

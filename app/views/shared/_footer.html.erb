@@ -1,41 +1,30 @@
-    <% unless current_client&.newsletter_subscriber %>
-      <%= form_with url: newsletter_subscriptions_path, method: :post, local: true, id: 'form_for_newsletter', class: "form-inline" do |form| %>
-        <div class="form-group">
-<!--           </%= form.label 'Email', for: :email, class: "sticky-left-label" %> -->
-<%= form.label :email do %>
-  <i class="fa fa-envelope sticky-left-label"></i>
-<% end %>
-          <%= form.email_field :email, required: true, class: "mr-1", placeholder: t('.subscribe_to_newsletter') %>
-        </div>
-        <%= form.submit 'ok', class: 'btn conscients-btn btn-green' %>
-      <% end %>
-    <% end %>
+<div class="bg-grey mt-5">
+  <div class="social-box">
 
+      <div class="social-links">
+        <a href="https://www.facebook.com/conscients/" target="blank"><i class="fa fa-facebook" title="Facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter" title="Twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram" title="Instagram"></i></a>
+        <%= link_to page_path('contact') do %>
+          <i class="fa fa-at" title="Contact"></i>
+        <% end %>
+      </div>
 
+      <div class="news-subscribe">
+        <% unless current_client&.newsletter_subscriber %>
+          <%= form_with url: newsletter_subscriptions_path, method: :post, local: true, id: 'form_for_newsletter', class: "form-inline" do |form| %>
+            <div class="form-group">
+              <%= form.email_field :email, required: true, class: "mr-1 news-subscribe-email-field", placeholder: t('.my_email') %>
+            </div>
+            <%= form.submit t('.subscribe_to_newsletter'), class: 'news-subscribe-link' %>
+          <% end %>
+        <% end %>
+      </div>
 
-
-
-<div class="container-conscients social-box bg-grey">
-  <div class="social-box-links bg-yellow">
-    <div class="bg-red">
-      <a href="https://www.facebook.com/conscients/" target="blank"><i class="fa fa-facebook" title="Facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter" title="Twitter"></i></a>
-      <a href="#"><i class="fa fa-instagram" title="Instagram"></i></a>
-      <%= link_to page_path('contact') do %>
-        <i class="fa fa-at" title="Contact"></i>
-      <% end %>
-    </div>
-    <% unless current_client&.newsletter_subscriber %>
-      <%= form_with url: newsletter_subscriptions_path, method: :post, local: true, id: 'form_for_newsletter', class: "form-inline" do |form| %>
-        <div class="form-group">
-          <%= form.label 'Email', for: :email %>
-          <%= form.email_field :email, required: true %>
-        </div>
-        <%= form.submit t('.subscribe_to_newsletter'), class: 'btn conscients-btn btn-green' %>
-      <% end %>
-    <% end %>
   </div>
 </div>
+
+
 
 <!-- <div class="container-conscients social-box bg-grey">
   <div class="social-box-links">
@@ -75,7 +64,7 @@
     <i class="footer-icons fa fa-credit-card" title="Paiement par carte bancaire"></i>
   </div>
   <div class="footer-items footer-items-row mobile-device">
-    <%= locale_links %>
+    <p><%= locale_links %></p>
   </div>
 
 </div>

@@ -442,11 +442,14 @@ fr:
       blog: "Journal"
       sign_out: "Me déconnecter"
     footer:
+      about: "A propos"
+      participate: "Participer"
       site_map_link: "Plan du site"
       payment_shipping_link: "Paiement Livraison Retours"
       terms_link: "Mentions légales et CGV"
       faq_link: "FAQ"
-      subscribe_to_newsletter: "M'inscrire à la newsletter"
+      my_email: "Mon email"
+      subscribe_to_newsletter: "> M'inscrire à la newsletter"
   helpers:
     placeholder:
       search: "Ma recherche..."
