@@ -16,6 +16,8 @@
             </div>
             <%= form.submit t('.subscribe_to_newsletter'), class: 'news-subscribe-link' %>
           <% end %>
+        <% else %>
+        <p class="heart-after title-grey"><%= t('.thank_you') %></p>
         <% end %>
       </div>
   </div>

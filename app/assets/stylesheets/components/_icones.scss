@@ -19,3 +19,9 @@
   padding: 0 1px;
 }
 
+.heart-after:after {
+    font-family: FontAwesome;
+    content: "\f004";
+    padding-left: 10px;
+    color: $conscients-red;
+}

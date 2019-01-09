@@ -77,6 +77,8 @@
           <% Category.in_order.main.each do |category| %>
             <%= link_to category.name, category_products_path(category), class: 'dropdown-item'  %>
           <% end %>
+          <div class="dropdown-divider"></div>
+          <%= link_to t('.blog'), blog_posts_path, class: "dropdown-item" %>
         </div>
       </div>
     </div>

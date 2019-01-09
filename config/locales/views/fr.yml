@@ -451,6 +451,7 @@ fr:
       faq_link: "FAQ"
       my_email: "Mon email"
       subscribe_to_newsletter: "> M'inscrire à la newsletter"
+      thank_you: "Merci"
   helpers:
     placeholder:
       search: "Ma recherche..."

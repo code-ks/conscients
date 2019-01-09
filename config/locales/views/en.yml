@@ -428,6 +428,7 @@ en:
       faq_link: "FAQ"
       my_email: "My email"
       subscribe_to_newsletter: "> Subscribe me to the newsletter"
+      thank_you: "Thank you"
   active_admin:
     resource:
       show:
