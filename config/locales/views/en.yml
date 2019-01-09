@@ -318,6 +318,7 @@ en:
         addresses: "Addresses"
         billing: "Billing address"
         delivery: "Delivery address"
+        edit_on_previous: "< Edit addresses (back to previous page)"
       show:
         go_to_client_space: "Find all information relating to your orders in your account"
         order_confirmed: "Thank you!"

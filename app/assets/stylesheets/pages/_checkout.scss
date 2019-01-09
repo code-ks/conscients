@@ -125,7 +125,7 @@
       font-size: 0.8rem !important;
     }
   }
-// ADRESS
+// ADDRESS
   .checkout-steps-box {
     width: 100%;
     z-index: 2;
@@ -154,26 +154,6 @@
       color: white;
     }
   }
-
-  // .box-green-text-checked {
-  //   @include for-tablet-landscape-up {
-  //     color: $conscients-dark-green;
-  //   }
-  // }
-
-  // .unchecked:before {
-  //   font-family: FontAwesome;
-  //   content: "\f0c8";
-  //   padding-right: 10px;
-  //   font-size: 1rem;
-  // }
-  // .checked:before {
-  //   font-family: FontAwesome;
-  //   content: "\f00c";
-  //   // content: "\f14a";
-  //   padding-right: 10px;
-  //   font-size: 1rem;
-  // }
 
   .box-green-input {
       .form-control, input[type=text] {
@@ -252,8 +232,6 @@
     @include for-tablet-landscape-up {
       color: white;
     }
-    // text-align: right;
-    // padding: 40px 0px 0 40px;
   }
 
 // PAYMENT BOX

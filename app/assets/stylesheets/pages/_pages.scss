@@ -18,6 +18,9 @@
 }
 .first-title-padding {
   padding-top: 30px;
+  @include for-phone-only {
+    padding-top: 0;
+  }
 }
 .terms-second-title-padding {
   padding-top: 50px;

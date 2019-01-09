@@ -1,41 +1,41 @@
 <% if category.is_root? %>
-  <div class="top-menu-font"><%= t('.category') %></div>
+  <div class="filters-font"><%= t('.category') %></div>
   <div class="dropdown">
     <%= fa_icon "angle-down", class: "c-pointer mr-5 ml-2", data: { toggle: "dropdown" } %>
     <div class="dropdown-menu filters-dropdown-menu">
       <% category.children.displayable.each do |c| %>
-        <%= link_to c.name, category_products_path(c), class: "dropdown-item filters-dropdown-item top-menu-font" %>
+        <%= link_to c.name, category_products_path(c), class: "dropdown-item filters-dropdown-item filters-font" %>
         <% c.children.displayable.each do |sub_c| %>
-          <%= link_to sub_c.name, category_products_path(sub_c), class: "ml-3 dropdown-item filters-dropdown-item top-menu-font" %>
+          <%= link_to sub_c.name, category_products_path(sub_c), class: "ml-3 dropdown-item filters-dropdown-item filters-font" %>
         <% end %>
       <% end %>
     </div>
   </div>
 <% elsif category.has_children? %>
-  <div class="top-menu-font"><%= t('.category') %></div>
+  <div class="filters-font"><%= t('.category') %></div>
   <div class="dropdown">
     <%= fa_icon "angle-down", class: "c-pointer mr-5 ml-2", data: { toggle: "dropdown" } %>
     <div class="dropdown-menu filters-dropdown-menu">
       <% category.children.displayable.each do |c| %>
-        <%= link_to c.name, category_products_path(c), class: "dropdown-item filters-dropdown-item top-menu-font" %>
+        <%= link_to c.name, category_products_path(c), class: "dropdown-item filters-dropdown-item filters-font" %>
       <% end %>
     </div>
   </div>
 <% elsif category.depth == 1 %>
-  <div class="top-menu-font"><%= t('.category') %></div>
+  <div class="filters-font"><%= t('.category') %></div>
   <div class="dropdown">
     <%= fa_icon "angle-down", class: "c-pointer mr-5 ml-2", data: { toggle: "dropdown" } %>
     <div class="dropdown-menu filters-dropdown-menu">
-      <%= link_to category.name, category_products_path(category), class: "dropdown-item filters-dropdown-item top-menu-font" %>
+      <%= link_to category.name, category_products_path(category), class: "dropdown-item filters-dropdown-item filters-font" %>
     </div>
   </div>
 <% elsif category.has_siblings? %>
-  <div class="top-menu-font"><%= t('.category') %></div>
+  <div class="filters-font"><%= t('.category') %></div>
   <div class="dropdown">
     <%= fa_icon "angle-down", class: "c-pointer mr-5 ml-2", data: { toggle: "dropdown" } %>
     <div class="dropdown-menu filters-dropdown-menu">
       <% category.siblings.displayable.each do |c| %>
-        <%= link_to c.name, category_products_path(c), class: "dropdown-item filters-dropdown-item top-menu-font" %>
+        <%= link_to c.name, category_products_path(c), class: "dropdown-item filters-dropdown-item filters-font" %>
       <% end %>
     </div>
   </div>
@@ -43,14 +43,14 @@
 
 <% if category.variants.any? %>
   <!-- if category products have variants then display following div -->
-  <div class="top-menu-font"><%= t('.variant') %></div>
+  <div class="filters-font"><%= t('.variant') %></div>
   <div class="dropdown">
     <%= fa_icon "angle-down", class: "c-pointer ml-2", data: { toggle: "dropdown" } %>
     <div class="dropdown-menu filters-dropdown-menu">
       <% category.variants.each do |variant| %>
-        <%= link_to variant.value.capitalize, category_products_path(category, variant: variant.id), class: "dropdown-item filters-dropdown-item top-menu-font" %>
+        <%= link_to variant.value.capitalize, category_products_path(category, variant: variant.id), class: "dropdown-item filters-dropdown-item filters-font" %>
       <% end %>
-      <%= link_to t('.back_to_everything'), category_products_path(category), class: "dropdown-item filters-dropdown-item top-menu-font" %>
+      <%= link_to t('.back_to_everything'), category_products_path(category), class: "dropdown-item filters-dropdown-item filters-font" %>
     </div>
   </div>
 <% end %>

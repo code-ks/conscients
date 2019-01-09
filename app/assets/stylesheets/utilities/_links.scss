@@ -21,7 +21,6 @@
   .yellow-link {
     color: $conscients-yellow;
   }
-
   .yellow-link:hover {
     color: $conscients-yellow;
     text-decoration: underline;
@@ -30,11 +29,11 @@
   .green-link {
     color: $conscients-green;
   }
-
   .green-link:hover {
     color: $conscients-dark-green;
     text-decoration: underline;
   }
+
   .red-link, .read-more, .back-to-top {
     color: $conscients-red;
   }
@@ -43,19 +42,23 @@
     text-decoration: underline;
     // font-weight: bold;
   }
-
   .read-more:after {
     font-family: FontAwesome;
     content: "\f107";
     padding-left: 10px;
     text-decoration: underline white;
   }
-
   .back-to-top:after {
     font-family: FontAwesome;
     content: "\f106";
     padding-left: 10px;
     text-decoration: underline white;
+  }
+
+  .angle-right-before:before {
+    font-family: FontAwesome;
+    content: "\f105";
+    padding-right: 10px;
   }
 
   .follow-link {

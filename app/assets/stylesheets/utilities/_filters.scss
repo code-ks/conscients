@@ -1,6 +1,15 @@
+.filters-font, .filters-font a {
+  font-family: "Roboto", "sans-serif";
+  text-transform: Uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+  color: $conscients-grey;
+  @include for-phone-only {
+    font-size: 10px;
+  }
+}
+
 .filters-margin {
-  // margin-top: 2rem;
-  // margin-bottom: 1rem;
   margin: 1.5rem 0;
 }
 

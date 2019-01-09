@@ -319,6 +319,7 @@ fr:
         addresses: "Adresses"
         billing: "Facturé à :"
         delivery: "Distribué à: "
+        edit_on_previous: "< Modifier les adresses (retour page précédente)"
       show:
         go_to_client_space: "Retrouvez toutes les informations liées à votre commande sur votre compte"
         order_confirmed: "Merci !"
