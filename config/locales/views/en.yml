@@ -182,6 +182,8 @@ en:
       total_vat: "Total taxes"
       total_price: "Total price"
   blog_posts:
+    blog_post:
+      read_article: "Read more"
     index:
       journal: 'Journal'
     show:

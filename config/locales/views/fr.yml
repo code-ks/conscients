@@ -183,6 +183,8 @@ fr:
       coupon_discount_ht: "Réduction HT"
       total_price: "Prix total"
   blog_posts:
+    blog_post:
+      read_article: "Lire la suite"
     index:
       journal: 'Journal'
     show:
