@@ -15,7 +15,9 @@
     </ol>
   </nav>
 
-  <%= render @blog_posts %>
+  <div class="row">
+    <%= render @blog_posts %>
+  </div>
 
   <div class="d-flex justify-content-center"><%= paginate @blog_posts %></div>
 </div>
