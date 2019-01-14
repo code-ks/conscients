@@ -1,5 +1,10 @@
-// carole
-.card-price {
+.card-columns {
+  @include media-breakpoint-up(sm) {
+    column-count: 2 !important;
+  }
+}
+
+.card-price, .card-title {
   font-family: "Roboto", "sans-serif";
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
@@ -8,7 +13,7 @@
   border: none !important;
 }
 
-// INITIAL
+
 .card-hide-hover {
   display: block;
 }

@@ -12,13 +12,16 @@
   border: none;
 }
 .alert-info {
-  // background: $conscients-green;
   background-color: $conscients-black;
-  // opacity: 1;
+  @include for-phone-only {
+    background-color: $conscients-yellow;
+  }
 }
 .alert-warning {
-  // background: $conscients-red;
   background-color: $conscients-black;
+  @include for-phone-only {
+    background-color: $conscients-yellow;
+  }
 }
 
 /* -------------------------------------

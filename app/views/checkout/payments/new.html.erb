@@ -24,6 +24,7 @@
             <%= render 'address', address: @cart.billing_address, title_key: ".billing" %>
           </div>
         </div>
+        <p class="edit-on-previous-page"> <%= t('.edit_on_previous') %></p>
         <%= render 'payment_buttons', cart: @cart %>
       </div>
     </div>

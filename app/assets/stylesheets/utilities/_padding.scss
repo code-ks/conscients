@@ -8,12 +8,14 @@
     padding: 16px 0px 24px 0px;
   }
   .padding-around {
-    padding : 16px;
+    padding : 16px !important;
   }
+  // remplacer par px-0
   .no-padding-around {
     padding-right: 0 !important;
     padding-left: 0 !important;
   }
+
   .padding-b {
     padding-bottom: 16px;
   }
@@ -22,13 +24,14 @@
     padding-top: 16px;
   }
 
+  // remplacer par pt-0
   .no-padding-t {
     padding-top: 0 !important;
   }
 
   .padding-tb{
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
   }
 
   .padding-r {

@@ -11,10 +11,16 @@
     display: flex;
     align-item: center;
     justify-content: space-around;
-    text-align: center;
+    text-align: justify;
+    @include for-tablet-landscape-up {
+      text-align: center;
+    }
 }
 .first-title-padding {
   padding-top: 30px;
+  @include for-phone-only {
+    padding-top: 0;
+  }
 }
 .terms-second-title-padding {
   padding-top: 50px;
@@ -74,6 +80,7 @@
     padding-top: 1rem;
     @include for-phone-only {
       font-size: 0.7rem;
+      padding-bottom: 0;
     }
   }
 }

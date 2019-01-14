@@ -1,10 +1,19 @@
-<%= image_tag(blog_post.main_image, height: 200) %>
+<!-- <div class="col-md-6 d-flex flex-column"> -->
+<div class="card shop-card p-2 mb-0">
 
-<div class="ql-displayer my-3">
-  <%= sanitize blog_post.content.gsub(/<img.*?>/, '').truncate(1000), tags: %w(a h1 h2 h3 h4 h5 h6 p ol ul li span), attributes: %w(class style href) %>
+<%= link_to image_tag(blog_post.main_image, class: "card-img-top rounded-O"), blog_post_path(blog_post) %>
+<!--   </%= image_tag(blog_post.main_image, class: "card-img-top rounded-0") %> -->
+  <div class="card-body text-justify px-0">
+    <div class="page-font"><h2 class="darker-hover-grey"><%= link_to blog_post.title, blog_post_path(blog_post) %></h2></div>
+<!--     <div class="page-font"><h2><%= blog_post.title %></h2></div>   -->
+    <div class="page-font"><h5 class="title-grey pt-0"><%= blog_post.category %></h5></div>
+    <hr>
+    <div class="ql-displayer my-3">
+      <%= sanitize blog_post.content.gsub(/<img.*?>/, '').truncate(700), tags: %w(a h1 h2 h3 h4 h5 h6 p ol ul li span), attributes: %w(class style href) %>
+    </div>
+    <%= link_to t('.read_article'), blog_post_path(blog_post), class: "btn conscients-btn btn-black" %>
+    <hr>
+  </div>
 </div>
 
-<%= link_to "Read Article", blog_post_path(blog_post), class: "btn btn-orange" %>
-
-<hr>
 

@@ -15,6 +15,14 @@
   </ol>
 </nav>
 
-<div class="container my-5 ql-displayer my-3">
-  <%= @blog_post.content.html_safe %>
+<div class="container-conscients mb-5 ql-displayer my-3">
+  <div class="page-font">
+    <h1 class="pb-0"><%= @blog_post.title %></h1>
+    <h4 class=text-center><%= @blog_post.category %></h4>
+  </div>
+  <div class="w-100 pt-3 text-justify">
+    <%= image_tag(@blog_post.main_image, class: " float-left w-50 pr-3") %>
+    <%= @blog_post.content.html_safe %>
+  </div>
 </div>
+

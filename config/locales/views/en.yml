@@ -1,10 +1,29 @@
 en:
   pages:
     home:
+      img_intro: "traduire"
+      img_intro_title: "traduire"
       hello: "Test EN"
       searching: "Search"
+      project: "Our project"
+      baseline: "Reveal and preserve earth’s wonderful resources, for our children"
+      discover: "Learn more about the project"
     about:
-      test: "Youpi"
+      about_title: "Titre"
+      about_sub_one : "Sous titre un"
+      about_sub_one_text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      about_sub_two : "Sous titre deux"
+      about_sub_two_text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      about_sub_tree : "Sous titre trois"
+      about_sub_tree_text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      about_sub_four : "Sous titre quatre"
+      about_sub_four_text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      about_sub_five : "Sous titre cinq"
+      about_sub_five_text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    b2b:
+      b2b_title: "B2B"
+      b2b_intro: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt"
+      contact_us: "Feel free to contact us !"
     contact:
       contact_title: "Contact Us"
       contact_intro: "Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you asap to help you."
@@ -139,7 +158,8 @@ en:
       about: 'About'
       contact: 'Contact'
       faq: 'FAQ'
-      participate: 'B2B'
+      participate: 'Participate'
+      b2b: "B2B"
       payment_shipping: 'Payments, Shippings, Returns'
       site_map: 'Site Map'
       terms: 'Terms'
@@ -182,6 +202,8 @@ en:
       total_vat: "Total taxes"
       total_price: "Total price"
   blog_posts:
+    blog_post:
+      read_article: "Read more"
     index:
       journal: 'Journal'
     show:
@@ -318,6 +340,7 @@ en:
         addresses: "Addresses"
         billing: "Billing address"
         delivery: "Delivery address"
+        edit_on_previous: "< Edit addresses (back to previous page)"
       show:
         go_to_client_space: "Find all information relating to your orders in your account"
         order_confirmed: "Thank you!"
@@ -388,6 +411,15 @@ en:
       core: "%{name} has planted a tree for you. Please find the certificate attached and visit www.conscients.com to plant some by yourself."
       thanks: "Thanks a lot"
   devise:
+    clients:
+      edit:
+        edit_account: "Edit my account"
+        edit_title: "Change ID or password"
+        new_pw: "New password"
+    passwords:
+      new:
+        intro: "Enter your e-mail address below and we will send you an e-mail to reset your password."
+        ok: "ok"
     sessions:
       new:
         title: "Client account"
@@ -402,6 +434,7 @@ en:
       about: "About"
       my_account: "My account"
       participate: "Participate"
+      b2b: "B2B"
       my_cart: "My cart"
       search: "Search"
       sign_in: "Connect"
@@ -410,11 +443,16 @@ en:
       forgot_your_password: "Forgot your password?"
       sign_in_with_provider: "Sign-up/Sign-in with Facebook"
     footer:
+      about: "About us"
+      participate: "Participate"
+      b2b: "B2B"
       site_map_link: "Site map"
       payment_shipping_link: "Payment and Shipping"
       terms_link: "Terms"
       faq_link: "FAQ"
-      subscribe_to_newsletter: "Subscribe me to the newsletter"
+      my_email: "My email"
+      subscribe_to_newsletter: "> Subscribe me to the newsletter"
+      thank_you: "Thank you"
   active_admin:
     resource:
       show:

@@ -7,7 +7,25 @@
 @import "borders";
 @import "colors";
 
+.mb-for-footer {
+  margin-bottom: 12rem;
+}
 
+
+#error_explanation {
+  color: $conscients-red;
+}
+#error_explanation h2 {
+  font-size: 0.8rem;
+  font-family: "Roboto", "sans-serif";
+  text-transform: Uppercase;
+  letter-spacing: 0.1rem;
+}
+#error_explanation li {
+  font-family: "Frank Ruhl Libre", "serif";
+  // color: $conscients-red;
+  font-size: 1rem;
+}
 
 a {
   color: inherit;

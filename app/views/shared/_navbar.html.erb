@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between align-items-top navbar-top-font">
       <div class= "navbar-item">
         <div><%= locale_links %></div>
-        <div><%= link_to t('.about'), page_path('about'), class: 'mr-2' %><%= link_to t('.participate'), root_path, class: 'mr-2' %></div>
+        <div><%= link_to t('.about'), page_path('about'), class: 'mr-2' %><%= link_to t('.b2b'), page_path('b2b'), class: 'mr-2' %></div>
       </div>
       <%= link_to root_path do %>
         <%= image_tag "logo-conscients-bebe-bio.png", class: "logo-padding" %>
@@ -64,7 +64,7 @@
         </div>
       </div>
       <!-- Dropdown right small devices -->
-      <div class="dropdown d-md-none">
+      <div class="dropdown d-md-none filters-font">
         <%= fa_icon "bars", class: "c-pointer", data: { toggle: "dropdown" } %>
         <div class="dropdown-menu dropdown-menu-right">
           <%= link_to t('shared.navbar.my_cart'), cart_path(@cart), class: 'dropdown-item' %>
@@ -77,6 +77,8 @@
           <% Category.in_order.main.each do |category| %>
             <%= link_to category.name, category_products_path(category), class: 'dropdown-item'  %>
           <% end %>
+          <div class="dropdown-divider"></div>
+          <%= link_to t('.blog'), blog_posts_path, class: "dropdown-item" %>
         </div>
       </div>
     </div>

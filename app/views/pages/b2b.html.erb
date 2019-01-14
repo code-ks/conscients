@@ -1,0 +1,17 @@
+<% set_meta_tags title: I18n.t('meta_tags.pages.b2b.title'),
+                 description: I18n.t('meta_tags.pages.b2b.description'),
+                 keywords: I18n.t('meta_tags.pages.b2b.keywords') %>
+
+<%= render 'pages/breadcrumb', page_name: 'b2b' %>
+
+<div class="container-conscients mb-5 my-3 page-font">
+  <h1><%= t'.b2b_title' %></h1>
+  <div class="page-container page-font">
+    <div class="summary padding-tb">
+      <p><%= t '.b2b_intro' %></p>
+    </div>
+    <div class="text-center">
+    <%= link_to t('.contact_us'), page_path('contact'), class: 'red-link angle-right-before' %>
+    </div>
+  </div>
+</div>

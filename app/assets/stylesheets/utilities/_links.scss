@@ -1,27 +1,33 @@
-  .yellow-over {
-    a {
-      &:hover {
-        color: $conscients-yellow;
-      }
+.yellow-over {
+  a {
+    &:hover {
+      color: $conscients-yellow;
     }
   }
+}
 
-  .underlined-link {
-      font-family: "Frank Ruhl Libre", "serif";
-      font-size: 0.9rem;
-      letter-spacing: 0.1rem;
-      text-decoration: underline;
-      text-underline-position: under;
-      @include for-phone-only {
-        font-size: 0.7rem;
-      }
-  }
+.underlined-link {
+    cursor: pointer;
+    font-family: "Frank Ruhl Libre", "serif";
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-decoration: underline;
+    text-underline-position: under;
+    @include for-phone-only {
+      font-size: 0.7rem;
+    }
+}
+
+.darker-hover-grey:hover {
+  color: hsl(54, 6%, 23%);
+}
+
 
 // READ MORE / BACK TO TOP
   .yellow-link {
     color: $conscients-yellow;
+    cursor: pointer;
   }
-
   .yellow-link:hover {
     color: $conscients-yellow;
     text-decoration: underline;
@@ -29,41 +35,40 @@
 
   .green-link {
     color: $conscients-green;
+    cursor: pointer;
   }
-
   .green-link:hover {
     color: $conscients-dark-green;
     text-decoration: underline;
   }
+
   .red-link, .read-more, .back-to-top {
     color: $conscients-red;
+    cursor: pointer;
   }
   .red-link:hover, .read-more:hover, .back-to-top:hover {
     color: $conscients-red;
     text-decoration: underline;
     // font-weight: bold;
   }
-
   .read-more:after {
     font-family: FontAwesome;
     content: "\f107";
     padding-left: 10px;
     text-decoration: underline white;
+    cursor: pointer;
   }
-
   .back-to-top:after {
     font-family: FontAwesome;
     content: "\f106";
     padding-left: 10px;
     text-decoration: underline white;
+    cursor: pointer;
   }
 
-  .follow-link {
-    font-weight: 500;
-  }
-
-  .follow-link:before {
+  .angle-right-before:before {
     font-family: FontAwesome;
     content: "\f105";
     padding-right: 10px;
+    cursor: pointer;
   }

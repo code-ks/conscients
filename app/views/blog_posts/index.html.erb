@@ -2,7 +2,7 @@
                  description: I18n.t('meta_tags.blog_posts.index.description'),
                  keywords: I18n.t('meta_tags.blog_posts.index.keywords') %>
 
-<div class="container my-5">
+<div class="container-conscients">
 
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -15,7 +15,9 @@
     </ol>
   </nav>
 
-  <%= render @blog_posts %>
+  <div class="card-columns">
+    <%= render @blog_posts %>
+  </div>
 
   <div class="d-flex justify-content-center"><%= paginate @blog_posts %></div>
 </div>

@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
+.home-first-img {
+   background: image-url('robe-bio-fille-conscients-des-nos-premiers-pas.jpg');
+}
 // FONTS
   .blog-pics-font {
     h2 {
@@ -311,33 +314,33 @@
     }
   }
 
-// SOCIAL
-  .social-box {
-    height: 200px;
-    display: flex;
-    margin-top: 60px;
-    align-items: center;
-    @include for-phone-only {
-      height: 75px;
-      margin-top: 32px;
-    }
-  }
-  .social-box-links {
-    margin: auto;
-  }
+// // SOCIAL
+//   .social-box {
+//     height: 200px;
+//     display: flex;
+//     margin-top: 60px;
+//     align-items: center;
+//     @include for-phone-only {
+//       height: 75px;
+//       margin-top: 32px;
+//     }
+//   }
+//   .social-box-links {
+//     margin: auto;
+//   }
 
-  .social-box-links a {
-  color: $conscients-grey;
-  opacity: 0.2;
-  text-decoration: none;
-  font-size: 2.5rem;
-  padding: 0px 30px;
-  @include for-phone-only {
-    font-size: 1.5rem;
-    padding: 0px 10px;
-  }
-}
-  .social-box-links a:hover {
-    // opacity: 1;
-    opacity: 1;
-  }
+//   .social-box-links a {
+//   color: $conscients-grey;
+//   opacity: 0.2;
+//   text-decoration: none;
+//   font-size: 2.5rem;
+//   padding: 0px 30px;
+//   @include for-phone-only {
+//     font-size: 1.5rem;
+//     padding: 0px 10px;
+//   }
+// }
+//   .social-box-links a:hover {
+//     // opacity: 1;
+//     opacity: 1;
+//   }
