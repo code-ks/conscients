@@ -20,6 +20,10 @@ fr:
       about_sub_four_text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
       about_sub_five : "Sous titre cinq"
       about_sub_five_text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    b2b:
+      b2b_title: "B2B"
+      b2b_intro: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt"
+      contact_us: "N'hésitez pas à nous contacter !"
     contact:
       contact_title: "Contact"
       contact_intro: "Vous avez des questions ? Sur votre commande, les arbres que vous offrez en cadeau, un partenariat ? Ou vous voulez simplement échanger ? N'hésitez pas à nous contacter, nous vous répondrons au plus vite !"
@@ -154,7 +158,8 @@ fr:
       about: 'A propos'
       contact: 'Contact'
       faq: 'FAQ'
-      participate: 'B2B'
+      participate: 'Participer'
+      b2b: "B2B"
       payment_shipping: 'Paiements, Livraison, Retours'
       site_map: 'Plan du site'
       terms: 'Mentions légales et CGV'
@@ -454,6 +459,7 @@ fr:
       about: "A propos"
       my_account: "Mon compte"
       participate: "Participer"
+      b2b: "B2B"
       my_cart: "Mon panier"
       search: "Rechercher"
       sign_in: "Me connecter"
@@ -462,6 +468,7 @@ fr:
     footer:
       about: "A propos"
       participate: "Participer"
+      b2b: "B2B"
       site_map_link: "Plan du site"
       payment_shipping_link: "Paiement Livraison Retours"
       terms_link: "Mentions légales et CGV"
