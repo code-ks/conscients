@@ -1,8 +1,13 @@
 fr:
   pages:
     home:
+      img_intro: "Sous-titre de l'actu"
+      img_intro_title: "Titre de l'actu avec lien vers la page"
       hello: "Test"
       searching: "Ma recherche"
+      project: "Le projet conscients"
+      baseline: "Révéler et préserver ce que le monde a de plus beau pour nos enfants"
+      discover: "Découvrir le projet"
     about:
       test: "Youpi"
     contact:

@@ -3,13 +3,19 @@
                  keywords: I18n.t('meta_tags.pages.home.keywords') %>
 
 <!-- BANNER -->
-<div class="banner" style="background-image: url('http://conscients.com/wp-content/uploads/2012/09/robe-bio-fille-conscients-des-nos-premiers-pas1.jpg1_.jpg');">
+<div class="banner home-first-img">
   <div class="banner-content">
-    <h2>Sous titre indiqué en admin</h2>
-    <h1>Admin : img accueil, titre, changer font color pour le banner content</h1>
+    <h2><%= t'.img_intro' %></h2>
+    <h1><%= t'.img_intro_title' %></h1>
   </div>
 </div>
 
+<!-- <div class="banner" style="background-image: url('http://conscients.com/wp-content/uploads/2012/09/robe-bio-fille-conscients-des-nos-premiers-pas1.jpg1_.jpg');">
+  <div class="banner-content">
+    <h2></%= t'.img_intro' %></h2>
+    <h1></%= t'.img_intro_title' %></h1>
+  </div>
+</div> -->
 
 
 <div data-controller="home-carousel">
@@ -43,8 +49,8 @@
 <!-- BRAND PREZ -->
 <div class="conscients-presentation home-pt home-font text-center">
   <div class="conscients-presentation-content padding-around ">
-    <h3>Le projet conscients</h3>
-    <h2>Conscients blabla brand de quelques lignes uniquement centré au milieu avec les mc qu'il faut</h2>
-    <a href="#" class="underlined-link">Découvrir le projet</a>
+    <h3><%= t '.project' %></h3>
+    <h2><%= t'.baseline' %></h2>
+    <%= link_to t(".discover"), page_path('about'), class: 'underlined-link'%>
   </div>
 </div>

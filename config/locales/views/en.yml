@@ -1,8 +1,13 @@
 en:
   pages:
     home:
+      img_intro: "traduire"
+      img_intro_title: "traduire"
       hello: "Test EN"
       searching: "Search"
+      project: "Our project"
+      baseline: "Reveal and preserve earth’s wonderful resources, for our children"
+      discover: "Learn more about the project"
     about:
       test: "Youpi"
     contact:
