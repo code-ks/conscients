@@ -3,11 +3,64 @@
                  keywords: I18n.t('meta_tags.pages.about.keywords') %>
 
 <%= render 'pages/breadcrumb', page_name: 'about' %>
-<div class="conscients-container mb-for-footer">
-  <h1 class="flex justify-center"><%= t 'pages.about.test' %> Hello from <%= Rails.application.class
-                                                                           .parent_name %>!</h1>
-  Youpi
+
+<!--   <h1 class="flex justify-center"></%= t 'pages.about.test' %> Hello from <%= Rails.application.class
+                                                                           .parent_name %>!</h1> -->
+<div class="container-conscients mb-5 my-3 page-font">
+  <h1><%= t'.about_title' %></h1>
+  <div class="row padding-tb">
+    <div class="col-md-6">
+      <%= image_tag "about-one.jpg", class: "w-100" %>
+    </div>
+    <div class="col-md-6">
+      <h4 class=text-center><%= t'.about_sub_one' %></h4>
+      <p><%= t '.about_sub_one_text' %></p>
+    </div>
+  </div>
+  <hr>
+  <div class="row padding-tb">
+    <div class="col-md-6">
+      <h4 class=text-center><%= t'.about_sub_two' %></h4>
+      <p><%= t '.about_sub_two_text' %></p>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag "about-one.jpg", class: "w-100" %>
+    </div>
+  </div>
+  <hr>
+  <div class="row padding-tb">
+    <div class="col-md-6">
+      <%= image_tag "about-one.jpg", class: "w-100" %>
+    </div>
+    <div class="col-md-6">
+      <h4 class=text-center><%= t'.about_sub_tree' %></h4>
+      <p><%= t '.about_sub_tree_text' %></p>
+    </div>
+  </div>
+  <hr>
+  <div class="row padding-tb">
+    <div class="col-md-6">
+      <h4 class=text-center><%= t'.about_sub_four' %></h4>
+      <p><%= t '.about_sub_four_text' %></p>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag "about-one.jpg", class: "w-100" %>
+    </div>
+  </div>
+  <hr>
+  <div class="row padding-tb">
+    <div class="col-md-6">
+      <%= image_tag "about-one.jpg", class: "w-100" %>
+    </div>
+    <div class="col-md-6">
+      <h4 class=text-center><%= t'.about_sub_five' %></h4>
+      <p><%= t '.about_sub_five_text' %></p>
+    </div>
+  </div>
 </div>
+
+
+
 
 
 
