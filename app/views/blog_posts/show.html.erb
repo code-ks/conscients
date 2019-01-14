@@ -20,10 +20,9 @@
     <h1 class="pb-0"><%= @blog_post.title %></h1>
     <h4 class=text-center><%= @blog_post.category %></h4>
   </div>
-  <div class="w-100">
-    <%= image_tag(@blog_post.main_image, class: " float-left w-50") %>
+  <div class="w-100 pt-3 text-justify">
+    <%= image_tag(@blog_post.main_image, class: " float-left w-50 pr-3") %>
     <%= @blog_post.content.html_safe %>
   </div>
 </div>
-lashow de blog posts
 

@@ -80,6 +80,7 @@
     padding-top: 1rem;
     @include for-phone-only {
       font-size: 0.7rem;
+      padding-bottom: 0;
     }
   }
 }

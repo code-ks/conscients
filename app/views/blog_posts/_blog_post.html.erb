@@ -1,8 +1,11 @@
 <!-- <div class="col-md-6 d-flex flex-column"> -->
 <div class="card shop-card p-2 mb-0">
-  <%= image_tag(blog_post.main_image, class: "card-img-top rounded-0") %>
+
+<%= link_to image_tag(blog_post.main_image, class: "card-img-top rounded-O"), blog_post_path(blog_post) %>
+<!--   </%= image_tag(blog_post.main_image, class: "card-img-top rounded-0") %> -->
   <div class="card-body text-justify px-0">
-    <div class="page-font"><h2><%= blog_post.title %></h2></div>
+    <div class="page-font"><h2 class="darker-hover-grey"><%= link_to blog_post.title, blog_post_path(blog_post) %></h2></div>
+<!--     <div class="page-font"><h2><%= blog_post.title %></h2></div>   -->
     <div class="page-font"><h5 class="title-grey pt-0"><%= blog_post.category %></h5></div>
     <hr>
     <div class="ql-displayer my-3">

@@ -1,21 +1,26 @@
-  .yellow-over {
-    a {
-      &:hover {
-        color: $conscients-yellow;
-      }
+.yellow-over {
+  a {
+    &:hover {
+      color: $conscients-yellow;
     }
   }
+}
 
-  .underlined-link {
-      font-family: "Frank Ruhl Libre", "serif";
-      font-size: 0.9rem;
-      letter-spacing: 0.1rem;
-      text-decoration: underline;
-      text-underline-position: under;
-      @include for-phone-only {
-        font-size: 0.7rem;
-      }
-  }
+.underlined-link {
+    font-family: "Frank Ruhl Libre", "serif";
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-decoration: underline;
+    text-underline-position: under;
+    @include for-phone-only {
+      font-size: 0.7rem;
+    }
+}
+
+.darker-hover-grey:hover {
+  color: hsl(54, 6%, 23%);
+}
+
 
 // READ MORE / BACK TO TOP
   .yellow-link {
