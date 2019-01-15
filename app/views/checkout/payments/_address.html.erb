@@ -2,7 +2,7 @@
 <% if address.email? %>
   <p><%= address.email %></p>
   <br>
-  <p><%= t('.certificates_delivered_by_email') %></p>
+<!--     <p></%= t('.certificates_delivered_by_email') %></p> -->
 <% else %>
     <p><%= address.full_name %></p>
   <% if address.company %>
@@ -20,3 +20,4 @@
   <% end %>
 <% end %>
 </div>
+

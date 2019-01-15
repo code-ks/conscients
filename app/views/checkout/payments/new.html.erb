@@ -18,7 +18,6 @@
           <div class="adresses-delivery">
             <p class="box-green-text"><%= t('.delivery') %></p>
             <%= render 'address', address: @cart.delivery_address, title_key: ".delivery" %>
-
             <% unless @cart.recipient_message.blank? %>
               <hr>
               <div class="message-added">
@@ -26,7 +25,6 @@
                 <p class="message-added-detail">"<%= @cart.recipient_message %>"</p>
               </div>
             <% end %>
-
           </div>
           <div class="adresses-billing pt-resp-16">
             <p class="box-green-text"><%= t('.billing') %></p>
@@ -44,6 +42,7 @@
         <%= render 'payment_buttons', cart: @cart %>
       </div>
     </div>
+
     <div class="checkout-cart-box cart-on-top">
 
       <div class="mobile-cart bg-grey border">
