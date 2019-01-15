@@ -61,6 +61,32 @@
   cursor: pointer;
 }
 
+.message-added {
+  padding-left: 1rem;
+  color: $conscients-title-grey;
+  @include for-tablet-landscape-up {
+    color: $conscients-dark-green;
+    padding-left: 0;
+  }
+}
+.message-added-title {
+  font-family: "Frank Ruhl libre", "serif";
+  font-weight: 300;
+  text-transform: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+
+.message-added-detail {
+  font-family: "Frank Ruhl libre", "serif";
+  font-weight: 300;
+  text-transform: none;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
 .coupon-div {
   margin-top: 1rem;
   margin-bottom: 1rem;
