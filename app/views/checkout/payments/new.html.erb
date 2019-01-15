@@ -18,7 +18,8 @@
           <div class="adresses-delivery">
             <p class="box-green-text"><%= t('.delivery') %></p>
             <%= render 'address', address: @cart.delivery_address, title_key: ".delivery" %>
-            <% unless @cart.recipient_message.empty? %>
+
+            <% unless @cart.recipient_message.blank? %>
               <hr>
               <div class="message-added">
                 <p class="message-added-title"><%= t('.recipient_message_title')%></p>
@@ -30,7 +31,7 @@
           <div class="adresses-billing pt-resp-16">
             <p class="box-green-text"><%= t('.billing') %></p>
             <%= render 'address', address: @cart.billing_address, title_key: ".billing" %>
-            <% unless @cart.customer_note.empty? %>
+            <% unless @cart.customer_note.blank? %>
               <hr>
               <div class="message-added">
                 <p class= "message-added-title"><%= t('.customer_note_title') %></p>
