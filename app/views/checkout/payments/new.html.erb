@@ -21,7 +21,7 @@
             <% unless @cart.recipient_message.empty? %>
               <hr>
               <div class="message-added">
-                <p class="message-added-title">Mot ajouté au colis</p>
+                <p class="message-added-title"><%= t('.recipient_message_title')%></p>
                 <p class="message-added-detail">"<%= @cart.recipient_message %>"</p>
               </div>
             <% end %>
@@ -33,7 +33,7 @@
             <% unless @cart.customer_note.empty? %>
               <hr>
               <div class="message-added">
-                <p class= "message-added-title">Votre message pour Conscients</p>
+                <p class= "message-added-title"><%= t('.customer_note_title') %></p>
                 <p class="message-added-detail">"<%= @cart.customer_note %>"</p>
               </div>
             <% end %>
