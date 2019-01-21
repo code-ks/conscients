@@ -3,11 +3,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.0'
-
 gem 'pg', '>= 0.18'
 gem 'puma', '~> 3.11'
-gem 'rails', '5.2.0.rc2'
+gem 'rails', '5.2.2'
 
 gem 'friendly_id-mobility', '~> 0.5'
 gem 'mobility', '~> 0.5'
@@ -36,8 +34,9 @@ gem 'gibbon', '~> 3.2'
 gem 'omniauth-facebook', '~> 5.0'
 gem 'postmark-rails', '~> 0.16'
 
-gem 'activeadmin', '~> 1.2'
+gem 'activeadmin', '~> 1.4'
 gem 'arctic_admin', '~> 1.4'
+gem 'ransack', '~> 2.1', '>= 2.1.1'
 
 gem 'acts_as_list', '~> 0.9'
 gem 'ancestry', '~> 3.0'
