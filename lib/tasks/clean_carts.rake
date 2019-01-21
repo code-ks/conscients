@@ -2,7 +2,7 @@
 
 Rails.logger = Logger.new(STDOUT)
 
-task create_development_resources: :environment do
+task clean_carts: :environment do
   Order.cart_to_destroy.each do |cart|
     cart.line_items.each do |line_item|
       line_item.product_sku.increment(:quantity, line_item.quantity) unless tree?
