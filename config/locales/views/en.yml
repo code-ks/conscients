@@ -340,6 +340,8 @@ en:
         addresses: "Addresses"
         billing: "Billing address"
         delivery: "Delivery address"
+        recipient_message_title: "Note to the recipient"
+        customer_note_title: "Your message to us"
         edit_on_previous: "< Edit addresses (back to previous page)"
       show:
         go_to_client_space: "Find all information relating to your orders in your account"

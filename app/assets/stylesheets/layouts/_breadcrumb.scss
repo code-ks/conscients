@@ -1,0 +1,27 @@
+.breadcrumb {
+  margin-bottom: 0 !important;
+  list-style: none;
+  color: $conscients-title-grey !important;
+  text-transform: uppercase !important;
+  background: none !important;
+  a {
+    font-family: "Roboto", "sans-serif" !important;
+    letter-spacing: 0.1rem !important;
+    font-size: 0.6rem !important;
+    @include for-phone-only {
+      font-size: 10px !important;
+    }
+  }
+}
+
+.breadcrumb-item {
+  + .breadcrumb-item::before {
+    color: $conscients-title-grey !important;
+    content: ">" !important;
+    font-size: 0.6rem !important;
+  }
+  &.active {
+    // color: $breadcrumb-active-color;
+    color: $conscients-title-grey;
+  }
+}
