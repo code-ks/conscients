@@ -110,4 +110,12 @@ class Client < ApplicationRecord
   def lower_case_md5_hashed_email
     Digest::MD5.hexdigest(email.downcase)
   end
+
+  def full_name
+    if first_name && last_name
+      "#{first_name} #{last_name}"
+    elsif addresses.any?
+      addresses.last.full_name
+    end
+  end
 end

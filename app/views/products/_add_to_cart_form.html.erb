@@ -35,8 +35,7 @@
     <div class="form-group row">
       <%= form.label :certificate_date, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
-        <%= form.date_field :certificate_date, class: "form-control mr-sm-2", id: "datepicker", required: true %>
-<!--         </%= form.date_field :certificate_date, value: Date.today.strftime("%d-%m-%Y"), class: "form-control mr-sm-2", id: "datepicker", required: true %>       -->
+        <%= form.date_field :certificate_date, class: "form-control mr-sm-2", id: "datepicker", required: true, data: { current_date: line_item.certificate_date ? l(line_item.certificate_date, format: :flatpicker_date) : '' } %>
       </div>
     </div>
 
