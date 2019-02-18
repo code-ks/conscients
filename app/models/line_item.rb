@@ -45,7 +45,8 @@ class LineItem < ApplicationRecord
   validates :recipient_message, length: { maximum: 110 }
   validates :certificate_date, presence: true, if: :tree?
 
-  before_validation :decrement_stock_quantities, prepend: true
+  before_validation :manage_stock_quantites_if_change_sku,
+                    :decrement_stock_quantities, prepend: true
   before_destroy :increment_stock_quantities_destroy
   before_save :update_price
   after_create :set_cart_to_correct_delivery_type
@@ -69,7 +70,11 @@ class LineItem < ApplicationRecord
   }
   scope :finished, lambda {
     includes(:order).where(orders: { aasm_state:
-      %w[preparing wainting_for_bank_transfer fulfilled delivered] })
+      %w[preparing waiting_for_bank_transfer fulfilled delivered] })
+  }
+  scope :paid, lambda {
+    includes(:order).where(orders: { aasm_state:
+      %w[preparing fulfilled delivered] })
   }
 
   def self.tree_plantation_marker
@@ -126,6 +131,13 @@ class LineItem < ApplicationRecord
 
   def url_certificate
     url_for(certificate_background)
+  end
+
+  def manage_stock_quantites_if_change_sku
+    return if (product_sku_id_was == product_sku_id) || new_record?
+
+    ProductSku.find(product_sku_id_was).increment(:quantity, quantity_was).save
+    product_sku.decrement(:quantity, quantity_was)
   end
 
   def decrement_stock_quantities

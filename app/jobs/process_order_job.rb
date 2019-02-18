@@ -8,7 +8,7 @@ class ProcessOrderJob < ApplicationJob
     @order = Order.find(order_id)
     set_view
     update_order
-    @order.generate_invoice
+    generate_invoice
     generate_certificates
     send_order_confirmation
     send_gift_certificates

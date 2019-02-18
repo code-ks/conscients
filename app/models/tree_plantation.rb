@@ -52,7 +52,7 @@ class TreePlantation < ApplicationRecord
   end
 
   def marker(client)
-    line_items.finished.where(orders: { client: client }).tree_plantation_marker
+    line_items.paid.where(orders: { client: client }).tree_plantation_marker
   end
 
   def to_s

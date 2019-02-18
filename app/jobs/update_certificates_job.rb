@@ -20,13 +20,13 @@ class UpdateCertificatesJob < ApplicationJob
   end
 
   def generate_certificates
-    @tree_plantation.line_items.finished.each do |line_item|
+    @tree_plantation.line_items.paid.each do |line_item|
       line_item.generate_certificate(@view)
     end
   end
 
   def send_update_emails
-    @tree_plantation.orders.finished.each do |order|
+    @tree_plantation.orders.paid.each do |order|
       ClientMailer.with(order: order).tree_plantation_update.deliver_later
     end
   end

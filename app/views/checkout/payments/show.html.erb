@@ -1,6 +1,6 @@
 <div class="page-container my-5 page-font first-title-padding">
   <h1 class="text-center"><%= t(".order_confirmed") %></h1>
-  <% if @order.wainting_for_bank_transfer? %>
+  <% if @order.waiting_for_bank_transfer? %>
     <h2 class="text-center"><%= t(".order_received") %>
     <%= t(".bank_transfer_instructions", amount: @order.total_price) %></h2>
     <div class="my-5 p-3 border-black">
@@ -70,7 +70,3 @@
     <%= link_to t('.contact_us'), page_path('contact'), class: "angle-right-before red-link"%>
   </div>
 </div>
-
-
-
-

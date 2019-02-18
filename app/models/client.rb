@@ -78,11 +78,11 @@ class Client < ApplicationRecord
   # rubocop:disable Metrics/AbcSize
   def markers
     markers = []
-    line_items.finished.includes(:product_sku).map do |line_item|
+    line_items.paid.includes(:product_sku).map do |line_item|
       markers << line_item.producer_marker if line_item.producer_marker?
     end
     tree_plantations.includes(:line_items).map do |tree_plantation|
-      markers << tree_plantation.marker(self) if tree_plantation.line_items.finished.any?
+      markers << tree_plantation.marker(self) if tree_plantation.line_items.paid.any?
     end
     markers.uniq
   end
@@ -93,7 +93,7 @@ class Client < ApplicationRecord
   end
 
   def quantity_of_trees_planted
-    line_items.finished.certificable.sum(&:quantity)
+    line_items.paid.certificable.sum(&:quantity)
   end
 
   def tonne_co2_captured

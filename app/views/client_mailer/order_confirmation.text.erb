@@ -2,6 +2,8 @@
 
 <% if @order.email? %>
   <%= t(".core_email") %>
+<% elsif @order.include_trees_to_update? %>
+  <%= t(".core_postal_with_tree_to_update") %>
 <% elsif @order.include_trees? %>
   <%= t(".core_postal_with_tree") %>
 <% else %>

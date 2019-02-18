@@ -57,7 +57,7 @@ en:
       order:
         aasm_state: "State of the order"
         aasm_state/in_cart: "Cart"
-        aasm_state/wainting_for_bank_transfer: "Waiting for bank transfer"
+        aasm_state/waiting_for_bank_transfer: "Waiting for bank transfer"
         aasm_state/preparing: "Preparing"
         aasm_state/fulfilled: "Fulfilled"
         aasm_state/delivered: "Delivered"
