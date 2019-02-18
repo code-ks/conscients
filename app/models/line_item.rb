@@ -48,6 +48,8 @@ class LineItem < ApplicationRecord
   before_validation :decrement_stock_quantities, prepend: true
   before_destroy :increment_stock_quantities_destroy
   before_save :update_price
+  after_create :set_cart_to_correct_delivery_type
+  after_destroy :set_cart_to_correct_delivery_type
 
   delegate :classic?, :personalized?, :tree?, :product, :product_images,
            :product_name, :product_ttc_price_cents, :product_ht_price_cents, :product_weight,
@@ -136,5 +138,9 @@ class LineItem < ApplicationRecord
     product_sku&.save unless tree?
     tree_plantation&.increment(:quantity, quantity) if tree?
     tree_plantation&.save if tree?
+  end
+
+  def set_cart_to_correct_delivery_type
+    order.to_correct_delivery_type
   end
 end
