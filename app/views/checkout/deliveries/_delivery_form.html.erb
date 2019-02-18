@@ -47,7 +47,7 @@
         <div data-controller="billing-address">
           <% if cart.postal? %>
             <div class="form-group box-green-text d-flex align-items-baseline mb-2">
-              <%= form.check_box :delivery_is_billing, checked: true, data: { action: "billing-address#toggleDisplay", target: "billing-address.checkable" } %>
+              <%= form.check_box :delivery_is_billing, checked: cart.delivery_is_billing?, data: { action: "billing-address#toggleDisplay", target: "billing-address.checkable" } %>
               <%= form.label t('.delivery_is_billing'), class: "ml-1" %>
             </div>
           <% end %>

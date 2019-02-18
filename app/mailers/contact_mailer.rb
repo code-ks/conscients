@@ -3,7 +3,9 @@
 class ContactMailer < ApplicationMailer
   def contact_message
     @message = params[:message]
-    mail from: %("#{params[:name]}" <#{params[:email]}>),
+    @name = params[:name]
+    @email = params[:email]
+    mail from: %("#{params[:name]}" <"carole@conscients.com">),
          to: 'carole@conscients.com', subject: params[:subject]
   end
 end

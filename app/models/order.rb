@@ -52,7 +52,7 @@ class Order < ApplicationRecord
 
   enum delivery_method: { postal: 0, email: 1 }
   enum payment_method: { stripe: 0, paypal: 1, bank_transfer: 2 }
-  enum aasm_state: { in_cart: 0, wainting_for_bank_transfer: 1, preparing: 3,
+  enum aasm_state: { in_cart: 0, waiting_for_bank_transfer: 1, preparing: 3,
                      fulfilled: 4, delivered: 5, canceled: 6 }
 
   validates :total_price_cents, presence: true, numericality: { greater_than_or_equal_to: 0 }
@@ -68,7 +68,7 @@ class Order < ApplicationRecord
 
   scope :order_by_date, -> { order(created_at: :desc) }
   scope :finished, lambda {
-    preparing.or(Order.wainting_for_bank_transfer).or(Order.fulfilled).or(Order.delivered)
+    preparing.or(Order.waiting_for_bank_transfer).or(Order.fulfilled).or(Order.delivered)
   }
   scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
   scope :cart_to_destroy, -> { in_cart.two_days_old }
@@ -76,19 +76,21 @@ class Order < ApplicationRecord
   include AASM
   aasm enum: true do
     state :in_cart, initial: true
-    state :wainting_for_bank_transfer
+    state :waiting_for_bank_transfer
     state :preparing
     state :fulfilled
     state :delivered
     state :canceled
 
     event :order_by_bank_transfer do
-      transitions from: :in_cart, to: :wainting_for_bank_transfer
+      transitions from: :in_cart, to: :waiting_for_bank_transfer
     end
 
     event :pay, after: :process_order do
+      transitions from: :in_cart, to: :fulfilled, guard: :tree_only?
+      transitions from: :waiting_for_bank_transfer, to: :fulfilled, guard: :tree_only?
       transitions from: :in_cart, to: :preparing
-      transitions from: :wainting_for_bank_transfer, to: :preparing
+      transitions from: :waiting_for_bank_transfer, to: :preparing
     end
 
     event :fulfill do
@@ -102,7 +104,7 @@ class Order < ApplicationRecord
 
     event :cancel do
       transitions from: :in_cart, to: :canceled
-      transitions from: :wainting_for_bank_transfer, to: :canceled
+      transitions from: :waiting_for_bank_transfer, to: :canceled
       transitions from: :preparing, to: :canceled
       transitions from: :fulfilled, to: :canceled
       transitions from: :delivered, to: :canceled
@@ -207,7 +209,7 @@ class Order < ApplicationRecord
   end
 
   def items_number
-    line_items.count
+    line_items.sum(:quantity)
   end
 
   def tree_only?
@@ -216,6 +218,10 @@ class Order < ApplicationRecord
 
   def include_trees?
     products.pluck(:product_type).include?('tree')
+  end
+
+  def include_trees_to_update?
+    line_items.map(&:tree_plantation).pluck(:is_full).include?(false)
   end
 
   def set_email_delivery_address
@@ -238,6 +244,12 @@ class Order < ApplicationRecord
     Hash[I18n.t('activerecord.attributes.order.aasm_events')
              .select { |k, _| permitted_events_names.include?(k) }
          .values.zip(permitted_events_names)]
+  end
+
+  def delivery_is_billing?
+    return true unless delivery_address && billing_address
+
+    delivery_address == billing_address
   end
 
   private

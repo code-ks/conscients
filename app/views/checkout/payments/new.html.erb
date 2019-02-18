@@ -38,7 +38,7 @@
             <% end %>
           </div>
         </div>
-        <p class="edit-on-previous-page"> <%= t('.edit_on_previous') %></p>
+        <%= link_to t('.edit_on_previous'), new_delivery_path, class: "edit-on-previous-page" %>
         <%= render 'payment_buttons', cart: @cart %>
       </div>
     </div>

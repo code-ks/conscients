@@ -45,9 +45,12 @@ class LineItem < ApplicationRecord
   validates :recipient_message, length: { maximum: 110 }
   validates :certificate_date, presence: true, if: :tree?
 
-  before_validation :decrement_stock_quantities, prepend: true
+  before_validation :manage_stock_quantites_if_change_sku,
+                    :decrement_stock_quantities, prepend: true
   before_destroy :increment_stock_quantities_destroy
   before_save :update_price
+  after_create :set_cart_to_correct_delivery_type
+  after_destroy :set_cart_to_correct_delivery_type
 
   delegate :classic?, :personalized?, :tree?, :product, :product_images,
            :product_name, :product_ttc_price_cents, :product_ht_price_cents, :product_weight,
@@ -67,7 +70,11 @@ class LineItem < ApplicationRecord
   }
   scope :finished, lambda {
     includes(:order).where(orders: { aasm_state:
-      %w[preparing wainting_for_bank_transfer fulfilled delivered] })
+      %w[preparing waiting_for_bank_transfer fulfilled delivered] })
+  }
+  scope :paid, lambda {
+    includes(:order).where(orders: { aasm_state:
+      %w[preparing fulfilled delivered] })
   }
 
   def self.tree_plantation_marker
@@ -126,6 +133,13 @@ class LineItem < ApplicationRecord
     url_for(certificate_background)
   end
 
+  def manage_stock_quantites_if_change_sku
+    return if (product_sku_id_was == product_sku_id) || new_record?
+
+    ProductSku.find(product_sku_id_was).increment(:quantity, quantity_was).save
+    product_sku.decrement(:quantity, quantity_was)
+  end
+
   def decrement_stock_quantities
     product_sku.decrement(:quantity, added_quantity) unless tree?
     tree_plantation.decrement(:quantity, added_quantity) if tree?
@@ -136,5 +150,9 @@ class LineItem < ApplicationRecord
     product_sku&.save unless tree?
     tree_plantation&.increment(:quantity, quantity) if tree?
     tree_plantation&.save if tree?
+  end
+
+  def set_cart_to_correct_delivery_type
+    order.to_correct_delivery_type
   end
 end

@@ -189,7 +189,7 @@ fr:
       order:
         aasm_state: "Etat de la commande"
         aasm_state/in_cart: "Panier"
-        aasm_state/wainting_for_bank_transfer: "En attente de virement bancaire"
+        aasm_state/waiting_for_bank_transfer: "En attente de virement bancaire"
         aasm_state/preparing: "En cours de préparation"
         aasm_state/fulfilled: "Envoyé"
         aasm_state/delivered: "Livré"

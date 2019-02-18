@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class LineItemsController < ApplicationController
-  before_action :set_product, :set_variant, :set_product_sku, only: :create
+  before_action :set_product, :set_variant, :set_product_sku, only: %i[create update]
   before_action :set_line_item, only: %i[update destroy]
 
   respond_to :js, :html
@@ -21,7 +21,6 @@ class LineItemsController < ApplicationController
 
   def destroy
     @line_item.destroy
-    @cart.to_correct_delivery_type
     redirect_back fallback_location: cart_path(@cart)
   end
 
@@ -58,5 +57,6 @@ class LineItemsController < ApplicationController
   def line_item_params_update
     params.require(:line_item).permit(:recipient_name, :recipient_message,
                                       :certificate_date, :quantity)
+          .merge(product_sku_id: @product_sku.id)
   end
 end

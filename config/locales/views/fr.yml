@@ -393,6 +393,7 @@ fr:
       greatings: "Bonjour"
       core_email: "Votre commande a bien été confirmée. Veuillez la trouver ci-jointe ainsi que votre facture."
       core_postal_with_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-joints vos certificats d'arbres ainsi que votre facture."
+      core_postal_with_tree_to_update: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-joints vos certificats d'arbres ainsi que votre facture."
       core_postal_without_tree: "Votre commande a bien été confirmée et sera expédiée sous peu. Veuillez trouver ci-jointe votre facture."
       go_to_client_space: "Rendez-vous dans votre espace client encore plus d'information."
       thanks: "Merci beaucoup"

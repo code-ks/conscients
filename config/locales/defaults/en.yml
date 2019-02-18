@@ -17,6 +17,9 @@ en:
   time:
     formats:
       long_no_time: "%B %d, %Y"
+  date:
+    formats:
+      flatpicker_date: "%Y-%m-%d"
   namespace:
     'true': "Yes"
     'false': "No"

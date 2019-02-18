@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /en/ do
     root to: 'pages#home'
-    devise_for :clients, skip: :omniauth_callbacks
+    devise_for :clients, skip: :omniauth_callbacks,
+               controllers: { registrations: 'clients/registrations' }
 
     namespace :admin do
       resources :blog_posts
