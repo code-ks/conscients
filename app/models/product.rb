@@ -64,7 +64,6 @@ class Product < ApplicationRecord
   validates :name_fr, :name_en, :description_short, :ht_price_cents, :product_type,
             :published, :seo_title, :meta_description, :slug, :tax_rate, presence: true
   validates :name_fr, :name_en, :slug, :seo_title, uniqueness: true
-  validates :name_fr, :name_en, :slug, length: { minimum: 3, maximum: 30 }
   validates :description_short, :meta_description, length: { minimum: 50, maximum: 500 }
   validates :seo_title, length: { minimum: 5, maximum: 150 }
   validates :product_type, inclusion: { in: product_types.keys }

@@ -18,8 +18,6 @@
 class Category < ApplicationRecord
   has_many :categorizations, dependent: :destroy
 
-  before_destroy :stop_destroy
-
   has_ancestry
   acts_as_list scope: [:ancestry]
 

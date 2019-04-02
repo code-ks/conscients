@@ -61,10 +61,14 @@ class TreePlantation < ApplicationRecord
 
   # rubocop:disable Metrics/CyclomaticComplexity
   # rubocop:disable Metrics/PerceivedComplexity
+  # rubocop:disable Metrics/AbcSize
   def finalized?
-    project_name && project_type && base_certificate_uuid && latitude && longitude &&
-      trees_quantity && partner && plantation_uuid && tree_specie && producer_name
+    project_name.present? && project_type.present? && base_certificate_uuid.present? &&
+      latitude.present? && longitude.present? && trees_quantity.present? &&
+      partner.present? && plantation_uuid.present? && tree_specie.present? &&
+      producer_name.present?
   end
+  # rubocop:enable Metrics/AbcSize
   # rubocop:enable Metrics/CyclomaticComplexity
   # rubocop:enable Metrics/PerceivedComplexity
 
