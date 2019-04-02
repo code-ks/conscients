@@ -3,7 +3,7 @@
 ActiveAdmin.register StockEntry do
   menu parent: I18n.t('active_admin.product_management')
 
-  actions :all, except: %i[edit update delete]
+  actions :all, except: %i[edit update destroy]
 
   permit_params :product_sku_id, :quantity
 

@@ -9,8 +9,8 @@ ActiveAdmin.register Product do
                 :description_long_fr, :description_long_en,
                 :ht_price_cents, :position, :position_home, :tax_rate, :weight, :product_type,
                 :published, :ht_buying_price_cents, :seo_title_fr, :seo_title_en,
-                :meta_description_fr, :meta_description_en, :keywords_fr, :keywords_en, :slug_fr,
-                :slug_en, :producer_latitude, :producer_longitude, :certificate_background,
+                :meta_description_fr, :meta_description_en, :keywords_fr, :keywords_en,
+                :producer_latitude, :producer_longitude, :certificate_background,
                 :background_image, :color_certificate, images: []
 
   includes :text_translations, :images_attachments, :certificate_background_attachment
@@ -85,8 +85,6 @@ ActiveAdmin.register Product do
     inputs do
       f.input :name_fr
       f.input :name_en
-      f.input :slug_fr
-      f.input :slug_en
       f.input :description_short_fr
       f.input :description_short_en
       f.input :description_long_fr, as: :text

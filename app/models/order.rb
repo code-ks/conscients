@@ -87,8 +87,8 @@ class Order < ApplicationRecord
     end
 
     event :pay, after: :process_order do
-      transitions from: :in_cart, to: :fulfilled, guard: :tree_only?
-      transitions from: :waiting_for_bank_transfer, to: :fulfilled, guard: :tree_only?
+      transitions from: :in_cart, to: :delivered, guard: :tree_only?
+      transitions from: :waiting_for_bank_transfer, to: :delivered, guard: :tree_only?
       transitions from: :in_cart, to: :preparing
       transitions from: :waiting_for_bank_transfer, to: :preparing
     end
@@ -98,8 +98,8 @@ class Order < ApplicationRecord
     end
 
     event :deliver, after: :deliver_order do
-      transitions from: :preparing, to: :deliver
-      transitions from: :fulfilled, to: :deliver
+      transitions from: :preparing, to: :delivered
+      transitions from: :fulfilled, to: :delivered
     end
 
     event :cancel do
