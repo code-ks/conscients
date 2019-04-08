@@ -3,6 +3,7 @@
 Mobility.configure do |config|
   # Sets the default backend to use in models. This can be overridden in models
   # by passing +backend: ...+ to +translates+.
+  # cf doc --> https://github.com/shioyama/mobility
   config.default_backend = :key_value
 
   # By default, Mobility uses the +translates+ class method in models to

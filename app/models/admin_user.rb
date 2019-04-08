@@ -19,6 +19,7 @@
 #  updated_at             :datetime         not null
 #
 
+# Separated from the client model
 class AdminUser < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

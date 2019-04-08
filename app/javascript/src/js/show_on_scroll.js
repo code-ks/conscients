@@ -1,3 +1,4 @@
+// Display logo differently on scroll
 $(document).on("turbolinks:load", () => {
   $(window).scroll(() => {
     if ($(document).scrollTop() > 100) {

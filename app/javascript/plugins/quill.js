@@ -23,6 +23,8 @@ const quillOptions = {
   }
 };
 
+// Manage JS rich text editor to submit results to Rails (I don't really remember why we decided not to use Trix but there was a reason)
+
 $(document).on("turbolinks:load", () => {
   const bodyFrEditor = document.getElementById("content-fr-editor");
 

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     devise_for :clients, skip: :omniauth_callbacks,
                controllers: { registrations: 'clients/registrations' }
 
+    # Blog posts are not managed in the normal Active Admin interface
+    # because of the specific rich text editors
     namespace :admin do
       resources :blog_posts
     end
@@ -38,6 +40,7 @@ Rails.application.routes.draw do
         resources :downloads, only: :new
       end
     end
+    # Routes for the checkout process --> Cart leads to deliveries choice leads to payments
     scope module: :checkout do
       resources :carts, only: :show
       resources :deliveries, only: %i[new create]

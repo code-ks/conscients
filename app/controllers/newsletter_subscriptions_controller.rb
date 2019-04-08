@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# For newsletter form in home (not signed up users)
 class NewsletterSubscriptionsController < ApplicationController
   def create
     if Rails.env.production?

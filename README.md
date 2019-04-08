@@ -79,3 +79,8 @@ Pour aller plus loin, se référer à la [documentation](https://github.com/thou
 
   - S'inspirer de `seeds.rb` pour les catégories (et notamment de la façon de gérer les parents)
   - Adapter `create_development_resources.rake` pour créer les autres types de resources
+
+### README dev:
+
+  - I use Rails 5.2 credentials to manage secrets
+  - There are githooks (rubocop and brakeman) to pass before commiting

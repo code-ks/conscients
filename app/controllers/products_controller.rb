@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ProductsController < ApplicationController
+  # Filter by search term and variant chosen
   def index
     @products = @current_category.products.page(params[:page]).displayable
                                  .merge(product_search)

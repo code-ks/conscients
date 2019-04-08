@@ -43,6 +43,7 @@ class Product < ApplicationRecord
   has_one_attached :certificate_background
 
   extend Mobility
+  # Change backend to allow query in translatable columns
   translates :name, backend: :column
   translates :description_short, :description_long, :seo_title, :meta_description,
              :keywords, :slug
@@ -94,11 +95,9 @@ class Product < ApplicationRecord
     ht_price_cents * (1 + tax_rate.fdiv(100))
   end
 
+  # Only age category for the moment. More categories would mean refactoring
+  # quite a lot of things (we tried but there was a problem I don't remember)
   def variants_by_category
     variants.group_by(&:category)
-  end
-
-  def certificable?
-    personalized? || tree?
   end
 end

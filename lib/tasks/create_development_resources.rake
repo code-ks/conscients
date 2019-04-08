@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Check if there is no problem as does not really work for Carole
 Rails.logger = Logger.new(STDOUT)
 
 task create_development_resources: :environment do

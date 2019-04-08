@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Initiate objects needed for the delivery options creation, especially addresses
 class LinkDeliveryInfoToCart
   def initialize(cart, order_params, addresses_params)
     @cart = cart
@@ -8,6 +9,8 @@ class LinkDeliveryInfoToCart
     @delivery_address_params =
       addresses_params[:delivery_address].merge(address_type: addresses_params[:address_type])
     @billing_address_params = addresses_params[:billing_address]
+    # Allows to forget the value of the billing address form if
+    # delivery_is_billing is checked (and so if the form is in fact hidden)
     @delivery_is_billing = addresses_params[:delivery_is_billing] == '1'
   end
 
@@ -37,6 +40,7 @@ class LinkDeliveryInfoToCart
   def manage_postal_address_type
     return unless @delivery_address.postal?
 
+    # Don't really remember why this :/ There should be a reason.
     if @delivery_address == @billing_address
       @delivery_address.postal_address_type = nil
     else

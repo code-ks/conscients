@@ -10,6 +10,7 @@ $(document).on("turbolinks:load", () => {
       minZoom: 2,
       maxZoom: 15
     });
+    // Change map zoom and position depending on the markers
     const markers = JSON.parse(mapElement.dataset.markers);
     map.addMarkers(markers);
     if (markers.length === 0) {

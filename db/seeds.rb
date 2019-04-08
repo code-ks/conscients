@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Could have been used by Carole to create the first categories.
+
 Category.destroy_all
 Variant.destroy_all
 

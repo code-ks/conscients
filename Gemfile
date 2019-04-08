@@ -8,6 +8,7 @@ gem 'puma', '~> 3.11'
 gem 'rails', '5.2.2'
 
 gem 'friendly_id-mobility', '~> 0.5'
+# Content translation (like Globalize but much better) --> https://github.com/shioyama/mobility
 gem 'mobility', '~> 0.5'
 gem 'rails-i18n', '~> 5.1'
 
@@ -26,6 +27,7 @@ gem 'rollbar', '~> 2.15'
 gem 'sidekiq', '~> 5.1'
 gem 'sidekiq-failures', '~> 1.0'
 
+# Analytics for rails --> https://github.com/ankane/ahoy
 gem 'ahoy_matey', '~> 2.0'
 gem 'devise', '~> 4.4'
 gem 'devise-i18n', '~> 1.6'
@@ -35,14 +37,19 @@ gem 'omniauth-facebook', '~> 5.0'
 gem 'postmark-rails', '~> 0.16'
 
 gem 'activeadmin', '~> 1.4'
+# Thème for activeadmin
 gem 'arctic_admin', '~> 1.4'
+# Search for active admin
 gem 'ransack', '~> 2.1', '>= 2.1.1'
 
 gem 'acts_as_list', '~> 0.9'
+# Tree structure for models (categories in our case) --> https://github.com/stefankroes/ancestry
 gem 'ancestry', '~> 3.0'
 gem 'friendly_id', '~> 5.2'
+# Static pages
 gem 'high_voltage', '~> 3.0'
 gem 'meta-tags', '~> 2.9'
+# Clean respond with in controllers
 gem 'responders', '~> 2.4'
 
 gem 'aasm', '~> 4.12'
@@ -67,6 +74,7 @@ end
 
 group :development do
   gem 'letter_opener', '~> 1.6'
+  # Find back messages sent to letter_opener in a web interface
   gem 'letter_opener_web', '~> 1.3'
 
   gem 'listen', '~> 3.1'
@@ -75,7 +83,9 @@ group :development do
 
   gem 'annotate', '~> 2.7'
   gem 'awesome_print', '~> 1.8'
+  # Possible to desactivate alerts if too annoying
   gem 'bullet', '~> 5.7'
+  # Generate schéma of database automatically in erd.pdf
   gem 'rails-erd', '~> 1.5'
   gem 'table_print', '~> 1.5'
   gem 'xray-rails', '~> 0.3'

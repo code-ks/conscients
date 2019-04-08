@@ -71,6 +71,7 @@ class Order < ApplicationRecord
     preparing.or(Order.waiting_for_bank_transfer).or(Order.fulfilled).or(Order.delivered)
   }
   scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
+  # Delay could be changed if needed
   scope :cart_to_destroy, -> { in_cart.two_days_old }
 
   include AASM
@@ -86,6 +87,7 @@ class Order < ApplicationRecord
       transitions from: :in_cart, to: :waiting_for_bank_transfer
     end
 
+    # Triggers process_order after paying the order
     event :pay, after: :process_order do
       transitions from: :in_cart, to: :delivered, guard: :tree_only?
       transitions from: :waiting_for_bank_transfer, to: :delivered, guard: :tree_only?
@@ -97,6 +99,7 @@ class Order < ApplicationRecord
       transitions from: :preparing, to: :fulfilled
     end
 
+    # Triggers deliver_order after paying the order
     event :deliver, after: :deliver_order do
       transitions from: :preparing, to: :delivered
       transitions from: :fulfilled, to: :delivered
@@ -160,10 +163,12 @@ class Order < ApplicationRecord
     current_delivery_fees_cents / 1.2
   end
 
+  # Use DELIVERY_FEES constant to get the first delivery fee
   def main_delivery_fees_cents
     DELIVERY_FEES.select { |weight| weight.member?(total_weight) }.values.dig(0, symbol_region) || 0
   end
 
+  # Because printing is not free ;)
   def printing_fees_cents
     return 0 if email?
 
@@ -228,10 +233,12 @@ class Order < ApplicationRecord
     delivery_address || client.email_address || build_delivery_address(email: client.email)
   end
 
+  # Order of priority for default value
   def set_postal_delivery_address
     delivery_address || client.delivery_address || client.postal_address || build_delivery_address
   end
 
+  # Order of priority for default value
   def set_billing_address
     billing_address || client.billing_address || client.postal_address || build_billing_address
   end

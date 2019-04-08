@@ -28,6 +28,7 @@
 
 class Address < ApplicationRecord
   belongs_to :client
+  # Two types of orders linked to an address
   has_many :delivery_orders, class_name: 'Order',
             foreign_key: 'delivery_address_id', dependent: :restrict_with_error
   has_many :billing_orders, class_name: 'Order',

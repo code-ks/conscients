@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale, :set_category, :set_cart, :set_current_visit
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # Analytics
   after_action :track_action
 
   private
@@ -26,6 +27,7 @@ class ApplicationController < ActionController::Base
     @current_category = params[:category_id] ? Category.find(params[:category_id]) : Category.home
   end
 
+  # Set current cart with session[:cart_id]
   def set_cart
     begin
       @cart = Order.in_cart.find(session[:cart_id])

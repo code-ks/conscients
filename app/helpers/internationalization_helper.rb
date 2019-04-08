@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module InternationalizationHelper
+  # Links to change language
   def locale_links
     content = ''
     I18n.available_locales.each_with_index do |locale, i|
