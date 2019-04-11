@@ -406,11 +406,12 @@ en:
       thanks: "Thanks you,"
       sign: "Carole - www.conscients.com"
     tree_plantation_update:
-      subject: "New information about your trees"
-      greatings: "Hello"
-      core: "The tree plantation of one of your orders has been updated."
+      subject: "Update about your plantation"
+      greatings: "Hi!"
+      core: "Updates about a plantation you've made with Conscients are available"
       go_to_client_space: "For more information, go to your client space."
-      thanks: "Thanks a lot"
+      thanks: "Thank you!"
+      sign: "Carole - www.conscients.com"
   recipient_mailer:
     gift_certificate:
       subject: "Somebody planted a tree for you"

@@ -407,11 +407,12 @@ fr:
       thanks: "Merci encore,"
       sign: "Carole - www.conscients.com"
     tree_plantation_update:
-      subject: "Des informations ont été rajouté au sujet de vos arbres plantés"
-      greatings: "Bonjour"
+      subject: "Des informations ont été rajoutées au sujet de vos arbres plantés avec Conscients"
+      greatings: "Bonjour!"
       core: "La parcelle de plantation des arbres d'une de vos commandes a été mise à jour."
       go_to_client_space: "Rendez-vous dans votre espace client encore plus d'information."
       thanks: "Merci beaucoup"
+      sign: "Carole - www.conscients.com"
   recipient_mailer:
     gift_certificate:
       subject: "Quelqu'un a planté un arbre pour vous"
