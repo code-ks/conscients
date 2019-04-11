@@ -2,6 +2,10 @@
 
 <% if @order.email? %>
   <p><%= t(".core_email") %></p>
+<% elsif @order.email? && @order.include_trees_to_update? %>
+  <p><%= t(".core_email_with_tree_to_update") %></p>
+<% elsif @order.include_trees_to_update? %>
+  <p><%= t(".core_postal_with_tree_to_update") %></p>
 <% elsif @order.include_trees? %>
   <p><%= t(".core_postal_with_tree") %></p>
 <% else %>
@@ -11,3 +15,4 @@
 <p><%= link_to t(".go_to_client_space"), clients_url %></p>
 
 <p><%= t(".thanks")%></p>
+<p><%= t(".sign")%></p>
