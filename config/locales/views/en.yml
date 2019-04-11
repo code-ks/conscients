@@ -400,10 +400,11 @@ en:
       thanks: "Thank you!"
       sign: "Carole - www.conscients.com"
     order_delivery:
-      subject: "Your order has been shipped"
-      greatings: "Hello"
-      core: "Your order has been delivered. You can find it in your mail box."
-      thanks: "Thanks a lot"
+      subject: "Delivery confirmed"
+      greatings: "Hi!"
+      core: "You order has been delivered. We hope it makes you happy !"
+      thanks: "Thanks you,"
+      sign: "Carole - www.conscients.com"
     tree_plantation_update:
       subject: "New information about your trees"
       greatings: "Hello"

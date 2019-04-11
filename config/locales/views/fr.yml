@@ -401,10 +401,11 @@ fr:
       thanks: "Merci encore ! Nous sommes à votre disposition si vous avez une question ou remarques, n'hésitez pas à nous contacter sur contact@conscients.com ! "
       sign: "Carole - www.conscients.com"
     order_delivery:
-      subject: "Votre commande a été confirmée"
-      greatings: "Bonjour"
-      core: "Votre commande a été livrée. Vous devez pouvoir la trouver dans votre boîte aux lettres."
-      thanks: "Merci beaucoup"
+      subject: "Votre commande Conscients a été livrée"
+      greatings: "Bonjour !"
+      core: "Votre commande a été livrée et nous espérons que cela vous rends heureux !"
+      thanks: "Merci encore,"
+      sign: "Carole - www.conscients.com"
     tree_plantation_update:
       subject: "Des informations ont été rajouté au sujet de vos arbres plantés"
       greatings: "Bonjour"
