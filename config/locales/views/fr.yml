@@ -415,10 +415,11 @@ fr:
       sign: "Carole - www.conscients.com"
   recipient_mailer:
     gift_certificate:
-      subject: "Quelqu'un a planté un arbre pour vous"
-      greatings: "Bonjour"
-      core: "%{name} a planté un arbre pour vous. Veuillez trouver le certificat ci-joint et rendez-vous sur www.conscients.com pour en planter par vous même."
-      thanks: "Merci beaucoup"
+      subject: "Quelqu'un a planté un arbre pour vous !"
+      greatings: "Bonjour!"
+      core: "%{name} a effectué une plantation pour vous ! Vous trouverez ci-joint le certificat que %{name} a personnalisé pour vous. Les plantations ont lieu en Amazonie péruvienne selon le modèle de l'agroforesterie qui consiste à combiner agriculture et plantation d'arbres et qui présente de nombreux bénéfices : érosion, sécheresse et inondation évitées ; retour de biodiversité ; séquestration carbone dans les arbres ; conservation de la forêt... Le projet permet ainsi d'éviter la déforestation, fortement liée à l'agriculture intensive en Amazonie, en proposant un modèle plus pérenne et respectueux de l'écosystème."
+      thanks: "Nous espérons que ce cadeau vous fait plaisir, n'hésitez pas à visiter notre site pour en apprendre plus :)"
+      sign: "Carole - www.conscients.com"
   devise:
     clients:
       edit:

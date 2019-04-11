@@ -415,9 +415,10 @@ en:
   recipient_mailer:
     gift_certificate:
       subject: "Somebody planted a tree for you"
-      greatings: "Hello"
-      core: "%{name} has planted a tree for you. Please find the certificate attached and visit www.conscients.com to plant some by yourself."
-      thanks: "Thanks a lot"
+      greatings: "Hi!"
+      core: "%{name} has planted a tree for you. Please find attached the tree planting certificate %{name} personalized for you. The tree plantation project is located in the peruvian amazonian rainforest. Trees are planted in agroforestry, a system that mix plantations and agriculture and helps preserve soils, water, biodiversity and climate."
+      thanks: "We hope you feel happy to receive this gift, please visit our website to learn more about the project :)"
+      sign: "Carole - www.conscients.com"
   devise:
     clients:
       edit:
