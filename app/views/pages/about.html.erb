@@ -4,16 +4,16 @@
 
 <%= render 'pages/breadcrumb', page_name: 'about' %>
 
-<!--   <h1 class="flex justify-center"></%= t 'pages.about.test' %> Hello from <%= Rails.application.class
+<!--   <h1 class="flex justify-center"></%= t 'pages.about.test' %> Hello from </%= Rails.application.class
                                                                            .parent_name %>!</h1> -->
 <div class="container-conscients mb-5 my-3 page-font">
   <h1><%= t'.about_title' %></h1>
   <div class="row padding-tb">
     <div class="col-md-6">
-      <%= image_tag "about-one.jpg", class: "w-100" %>
+      <%= image_tag "about-conscients-cadeaux-ecolos.jpg", class: "w-100" %>
     </div>
     <div class="col-md-6">
-      <h4 class=text-center><%= t'.about_sub_one' %></h4>
+      <h4 class="text-center"><%= t'.about_sub_one' %></h4>
       <div class="text-justify">
         <p><%= t '.about_sub_one_pa' %></p>
         <p><%= t '.about_sub_one_pb' %></p>
@@ -24,22 +24,23 @@
   <div class="row padding-tb">
     <div class="col-md-6">
       <h4 class=text-center><%= t'.about_sub_two' %></h4>
-      <p class=text-justify><%= t '.about_sub_two_pa' %></p>
+      <p class="text-justify"><%= t '.about_sub_two_pa' %></p>
+      <%= link_to t(".about_sub_two_pb"), blog_posts_path, class: "red-link angle-right-before" %>
+      <!-- todo integrate link to article instead of link to blog-->
     </div>
     <div class="col-md-6">
-      <%= image_tag "about-one.jpg", class: "w-100" %>
+      <%= image_tag "about-coton-bio.jpg", class: "w-100" %>
     </div>
   </div>
   <hr>
   <div class="row padding-tb">
     <div class="col-md-6">
-      <%= image_tag "about-one.jpg", class: "w-100" %>
+      <%= image_tag "about-arbre-naissance.jpg", class: "w-100" %>
     </div>
     <div class="col-md-6">
       <h4 class=text-center><%= t'.about_sub_tree' %></h4>
       <div class="text-justify">
         <p><%= t '.about_sub_tree_pa' %></p>
-        <p><%= t '.about_sub_tree_pb' %></p>
       </div>
     </div>
   </div>
@@ -47,20 +48,25 @@
   <div class="row padding-tb">
     <div class="col-md-6">
       <h4 class=text-center><%= t'.about_sub_four' %></h4>
-      <p><%= t '.about_sub_four_text' %></p>
+      <p><%= t '.about_sub_four_pa' %></p>
     </div>
     <div class="col-md-6">
-      <%= image_tag "about-one.jpg", class: "w-100" %>
+      <%= image_tag "about-arbre-enfant.jpg", class: "w-100" %>
     </div>
   </div>
   <hr>
   <div class="row padding-tb">
     <div class="col-md-6">
-      <%= image_tag "about-one.jpg", class: "w-100" %>
+      <%= image_tag "about-reforestation.jpg", class: "w-100" %>
     </div>
     <div class="col-md-6">
       <h4 class=text-center><%= t'.about_sub_five' %></h4>
-      <p><%= t '.about_sub_five_text' %></p>
+      <div class="text-justify">
+        <p><%= t '.about_sub_five_pa' %></p>
+        <p><%= t '.about_sub_five_pb' %></p>
+        <p><%= t '.about_sub_five_pc' %></p>
+        <a class="red-link angle-right-before" href="https://www.fundacionamazoniaviva.pe/" target="_blank"><%= t '.about_sub_five_pd' %></a>
+      </div>
     </div>
   </div>
 </div>

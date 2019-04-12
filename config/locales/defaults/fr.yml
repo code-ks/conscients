@@ -26,18 +26,18 @@ fr:
   meta_tags:
     blog_posts:
       index:
-        title: "Blog"
-        description: "Blog du site Conscients"
-        keywords: "Blog, Articles"
+        title: "Blog ecolo bio de Conscients"
+        description: "Sur le blog écolo de Conscients, nous parlons d'offrir et de planter des arbres, de cadeau de naissance bio pour les bébés, d'écologie et de nature au quotidien.."
+        keywords: "blog-ecolo-bio, offrir-un-arbre, cadeau-de-naissance-bio, blog-ecologie-nature"
     pages:
       home:
         title: "Page d'accueil"
         description: "Page d'accueil du site Conscients"
         keywords: "Ecologique, Développement Durable, Accueil, Home"
       about:
-        title: "A propos"
-        description: "Pour en savoir plus sur Conscients"
-        keywords: "A propos"
+        title: "Conscients et ses cadeaux écolos bio équitables"
+        description: "Découvrez Conscients, pour offrir des cadeaux écolos originaux, faire plaisir et partager tout ce que l'on peut faire de positif pour préserver les écosystèmes."
+        keywords: "cadeaux-bio-écolos-équitables, offrir-un-arbre-en-amazonie, coton-bio-équitable, un-arbre-pour-une-naissance"
     products:
       index:
         title: "Liste des produits"
