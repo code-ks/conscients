@@ -105,6 +105,21 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
+
+  file = File.open('lib/assets/certificate-background.jpg')
+  product.images.attach \
+    io: file,
+    filename: 'certificate-background.jpg',
+    content_type: 'image/jpg'
+  file.close
+
+  file = File.open('lib/assets/certificate-background.jpg')
+  product.certificate_background.attach \
+    io: file,
+    filename: 'certificate-background.jpg',
+    content_type: 'image/jpg'
+  file.close
+
   ProductSku.create!(product: product)
 
   product = Product.create!(
@@ -121,6 +136,21 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
+
+  file = File.open('lib/assets/certificate-background.jpg')
+  product.images.attach \
+    io: file,
+    filename: 'certificate-background.jpg',
+    content_type: 'image/jpg'
+  file.close
+
+  file = File.open('lib/assets/certificate-background.jpg')
+  product.certificate_background.attach \
+    io: file,
+    filename: 'certificate-background.jpg',
+    content_type: 'image/jpg'
+  file.close
+
   ProductSku.create!(product: product)
 
   Rails.logger.info 'associate image to all products'
