@@ -405,6 +405,7 @@ en:
       core_postal_with_tree_to_update: "Thank you for planting trees with Conscients. The tree plantation project is located in the peruvian amazonian rainforest. Trees are planted in agroforestry, a system that mix plantations and agriculture and helps preserve soils, water, biodiversity and climate.Thank you for participating ! You'll find your deliverables attached (also available on your client account) and we will send them soon. When plantations waves will be implemented, you will receive updated informations about the parcel (it may take a few month to centralize and dispatch those informations). To limit our carbon emission, we will only email you when the postal delivery will be confirmed. Meanwhile, you can find all informations about your order on your client account."
       core_postal_without_tree: "Thank you for your order that will soon be sent ! To limit our carbon emission, we will only email you when the postal delivery will be confirmed. Meanwhile, you can find all informations about your order on your client account."
       go_to_client_space: "For more information, go to your client space."
+      project_presentation: "Project presentation (in french)"
       thanks: "Thank you!"
       sign: "Carole - www.conscients.com"
     order_delivery:
