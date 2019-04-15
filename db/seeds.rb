@@ -38,8 +38,8 @@ Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'enfants-give-a-tree',
 
 first_child = Category.create!(name_fr: 'Cadeaux', slug_fr: 'cadeaux',
                               name_en: 'Gifts', slug_en: 'gifts', parent: node)
-Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'gifts-give-a-tree',
-                 name_en: 'Give a tree', slug_en: 'gifts-give-a-tree', parent: first_child,
+Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'offrir-un-arbre-cadeau',
+                 name_en: 'Give a tree', slug_en: 'offrir-un-arbre-cadeau', parent: first_child,
                  home_display: 3)
 Category.create!(name_fr: 'Cadeaux de naissance', slug_fr: 'cadeaux-cadeaux-de-naissance',
                  name_en: 'Birth gifts', slug_en: 'gifts-birth-gifts', parent: first_child,

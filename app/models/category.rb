@@ -62,7 +62,7 @@ class Category < ApplicationRecord
   end
 
   def self.give_a_tree
-    find_by(slug: 'gifts-give-a-tree')
+    find_by(slug: 'offrir-un-arbre-cadeau')
   end
 
   def should_generate_new_friendly_id?
