@@ -16,7 +16,7 @@ Ouvrir le terminal et lancer les commandes si dessous dans l'ordre:
 ### Travailler sur une feature
 
 - Commencer ma feature: `git co -b feature/<nom-de-ma-feature>`
-- Lancer l'application (attention, avec webpack ce n'est plus `rails s`): `overmind start -f Procfile.dev`
+- Lancer l'application (pas `rails s` mais): `overmind start -f Procfile.dev`
 - Finir ma feature: `git add .` puis `git commit -m <message>` puis `git push origin
 feature/<nom-de-ma-feature>`. Puis faire une pull request sur Github et demander une code review
 sur Slack
