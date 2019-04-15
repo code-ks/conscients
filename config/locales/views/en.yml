@@ -1,8 +1,8 @@
 en:
   pages:
     home:
-      img_intro: "traduire"
-      img_intro_title: "traduire"
+      img_intro: "Welcome"
+      img_intro_title: "To the little change makers !"
       hello: "Test EN"
       searching: "Search"
       project: "Our project"
