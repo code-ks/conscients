@@ -246,6 +246,7 @@ en:
       invoice: "Invoice"
       certificates: "Certificates"
       state: "State"
+      delivery_name: "Deliver to"
     impact:
       trees_planted_amount: "%{quantity} trees planted"
       trees_planted: "trees planted"

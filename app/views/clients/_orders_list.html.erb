@@ -9,7 +9,7 @@
           <th class="th-font"><%= t('.invoice') %></th>
           <th class="th-font"><%= t('.certificates') %></th>
           <th class="th-font"><%= t('.state') %></th>
-<!--           <th class="th-font">livraison</th> -->
+          <th class="th-font"><%= t('.delivery_name') %></th>
         </tr>
       </thead>
       <tbody>
@@ -32,7 +32,7 @@
               <% end %>
             </td>
             <td><%= order.aasm.human_state %></td>
-<!--             <td></%= order.delivery_address_2.full_name %></td> -->
+            <td><%= order.delivery_address.first_name %>, <%= order.delivery_address.city %></td>
           </tr>
         <% end %>
       </tbody>

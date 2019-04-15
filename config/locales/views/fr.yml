@@ -247,6 +247,7 @@ fr:
       invoice: "Facture"
       certificates: "Certificats"
       state: "Statut"
+      delivery_name: "Livrer à"
     impact:
       trees_planted_amount: "%{quantity} arbres plantés"
       trees_planted: "arbres plantés"
