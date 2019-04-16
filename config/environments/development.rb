@@ -70,7 +70,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   Bullet.enable = true
-  Bullet.alert = true
+  # Bullet.alert = true
   # Could not find ways to fix the n+1 problems bellow. Could used a refactor if you find a way
   Bullet.add_whitelist type: :n_plus_one_query,
                        class_name: 'ActiveStorage::Attachment', association: :blob
