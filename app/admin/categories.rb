@@ -45,6 +45,7 @@ ActiveAdmin.register Category do
       f.input :description_en
       f.input :ancestry
       f.input :position
+      f.input :home_display
     end
     f.actions
   end
@@ -60,6 +61,7 @@ ActiveAdmin.register Category do
       row :description_en
       row :ancestry
       row :position
+      row :home_display
       row :created_at
       row :updated_at
     end

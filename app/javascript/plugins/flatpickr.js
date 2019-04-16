@@ -13,11 +13,13 @@ function launchFlatpickr(id, displayedDate) {
 }
 
 document.addEventListener("turbolinks:load", () => {
-  const dataDate = document
-    .getElementById("datepicker")
-    .getAttribute("data-current-date");
-  const displayedDate = dataDate == "" ? "today" : new Date(dataDate);
-  launchFlatpickr("#datepicker", displayedDate);
+  if(document.getElementById("datepicker")){
+    const dataDate = document
+      .getElementById("datepicker")
+      .getAttribute("data-current-date");
+    const displayedDate = dataDate == "" ? "today" : new Date(dataDate);
+    launchFlatpickr("#datepicker", displayedDate);
+  }
 });
 
 window.launchFlatpickr = launchFlatpickr;

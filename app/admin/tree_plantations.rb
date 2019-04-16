@@ -5,7 +5,9 @@ ActiveAdmin.register TreePlantation do
 
   permit_params :project_name, :project_type_fr, :project_type_en, :partner, :plantation_uuid,
                 :base_certificate_uuid, :latitude, :longitude,
-                :tree_specie, :producer_name, :trees_quantity
+                :tree_specie, :producer_name, :trees_quantity, :klm_file
+
+  includes :klm_file_attachment
 
   index do
     selectable_column
@@ -21,6 +23,9 @@ ActiveAdmin.register TreePlantation do
     column :tree_specie
     column :producer_name
     column :trees_quantity
+    column :klm_file do |tree_plantation|
+      I18n.t('active_admin.attachement_uploaded') if tree_plantation.klm_file.attached?
+    end
     column :created_at
     column :updated_at
     actions
@@ -40,6 +45,8 @@ ActiveAdmin.register TreePlantation do
       f.input :tree_specie
       f.input :producer_name
       f.input :trees_quantity
+      f.input :klm_file, as: :file,
+        hint: tree_plantation.klm_file.attached? && I18n.t('active_admin.attachement_uploaded')
     end
     f.actions
   end
@@ -58,6 +65,9 @@ ActiveAdmin.register TreePlantation do
       row :tree_specie
       row :producer_name
       row :trees_quantity
+      row :klm_file do |tree_plantation|
+        I18n.t('active_admin.attachement_uploaded') if tree_plantation.klm_file.attached?
+      end
       row :created_at
       row :updated_at
     end
