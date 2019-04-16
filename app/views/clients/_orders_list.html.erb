@@ -42,7 +42,13 @@
               <% end %>
             </td>
             <td><%= order.aasm.human_state %></td>
-            <td><%= order.delivery_address.first_name %>, <%= order.delivery_address.city %></td>
+            <td>
+            <% if order.email? %>
+              <%= order.client.email %>
+            <% else %>
+              <%= order.delivery_address.first_name %>, <%= order.delivery_address.city %>
+            <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
