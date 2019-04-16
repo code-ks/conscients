@@ -41,6 +41,7 @@ class Coupon < ApplicationRecord
 
   private
 
+  # Return true if only amount or only percentage filled
   def amount_or_percentage
     return if !!amount ^ !!percentage
 

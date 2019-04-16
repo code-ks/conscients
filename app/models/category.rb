@@ -37,6 +37,7 @@ class Category < ApplicationRecord
   scope :in_order_home, -> { order(home_display: :asc) }
   scope :main, -> { home.children }
 
+  # Used in the modal after adding a problem to cart
   class << self
     def last_visited
       find(Ahoy::Event.id_last_category_visited)
@@ -45,6 +46,7 @@ class Category < ApplicationRecord
     end
   end
 
+  # Displays styled name in admin
   def to_s
     "#{id} - #{name}".tap do |string|
       string += "parent: #{parent&.name}" if parent
@@ -55,12 +57,14 @@ class Category < ApplicationRecord
     roots.first
   end
 
+  # All categories with at least one displayable product
   def self.displayable
     all.to_a.select do |category|
       category.products.displayable.any?
     end
   end
 
+  # Be careful, need a slug with this exact title in the app
   def self.give_a_tree
     find_by(slug: 'offrir-un-arbre-cadeau')
   end
@@ -69,6 +73,8 @@ class Category < ApplicationRecord
     name_changed? || super
   end
 
+  # Cf act_as_lists gem doc to understand subtree. I could not use as many through
+  # because I also want the product linked to a child category, not only the curant ones
   def products
     Product.includes(:categorizations).where(categorizations: { category: subtree })
   end

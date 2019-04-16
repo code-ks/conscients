@@ -26,7 +26,9 @@ class TreePlantation < ApplicationRecord
   has_many :orders, through: :line_items
   has_one_attached :klm_file
 
+  # Initialize quantity (base tree quantity is the initial quantity in the plantation)
   before_create :match_base_tree_quantity
+  # Check if Tree Plantation infos finalized and send emails if necessary
   before_save :update_is_full_and_send_emails, unless: :is_full?
 
   extend Mobility
@@ -46,6 +48,7 @@ class TreePlantation < ApplicationRecord
 
   alias_attribute :quantity, :trees_quantity
 
+  # Picks the correct tree plantation to link the line item to
   class << self
     def first_with_needed_quantity(quantity)
       find_by('trees_quantity > ?', quantity) || last
@@ -60,6 +63,8 @@ class TreePlantation < ApplicationRecord
     project_name
   end
 
+  # Finalized means with all the correct info to make it complete
+  # (because can be created incomplete)
   # rubocop:disable Metrics/CyclomaticComplexity
   # rubocop:disable Metrics/PerceivedComplexity
   # rubocop:disable Metrics/AbcSize

@@ -6,6 +6,7 @@ class LineItemsController < ApplicationController
 
   respond_to :js, :html
 
+  # Line item does not exist
   def create
     @line_item = AddItemToCart.new(@cart, line_item_params, quantity)
                               .perform
@@ -14,6 +15,7 @@ class LineItemsController < ApplicationController
     end
   end
 
+  # Line item already in the cart but we update it (especially quantity)
   def update
     flash[:alert] = 'Stock trop faible' unless @line_item.update(line_item_params_update)
     redirect_to cart_path(@cart)

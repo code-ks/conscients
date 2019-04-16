@@ -19,12 +19,15 @@
 #
 
 class BlogPost < ApplicationRecord
+  # Main image of the article
   has_one_attached :main_image
+  # Image to display on the home page
   has_one_attached :image_for_home
 
   extend Mobility
   translates :content, :slug, :seo_title, :meta_description, :category, :title
 
+  # Cf friendly_id_mobility gem to understand how to use both together
   include FriendlyId
   friendly_id :seo_title, use: %i[slugged mobility]
 
@@ -38,6 +41,7 @@ class BlogPost < ApplicationRecord
 
   default_scope { i18n.friendly.in_order.includes(:image_for_home_attachment) }
   scope :in_order, -> { order(position: :asc) }
+  # Can be published in one language but not the other
   scope :published_en, -> { where(published_en: true) }
   scope :published_fr, -> { where(published_fr: true) }
 end

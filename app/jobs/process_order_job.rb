@@ -12,11 +12,13 @@ class ProcessOrderJob < ApplicationJob
     generate_certificates
     send_order_confirmation
     send_gift_certificates
+    # Not delivery to do if only trees in the order
     @order.delivered! if @order.tree_only?
   end
 
   private
 
+  # Needed to render invoice and attach in with Active Storage
   def set_view
     @view = ActionView::Base.new('app/views', {}, ActionController::Base.new)
     @view.extend(ApplicationHelper)

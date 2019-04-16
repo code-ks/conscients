@@ -9,6 +9,7 @@ ActiveAdmin.register LineItem do
 
   includes :order, :tree_plantation, :product_sku
 
+  # Custom action --> Link + simili controller
   action_item :download_certificate, only: :show, if: proc { line_item.certificate.attached? } do
     link_to t('.download_certificate'),
             download_certificate_admin_line_item_path(line_item), method: :put

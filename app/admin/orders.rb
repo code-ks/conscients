@@ -9,6 +9,7 @@ ActiveAdmin.register Order do
 
   includes :client, :coupon, :delivery_address, :billing_address
 
+  # Custom action --> Link + simili controller
   action_item :download_invoice, only: :show, if: proc { order.invoice.attached? } do
     link_to t('.download_invoice'), download_invoice_admin_order_path(order), method: :put
   end
@@ -18,6 +19,7 @@ ActiveAdmin.register Order do
               filename: "invoice##{resource.id}")
   end
 
+  # Manage state change in admin
   after_save do |order|
     event = params[:order][:active_admin_requested_event]
     if event.present?

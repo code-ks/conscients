@@ -1,5 +1,6 @@
 import { Controller } from "stimulus";
 
+// Manage the tabs in the home carousel
 export default class extends Controller {
   static targets = [
     "Tab0",

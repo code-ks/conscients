@@ -21,6 +21,7 @@ ActiveAdmin.register Product do
     end
   end
 
+  # Custom action --> Link + simili controller
   action_item :remove_images, only: :show do
     link_to t('.remove_images'), remove_images_admin_product_path(product), method: :put
   end

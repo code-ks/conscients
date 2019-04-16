@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ClientMailer < ApplicationMailer
+  # Sent when bank transfer payment selected
   def bank_account_details
     @order = params[:order]
     attachments['bank_account_details_conscients.pdf'] =

@@ -16,9 +16,11 @@
 #  fk_rails_...  (product_id => products.id)
 #
 
+# Link between a produit and a category
 class Categorization < ApplicationRecord
   belongs_to :category
   belongs_to :product
 
+  # Each product only once in each category, of course
   validates :product_id, uniqueness: { scope: :category_id }
 end

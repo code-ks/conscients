@@ -1,5 +1,6 @@
 import { Controller } from "stimulus";
 
+// Hide or show the billing address (if different from the delivery address)
 export default class extends Controller {
   static targets = ["hideable", "checkable", "requireable"];
 

@@ -56,6 +56,7 @@ class Client < ApplicationRecord
 
   validates :email, :encrypted_password, presence: true
 
+  # Subscribe if accepted newsletter
   after_create :subscribe_to_mailing_list, if: :newsletter_subscriber?
 
   class << self
@@ -75,6 +76,7 @@ class Client < ApplicationRecord
     email
   end
 
+  # Build markers for producers and tree plantations for the client admin
   # rubocop:disable Metrics/AbcSize
   def markers
     markers = []
@@ -100,6 +102,7 @@ class Client < ApplicationRecord
     quantity_of_trees_planted.fdiv(3.5).round(2)
   end
 
+  # Manage 2 Mailchimp lists: English and French
   def subscribe_to_mailing_list
     return unless Rails.env.production?
 

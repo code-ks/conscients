@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Update and resend certificates to clients who ordered trees from
+# tree_plantations with incomplete informations
 class UpdateCertificatesJob < ApplicationJob
   include Rails.application.routes.url_helpers
   queue_as :default

@@ -27,6 +27,8 @@ class Ahoy::Event < ApplicationRecord
       Current.visit&.events
     end
 
+    # Events linked to the current visit, linked to a category (category_id not null),
+    # we select the last one and find its category_id
     def id_last_category_visited
       events_current_visit&.category_events&.last&.properties&.dig('category_id') ||
         Category.home.id

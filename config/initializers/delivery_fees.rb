@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Main constant file used to calculate delivery fees in the app
 EUROPE = %w[AD AL AT BA BE BG BY CH CY CZ DE DK EE ES FI FO FR GG GI GR HR HU IE IM IS
             IT JE LI LT LU LV MC MD MK MT NL NO PL PT RO RU SE SI SJ SK SM TR UA UK VA YU].freeze
 

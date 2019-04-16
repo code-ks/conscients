@@ -45,10 +45,13 @@ class LineItem < ApplicationRecord
   validates :recipient_message, length: { maximum: 110 }
   validates :certificate_date, presence: true, if: :tree?
 
+  # Increment and decrement stock quantities
   before_validation :manage_stock_quantites_if_change_sku,
                     :decrement_stock_quantities, prepend: true
   before_destroy :increment_stock_quantities_destroy
+  # Calculate price
   before_save :update_price
+  # Change the default cart type depending on the products in it
   after_create :set_cart_to_correct_delivery_type
   after_destroy :set_cart_to_correct_delivery_type
 
@@ -68,10 +71,12 @@ class LineItem < ApplicationRecord
   scope :certificated, lambda {
     includes(:certificate_attachment).select { |line_item| line_item.certificate.attached? }
   }
+  # Order is passed
   scope :finished, lambda {
     includes(:order).where(orders: { aasm_state:
       %w[preparing waiting_for_bank_transfer fulfilled delivered] })
   }
+  # Order is passed and paid (not waiting for bank_transfer)
   scope :paid, lambda {
     includes(:order).where(orders: { aasm_state:
       %w[preparing fulfilled delivered] })
@@ -105,6 +110,7 @@ class LineItem < ApplicationRecord
     producer_latitude && producer_longitude
   end
 
+  # Quantity added during update
   def added_quantity
     quantity - quantity_was
   end

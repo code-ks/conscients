@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Big fucking Paypal --> painful
 class CreatePaypalPayment
   include Rails.application.routes.url_helpers
 
