@@ -3,48 +3,54 @@
   <div class="row impact-background pb-md-5">
     <div class="col-12 impact-info">
       <div class="btn impact-btn c-default">
-        <span class="badge badge-light"><%= current_client.quantity_of_trees_planted %></span> <%= t('.trees_planted') %>
+        <span class="badge badge-light"><%#= @quantity_of_trees_planted %></span> <%= t('.trees_planted') %>
       </div>
       <div class="btn impact-btn c-default">
-        <span class="badge badge-light"><%= current_client.tonne_co2_captured %></span> <%= t('.tonnes_of_co2') %>
+        <span class="badge badge-light"><%#= @tonne_co2_captured %></span> <%= t('.tonnes_of_co2') %>
       </div>
     </div>
 
     <div class="col-12">
       <div id="map" class="w-100 h-450p" data-markers="<%= @markers.to_json %>"></div>
     </div>
-<!--       <h2></%= t('.tree_species') %></h2>
-      <ul>
-        </% current_client.tree_species_planted.each do |specie| %>
-          <li></%= specie %></li>
-        </% end %>
-      </ul> -->
   </div>
   <div class="container mb-5">
     <div class="page-font text-center py-5">
-      <h2>Mes plantations</h2>
+      <h2><%= t('.my_plantations') %></h2>
     </div>
     <div class="border-resp">
       <table class="conscients-table-responsive">
        <thead>
         <tr class="top-tr text-center">
-          <th class="th-font">Date</th>
-          <th class="th-font">Espèce plantée</th>
-          <th class="th-font">Planteur</th>
-          <th class="th-font">Attribué à</th>
-          <th class="th-font">Certificat</th>
-          <th class="th-font">Geolocalisation</th>
+          <th class="th-font"><%= t('.date') %></th>
+          <th class="th-font"><%= t('.trees_specie_planted') %></th>
+          <th class="th-font"><%= t('.planter') %></th>
+          <th class="th-font"><%= t('.attributed_to') %></th>
+          <th class="th-font"><%= t('.certificate') %></th>
+          <th class="th-font"><%= t('.geolocation') %></th>
         </tr>
       </thead>
         <tbody>
-          <tr class="desktop-border-bottom td-font text-center">
-            <td>order payment date for 1 line item (tree)</td>
-            <td>Tree specie or ...</td>
-            <td>Farmer ou ...</td>
-            <td>Certificate recipient</td>
-            <td>Download certificate</td>
-            <td>Download kml</td>
-          </tr>
+          <% @line_items.each do |line_item| %>
+            <tr class="desktop-border-bottom td-font text-center">
+              <td><%= I18n.l(line_item.order.payment_date || line_item.order.created_at, format: :long_no_time).titleize %></td>
+              <td><%= line_item.tree_plantation.tree_specie.capitalize %></td>
+              <td><%= line_item.tree_plantation.partner.capitalize %></td>
+              <td><%= line_item.recipient_name %></td>
+              <td>
+                <%= link_to new_certificates_download_path(line_item_id: line_item.id) do %>
+                  <%= fa_icon "cloud-download", class: "c-pointer mr-3 color-green" %>
+                <% end %>
+              </td>
+              <td>
+                <% if line_item.tree_plantation.klm_file.attached? %>
+                  <%= link_to new_klm_files_download_path(tree_plantation_id: line_item.tree_plantation.id) do %>
+                    <%= fa_icon "cloud-download", class: "c-pointer mr-3 color-green" %>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

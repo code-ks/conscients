@@ -262,6 +262,10 @@ class Order < ApplicationRecord
     delivery_address == billing_address
   end
 
+  def client_email_or_delivery_address
+    email? ? client.email : "#{delivery_address.full_name}\n#{delivery_address}"
+  end
+
   private
 
   def process_order

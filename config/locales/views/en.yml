@@ -248,9 +248,16 @@ en:
       klm_files: klm files
       state: "State"
       delivery_name: "Deliver to"
+      delivered_to: Delivered to
     impact:
+      my_plantations: My plantations
       trees_planted_amount: "%{quantity} trees planted"
       trees_planted: "trees planted"
+      trees_specie_planted: Specie planted
+      planter: Planter
+      attributed_to: Attributed to
+      certificate: Certificate
+      geolocation: Geolocation
       tonnes_of_co2: "tonnes of Co2 captured"
       tree_species: "Tree species planted"
   admin:
