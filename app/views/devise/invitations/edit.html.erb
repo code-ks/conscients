@@ -1,16 +1,29 @@
-<h2><%= t 'devise.invitations.edit.header' %></h2>
+<% set_meta_tags noindex: true %>
 
-<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :invitation_token, readonly: true %>
+<div class="container-conscients first-title-padding page-font">
+  <h1><%= t 'devise.invitations.edit.header' %></h1>
+</div>
 
-  <% if f.object.class.require_password_on_accepting %>
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+<div class="page-container page-font my-4 text-center">
+  <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :invitation_token, readonly: true %>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
+    <div class="field">
+      <% if f.object.class.require_password_on_accepting %>
+      <p><%= f.label :password %><br />
+      <%= f.password_field :password, class: "w-25" %></p>
+    </div>
+
+    <div class="field">
+      <p><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, class: "w-25" %></p>
+      <% end %>
+    </div>
+
+    <div class="actions">
+      <p><%= f.submit t("devise.invitations.edit.submit_button"), class: "btn conscients-btn btn-green" %></p>
+    </div>
+
   <% end %>
-
-  <p><%= f.submit t("devise.invitations.edit.submit_button") %></p>
-<% end %>
+</div>

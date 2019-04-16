@@ -11,7 +11,7 @@
 
     <div class="field">
       <%= f.label :password, t('.new_password') %><br />
-      <%= f.password_field :password, autofocus: true, autocomplete: "off", class:"w-50" %>
+      <%= f.password_field :password, autofocus: true, autocomplete: "off", class: "w-50" %>
       <% if @minimum_password_length %>
         <p class="f-08R"><em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em></p>
       <% end %>
@@ -21,6 +21,5 @@
       <%= f.submit "ok", class: "btn conscients-btn btn-green" %>
     </div>
   <% end %>
-
 
 </div>
