@@ -38,6 +38,11 @@ Rails.application.routes.draw do
         resources :downloads, only: :new
       end
     end
+    resource :klm_files, only: [] do
+      scope module: :klm_files do
+        resources :downloads, only: :new
+      end
+    end
     scope module: :checkout do
       resources :carts, only: :show
       resources :deliveries, only: %i[new create]

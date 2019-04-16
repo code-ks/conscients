@@ -20,8 +20,6 @@ class StockEntry < ApplicationRecord
 
   after_create :update_stock_product_sku, only: :create
 
-  validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1 }
-
   def readonly?
     new_record? ? false : true
   end

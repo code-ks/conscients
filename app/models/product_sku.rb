@@ -21,7 +21,7 @@
 class ProductSku < ApplicationRecord
   belongs_to :product
   belongs_to :variant, optional: true
-  has_many :stock_entries, dependent: :destroy
+  has_many :stock_entries, dependent: :nullify
   has_many :line_items, dependent: :nullify
   has_many :orders, through: :line_items
 

@@ -8,6 +8,7 @@
           <th class="th-font"><%= t('.amount') %></th>
           <th class="th-font"><%= t('.invoice') %></th>
           <th class="th-font"><%= t('.certificates') %></th>
+          <th class="th-font"><%= t('.klm_files') %></th>
           <th class="th-font"><%= t('.state') %></th>
           <th class="th-font"><%= t('.delivery_name') %></th>
         </tr>
@@ -28,6 +29,15 @@
               <% order.line_items.certificated.each do |line_item| %>
                 <%= link_to new_certificates_download_path(line_item_id: line_item.id) do %>
                   <%= fa_icon "cloud-download", class: "c-pointer mr-3 color-green" %>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <% order.line_items.each do |line_item| %>
+                <% if line_item&.tree_plantation&.klm_file&.attached? %>
+                  <%= link_to new_klm_files_download_path(tree_plantation_id: line_item.tree_plantation.id) do %>
+                    <%= fa_icon "cloud-download", class: "c-pointer mr-3 color-green" %>
+                  <% end %>
                 <% end %>
               <% end %>
             </td>

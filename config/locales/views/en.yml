@@ -245,6 +245,7 @@ en:
       amount: "Amount"
       invoice: "Invoice"
       certificates: "Certificates"
+      klm_files: klm files
       state: "State"
       delivery_name: "Deliver to"
     impact:

@@ -72,6 +72,7 @@ class Order < ApplicationRecord
   }
   scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
   scope :cart_to_destroy, -> { in_cart.two_days_old }
+  scope :paid, -> { where(aasm_state: %w[preparing fulfilled delivered]) }
 
   include AASM
   aasm enum: true do
@@ -87,8 +88,8 @@ class Order < ApplicationRecord
     end
 
     event :pay, after: :process_order do
-      transitions from: :in_cart, to: :fulfilled, guard: :tree_only?
-      transitions from: :waiting_for_bank_transfer, to: :fulfilled, guard: :tree_only?
+      transitions from: :in_cart, to: :delivered, guard: :tree_only?
+      transitions from: :waiting_for_bank_transfer, to: :delivered, guard: :tree_only?
       transitions from: :in_cart, to: :preparing
       transitions from: :waiting_for_bank_transfer, to: :preparing
     end
@@ -98,8 +99,8 @@ class Order < ApplicationRecord
     end
 
     event :deliver, after: :deliver_order do
-      transitions from: :preparing, to: :deliver
-      transitions from: :fulfilled, to: :deliver
+      transitions from: :preparing, to: :delivered
+      transitions from: :fulfilled, to: :delivered
     end
 
     event :cancel do
@@ -221,6 +222,8 @@ class Order < ApplicationRecord
   end
 
   def include_trees_to_update?
+    return false unless include_trees?
+
     line_items.map(&:tree_plantation).pluck(:is_full).include?(false)
   end
 

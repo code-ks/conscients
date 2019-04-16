@@ -5,6 +5,8 @@ Rails.logger = Logger.new(STDOUT)
 task create_development_resources: :environment do
   desc 'Create minimal resources to allow tests in development'
 
+  Rails.logger.info 'models destruction start'
+
   StockEntry.delete_all
   Product.destroy_all
   AdminUser.destroy_all
@@ -16,6 +18,8 @@ task create_development_resources: :environment do
   Order.destroy_all
   LineItem.destroy_all
   TreePlantation.destroy_all
+
+  Rails.logger.info 'models destruction end'
 
   product = Product.create!(
     name_fr: 'Top livre',
@@ -101,11 +105,21 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
-  product.images.attach(io: File.open('lib/assets/certificate-background.jpg'),
-                        filename: 'certificate-background.jpg', content_type: 'image/jpg')
-  product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpg'),
-                                        filename: 'certificate-background.jpg',
-                                        content_type: 'image/jpg')
+
+  file = File.open('lib/assets/certificate-background.jpg')
+  product.images.attach \
+    io: file,
+    filename: 'certificate-background.jpg',
+    content_type: 'image/jpg'
+  file.close
+
+  file = File.open('lib/assets/certificate-background.jpg')
+  product.certificate_background.attach \
+    io: file,
+    filename: 'certificate-background.jpg',
+    content_type: 'image/jpg'
+  file.close
+
   ProductSku.create!(product: product)
 
   product = Product.create!(
@@ -122,30 +136,49 @@ task create_development_resources: :environment do
     le monde devrait acheter parce qu'il est vraiment bien",
     keywords: %w[top bundle livre arbre]
   )
-  product.images.attach(io: File.open('lib/assets/certificate-background.jpg'),
-                        filename: 'certificate-background.jpg', content_type: 'image/jpg')
-  product.certificate_background.attach(io: File.open('lib/assets/certificate-background.jpg'),
-                                        filename: 'certificate-background.jpg',
-                                        content_type: 'image/jpg')
+
+  file = File.open('lib/assets/certificate-background.jpg')
+  product.images.attach \
+    io: file,
+    filename: 'certificate-background.jpg',
+    content_type: 'image/jpg'
+  file.close
+
+  file = File.open('lib/assets/certificate-background.jpg')
+  product.certificate_background.attach \
+    io: file,
+    filename: 'certificate-background.jpg',
+    content_type: 'image/jpg'
+  file.close
+
   ProductSku.create!(product: product)
 
+  Rails.logger.info 'associate image to all products'
   Product.all.each do |p|
-    p.images.attach(io: File.open('lib/assets/tree.jpeg'),
-                   filename: 'tree.jpeg', content_type: 'image/jpeg')
-    p.background_image.attach(io: File.open('lib/assets/tree.jpeg'),
-                   filename: 'tree.jpeg', content_type: 'image/jpeg')
-    p.images.attach(io: File.open('lib/assets/book.jpeg'),
-                   filename: 'book.jpeg', content_type: 'image/jpeg')
+    bg_file = File.open('lib/assets/certificate-background.jpg')
+    p.images.attach(io: bg_file, filename: 'tree.jpeg', content_type: 'image/jpeg')
+    bg_file.close
+
+    bg_file = File.open('lib/assets/certificate-background.jpg')
+    p.background_image.attach(io: bg_file, filename: 'tree.jpeg', content_type: 'image/jpeg')
+    bg_file.close
+
+    book_file = File.open('lib/assets/book.jpeg')
+    p.images.attach(io: book_file, filename: 'book.jpeg', content_type: 'image/jpeg')
+    book_file.close
+
     8.times do
       Categorization.find_or_create_by!(product: p, category: Category.all.sample)
     end
     p.save
   end
 
+  Rails.logger.info 'create 2 stock_entries for each product_sku'
   ProductSku.all.each do |sku|
     2.times { StockEntry.create!(product_sku: sku, quantity: rand(1..10)) }
   end
 
+  Rails.logger.info 'create a TreePlantation'
   TreePlantation.create!(
     project_name: 'Alta Huayabamba, San Martin, Pérou',
     project_type_fr: 'reforestation / agroforesterie',
@@ -160,12 +193,14 @@ task create_development_resources: :environment do
     longitude: -72.007402
   )
 
+  Rails.logger.info 'create a Coupon'
   Coupon.create!(name: 'MYREDUC', amount_cents: 1000, amount_min_order_cents: 3000,
                  valid_from: Time.zone.today - 2.days, valid_until: Time.zone.today + 20.days)
 
   Rails.logger.info "#{Product.all.count} products created with SKU and co"
 
   if Rails.env.development?
+    Rails.logger.info 'create AdminUser'
     AdminUser.create!(email: 'admin@example.com', password: 'password',
                       password_confirmation: 'password')
   end

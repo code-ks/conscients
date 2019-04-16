@@ -246,6 +246,7 @@ fr:
       amount: "Montant"
       invoice: "Facture"
       certificates: "Certificats"
+      klm_files: fichiers klm
       state: "Statut"
       delivery_name: "Livrer à"
     impact:
