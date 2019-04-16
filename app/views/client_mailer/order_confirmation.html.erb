@@ -2,8 +2,16 @@
 
 <% if @order.email? %>
   <p><%= t(".core_email") %></p>
+  <p><%= link_to t(".project_presentation"), "https://www.dropbox.com/s/5111h2kmhudzrk2/Reforestation_%20Amazonie.pdf?dl=0" %></p>
+<% elsif @order.email? && @order.include_trees_to_update? %>
+  <p><%= t(".core_email_with_tree_to_update") %></p>
+  <p><%= link_to t(".project_presentation"), "https://www.dropbox.com/s/5111h2kmhudzrk2/Reforestation_%20Amazonie.pdf?dl=0" %></p>
+<% elsif @order.include_trees_to_update? %>
+  <p><%= t(".core_postal_with_tree_to_update") %></p>
+  <p><%= link_to t(".project_presentation"), "https://www.dropbox.com/s/5111h2kmhudzrk2/Reforestation_%20Amazonie.pdf?dl=0" %></p>
 <% elsif @order.include_trees? %>
   <p><%= t(".core_postal_with_tree") %></p>
+  <p><%= link_to t(".project_presentation"), "https://www.dropbox.com/s/5111h2kmhudzrk2/Reforestation_%20Amazonie.pdf?dl=0" %></p>
 <% else %>
   <p><%= t(".core_postal_without_tree") %></p>
 <% end %>
@@ -11,3 +19,4 @@
 <p><%= link_to t(".go_to_client_space"), clients_url %></p>
 
 <p><%= t(".thanks")%></p>
+<p><%= t(".sign")%></p>

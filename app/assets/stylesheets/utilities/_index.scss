@@ -7,6 +7,21 @@
 @import "borders";
 @import "colors";
 
+
+.blog-index-pagination {
+  .page-link {
+    border: none !important;
+    color: $conscients-grey !important;
+  }
+
+  .page-item.active .page-link {
+    background-color: white !important;
+    border-color: white !important;
+    color: $conscients-red !important;
+  }
+}
+
+
 .mb-for-footer {
   margin-bottom: 12rem;
 }
