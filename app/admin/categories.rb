@@ -6,7 +6,7 @@ ActiveAdmin.register Category do
   config.sort_order = 'position_asc'
 
   permit_params :name_fr, :slug_fr, :name_en, :slug_en, :position, :description_fr, :description_en,
-                :ancestry
+                :ancestry, :home_display
 
   includes :text_translations
 
@@ -29,6 +29,7 @@ ActiveAdmin.register Category do
     column :description_en
     column :ancestry
     column :position
+    column :home_display
     column :created_at
     column :updated_at
     actions
