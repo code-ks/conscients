@@ -238,6 +238,7 @@ en:
       amount: "Amount"
       invoice: "Invoice"
       certificates: "Certificates"
+      klm_files: klm files
       state: "State"
     impact:
       trees_planted_amount: "%{quantity} trees planted"

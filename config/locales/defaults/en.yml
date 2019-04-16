@@ -11,6 +11,7 @@ en:
     blog_management: "Blog Management"
     current_state: "Current state"
     change_state: "New state"
+    attachement_uploaded: uploaded
   paypal:
     delivery_fees: "Delivery fees"
     total_price: "Total price"

@@ -11,6 +11,7 @@ fr:
     blog_management: "Gestion du Blog"
     current_state: "Statut actuel"
     change_state: "Changement de statut à effectuer"
+    attachement_uploaded: téléchargé
   paypal:
     delivery_fees: "Frais de livraison"
     total_price: "Prix total"

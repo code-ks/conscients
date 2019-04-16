@@ -24,6 +24,7 @@
 class TreePlantation < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_many :orders, through: :line_items
+  has_one_attached :klm_file
 
   before_create :match_base_tree_quantity
   before_save :update_is_full_and_send_emails, unless: :is_full?

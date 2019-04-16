@@ -239,6 +239,7 @@ fr:
       amount: "Montant"
       invoice: "Facture"
       certificates: "Certificats"
+      klm_files: fichiers klm
       state: "Statut"
     impact:
       trees_planted_amount: "%{quantity} arbres plantés"
