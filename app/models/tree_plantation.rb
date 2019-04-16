@@ -24,6 +24,7 @@
 class TreePlantation < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_many :orders, through: :line_items
+  has_one_attached :klm_file
 
   # Initialize quantity (base tree quantity is the initial quantity in the plantation)
   before_create :match_base_tree_quantity

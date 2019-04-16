@@ -21,7 +21,7 @@ Category.create!(name_fr: 'Livre', slug_fr: 'bebe-livre',
                  name_en: 'Book', slug_en: 'baby-book', parent: first_child)
 Category.create!(name_fr: 'Autres produits', slug_fr: 'bebe-autres',
                  name_en: 'Other products', slug_en: 'baby-others', parent: first_child)
-Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'bebe-give-a-tree',
+Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'bebe-offrir-un-arbre',
                  name_en: 'Give a tree', slug_en: 'baby-give-a-tree', parent: first_child)
 
 first_child = Category.create!(name_fr: 'Enfants', slug_fr: 'enfants',
@@ -35,13 +35,13 @@ Category.create!(name_fr: 'Livre', slug_fr: 'enfants-livre',
                  name_en: 'Book', slug_en: 'children-book', parent: first_child)
 Category.create!(name_fr: 'Autres produits', slug_fr: 'enfants-autres',
                  name_en: 'Other products', slug_en: 'children-others', parent: first_child)
-Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'enfants-give-a-tree',
+Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'enfants-offrir-un-arbre',
                  name_en: 'Give a tree', slug_en: 'children-give-a-tree', parent: first_child)
 
 first_child = Category.create!(name_fr: 'Cadeaux', slug_fr: 'cadeaux',
                               name_en: 'Gifts', slug_en: 'gifts', parent: node)
-Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'gifts-give-a-tree',
-                 name_en: 'Give a tree', slug_en: 'gifts-give-a-tree', parent: first_child,
+Category.create!(name_fr: 'Offrir un arbre', slug_fr: 'offrir-un-arbre-cadeau',
+                 name_en: 'Give a tree', slug_en: 'offrir-un-arbre-cadeau', parent: first_child,
                  home_display: 3)
 Category.create!(name_fr: 'Cadeaux de naissance', slug_fr: 'cadeaux-cadeaux-de-naissance',
                  name_en: 'Birth gifts', slug_en: 'gifts-birth-gifts', parent: first_child,

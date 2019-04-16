@@ -11,6 +11,7 @@ fr:
     blog_management: "Gestion du Blog"
     current_state: "Statut actuel"
     change_state: "Changement de statut à effectuer"
+    attachement_uploaded: téléchargé
   paypal:
     delivery_fees: "Frais de livraison"
     total_price: "Prix total"
@@ -26,20 +27,20 @@ fr:
   meta_tags:
     blog_posts:
       index:
-        title: "Blog"
-        description: "Blog du site Conscients"
-        keywords: "Blog, Articles"
+        title: "Blog ecolo bio de Conscients"
+        description: "Sur le blog écolo de Conscients, nous parlons d'offrir et de planter des arbres, de cadeau de naissance bio pour les bébés, d'écologie et de nature au quotidien.."
+        keywords: "blog-ecolo-bio, offrir-un-arbre, cadeau-de-naissance-bio, blog-ecologie-nature"
     pages:
       home:
-        title: "Page d'accueil"
-        description: "Page d'accueil du site Conscients"
-        keywords: "Ecologique, Développement Durable, Accueil, Home"
+        title: "Cadeau bio écolo personnalisé pour bébé et sa famille"
+        description: "Vous cherchez un cadeau de naissance bio écolo éthique personnalisé et original ? Pour bébé et vous voulez offrir un arbre à ses parents ? Alors bienvenue !"
+        keywords: "cadeau-bio-ecolo-personnalisé-bébé, cadeau-de-naissance-bio-ecolo, offrir-un-arbre-en Amazonie, offrir-un-arbre-pour-une-naissance, bebe-bio-vetement, bebe-coton-bio, cadeau-bio-pour-bébé, cadeau-naissance-bio-equitable"
       about:
-        title: "A propos"
-        description: "Pour en savoir plus sur Conscients"
-        keywords: "A propos"
+        title: "Conscients et ses cadeaux écolos bio équitables"
+        description: "Découvrez Conscients, pour offrir des cadeaux écolos originaux, faire plaisir et partager tout ce que l'on peut faire de positif pour préserver les écosystèmes."
+        keywords: "cadeaux-bio-écolos-équitables, offrir-un-arbre-en-amazonie, coton-bio-équitable, un-arbre-pour-une-naissance"
     products:
       index:
-        title: "Liste des produits"
-        description: "Les produits responsables Conscients"
-        keywords: "Produits, Développement Durable"
+        title: "Idée cadeau bio équitable pour bébé, femme et homme"
+        description: "Cadeau bébé bio personnalisé comme le tree-shirt, arbres à offrir en Amazonie, cadeau naissance pour grande sœur ou frère et vetement bio bébé en coton bio pima."
+        keywords: "idee-cadeau-bio-equitable, cadeau-bébé-bio-personnalisé, offrir-un-arbre-en-amazonie, cadeau-naissance-grande-sœur, vetement-bio-bébé, bebe-coton-bio"

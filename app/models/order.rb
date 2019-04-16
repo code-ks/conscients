@@ -73,6 +73,7 @@ class Order < ApplicationRecord
   scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
   # Delay could be changed if needed
   scope :cart_to_destroy, -> { in_cart.two_days_old }
+  scope :paid, -> { where(aasm_state: %w[preparing fulfilled delivered]) }
 
   include AASM
   aasm enum: true do
@@ -226,6 +227,8 @@ class Order < ApplicationRecord
   end
 
   def include_trees_to_update?
+    return false unless include_trees?
+
     line_items.map(&:tree_plantation).pluck(:is_full).include?(false)
   end
 

@@ -40,6 +40,11 @@ Rails.application.routes.draw do
         resources :downloads, only: :new
       end
     end
+    resource :klm_files, only: [] do
+      scope module: :klm_files do
+        resources :downloads, only: :new
+      end
+    end
     # Routes for the checkout process --> Cart leads to deliveries choice leads to payments
     scope module: :checkout do
       resources :carts, only: :show
