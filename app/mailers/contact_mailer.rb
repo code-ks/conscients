@@ -8,4 +8,11 @@ class ContactMailer < ApplicationMailer
     mail from: %("#{params[:name]}" <"carole@conscients.com">),
          to: 'carole@conscients.com', subject: params[:subject]
   end
+
+  def stock_alert
+    @message = params[:message]
+    mail from: 'carole@conscients.com',
+         to: 'carole@conscients.com',
+         subject: params[:subject]
+  end
 end
