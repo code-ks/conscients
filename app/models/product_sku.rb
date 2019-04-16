@@ -26,6 +26,7 @@ class ProductSku < ApplicationRecord
   has_many :orders, through: :line_items
 
   before_validation :normalize_sku, only: :create
+  before_update :alert_on_zero_quantity
 
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :sku, presence: true, uniqueness: true, length: { minimum: 3 }
@@ -45,4 +46,15 @@ class ProductSku < ApplicationRecord
   def normalize_sku
     self.sku = SecureRandom.uuid
   end
+
+  # rubocop:disable Metrics/AbcSize
+  def alert_on_zero_quantity
+    return unless quantity != quantity_was && quantity_was.positive? && quantity.zero?
+
+    ContactMailer.with(
+      subject: "Stock alert SKU: #{sku} - product: #{product.name}",
+      message: "The quantity reached 0 for the product #{product.name} with the sku #{sku}"
+    ).stock_alert.deliver_later
+  end
+  # rubocop:enable Metrics/AbcSize
 end

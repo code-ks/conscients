@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
+
   devise_for :clients, only: :omniauth_callbacks,
   controllers: { omniauth_callbacks: 'clients/omniauth_callbacks' }
 
