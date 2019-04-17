@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Rails.application.routes.default_url_options[:host] = 'conscients.herokuapp.com'
+Rails.application.routes.default_url_options[:host] = 'conscients.com'
 
 # Production configs for the app
 Rails.application.configure do
@@ -55,7 +55,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -75,7 +75,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method     = :postmark
   config.action_mailer.postmark_settings   = { api_token: Rails.application.credentials.postmark }
   # To change with the right URL
-  config.action_mailer.default_url_options = { host: 'conscients.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'conscients.com' }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

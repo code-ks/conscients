@@ -26,6 +26,7 @@ Rails/HasAndBelongsToMany:
 Metrics/BlockLength:
   Exclude:
     - config/environments/development.rb
+    - config/environments/production.rb
     - Guardfile
     - config/initializers/simple_form_bootstrap.rb
     - config/routes.rb
