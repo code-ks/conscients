@@ -38,6 +38,8 @@
     margin-bottom: 0;
     letter-spacing: 0.1rem;
     // overflow: scroll;
+    text-overflow: ellipsis;
+    overflow: hidden;
     @include for-tablet-landscape-up {
       color: white;
     }
