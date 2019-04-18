@@ -5,13 +5,13 @@ class ContactMailer < ApplicationMailer
     @message = params[:message]
     @name = params[:name]
     @email = params[:email]
-    mail from: %("#{params[:name]}" <"carole@conscients.com">),
+    mail from: 'contact@conscients.com',
          to: 'carole@conscients.com', subject: params[:subject]
   end
 
   def stock_alert
     @message = params[:message]
-    mail from: 'carole@conscients.com',
+    mail from: 'contact@conscients.com',
          to: 'carole@conscients.com',
          subject: params[:subject]
   end
