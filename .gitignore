@@ -34,3 +34,4 @@ yarn-debug.log*
 erd.pdf
 
 .idea/
+.DS_Store
