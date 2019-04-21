@@ -9,6 +9,10 @@ ActiveAdmin.register Order do
 
   includes :client, :coupon, :delivery_address, :billing_address
 
+  scope :not_in_cart, default: true
+  scope :in_cart
+  scope :all
+
   # Custom action --> Link + simili controller
   action_item :download_invoice, only: :show, if: proc { order.invoice.attached? } do
     link_to t('.download_invoice'), download_invoice_admin_order_path(order), method: :put
@@ -30,6 +34,35 @@ ActiveAdmin.register Order do
       # launch the event with bang
       order.send("#{safe_event}!")
     end
+  end
+
+  index do
+    selectable_column
+    id_column
+    column :aasm_state do |order|
+      I18n.t("activerecord.attributes.order.aasm_state/#{order.aasm_state}")
+    end
+    # column :coupon_id
+    # column :delivery_address_id do |order|
+    #   order.delivery_address.to_s
+    # end
+    # column :billing_address_id do |order|
+    #   order.billing_address.to_s
+    # end
+    # column :delivery_method
+    # column :delivery_fees_cents
+    # column :delivery_fees_currency
+    column :total_price_cents
+    # column :total_price_currency
+    column :payment_method
+    # column :recipient_message
+    # column :customer_note
+    column :payment_date
+    column :client_id
+    column :created_at
+    # column :updated_at
+    # column :payment_details
+    actions
   end
 
   form do |f|

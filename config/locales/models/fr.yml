@@ -216,6 +216,7 @@ fr:
           stripe: "Stripe"
           paypal: "Paypal"
           bank_tranfer: "Tranfert bancaire"
+        payment_date: Date de paiement
         recipient_message: "Message au destinataire"
         customer_note: "Note du client"
         client: "Client"
