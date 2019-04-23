@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ContactsController < ApplicationController
+  invisible_captcha only: :create, honeypot: :profession
+
   def create
     send_contact_email
     flash[:notice] = t('flash.contact.create.notice')
