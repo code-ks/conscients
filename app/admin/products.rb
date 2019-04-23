@@ -38,10 +38,18 @@ ActiveAdmin.register Product do
     column :name_en
     column :slug_fr
     column :slug_en
-    column :description_short_fr
-    column :description_short_en
-    column :description_long_fr
-    column :description_long_en
+    column :description_short_fr do |product|
+      truncate product.description_short_fr, length: 50
+    end
+    column :description_short_en do |product|
+      truncate product.description_short_en, length: 50
+    end
+    column :description_long_fr do |product|
+      truncate product.description_long_fr, length: 50
+    end
+    column :description_long_en do |product|
+      truncate product.description_long_en, length: 50
+    end
     column :images do |product|
       if product.images.attached?
         ul do
@@ -59,20 +67,32 @@ ActiveAdmin.register Product do
     column :tax_rate
     column :weight
     column :product_type
-    column :seo_title_fr
-    column :seo_title_en
-    column :meta_description_fr
-    column :meta_description_en
-    column :keywords_fr
-    column :keywords_en
+    column :seo_title_fr do |product|
+      truncate product.seo_title_fr, length: 50
+    end
+    column :seo_title_en do |product|
+      truncate product.seo_title_en, length: 50
+    end
+    column :meta_description_fr do |product|
+      truncate product.meta_description_fr, length: 50
+    end
+    column :meta_description_en do |product|
+      truncate product.meta_description_en, length: 50
+    end
+    column :keywords_fr do |product|
+      truncate product.keywords_fr, length: 50
+    end
+    column :keywords_en do |product|
+      truncate product.keywords_en, length: 50
+    end
     column :producer_latitude
     column :producer_longitude
     column :background_image do |product|
-      image_tag(product.background_image, height: 200) if product.background_image.attached?
+      image_tag(product.background_image, height: 150) if product.background_image.attached?
     end
     column :certificate_background do |product|
       if product.certificate_background.attached?
-        image_tag(product.certificate_background, height: 200)
+        image_tag(product.certificate_background, height: 150)
       end
     end
     column :color_certificate
