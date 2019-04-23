@@ -67,6 +67,8 @@ gem 'country_select', '~> 3.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'sass-rails', '~> 5.0'
 
+gem 'invisible_captcha'
+
 group :development, :test do
   gem 'pry-byebug', '~> 3.6'
   gem 'pry-rails', '~> 0.3'
