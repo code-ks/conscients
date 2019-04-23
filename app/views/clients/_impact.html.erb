@@ -35,7 +35,7 @@
             <tr class="desktop-border-bottom td-font text-center">
               <td><%= I18n.l(line_item.order.payment_date || line_item.order.created_at, format: :long_no_time).titleize %></td>
               <td><%= line_item.tree_plantation.tree_specie.capitalize %></td>
-              <td><%= line_item.tree_plantation.partner.capitalize %></td>
+              <td><%= line_item.tree_plantation.producer_name.capitalize %></td>
               <td><%= line_item.recipient_name %></td>
               <td>
                 <%= link_to new_certificates_download_path(line_item_id: line_item.id) do %>
