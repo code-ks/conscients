@@ -61,5 +61,46 @@ Rails.application.routes.draw do
       end
       resources :coupon_to_order_additions, only: :create
     end
+
+    # permanent redirections
+    get '/conscients-chez-lilli-bulle', to: redirect(
+      '/', status: 301
+    )
+    get '/shop/fr/cadeau-arbre/22-offrir-un-arbre-cadeau-amazonie.html', to: redirect(
+      '/cadeau-ecolo-bio/offrir-un-arbre-en-amazonie', status: 301
+    )
+    get '/offrir-un-arbre-pour-une-naissance', to: redirect(
+      '/cadeau-ecolo-bio/offrir-un-arbre-en-cadeau-de-naissance', status: 301
+    )
+    get '/shop/fr/12-cadeau-arbre', to: redirect(
+      '/cadeau-ecolo/offrir-un-arbre-cadeau/products', status: 301
+    )
+    get '/shop/fr/14-cadeau-bebe-bio', to: redirect(
+      '/cadeau-ecolo/cadeau-bebe-bio-ecolo-vetement-bio-b%C3%A9b%C3%A9/products', status: 301
+    )
+    get '/shop/fr/13-cadeau-naissance-bio', to: redirect(
+      '/cadeau-ecolo/cadeau-naissance-bio-%C3%A9quitable-original/products', status: 301
+    )
+    get '/shop/fr/7-vetements-bio-bebe-fille', to: redirect(
+      '/cadeau-ecolo/vetement-bebe-fille-coton-bio/products', status: 301
+    )
+    get '/shop/fr/11-vetements-bio-bebe-garcon', to: redirect(
+      '/cadeau-ecolo/vetement-bio-bebe-garcon/products', status: 301
+    )
+    get '/mytreeshirt', to: redirect(
+      '/cadeau-ecolo/idee-cadeau-ecolo-bio-bebe-femme-homme/products', status: 301
+    )
+    get '/shop/fr/cadeau-arbre/64-album-illustre-jeunesse-foret-tropicale.html', to: redirect(
+      '/cadeau-ecolo-bio/les-super-yoghiros', status: 301
+    )
+    get '/shop/fr/cadeau-arbre/69-coffret-cadeau-naissance-bio-equitable-personnalise-my-tree-shirt-super-yoghiros.html', to: redirect(
+      '/cadeau-ecolo-bio/cadeau-naissance-bio-tree-shirt-yoghiros-rose', status: 301
+    )
+    get '/shop/fr/cadeau-bebe-bio/68-cadeau-bebe-bio-personnalise-avec-prenom-et-date-de-naissance-my-tree-shirt.html', to: redirect(
+      '/cadeau-ecolo-bio/cadeau-naissance-bio-tree-shirt-yoghiros-bleu', status: 301
+    )
+    get '/shop/fr/cadeau-bebe-bio/70-bebe-bio-cadeau-vetement-bio-luxe-naissance-coton-bio-my-tree-shirt.html', to: redirect(
+      '/cadeau-ecolo-bio/cadeau-naissance-bio-tree-shirt-yoghiros-camel', status: 301
+    )
   end
 end

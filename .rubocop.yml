@@ -3,6 +3,8 @@ Rails:
 
 Metrics/LineLength:
   Max: 100
+  Exclude:
+    - config/routes.rb
 
 AllCops:
   Exclude:
