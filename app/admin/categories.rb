@@ -25,8 +25,12 @@ ActiveAdmin.register Category do
     column :name_en
     column :slug_fr
     column :slug_en
-    column :description_fr
-    column :description_en
+    column :description_fr do |product|
+      truncate product.description_fr, length: 50
+    end
+    column :description_en do |product|
+      truncate product.description_en, length: 50
+    end
     column :ancestry
     column :position
     column :home_display
