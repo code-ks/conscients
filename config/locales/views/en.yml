@@ -506,3 +506,6 @@ en:
         notice: "Your order has been confirmed. Thank you!"
       create_bank_transfer:
         notice: "You will receive an email with instruction for the bank transfer"
+    clients:
+      show:
+        notice: You must log in to access this page
