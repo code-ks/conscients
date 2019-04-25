@@ -549,3 +549,6 @@ fr:
         notice: "Votre commande a été validée. Nous vous remercions"
       create_bank_transfer:
         notice: "Un email vous a été envoyé avec les instructions pour réaliser le virement"
+    clients:
+      show:
+        notice: Vous devez vous connecter pour accéder à cette page

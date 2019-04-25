@@ -54,6 +54,10 @@ Style/AsciiComments:
 Style/DoubleNegation:
   Enabled: False
 
+Style/AndOr:
+  Exclude:
+    - app/controllers/clients_controller.rb
+
 Rails/OutputSafety:
   Exclude:
     - app/helpers/internationalization_helper.rb

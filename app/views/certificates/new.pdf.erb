@@ -19,10 +19,16 @@
     <span><%= t('.project_name', project_name: @line_item.tree_plantation.project_name) %></span>
     <span><%= t('.project_type', project_type: @line_item.tree_plantation.project_type) %></span>
     <span><%= t('.project_partner', project_partner: @line_item.tree_plantation.partner) %></span>
-    <span><%= t('.plantation_uuid', plantation_uuid: @line_item.tree_plantation.plantation_uuid) %></span>
+    <% if @line_item.tree_plantation.plantation_uuid.present? %>
+      <span><%= t('.plantation_uuid', plantation_uuid: @line_item.tree_plantation.plantation_uuid) %></span>
+    <% end %>
     <span><%= t('.coordinates', lat: @line_item.tree_plantation.latitude, long: @line_item.tree_plantation.longitude) %></span>
-    <span><%= t('.tree_specie', tree_specie: @line_item.tree_plantation.tree_specie) %></span>
-    <span><%= t('.tree_producer', tree_producer: @line_item.tree_plantation.producer_name) %></span>
+    <% if @line_item.tree_plantation.tree_specie.present? %>
+      <span><%= t('.tree_specie', tree_specie: @line_item.tree_plantation.tree_specie) %></span>
+    <% end %>
+    <% if @line_item.tree_plantation.producer_name.present? %>
+      <span><%= t('.tree_producer', tree_producer: @line_item.tree_plantation.producer_name) %></span>
+    <% end %>
   </div>
   <div class="certificate-date">
     <span style="color:<%= @line_item.color_certificate %>"><%= I18n.l(@line_item.certificate_date, format: :long) %></span>
