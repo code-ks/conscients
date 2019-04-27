@@ -12,6 +12,10 @@ fr:
     current_state: "Statut actuel"
     change_state: "Changement de statut à effectuer"
     attachement_uploaded: téléchargé
+    is_full_change: "Décocher pour pouvoir laisser Identifiant de la plantation, Espèce d'arbre ou Nom du producteur vides\n
+                    ATTENTION: une fois ces 3 champs à nouveau remplis, les clients d'arbres de cette plantation recevront\n
+                    l'email de mise à jour.\n
+                    A n'utiliser qu'avant commercialisation de la plantation, en cas d'erreur."
   paypal:
     delivery_fees: "Frais de livraison"
     total_price: "Prix total"
