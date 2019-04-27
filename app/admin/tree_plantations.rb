@@ -4,7 +4,7 @@ ActiveAdmin.register TreePlantation do
   menu parent: I18n.t('active_admin.product_management')
 
   permit_params :project_name, :project_type_fr, :project_type_en, :partner, :plantation_uuid,
-                :base_certificate_uuid, :latitude, :longitude,
+                :base_certificate_uuid, :latitude, :longitude, :is_full,
                 :tree_specie, :producer_name, :trees_quantity, :klm_file
 
   includes :klm_file_attachment
@@ -47,6 +47,9 @@ ActiveAdmin.register TreePlantation do
       f.input :trees_quantity
       f.input :klm_file, as: :file,
         hint: tree_plantation.klm_file.attached? && I18n.t('active_admin.attachement_uploaded')
+      if f.object.is_full
+        f.input :is_full, as: :boolean, label: simple_format(I18n.t('active_admin.is_full_change'))
+      end
     end
     f.actions
   end
