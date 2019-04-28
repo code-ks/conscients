@@ -42,27 +42,60 @@ ActiveAdmin.register Order do
     column :aasm_state do |order|
       I18n.t("activerecord.attributes.order.aasm_state/#{order.aasm_state}")
     end
-    # column :coupon_id
-    # column :delivery_address_id do |order|
-    #   order.delivery_address.to_s
-    # end
-    # column :billing_address_id do |order|
-    #   order.billing_address.to_s
-    # end
-    # column :delivery_method
-    # column :delivery_fees_cents
-    # column :delivery_fees_currency
     column :total_price_cents
-    # column :total_price_currency
     column :payment_method
-    # column :recipient_message
-    # column :customer_note
     column :payment_date
     column :client_id
     column :created_at
-    # column :updated_at
-    # column :payment_details
     actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :aasm_state do |order|
+        I18n.t("activerecord.attributes.order.aasm_state/#{order.aasm_state}")
+      end
+      row :coupon_id
+      row :delivery_address_id do |order|
+        order.delivery_address.to_s
+      end
+      row :billing_address_id do |order|
+        order.billing_address.to_s
+      end
+      row :delivery_method
+      row :delivery_fees_cents
+      row :delivery_fees_currency
+      row :total_price_cents
+      row :total_price_currency
+      row :payment_method
+      row :recipient_message
+      row :customer_note
+      row :payment_date
+      row :client_id
+      row :created_at
+      row :updated_at
+      row :payment_details
+      panel 'Line Items' do
+        table_for order.line_items do
+          column :id
+          column :product_sku
+          column :tree_plantation do |line_item|
+            line_item&.tree_plantation
+          end
+          column :certificate do |line_item|
+            if line_item&.certificate&.attached?
+              link_to 'Télécharger Certificat', new_certificates_download_path(
+                line_item_id: line_item.id, format: :pdf
+              )
+            end
+          end
+          column :details do |line_item|
+            link_to "Voir line item #{line_item.id}", admin_line_item_path(line_item)
+          end
+        end
+      end
+    end
   end
 
   form do |f|
