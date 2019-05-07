@@ -234,7 +234,7 @@ class Order < ApplicationRecord
   def include_trees_to_update?
     return false unless include_trees?
 
-    line_items.map(&:tree_plantation).pluck(:is_full).include?(false)
+    line_items.map(&:tree_plantation).compact.pluck(:is_full).include?(false)
   end
 
   def set_email_delivery_address
