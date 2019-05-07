@@ -100,4 +100,8 @@ class Product < ApplicationRecord
   def variants_by_category
     variants.group_by(&:category)
   end
+
+  def tree_or_personalized?
+    tree? || personalized?
+  end
 end

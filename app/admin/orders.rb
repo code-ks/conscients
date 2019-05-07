@@ -90,6 +90,7 @@ ActiveAdmin.register Order do
               )
             end
           end
+          column :recipient_name
           column :details do |line_item|
             link_to "Voir line item #{line_item.id}", admin_line_item_path(line_item)
           end

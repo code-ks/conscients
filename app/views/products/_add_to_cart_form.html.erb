@@ -23,15 +23,16 @@
     </div>
   <% end %>
 
-  <% if product.tree? %>
-
+  <% if product.tree_or_personalized? %>
     <div class="form-group row">
       <%= form.label :recipient_name, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
         <%= form.text_field :recipient_name, class: "form-control mr-sm-2", maxlength: 32, required: true %>
       </div>
     </div>
+  <% end %>
 
+  <% if product.tree? %>
     <div class="form-group row">
       <%= form.label :certificate_date, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
@@ -46,7 +47,6 @@
         <p class="color-green font-italic mb-0"><%= t 'products.product.car_max_message' %></p>
       </div>
     </div>
-
   <% end %>
 
  <!--  </%= form.submit class: "btn btn-outline-success offset-sm-4 col-sm-8"%> -->
