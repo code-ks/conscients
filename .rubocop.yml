@@ -36,6 +36,14 @@ Metrics/BlockLength:
     - app/admin/*
     - app/models/order.rb
 
+Metrics/MethodLength:
+  Exclude:
+    - app/models/sitemaps/sitemap.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - app/models/sitemaps/sitemap.rb
+
 Metrics/ClassLength:
   Exclude:
     - app/models/order.rb

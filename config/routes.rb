@@ -102,5 +102,6 @@ Rails.application.routes.draw do
     get '/shop/fr/cadeau-bebe-bio/70-bebe-bio-cadeau-vetement-bio-luxe-naissance-coton-bio-my-tree-shirt.html', to: redirect(
       '/products/cadeau-naissance-bio-tree-shirt-yoghiros-camel', status: 301
     )
+    resources :sitemap_tests, only: :index
   end
 end
