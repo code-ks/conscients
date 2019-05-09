@@ -83,4 +83,18 @@ class Category < ApplicationRecord
     Variant.includes(:text_translations, :product_skus)
            .where(product_skus: { product: products.displayable })
   end
+
+  def url(locale = nil)
+    slug_locale = default_locale?(locale) ? 'slug_fr' : "slug_#{locale}"
+    prefix = locale.to_s unless default_locale?(locale)
+    "#{prefix}/categories/#{send(slug_locale)}/products"
+  end
+
+  def default_locale?(locale)
+    locale.nil? || locale == 'fr'
+  end
+
+  def lastmod
+    updated_at.strftime('%F')
+  end
 end

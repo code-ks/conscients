@@ -1,1 +1,10 @@
 # See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+
+User-agent: *
+Allow: /
+
+Disallow: /sidekiq
+Disallow: /checkout
+Disallow: /admin
+
+Sitemap: https://s3.eu-west-3.amazonaws.com/photo-conscients-bebe-bio/sitemaps/index.xml

@@ -104,4 +104,18 @@ class Product < ApplicationRecord
   def tree_or_personalized?
     tree? || personalized?
   end
+
+  def url(locale = nil)
+    slug_locale = default_locale?(locale) ? 'slug_fr' : "slug_#{locale}"
+    prefix = locale.to_s unless default_locale?(locale)
+    "#{prefix}/products/#{send(slug_locale)}"
+  end
+
+  def default_locale?(locale)
+    locale.nil? || locale == 'fr'
+  end
+
+  def lastmod
+    updated_at.strftime('%F')
+  end
 end
