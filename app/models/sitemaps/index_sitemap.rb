@@ -5,6 +5,12 @@ class IndexSitemap < Sitemap
     builder.to_xml
   end
 
+  def name
+    'index.xml'
+  end
+
+  private
+
   def builder
     Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
       xml.sitemapindex('xlmns' => 'http://www.sitemaps.org/schemas/sitemap/0.9') do
@@ -17,12 +23,6 @@ class IndexSitemap < Sitemap
       end
     end
   end
-
-  def name
-    'index.xml'
-  end
-
-  private
 
   def filename
     name

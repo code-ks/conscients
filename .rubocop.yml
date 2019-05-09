@@ -43,6 +43,7 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Exclude:
     - app/models/sitemaps/sitemap.rb
+    - app/helpers/application_helper.rb
 
 Metrics/ClassLength:
   Exclude:

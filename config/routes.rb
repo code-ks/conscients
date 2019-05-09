@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  # noise
+  respond200 = ['wp-login.php']
+  respond200.each do |r2|
+    get "/#{r2}", to: proc { [200, {}, ['']] }
+  end
+  redirect_root = ['login.aspx']
+  redirect_root.each do |rr|
+    get "/#{rr}", to: redirect('/')
+  end
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
