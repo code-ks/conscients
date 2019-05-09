@@ -6,6 +6,8 @@ module ApplicationHelper
     a = action_name
     c = controller_name
 
+    return '/' if r == '/'
+
     return r.remove('?locale=en') if r.include?('?locale=en')
 
     if c == 'products'
