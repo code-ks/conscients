@@ -264,7 +264,7 @@ class Order < ApplicationRecord
   def delivery_is_billing?
     return true unless delivery_address && billing_address
 
-    delivery_address == billing_address
+    delivery_address.attributes == billing_address.attributes
   end
 
   def client_email_or_delivery_address
