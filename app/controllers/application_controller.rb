@@ -3,6 +3,8 @@ require 'application_responder'
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found?
+
   self.responder = ApplicationResponder
   respond_to :html
 
@@ -50,5 +52,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:newsletter_subscriber])
     devise_parameter_sanitizer.permit(:account_update,
                                       keys: %i[password password_confirmation current_password])
+  end
+
+  def record_not_found?
+    # rubocop:disable Style/AndOr
+    flash[:alert] = I18n.t('flash.record_not_found')
+    redirect_to root_path and return
+    # rubocop:enable Style/AndOr
   end
 end
