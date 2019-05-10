@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   respond200 = ['wp-login.php']
   respond200.each do |r2|
     get "/#{r2}", to: proc { [200, {}, ['']] }
+    post "/#{r2}", to: proc { [200, {}, ['']] }
   end
   redirect_root = ['login.aspx']
   redirect_root.each do |rr|
