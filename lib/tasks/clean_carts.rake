@@ -10,7 +10,7 @@ task clean_carts: :environment do
   Order.cart_to_destroy.each do |cart|
     cart.line_items.each do |line_item|
       line_item.product_sku.increment(:quantity, line_item.quantity) unless line_item.tree?
-      line_item.tree_plantation.increment(:quantity, line_item.quantity) unless line_item.classic?
+      line_item.tree_plantation&.increment(:quantity, line_item.quantity)
     end
     cart.destroy!
   end
