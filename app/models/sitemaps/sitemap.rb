@@ -35,9 +35,9 @@ class Sitemap
         'xmlns:xhtml' => 'default'
       ) do
         items.each do |item|
-          xml.lastmod item.lastmod if item.lastmod
           xml.url do
             xml.loc("#{ROOT}#{item.url(@locale)}")
+            xml.lastmod item.lastmod if item.lastmod
             I18n.available_locales.map(&:to_s).each do |loc|
               xml['xhtml'].link rel: 'alternate', hreflang: loc, href: "#{ROOT}#{item.url(loc)}"
             end
