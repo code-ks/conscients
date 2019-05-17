@@ -153,7 +153,15 @@ Rails.application.routes.draw do
     get '/shop/62-356-large/arbre-cadeau-bapteme-fille-garcon-parrain-marraine.jpg', to: redirect(
       '/categories/Offrir-un-arbre-pour-un-bapteme-ecolo/products', status: 301
     )
-
+    get '/shop/fr/cadeau-arbre/62-arbre-cadeau-bapteme-fille-garcon-parrain-marraine.html', to: redirect(
+      '/categories/Offrir-un-arbre-pour-un-bapteme-ecolo/products', status: 301
+    )
+    get '/wp-content/uploads/2016/02/cadeau-invit%C3%A9-bapteme-personnalis%C3%A91.jpg', to: redirect(
+      '/categories/Offrir-un-arbre-pour-un-bapteme-ecolo/products', status: 301
+    )
+    get '/wp-content/uploads/2016/02/idee-cadeau-bapteme-original-invites1.jpg', to: redirect(
+      '/categories/Offrir-un-arbre-pour-un-bapteme-ecolo/products', status: 301
+    )
     resources :sitemap_tests, only: :index
   end
 end
