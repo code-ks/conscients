@@ -436,6 +436,9 @@ Rails.application.routes.draw do
     get '/wp-login.php?redirect_to=http://www.conscients.com/album-foret-maternelle-illustre-tests-couleurs/', to: redirect(
       '/products/les-super-yoghiros', status: 301
     )
+    get '/shop/fr/*foo', to: redirect(
+      '/', status: 301
+    )
     resources :sitemap_tests, only: :index
   end
 end
