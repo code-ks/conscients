@@ -162,6 +162,7 @@ Rails.application.routes.draw do
     get '/wp-content/uploads/2016/02/idee-cadeau-bapteme-original-invites1.jpg', to: redirect(
       '/categories/Offrir-un-arbre-pour-un-bapteme-ecolo/products', status: 301
     )
+
     # permanent redirections mariage
     get '/shop/63-361-thickbox/arbre-cadeau-mariage-ecolo-chic.jpg', to: redirect(
       '/products/offrir-un-arbre-pour-un-mariage', status: 301
@@ -202,6 +203,7 @@ Rails.application.routes.draw do
     get '/shop/60-345-large/offrir-un-arbre-pour-un-mariage-avec-un-mot-doux.jpg', to: redirect(
       '/products/offrir-un-arbre-pour-un-mariage', status: 301
     )
+
     # permanent redirections arbre amazonie
     get '/shop/it/cadeau-arbre/60-offrir-un-arbre-cadeau-amazonie.html', to: redirect(
       '/products/offrir-un-arbre-en-amazonie', status: 301
@@ -330,6 +332,7 @@ Rails.application.routes.draw do
     get '/wp-content/uploads/2013/01/offrir-un-arbre-pour-une-naissance-en-amazonie-perou.jpg', to: redirect(
       '/products/offrir-un-arbre-en-cadeau-de-naissance', status: 301
     )
+
     # Permanent redirections Livre Yoghiros
     get '/feed/www.kisskissbankbank.com/les-super-yoghiros-en-amazonie-le-livre', to: redirect(
       '/products/les-super-yoghiros', status: 301
@@ -421,18 +424,15 @@ Rails.application.routes.draw do
     get '/shop/64-369-thickbox/album-illustre-sur-la-foret-tropicale.jpg', to: redirect(
       '/products/les-super-yoghiros', status: 301
     )
-    get '/shop/fr/cadeau-arbre/64-album-illustre-jeunesse-foret-tropicale.html', to: redirect(
-      '/products/les-super-yoghiros', status: 301
-    )
     get '/les-supers-yoghiros-preface-de-francis-halle/feed/', to: redirect(
       '/products/les-super-yoghiros', status: 301
     )
     get '/shop/64-363-large/album-illustre-jeunesse-foret-tropicale.jpg', to: redirect(
       '/products/les-super-yoghiros', status: 301
     )
-    get '/shop/fr/cadeau-arbre/64-album-illustre-jeunesse-foret-tropicale.html?code=phpinfo();', to: redirect(
-      '/products/les-super-yoghiros', status: 301
-    )
+    # get '/shop/fr/cadeau-arbre/64-album-illustre-jeunesse-foret-tropicale.html?code=phpinfo();', to: redirect(
+    #   '/products/les-super-yoghiros', status: 301
+    # )
     get '/wp-login.php?redirect_to=http://www.conscients.com/album-foret-maternelle-illustre-tests-couleurs/', to: redirect(
       '/products/les-super-yoghiros', status: 301
     )
