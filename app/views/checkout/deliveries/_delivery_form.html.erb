@@ -48,7 +48,7 @@
           <% if cart.postal? %>
             <div class="form-group box-green-text d-flex align-items-baseline mb-2">
               <%= form.check_box :delivery_is_billing, checked: cart.delivery_is_billing?, data: { action: "billing-address#toggleDisplay", target: "billing-address.checkable" } %>
-              <%= form.label t('.delivery_is_billing'), class: "ml-1" %>
+              <%= form.label :delivery_is_billing, t('.delivery_is_billing'), class: "ml-1" %>
             </div>
           <% end %>
           <div data-target="billing-address.hideable" class="<%= "d-none" if cart.postal? %>">
@@ -64,7 +64,7 @@
       <div class= "delivery-validation-box padding-t">
         <div class="form-group d-flex align-items-baseline">
           <%= form.check_box :general_sales_conditions, checked: false, required: true %>
-          <%= form.label t('.general_sales_conditions'), class: "mb-0 ml-1" %>
+          <%= form.label :general_sales_conditions, t('.general_sales_conditions'), class: "mb-0 ml-1" %>
         </div>
 
         <%= form.hidden_field :address_type, value: cart.delivery_method %>
