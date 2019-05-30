@@ -32,7 +32,7 @@
     </div>
   <% end %>
 
-  <% if product.tree? %>
+  <% if product.tree_or_personalized? %>
     <div class="form-group row">
       <%= form.label :certificate_date, class: "col-sm-4 col-form-label" %>
       <div class="col-sm-8">
@@ -49,11 +49,9 @@
     </div>
   <% end %>
 
- <!--  </%= form.submit class: "btn btn-outline-success offset-sm-4 col-sm-8"%> -->
  <div class="col-sm-8 float-right pr-0 my-3">
   <%= form.submit class: "btn conscients-btn btn-green float-right", data: { turbolinks: false }%>
  </div>
-
 
 <% end %>
 
