@@ -95,8 +95,8 @@ class Order < ApplicationRecord
 
     # Triggers process_order after paying the order
     event :pay, after: :process_order do
-      transitions from: :in_cart, to: :delivered, guard: :tree_only?
-      transitions from: :waiting_for_bank_transfer, to: :delivered, guard: :tree_only?
+      transitions from: :in_cart, to: :delivered, guard: :tree_only_and_email?
+      transitions from: :waiting_for_bank_transfer, to: :delivered, guard: :tree_only_and_email?
       transitions from: :in_cart, to: :preparing
       transitions from: :waiting_for_bank_transfer, to: :preparing
     end
@@ -225,6 +225,10 @@ class Order < ApplicationRecord
 
   def tree_only?
     products.pluck(:product_type).uniq == ['tree']
+  end
+
+  def tree_only_and_email?
+    tree_only? && email?
   end
 
   def include_trees?
