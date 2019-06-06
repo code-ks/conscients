@@ -113,6 +113,14 @@ Rails.application.routes.draw do
     get '/shop/fr/cadeau-bebe-bio/70-bebe-bio-cadeau-vetement-bio-luxe-naissance-coton-bio-my-tree-shirt.html', to: redirect(
       '/products/cadeau-naissance-bio-tree-shirt-yoghiros-camel', status: 301
     )
+    # permanent redirections sitemap
+    get '/shop/en/sitemap', to: redirect(
+      '/site_map', status: 301
+    )
+    get '/sitemap', to: redirect(
+      '/site_map', status: 301
+    )
+
     # permanent redirections bapteme
     get '/shop/62-356-thickbox/arbre-cadeau-bapteme.jpg', to: redirect(
       '/categories/Offrir-un-arbre-pour-un-bapteme-ecolo/products', status: 301
