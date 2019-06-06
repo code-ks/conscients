@@ -8,8 +8,10 @@ class CreateStripePayment
 
   def perform
     create_customer
-    @charge = create_charge
-    update_order
+    @charge = response = create_charge
+    (400..600).cover?(response.code.to_i) ? raise(StandardError) : update_order
+
+    response
   end
 
   private
