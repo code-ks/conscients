@@ -1,0 +1,7 @@
+default:
+  name: 'Home'
+  slug: 'home'
+  # name_fr: 'Home'
+  # slug_fr: 'home'
+  # name_en: 'Home'
+  # slug_en: 'home'

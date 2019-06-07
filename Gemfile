@@ -70,8 +70,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'invisible_captcha'
 
 group :development, :test do
+  gem 'capybara', '~> 2.4.0'
   gem 'pry-byebug', '~> 3.6'
   gem 'pry-rails', '~> 0.3'
+  gem 'rspec-rails'
 end
 
 group :development do
