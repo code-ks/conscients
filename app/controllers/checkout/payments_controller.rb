@@ -5,7 +5,8 @@ class Checkout::PaymentsController < ApplicationController
 
   def create_stripe
     CreateStripePayment.new(@cart, params[:stripe_token]).perform
-    redirect_to payment_path(@cart), notice: t('flash.payments.create.notice')
+    redirect_to payment_path(@cart)
+    # redirect_to payment_path(@cart), notice: t('flash.payments.create.notice')
   rescue Stripe::CardError, StandardError
     redirect_to new_payment_path, alert: t('flash.payments.create.alert')
   end
