@@ -94,7 +94,7 @@ group :development do
 
   gem 'brakeman', '~> 4.2', require: false
   gem 'overcommit', '~> 0.44'
-  gem 'rubocop', '~> 0.54', require: false
+  gem 'rubocop', '~> 0.71', require: false
 
   gem 'guard', '~> 2.14'
   gem 'guard-bundler', '~> 2.1', require: false

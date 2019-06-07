@@ -9,7 +9,7 @@ class CreateStripePayment
   def perform
     create_customer
     @charge = create_charge
-    update_order
+    @charge.is_a?(Stripe::Charge) ? update_order : raise(StandardError)
   end
 
   private
