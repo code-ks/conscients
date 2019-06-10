@@ -448,5 +448,11 @@ Rails.application.routes.draw do
       '/', status: 301
     )
     resources :sitemap_tests, only: :index
+
+    if Rails.env.production?
+      get '*path', to: 'pages#home', constraints: lambda { |req|
+        req.path.exclude? 'rails/active_storage'
+      }
+    end
   end
 end
