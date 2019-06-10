@@ -29,7 +29,7 @@
       <tbody>
         <% @cart.line_items.includes(:product_sku).each do |line_item| %>
           <tr class="desktop-border-bottom td-font text-center">
-            <td class="cart-img"><%= image_tag(line_item.product_images.first) %></td>
+            <td class="cart-img"><%= image_tag(line_item.product_images.first) if line_item.product_images.present? %></td>
             <td class= pl-2>
               <div class="text-left"><%= line_item.product_sku.to_s %></div>
               <div class="text-left">

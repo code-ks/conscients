@@ -17,7 +17,7 @@
               <%= t('.product_added') %>
             <% end %>
           </h2>
-          <%= link_to t('.go_to_cart'), cart_path(@cart), class: "red-link angle-right-before mb-1" %>
+          <%= link_to t('.go_to_cart'), cart_path(@cart), class: "red-link angle-right-before mb-1", id: 'go_to_cart'%>
           <% if product.tree? %>
             <%= link_to t('.plant_more_trees'), category_products_path(Category.give_a_tree), class: "red-link angle-right-before mb-1" %>
           <% else %>

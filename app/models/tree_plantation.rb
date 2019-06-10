@@ -35,8 +35,7 @@ class TreePlantation < ApplicationRecord
   translates :project_type
 
   validates :project_name, :project_type, :base_certificate_uuid,
-            :latitude, :longitude, :trees_quantity, :partner,
-            presence: true
+            :latitude, :longitude, :partner, presence: true
   validates :plantation_uuid, :tree_specie, :producer_name, presence: true, if: :is_full?
   validates :base_certificate_uuid, length: { maximum: 15 }
   validates :project_name, :project_type, :plantation_uuid, :tree_specie, :producer_name,
