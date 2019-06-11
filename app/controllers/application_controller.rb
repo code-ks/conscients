@@ -4,6 +4,7 @@ require 'application_responder'
 
 class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found?
+  rescue_from ActionController::UnknownFormat, with: :record_not_found? if Rails.env.production?
 
   self.responder = ApplicationResponder
   respond_to :html
