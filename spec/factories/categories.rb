@@ -1,10 +1,21 @@
-default:
-  name: 'Home'
-  slug: 'home'
-  # name_fr: 'Home'
-  # slug_fr: 'home'
-  # name_en: 'Home'
-  # slug_en: 'home'
+# frozen_string_literal: true
+
+FactoryBot.define do
+  factory :category do
+    name_fr { 'Home' }
+    slug_fr { 'Home' }
+    name_en { 'Home' }
+    slug_en { 'Home' }
+  end
+end
+
+# default:
+#   name: 'Home'
+#   slug: 'home'
+# name_fr: 'Home'
+# slug_fr: 'home'
+# name_en: 'Home'
+# slug_en: 'home'
 # node:
 #   name_fr: 'Home'
 #   slug_fr: 'home'
