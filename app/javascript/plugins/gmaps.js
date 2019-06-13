@@ -8,7 +8,8 @@ $(document).on("turbolinks:load", () => {
       lat: 0,
       lng: 0,
       minZoom: 2,
-      maxZoom: 15
+      maxZoom: 15,
+      mapTypeId: 'satellite'
     });
     // Change map zoom and position depending on the markers
     const markers = JSON.parse(mapElement.dataset.markers);
