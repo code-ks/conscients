@@ -184,7 +184,8 @@ class Order < ApplicationRecord
   end
 
   def total_weight
-    line_items.includes(:product_sku).sum(&:product_weight) || 0
+    line_items.includes(:product_sku).map(&:product_sku).compact.present? ?
+      line_items.includes(:product_sku).sum(&:product_weight) || 0 : 0
   end
 
   def symbol_region
