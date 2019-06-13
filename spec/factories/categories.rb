@@ -1,11 +1,26 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: categories
+#
+#  id           :bigint(8)        not null, primary key
+#  name         :string
+#  slug         :string
+#  description  :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  ancestry     :string
+#  position     :integer
+#  home_display :integer
+#
+
 FactoryBot.define do
   factory :category do
-    name_fr { 'Home' }
-    slug_fr { 'Home' }
-    name_en { 'Home' }
-    slug_en { 'Home' }
+    name_fr { 'Default' }
+    slug_fr { 'Default' }
+    name_en { 'Default' }
+    slug_en { 'Default' }
   end
 end
 

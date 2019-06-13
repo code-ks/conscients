@@ -7,8 +7,8 @@ RSpec.feature 'Classic Product Purchase', type: :feature, js: true do
   include_context 'When authenticated'
 
   scenario 'A user can buy a classic product' do
-    product = create(:product)
-    file_path = Rails.root.join('spec', 'support', 'assets', 'test-image.jpg')
+    product = create(:product, name_fr: 'Top livre')
+    file_path = Rails.root.join('spec', 'support', 'assets', 'classic-product-image.jpg')
     file = fixture_file_upload(file_path, 'image/jpg')
     product.images.attach(file)
 
