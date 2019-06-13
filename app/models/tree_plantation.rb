@@ -19,6 +19,7 @@
 #  updated_at            :datetime         not null
 #  base_tree_quantity    :integer
 #  is_full               :boolean          default(FALSE)
+#  certificate_counter   :integer          default(0), not null
 #
 
 class TreePlantation < ApplicationRecord
@@ -35,8 +36,7 @@ class TreePlantation < ApplicationRecord
   translates :project_type
 
   validates :project_name, :project_type, :base_certificate_uuid,
-            :latitude, :longitude, :trees_quantity, :partner,
-            presence: true
+            :latitude, :longitude, :partner, presence: true
   validates :plantation_uuid, :tree_specie, :producer_name, presence: true, if: :is_full?
   validates :base_certificate_uuid, length: { maximum: 15 }
   validates :project_name, :project_type, :plantation_uuid, :tree_specie, :producer_name,
@@ -79,7 +79,8 @@ class TreePlantation < ApplicationRecord
   # rubocop:enable Metrics/PerceivedComplexity
 
   def generate_certificate_number
-    base_certificate_uuid + "-#{format '%03d', base_tree_quantity - trees_quantity + 1}"
+    update certificate_counter: certificate_counter + 1
+    base_certificate_uuid + "-#{format '%03d', certificate_counter}"
   end
 
   def match_base_tree_quantity

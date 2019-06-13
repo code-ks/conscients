@@ -70,8 +70,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'invisible_captcha'
 
 group :development, :test do
+  gem 'capybara'
+  gem 'database_cleaner'
   gem 'pry-byebug', '~> 3.6'
   gem 'pry-rails', '~> 0.3'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  # gem 'factory_bot'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -94,7 +101,8 @@ group :development do
 
   gem 'brakeman', '~> 4.2', require: false
   gem 'overcommit', '~> 0.44'
-  gem 'rubocop', '~> 0.71', require: false
+  # gem 'rubocop', '~> 0.71', require: false
+  gem 'rubocop-rails', require: false
 
   gem 'guard', '~> 2.14'
   gem 'guard-bundler', '~> 2.1', require: false

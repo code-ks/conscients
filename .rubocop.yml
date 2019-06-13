@@ -1,3 +1,5 @@
+require: rubocop-rails
+
 Rails:
   Enabled: true
 
@@ -25,6 +27,11 @@ Rails/InverseOf:
 Rails/HasAndBelongsToMany:
   Enabled: false
 
+# todo
+Rails/HelperInstanceVariable:
+  Exclude:
+    - app/helpers/application_helper.rb
+
 Metrics/BlockLength:
   Exclude:
     - config/environments/development.rb
@@ -35,6 +42,7 @@ Metrics/BlockLength:
     - lib/tasks/*
     - app/admin/*
     - app/models/order.rb
+    - spec/features/*.rb
 
 Metrics/MethodLength:
   Exclude:
