@@ -35,3 +35,4 @@ erd.pdf
 
 .idea/
 .DS_Store
+.env*
