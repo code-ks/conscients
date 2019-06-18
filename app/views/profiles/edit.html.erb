@@ -1,0 +1,68 @@
+<% set_meta_tags noindex: true %>
+
+<div class="container-conscients first-title-padding page-font">
+  <h1><%= t 'profiles.edit.edit_account' %></h1>
+</div>
+
+<div class="session-page-container">
+    <div class="p-3">
+      <h2 class="my-4 f-08R-phone"><%= t('profiles.edit.email_edit_title') %></h2>
+      <%= form_for(current_client, as: current_client, url: profile_email_path, html: { method: :patch }) do |f| %>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mr-sm-2", placeholder: true %>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-3">
+        <%= f.submit t('.update'), class: "btn conscients-btn btn-green", id: 'update-email-btn' %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="py-5 px-3 border-top-dotted border-bottom-dotted">
+      <h2 class="my-4 f-08R-phone"><%= t('profiles.edit.password_edit_title') %></h2>
+      <%= form_for(current_client, as: current_client, url: profile_password_path, html: { method: :patch }) do |f| %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence unless f.object.errors.blank? %>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.label :current_password %> <br />
+              <%= f.password_field :current_password, autocomplete: "off", class: "form-control mr-sm-2"%>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.label :password, t('devise.clients.edit.new_pw')%> <br />
+              <%= f.password_field :password, autocomplete: "off", class: "form-control mr-sm-2" %>
+              <% if @minimum_password_length %>
+
+                <p class="f-08R"><em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="py-3">
+        <%= f.submit t('.update'), class: "btn conscients-btn btn-green", id: 'update-pwd-btn' %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="py-5 px-3 border-top-dotted border-bottom-dotted">
+      <h2 class="f-08R-phone"><%= t('.cancel_my_account') %></h2>
+      <p><%= button_to t('.cancel_my_account'), registration_path(current_client), data: { confirm: t('.are_you_sure') }, method: :delete, class: "btn conscients-btn btn-red" %></p>
+    </div>
+    <div class="p-3">
+      <%= link_to t('devise.shared.links.back'), clients_path, class: "continue-shopping" %>
+    </div>
+</div>
+
+
+

@@ -72,6 +72,9 @@ Rails.application.routes.draw do
       end
       resources :coupon_to_order_additions, only: :create
     end
+    resource :profile, only: %i[edit]
+    resource :profile_email, only: %i[update]
+    resource :profile_password, only: %i[update]
 
     # permanent redirections
     get '/conscients-chez-lilli-bulle', to: redirect(
