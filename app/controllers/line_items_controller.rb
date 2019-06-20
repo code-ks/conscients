@@ -8,8 +8,7 @@ class LineItemsController < ApplicationController
 
   # Line item does not exist
   def create
-    @line_item = AddItemToCart.new(@cart, line_item_params, quantity)
-                              .perform
+    @line_item = AddItemToCart.new(@cart, line_item_params, quantity).perform
     respond_with(@line_item, location: product_path(@product)) do |format|
       format.html { render 'products/show' } unless @line_item.save
     end

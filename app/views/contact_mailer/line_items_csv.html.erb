@@ -1,0 +1,7 @@
+<h3>Quantities per project</h3>
+<span>Line items csv attached</span>
+<ul>
+  <% TreePlantation.all.sort.each do |tp|  %>
+    <li><%= "#{tp.id} - #{tp.project_name}: #{tp.trees_quantity}" %></li>
+  <% end %>
+</ul>
