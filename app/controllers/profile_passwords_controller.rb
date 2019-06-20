@@ -3,9 +3,9 @@
 class ProfilePasswordsController < ProfilesController
   def update
     if update_with_password password_params
-      redirect_to edit_profile_path, notice: 'mise à jour effectuée'
+      redirect_to clients_path, notice: 'mise à jour effectuée'
     else
-      redirect_to edit_profile_path, notice: 'mise à jour non effectuée'
+      redirect_to clients_path, notice: 'mise à jour non effectuée'
     end
   end
 

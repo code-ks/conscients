@@ -239,7 +239,7 @@ en:
       my_addresses: "My addresses"
       address_type: "Address type: %{type}"
       postal_address_type: "%{type} address"
-      edit_password: "Edit my password"
+      edit_password: "Edit my ID or password"
     orders_list:
       date: "Order Date"
       amount: "Amount"
@@ -444,7 +444,7 @@ en:
       update: Update
       cancel_my_account: "Cancel my account"
       successfull_update: "Update successful"
-      un_successfull_update: "Update not successful"
+      unsuccessfull_update: "Update not successful"
   devise:
     clients:
       edit:

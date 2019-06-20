@@ -240,7 +240,7 @@ fr:
       my_addresses: "Mes adresses"
       address_type: "Adresse %{type}"
       postal_address_type: "Adresse de %{type}"
-      edit_password: "Changer mon mot de passe"
+      edit_password: "Changer mon identifiant ou mon mot de passe"
     orders_list:
       date: "Date de la commande"
       amount: "Montant"
@@ -445,7 +445,7 @@ fr:
       update: Modifier
       cancel_my_account: "Supprimer mon compte"
       successfull_update: "Modification réussie"
-      un_successfull_update: "Modification échouée"
+      unsuccessfull_update: "Modification échouée"
   devise:
     clients:
       edit:

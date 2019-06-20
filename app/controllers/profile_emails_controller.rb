@@ -3,9 +3,10 @@
 class ProfileEmailsController < ProfilesController
   def update
     if current_client.update(client_params)
-      redirect_to edit_profile_path, notice: t('profiles.edit.successfull_update')
+      redirect_to clients_path, notice: t('profiles.edit.successfull_update')
     else
-      redirect_to edit_profile_path, notice: t('profiles.edit.unsuccessfull_update')
+      errors = current_client.errors.full_messages.join(', ')
+      redirect_to clients_path, notice: "#{t('profiles.edit.unsuccessfull_update')}: #{errors}"
     end
   end
 
