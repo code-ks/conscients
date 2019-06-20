@@ -70,11 +70,11 @@ class Order < ApplicationRecord
   scope :finished, lambda {
     preparing.or(Order.waiting_for_bank_transfer).or(Order.fulfilled).or(Order.delivered)
   }
-  scope :one_hour_ago, -> { where('updated_at < ?', Time.zone.now - 1.hour) }
+  scope :one_hour_old, -> { where('updated_at < ?', Time.zone.now - 1.hour) }
   scope :one_day_old, -> { where('updated_at < ?', Time.zone.now - 1.day) }
   scope :two_days_old, -> { where('updated_at < ?', Time.zone.now - 2.days) }
   # Delay could be changed if needed
-  scope :cart_to_destroy, -> { in_cart.one_hour_ago }
+  scope :cart_to_destroy, -> { in_cart.one_day_old }
   scope :not_in_cart, lambda {
     where(aasm_state: %w[waiting_for_bank_transfer preparing fulfilled delivered canceled])
   }

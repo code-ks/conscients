@@ -5,12 +5,10 @@
       <!-- nom du user si on peut séparer delivery de billing -->
       <!-- <h3 class="text-capitalize color-red"><%= current_client.full_name %></h3> -->
       <!-- end garder nom du user si on peut séparer delivery de billing -->
-      <h3 class="my-md-3 client-id"><%= t('.client_email', email: current_client.email) %></h3></i><%= link_to t('.edit_password'), edit_client_registration_path, class: "yellow-link client-id" %>
+      <h3 class="my-md-3 client-id"><%= t('.client_email', email: current_client.email) %></h3></i><%= link_to t('.edit_password'), edit_profile_path, class: "yellow-link client-id" %>
     </div>
 
     <div class="col-sm-6">
-
-      <!-- <h2 class="my-4"></%= t('.my_addresses') %></h2> -->
 
       <div class="row">
 
