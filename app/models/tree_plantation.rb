@@ -51,7 +51,7 @@ class TreePlantation < ApplicationRecord
   # Picks the correct tree plantation to link the line item to
   class << self
     def first_with_needed_quantity(quantity)
-      find_by('trees_quantity > ?', quantity) || last
+      all.sort.select{ |tp| tp.trees_quantity > quantity } || last
     end
   end
 
