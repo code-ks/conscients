@@ -53,4 +53,18 @@ RSpec.describe TreePlantation, type: :model do
     expect(first_certif_num).not_to eq(second_certif_num)
     expect([first_certif_num, second_certif_num].max).to eq(second_certif_num)
   end
+
+  it 'first_with_needed_quantity works as expected' do
+    tp_ten_first = create(:tree_plantation, trees_quantity: 10,
+      project_name: 'Amazonia', project_type: 'type type', partner: 'La Fondacion',
+      latitude: 0.434079e2, longitude: 0.37008e1, base_certificate_uuid: 'ABC')
+    tp_ten_second = create(:tree_plantation, trees_quantity: 10,
+      project_name: 'Amazonia', project_type: 'type type', partner: 'La Fondacion',
+      latitude: 0.434079e2, longitude: 0.37008e1, base_certificate_uuid: 'ABC')
+    tp_hundred = create(:tree_plantation, trees_quantity: 100,
+      project_name: 'Amazonia', project_type: 'type type', partner: 'La Fondacion',
+      latitude: 0.434079e2, longitude: 0.37008e1, base_certificate_uuid: 'ABC')
+    expect(TreePlantation.first_with_needed_quantity(1)).to eq(tp_ten_first)
+    expect(TreePlantation.first_with_needed_quantity(11)).to eq(tp_hundred)
+  end
 end
