@@ -32,14 +32,14 @@
 
 FactoryBot.define do
   factory :product do
-    name_fr { 'Default name_fr' }
-    name_en { 'Default name_en' }
+    sequence(:name_fr) { |n| "Default name_fr #{n}" }
+    sequence(:name_en) { |n| "Default name_en #{n}" }
     description_short do
       "Lorem ipsum dolor sit amet, consectetur adipiscing\
       elit. Mauris sit amet ligula non sem ullamcorper commodo."
     end
     ht_price_cents { 1000 }
-    seo_title { 'SEO title' }
+    sequence(:seo_title) { |n| "Seo_title #{n}" }
     meta_description do
       "Lorem ipsum dolor sit amet, consectetur adipiscing\
       elit. Mauris sit amet ligula non sem ullamcorper commodo."

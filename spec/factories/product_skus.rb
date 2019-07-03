@@ -20,5 +20,6 @@
 
 FactoryBot.define do
   factory :product_sku do
+    product
   end
 end
