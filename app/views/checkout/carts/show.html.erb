@@ -51,7 +51,7 @@
               </div>
               <div class="text-left"><%= line_item.recipient_message if line_item&.recipient_message&.present? %></div>
             </td>
-            <td><%= humanized_money_with_symbol line_item.ttc_price %></td>
+            <td class='line_item_ttc_price'><%= humanized_money_with_symbol line_item.ttc_price %></td>
             <td class="pl-1 pr-1">
               <%= link_to product_path(line_item.product, line_item: line_item) do %>
                 <%= fa_icon "pencil", class: "c-pointer" %>
