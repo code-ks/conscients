@@ -116,8 +116,8 @@ class LineItem < ApplicationRecord
   end
 
   def update_price
-    self.ttc_price_cents = quantity * product_ttc_price_cents
-    self.ht_price_cents = quantity * product_ht_price_cents
+    self.ttc_price_cents = quantity * product_ttc_price_cents.to_i
+    self.ht_price_cents = quantity * product_ht_price_cents.to_i
   end
 
   def generate_certificate(view)
