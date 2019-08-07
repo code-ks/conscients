@@ -1,0 +1,9 @@
+<ul class='mt-4'>
+  <% @clients.each do |client| %>
+    <% next if client == true_client %>
+    <li>
+      <%= link_to "Se logguer en tant que #{client.full_name} - #{client.email} - #{client.id} - créé le #{client.created_at.strftime('%F')}", impersonate_impersonation_path(client), method: :post %>
+    </li>
+  <% end %>
+</ul>
+

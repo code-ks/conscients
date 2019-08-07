@@ -71,6 +71,7 @@ gem 'invisible_captcha'
 
 # debugging
 gem 'pgsync' # Sync Postgres data between databases (ex: from Production To Development)
+gem 'pretender' # login as any user
 
 group :development, :test do
   gem 'capybara'

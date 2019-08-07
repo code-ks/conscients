@@ -3,6 +3,8 @@ require 'application_responder'
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  impersonates :client
+
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found?
   rescue_from ActionController::UnknownFormat, with: :record_not_found? if Rails.env.production?
   rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_to_referer_or_path
