@@ -447,6 +447,9 @@ Rails.application.routes.draw do
     get '/wp-login.php?redirect_to=http://www.conscients.com/album-foret-maternelle-illustre-tests-couleurs/', to: redirect(
       '/products/les-super-yoghiros', status: 301
     )
+    get 'rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWTQ9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7b5b4c3ff16cd8eef85281cdb4925db595b131dc/planter-un-arbre-pour-la-naissance-de-bebe.jpg', to: redirect(
+      '/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBWDg9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--29fae213a6151a15a4edd646c04002eaf3d40b95/Offrir-un-arbre-en-amazonie.png', status: 301
+    )
     get '/shop/fr/*foo', to: redirect(
       '/', status: 301
     )
@@ -454,6 +457,9 @@ Rails.application.routes.draw do
 
     if Rails.env.production?
       get '*path', to: 'pages#home', constraints: lambda { |req|
+        req.path.exclude? 'rails/active_storage'
+      }
+      post '*path', to: 'pages#home', constraints: lambda { |req|
         req.path.exclude? 'rails/active_storage'
       }
     end
