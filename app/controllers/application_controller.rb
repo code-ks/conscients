@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def redirect_to_referer_or_path
     flash[:notice] = t('flash.invalid_authenticity_token')
-    redirect_to request.referer
+    redirect_to request.referer || root_path
   end
 
   def set_locale
