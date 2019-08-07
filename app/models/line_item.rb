@@ -59,7 +59,7 @@ class LineItem < ApplicationRecord
            :product_name, :product_ttc_price_cents, :product_ht_price_cents, :product_weight,
            :certificate_background, :producer_latitude, :producer_longitude,
            to: :product_sku, allow_nil: true
-  delegate :client_full_name, to: :order
+  delegate :client_full_name, :paid?, to: :order
   delegate :color_certificate, to: :product_sku, allow_nil: true
   delegate :latitude, :longitude, :project_name, :project_type,
            to: :tree_plantation, prefix: true, allow_nil: true
@@ -82,15 +82,31 @@ class LineItem < ApplicationRecord
       %w[preparing fulfilled delivered] })
   }
 
-  def self.tree_plantation_marker
+  def tree_plantation_marker
     {
-      lat: first.tree_plantation_latitude.to_f,
-      lng: first.tree_plantation_longitude.to_f,
-      infoWindow: { content: "<h5>#{first.tree_plantation_project_name}</h5>\
-      #{first.tree_plantation_project_type}</br>\
-      #{I18n.t('clients.impact.trees_planted_amount', quantity: pluck(:quantity).sum)}" },
+      lat: tree_plantation_latitude.to_f,
+      lng: tree_plantation_longitude.to_f,
+      infoWindow: {
+        content: "<h5>#{tree_plantation_project_name}</h5>\
+                  #{tree_plantation_project_type}</br>\
+                  #{I18n.t('clients.impact.trees_planted_amount',
+                           quantity: order_line_items_at_tree_plantation_location_qtty)}"
+      },
       icon: ActionController::Base.helpers.asset_path('tree_marker.png')
     }
+  end
+
+  def order_line_items_at_tree_plantation_location_qtty
+    order_line_items_at_tree_plantation_location.map(&:quantity).sum
+  end
+
+  def order_line_items_at_tree_plantation_location
+    # some tree_plantations with identical coordinates in production
+    order.client
+         .line_items
+         .joins(:tree_plantation)
+         .where(tree_plantations: { latitude: tree_plantation.latitude,
+                                    longitude: tree_plantation.longitude })
   end
 
   def producer_marker

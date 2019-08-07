@@ -23,6 +23,11 @@ Rails.application.routes.draw do
   devise_for :clients, only: :omniauth_callbacks,
   controllers: { omniauth_callbacks: 'clients/omniauth_callbacks' }
 
+  resources :impersonations, only: [:index] do
+    post :impersonate, on: :member
+    post :stop_impersonating, on: :collection
+  end
+
   scope '(:locale)', locale: /en/ do
     root to: 'pages#home'
     devise_for :clients, skip: :omniauth_callbacks,

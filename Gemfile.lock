@@ -299,6 +299,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
+    multiprocessing (0.0.2)
     nenv (0.3.0)
     nio4r (2.3.1)
     nokogiri (1.10.3)
@@ -335,11 +336,18 @@ GEM
     pg_search (2.1.4)
       activerecord (>= 4.2)
       activesupport (>= 4.2)
+    pgsync (0.4.1)
+      multiprocessing
+      parallel
+      pg (>= 0.18.2)
+      slop (>= 4.2.0)
     postmark (1.15.0)
       json
     postmark-rails (0.19.0)
       actionmailer (>= 3.0.0)
       postmark (~> 1.15.0)
+    pretender (0.3.4)
+      actionpack (>= 4.2)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -467,6 +475,7 @@ GEM
     sidekiq-failures (1.0.0)
       sidekiq (>= 4.0.0)
     sixarm_ruby_unaccent (1.2.0)
+    slop (4.7.0)
     sort_alphabetical (1.1.0)
       unicode_utils (>= 1.2.2)
     spring (2.0.2)
@@ -568,7 +577,9 @@ DEPENDENCIES
   paypal-sdk-rest (~> 1.7)
   pg (>= 0.18)
   pg_search (~> 2.1)
+  pgsync
   postmark-rails (~> 0.16)
+  pretender
   pry-byebug (~> 3.6)
   pry-rails (~> 0.3)
   puma (~> 3.11)

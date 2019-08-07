@@ -1,0 +1,15 @@
+<% if current_client != true_client %>
+  <div class='impersonation-status'>
+    Vous (<%= true_client.email %>) êtes loggué en tant que
+    <%= "#{current_client.email} #{current_client.id}" %>
+    <%= link_to "Stop l'impersonation", stop_impersonating_impersonations_path, method: :post %>
+  </div>
+<% end %>
+
+<% if current_client&.can_debug && current_client == true_client %>
+  <%= link_to impersonations_path do %>
+    <div class='impersonation-status yellow-link'>
+      impersonation
+    </div>
+  <% end %>
+<% end %>
