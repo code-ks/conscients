@@ -279,6 +279,10 @@ class Order < ApplicationRecord
     email? ? client.email : "#{delivery_address.full_name}\n#{delivery_address}"
   end
 
+  def paid?
+    preparing? || fulfilled? || delivered?
+  end
+
   private
 
   def process_order

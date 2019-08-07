@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: clients
@@ -79,14 +80,10 @@ class Client < ApplicationRecord
   # Build markers for producers and tree plantations for the client admin
   # rubocop:disable Metrics/AbcSize
   def markers
-    markers = []
     line_items.paid.includes(:product_sku).map do |line_item|
-      markers << line_item.producer_marker if line_item.producer_marker?
-    end
-    tree_plantations.includes(:line_items).map do |tree_plantation|
-      markers << tree_plantation.marker(self) if tree_plantation.line_items.paid.any?
-    end
-    markers.uniq
+      line_item.producer_marker if line_item.producer_marker?
+      line_item.tree_plantation_marker if line_item.tree_marker?
+    end.uniq
   end
   # rubocop:enable Metrics/AbcSize
 

@@ -55,10 +55,6 @@ class TreePlantation < ApplicationRecord
     end
   end
 
-  def marker(client)
-    line_items.paid.where(orders: { client: client }).tree_plantation_marker
-  end
-
   def to_s
     project_name
   end
