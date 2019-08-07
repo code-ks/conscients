@@ -519,3 +519,4 @@ en:
       show:
         notice: You must log in to access this page
     record_not_found: Resource not found
+    invalid_authenticity_token: Please try again

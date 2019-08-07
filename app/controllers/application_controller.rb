@@ -5,6 +5,7 @@ require 'application_responder'
 class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found?
   rescue_from ActionController::UnknownFormat, with: :record_not_found? if Rails.env.production?
+  rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_to_referer_or_path
 
   self.responder = ApplicationResponder
   respond_to :html
@@ -17,6 +18,11 @@ class ApplicationController < ActionController::Base
   after_action :track_action
 
   private
+
+  def redirect_to_referer_or_path
+    flash[:notice] = t('flash.invalid_authenticity_token')
+    redirect_to request.referer
+  end
 
   def set_locale
     I18n.locale = params.fetch(:locale, I18n.default_locale).to_sym
