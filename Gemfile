@@ -69,6 +69,9 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'invisible_captcha'
 
+# debugging
+gem 'pgsync' # Sync Postgres data between databases (ex: from Production To Development)
+
 group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'

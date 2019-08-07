@@ -1,0 +1,57 @@
+# source database URL
+# database URLs take the format of:
+#   postgres://user:password@host:port/dbname
+# we recommend a command which outputs a database URL
+# so sensitive information is not included in this file
+from: $(heroku config:get DATABASE_URL -r production)
+
+# destination database URL
+to: postgres://localhost:5432/conscients_development
+
+exclude:
+
+
+
+# define groups
+groups:
+  all:
+    - admin_users
+    - clients
+    - tree_plantations
+    - products
+    - variants
+    - product_skus
+    - active_admin_comments
+    - active_storage_attachments
+    - active_storage_blobs
+    - addresses
+    - ahoy_events
+    - ahoy_visits
+    - blog_posts
+    - categories
+    - categorizations
+    - coupons
+    - friendly_id_slugs
+    - orders
+    - line_items
+    - mobility_string_translations
+    - mobility_text_translations
+    - stock_entries
+  # user:
+  #   users: "WHERE id = {1}"
+  #   orders: "WHERE user_id = {1}"
+  #   order_items: "WHERE order_id IN (SELECT id FROM orders WHERE user_id = {1})"
+  # order:
+  #   orders: "WHERE id = {1}"
+  #   order_items: "WHERE order_id = {1}"
+  #   users: "WHERE id IN (select user_id FROM orders WHERE orders.id = {1})"
+  # orders:
+  #   orders: "WHERE order_date IS NOT NULL ORDER BY order_date DESC LIMIT {1}"
+  #   order_items: "WHERE order_id IN (SELECT id FROM orders WHERE order_date IS NOT NULL ORDER BY order_date DESC LIMIT {1})"
+  #   users: "WHERE id = (SELECT user_id FROM orders WHERE order_date IS NOT NULL ORDER BY order_date DESC LIMIT {1})"
+
+# protect sensitive information
+data_rules:
+  encrypted_*: unique_secret
+  # email: unique_email
+  # name: random_letter
