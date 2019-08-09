@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class LineItemsController < ApplicationController
-  before_action :set_product, :set_variant, :set_product_sku, only: %i[create update]
+  before_action :set_product, :set_variant, :set_product_sku, only: %i[create update tree_plantations]
   before_action :set_line_item, only: %i[update destroy]
 
   respond_to :js, :html
 
   # Line item does not exist
   def create
-    @line_item = AddItemToCart.new(@cart, line_item_params, quantity).perform
+    @line_item = AddItemToCart.new(@cart, line_item_params, quantity, tree_plantations).perform
     respond_with(@line_item, location: product_path(@product)) do |format|
       format.html { render 'products/show' } unless @line_item.save
     end
@@ -57,6 +57,10 @@ class LineItemsController < ApplicationController
     params[:line_item] = { empty: true } unless params.key?(:line_item)
     params.require(:line_item).permit(:recipient_name, :recipient_message, :certificate_date)
           .merge(product_sku_id: @product_sku.id)
+  end
+
+  def tree_plantations
+    @product.tree_plantations.map { |tp| tp.project_name }
   end
 
   def line_item_params_update

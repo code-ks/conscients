@@ -26,6 +26,8 @@ class TreePlantation < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_many :orders, through: :line_items
   has_one_attached :klm_file
+  has_many :product_tree_plantations, dependent: :destroy
+  has_many :product, through: :product_tree_plantations
 
   # Initialize quantity (base tree quantity is the initial quantity in the plantation)
   before_create :match_base_tree_quantity
@@ -50,8 +52,8 @@ class TreePlantation < ApplicationRecord
 
   # Picks the correct tree plantation to link the line item to
   class << self
-    def first_with_needed_quantity(quantity)
-      all.sort.select { |tp| tp.trees_quantity >= quantity }.first || last
+    def first_with_needed_quantity(quantity, tree_plantations)
+      all.where(project_name: tree_plantations).select { |tp| tp.trees_quantity >= quantity }.first || last
     end
   end
 

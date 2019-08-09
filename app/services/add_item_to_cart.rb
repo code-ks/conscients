@@ -4,10 +4,11 @@
 # (quantity, tree_plantation, certificate_number)
 # Be careful that the right tree_plantation is kept when line_item just updated (to check)
 class AddItemToCart
-  def initialize(cart, line_item_params, quantity)
+  def initialize(cart, line_item_params, quantity, tree_plantations)
     @cart = cart
     @line_item_params = line_item_params
     @quantity = quantity.to_i
+    @tree_plantations = tree_plantations
   end
 
   def perform
@@ -34,7 +35,7 @@ class AddItemToCart
   end
 
   def set_tree_plantation
-    @tree_plantation = TreePlantation.first_with_needed_quantity(@quantity)
+    @tree_plantation = TreePlantation.first_with_needed_quantity(@quantity, @tree_plantations)
   end
 
   def add_plantation_attributes_to_line_item

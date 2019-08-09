@@ -41,6 +41,8 @@ class Product < ApplicationRecord
   has_many_attached :images
   has_one_attached :background_image
   has_one_attached :certificate_background
+  has_many :product_tree_plantations, dependent: :destroy
+  has_many :tree_plantations, through: :product_tree_plantations
 
   extend Mobility
   # Change backend to allow query in translatable columns

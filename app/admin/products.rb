@@ -11,7 +11,7 @@ ActiveAdmin.register Product do
                 :published, :ht_buying_price_cents, :seo_title_fr, :seo_title_en,
                 :meta_description_fr, :meta_description_en, :keywords_fr, :keywords_en,
                 :producer_latitude, :producer_longitude, :certificate_background,
-                :background_image, :color_certificate, images: []
+                :background_image, :color_certificate, images: [], tree_plantation_ids: []
 
   includes :text_translations, :images_attachments, :certificate_background_attachment
 
@@ -67,6 +67,7 @@ ActiveAdmin.register Product do
     column :tax_rate
     column :weight
     column :product_type
+    column :tree_plantations
     column :seo_title_fr do |product|
       truncate product.seo_title_fr, length: 50
     end
@@ -126,6 +127,7 @@ ActiveAdmin.register Product do
       f.input :tax_rate
       f.input :weight
       f.input :product_type
+      f.input :tree_plantations, as: :check_boxes, :collection => TreePlantation.all.map{ |tp|  [tp.project_name, tp.id] }
       f.input :seo_title_fr
       f.input :seo_title_en
       f.input :meta_description_fr
@@ -175,6 +177,7 @@ ActiveAdmin.register Product do
       row :tax_rate
       row :weight
       row :product_type
+      row :tree_plantations
       row :seo_title_fr
       row :seo_title_en
       row :meta_description_fr
