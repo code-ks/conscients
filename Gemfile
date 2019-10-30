@@ -29,7 +29,7 @@ gem 'sidekiq-failures', '~> 1.0'
 
 # Analytics for rails --> https://github.com/ankane/ahoy
 gem 'ahoy_matey', '~> 2.0'
-gem 'devise', '~> 4.4'
+gem 'devise', '~> 4.7'
 gem 'devise-i18n', '~> 1.6'
 gem 'devise_invitable', '~> 1.7', '>= 1.7.5'
 gem 'gibbon', '~> 3.2'
