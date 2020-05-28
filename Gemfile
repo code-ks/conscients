@@ -57,7 +57,7 @@ gem 'money-rails', '~> 1.11'
 gem 'paypal-sdk-rest', '~> 1.7'
 gem 'stripe', '~> 3.13'
 
-gem 'kaminari', '~> 1.1'
+gem 'kaminari', '~> 1.2'
 gem 'pg_search', '~> 2.1'
 gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary', '~> 0.12'
