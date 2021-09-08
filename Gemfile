@@ -113,7 +113,7 @@ group :development do
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'rack-livereload', '~> 0.3'
 
-  gem 'better_errors', '~> 2.4'
+  gem 'better_errors', '~> 2.8'
   gem 'binding_of_caller', '~> 0.8'
   gem 'web-console', '~> 3.6'
 end
